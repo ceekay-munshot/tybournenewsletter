@@ -36,6 +36,8 @@ export interface ChangeBlock {
   isStale?: boolean;
   breakdown: BreakdownRow[];
   trend?: TrendPoint[];
+  /** Other things that moved in this system (same shape, rendered smaller). */
+  secondaryMetrics?: ChangeBlock[];
   sourceName: string;
   sourceUrl: string;
   dashboardUrl?: string | null;

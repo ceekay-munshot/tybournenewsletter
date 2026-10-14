@@ -12,18 +12,19 @@ First client: **Tybourne Global Holdings** (published by Munshot).
 
 ---
 
-## Phase 1 scope (this repo)
+## Scope
 
 - Foundation: React 18 + TypeScript + Vite + Tailwind, hand-rolled dependency-free SVG charts.
 - Node 20 ES-module data pipeline (`.mjs`), one connector file per source type.
-- **4 working connectors** (all keyless public GETs): CPU Prices, Taiwan Semiconductor
-  Revenue, AI Compute Pricing, Schneider Electric.
-- Overview dashboard (movers chart + sector cards), per-sector tabs, and a generic
-  per-system drill-down.
+- **13 working connectors** (all keyless public GETs) across all four sectors, each returning
+  a headline `ChangeBlock` plus optional `secondaryMetrics`.
+- Overview dashboard: movers chart (all systems, ranked), an "Everything that moved" master
+  table (every headline + secondary metric, sortable), and colour-banded sector sections of
+  change cards. Per-sector tabs and a generic per-system drill-down (breakdown chart with a
+  % / absolute toggle, trend, detail table, and every secondary metric).
 
-Later phases add the remaining 8 systems, an AI-written newsletter, and a downloadable
-editorial PDF — each new system plugs in with **one config entry + one connector file**;
-no architectural changes.
+The AI-written newsletter and downloadable editorial PDF come next — each new system still
+plugs in with **one config entry + one connector file**; no architectural changes.
 
 ---
 
@@ -89,11 +90,20 @@ new config folder.
 The header shows `public/munshot-logo.png` when present and falls back to a built-in
 "Munshot" wordmark otherwise. Drop the real logo at `public/munshot-logo.png` to use it.
 
-## Sources (Phase 1)
+## Systems & sources
 
-| System | Source | Cadence |
-| --- | --- | --- |
-| CPU Prices | PassMark / cpubenchmark.net (street price) | QoQ (QTD) |
-| Taiwan Semiconductor Revenue | Taiwan MOPS / TWSE monthly filings | QoQ |
-| AI Compute Pricing | pricepertoken.com / getdeploying.com | QoQ (QTD) |
-| Schneider Electric | Graybar distributor pricing | QoQ (QTD) |
+| Sector | System | Source | Cadence |
+| --- | --- | --- | --- |
+| Technology | CPU Prices | PassMark / cpubenchmark.net (street price) | QoQ (QTD) |
+| Technology | Taiwan Semiconductor Revenue | Taiwan MOPS / TWSE monthly filings | QoQ |
+| Technology | AI Compute Pricing | pricepertoken.com / getdeploying.com | QoQ (QTD) |
+| Technology | SAP AI Strategy | HN / Reddit / StackExchange + SAP docs | QoQ (daily→91d) |
+| Technology | Hugging Face Activity | Hugging Face Hub | MoM |
+| Technology | AI Model Intelligence | OpenRouter / UBS / SEC | QoQ |
+| Technology | Texas Instruments Prices | Mouser / UBS index | QoQ (stale ~Apr '26) |
+| Technology | GPU Cloud Pricing | getdeploying.com | QoQ (QTD) |
+| Industrial | Schneider Electric | Graybar distributor pricing | QoQ (QTD) |
+| Industrial | Airline Demand | TSA.gov + IATA | QoQ |
+| Financial | 13F Fund Holdings | SEC EDGAR 13F filings | QoQ |
+| Financial | Nubank | BCB / IF.data / issuer filings | QoQ (pp) |
+| Macro | Podcast Themes | Investor podcasts | QoQ (QTD) |

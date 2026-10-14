@@ -18,7 +18,7 @@ export function ChangeCard({ block, onSelect }: { block: ChangeBlock; onSelect: 
 
   if (block.status === 'error') {
     return (
-      <Card className="flex flex-col" hover>
+      <Card className="flex flex-col" hover accent={accent}>
         <div className="flex items-center gap-2.5">
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: `${accent}14`, color: accent }}>
             <Icon size={16} strokeWidth={2.2} />
@@ -35,7 +35,7 @@ export function ChangeCard({ block, onSelect }: { block: ChangeBlock; onSelect: 
 
   return (
     <button onClick={() => onSelect(block.systemId)} className="group block w-full text-left">
-      <Card className="flex h-full flex-col" hover>
+      <Card className="flex h-full flex-col" hover accent={accent}>
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-2.5">
             <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: `${accent}14`, color: accent }}>

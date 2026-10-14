@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T17:50:57.829Z",
+  "generatedAt": "2026-10-14T19:00:52.864Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -316,7 +316,7 @@
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.94pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.92pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -362,6 +362,1264 @@
       "sourceUrl": "https://www.graybar.com/search/?q=query%3Aups%3Bsort%3Arelevance%3Bbrands%3ATripp+Lite+%28Eaton%29%3Bbrands%3AAPC+%28Schneider+Electric%29%3Bbrands%3ALiebert+%28Vertiv%29%3Bbrands%3AEaton%3Bbrands%3AChatsworth&text=ups&enablePartNumberSearch=",
       "dashboardUrl": null,
       "notes": "Like-for-like: mean over items priced in both quarters, only priced categories. Excluded from headline (too few comparable items): DCIM.",
+      "status": "ok"
+    },
+    {
+      "systemId": "thirteen-f",
+      "name": "13F Fund Holdings",
+      "sector": "financial",
+      "metricLabel": "New buys this quarter",
+      "unit": "positions",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q2 '26",
+      "lastPeriodLabel": "Q1 '26",
+      "thisValue": 714,
+      "lastValue": 119,
+      "changePct": 5,
+      "changeAbs": 595,
+      "direction": "up",
+      "asOf": "2026-06-30",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Nuveen, LLC",
+          "thisValue": 671,
+          "lastValue": 74,
+          "changePct": 8.067567567567568,
+          "direction": "up"
+        },
+        {
+          "label": "LONE PINE CAPITAL LLC",
+          "thisValue": 13,
+          "lastValue": 11,
+          "changePct": 0.18181818181818182,
+          "direction": "up"
+        },
+        {
+          "label": "Avantyr Capital Partners, LP",
+          "thisValue": 8,
+          "lastValue": 11,
+          "changePct": -0.2727272727272727,
+          "direction": "down"
+        },
+        {
+          "label": "Aspex Management (HK) Ltd",
+          "thisValue": 5,
+          "lastValue": 6,
+          "changePct": -0.16666666666666666,
+          "direction": "down"
+        },
+        {
+          "label": "Foxhaven Asset Management, LP",
+          "thisValue": 4,
+          "lastValue": 1,
+          "changePct": 3,
+          "direction": "up"
+        },
+        {
+          "label": "Durable Capital Partners LP",
+          "thisValue": 4,
+          "lastValue": 8,
+          "changePct": -0.5,
+          "direction": "down"
+        },
+        {
+          "label": "SurgoCap Partners LP",
+          "thisValue": 3,
+          "lastValue": 3,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Darsana Capital Partners LP",
+          "thisValue": 3,
+          "lastValue": 0,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "TCI FUND MANAGEMENT LTD",
+          "thisValue": 2,
+          "lastValue": 1,
+          "changePct": 1,
+          "direction": "up"
+        },
+        {
+          "label": "Berkshire Hathaway Inc",
+          "thisValue": 1,
+          "lastValue": 3,
+          "changePct": -0.6666666666666666,
+          "direction": "down"
+        },
+        {
+          "label": "PERSHING SQUARE HOLDCO, L.P.",
+          "thisValue": 0,
+          "lastValue": 0,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "WINDACRE PARTNERSHIP LLC",
+          "thisValue": 0,
+          "lastValue": 0,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "ABRAMS CAPITAL MANAGEMENT, L.P.",
+          "thisValue": 0,
+          "lastValue": 0,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Cantillon Capital Management LLC",
+          "thisValue": 0,
+          "lastValue": 1,
+          "changePct": -1,
+          "direction": "down"
+        }
+      ],
+      "secondaryMetrics": [
+        {
+          "systemId": "thirteen-f",
+          "name": "13F Fund Holdings",
+          "sector": "financial",
+          "metricLabel": "Positions exited",
+          "unit": "positions",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "Q2 '26",
+          "lastPeriodLabel": "Q1 '26",
+          "thisValue": 213,
+          "lastValue": 163,
+          "changePct": 0.3067484662576687,
+          "changeAbs": 50,
+          "direction": "up",
+          "asOf": "2026-06-30",
+          "isStale": false,
+          "breakdown": [
+            {
+              "label": "Nuveen, LLC",
+              "thisValue": 160,
+              "lastValue": 100,
+              "changePct": 0.6,
+              "direction": "up"
+            },
+            {
+              "label": "LONE PINE CAPITAL LLC",
+              "thisValue": 15,
+              "lastValue": 7,
+              "changePct": 1.1428571428571428,
+              "direction": "up"
+            },
+            {
+              "label": "Cantillon Capital Management LLC",
+              "thisValue": 11,
+              "lastValue": 0,
+              "changePct": null,
+              "direction": "flat"
+            },
+            {
+              "label": "Aspex Management (HK) Ltd",
+              "thisValue": 7,
+              "lastValue": 1,
+              "changePct": 6,
+              "direction": "up"
+            },
+            {
+              "label": "Avantyr Capital Partners, LP",
+              "thisValue": 6,
+              "lastValue": 14,
+              "changePct": -0.5714285714285714,
+              "direction": "down"
+            },
+            {
+              "label": "Durable Capital Partners LP",
+              "thisValue": 5,
+              "lastValue": 11,
+              "changePct": -0.5454545454545454,
+              "direction": "down"
+            },
+            {
+              "label": "SurgoCap Partners LP",
+              "thisValue": 4,
+              "lastValue": 6,
+              "changePct": -0.3333333333333333,
+              "direction": "down"
+            },
+            {
+              "label": "Foxhaven Asset Management, LP",
+              "thisValue": 2,
+              "lastValue": 3,
+              "changePct": -0.3333333333333333,
+              "direction": "down"
+            },
+            {
+              "label": "Berkshire Hathaway Inc",
+              "thisValue": 1,
+              "lastValue": 16,
+              "changePct": -0.9375,
+              "direction": "down"
+            },
+            {
+              "label": "TCI FUND MANAGEMENT LTD",
+              "thisValue": 1,
+              "lastValue": 0,
+              "changePct": null,
+              "direction": "flat"
+            },
+            {
+              "label": "Darsana Capital Partners LP",
+              "thisValue": 1,
+              "lastValue": 2,
+              "changePct": -0.5,
+              "direction": "down"
+            },
+            {
+              "label": "PERSHING SQUARE HOLDCO, L.P.",
+              "thisValue": 0,
+              "lastValue": 0,
+              "changePct": null,
+              "direction": "flat"
+            },
+            {
+              "label": "WINDACRE PARTNERSHIP LLC",
+              "thisValue": 0,
+              "lastValue": 2,
+              "changePct": -1,
+              "direction": "down"
+            },
+            {
+              "label": "ABRAMS CAPITAL MANAGEMENT, L.P.",
+              "thisValue": 0,
+              "lastValue": 1,
+              "changePct": -1,
+              "direction": "down"
+            }
+          ],
+          "sourceName": "SEC EDGAR 13F filings",
+          "sourceUrl": "https://13f-eo2.pages.dev/",
+          "dashboardUrl": "https://13f-eo2.pages.dev/",
+          "status": "ok"
+        },
+        {
+          "systemId": "thirteen-f",
+          "name": "13F Fund Holdings",
+          "sector": "financial",
+          "metricLabel": "Total reported holdings",
+          "unit": "$",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "Q2 '26",
+          "lastPeriodLabel": "Q1 '26",
+          "thisValue": 865375537793,
+          "lastValue": 742361662143,
+          "changePct": 0.16570612670769092,
+          "changeAbs": 123013875650,
+          "direction": "up",
+          "asOf": "2026-06-30",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "SEC EDGAR 13F filings",
+          "sourceUrl": "https://13f-eo2.pages.dev/",
+          "dashboardUrl": "https://13f-eo2.pages.dev/",
+          "status": "ok"
+        }
+      ],
+      "sourceName": "SEC EDGAR 13F filings",
+      "sourceUrl": "https://13f-eo2.pages.dev/",
+      "dashboardUrl": "https://13f-eo2.pages.dev/",
+      "notes": "New long positions across 14 watchlist funds. Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.",
+      "status": "ok"
+    },
+    {
+      "systemId": "nubank",
+      "name": "Nubank",
+      "sector": "financial",
+      "metricLabel": "Brazil card market share",
+      "unit": "% share",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "2Q '26",
+      "lastPeriodLabel": "1Q '26",
+      "thisValue": 15.49,
+      "lastValue": 15.68,
+      "changePct": -0.012117346938775479,
+      "changeAbs": -0.19,
+      "direction": "down",
+      "asOf": "2Q26",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Itaú",
+          "thisValue": 20.23,
+          "lastValue": 20.43,
+          "changePct": -0.009789525208027377,
+          "direction": "down"
+        },
+        {
+          "label": "Nu",
+          "thisValue": 15.49,
+          "lastValue": 15.68,
+          "changePct": -0.012117346938775479,
+          "direction": "down"
+        },
+        {
+          "label": "Bradesco",
+          "thisValue": 10.71,
+          "lastValue": 10.64,
+          "changePct": 0.006578947368421079,
+          "direction": "up"
+        },
+        {
+          "label": "BB",
+          "thisValue": 9.35,
+          "lastValue": 9.87,
+          "changePct": -0.0526849037487335,
+          "direction": "down"
+        },
+        {
+          "label": "Santander",
+          "thisValue": 8.73,
+          "lastValue": 8.58,
+          "changePct": 0.017482517482517525,
+          "direction": "up"
+        },
+        {
+          "label": "Caixa",
+          "thisValue": 3.09,
+          "lastValue": 3.04,
+          "changePct": 0.01644736842105257,
+          "direction": "up"
+        },
+        {
+          "label": "Inter",
+          "thisValue": 2.02,
+          "lastValue": 1.99,
+          "changePct": 0.015075376884422124,
+          "direction": "up"
+        }
+      ],
+      "secondaryMetrics": [
+        {
+          "systemId": "nubank",
+          "name": "Nubank",
+          "sector": "financial",
+          "metricLabel": "Nu 90+ day NPL",
+          "unit": "% NPL",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "2Q '26",
+          "lastPeriodLabel": "1Q '26",
+          "thisValue": 6.9,
+          "lastValue": 6.5,
+          "changePct": 0.06153846153846159,
+          "changeAbs": 0.4,
+          "direction": "up",
+          "asOf": "2Q26",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "BCB / IF.data / issuer filings",
+          "sourceUrl": "",
+          "dashboardUrl": null,
+          "notes": "Asset quality: share of the book 90+ days overdue (higher = worse).",
+          "status": "ok"
+        },
+        {
+          "systemId": "nubank",
+          "name": "Nubank",
+          "sector": "financial",
+          "metricLabel": "Nu unsecured-loan share",
+          "unit": "% share",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "2Q '26",
+          "lastPeriodLabel": "1Q '26",
+          "thisValue": 15.07,
+          "lastValue": 15.26,
+          "changePct": -0.012450851900393153,
+          "changeAbs": -0.19,
+          "direction": "down",
+          "asOf": "2Q26",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "BCB / IF.data / issuer filings",
+          "sourceUrl": "",
+          "dashboardUrl": null,
+          "status": "ok"
+        }
+      ],
+      "sourceName": "BCB / IF.data / issuer filings",
+      "sourceUrl": "",
+      "dashboardUrl": null,
+      "notes": "Brazil credit-card market share (%); change shown in percentage points. Nu vs incumbent banks, from BCB IF.data + issuer filings.",
+      "status": "ok"
+    },
+    {
+      "systemId": "sap-ai",
+      "name": "SAP AI Strategy",
+      "sector": "technology",
+      "metricLabel": "Practitioner sentiment (1-5)",
+      "unit": "score 1-5",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 2.6,
+      "lastValue": 3.4,
+      "changePct": -0.23529411764705876,
+      "changeAbs": -0.8,
+      "direction": "down",
+      "asOf": "2026-10-14T11:15:57.092Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Partner views",
+          "thisValue": 3.3,
+          "lastValue": 4,
+          "changePct": -0.17500000000000004,
+          "direction": "down"
+        },
+        {
+          "label": "Reporting & analytics",
+          "thisValue": 3.1,
+          "lastValue": 2.7,
+          "changePct": 0.1481481481481481,
+          "direction": "up"
+        },
+        {
+          "label": "Joule (AI copilot)",
+          "thisValue": 3,
+          "lastValue": 2.9,
+          "changePct": 0.03448275862068969,
+          "direction": "up"
+        },
+        {
+          "label": "Customer satisfaction",
+          "thisValue": 2.9,
+          "lastValue": 5,
+          "changePct": -0.42000000000000004,
+          "direction": "down"
+        },
+        {
+          "label": "Business Data Cloud",
+          "thisValue": 2.8,
+          "lastValue": 3.5,
+          "changePct": -0.20000000000000004,
+          "direction": "down"
+        },
+        {
+          "label": "S/4HANA AI",
+          "thisValue": 2.8,
+          "lastValue": 3.4,
+          "changePct": -0.17647058823529416,
+          "direction": "down"
+        },
+        {
+          "label": "Vs competitors",
+          "thisValue": 2.6,
+          "lastValue": 3.4,
+          "changePct": -0.23529411764705876,
+          "direction": "down"
+        },
+        {
+          "label": "BTP AI platform",
+          "thisValue": 2.3,
+          "lastValue": 3.7,
+          "changePct": -0.37837837837837845,
+          "direction": "down"
+        },
+        {
+          "label": "Risks & gaps",
+          "thisValue": 2.1,
+          "lastValue": 3,
+          "changePct": -0.3,
+          "direction": "down"
+        }
+      ],
+      "sourceName": "HN/Reddit/StackExchange + SAP docs",
+      "sourceUrl": "",
+      "dashboardUrl": null,
+      "notes": "Practitioner sentiment (1-5) from HN / Reddit / StackExchange + SAP docs; daily index compared across ~91 days.",
+      "status": "ok"
+    },
+    {
+      "systemId": "airlines",
+      "name": "Airline Demand",
+      "sector": "industrial",
+      "metricLabel": "US passenger volume",
+      "unit": "daily pax",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q3 '26",
+      "lastPeriodLabel": "Q2 '26",
+      "thisValue": 2508148,
+      "lastValue": 2568827,
+      "changePct": -0.02362128706993503,
+      "changeAbs": -60679,
+      "direction": "down",
+      "asOf": "2026-10-13",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Latin America",
+          "thisValue": 5.3,
+          "lastValue": null,
+          "changePct": 0.053,
+          "direction": "up"
+        },
+        {
+          "label": "Africa",
+          "thisValue": 4.4,
+          "lastValue": null,
+          "changePct": 0.044000000000000004,
+          "direction": "up"
+        },
+        {
+          "label": "Asia/Pacific",
+          "thisValue": 1.4,
+          "lastValue": null,
+          "changePct": 0.013999999999999999,
+          "direction": "up"
+        },
+        {
+          "label": "Europe",
+          "thisValue": 0.7,
+          "lastValue": null,
+          "changePct": 0.006999999999999999,
+          "direction": "up"
+        },
+        {
+          "label": "North America",
+          "thisValue": -2.2,
+          "lastValue": null,
+          "changePct": -0.022000000000000002,
+          "direction": "down"
+        },
+        {
+          "label": "Middle East",
+          "thisValue": -14.6,
+          "lastValue": null,
+          "changePct": -0.146,
+          "direction": "down"
+        }
+      ],
+      "trend": [
+        {
+          "period": "Q4 '24",
+          "value": 2450824
+        },
+        {
+          "period": "Q1 '25",
+          "value": 2283554
+        },
+        {
+          "period": "Q2 '25",
+          "value": 2579172
+        },
+        {
+          "period": "Q3 '25",
+          "value": 2579580
+        },
+        {
+          "period": "Q4 '25",
+          "value": 2465326
+        },
+        {
+          "period": "Q1 '26",
+          "value": 2318448
+        },
+        {
+          "period": "Q2 '26",
+          "value": 2568827
+        },
+        {
+          "period": "Q3 '26",
+          "value": 2508148
+        }
+      ],
+      "secondaryMetrics": [
+        {
+          "systemId": "airlines",
+          "name": "Airline Demand",
+          "sector": "industrial",
+          "metricLabel": "Industry RPK (YoY growth)",
+          "unit": "% YoY",
+          "comparison": "MoM",
+          "thisPeriodLabel": "Aug '26",
+          "lastPeriodLabel": "Jul '26",
+          "thisValue": -0.8,
+          "lastValue": 0.2,
+          "changePct": null,
+          "changeAbs": -1,
+          "direction": "down",
+          "asOf": "2026-10-13",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "TSA.gov + IATA",
+          "sourceUrl": "",
+          "dashboardUrl": null,
+          "notes": "IATA global industry RPK, year-over-year; change shown as month-over-month acceleration (pp).",
+          "status": "ok"
+        }
+      ],
+      "sourceName": "TSA.gov + IATA",
+      "sourceUrl": "",
+      "dashboardUrl": null,
+      "notes": "Mean daily TSA checkpoint throughput over complete calendar quarters. Breakdown = regional RPK YoY growth (latest month, IATA).",
+      "status": "ok"
+    },
+    {
+      "systemId": "huggingface",
+      "name": "Hugging Face Activity",
+      "sector": "technology",
+      "metricLabel": "New AI Spaces",
+      "unit": "new Spaces",
+      "comparison": "MoM",
+      "thisPeriodLabel": "Sep '26",
+      "lastPeriodLabel": "Aug '26",
+      "thisValue": 25225,
+      "lastValue": 17828,
+      "changePct": 0.4149091317029392,
+      "changeAbs": 7397,
+      "direction": "up",
+      "asOf": "2026-10-05",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Other",
+          "thisValue": 29.680931738564,
+          "lastValue": 25.742449431040075,
+          "changePct": 0.15299563151806864,
+          "direction": "up"
+        },
+        {
+          "label": "Chat & assistants",
+          "thisValue": 15.549217199989922,
+          "lastValue": 16.54539178779733,
+          "changePct": -0.060208582582016286,
+          "direction": "down"
+        },
+        {
+          "label": "Image generation",
+          "thisValue": 9.696109044951807,
+          "lastValue": 9.662029201522902,
+          "changePct": 0.003527193172168638,
+          "direction": "up"
+        },
+        {
+          "label": "Data analysis",
+          "thisValue": 7.719915039995432,
+          "lastValue": 7.437650341754368,
+          "changePct": 0.037950788928117984,
+          "direction": "up"
+        },
+        {
+          "label": "Document AI",
+          "thisValue": 6.612379556536161,
+          "lastValue": 6.2823001600058355,
+          "changePct": 0.05254116933661745,
+          "direction": "up"
+        },
+        {
+          "label": "Voice & audio",
+          "thisValue": 5.5475563715346805,
+          "lastValue": 8.451671561631283,
+          "changePct": -0.34361429794321896,
+          "direction": "down"
+        },
+        {
+          "label": "Search & research",
+          "thisValue": 5.534754747296798,
+          "lastValue": 7.529382709345325,
+          "changePct": -0.2649125484845966,
+          "direction": "down"
+        },
+        {
+          "label": "Video generation",
+          "thisValue": 4.478813250351347,
+          "lastValue": 6.21179610854041,
+          "changePct": -0.27898257249725844,
+          "direction": "down"
+        },
+        {
+          "label": "Coding",
+          "thisValue": 3.8245153385199413,
+          "lastValue": 2.9170159093019516,
+          "changePct": 0.3111054095811072,
+          "direction": "up"
+        },
+        {
+          "label": "Scientific tools",
+          "thisValue": 3.598862580021544,
+          "lastValue": 2.625360632719361,
+          "changePct": 0.3708069417852987,
+          "direction": "up"
+        },
+        {
+          "label": "Education",
+          "thisValue": 3.402569605871153,
+          "lastValue": 2.6936686109206605,
+          "changePct": 0.26317305405589575,
+          "direction": "up"
+        },
+        {
+          "label": "3D / gaming",
+          "thisValue": 2.42828365576783,
+          "lastValue": 2.0345180164080334,
+          "changePct": 0.19354246862605545,
+          "direction": "up"
+        },
+        {
+          "label": "Music generation",
+          "thisValue": 1.0363320127671163,
+          "lastValue": 0.9836777095131932,
+          "changePct": 0.05352800286587856,
+          "direction": "up"
+        },
+        {
+          "label": "Robotics",
+          "thisValue": 0.8897598578322666,
+          "lastValue": 0.8830878194992726,
+          "changePct": 0.007555350878667066,
+          "direction": "up"
+        }
+      ],
+      "trend": [
+        {
+          "period": "07-27",
+          "value": 5674
+        },
+        {
+          "period": "08-03",
+          "value": 1250
+        },
+        {
+          "period": "08-10",
+          "value": 5570
+        },
+        {
+          "period": "08-17",
+          "value": 5842
+        },
+        {
+          "period": "08-24",
+          "value": 6028
+        },
+        {
+          "period": "08-31",
+          "value": 5958
+        },
+        {
+          "period": "09-07",
+          "value": 6081
+        },
+        {
+          "period": "09-14",
+          "value": 6222
+        },
+        {
+          "period": "09-21",
+          "value": 6400
+        },
+        {
+          "period": "09-28",
+          "value": 6522
+        },
+        {
+          "period": "10-05",
+          "value": 6475
+        }
+      ],
+      "sourceName": "Hugging Face Hub",
+      "sourceUrl": "",
+      "dashboardUrl": null,
+      "notes": "New Spaces totalled 25,225 this period, up +41.5% on 17,828, and the build mix is led by conversational tooling: chat and assistants account for 3,924 of them. Document AI grew fastest among named use cases at +48.8%, and enterprise productivity picked up the most ground of any vertical at +1.2 points to reach 7.4% of new Spaces. Technique tags lean toward vision-language and agentic patterns, while shipping is concentrated in Static and Gradio. On the model side Llama and Mistral uploads expanded sharply while Qwen contracted −4.3%.",
+      "status": "ok"
+    },
+    {
+      "systemId": "ai-model-intel",
+      "name": "AI Model Intelligence",
+      "sector": "technology",
+      "metricLabel": "AI model token usage",
+      "unit": "tokens",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q3 '26",
+      "lastPeriodLabel": "Q2 '26",
+      "thisValue": 1263807958711772,
+      "lastValue": 421326478355599,
+      "changePct": 1.9995930083585198,
+      "changeAbs": 842481480356173,
+      "direction": "up",
+      "asOf": "2026-10-14T19:00:48.093Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "DeepSeek",
+          "thisValue": 267532506364687,
+          "lastValue": 64532038330073,
+          "changePct": 3.145731535648897,
+          "direction": "up"
+        },
+        {
+          "label": "OpenAI",
+          "thisValue": 155433792452304,
+          "lastValue": 38549495120143,
+          "changePct": 3.03205779914576,
+          "direction": "up"
+        },
+        {
+          "label": "Others",
+          "thisValue": 143818731432089,
+          "lastValue": 57849726067508,
+          "changePct": 1.4860745453532327,
+          "direction": "up"
+        },
+        {
+          "label": "Tencent",
+          "thisValue": 142177083183398,
+          "lastValue": 32511786371238,
+          "changePct": 3.373093547058273,
+          "direction": "up"
+        },
+        {
+          "label": "Z.ai",
+          "thisValue": 127127029767205,
+          "lastValue": 17143688181154,
+          "changePct": 6.415383925785312,
+          "direction": "up"
+        },
+        {
+          "label": "Xiaomi",
+          "thisValue": 104334153298663,
+          "lastValue": 26519491073576,
+          "changePct": 2.934244175696926,
+          "direction": "up"
+        },
+        {
+          "label": "Google",
+          "thisValue": 82034409930238,
+          "lastValue": 51427552913035,
+          "changePct": 0.5951451174229463,
+          "direction": "up"
+        },
+        {
+          "label": "stealth",
+          "thisValue": 79769068827848,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Anthropic",
+          "thisValue": 72200283990945,
+          "lastValue": 64324408433701,
+          "changePct": 0.12243992209211911,
+          "direction": "up"
+        },
+        {
+          "label": "Nvidia",
+          "thisValue": 60514423360253,
+          "lastValue": 2390738058542,
+          "changePct": 24.31202577548706,
+          "direction": "up"
+        },
+        {
+          "label": "minimax",
+          "thisValue": 20036431126892,
+          "lastValue": 29096800318289,
+          "changePct": -0.3113871316531681,
+          "direction": "down"
+        },
+        {
+          "label": "meta",
+          "thisValue": 4864149849700,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "poolside",
+          "thisValue": 3965895127550,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        }
+      ],
+      "trend": [
+        {
+          "period": "Q3 '25",
+          "value": 49990931958678
+        },
+        {
+          "period": "Q4 '25",
+          "value": 74302746515446
+        },
+        {
+          "period": "Q1 '26",
+          "value": 181794586973975
+        },
+        {
+          "period": "Q2 '26",
+          "value": 421326478355599
+        },
+        {
+          "period": "Q3 '26",
+          "value": 1263807958711772
+        }
+      ],
+      "secondaryMetrics": [
+        {
+          "systemId": "ai-model-intel",
+          "name": "AI Model Intelligence",
+          "sector": "technology",
+          "metricLabel": "Gemini best rank (snapshot)",
+          "unit": "rank",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "snapshot",
+          "lastPeriodLabel": "—",
+          "thisValue": 17,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "asOf": "2026-10-14T19:00:48.222Z",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "OpenRouter / UBS / SEC",
+          "sourceUrl": "https://google-dash-git.pages.dev/",
+          "dashboardUrl": "https://google-dash-git.pages.dev/",
+          "notes": "Highest-ranked Gemini model on OpenRouter: Gemini 3.8 Flash 0902 (point-in-time snapshot, not a period change).",
+          "status": "ok"
+        },
+        {
+          "systemId": "ai-model-intel",
+          "name": "AI Model Intelligence",
+          "sector": "technology",
+          "metricLabel": "Alphabet search revenue (YoY)",
+          "unit": "% YoY",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "Q2 2026",
+          "lastPeriodLabel": "year ago",
+          "thisValue": 17,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "up",
+          "asOf": "2026-10-14T19:00:48.828Z",
+          "isStale": false,
+          "breakdown": [],
+          "sourceName": "OpenRouter / UBS / SEC",
+          "sourceUrl": "https://google-dash-git.pages.dev/",
+          "dashboardUrl": "https://google-dash-git.pages.dev/",
+          "notes": "Reported in Alphabet Q2 2026 results (+17% YoY).",
+          "status": "ok"
+        },
+        {
+          "systemId": "ai-model-intel",
+          "name": "AI Model Intelligence",
+          "sector": "technology",
+          "metricLabel": "AI app download share — ChatGPT",
+          "unit": "% share",
+          "comparison": "QoQ",
+          "thisPeriodLabel": "Q4 '26",
+          "lastPeriodLabel": "Q3 '26",
+          "thisValue": 42.28,
+          "lastValue": 41.709999999999994,
+          "changePct": 0.013665787580916076,
+          "changeAbs": 0.6,
+          "direction": "up",
+          "asOf": "2026-10-14T19:00:48.900Z",
+          "isStale": false,
+          "breakdown": [
+            {
+              "label": "ChatGPT",
+              "thisValue": 42.28,
+              "lastValue": 41.709999999999994,
+              "changePct": 0.013665787580916076,
+              "direction": "up"
+            },
+            {
+              "label": "Gemini",
+              "thisValue": 16.869999999999997,
+              "lastValue": 15.886153846153844,
+              "changePct": 0.061931047840402924,
+              "direction": "up"
+            }
+          ],
+          "sourceName": "OpenRouter / UBS / SEC",
+          "sourceUrl": "https://google-dash-git.pages.dev/",
+          "dashboardUrl": "https://google-dash-git.pages.dev/",
+          "notes": "Global AI-app download share (UBS Evidence Lab), quarterly mean of weekly snapshots.",
+          "status": "ok"
+        }
+      ],
+      "sourceName": "OpenRouter / UBS / SEC",
+      "sourceUrl": "https://google-dash-git.pages.dev/",
+      "dashboardUrl": "https://google-dash-git.pages.dev/",
+      "notes": "OpenRouter model token volume, weekly data rolled to complete quarters. AI-crawler share omitted (Cloudflare Radar token is down).",
+      "status": "ok"
+    },
+    {
+      "systemId": "ti-chip-prices",
+      "name": "Texas Instruments Prices",
+      "sector": "technology",
+      "metricLabel": "Chip price index",
+      "unit": "price index",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q1 '26",
+      "lastPeriodLabel": "Q4 '25",
+      "thisValue": 107.21230769230769,
+      "lastValue": 106.8523076923077,
+      "changePct": 0.0033691364068302813,
+      "changeAbs": 0.3599999999999852,
+      "direction": "up",
+      "asOf": "2026-04-11",
+      "isStale": true,
+      "breakdown": [
+        {
+          "label": "MCU · 32-bit",
+          "thisValue": 110.06,
+          "lastValue": 105.14,
+          "changePct": 0.0467947498573331,
+          "direction": "up"
+        },
+        {
+          "label": "Converters · Other",
+          "thisValue": 97.19,
+          "lastValue": 95.47,
+          "changePct": 0.018016130721692666,
+          "direction": "up"
+        },
+        {
+          "label": "MCU · Other",
+          "thisValue": 114.97,
+          "lastValue": 113.43,
+          "changePct": 0.01357665520585376,
+          "direction": "up"
+        },
+        {
+          "label": "MCU · 8-bit",
+          "thisValue": 109.69,
+          "lastValue": 108.67,
+          "changePct": 0.009386215146774603,
+          "direction": "up"
+        },
+        {
+          "label": "MCU · 16-bit",
+          "thisValue": 119.2,
+          "lastValue": 118.57,
+          "changePct": 0.005313317027916081,
+          "direction": "up"
+        },
+        {
+          "label": "Amplifiers · Comparators",
+          "thisValue": 110.72,
+          "lastValue": 110.18,
+          "changePct": 0.004901070974768488,
+          "direction": "up"
+        },
+        {
+          "label": "Converters · ADC",
+          "thisValue": 114.42,
+          "lastValue": 113.87,
+          "changePct": 0.0048300693773601225,
+          "direction": "up"
+        },
+        {
+          "label": "Power · Linear VR",
+          "thisValue": 106.24,
+          "lastValue": 105.88,
+          "changePct": 0.0034000755572346,
+          "direction": "up"
+        },
+        {
+          "label": "Power · Switching VR",
+          "thisValue": 102.93,
+          "lastValue": 102.68,
+          "changePct": 0.002434748733930658,
+          "direction": "up"
+        },
+        {
+          "label": "Power · Other",
+          "thisValue": 101.42,
+          "lastValue": 101.18,
+          "changePct": 0.002372010278711157,
+          "direction": "up"
+        },
+        {
+          "label": "Converters · DAC",
+          "thisValue": 110.1,
+          "lastValue": 109.87,
+          "changePct": 0.002093383089105213,
+          "direction": "up"
+        },
+        {
+          "label": "Amplifiers · Audio",
+          "thisValue": 93.86,
+          "lastValue": 93.96,
+          "changePct": -0.0010642826734780153,
+          "direction": "down"
+        },
+        {
+          "label": "Amplifiers · Op-amps",
+          "thisValue": 102.96,
+          "lastValue": 110.18,
+          "changePct": -0.0655291341441279,
+          "direction": "down"
+        }
+      ],
+      "sourceName": "Mouser / UBS index",
+      "sourceUrl": "https://texas-instruments-dashboard-final.pages.dev/",
+      "dashboardUrl": "https://texas-instruments-dashboard-final.pages.dev/",
+      "notes": "Latest committed data ~Apr 2026; the live quarter needs a Mouser key. Headline = mean across 13 TI product-line indices.",
+      "status": "ok"
+    },
+    {
+      "systemId": "gpu-cloud-pricing",
+      "name": "GPU Cloud Pricing",
+      "sector": "technology",
+      "metricLabel": "GPU $/hour",
+      "unit": "$/GPU-hr",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26 (QTD)",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 3.5163,
+      "lastValue": 3.3819,
+      "changePct": 0.039740974008693426,
+      "changeAbs": 0.1344000000000003,
+      "direction": "up",
+      "asOf": "2026-10-14",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "GB200",
+          "thisValue": 16,
+          "lastValue": 16,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "B200",
+          "thisValue": 7.95,
+          "lastValue": 6.79,
+          "changePct": 0.170839469808542,
+          "direction": "up"
+        },
+        {
+          "label": "H200",
+          "thisValue": 4.615,
+          "lastValue": 4.5,
+          "changePct": 0.025555555555555602,
+          "direction": "up"
+        },
+        {
+          "label": "H100",
+          "thisValue": 3.5163,
+          "lastValue": 3.3819,
+          "changePct": 0.039740974008693426,
+          "direction": "up"
+        },
+        {
+          "label": "A100",
+          "thisValue": 1.8375,
+          "lastValue": 1.76,
+          "changePct": 0.044034090909090856,
+          "direction": "up"
+        },
+        {
+          "label": "L40S",
+          "thisValue": 1.57,
+          "lastValue": 1.535,
+          "changePct": 0.022801302931596185,
+          "direction": "up"
+        }
+      ],
+      "sourceName": "getdeploying.com",
+      "sourceUrl": "https://ai-compute-pricing.pages.dev/",
+      "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
+      "notes": "Street GPU rental rates. Headline = Nvidia H100; breakdown covers 6 SKUs.",
+      "status": "ok"
+    },
+    {
+      "systemId": "podcast-themes",
+      "name": "Podcast Themes",
+      "sector": "macro",
+      "metricLabel": "Episodes analysed",
+      "unit": "episodes",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26 (QTD)",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 35,
+      "lastValue": 8,
+      "changePct": 3.375,
+      "changeAbs": 27,
+      "direction": "up",
+      "asOf": "2026-10-14T10:00:00.000Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Stratechery",
+          "thisValue": 11,
+          "lastValue": 1,
+          "changePct": 10,
+          "direction": "up"
+        },
+        {
+          "label": "In Good Company",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Sources",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "AI Daily",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Odd Lots",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "All-In",
+          "thisValue": 3,
+          "lastValue": 1,
+          "changePct": 2,
+          "direction": "up"
+        },
+        {
+          "label": "Invest Like the Best",
+          "thisValue": 2,
+          "lastValue": 2,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Lenny's",
+          "thisValue": 2,
+          "lastValue": 2,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Cheeky Pint",
+          "thisValue": 1,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        }
+      ],
+      "sourceName": "Investor podcasts",
+      "sourceUrl": "https://podcast-afg.pages.dev/",
+      "dashboardUrl": "https://podcast-afg.pages.dev/",
+      "notes": "Episodes analysed across 9 investor shows, bucketed by publish date (latest quarter is quarter-to-date). Thematic analysis feeds the newsletter (next phase).",
       "status": "ok"
     }
   ]

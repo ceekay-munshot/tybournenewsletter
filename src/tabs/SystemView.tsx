@@ -259,8 +259,68 @@ export function SystemView({
         </Card>
       )}
 
+      {/* secondary metrics */}
+      {block.secondaryMetrics && block.secondaryMetrics.length > 0 && (
+        <div className="mt-5">
+          <h3 className="mb-2.5 font-display text-[15px] font-bold text-slate-900">
+            More that moved in {block.name}
+          </h3>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+            {block.secondaryMetrics.map((m) => (
+              <SecondaryCard key={m.metricLabel} metric={m} accent={accent} />
+            ))}
+          </div>
+        </div>
+      )}
+
       <SourceLine block={block} />
     </div>
+  );
+}
+
+function SecondaryCard({ metric, accent }: { metric: ChangeBlock; accent: string }) {
+  const dir = directionColor(metric.direction);
+  const bd = (metric.breakdown || []).filter((r) => r.changePct != null);
+  const big = metric.changePct != null ? signedPct(metric.changePct) : fmtValue(metric.thisValue, metric.unit);
+  return (
+    <Card accent={accent}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <h4 className="font-display text-[13.5px] font-bold leading-tight text-slate-900">{metric.metricLabel}</h4>
+          <p className="mt-0.5 text-[11.5px] text-slate-500">
+            {metric.lastPeriodLabel} <span className="text-slate-300">→</span> {metric.thisPeriodLabel}
+          </p>
+        </div>
+        <div className="shrink-0 text-right">
+          <div className="tnum font-display text-[20px] font-bold leading-none" style={{ color: dir }}>
+            {big}
+          </div>
+          {metric.lastValue != null && (
+            <div className="tnum mt-1 text-[11px] text-slate-500">
+              {fmtValue(metric.lastValue, metric.unit)} → {fmtValue(metric.thisValue, metric.unit)}
+            </div>
+          )}
+        </div>
+      </div>
+      {bd.length > 0 && (
+        <div className="mt-2">
+          <DivergingBars
+            data={bd.map((r) => ({
+              key: r.label,
+              label: r.label,
+              value: r.changePct as number,
+              color: directionColor(r.direction),
+              valueLabel: signedPct(r.changePct),
+              tipRows: [{ label: 'Value', value: `${fmtValue(r.lastValue, metric.unit)} → ${fmtValue(r.thisValue, metric.unit)}` }],
+            }))}
+            axisFormat={axisPct}
+            labelWidth={140}
+            barSize={20}
+          />
+        </div>
+      )}
+      {metric.notes && <p className="mt-2 text-[11px] italic leading-snug text-slate-500">{metric.notes}</p>}
+    </Card>
   );
 }
 

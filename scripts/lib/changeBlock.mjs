@@ -64,6 +64,7 @@ export function makeBlock(system, f) {
     isStale: f.isStale ?? isStale(f.asOf, f.comparison ?? 'QoQ'),
     breakdown: f.breakdown ?? [],
     ...(f.trend && f.trend.length ? { trend: f.trend } : {}),
+    ...(f.secondaryMetrics && f.secondaryMetrics.length ? { secondaryMetrics: f.secondaryMetrics } : {}),
     sourceName: system.sourceName ?? f.sourceName ?? '',
     sourceUrl: f.sourceUrl ?? system.dashboardUrl ?? '',
     dashboardUrl: system.dashboardUrl ?? null,
