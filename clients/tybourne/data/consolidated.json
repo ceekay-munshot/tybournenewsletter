@@ -1,0 +1,368 @@
+{
+  "generatedAt": "2026-10-14T17:50:57.829Z",
+  "client": {
+    "id": "tybourne",
+    "name": "Tybourne Global Holdings",
+    "shortName": "Tybourne",
+    "publishedBy": "Munshot"
+  },
+  "sectors": [
+    {
+      "id": "technology",
+      "label": "Technology",
+      "color": "#6366F1"
+    },
+    {
+      "id": "industrial",
+      "label": "Industrial",
+      "color": "#F59E0B"
+    },
+    {
+      "id": "financial",
+      "label": "Financial",
+      "color": "#10B981"
+    },
+    {
+      "id": "macro",
+      "label": "Macro",
+      "color": "#EC4899"
+    }
+  ],
+  "systems": [
+    {
+      "systemId": "cpu-prices",
+      "name": "CPU Prices",
+      "sector": "technology",
+      "metricLabel": "CPU average price",
+      "unit": "$",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26 (QTD)",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 678.6894712317667,
+      "lastValue": 678.8936405996759,
+      "changePct": -0.000969303849794123,
+      "changeAbs": -0.20416936790923046,
+      "direction": "down",
+      "asOf": "2026-10-14T14:33:04.382Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Server · Intel",
+          "thisValue": 1199.0604478609625,
+          "lastValue": 1201.3436697860964,
+          "changePct": -0.0019005568369459423,
+          "direction": "down"
+        },
+        {
+          "label": "Server · AMD",
+          "thisValue": 2001.4391592920354,
+          "lastValue": 1994.8608849557522,
+          "changePct": 0.0032976105681821136,
+          "direction": "up"
+        },
+        {
+          "label": "Laptop · Intel",
+          "thisValue": 395.4417171717172,
+          "lastValue": 395.4417171717172,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Laptop · AMD",
+          "thisValue": 52.19724137931034,
+          "lastValue": 52.19724137931034,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Desktop · Intel",
+          "thisValue": 202.16466091245377,
+          "lastValue": 201.82913686806413,
+          "changePct": 0.0016624162873419628,
+          "direction": "up"
+        },
+        {
+          "label": "Desktop · AMD",
+          "thisValue": 179.86059210526318,
+          "lastValue": 181.07734649122804,
+          "changePct": -0.006719528475218904,
+          "direction": "down"
+        }
+      ],
+      "trend": [
+        {
+          "period": "Jun-26",
+          "value": 665.0641209016394
+        },
+        {
+          "period": "Jul-26",
+          "value": 672.810454730832
+        },
+        {
+          "period": "Aug-26",
+          "value": 672.6178024439919
+        },
+        {
+          "period": "Sep-26",
+          "value": 678.5789979674796
+        },
+        {
+          "period": "Oct-26",
+          "value": 678.6894712317667
+        }
+      ],
+      "sourceName": "PassMark / cpubenchmark.net (street price)",
+      "sourceUrl": "https://cpuprices-bzr.pages.dev/",
+      "dashboardUrl": "https://cpuprices-bzr.pages.dev/",
+      "notes": "PassMark street price, not direct vendor retail. Headline is the SKU-weighted mean of 6 segment×vendor cohort changes.",
+      "status": "ok"
+    },
+    {
+      "systemId": "taiwan-semi-revenue",
+      "name": "Taiwan Semiconductor Revenue",
+      "sector": "technology",
+      "metricLabel": "Supply-chain revenue",
+      "unit": "TWD bn",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q3 '26",
+      "lastPeriodLabel": "Q2 '26",
+      "thisValue": 8186.813691,
+      "lastValue": 7078.40981,
+      "changePct": 0.15658939094400923,
+      "changeAbs": 1108.4038810000002,
+      "direction": "up",
+      "asOf": "2026-09-01",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "Rack / ODM",
+          "thisValue": 5718.353762,
+          "lastValue": 4859.376748,
+          "changePct": 0.17676691035605213,
+          "direction": "up"
+        },
+        {
+          "label": "AI Silicon",
+          "thisValue": 1539.185923,
+          "lastValue": 1291.916962,
+          "changePct": 0.19139694599040336,
+          "direction": "up"
+        },
+        {
+          "label": "Advanced Packaging / Test",
+          "thisValue": 201.089119,
+          "lastValue": 231.952699,
+          "changePct": -0.13305980112781524,
+          "direction": "down"
+        },
+        {
+          "label": "Power / Data Center Electrical",
+          "thisValue": 196.519329,
+          "lastValue": 244.403548,
+          "changePct": -0.19592276540928122,
+          "direction": "down"
+        },
+        {
+          "label": "Substrate / AI PCB / Materials",
+          "thisValue": 174.170662,
+          "lastValue": 140.554934,
+          "changePct": 0.23916433983029006,
+          "direction": "up"
+        },
+        {
+          "label": "Networking",
+          "thisValue": 120.74371,
+          "lastValue": 95.537694,
+          "changePct": 0.26383320493375095,
+          "direction": "up"
+        },
+        {
+          "label": "Legacy / Mature Node Control Group",
+          "thisValue": 111.283935,
+          "lastValue": 100.267691,
+          "changePct": 0.10986833236241574,
+          "direction": "up"
+        },
+        {
+          "label": "Thermal",
+          "thisValue": 84.51586,
+          "lastValue": 70.513393,
+          "changePct": 0.19857882884745046,
+          "direction": "up"
+        },
+        {
+          "label": "Semi Equipment / Consumables",
+          "thisValue": 21.364667,
+          "lastValue": 25.633783,
+          "changePct": -0.16654256611285195,
+          "direction": "down"
+        },
+        {
+          "label": "Analog Cycle",
+          "thisValue": 19.586724,
+          "lastValue": 18.252358,
+          "changePct": 0.07310649944516753,
+          "direction": "up"
+        }
+      ],
+      "trend": [
+        {
+          "period": "Dec '25",
+          "value": 2091.234959
+        },
+        {
+          "period": "Jan '26",
+          "value": 1955.314715
+        },
+        {
+          "period": "Feb '26",
+          "value": 1746.007925
+        },
+        {
+          "period": "Mar '26",
+          "value": 2337.31626
+        },
+        {
+          "period": "Apr '26",
+          "value": 2303.310696
+        },
+        {
+          "period": "May '26",
+          "value": 2318.222711
+        },
+        {
+          "period": "Jun '26",
+          "value": 2456.876403
+        },
+        {
+          "period": "Jul '26",
+          "value": 2587.604922
+        },
+        {
+          "period": "Aug '26",
+          "value": 2830.265917
+        },
+        {
+          "period": "Sep '26",
+          "value": 2768.942852
+        }
+      ],
+      "sourceName": "Taiwan MOPS / TWSE monthly filings",
+      "sourceUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
+      "dashboardUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
+      "notes": "Excludes Wiwynn (consolidated into Wistron). Monthly filings summed into calendar quarters.",
+      "status": "ok"
+    },
+    {
+      "systemId": "ai-compute-pricing",
+      "name": "AI Compute Pricing",
+      "sector": "technology",
+      "metricLabel": "Model price ($/1M tokens)",
+      "unit": "$/1M tokens",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26 (QTD)",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 2.46,
+      "lastValue": 2.45,
+      "changePct": 0.005,
+      "changeAbs": 0.009999999999999787,
+      "direction": "up",
+      "asOf": "2026-10-12T00:00:00.000Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "OpenAI",
+          "thisValue": 5.859,
+          "lastValue": 5.882530120481928,
+          "changePct": -0.004,
+          "direction": "down"
+        },
+        {
+          "label": "Anthropic",
+          "thisValue": 5.035,
+          "lastValue": 5.035,
+          "changePct": 0,
+          "direction": "flat"
+        },
+        {
+          "label": "Google",
+          "thisValue": 0.51,
+          "lastValue": 0.513595166163142,
+          "changePct": -0.007,
+          "direction": "down"
+        },
+        {
+          "label": "DeepSeek",
+          "thisValue": 0.248,
+          "lastValue": 0.3208279430789133,
+          "changePct": -0.227,
+          "direction": "down"
+        }
+      ],
+      "trend": [
+        {
+          "period": "Q2 '26",
+          "value": 2.39
+        },
+        {
+          "period": "Q3 '26",
+          "value": 2.45
+        },
+        {
+          "period": "Q4 '26",
+          "value": 2.46
+        }
+      ],
+      "sourceName": "pricepertoken.com / getdeploying.com",
+      "sourceUrl": "https://ai-compute-pricing.pages.dev/",
+      "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
+      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.94pp). Equal-weighted basket, QTD.",
+      "status": "ok"
+    },
+    {
+      "systemId": "schneider-electric",
+      "name": "Schneider Electric",
+      "sector": "industrial",
+      "metricLabel": "Data-centre equipment price",
+      "unit": "$",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q4 '26 (QTD)",
+      "lastPeriodLabel": "Q3 '26",
+      "thisValue": 2816.5204186602896,
+      "lastValue": 2824.0310167464136,
+      "changePct": -0.0014923967378016644,
+      "changeAbs": -7.510598086123991,
+      "direction": "down",
+      "asOf": "2026-10-12T15:39:55.296Z",
+      "isStale": false,
+      "breakdown": [
+        {
+          "label": "UPS",
+          "thisValue": 3775.3928290766253,
+          "lastValue": 3789.360157170927,
+          "changePct": -0.003685933116668796,
+          "direction": "down"
+        },
+        {
+          "label": "Rack PDUs",
+          "thisValue": 1323.96366972477,
+          "lastValue": 1321.423883792048,
+          "changePct": 0.0019220069834318832,
+          "direction": "up"
+        },
+        {
+          "label": "DCIM",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        }
+      ],
+      "sourceName": "Graybar distributor pricing",
+      "sourceUrl": "https://www.graybar.com/search/?q=query%3Aups%3Bsort%3Arelevance%3Bbrands%3ATripp+Lite+%28Eaton%29%3Bbrands%3AAPC+%28Schneider+Electric%29%3Bbrands%3ALiebert+%28Vertiv%29%3Bbrands%3AEaton%3Bbrands%3AChatsworth&text=ups&enablePartNumberSearch=",
+      "dashboardUrl": null,
+      "notes": "Like-for-like: mean over items priced in both quarters, only priced categories. Excluded from headline (too few comparable items): DCIM.",
+      "status": "ok"
+    }
+  ]
+}
