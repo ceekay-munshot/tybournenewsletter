@@ -1,7 +1,7 @@
 // Tiny keyless GET helper with timeout + exponential-backoff retry.
 // Node 20+ has global fetch/AbortController.
 
-export async function getJson(url, { timeoutMs = 30000, retries = 3 } = {}) {
+async function getRaw(url, { timeoutMs = 30000, retries = 3, accept = 'application/json' } = {}) {
   let lastErr;
   for (let attempt = 0; attempt <= retries; attempt++) {
     const ctl = new AbortController();
@@ -9,10 +9,10 @@ export async function getJson(url, { timeoutMs = 30000, retries = 3 } = {}) {
     try {
       const res = await fetch(url, {
         signal: ctl.signal,
-        headers: { accept: 'application/json', 'user-agent': 'munshot-consolidate/1.0' },
+        headers: { accept, 'user-agent': 'munshot-consolidate/1.0' },
       });
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-      return await res.json();
+      return res;
     } catch (e) {
       lastErr = e;
       if (attempt < retries) {
@@ -23,4 +23,14 @@ export async function getJson(url, { timeoutMs = 30000, retries = 3 } = {}) {
     }
   }
   throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+}
+
+export async function getJson(url, opts = {}) {
+  const res = await getRaw(url, { ...opts, accept: 'application/json' });
+  return res.json();
+}
+
+export async function getText(url, opts = {}) {
+  const res = await getRaw(url, { ...opts, accept: 'text/plain,*/*' });
+  return res.text();
 }

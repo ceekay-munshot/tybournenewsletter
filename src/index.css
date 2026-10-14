@@ -19,7 +19,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Faint corner radial-gradient washes (indigo / pink / sky), very low opacity. */
+/* Richer multi-corner radial-gradient wash (indigo / pink / sky / amber / emerald). */
 body::before {
   content: '';
   position: fixed;
@@ -27,9 +27,11 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(60vw 52vh at 0% 0%, rgba(99, 102, 241, 0.08), transparent 60%),
-    radial-gradient(55vw 46vh at 100% 2%, rgba(236, 72, 153, 0.07), transparent 60%),
-    radial-gradient(62vw 52vh at 100% 100%, rgba(14, 165, 233, 0.07), transparent 62%);
+    radial-gradient(58vw 50vh at 0% 0%, rgba(99, 102, 241, 0.13), transparent 60%),
+    radial-gradient(52vw 44vh at 100% 1%, rgba(236, 72, 153, 0.11), transparent 60%),
+    radial-gradient(60vw 50vh at 100% 100%, rgba(14, 165, 233, 0.11), transparent 62%),
+    radial-gradient(48vw 44vh at 0% 100%, rgba(16, 185, 129, 0.09), transparent 62%),
+    radial-gradient(40vw 40vh at 50% 120%, rgba(245, 158, 11, 0.06), transparent 60%);
 }
 
 /* All figures align in columns. */

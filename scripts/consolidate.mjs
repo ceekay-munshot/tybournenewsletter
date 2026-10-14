@@ -19,6 +19,15 @@ const CONNECTORS = {
   taiwanSemiRevenue: () => import('./connectors/taiwanSemiRevenue.mjs'),
   aiComputePricing: () => import('./connectors/aiComputePricing.mjs'),
   schneiderElectric: () => import('./connectors/schneiderElectric.mjs'),
+  thirteenF: () => import('./connectors/thirteenF.mjs'),
+  nubank: () => import('./connectors/nubank.mjs'),
+  sapAi: () => import('./connectors/sapAi.mjs'),
+  airlines: () => import('./connectors/airlines.mjs'),
+  huggingface: () => import('./connectors/huggingface.mjs'),
+  aiModelIntel: () => import('./connectors/aiModelIntel.mjs'),
+  texasInstruments: () => import('./connectors/texasInstruments.mjs'),
+  gpuCloudPricing: () => import('./connectors/gpuCloudPricing.mjs'),
+  podcast: () => import('./connectors/podcast.mjs'),
 };
 
 const pctStr = (p) => (p == null ? '    —  ' : `${p >= 0 ? '+' : ''}${(p * 100).toFixed(2)}%`);
@@ -43,15 +52,16 @@ async function run() {
       const mod = await load();
       const block = await mod.connect(system);
       blocks.push(block);
+      const sec = block.secondaryMetrics?.length ? ` +${block.secondaryMetrics.length} more` : '';
       if (block.status === 'ok') {
         okCount += 1;
         console.log(
           `  ✓ ${system.name.padEnd(30)} ${arrow(block.direction)} ${pctStr(block.changePct)}` +
             `  ${block.lastPeriodLabel} → ${block.thisPeriodLabel}` +
-            `  (${block.breakdown.length} breakdown · as of ${String(block.asOf).slice(0, 10)})`
+            `  (${block.breakdown.length} breakdown${sec} · as of ${String(block.asOf).slice(0, 10)})`
         );
       } else {
-        console.log(`  ⚠ ${system.name.padEnd(30)} status=${block.status} — ${block.statusReason ?? ''}`);
+        console.log(`  ⚠ ${system.name.padEnd(30)} status=${block.status} — ${block.statusReason ?? ''}${sec}`);
       }
     } catch (e) {
       const reason = e instanceof Error ? e.message : String(e);

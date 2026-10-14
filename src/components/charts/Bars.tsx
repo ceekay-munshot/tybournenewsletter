@@ -1,5 +1,6 @@
 import { useElementWidth, useTip, ChartFrame, type TipRow } from './ChartBase';
 import { niceTicks, linScale } from '../../lib/chartMath';
+import { shade } from '../../lib/brand';
 
 export interface HBarDatum {
   key: string;
@@ -64,9 +65,20 @@ export function HBars({
     });
   };
 
+  const uniqueColors = [...new Set(data.map((d) => d.color))];
+  const gid = (c: string) => `hb-${c.replace('#', '')}`;
+
   return (
     <ChartFrame innerRef={ref} tip={tip} width={width}>
       <svg width={width} height={chartH} role="img" className="overflow-visible">
+        <defs>
+          {uniqueColors.map((c) => (
+            <linearGradient key={c} id={gid(c)} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor={shade(c, 0.22)} />
+              <stop offset="100%" stopColor={c} />
+            </linearGradient>
+          ))}
+        </defs>
         {showAxis &&
           ticks.map((t, i) => (
             <g key={i}>
@@ -124,7 +136,7 @@ export function HBars({
                 width={barW}
                 height={barSize}
                 rx={5}
-                fill={d.color}
+                fill={`url(#${gid(d.color)})`}
               />
               <text
                 x={insideLabel ? plotLeft + barW - 8 : plotLeft + barW + 6}

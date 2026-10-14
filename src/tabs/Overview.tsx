@@ -2,10 +2,11 @@ import type { ConsolidatedData } from '../types';
 import { PageHeader, Card, CardHeader } from '../components/ui/Card';
 import { Legend } from '../components/charts/ChartBase';
 import { MoversChart } from '../components/MoversChart';
+import { MasterTable } from '../components/MasterTable';
 import { SectorSection } from '../components/SectorSection';
 import { bySector } from '../lib/data';
 import { DIRECTION_COLOR } from '../lib/brand';
-import { TrendingUp } from 'lucide-react';
+import { TrendingUp, Table2 } from 'lucide-react';
 
 export function Overview({ data, onSelect }: { data: ConsolidatedData; onSelect: (id: string) => void }) {
   const liveCount = data.systems.filter((s) => s.status !== 'error' && s.changePct != null).length;
@@ -34,6 +35,21 @@ export function Overview({ data, onSelect }: { data: ConsolidatedData; onSelect:
           }
         />
         <MoversChart systems={data.systems} onSelect={onSelect} />
+      </Card>
+
+      <Card className="mb-5" pad={false}>
+        <div className="flex items-center gap-2.5 p-4 pb-2">
+          <span className="grid h-8 w-8 place-items-center rounded-lg" style={{ background: '#6366F114', color: '#6366F1' }}>
+            <Table2 size={17} strokeWidth={2.2} />
+          </span>
+          <div>
+            <h3 className="font-display text-[15px] font-bold text-slate-900">Everything that moved</h3>
+            <p className="text-[12px] text-slate-500">Every headline and secondary metric across all systems — click a column to sort, click a row to drill in.</p>
+          </div>
+        </div>
+        <div className="px-4 pb-4">
+          <MasterTable data={data} onSelect={onSelect} />
+        </div>
       </Card>
 
       <div className="flex flex-col gap-5">

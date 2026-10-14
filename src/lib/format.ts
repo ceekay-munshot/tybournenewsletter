@@ -37,15 +37,31 @@ export function fmtValue(n: number | null | undefined, unit: string): string {
   if (n == null || !Number.isFinite(n)) return '—';
   switch (unit) {
     case '$':
-      return usd(n, 2);
     case '$/1M tokens':
-      return usd(n, 2);
+    case '$/GPU-hr':
+      return usd(n, Math.abs(n) >= 1000 ? 0 : 2);
     case 'TWD bn':
       return `${n.toLocaleString('en-US', { maximumFractionDigits: 0 })} bn`;
+    case 'tokens':
+      return fmtCompact(n);
     case '%':
-      return `${n.toFixed(1)}%`;
+    case '% share':
+    case '% NPL':
+    case '% YoY':
+      return `${n.toFixed(Math.abs(n) >= 100 ? 0 : 1)}%`;
+    case 'score 1-5':
+      return n.toFixed(2);
+    case 'price index':
     case 'index':
       return n.toLocaleString('en-US', { maximumFractionDigits: 1 });
+    case 'rank':
+      return `#${Math.round(n)}`;
+    case 'positions':
+    case 'new Spaces':
+    case 'models':
+    case 'daily pax':
+    case 'episodes':
+      return Math.round(n).toLocaleString('en-US');
     default:
       return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
   }
@@ -63,16 +79,18 @@ export function fmtCompact(n: number | null | undefined, unit = ''): string {
   if (n == null || !Number.isFinite(n)) return '—';
   const abs = Math.abs(n);
   const body =
-    abs >= 1e9
-      ? `${(n / 1e9).toFixed(1)}B`
-      : abs >= 1e6
-        ? `${(n / 1e6).toFixed(1)}M`
-        : abs >= 1e3
-          ? `${(n / 1e3).toFixed(1)}k`
-          : abs < 10 && abs > 0
-            ? n.toFixed(2)
-            : n.toFixed(0);
-  if (unit === '$' || unit === '$/1M tokens') return `$${body}`;
+    abs >= 1e12
+      ? `${(n / 1e12).toFixed(1)}T`
+      : abs >= 1e9
+        ? `${(n / 1e9).toFixed(1)}B`
+        : abs >= 1e6
+          ? `${(n / 1e6).toFixed(1)}M`
+          : abs >= 1e3
+            ? `${(n / 1e3).toFixed(1)}k`
+            : abs < 10 && abs > 0
+              ? n.toFixed(2)
+              : n.toFixed(0);
+  if (unit === '$' || unit === '$/1M tokens' || unit === '$/GPU-hr') return `$${body}`;
   return body;
 }
 

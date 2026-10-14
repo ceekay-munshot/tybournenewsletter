@@ -1,5 +1,6 @@
 import { useElementWidth, useTip, ChartFrame, type TipRow } from './ChartBase';
 import { niceTicks, linScale } from '../../lib/chartMath';
+import { shade } from '../../lib/brand';
 
 export interface ColumnDatum {
   key: string;
@@ -51,9 +52,20 @@ export function Columns({ data, format, height = 220, maxValue, axisTicks = 4, y
     });
   };
 
+  const uniqueColors = [...new Set(data.map((d) => d.color))];
+  const gid = (c: string) => `col-${c.replace('#', '')}`;
+
   return (
     <ChartFrame innerRef={ref} tip={tip} width={width}>
       <svg width={width} height={height} role="img">
+        <defs>
+          {uniqueColors.map((c) => (
+            <linearGradient key={c} id={gid(c)} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor={shade(c, 0.22)} />
+              <stop offset="100%" stopColor={c} />
+            </linearGradient>
+          ))}
+        </defs>
         {ticks.map((t, i) => (
           <g key={i}>
             <line
@@ -84,7 +96,7 @@ export function Columns({ data, format, height = 220, maxValue, axisTicks = 4, y
                 width={barW}
                 height={h}
                 rx={4}
-                fill={d.color}
+                fill={`url(#${gid(d.color)})`}
               />
               {everyOther && (
                 <text x={cx} y={height - 8} textAnchor="middle" fontSize={10} fill="#94A3B8">

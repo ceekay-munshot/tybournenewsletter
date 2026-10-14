@@ -15,11 +15,16 @@ export function MoversChart({
 }) {
   const live = systems
     .filter((b) => b.status !== 'error' && b.changePct != null)
-    .sort((a, b) => (b.changePct ?? 0) - (a.changePct ?? 0));
+    .sort((a, b) => Math.abs(b.changePct ?? 0) - Math.abs(a.changePct ?? 0));
 
   if (!live.length) {
     return <div className="py-10 text-center text-[13px] text-slate-400">No comparable movements yet.</div>;
   }
+
+  // Cap the axis at the 4th-largest magnitude so the handful of extreme outliers
+  // (e.g. +500%) don't crush the rest; clamped bars still show their true value.
+  const mags = live.map((b) => Math.abs(b.changePct as number)).sort((a, b) => b - a);
+  const domain = mags.length >= 4 ? Math.max(0.05, mags[3]) : mags[mags.length - 1] || 0.05;
 
   const data: DivergingDatum[] = live.map((b) => ({
     key: b.systemId,
@@ -41,5 +46,5 @@ export function MoversChart({
     tipNote: `${b.comparison} · click to open ${b.name}`,
   }));
 
-  return <DivergingBars data={data} axisFormat={axisPct} labelWidth={185} onClick={onSelect} />;
+  return <DivergingBars data={data} axisFormat={axisPct} labelWidth={190} barSize={30} domain={domain} onClick={onSelect} />;
 }
