@@ -1,0 +1,23 @@
+{
+  "client": { "id": "tybourne", "name": "Tybourne Global Holdings", "shortName": "Tybourne", "publishedBy": "Munshot" },
+  "sectors": [
+    { "id": "technology", "label": "Technology", "color": "#6366F1" },
+    { "id": "industrial", "label": "Industrial", "color": "#F59E0B" },
+    { "id": "financial", "label": "Financial", "color": "#10B981" },
+    { "id": "macro", "label": "Macro", "color": "#EC4899" }
+  ],
+  "systems": [
+    { "id": "cpu-prices", "name": "CPU Prices", "sector": "technology", "metricLabel": "CPU average price", "connector": "cpuprices",
+      "source": { "api": "https://cpuprices-bzr.pages.dev/api/period-aggregates" },
+      "sourceName": "PassMark / cpubenchmark.net (street price)", "dashboardUrl": "https://cpuprices-bzr.pages.dev/" },
+    { "id": "taiwan-semi-revenue", "name": "Taiwan Semiconductor Revenue", "sector": "technology", "metricLabel": "Supply-chain revenue", "connector": "taiwanSemiRevenue",
+      "source": { "url": "https://taiwan-semicon-revenue.tech-441.workers.dev/data/analytics.json" },
+      "sourceName": "Taiwan MOPS / TWSE monthly filings", "dashboardUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/" },
+    { "id": "ai-compute-pricing", "name": "AI Compute Pricing", "sector": "technology", "metricLabel": "Model price ($/1M tokens)", "connector": "aiComputePricing",
+      "source": { "signal": "https://ai-compute-pricing.pages.dev/api/pricing-share-signal", "history": "https://ai-compute-pricing.pages.dev/api/pricing-history?metric=input&view=basket&range=400" },
+      "sourceName": "pricepertoken.com / getdeploying.com", "dashboardUrl": "https://ai-compute-pricing.pages.dev/" },
+    { "id": "schneider-electric", "name": "Schneider Electric", "sector": "industrial", "metricLabel": "Data-centre equipment price", "connector": "schneiderElectric",
+      "source": { "base": "https://raw.githubusercontent.com/ceekay-munshot/Schneider-Electric/main/public/data", "slugs": ["ups", "rack-pdus", "dcim"] },
+      "sourceName": "Graybar distributor pricing", "dashboardUrl": null }
+  ]
+}
