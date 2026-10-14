@@ -28,6 +28,38 @@ export function axisPct(frac: number): string {
   return `${v > 0 ? '+' : ''}${v.toFixed(dp)}%`;
 }
 
+type ChangeDisplay = 'pct' | 'pp' | 'pts' | undefined;
+
+/** The headline change as display text, honouring changeDisplay (pct|pp|pts). */
+export function headlineText(
+  changePct: number | null | undefined,
+  changeAbs: number | null | undefined,
+  changeDisplay?: ChangeDisplay
+): string {
+  if (changeDisplay === 'pp' || changeDisplay === 'pts') {
+    if (changeAbs == null || !Number.isFinite(changeAbs)) return '—';
+    const a = Math.abs(changeAbs);
+    const dp = a >= 1 ? 1 : 2;
+    const sign = changeAbs > 0 ? '+' : '';
+    return `${sign}${changeAbs.toFixed(dp)} ${changeDisplay}`;
+  }
+  return signedPct(changePct);
+}
+
+/** The headline change as a plottable magnitude for the (mixed-unit) movers axis:
+ *  percent systems contribute changePct×100, pp/pts systems contribute changeAbs.
+ *  Returns null for narrative cards (nothing to plot). */
+export function headlineMagnitude(
+  changePct: number | null | undefined,
+  changeAbs: number | null | undefined,
+  changeDisplay?: ChangeDisplay
+): number | null {
+  if (changeDisplay === 'pp' || changeDisplay === 'pts') {
+    return changeAbs == null || !Number.isFinite(changeAbs) ? null : changeAbs;
+  }
+  return changePct == null || !Number.isFinite(changePct) ? null : changePct * 100;
+}
+
 function usd(n: number, dp: number): string {
   return `$${n.toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp })}`;
 }

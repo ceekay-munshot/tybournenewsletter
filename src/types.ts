@@ -32,10 +32,15 @@ export interface ChangeBlock {
   changePct: number | null;
   changeAbs: number | null;
   direction: Direction;
+  /** How the headline change should read: percent (default), percentage points, or points. */
+  changeDisplay?: 'pct' | 'pp' | 'pts';
   asOf: string;
   isStale?: boolean;
   breakdown: BreakdownRow[];
   trend?: TrendPoint[];
+  /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
+  highlights?: string[];
+  tone?: string;
   /** Other things that moved in this system (same shape, rendered smaller). */
   secondaryMetrics?: ChangeBlock[];
   sourceName: string;
@@ -64,4 +69,37 @@ export interface ConsolidatedData {
   client: ClientInfo;
   sectors: SectorDef[];
   systems: ChangeBlock[];
+}
+
+// ---- AI newsletter (scripts/newsletter.mjs -> clients/<client>/data/newsletter.json) ----
+
+/** 'ok' = AI edition written; 'no-key' = Bedrock not configured (honest, no prose);
+ *  'error' = model failed / returned malformed JSON (honest, no prose). */
+export type NewsletterStatus = 'ok' | 'no-key' | 'error';
+
+export interface NewsletterSystemLine {
+  systemId: string;
+  line: string;
+}
+
+export interface NewsletterSector {
+  sector: SectorId | string;
+  summary: string;
+  systems: NewsletterSystemLine[];
+}
+
+export interface Newsletter {
+  generatedAt: string;
+  status: NewsletterStatus;
+  provider?: string;
+  model?: string;
+  region?: string;
+  dataHash?: string;
+  note?: string;
+  /** AI-written fields — null/empty unless status === 'ok'. Never fabricated. */
+  quarterLabel: string | null;
+  executiveSummary: string | null;
+  bySector: NewsletterSector[];
+  watchList: string[];
+  methodNote: string | null;
 }

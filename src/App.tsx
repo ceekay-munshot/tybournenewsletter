@@ -1,20 +1,32 @@
 import { useState } from 'react';
-import { LayoutGrid, AlertTriangle } from 'lucide-react';
+import { LayoutGrid, Newspaper, AlertTriangle } from 'lucide-react';
 import { useConsolidated, systemById } from './lib/data';
+import { useNewsletter } from './lib/newsletter';
 import type { SectorId } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Tabs, type TabDef } from './components/ui/Tabs';
 import { SECTOR_ICON } from './lib/icons';
 import { Overview } from './tabs/Overview';
+import { NewsletterTab } from './tabs/Newsletter';
 import { SectorTab } from './tabs/SectorTab';
 import { SystemView } from './tabs/SystemView';
 
-type TabKey = 'overview' | SectorId;
+type TabKey = 'overview' | 'newsletter' | SectorId;
+
+/** Deep-link support: /?edition=newsletter (or #newsletter) opens the Newsletter tab.
+ *  Used by the quarterly email render and for shareable links. */
+function initialTab(): TabKey {
+  if (typeof window === 'undefined') return 'overview';
+  const q = new URLSearchParams(window.location.search).get('edition') ?? '';
+  const v = (q || window.location.hash.replace('#', '')).toLowerCase();
+  return v === 'newsletter' ? 'newsletter' : 'overview';
+}
 
 export default function App() {
   const state = useConsolidated();
-  const [tab, setTab] = useState<TabKey>('overview');
+  const newsletter = useNewsletter();
+  const [tab, setTab] = useState<TabKey>(initialTab);
   const [systemId, setSystemId] = useState<string | null>(null);
 
   if (state.status === 'loading') return <LoadingScreen />;
@@ -24,6 +36,7 @@ export default function App() {
 
   const tabs: TabDef<TabKey>[] = [
     { key: 'overview', label: 'Overview', icon: LayoutGrid, color: '#6366F1' },
+    { key: 'newsletter', label: 'Newsletter', icon: Newspaper, color: '#8B5CF6' },
     ...data.sectors.map((s) => ({
       key: s.id as TabKey,
       label: s.label,
@@ -45,11 +58,22 @@ export default function App() {
     setTab(t);
   };
 
+  // Download PDF: jump to the (print-friendly) Newsletter, then open the browser's
+  // print dialog. The print stylesheet renders only the newsletter article.
+  const downloadPdf = () => {
+    setSystemId(null);
+    setTab('newsletter');
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0 });
+      window.setTimeout(() => window.print(), 180);
+    }
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
-      <Header client={data.client} generatedAt={data.generatedAt} />
+      <Header client={data.client} generatedAt={data.generatedAt} onDownloadPdf={downloadPdf} />
 
-      <div className="sticky top-[53px] z-30 border-b border-slate-200/80 bg-white/70 backdrop-blur-md">
+      <div className="no-print sticky top-[53px] z-30 border-b border-slate-200/80 bg-white/70 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Tabs tabs={tabs} active={tab} onChange={changeTab} />
         </div>
@@ -60,6 +84,8 @@ export default function App() {
           <SystemView block={selected} onBack={() => setSystemId(null)} backLabel={activeTabLabel} />
         ) : tab === 'overview' ? (
           <Overview data={data} onSelect={openSystem} />
+        ) : tab === 'newsletter' ? (
+          <NewsletterTab data={data} newsletter={newsletter} onSelect={openSystem} onDownloadPdf={downloadPdf} />
         ) : (
           <SectorTab data={data} sector={data.sectors.find((s) => s.id === tab)!} onSelect={openSystem} />
         )}

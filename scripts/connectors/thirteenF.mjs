@@ -68,12 +68,22 @@ export async function connect(system) {
   const priorPeriods = funds.flatMap((f) => f.series.map((s) => s.period)).filter((p) => p < thisP);
   const lastP = priorPeriods.length ? priorPeriods.sort().slice(-1)[0] : null;
 
+  // Apples-to-apples: only funds whose this-quarter row is a clean delta vs a valid
+  // prior (priorState PRIOR_OK, deltas not suppressed). Funds mid-restructuring would
+  // otherwise inflate the counts.
+  const isClean = (f) => {
+    const row = f.series.find((s) => s.period === thisP);
+    return !!row && row.priorState === 'PRIOR_OK' && row.deltasSuppressed !== true;
+  };
+  const pool = funds.filter(isClean);
+  const usable = pool.length ? pool : funds;
+
   const at = (f, period, key) => {
     const row = f.series.find((s) => s.period === period);
     return row ? (row[key] ?? null) : null;
   };
   const sumKey = (period, key) =>
-    funds.reduce((acc, f) => {
+    usable.reduce((acc, f) => {
       const v = at(f, period, key);
       return v == null ? acc : acc + v;
     }, 0);
@@ -81,7 +91,7 @@ export async function connect(system) {
   const thisNew = sumKey(thisP, 'n_new');
   const lastNew = lastP ? sumKey(lastP, 'n_new') : null;
 
-  const breakdown = funds
+  const breakdown = usable
     .map((f) => {
       const tv = at(f, thisP, 'n_new');
       const lv = lastP ? at(f, lastP, 'n_new') : null;
@@ -104,7 +114,7 @@ export async function connect(system) {
       lastValue: lastExit,
       changePct: pctChange(thisExit, lastExit),
       asOf: thisP,
-      breakdown: funds
+      breakdown: usable
         .map((f) => {
           const tv = at(f, thisP, 'n_exited');
           const lv = lastP ? at(f, lastP, 'n_exited') : null;
@@ -141,6 +151,6 @@ export async function connect(system) {
     asOf: thisP,
     breakdown,
     secondaryMetrics: secondary,
-    notes: `New long positions across ${funds.length} watchlist funds. Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.`,
+    notes: `New long positions across ${usable.length} funds with comparable filings (clean prior-quarter deltas). Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.`,
   });
 }

@@ -61,6 +61,7 @@ export async function connect(system) {
             lastValue: l,
             changePct: null,
             changeAbs: Math.round((t - l) * 10) / 10,
+            changeDisplay: 'pp',
             direction: directionOf(t - l),
             asOf: tsa?._meta?.latest_date || thisQ,
             breakdown: [],

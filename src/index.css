@@ -109,3 +109,95 @@ body::before {
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* ===========================================================================
+   Print / "Download PDF" — the Newsletter tab becomes an A4 editorial document.
+   Keeps colour + charts (print-color-adjust: exact), hides the app chrome, and
+   controls page breaks so cards/rows never split awkwardly.
+   =========================================================================== */
+.no-print {
+  /* shown on screen; removed in print below */
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 13mm 12mm;
+  }
+
+  /* Force backgrounds, ring colours and chart fills to actually print. */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  /* Kill the fixed radial wash — wastes ink and tints the page. */
+  body::before {
+    display: none !important;
+  }
+
+  /* App chrome: header, tab bar, footer, download buttons, editor notes. */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Let the document flow full-width; drop the on-screen max-width + padding. */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nl-root {
+    max-width: 100% !important;
+    margin: 0 !important;
+    animation: none !important;
+  }
+
+  /* Freeze chart entrance animations in their final state for print. */
+  .anim-bar-h,
+  .anim-bar-v,
+  .anim-line,
+  .anim-pop,
+  .anim-fade {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  /* Page-break discipline. */
+  .nl-section {
+    break-inside: auto;
+  }
+  .nl-avoid {
+    break-inside: avoid;
+  }
+  .nl-masthead {
+    break-after: avoid;
+  }
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  /* Tighten shadows (they render as grey boxes on paper). */
+  .shadow-card,
+  .shadow-card-hover,
+  .shadow-pop {
+    box-shadow: none !important;
+  }
+
+  /* Don't let the browser append raw URLs after links in the newsletter. */
+  .nl-root a[href]::after {
+    content: none !important;
+  }
+}
