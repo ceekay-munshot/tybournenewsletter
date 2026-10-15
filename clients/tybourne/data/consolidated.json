@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:29:16.420Z",
+  "generatedAt": "2026-10-15T13:44:25.765Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1761,240 +1761,1514 @@
       "systemId": "thirteen-f",
       "name": "13F Fund Holdings",
       "sector": "financial",
-      "metricLabel": "New buys this quarter",
-      "unit": "positions",
+      "metricLabel": "Consensus weight change",
+      "unit": "pp",
       "comparison": "QoQ",
       "thisPeriodLabel": "Q2 '26",
       "lastPeriodLabel": "Q1 '26",
-      "thisValue": 714,
-      "lastValue": 118,
-      "changePct": 5.0508474576271185,
-      "changeAbs": 596,
-      "direction": "up",
+      "thisValue": null,
+      "lastValue": null,
+      "changePct": null,
+      "changeAbs": -0.37976206896551723,
+      "direction": "down",
+      "changeDisplay": "pp",
       "asOf": "2026-06-30",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Nuveen, LLC",
-          "thisValue": 671,
-          "lastValue": 74,
-          "changePct": 8.067567567567568,
-          "direction": "up"
-        },
-        {
-          "label": "LONE PINE CAPITAL LLC",
-          "thisValue": 13,
-          "lastValue": 11,
-          "changePct": 0.18181818181818182,
-          "direction": "up"
-        },
-        {
-          "label": "Avantyr Capital Partners, LP",
-          "thisValue": 8,
-          "lastValue": 11,
-          "changePct": -0.2727272727272727,
-          "direction": "down"
-        },
-        {
-          "label": "Aspex Management (HK) Ltd",
-          "thisValue": 5,
-          "lastValue": 6,
-          "changePct": -0.16666666666666666,
-          "direction": "down"
-        },
-        {
-          "label": "Foxhaven Asset Management, LP",
-          "thisValue": 4,
-          "lastValue": 1,
-          "changePct": 3,
-          "direction": "up"
-        },
-        {
-          "label": "Durable Capital Partners LP",
-          "thisValue": 4,
-          "lastValue": 8,
-          "changePct": -0.5,
-          "direction": "down"
-        },
-        {
-          "label": "SurgoCap Partners LP",
-          "thisValue": 3,
-          "lastValue": 3,
-          "changePct": 0,
-          "direction": "flat"
-        },
-        {
-          "label": "Darsana Capital Partners LP",
-          "thisValue": 3,
-          "lastValue": 0,
+          "label": "V",
+          "thisValue": null,
+          "lastValue": null,
           "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "TCI FUND MANAGEMENT LTD",
-          "thisValue": 2,
-          "lastValue": 1,
-          "changePct": 1,
-          "direction": "up"
-        },
-        {
-          "label": "Berkshire Hathaway Inc",
-          "thisValue": 1,
-          "lastValue": 3,
-          "changePct": -0.6666666666666666,
-          "direction": "down"
-        },
-        {
-          "label": "WINDACRE PARTNERSHIP LLC",
-          "thisValue": 0,
-          "lastValue": 0,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "ABRAMS CAPITAL MANAGEMENT, L.P.",
-          "thisValue": 0,
-          "lastValue": 0,
-          "changePct": null,
-          "direction": "flat"
-        }
-      ],
-      "secondaryMetrics": [
-        {
-          "systemId": "thirteen-f",
-          "name": "13F Fund Holdings",
-          "sector": "financial",
-          "metricLabel": "Positions exited",
-          "unit": "positions",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "Q2 '26",
-          "lastPeriodLabel": "Q1 '26",
-          "thisValue": 202,
-          "lastValue": 163,
-          "changePct": 0.2392638036809816,
-          "changeAbs": 39,
+          "changeAbs": 0.41569999999999996,
+          "changeDisplay": "pp",
           "direction": "up",
-          "asOf": "2026-06-30",
-          "isStale": false,
-          "breakdown": [
+          "bigMove": false,
+          "note": "8 funds · 6 adding / 1 trimming · Unclassified",
+          "sub": [
             {
-              "label": "Nuveen, LLC",
-              "thisValue": 160,
-              "lastValue": 100,
-              "changePct": 0.6,
-              "direction": "up"
-            },
-            {
-              "label": "LONE PINE CAPITAL LLC",
-              "thisValue": 15,
-              "lastValue": 7,
-              "changePct": 1.1428571428571428,
-              "direction": "up"
-            },
-            {
-              "label": "Aspex Management (HK) Ltd",
-              "thisValue": 7,
-              "lastValue": 1,
-              "changePct": 6,
-              "direction": "up"
-            },
-            {
-              "label": "Avantyr Capital Partners, LP",
-              "thisValue": 6,
-              "lastValue": 14,
-              "changePct": -0.5714285714285714,
-              "direction": "down"
-            },
-            {
-              "label": "Durable Capital Partners LP",
-              "thisValue": 5,
-              "lastValue": 11,
-              "changePct": -0.5454545454545454,
-              "direction": "down"
-            },
-            {
-              "label": "SurgoCap Partners LP",
-              "thisValue": 4,
-              "lastValue": 6,
-              "changePct": -0.3333333333333333,
-              "direction": "down"
-            },
-            {
-              "label": "Foxhaven Asset Management, LP",
-              "thisValue": 2,
-              "lastValue": 3,
-              "changePct": -0.3333333333333333,
-              "direction": "down"
-            },
-            {
-              "label": "Berkshire Hathaway Inc",
-              "thisValue": 1,
-              "lastValue": 16,
-              "changePct": -0.9375,
-              "direction": "down"
-            },
-            {
-              "label": "TCI FUND MANAGEMENT LTD",
-              "thisValue": 1,
-              "lastValue": 0,
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
               "changePct": null,
-              "direction": "flat"
+              "changeAbs": 3.3473,
+              "changeDisplay": "pp",
+              "direction": "up"
             },
             {
-              "label": "Darsana Capital Partners LP",
-              "thisValue": 1,
-              "lastValue": 2,
-              "changePct": -0.5,
+              "label": "Avantyr",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 1.5184,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.7069,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "TCI Fund Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.5602,
+              "changeDisplay": "pp",
               "direction": "down"
             },
             {
-              "label": "WINDACRE PARTNERSHIP LLC",
-              "thisValue": 0,
-              "lastValue": 2,
-              "changePct": -1,
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.1245,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0081,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "CPNG",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -1.1725,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true,
+          "note": "6 funds · 2 adding / 3 trimming · Consumer Discretionary",
+          "sub": [
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -3.4307,
+              "changeDisplay": "pp",
               "direction": "down"
             },
             {
-              "label": "ABRAMS CAPITAL MANAGEMENT, L.P.",
-              "thisValue": 0,
-              "lastValue": 1,
-              "changePct": -1,
+              "label": "Aspex",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 3.0545,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Durable",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.845,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Abrams Capital",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.1725,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.0034,
+              "changeDisplay": "pp",
               "direction": "down"
             }
-          ],
-          "sourceName": "SEC EDGAR 13F filings",
-          "sourceUrl": "https://13f-eo2.pages.dev/",
-          "dashboardUrl": "https://13f-eo2.pages.dev/",
-          "status": "ok"
+          ]
         },
         {
-          "systemId": "thirteen-f",
-          "name": "13F Fund Holdings",
-          "sector": "financial",
-          "metricLabel": "Total reported holdings",
-          "unit": "$",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "Q2 '26",
-          "lastPeriodLabel": "Q1 '26",
-          "thisValue": 845244731931,
-          "lastValue": 726741343177,
-          "changePct": 0.16306130078681674,
-          "changeAbs": 118503388754,
+          "label": "AMZN",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.27249999999999996,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "6 funds · 3 adding / 2 trimming · Consumer Discretionary",
+          "sub": [
+            {
+              "label": "WindAcre",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -3.1135,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.6839,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.4438,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Avantyr",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.1012,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "GOOGL",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": 0.0998,
+          "changeDisplay": "pp",
           "direction": "up",
-          "asOf": "2026-06-30",
-          "isStale": false,
-          "breakdown": [],
-          "sourceName": "SEC EDGAR 13F filings",
-          "sourceUrl": "https://13f-eo2.pages.dev/",
-          "dashboardUrl": "https://13f-eo2.pages.dev/",
-          "status": "ok"
+          "bigMove": false,
+          "note": "6 funds · 3 adding / 2 trimming · Software & IT Services",
+          "sub": [
+            {
+              "label": "Berkshire Hathaway",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 3.4798,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Abrams Capital",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -2.6294,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.3338,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "TCI Fund Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0998,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.041,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "TSM",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.89405,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true,
+          "note": "5 funds · 0 adding / 5 trimming · Semiconductors",
+          "sub": [
+            {
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -3.448,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "WindAcre",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.81,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 1.5146,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0219,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "META",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.6684,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "5 funds · 1 adding / 2 trimming · Software & IT Services",
+          "sub": [
+            {
+              "label": "Avantyr",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -2.5977,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Abrams Capital",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.6684,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.3165,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "NU",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.5136499999999999,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "5 funds · 4 adding / 1 trimming · Banks & Lending",
+          "sub": [
+            {
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.2787,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.5294,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.4979,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.0056,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "GOOG",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": 0.2465,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false,
+          "note": "5 funds · 3 adding / 2 trimming · Software & IT Services",
+          "sub": [
+            {
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -3.2269,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Berkshire Hathaway",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 2.8192,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "TCI Fund Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 1.0319,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.2465,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.2308,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "MCO",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.1863,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "5 funds · 1 adding / 2 trimming · Unclassified",
+          "sub": [
+            {
+              "label": "TCI Fund Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.5407,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Berkshire Hathaway",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.3568,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "WindAcre",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0904,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.0158,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "SPGI",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -1.19695,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true,
+          "note": "4 funds · 1 adding / 2 trimming · Unclassified",
+          "sub": [
+            {
+              "label": "TCI Fund Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -2.348,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.0459,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "NVDA",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.7547,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true,
+          "note": "4 funds · 1 adding / 3 trimming · Semiconductors",
+          "sub": [
+            {
+              "label": "Avantyr",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.7607,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "WindAcre",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.7547,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.205,
+              "changeDisplay": "pp",
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "FWONK",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.28545,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "4 funds · 2 adding / 0 trimming · Communications",
+          "sub": [
+            {
+              "label": "Darsana",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -5.9467,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Avantyr",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.5785,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Foxhaven",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0986,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0076,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "MDLN",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": 0.26,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false,
+          "note": "4 funds · 3 adding / 1 trimming · Health Care",
+          "sub": [
+            {
+              "label": "Durable",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -2.3208,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.8734,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.519,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.001,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "GLW",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": 0.20834999999999998,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false,
+          "note": "4 funds · 1 adding / 3 trimming · Materials",
+          "sub": [
+            {
+              "label": "SurgoCap",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 2.6846,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Aspex",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.7636,
+              "changeDisplay": "pp",
+              "direction": "down"
+            },
+            {
+              "label": "Lone Pine",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.2296,
+              "changeDisplay": "pp",
+              "direction": "up"
+            },
+            {
+              "label": "Nuveen",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.1871,
+              "changeDisplay": "pp",
+              "direction": "up"
+            }
+          ]
         }
       ],
+      "summary": "44 names are held by 3+ of the 14 watchlist funds. On balance those shared positions were trimmed (typical -0.38pp) — 5 building conviction, 5 being lightened. Most-owned: V (8), CPNG (6), AMZN (6).",
       "sourceName": "SEC EDGAR 13F filings",
       "sourceUrl": "https://13f-eo2.pages.dev/",
       "dashboardUrl": "https://13f-eo2.pages.dev/",
-      "notes": "New long positions across 12 funds with comparable filings (clean prior-quarter deltas). Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.",
-      "status": "ok"
+      "notes": "Consensus = held by 3+ of 14 watchlist funds. Headline = the typical consensus name's weight move (median). Nuveen counts as one fund in the vote but is excluded from dollar-flow / single-fund totals. Q1 '26 → Q2 '26. Next quarter's 13Fs are due ~45 days after quarter-end, so this is the latest fully-filed quarter.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": false,
+          "unavailableReason": "13F positions are disclosed quarterly — there is no weekly view.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "changeDisplay": "pp",
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": false,
+          "unavailableReason": "13F positions are disclosed quarterly — there is no monthly view.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "changeDisplay": "pp",
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q2 '26",
+          "lastPeriodLabel": "Q1 '26",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": -0.37976206896551723,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true,
+          "breakdown": [
+            {
+              "label": "V",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.41569999999999996,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false,
+              "note": "8 funds · 6 adding / 1 trimming · Unclassified",
+              "sub": [
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 3.3473,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Avantyr",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 1.5184,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.7069,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "TCI Fund Mgmt",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.5602,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.1245,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0081,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "CPNG",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.1725,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": true,
+              "note": "6 funds · 2 adding / 3 trimming · Consumer Discretionary",
+              "sub": [
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -3.4307,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Aspex",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 3.0545,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Durable",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.845,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Abrams Capital",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.1725,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.0034,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "AMZN",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.27249999999999996,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "6 funds · 3 adding / 2 trimming · Consumer Discretionary",
+              "sub": [
+                {
+                  "label": "WindAcre",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -3.1135,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.6839,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.4438,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Avantyr",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.1012,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "GOOGL",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.0998,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false,
+              "note": "6 funds · 3 adding / 2 trimming · Software & IT Services",
+              "sub": [
+                {
+                  "label": "Berkshire Hathaway",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 3.4798,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Abrams Capital",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -2.6294,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.3338,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "TCI Fund Mgmt",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0998,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.041,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "TSM",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.89405,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": true,
+              "note": "5 funds · 0 adding / 5 trimming · Semiconductors",
+              "sub": [
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -3.448,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "WindAcre",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.81,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 1.5146,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0219,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "META",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.6684,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "5 funds · 1 adding / 2 trimming · Software & IT Services",
+              "sub": [
+                {
+                  "label": "Avantyr",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -2.5977,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Abrams Capital",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.6684,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.3165,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "NU",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.5136499999999999,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "5 funds · 4 adding / 1 trimming · Banks & Lending",
+              "sub": [
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.2787,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.5294,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.4979,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.0056,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "GOOG",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.2465,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false,
+              "note": "5 funds · 3 adding / 2 trimming · Software & IT Services",
+              "sub": [
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -3.2269,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Berkshire Hathaway",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 2.8192,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "TCI Fund Mgmt",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 1.0319,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.2465,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.2308,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "MCO",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.1863,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "5 funds · 1 adding / 2 trimming · Unclassified",
+              "sub": [
+                {
+                  "label": "TCI Fund Mgmt",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.5407,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Berkshire Hathaway",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.3568,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "WindAcre",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0904,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.0158,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "SPGI",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -1.19695,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": true,
+              "note": "4 funds · 1 adding / 2 trimming · Unclassified",
+              "sub": [
+                {
+                  "label": "TCI Fund Mgmt",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -2.348,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.0459,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "NVDA",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.7547,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": true,
+              "note": "4 funds · 1 adding / 3 trimming · Semiconductors",
+              "sub": [
+                {
+                  "label": "Avantyr",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -1.7607,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "WindAcre",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.7547,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.205,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "FWONK",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": -0.28545,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "4 funds · 2 adding / 0 trimming · Communications",
+              "sub": [
+                {
+                  "label": "Darsana",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -5.9467,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Avantyr",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.5785,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Foxhaven",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0986,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.0076,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "MDLN",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.26,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false,
+              "note": "4 funds · 3 adding / 1 trimming · Health Care",
+              "sub": [
+                {
+                  "label": "Durable",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -2.3208,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.8734,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.519,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.001,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "GLW",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "changeAbs": 0.20834999999999998,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false,
+              "note": "4 funds · 1 adding / 3 trimming · Materials",
+              "sub": [
+                {
+                  "label": "SurgoCap",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 2.6846,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Aspex",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": -0.7636,
+                  "changeDisplay": "pp",
+                  "direction": "down"
+                },
+                {
+                  "label": "Lone Pine",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.2296,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                },
+                {
+                  "label": "Nuveen",
+                  "thisValue": null,
+                  "lastValue": null,
+                  "changePct": null,
+                  "changeAbs": 0.1871,
+                  "changeDisplay": "pp",
+                  "direction": "up"
+                }
+              ]
+            }
+          ],
+          "summary": "44 names are held by 3+ of the 14 watchlist funds. On balance those shared positions were trimmed (typical -0.38pp) — 5 building conviction, 5 being lightened. Most-owned: V (8), CPNG (6), AMZN (6)."
+        }
+      ],
+      "breakdownNoun": "consensus name",
+      "subNoun": "fund",
+      "changeNoun": "Avg weight change",
+      "insights": [
+        {
+          "title": "Consensus buys — where conviction is building",
+          "body": "Names multiple watchlist funds agree on and were net adding to this quarter.",
+          "bullets": [
+            "V — 8 funds hold, 6 adding / 1 trimming (avg +0.42pp)",
+            "CVNA — 4 funds hold, 4 adding (avg -0.08pp)",
+            "NU — 5 funds hold, 4 adding / 1 trimming (avg -0.51pp)",
+            "AUR — 3 funds hold, 3 adding (avg +0.66pp)",
+            "MDLN — 4 funds hold, 3 adding / 1 trimming (avg +0.26pp)"
+          ]
+        },
+        {
+          "title": "Consensus sells — where they’re taking money off",
+          "body": "Shared names where more funds trimmed or exited than added.",
+          "bullets": [
+            "TSM — 5 funds hold, 5 trimming (avg -0.89pp)",
+            "CRS — 3 funds hold, 3 trimming (avg -2.06pp)",
+            "CPNG — 6 funds hold, 3 trimming / 2 adding (avg -1.17pp)",
+            "NVDA — 4 funds hold, 3 trimming / 1 adding (avg -0.75pp)",
+            "GLW — 4 funds hold, 3 trimming / 1 adding (avg +0.21pp)"
+          ]
+        },
+        {
+          "title": "Sector rotation (net $ moved, ex-Nuveen)",
+          "body": "Net dollars the concentrated managers put to work or pulled, by sector, from this quarter’s position changes.",
+          "bullets": [
+            "Into: Software & IT Services $21.2B, Banks & Lending $8.3B, Computers & Hardware $8.1B, Electronics & Instruments $4.2B",
+            "Out of: Energy $-7.8B, Semiconductors $-3.1B, Capital Markets $-2.8B"
+          ]
+        },
+        {
+          "title": "Boldest single-fund bets, entries & exits",
+          "body": "The biggest conviction moves by any one manager this quarter (ex-Nuveen).",
+          "bullets": [
+            "Boldest adds: Abrams Capital: LOAR +7.56pp; Aspex: MKSI +4.00pp; Avantyr: SGI +4.00pp; TCI Fund Mgmt: GE +3.74pp",
+            "New positions: Aspex: new in QCOM (13.2% wt); SurgoCap: new in INTC (8.3% wt); Lone Pine: new in NBIS (7.2% wt)",
+            "Exits: Aspex: exited NVDA (was 13.1%); Avantyr: exited ASML (was 8.5%); Lone Pine: exited VST (was 7.4%)"
+          ]
+        },
+        {
+          "title": "On Nuveen",
+          "body": "Nuveen is a large diversified manager (~3,735 positions). Per the client it stays in — it counts as one fund in the consensus vote above — but its mechanical position churn is kept out of the dollar-flow and single-fund-move totals so it doesn't swamp the concentrated managers' signal."
+        }
+      ]
     },
     {
       "systemId": "nubank",
@@ -2969,7 +4243,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-15T13:29:09.044Z",
+      "asOf": "2026-10-15T13:42:46.781Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3375,7 +4649,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-15T13:29:09.187Z"
+          "asOf": "2026-10-15T13:42:46.942Z"
         }
       ]
     },

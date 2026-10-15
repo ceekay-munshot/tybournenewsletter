@@ -19,7 +19,7 @@
     { "id": "schneider-electric", "name": "Schneider Electric", "sector": "industrial", "metricLabel": "Data-centre equipment price", "connector": "schneiderElectric",
       "source": { "base": "https://raw.githubusercontent.com/ceekay-munshot/Schneider-Electric/main/public/data", "slugs": ["ups", "busway", "rack-pdus", "rack-systems", "pod-modular", "dcim"] },
       "sourceName": "Graybar distributor pricing", "dashboardUrl": null },
-    { "id": "thirteen-f", "name": "13F Fund Holdings", "sector": "financial", "metricLabel": "New buys this quarter", "connector": "thirteenF",
+    { "id": "thirteen-f", "name": "13F Fund Holdings", "sector": "financial", "metricLabel": "Consensus weight change", "connector": "thirteenF",
       "source": { "base": "https://13f-eo2.pages.dev/data", "watchlist": "https://raw.githubusercontent.com/ceekay-munshot/13F/main/shared/watchlist.mjs" },
       "sourceName": "SEC EDGAR 13F filings", "dashboardUrl": "https://13f-eo2.pages.dev/" },
     { "id": "nubank", "name": "Nubank", "sector": "financial", "metricLabel": "Brazil card market share", "connector": "nubank",
