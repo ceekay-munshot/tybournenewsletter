@@ -333,7 +333,7 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
   const accent = sectorColor(b.sector);
   const c = directionColor(b.direction);
   const narrative = !!b.highlights?.length;
-  const body = line || factualLine(b);
+  const body = line || b.summary || factualLine(b);
   const rows = b.breakdown || [];
 
   return (

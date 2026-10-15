@@ -187,6 +187,19 @@ export function SystemView({
         </div>
       </Card>
 
+      {/* consolidated note (e.g. podcast quarter-over-quarter read) */}
+      {block.summary && (
+        <Card className="mb-4" accent={accent}>
+          <CardHeader
+            icon={Quote}
+            accent={accent}
+            title="Consolidated note — what the podcasts are saying"
+            subtitle={`${block.lastPeriodLabel} → ${block.thisPeriodLabel}`}
+          />
+          <p className="text-[13.5px] leading-relaxed text-slate-700">{block.summary}</p>
+        </Card>
+      )}
+
       {/* narrative themes (e.g. podcast) */}
       {block.highlights && block.highlights.length > 0 && (
         <Card className="mb-4" accent={accent}>

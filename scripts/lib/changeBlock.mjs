@@ -67,6 +67,7 @@ export function makeBlock(system, f) {
     ...(f.trend && f.trend.length ? { trend: f.trend } : {}),
     ...(f.highlights && f.highlights.length ? { highlights: f.highlights } : {}),
     ...(f.tone ? { tone: f.tone } : {}),
+    ...(f.summary ? { summary: f.summary } : {}),
     ...(f.secondaryMetrics && f.secondaryMetrics.length ? { secondaryMetrics: f.secondaryMetrics } : {}),
     sourceName: system.sourceName ?? f.sourceName ?? '',
     sourceUrl: f.sourceUrl ?? system.dashboardUrl ?? '',

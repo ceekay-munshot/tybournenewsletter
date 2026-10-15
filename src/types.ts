@@ -41,6 +41,8 @@ export interface ChangeBlock {
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;
+  /** A consolidated written note (e.g. the podcast quarter-over-quarter read). */
+  summary?: string;
   /** Other things that moved in this system (same shape, rendered smaller). */
   secondaryMetrics?: ChangeBlock[];
   sourceName: string;

@@ -1522,9 +1522,9 @@
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 34,
-      "lastValue": null,
+      "lastValue": 7,
       "changePct": null,
-      "changeAbs": null,
+      "changeAbs": 27,
       "direction": "flat",
       "asOf": "2026-10-15T01:54:00.000Z",
       "isStale": false,
@@ -1602,10 +1602,11 @@
         "SpaceX's spectrum move clarifies mobile ambitions"
       ],
       "tone": "Tone across 34 episodes — 13 positive, 11 mixed, 5 neutral, 4 cautious",
+      "summary": "Q4 '26 (QTD): 34 investor-podcast episodes across 9 shows. The recurring threads — Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms; AI agents to grow in retail trading. Sentiment ran 13 positive, 11 mixed, 5 neutral, 4 cautious. Last quarter (Q3 '26) ran 7 episodes (3 positive, 2 mixed, 2 cautious), centred on OpenAI Dev Day’s new product is confusing but visionary; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "34 investor-podcast episodes analysed this quarter across 9 shows. Themes feed the newsletter narrative; this is a qualitative read, not a quantitative mover.",
+      "notes": "34 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
