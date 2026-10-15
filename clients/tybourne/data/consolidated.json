@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:03:33.761Z",
+  "generatedAt": "2026-10-15T13:10:57.926Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2729,159 +2729,231 @@
       "changePct": 0.4149091317029392,
       "changeAbs": 7397,
       "direction": "up",
-      "asOf": "2026-10-05",
+      "asOf": "2026-10-05T07:15:20.473Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Other",
-          "thisValue": 29.680931738564,
-          "lastValue": 25.742449431040075,
-          "changePct": 0.15299563151806864,
-          "direction": "up"
+          "label": "Other / mixed",
+          "thisValue": 7484,
+          "lastValue": 5721,
+          "changePct": 0.3081629085824157,
+          "direction": "up",
+          "bigMove": true
         },
         {
           "label": "Chat & assistants",
-          "thisValue": 15.549217199989922,
-          "lastValue": 16.54539178779733,
-          "changePct": -0.060208582582016286,
-          "direction": "down"
+          "thisValue": 3924,
+          "lastValue": 2712,
+          "changePct": 0.44690265486725667,
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Image generation",
-          "thisValue": 9.696109044951807,
-          "lastValue": 9.662029201522902,
-          "changePct": 0.003527193172168638,
-          "direction": "up"
+          "thisValue": 2448,
+          "lastValue": 1742,
+          "changePct": 0.4052812858783008,
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Data analysis",
-          "thisValue": 7.719915039995432,
-          "lastValue": 7.437650341754368,
-          "changePct": 0.037950788928117984,
-          "direction": "up"
+          "thisValue": 1945,
+          "lastValue": 1387,
+          "changePct": 0.4023071377072819,
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Document AI",
-          "thisValue": 6.612379556536161,
-          "lastValue": 6.2823001600058355,
-          "changePct": 0.05254116933661745,
-          "direction": "up"
+          "thisValue": 1670,
+          "lastValue": 1122,
+          "changePct": 0.4884135472370767,
+          "direction": "up",
+          "bigMove": true
         },
         {
           "label": "Voice & audio",
-          "thisValue": 5.5475563715346805,
-          "lastValue": 8.451671561631283,
-          "changePct": -0.34361429794321896,
-          "direction": "down"
-        },
-        {
-          "label": "Search & research",
-          "thisValue": 5.534754747296798,
-          "lastValue": 7.529382709345325,
-          "changePct": -0.2649125484845966,
-          "direction": "down"
-        },
-        {
-          "label": "Video generation",
-          "thisValue": 4.478813250351347,
-          "lastValue": 6.21179610854041,
-          "changePct": -0.27898257249725844,
-          "direction": "down"
-        },
-        {
-          "label": "Coding",
-          "thisValue": 3.8245153385199413,
-          "lastValue": 2.9170159093019516,
-          "changePct": 0.3111054095811072,
-          "direction": "up"
-        },
-        {
-          "label": "Scientific tools",
-          "thisValue": 3.598862580021544,
-          "lastValue": 2.625360632719361,
-          "changePct": 0.3708069417852987,
-          "direction": "up"
-        },
-        {
-          "label": "Education",
-          "thisValue": 3.402569605871153,
-          "lastValue": 2.6936686109206605,
-          "changePct": 0.26317305405589575,
-          "direction": "up"
-        },
-        {
-          "label": "3D / gaming",
-          "thisValue": 2.42828365576783,
-          "lastValue": 2.0345180164080334,
-          "changePct": 0.19354246862605545,
-          "direction": "up"
-        },
-        {
-          "label": "Music generation",
-          "thisValue": 1.0363320127671163,
-          "lastValue": 0.9836777095131932,
-          "changePct": 0.05352800286587856,
-          "direction": "up"
-        },
-        {
-          "label": "Robotics",
-          "thisValue": 0.8897598578322666,
-          "lastValue": 0.8830878194992726,
-          "changePct": 0.007555350878667066,
-          "direction": "up"
+          "thisValue": 1398,
+          "lastValue": 993,
+          "changePct": 0.4078549848942598,
+          "direction": "up",
+          "bigMove": false
         }
       ],
-      "trend": [
-        {
-          "period": "07-27",
-          "value": 5674
-        },
-        {
-          "period": "08-03",
-          "value": 1250
-        },
-        {
-          "period": "08-10",
-          "value": 5570
-        },
-        {
-          "period": "08-17",
-          "value": 5842
-        },
-        {
-          "period": "08-24",
-          "value": 6028
-        },
-        {
-          "period": "08-31",
-          "value": 5958
-        },
-        {
-          "period": "09-07",
-          "value": 6081
-        },
-        {
-          "period": "09-14",
-          "value": 6222
-        },
-        {
-          "period": "09-21",
-          "value": 6400
-        },
-        {
-          "period": "09-28",
-          "value": 6522
-        },
-        {
-          "period": "10-05",
-          "value": 6475
-        }
-      ],
+      "summary": "Month-on-month new Spaces up 41.5% to 25,225; chat & assistants leads the build mix at 3,924 new Spaces.",
       "sourceName": "Hugging Face Hub",
       "sourceUrl": "",
       "dashboardUrl": null,
-      "notes": "New Spaces totalled 25,225 this period, up +41.5% on 17,828, and the build mix is led by conversational tooling: chat and assistants account for 3,924 of them. Document AI grew fastest among named use cases at +48.8%, and enterprise productivity picked up the most ground of any vertical at +1.2 points to reach 7.4% of new Spaces. Technique tags lean toward vision-language and agentic patterns, while shipping is concentrated in Static and Gradio. On the model side Llama and Mistral uploads expanded sharply while Qwen contracted −4.3%.",
-      "status": "ok"
+      "notes": "New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Breakdown is new Spaces by use-case; model-family shifts and the new-models total are in “Why it moved”. Quarter-on-quarter needs two full quarters — not available yet.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": true,
+          "thisPeriodLabel": "wk 5 Oct",
+          "lastPeriodLabel": "wk 28 Sep",
+          "thisValue": 6475,
+          "lastValue": 6522,
+          "changePct": -0.007206378411530205,
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Other / mixed",
+              "thisValue": 1855,
+              "lastValue": 1903,
+              "changePct": -0.025223331581713086,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Chat & assistants",
+              "thisValue": 955,
+              "lastValue": 999,
+              "changePct": -0.044044044044044044,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Image generation",
+              "thisValue": 734,
+              "lastValue": 669,
+              "changePct": 0.09715994020926756,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Data analysis",
+              "thisValue": 473,
+              "lastValue": 496,
+              "changePct": -0.04637096774193548,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Document AI",
+              "thisValue": 432,
+              "lastValue": 463,
+              "changePct": -0.06695464362850972,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Search & research",
+              "thisValue": 372,
+              "lastValue": 378,
+              "changePct": -0.015873015873015872,
+              "direction": "down",
+              "bigMove": false
+            }
+          ],
+          "summary": "Week-on-week new Spaces down 0.7% to 6,475; chat & assistants leads the build mix at 955 new Spaces."
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "Sep '26",
+          "lastPeriodLabel": "Aug '26",
+          "thisValue": 25225,
+          "lastValue": 17828,
+          "changePct": 0.4149091317029392,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Other / mixed",
+              "thisValue": 7484,
+              "lastValue": 5721,
+              "changePct": 0.3081629085824157,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Chat & assistants",
+              "thisValue": 3924,
+              "lastValue": 2712,
+              "changePct": 0.44690265486725667,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Image generation",
+              "thisValue": 2448,
+              "lastValue": 1742,
+              "changePct": 0.4052812858783008,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Data analysis",
+              "thisValue": 1945,
+              "lastValue": 1387,
+              "changePct": 0.4023071377072819,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Document AI",
+              "thisValue": 1670,
+              "lastValue": 1122,
+              "changePct": 0.4884135472370767,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Voice & audio",
+              "thisValue": 1398,
+              "lastValue": 993,
+              "changePct": 0.4078549848942598,
+              "direction": "up",
+              "bigMove": false
+            }
+          ],
+          "summary": "Month-on-month new Spaces up 41.5% to 25,225; chat & assistants leads the build mix at 3,924 new Spaces."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": false,
+          "unavailableReason": "Hugging Face tracking started in late July 2026 — a quarter-on-quarter needs two full quarters, so it is not available yet.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
+        }
+      ],
+      "breakdownNoun": "use-case",
+      "changeNoun": "New Spaces change",
+      "insights": [
+        {
+          "title": "The month in one line",
+          "body": "New Spaces totalled 25,225 this period, up +41.5% on 17,828, and the build mix is led by conversational tooling: chat and assistants account for 3,924 of them. Document AI grew fastest among named use cases at +48.8%, and enterprise productivity picked up the most ground of any vertical at +1.2 points to reach 7.4% of new Spaces. Technique tags lean toward vision-language and agentic patterns, while shipping is concentrated in Static and Gradio. On the model side Llama and Mistral uploads expanded sharply while Qwen contracted −4.3%. New models totalled 92,166 (+27% MoM).",
+          "asOf": "2026-10-05T07:15:20.473Z"
+        },
+        {
+          "title": "Model-family shifts (new models, MoM)",
+          "body": "Which model families saw the most new models published this month.",
+          "bullets": [
+            "Mistral +102% (720 new)",
+            "Llama +80% (5,916 new)",
+            "Other open models +56% (24,678 new)",
+            "Gemma +20% (2,429 new)",
+            "Qwen -4% (21,636 new)"
+          ],
+          "asOf": "2026-10-05T07:15:20.473Z"
+        },
+        {
+          "title": "Reading the month-on-month jump",
+          "body": "August 2026 was Hugging Face’s first full tracked month, so the comparison base is young. The Weekly view — new Spaces running a steady ~6.4k/week — is the cleaner read on the current pace; treat the large MoM as base-sensitive."
+        }
+      ]
     },
     {
       "systemId": "ai-model-intel",
@@ -2897,7 +2969,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T13:03:28.814Z",
+      "asOf": "2026-10-15T13:10:54.215Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3029,7 +3101,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T13:03:28.932Z",
+          "asOf": "2026-10-15T13:10:54.315Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -3052,7 +3124,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T13:03:30.130Z",
+          "asOf": "2026-10-15T13:10:54.978Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -3075,7 +3147,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T13:03:30.199Z",
+          "asOf": "2026-10-15T13:10:55.042Z",
           "isStale": false,
           "breakdown": [
             {

@@ -1,10 +1,12 @@
-// Hugging Face Activity — new AI Spaces created, month-over-month.
-// Only ~1 quarter of weekly data exists, so this is honestly MoM (never a faked QoQ).
-// Headline figures come from the Hub's own monthly `insights.facts` (authoritative);
-// the use-case breakdown is derived from the weekly `series`.
+// Hugging Face Activity — new AI Spaces created on the Hub, Weekly and MoM.
+// The Hub's own insights.json is the authoritative, self-consistent source: each
+// period (week / month) ships `facts` carrying value, prev and changePct, so the
+// headline, the use-case breakdown and the model-family shifts all come straight
+// from the Hub's published numbers. History starts late-July 2026, so a QoQ needs
+// two full quarters we don't have yet — shown honestly as unavailable.
 import { getJson } from '../lib/http.mjs';
 import { monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, pctChange } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
 
 const UC_LABEL = {
   '3d-gaming': '3D / gaming',
@@ -15,108 +17,212 @@ const UC_LABEL = {
   education: 'Education',
   'image-generation': 'Image generation',
   'music-generation': 'Music generation',
-  other: 'Other',
+  other: 'Other / mixed',
   robotics: 'Robotics',
   'scientific-tools': 'Scientific tools',
   'search-research': 'Search & research',
   'video-generation': 'Video generation',
   'voice-audio': 'Voice & audio',
 };
-
-const prevMonthKey = (ym) => {
-  const [y, m] = ym.split('-').map(Number);
-  const d = new Date(Date.UTC(y, m - 1, 1));
-  d.setUTCMonth(d.getUTCMonth() - 1);
-  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+const FAMILY_LABEL = {
+  'glm-zhipu': 'GLM (Zhipu)',
+  'kimi-moonshot': 'Kimi (Moonshot)',
+  'nvidia-nemotron': 'Nvidia Nemotron',
+  'other-open': 'Other open models',
+  unknown: 'Unresolved family',
 };
+const famLabel = (d) => FAMILY_LABEL[d] || d.charAt(0).toUpperCase() + d.slice(1);
 
-export async function connect(system) {
-  const [d, ins] = await Promise.all([
-    getJson(system.source.series),
-    getJson(system.source.insights).catch(() => null),
-  ]);
-  const weeks = d?.weeks || [];
-  const series = d?.series || [];
-  if (!weeks.length || !series.length) throw new Error('no HF series');
+const frac = (changePct) => (changePct == null || !Number.isFinite(changePct) ? null : changePct / 100);
 
-  const monthOf = (w) => w.slice(0, 7);
-  const spaceSeries = series.filter((s) => s.cut === 'spaces_by_use_case');
-  const totalPerWeek = weeks.map((_, i) => spaceSeries.reduce((a, s) => a + (s.values[i] || 0), 0));
-  const trend = weeks.map((w, i) => ({ period: w.slice(5), value: totalPerWeek[i] }));
+// Robust-z over a set of fractional changes → flags the use-cases diverging from the pack.
+function zScorer(values) {
+  const xs = values.filter((v) => v != null && Number.isFinite(v)).slice().sort((a, b) => a - b);
+  if (xs.length < 3) return () => 0;
+  const med = xs.length % 2 ? xs[(xs.length - 1) / 2] : (xs[xs.length / 2 - 1] + xs[xs.length / 2]) / 2;
+  const dev = xs.map((v) => Math.abs(v - med)).sort((a, b) => a - b);
+  const mad = dev.length % 2 ? dev[(dev.length - 1) / 2] : (dev[dev.length / 2 - 1] + dev[dev.length / 2]) / 2;
+  const scale = 1.4826 * mad;
+  return (v) => (v == null || !scale ? 0 : (v - med) / scale);
+}
 
-  // Headline + "new models" secondary from the Hub's own monthly facts.
-  const month0 = ins?.month?.[0];
-  const facts = month0?.facts || [];
-  const fact = (sub) => facts.find((f) => String(f.what || '').toLowerCase().includes(sub));
-  const periodKey = month0?.periodKey;
+const factBy = (entry, pred) => (entry?.facts || []).find(pred);
+const spacesTotalFact = (entry) =>
+  factBy(entry, (f) => f.cut === 'sdk_distribution' && f.dimension == null) ||
+  factBy(entry, (f) => String(f.what || '').toLowerCase().includes('new spaces in total'));
 
-  let thisVal = null;
-  let lastVal = null;
-  let thisM = periodKey || monthOf(weeks[weeks.length - 1]);
-  let lastM = prevMonthKey(thisM);
-  const spacesFact = fact('new spaces in total');
-  if (spacesFact) {
-    thisVal = spacesFact.value ?? null;
-    lastVal = spacesFact.prev ?? null;
-  } else {
-    // fallback: calendar-month sums from the series
-    const mt = {};
-    const wpm = {};
-    weeks.forEach((w, i) => {
-      const m = monthOf(w);
-      mt[m] = (mt[m] || 0) + totalPerWeek[i];
-      wpm[m] = (wpm[m] || 0) + 1;
-    });
-    const full = Object.keys(mt).filter((m) => wpm[m] >= 4).sort();
-    const use = full.length >= 2 ? full.slice(-2) : Object.keys(mt).sort().slice(-2);
-    [lastM, thisM] = use;
-    thisVal = mt[thisM];
-    lastVal = mt[lastM];
-  }
+function viewFrom(entry, comparison, label, labelOf, prevLabelOf) {
+  if (!entry) return unavailable(comparison, label, 'No data for this window yet.');
+  const total = spacesTotalFact(entry);
+  if (!total || total.value == null) return unavailable(comparison, label, 'No data for this window yet.');
 
-  const monthAvg = (s, ym) => {
-    const idx = weeks.map((w, i) => (monthOf(w) === ym ? i : -1)).filter((i) => i >= 0);
-    return idx.length ? idx.reduce((a, i) => a + (s.values[i] || 0), 0) / idx.length : null;
-  };
-  const breakdown = series
-    .filter((s) => s.cut === 'share_by_use_case')
-    .map((s) => {
-      const tv = monthAvg(s, thisM);
-      const lv = monthAvg(s, lastM);
-      return { label: UC_LABEL[s.dimension] || s.dimension, thisValue: tv, lastValue: lv, changePct: pctChange(tv, lv), direction: directionOf(pctChange(tv, lv)) };
+  const uc = (entry.facts || []).filter((f) => f.cut === 'spaces_by_use_case' && f.dimension);
+  const zOf = zScorer(uc.map((f) => frac(f.changePct)));
+  const rows = uc
+    .map((f) => {
+      const cp = frac(f.changePct);
+      return {
+        label: UC_LABEL[f.dimension] || f.dimension,
+        thisValue: f.value ?? null,
+        lastValue: f.prev ?? null,
+        changePct: cp,
+        direction: directionOf(cp),
+        bigMove: cp != null && Math.abs(zOf(cp)) >= 1.5,
+      };
     })
     .sort((a, b) => (b.thisValue ?? 0) - (a.thisValue ?? 0));
 
-  const secondary = [];
-  const modelsFact = fact('new models in total');
-  if (modelsFact) {
-    secondary.push(
-      makeBlock(system, {
-        metricLabel: 'New AI models',
-        unit: 'models',
-        comparison: 'MoM',
-        thisPeriodLabel: monthLabel(thisM),
-        lastPeriodLabel: monthLabel(lastM),
-        thisValue: modelsFact.value ?? null,
-        lastValue: modelsFact.prev ?? null,
-        changePct: pctChange(modelsFact.value, modelsFact.prev),
-        asOf: weeks[weeks.length - 1],
-        breakdown: [],
-      })
-    );
+  const cp = frac(total.changePct);
+  const top = rows.filter((r) => r.label !== 'Other / mixed')[0];
+  const summary =
+    cp != null
+      ? `${cap(label)}-on-${label.toLowerCase()} new Spaces ${cp >= 0 ? 'up' : 'down'} ${Math.abs(cp * 100).toFixed(
+          1
+        )}% to ${fmtInt(total.value)}${top ? `; ${top.label.toLowerCase()} leads the build mix at ${fmtInt(top.thisValue)} new Spaces` : ''}.`
+      : undefined;
+
+  return {
+    comparison,
+    label,
+    available: cp != null,
+    thisPeriodLabel: labelOf(entry.periodKey),
+    lastPeriodLabel: prevLabelOf ? prevLabelOf(entry.periodKey) : '',
+    thisValue: total.value ?? null,
+    lastValue: total.prev ?? null,
+    changePct: cp,
+    direction: directionOf(cp),
+    bigMove: cp != null && Math.abs(cp) >= 0.5,
+    breakdown: rows,
+    summary,
+  };
+}
+
+function unavailable(comparison, label, reason) {
+  return {
+    comparison,
+    label,
+    available: false,
+    unavailableReason: reason,
+    thisPeriodLabel: '—',
+    lastPeriodLabel: '—',
+    thisValue: null,
+    lastValue: null,
+    changePct: null,
+    changeAbs: null,
+    direction: 'flat',
+    breakdown: [],
+  };
+}
+
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const fmtInt = (n) => (n == null ? '—' : Math.round(n).toLocaleString('en-US'));
+
+// WoW periodKey is a week-start date "2026-10-05"; MoM is "2026-09".
+const M3 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const weekLabel = (k) => {
+  const d = new Date(`${k}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return k;
+  return `wk ${d.getUTCDate()} ${M3[d.getUTCMonth()]}`;
+};
+const prevWeekLabel = (k) => {
+  const d = new Date(`${k}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return '';
+  d.setUTCDate(d.getUTCDate() - 7);
+  return `wk ${d.getUTCDate()} ${M3[d.getUTCMonth()]}`;
+};
+const prevMonthLabel = (ym) => {
+  const [y, m] = String(ym).split('-').map(Number);
+  if (!y || !m) return '';
+  const d = new Date(Date.UTC(y, m - 1, 1));
+  d.setUTCMonth(d.getUTCMonth() - 1);
+  return `${M3[d.getUTCMonth()]} '${String(d.getUTCFullYear()).slice(2)}`;
+};
+
+function buildInsights(month) {
+  if (!month) return [];
+  const out = [];
+  const models = factBy(month, (f) => f.cut === 'models_by_family' && f.dimension == null);
+
+  // 1) the month in one line (lifted narrative) + the models headline
+  if (month.narrative) {
+    out.push({
+      title: 'The month in one line',
+      body:
+        month.narrative.trim() +
+        (models && models.value != null
+          ? ` New models totalled ${fmtInt(models.value)}${
+              models.changePct != null ? ` (${models.changePct >= 0 ? '+' : ''}${models.changePct.toFixed(0)}% MoM)` : ''
+            }.`
+          : ''),
+      asOf: month.generatedAt,
+    });
   }
 
-  return makeBlock(system, {
-    unit: 'new Spaces',
-    comparison: 'MoM',
-    thisPeriodLabel: monthLabel(thisM),
-    lastPeriodLabel: monthLabel(lastM),
-    thisValue: thisVal,
-    lastValue: lastVal,
-    changePct: pctChange(thisVal, lastVal),
-    asOf: weeks[weeks.length - 1],
-    breakdown,
-    trend,
-    notes: month0?.narrative || 'Only ~1 quarter of weekly data — compared month-over-month; breakdown shows use-case share shifts.',
+  // 2) model-family shifts — the divergent story inside "new models"
+  const fams = (month.facts || [])
+    .filter((f) => f.cut === 'models_by_family' && f.dimension && f.dimension !== 'unknown' && f.changePct != null)
+    .sort((a, b) => Math.abs(b.changePct) - Math.abs(a.changePct))
+    .slice(0, 5);
+  if (fams.length) {
+    out.push({
+      title: 'Model-family shifts (new models, MoM)',
+      body: 'Which model families saw the most new models published this month.',
+      bullets: fams.map(
+        (f) => `${famLabel(f.dimension)} ${f.changePct >= 0 ? '+' : ''}${f.changePct.toFixed(0)}% (${fmtInt(f.value)} new)`
+      ),
+      asOf: month.generatedAt,
+    });
+  }
+
+  // 3) honest read on the MoM base
+  out.push({
+    title: 'Reading the month-on-month jump',
+    body:
+      'August 2026 was Hugging Face’s first full tracked month, so the comparison base is young. The Weekly view — new Spaces running a steady ~6.4k/week — is the cleaner read on the current pace; treat the large MoM as base-sensitive.',
   });
+  return out;
+}
+
+export async function connect(system) {
+  const ins = await getJson(system.source.insights);
+  const months = Array.isArray(ins?.month) ? ins.month : [];
+  const weeks = Array.isArray(ins?.week) ? ins.week : [];
+  if (!months.length) throw new Error('HF insights.json has no monthly entries');
+
+  const month0 = months[0];
+  const week0 = weeks[0];
+
+  const momView = viewFrom(month0, 'MoM', 'Month', monthLabel, prevMonthLabel);
+  const wowView = week0
+    ? viewFrom(week0, 'WoW', 'Week', weekLabel, prevWeekLabel)
+    : unavailable('WoW', 'Week', 'No weekly entry yet.');
+  const qoqView = unavailable(
+    'QoQ',
+    'Quarter',
+    'Hugging Face tracking started in late July 2026 — a quarter-on-quarter needs two full quarters, so it is not available yet.'
+  );
+  const views = [wowView, momView, qoqView];
+  const def = momView.available ? momView : wowView.available ? wowView : views[0];
+
+  const asOf = month0.generatedAt || `${month0.periodKey}-28`;
+  const block = makeBlock(system, {
+    unit: 'new Spaces',
+    comparison: def.comparison,
+    thisPeriodLabel: def.thisPeriodLabel,
+    lastPeriodLabel: def.lastPeriodLabel,
+    thisValue: def.thisValue,
+    lastValue: def.lastValue,
+    changePct: def.changePct,
+    direction: def.direction,
+    asOf,
+    breakdown: def.breakdown,
+    summary: def.summary,
+    notes:
+      'New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Breakdown is new Spaces by use-case; model-family shifts and the new-models total are in “Why it moved”. Quarter-on-quarter needs two full quarters — not available yet.',
+  });
+  block.views = views;
+  block.breakdownNoun = 'use-case';
+  block.changeNoun = 'New Spaces change';
+  block.insights = buildInsights(month0);
+  return block;
 }
