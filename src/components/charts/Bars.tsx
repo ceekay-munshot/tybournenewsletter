@@ -18,6 +18,8 @@ export interface HBarDatum {
 interface Props {
   data: HBarDatum[];
   format: (n: number) => string;
+  /** Optional separate formatter for the axis ticks (keeps ticks compact when bar labels carry units). */
+  axisFormat?: (n: number) => string;
   barSize?: number;
   labelWidth?: number;
   maxValue?: number;
@@ -30,6 +32,7 @@ interface Props {
 export function HBars({
   data,
   format,
+  axisFormat,
   barSize = 24,
   labelWidth = 150,
   maxValue,
@@ -37,6 +40,7 @@ export function HBars({
   showAxis = true,
   onClick,
 }: Props) {
+  const fmtAxis = axisFormat ?? format;
   const { ref, width } = useElementWidth<HTMLDivElement>();
   const { tip, show, hide } = useTip();
 
@@ -98,7 +102,7 @@ export function HBars({
                 fontSize={10.5}
                 fill="#94A3B8"
               >
-                {format(t)}
+                {fmtAxis(t)}
               </text>
             </g>
           ))}

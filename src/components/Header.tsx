@@ -1,4 +1,4 @@
-import { ShieldCheck, Download } from 'lucide-react';
+import { ShieldCheck, Newspaper } from 'lucide-react';
 import type { ClientInfo } from '../types';
 import { whenLabel } from '../lib/format';
 import { MunshotMark } from './MunshotMark';
@@ -6,11 +6,11 @@ import { MunshotMark } from './MunshotMark';
 export function Header({
   client,
   generatedAt,
-  onDownloadPdf,
+  onOpenNewsletter,
 }: {
   client: ClientInfo;
   generatedAt: string;
-  onDownloadPdf: () => void;
+  onOpenNewsletter: () => void;
 }) {
   return (
     <header className="no-print sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
@@ -33,13 +33,13 @@ export function Header({
             100% real data
           </span>
           <button
-            onClick={onDownloadPdf}
-            title="Open the newsletter and print / save as PDF"
+            onClick={onOpenNewsletter}
+            title="Open the quarterly newsletter"
             className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-2.5 py-1.5 text-[12px] font-semibold text-white shadow-sm transition hover:bg-slate-700 sm:px-3"
           >
-            <Download size={14} strokeWidth={2.4} />
-            <span className="hidden sm:inline">Download PDF</span>
-            <span className="sm:hidden">PDF</span>
+            <Newspaper size={14} strokeWidth={2.4} />
+            <span className="hidden sm:inline">Newsletter</span>
+            <span className="sm:hidden">News</span>
           </button>
           <div className="hidden text-right sm:block">
             <div className="text-[10px] uppercase tracking-wide text-slate-400">as of</div>

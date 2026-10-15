@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LayoutGrid, Newspaper, AlertTriangle } from 'lucide-react';
+import { LayoutGrid, AlertTriangle } from 'lucide-react';
 import { useConsolidated, systemById } from './lib/data';
 import { useNewsletter } from './lib/newsletter';
 import type { SectorId } from './types';
@@ -8,26 +8,27 @@ import { Footer } from './components/Footer';
 import { Tabs, type TabDef } from './components/ui/Tabs';
 import { SECTOR_ICON } from './lib/icons';
 import { Overview } from './tabs/Overview';
-import { NewsletterTab } from './tabs/Newsletter';
+import { NewsletterModal } from './tabs/Newsletter';
 import { SectorTab } from './tabs/SectorTab';
 import { SystemView } from './tabs/SystemView';
 
-type TabKey = 'overview' | 'newsletter' | SectorId;
+type TabKey = 'overview' | SectorId;
 
-/** Deep-link support: /?edition=newsletter (or #newsletter) opens the Newsletter tab.
- *  Used by the quarterly email render and for shareable links. */
-function initialTab(): TabKey {
-  if (typeof window === 'undefined') return 'overview';
+/** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
+ *  Used by the quarterly email render and shareable links. */
+function wantsNewsletter(): boolean {
+  if (typeof window === 'undefined') return false;
   const q = new URLSearchParams(window.location.search).get('edition') ?? '';
   const v = (q || window.location.hash.replace('#', '')).toLowerCase();
-  return v === 'newsletter' ? 'newsletter' : 'overview';
+  return v === 'newsletter';
 }
 
 export default function App() {
   const state = useConsolidated();
   const newsletter = useNewsletter();
-  const [tab, setTab] = useState<TabKey>(initialTab);
+  const [tab, setTab] = useState<TabKey>('overview');
   const [systemId, setSystemId] = useState<string | null>(null);
+  const [nlOpen, setNlOpen] = useState<boolean>(wantsNewsletter);
 
   if (state.status === 'loading') return <LoadingScreen />;
   if (state.status === 'error') return <ErrorScreen message={state.error} />;
@@ -36,7 +37,6 @@ export default function App() {
 
   const tabs: TabDef<TabKey>[] = [
     { key: 'overview', label: 'Overview', icon: LayoutGrid, color: '#6366F1' },
-    { key: 'newsletter', label: 'Newsletter', icon: Newspaper, color: '#8B5CF6' },
     ...data.sectors.map((s) => ({
       key: s.id as TabKey,
       label: s.label,
@@ -58,20 +58,16 @@ export default function App() {
     setTab(t);
   };
 
-  // Download PDF: jump to the (print-friendly) Newsletter, then open the browser's
-  // print dialog. The print stylesheet renders only the newsletter article.
+  // Download PDF: open the newsletter modal, then the browser's print dialog.
+  // The print stylesheet flattens the modal into a full-flow A4 document.
   const downloadPdf = () => {
-    setSystemId(null);
-    setTab('newsletter');
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0 });
-      window.setTimeout(() => window.print(), 180);
-    }
+    setNlOpen(true);
+    if (typeof window !== 'undefined') window.setTimeout(() => window.print(), 300);
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header client={data.client} generatedAt={data.generatedAt} onDownloadPdf={downloadPdf} />
+    <div className={`flex min-h-screen flex-col${nlOpen ? ' print-only-newsletter' : ''}`}>
+      <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
 
       <div className="no-print sticky top-[53px] z-30 border-b border-slate-200/80 bg-white/70 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -84,14 +80,24 @@ export default function App() {
           <SystemView block={selected} onBack={() => setSystemId(null)} backLabel={activeTabLabel} />
         ) : tab === 'overview' ? (
           <Overview data={data} onSelect={openSystem} />
-        ) : tab === 'newsletter' ? (
-          <NewsletterTab data={data} newsletter={newsletter} onSelect={openSystem} onDownloadPdf={downloadPdf} />
         ) : (
           <SectorTab data={data} sector={data.sectors.find((s) => s.id === tab)!} onSelect={openSystem} />
         )}
       </main>
 
       <Footer data={data} />
+
+      <NewsletterModal
+        data={data}
+        newsletter={newsletter}
+        open={nlOpen}
+        onClose={() => setNlOpen(false)}
+        onSelect={(id) => {
+          setNlOpen(false);
+          openSystem(id);
+        }}
+        onDownloadPdf={downloadPdf}
+      />
     </div>
   );
 }

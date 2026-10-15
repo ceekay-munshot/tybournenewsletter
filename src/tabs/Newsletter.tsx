@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp } from 'lucide-react';
+import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { ConsolidatedData, Newsletter, ChangeBlock, SectorDef } from '../types';
 import type { NewsletterState } from '../lib/newsletter';
@@ -7,7 +7,7 @@ import { MoversChart } from '../components/MoversChart';
 import { MunshotMark } from '../components/MunshotMark';
 import { SECTOR_ICON, iconFor } from '../lib/icons';
 import { sectorColor, directionColor, shade, withAlpha } from '../lib/brand';
-import { headlineText, headlineMagnitude, fmtValue, dateLabel } from '../lib/format';
+import { headlineText, headlineMagnitude, fmtValue, signedPct, dateLabel } from '../lib/format';
 
 const periodArrow = (b: ChangeBlock) => `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
 
@@ -40,7 +40,43 @@ function deriveQuarterLabel(data: ConsolidatedData): string {
 
 // ---------------------------------------------------------------------------
 
-export function NewsletterTab({
+export function NewsletterModal(props: {
+  data: ConsolidatedData;
+  newsletter: NewsletterState;
+  open: boolean;
+  onClose: () => void;
+  onSelect: (id: string) => void;
+  onDownloadPdf: () => void;
+}) {
+  if (!props.open) return null;
+  return (
+    <div
+      className="nl-modal-overlay no-print fixed inset-0 z-50 overflow-y-auto bg-slate-900/55 p-3 backdrop-blur-sm sm:p-6"
+      onClick={props.onClose}
+    >
+      <div
+        className="nl-modal-panel relative mx-auto w-full max-w-4xl rounded-2xl bg-white p-5 shadow-pop ring-1 ring-slate-200 sm:my-2 sm:p-8"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={props.onClose}
+          aria-label="Close newsletter"
+          className="no-print absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200 hover:text-slate-800"
+        >
+          <X size={16} strokeWidth={2.4} />
+        </button>
+        <NewsletterArticle
+          data={props.data}
+          newsletter={props.newsletter}
+          onSelect={props.onSelect}
+          onDownloadPdf={props.onDownloadPdf}
+        />
+      </div>
+    </div>
+  );
+}
+
+function NewsletterArticle({
   data,
   newsletter,
   onSelect,
@@ -78,7 +114,7 @@ export function NewsletterTab({
   const sources = [...new Set(data.systems.map((s) => s.sourceName).filter(Boolean))];
 
   return (
-    <article className="nl-root animate-fade-in mx-auto max-w-4xl">
+    <article className="nl-root animate-fade-in">
       <Masthead client={data.client} quarterLabel={quarterLabel} generatedAt={data.generatedAt} onDownloadPdf={onDownloadPdf} />
 
       {!aiOk && <EditorNote state={newsletter} />}
@@ -280,61 +316,112 @@ function SectorBlock({
 
       {summary && <p className="nl-lede mb-3 text-[13.5px] italic leading-relaxed text-slate-600">{summary}</p>}
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2.5">
         {blocks.map((b) => (
-          <SystemLine key={b.systemId} b={b} line={aiLine.get(b.systemId)} onSelect={onSelect} />
+          <SystemDetail key={b.systemId} b={b} line={aiLine.get(b.systemId)} onSelect={onSelect} />
         ))}
       </div>
     </section>
   );
 }
 
-function SystemLine({ b, line, onSelect }: { b: ChangeBlock; line?: string; onSelect: (id: string) => void }) {
+/** A full, document-style entry per system: headline, the narrative line, the COMPLETE
+ *  breakdown table, any secondary metrics, and the honest caveat. The newsletter is the
+ *  detailed record — the dashboard is the glance. */
+function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; onSelect: (id: string) => void }) {
   const Icon = iconFor(b.systemId, b.sector);
   const accent = sectorColor(b.sector);
   const c = directionColor(b.direction);
   const narrative = !!b.highlights?.length;
   const body = line || factualLine(b);
+  const rows = b.breakdown || [];
 
   return (
-    <button
-      onClick={() => onSelect(b.systemId)}
-      className="nl-avoid group block w-full rounded-xl bg-white p-3 text-left ring-1 ring-slate-200/70 transition hover:ring-slate-300"
-    >
+    <div className="nl-avoid rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
       <div className="flex items-start justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-2">
+        <button onClick={() => onSelect(b.systemId)} className="flex min-w-0 items-center gap-2 text-left">
           <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg" style={{ background: `${accent}14`, color: accent }}>
             <Icon size={15} strokeWidth={2.2} />
           </span>
           <div className="min-w-0">
-            <div className="truncate font-display text-[13.5px] font-bold leading-tight text-slate-900">{b.name}</div>
-            <div className="tnum text-[10.5px] text-slate-400">{periodArrow(b)}</div>
+            <div className="font-display text-[14px] font-bold leading-tight text-slate-900">{b.name}</div>
+            <div className="tnum text-[10.5px] text-slate-400">{b.metricLabel} · {periodArrow(b)}</div>
           </div>
-        </div>
+        </button>
         {narrative ? (
           <span className="tnum shrink-0 rounded-md px-2 py-0.5 text-[11px] font-bold" style={{ background: `${accent}14`, color: accent }}>
             {b.thisValue != null ? fmtValue(b.thisValue, b.unit) : 'themes'}
           </span>
         ) : (
-          <span className="tnum shrink-0 font-display text-[18px] font-bold leading-none" style={{ color: c }}>
-            {headlineText(b.changePct, b.changeAbs, b.changeDisplay)}
-          </span>
+          <div className="shrink-0 text-right">
+            <div className="tnum font-display text-[19px] font-bold leading-none" style={{ color: c }}>
+              {headlineText(b.changePct, b.changeAbs, b.changeDisplay)}
+            </div>
+            {b.lastValue != null && (
+              <div className="tnum mt-0.5 text-[10.5px] text-slate-400">
+                {fmtValue(b.lastValue, b.unit)} → {fmtValue(b.thisValue, b.unit)}
+              </div>
+            )}
+          </div>
         )}
       </div>
 
+      <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">{body}</p>
+
       {narrative && b.highlights ? (
         <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
-          {b.highlights.slice(0, 4).map((h, i) => (
+          {b.highlights.map((h, i) => (
             <li key={i} className="flex gap-1.5 text-[12px] leading-snug text-slate-600">
               <Quote size={11} className="mt-[3px] shrink-0" style={{ color: accent }} />
-              <span className="line-clamp-2">{h}</span>
+              <span>{h}</span>
             </li>
           ))}
         </ul>
-      ) : (
-        <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">{body}</p>
+      ) : rows.length > 0 ? (
+        <div className="mt-2.5 overflow-hidden rounded-lg ring-1 ring-slate-200/70">
+          <table className="w-full text-[11.5px]">
+            <thead>
+              <tr className="bg-slate-50 text-left text-slate-500">
+                <th className="px-2.5 py-1.5 font-semibold">Breakdown</th>
+                <th className="px-2.5 py-1.5 text-right font-semibold">{b.lastPeriodLabel}</th>
+                <th className="px-2.5 py-1.5 text-right font-semibold">{b.thisPeriodLabel}</th>
+                <th className="px-2.5 py-1.5 text-right font-semibold">Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
+                  <td className="px-2.5 py-1.5 font-medium text-slate-700">{r.label}</td>
+                  <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>
+                  <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>
+                  <td className="tnum px-2.5 py-1.5 text-right font-bold" style={{ color: directionColor(r.direction) }}>
+                    {signedPct(r.changePct)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : null}
+
+      {b.secondaryMetrics && b.secondaryMetrics.length > 0 && (
+        <div className="mt-2.5 border-t border-dashed border-slate-200 pt-2">
+          <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Also moved</div>
+          <div className="mt-1 grid grid-cols-1 gap-x-4 gap-y-1 sm:grid-cols-2">
+            {b.secondaryMetrics.map((m) => (
+              <div key={m.metricLabel} className="flex items-baseline justify-between gap-2 text-[12px]">
+                <span className="min-w-0 truncate text-slate-600">{m.metricLabel}</span>
+                <span className="tnum shrink-0 font-semibold" style={{ color: directionColor(m.direction) }}>
+                  {headlineText(m.changePct, m.changeAbs, m.changeDisplay)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       )}
-    </button>
+
+      {b.notes && <p className="mt-2 text-[11px] italic leading-snug text-slate-400">{b.notes}</p>}
+    </div>
   );
 }
 

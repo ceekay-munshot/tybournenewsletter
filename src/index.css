@@ -200,4 +200,29 @@ body::before {
   .nl-root a[href]::after {
     content: none !important;
   }
+
+  /* Newsletter opened as a modal: flatten it to a full-flow A4 document. */
+  .nl-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    z-index: auto !important;
+  }
+  .nl-modal-panel {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  /* When the newsletter modal is open, hide the dashboard behind it in print. */
+  .print-only-newsletter main,
+  .print-only-newsletter > footer {
+    display: none !important;
+  }
 }

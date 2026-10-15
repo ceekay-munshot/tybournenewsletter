@@ -73,27 +73,31 @@ export function fmtValue(n: number | null | undefined, unit: string): string {
     case '$/GPU-hr':
       return usd(n, Math.abs(n) >= 1000 ? 0 : 2);
     case 'TWD bn':
-      return `${n.toLocaleString('en-US', { maximumFractionDigits: 0 })} bn`;
+      return `${n.toLocaleString('en-US', { maximumFractionDigits: 0 })} bn TWD`;
     case 'tokens':
-      return fmtCompact(n);
+      return `${fmtCompact(n)} tokens`;
     case '%':
     case '% share':
     case '% NPL':
     case '% YoY':
       return `${n.toFixed(Math.abs(n) >= 100 ? 0 : 1)}%`;
     case 'score 1-5':
-      return n.toFixed(2);
+      return `${n.toFixed(2)} / 5`;
     case 'price index':
     case 'index':
-      return n.toLocaleString('en-US', { maximumFractionDigits: 1 });
+      return `${n.toLocaleString('en-US', { maximumFractionDigits: 1 })} idx`;
     case 'rank':
       return `#${Math.round(n)}`;
     case 'positions':
+      return `${Math.round(n).toLocaleString('en-US')} positions`;
     case 'new Spaces':
+      return `${Math.round(n).toLocaleString('en-US')} Spaces`;
     case 'models':
+      return `${Math.round(n).toLocaleString('en-US')} models`;
     case 'daily pax':
+      return `${Math.round(n).toLocaleString('en-US')} pax/day`;
     case 'episodes':
-      return Math.round(n).toLocaleString('en-US');
+      return `${Math.round(n).toLocaleString('en-US')} episodes`;
     default:
       return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
   }

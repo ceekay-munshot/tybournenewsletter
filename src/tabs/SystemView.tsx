@@ -97,6 +97,12 @@ export function SystemView({
 
   const hasBreakdownChart = mode === 'pct' ? pctData.length > 0 : absData.length > 0;
 
+  // Clamp the diverging axis when one segment dwarfs the rest, so small moves stay visible
+  // (the clamped bar keeps its true label). Only when the top value is >2x the next.
+  const absVals = pctData.map((d) => Math.abs(d.value)).sort((a, b) => b - a);
+  const pctDomain = absVals.length > 2 && absVals[0] > absVals[1] * 2 ? Math.max(absVals[1] * 1.25, 0.05) : undefined;
+  const hasTrend = !!(block.trend && block.trend.length > 1);
+
   // ---- breakdown table ----
   const cols: Column<BreakdownRow>[] = [
     {
@@ -198,7 +204,7 @@ export function SystemView({
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
         {/* breakdown chart */}
-        <Card className="lg:col-span-3">
+        <Card className={hasTrend ? 'lg:col-span-3' : 'lg:col-span-5'}>
           <CardHeader
             icon={Icon}
             accent={accent}
@@ -219,9 +225,9 @@ export function SystemView({
           {hasBreakdownChart ? (
             <>
               {mode === 'pct' ? (
-                <DivergingBars data={pctData} axisFormat={axisPct} labelWidth={168} />
+                <DivergingBars data={pctData} axisFormat={axisPct} labelWidth={168} domain={pctDomain} />
               ) : (
-                <HBars data={absData} format={(n) => fmtValue(n, block.unit)} labelWidth={168} />
+                <HBars data={absData} format={(n) => fmtValue(n, block.unit)} axisFormat={(n) => fmtCompact(n, block.unit)} labelWidth={168} />
               )}
               <div className="mt-2">
                 {mode === 'pct' ? (
@@ -242,21 +248,21 @@ export function SystemView({
           )}
         </Card>
 
-        {/* trend + table */}
-        <div className="flex flex-col gap-4 lg:col-span-2">
-          {block.trend && block.trend.length > 1 && (
+        {/* trend */}
+        {hasTrend && (
+          <div className="flex flex-col gap-4 lg:col-span-2">
             <Card>
               <CardHeader icon={Icon} accent={accent} title="Trend" subtitle={`${block.metricLabel} over time`} />
               <LineArea
-                points={block.trend.map((t) => ({ label: t.period, value: t.value }))}
+                points={block.trend!.map((t) => ({ label: t.period, value: t.value }))}
                 color={accent}
                 height={180}
                 yAxisFormat={(n) => fmtCompact(n, block.unit)}
                 format={(n) => fmtValue(n, block.unit)}
               />
             </Card>
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       {/* full breakdown table */}
