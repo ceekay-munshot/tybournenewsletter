@@ -127,7 +127,7 @@ export function MultiPeriodView({
               icon={Icon}
               accent={accent}
               title={`${changeNoun} by ${bNoun}`}
-              subtitle={`${cap(view.label)}-over-${view.label.toLowerCase()}`}
+              subtitle={block.breakdownSubtitle ?? `${cap(view.label)}-over-${view.label.toLowerCase()}`}
               right={
                 <Legend
                   items={[

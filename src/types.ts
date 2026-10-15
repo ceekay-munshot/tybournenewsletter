@@ -91,6 +91,10 @@ export interface ChangeBlock {
   subNoun?: string;
   /** Title for the breakdown chart, e.g. "Price change" or "Sentiment change". */
   changeNoun?: string;
+  /** Optional override for the breakdown chart's subtitle. When set, replaces the
+   *  default "<Period>-over-<period>" line — used when the breakdown is a separate
+   *  lens from the headline (e.g. a lagged regional snapshot). */
+  breakdownSubtitle?: string;
   /** Lifted narrative ("why it moved") — shown as cards in the multi-period view. */
   insights?: InsightItem[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
