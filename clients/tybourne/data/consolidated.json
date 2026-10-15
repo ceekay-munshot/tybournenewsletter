@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T12:44:46.011Z",
+  "generatedAt": "2026-10-15T12:53:29.428Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -566,60 +566,137 @@
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 2.42,
       "lastValue": 2.45,
-      "changePct": -0.013,
+      "changePct": -0.012244897959183773,
       "changeAbs": -0.03000000000000025,
       "direction": "down",
       "asOf": "2026-10-13T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "OpenAI",
-          "thisValue": 5.861,
-          "lastValue": 5.87863590772317,
-          "changePct": -0.003,
-          "direction": "down"
-        },
-        {
-          "label": "Anthropic",
-          "thisValue": 5.025,
-          "lastValue": 5.025,
-          "changePct": 0,
-          "direction": "flat"
+          "label": "DeepSeek",
+          "thisValue": 0.249,
+          "lastValue": 0.3208762886597938,
+          "changePct": -0.224,
+          "direction": "down",
+          "bigMove": true
         },
         {
           "label": "Google",
           "thisValue": 0.512,
           "lastValue": 0.5156092648539778,
           "changePct": -0.007,
-          "direction": "down"
+          "direction": "down",
+          "bigMove": false
         },
         {
-          "label": "DeepSeek",
-          "thisValue": 0.249,
-          "lastValue": 0.3208762886597938,
-          "changePct": -0.224,
-          "direction": "down"
+          "label": "OpenAI",
+          "thisValue": 5.861,
+          "lastValue": 5.87863590772317,
+          "changePct": -0.003,
+          "direction": "down",
+          "bigMove": false
+        },
+        {
+          "label": "Anthropic",
+          "thisValue": 5.025,
+          "lastValue": 5.025,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false
         }
       ],
-      "trend": [
-        {
-          "period": "Q2 '26",
-          "value": 2.39
-        },
-        {
-          "period": "Q3 '26",
-          "value": 2.45
-        },
-        {
-          "period": "Q4 '26",
-          "value": 2.42
-        }
-      ],
+      "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: DeepSeek -22.4%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +7.01pp). Equal-weighted basket, QTD.",
-      "status": "ok"
+      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": false,
+          "unavailableReason": "No weekly model-price series.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": false,
+          "unavailableReason": "Frontier model list prices don’t change within a month — they reset on a quarterly cadence. See the Quarter view for the real moves.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q4 '26 (QTD)",
+          "lastPeriodLabel": "Q3 '26",
+          "thisValue": 2.42,
+          "lastValue": 2.45,
+          "changePct": -0.012244897959183773,
+          "changeAbs": -0.03000000000000025,
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "DeepSeek",
+              "thisValue": 0.249,
+              "lastValue": 0.3208762886597938,
+              "changePct": -0.224,
+              "direction": "down",
+              "bigMove": true
+            },
+            {
+              "label": "Google",
+              "thisValue": 0.512,
+              "lastValue": 0.5156092648539778,
+              "changePct": -0.007,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 5.861,
+              "lastValue": 5.87863590772317,
+              "changePct": -0.003,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 5.025,
+              "lastValue": 5.025,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false
+            }
+          ],
+          "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: DeepSeek -22.4%. List prices are otherwise flat month-to-month."
+        }
+      ],
+      "breakdownNoun": "provider",
+      "changeNoun": "Price change",
+      "insights": [
+        {
+          "title": "Biggest price cut — DeepSeek",
+          "body": "-22.4% input · share +7.00pp"
+        }
+      ]
     },
     {
       "systemId": "schneider-electric",
@@ -2626,7 +2703,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T12:44:42.027Z",
+      "asOf": "2026-10-15T12:53:24.713Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2758,7 +2835,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T12:44:42.148Z",
+          "asOf": "2026-10-15T12:53:25.084Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2781,7 +2858,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T12:44:42.841Z",
+          "asOf": "2026-10-15T12:53:25.979Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2804,7 +2881,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T12:44:42.895Z",
+          "asOf": "2026-10-15T12:53:26.018Z",
           "isStale": false,
           "breakdown": [
             {
@@ -2956,65 +3033,218 @@
       "sector": "technology",
       "metricLabel": "GPU $/hour",
       "unit": "$/GPU-hr",
-      "comparison": "QoQ",
-      "thisPeriodLabel": "Q4 '26 (QTD)",
-      "lastPeriodLabel": "Q3 '26",
-      "thisValue": 3.5082,
-      "lastValue": 3.3819,
-      "changePct": 0.03734587066441943,
-      "changeAbs": 0.12630000000000008,
+      "comparison": "MoM",
+      "thisPeriodLabel": "Oct-26 (MTD)",
+      "lastPeriodLabel": "Sep-26",
+      "thisValue": 3.466,
+      "lastValue": 3.3492,
+      "changePct": 0.03487399976113699,
+      "changeAbs": 0.11680000000000001,
       "direction": "up",
       "asOf": "2026-10-15",
       "isStale": false,
       "breakdown": [
         {
-          "label": "GB200",
-          "thisValue": 16,
-          "lastValue": 16,
-          "changePct": 0,
-          "direction": "flat"
-        },
-        {
-          "label": "B200",
-          "thisValue": 7.97,
-          "lastValue": 6.79,
-          "changePct": 0.17378497790868921,
-          "direction": "up"
+          "label": "H100",
+          "thisValue": 3.466,
+          "lastValue": 3.3492,
+          "changePct": 0.03487399976113699,
+          "direction": "up",
+          "bigMove": true
         },
         {
           "label": "H200",
-          "thisValue": 4.725,
-          "lastValue": 4.5,
-          "changePct": 0.04999999999999992,
-          "direction": "up"
+          "thisValue": 4.6201,
+          "lastValue": 4.4299,
+          "changePct": 0.042935506444840725,
+          "direction": "up",
+          "bigMove": true
         },
         {
-          "label": "H100",
-          "thisValue": 3.5082,
-          "lastValue": 3.3819,
-          "changePct": 0.03734587066441943,
-          "direction": "up"
+          "label": "B200",
+          "thisValue": 7.1047,
+          "lastValue": 6.3742,
+          "changePct": 0.11460261679897088,
+          "direction": "up",
+          "bigMove": true
+        },
+        {
+          "label": "GB200",
+          "thisValue": 16,
+          "lastValue": 16.554,
+          "changePct": -0.033466231726470855,
+          "direction": "down",
+          "bigMove": true
         },
         {
           "label": "A100",
-          "thisValue": 1.8156,
-          "lastValue": 1.76,
-          "changePct": 0.03159090909090914,
-          "direction": "up"
+          "thisValue": 1.8173,
+          "lastValue": 1.7444,
+          "changePct": 0.0417908736528319,
+          "direction": "up",
+          "bigMove": true
         },
         {
           "label": "L40S",
-          "thisValue": 1.5865,
-          "lastValue": 1.535,
-          "changePct": 0.0335504885993486,
-          "direction": "up"
+          "thisValue": 1.5487,
+          "lastValue": 1.5035,
+          "changePct": 0.030063185899567614,
+          "direction": "up",
+          "bigMove": true
         }
       ],
+      "summary": "Month-on-month H100 rental up 3.5% to $3.47/hr; B200 the standout at +11.5%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Street GPU rental rates. Headline = Nvidia H100; breakdown covers 6 SKUs.",
-      "status": "ok"
+      "notes": "Street GPU rental rates ($/GPU-hour), provider-median across clouds (getdeploying). Headline = Nvidia H100 (the benchmark); breakdown covers all tracked GPUs. Monthly/quarterly only — no weekly series.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": false,
+          "unavailableReason": "GPU rental is tracked monthly here — no weekly series.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "Oct-26 (MTD)",
+          "lastPeriodLabel": "Sep-26",
+          "thisValue": 3.466,
+          "lastValue": 3.3492,
+          "changePct": 0.03487399976113699,
+          "changeAbs": 0.11680000000000001,
+          "direction": "up",
+          "bigMove": true,
+          "breakdown": [
+            {
+              "label": "H100",
+              "thisValue": 3.466,
+              "lastValue": 3.3492,
+              "changePct": 0.03487399976113699,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "H200",
+              "thisValue": 4.6201,
+              "lastValue": 4.4299,
+              "changePct": 0.042935506444840725,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "B200",
+              "thisValue": 7.1047,
+              "lastValue": 6.3742,
+              "changePct": 0.11460261679897088,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "GB200",
+              "thisValue": 16,
+              "lastValue": 16.554,
+              "changePct": -0.033466231726470855,
+              "direction": "down",
+              "bigMove": true
+            },
+            {
+              "label": "A100",
+              "thisValue": 1.8173,
+              "lastValue": 1.7444,
+              "changePct": 0.0417908736528319,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "L40S",
+              "thisValue": 1.5487,
+              "lastValue": 1.5035,
+              "changePct": 0.030063185899567614,
+              "direction": "up",
+              "bigMove": true
+            }
+          ],
+          "summary": "Month-on-month H100 rental up 3.5% to $3.47/hr; B200 the standout at +11.5%."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q4 '26 (QTD)",
+          "lastPeriodLabel": "Q3 '26",
+          "thisValue": 3.466,
+          "lastValue": 3.3073,
+          "changePct": 0.04798476098327943,
+          "changeAbs": 0.15870000000000006,
+          "direction": "up",
+          "bigMove": true,
+          "breakdown": [
+            {
+              "label": "H100",
+              "thisValue": 3.466,
+              "lastValue": 3.3073,
+              "changePct": 0.04798476098327943,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "H200",
+              "thisValue": 4.6201,
+              "lastValue": 4.3361,
+              "changePct": 0.06549664445008183,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "B200",
+              "thisValue": 7.1047,
+              "lastValue": 6.3989,
+              "changePct": 0.1103002078482239,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "GB200",
+              "thisValue": 16,
+              "lastValue": 16.9936,
+              "changePct": -0.05846907070897283,
+              "direction": "down",
+              "bigMove": true
+            },
+            {
+              "label": "A100",
+              "thisValue": 1.8173,
+              "lastValue": 1.7896,
+              "changePct": 0.015478319177469732,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "L40S",
+              "thisValue": 1.5487,
+              "lastValue": 1.5182,
+              "changePct": 0.020089579765511772,
+              "direction": "up",
+              "bigMove": true
+            }
+          ],
+          "summary": "Quarter-on-quarter H100 rental up 4.8% to $3.47/hr; B200 the standout at +11.0%."
+        }
+      ],
+      "breakdownNoun": "GPU",
+      "changeNoun": "Price change"
     },
     {
       "systemId": "podcast-themes",
@@ -3105,15 +3335,15 @@
         }
       ],
       "highlights": [
+        "Seagrass restoration is a major early focus with broad ecological impact",
+        "Emanuel's relentless call routine",
+        "Safety vs Speed in AI Development: Airbags Analogy",
+        "Hyperliquid aims to house all of finance on a permissionless blockchain protocol",
         "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
-        "Mixed coding reviews for Gemini 4 Argon",
-        "Skepticism about HomeView's AI capabilities",
-        "Match Group CEO on matchmaking algorithms",
-        "AI agents to grow in retail trading",
-        "Polarizing responses to Meta's Muse Wonder"
+        "Mixed coding reviews for Gemini 4 Argon"
       ],
-      "tone": "Tone across 38 episodes — 13 positive, 11 mixed, 7 neutral, 2 cautious",
-      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms. Sentiment ran 13 positive, 11 mixed, 7 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities.",
+      "tone": "Tone across 38 episodes — 15 positive, 12 mixed, 8 neutral, 2 cautious",
+      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy; Hyperliquid aims to house all of finance on a permissionless blockchain protocol. Sentiment ran 15 positive, 12 mixed, 8 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",

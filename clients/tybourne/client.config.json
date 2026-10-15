@@ -41,7 +41,7 @@
       "source": { "series": "https://raw.githubusercontent.com/ceekay-munshot/texas-instruments-dashboard/main/webapp/src/data/historicalSeries.json" },
       "sourceName": "Mouser / UBS index", "dashboardUrl": "https://texas-instruments-dashboard-final.pages.dev/" },
     { "id": "gpu-cloud-pricing", "name": "GPU Cloud Pricing", "sector": "technology", "metricLabel": "GPU $/hour", "connector": "gpuCloudPricing",
-      "source": { "history": "https://ai-compute-pricing.pages.dev/api/gpu-hardware-pricing-history?view=quarter" },
+      "source": { "history": "https://ai-compute-pricing.pages.dev/api/gpu-hardware-pricing-history?view=financial" },
       "sourceName": "getdeploying.com", "dashboardUrl": "https://ai-compute-pricing.pages.dev/" },
     { "id": "podcast-themes", "name": "Podcast Themes", "sector": "macro", "metricLabel": "Episodes analysed", "connector": "podcast",
       "source": { "episodes": "https://podcast-afg.pages.dev/api/episodes" },
