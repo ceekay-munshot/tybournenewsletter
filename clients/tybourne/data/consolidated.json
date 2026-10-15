@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T21:28:45.077Z",
+  "generatedAt": "2026-10-15T03:27:43.129Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -262,12 +262,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.44,
+      "thisValue": 2.42,
       "lastValue": 2.45,
-      "changePct": -0.007,
-      "changeAbs": -0.010000000000000231,
+      "changePct": -0.013,
+      "changeAbs": -0.03000000000000025,
       "direction": "down",
-      "asOf": "2026-10-12T00:00:00.000Z",
+      "asOf": "2026-10-13T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -310,13 +310,13 @@
         },
         {
           "period": "Q4 '26",
-          "value": 2.44
+          "value": 2.42
         }
       ],
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.89pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.82pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -1122,7 +1122,7 @@
       "changePct": 1.9995930083585198,
       "changeAbs": 842481480356173,
       "direction": "up",
-      "asOf": "2026-10-14T21:28:29.386Z",
+      "asOf": "2026-10-15T03:27:35.088Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1254,7 +1254,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-14T21:28:29.481Z",
+          "asOf": "2026-10-15T03:27:35.143Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1277,7 +1277,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-14T21:28:41.636Z",
+          "asOf": "2026-10-15T03:27:35.919Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +1300,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-14T21:28:41.691Z",
+          "asOf": "2026-10-15T03:27:35.940Z",
           "isStale": false,
           "breakdown": [
             {
@@ -1521,17 +1521,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 35,
+      "thisValue": 34,
       "lastValue": null,
       "changePct": null,
       "changeAbs": null,
       "direction": "flat",
-      "asOf": "2026-10-14T19:56:06.000Z",
+      "asOf": "2026-10-15T01:54:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 11,
+          "thisValue": 9,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "All-In",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -1560,13 +1567,6 @@
         {
           "label": "Odd Lots",
           "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "All-In",
-          "thisValue": 3,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -1601,11 +1601,11 @@
         "Polarizing responses to Meta's Muse Wonder",
         "SpaceX's spectrum move clarifies mobile ambitions"
       ],
-      "tone": "Tone across 35 episodes — 13 positive, 11 mixed, 7 neutral, 3 cautious",
+      "tone": "Tone across 34 episodes — 13 positive, 11 mixed, 5 neutral, 4 cautious",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "35 investor-podcast episodes analysed this quarter across 9 shows. Themes feed the newsletter narrative; this is a qualitative read, not a quantitative mover.",
+      "notes": "34 investor-podcast episodes analysed this quarter across 9 shows. Themes feed the newsletter narrative; this is a qualitative read, not a quantitative mover.",
       "status": "ok"
     }
   ]
