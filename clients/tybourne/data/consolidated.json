@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:50:49.803Z",
+  "generatedAt": "2026-10-15T13:56:35.544Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3281,117 +3281,240 @@
       "lastPeriodLabel": "1Q '26",
       "thisValue": 15.49,
       "lastValue": 15.68,
-      "changePct": -0.012117346938775479,
+      "changePct": null,
       "changeAbs": -0.19,
       "direction": "down",
       "changeDisplay": "pp",
-      "asOf": "2Q26",
+      "asOf": "2026-08-24",
       "isStale": false,
       "breakdown": [
         {
           "label": "Itaú",
           "thisValue": 20.23,
           "lastValue": 20.43,
-          "changePct": -0.009789525208027377,
-          "direction": "down"
+          "changePct": null,
+          "changeAbs": -0.2,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false
         },
         {
           "label": "Nu",
           "thisValue": 15.49,
           "lastValue": 15.68,
-          "changePct": -0.012117346938775479,
-          "direction": "down"
+          "changePct": null,
+          "changeAbs": -0.19,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "note": "Nubank"
         },
         {
           "label": "Bradesco",
           "thisValue": 10.71,
           "lastValue": 10.64,
-          "changePct": 0.006578947368421079,
-          "direction": "up"
+          "changePct": null,
+          "changeAbs": 0.07,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "BB",
           "thisValue": 9.35,
           "lastValue": 9.87,
-          "changePct": -0.0526849037487335,
-          "direction": "down"
+          "changePct": null,
+          "changeAbs": -0.52,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": true
         },
         {
           "label": "Santander",
           "thisValue": 8.73,
           "lastValue": 8.58,
-          "changePct": 0.017482517482517525,
-          "direction": "up"
+          "changePct": null,
+          "changeAbs": 0.15,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Caixa",
           "thisValue": 3.09,
           "lastValue": 3.04,
-          "changePct": 0.01644736842105257,
-          "direction": "up"
+          "changePct": null,
+          "changeAbs": 0.05,
+          "changeDisplay": "pp",
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Inter",
           "thisValue": 2.02,
           "lastValue": 1.99,
-          "changePct": 0.015075376884422124,
-          "direction": "up"
-        }
-      ],
-      "secondaryMetrics": [
-        {
-          "systemId": "nubank",
-          "name": "Nubank",
-          "sector": "financial",
-          "metricLabel": "Nu 90+ day NPL",
-          "unit": "% NPL",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "2Q '26",
-          "lastPeriodLabel": "1Q '26",
-          "thisValue": 6.9,
-          "lastValue": 6.5,
-          "changePct": 0.06153846153846159,
-          "changeAbs": 0.4,
+          "changePct": null,
+          "changeAbs": 0.03,
+          "changeDisplay": "pp",
           "direction": "up",
-          "changeDisplay": "pp",
-          "asOf": "2Q26",
-          "isStale": false,
-          "breakdown": [],
-          "sourceName": "BCB / IF.data / issuer filings",
-          "sourceUrl": "",
-          "dashboardUrl": null,
-          "notes": "Asset quality: share of the book 90+ days overdue (higher = worse).",
-          "status": "ok"
-        },
-        {
-          "systemId": "nubank",
-          "name": "Nubank",
-          "sector": "financial",
-          "metricLabel": "Nu unsecured-loan share",
-          "unit": "% share",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "2Q '26",
-          "lastPeriodLabel": "1Q '26",
-          "thisValue": 15.07,
-          "lastValue": 15.26,
-          "changePct": -0.012450851900393153,
-          "changeAbs": -0.19,
-          "direction": "down",
-          "changeDisplay": "pp",
-          "asOf": "2Q26",
-          "isStale": false,
-          "breakdown": [],
-          "sourceName": "BCB / IF.data / issuer filings",
-          "sourceUrl": "",
-          "dashboardUrl": null,
-          "status": "ok"
+          "bigMove": false
         }
       ],
+      "summary": "Nu holds 15.49% of the Brazilian credit-card market (2Q '26), down -0.19pp on 1Q '26 — after climbing from ~13% a year ago. 4 of 7 issuers gained share this quarter.",
       "sourceName": "BCB / IF.data / issuer filings",
       "sourceUrl": "",
       "dashboardUrl": null,
-      "notes": "Brazil credit-card market share (%); change shown in percentage points. Nu vs incumbent banks, from BCB IF.data + issuer filings.",
-      "status": "ok"
+      "notes": "Brazil credit-card market share (%), change in percentage points, from the client Nu_Brazil workbook + BCB IF.data. Quarterly — card share, TPV share and peer NPL are QoQ; the system-wide macro NPL is monthly (shown MoM). Updates when the client sends a fresh workbook.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": false,
+          "unavailableReason": "Nu and the Brazilian banks report card share quarterly — the monthly macro NPL is in “Why it moved”.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "changeDisplay": "pp",
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": false,
+          "unavailableReason": "Nu and the Brazilian banks report card share quarterly — the monthly macro NPL is in “Why it moved”.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "changeDisplay": "pp",
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "2Q '26",
+          "lastPeriodLabel": "1Q '26",
+          "thisValue": 15.49,
+          "lastValue": 15.68,
+          "changePct": null,
+          "changeAbs": -0.19,
+          "changeDisplay": "pp",
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Itaú",
+              "thisValue": 20.23,
+              "lastValue": 20.43,
+              "changePct": null,
+              "changeAbs": -0.2,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Nu",
+              "thisValue": 15.49,
+              "lastValue": 15.68,
+              "changePct": null,
+              "changeAbs": -0.19,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": false,
+              "note": "Nubank"
+            },
+            {
+              "label": "Bradesco",
+              "thisValue": 10.71,
+              "lastValue": 10.64,
+              "changePct": null,
+              "changeAbs": 0.07,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "BB",
+              "thisValue": 9.35,
+              "lastValue": 9.87,
+              "changePct": null,
+              "changeAbs": -0.52,
+              "changeDisplay": "pp",
+              "direction": "down",
+              "bigMove": true
+            },
+            {
+              "label": "Santander",
+              "thisValue": 8.73,
+              "lastValue": 8.58,
+              "changePct": null,
+              "changeAbs": 0.15,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Caixa",
+              "thisValue": 3.09,
+              "lastValue": 3.04,
+              "changePct": null,
+              "changeAbs": 0.05,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Inter",
+              "thisValue": 2.02,
+              "lastValue": 1.99,
+              "changePct": null,
+              "changeAbs": 0.03,
+              "changeDisplay": "pp",
+              "direction": "up",
+              "bigMove": false
+            }
+          ],
+          "summary": "Nu holds 15.49% of the Brazilian credit-card market (2Q '26), down -0.19pp on 1Q '26 — after climbing from ~13% a year ago. 4 of 7 issuers gained share this quarter."
+        }
+      ],
+      "breakdownNoun": "issuer",
+      "changeNoun": "Share change",
+      "insights": [
+        {
+          "title": "Card TPV share — Nu at 23.6% of payment volume",
+          "body": "Nu processes 23.6% of Brazilian card payment volume (1Q '26, +0.07pp QoQ) — about 8.1pp above its 15.49% share of card balances. Customers spend heavily on the card even where they carry less revolving balance.",
+          "bullets": [
+            "TPV share trend: 1Q '25 21.89% → 2Q '25 22.22% → 3Q '25 22.68% → 4Q '25 23.53% → 1Q '26 23.6%"
+          ]
+        },
+        {
+          "title": "Brazil macro credit NPL — Aug 2026 (BCB, monthly)",
+          "body": "System-wide 90-day arrears, month-on-month. Credit-card NPL is 9.96% (+0.45pp vs Jul 2026) and rising — the macro backdrop for Nu's own loss rates.",
+          "bullets": [
+            "Credit card loans: 9.96% (+0.45pp MoM)",
+            "Personal loans: 10.95% (+0.30pp MoM)",
+            "Payroll loans: 3.76% (+0.17pp MoM)",
+            "All household loans: 6.03% (+0.23pp MoM)"
+          ],
+          "asOf": "Aug 2026"
+        },
+        {
+          "title": "Nu asset quality — 90+ NPL at 6.9%",
+          "body": "Nu's non-performing-loan ratio is 6.9% (2Q '26, +0.40pp QoQ) — structurally higher than the incumbents because Nu lends to a broader, newer-to-credit base. Worth watching as system NPL rises.",
+          "bullets": [
+            "Peers (90+ NPL): Itaú 1.9%, Santander Brasil 3.3%, Bradesco 4.3%, Inter 5%"
+          ]
+        }
+      ]
     },
     {
       "systemId": "sap-ai",
@@ -4429,7 +4552,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-15T13:50:32.052Z",
+      "asOf": "2026-10-15T13:56:19.116Z",
       "isStale": false,
       "breakdown": [
         {
@@ -4835,7 +4958,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-15T13:50:32.135Z"
+          "asOf": "2026-10-15T13:56:19.210Z"
         }
       ]
     },
