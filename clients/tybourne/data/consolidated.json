@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T16:25:18.576Z",
+  "generatedAt": "2026-10-15T20:59:34.206Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -316,7 +316,7 @@
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +7.00pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +7.02pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -828,7 +828,7 @@
       "changePct": -0.02362128706993503,
       "changeAbs": -60679,
       "direction": "down",
-      "asOf": "2026-10-13",
+      "asOf": "2026-10-14",
       "isStale": false,
       "breakdown": [
         {
@@ -924,7 +924,7 @@
           "changeAbs": -1,
           "direction": "down",
           "changeDisplay": "pp",
-          "asOf": "2026-10-13",
+          "asOf": "2026-10-14",
           "isStale": false,
           "breakdown": [],
           "sourceName": "TSA.gov + IATA",
@@ -1122,7 +1122,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T16:25:07.675Z",
+      "asOf": "2026-10-15T20:59:24.294Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1254,7 +1254,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T16:25:07.846Z",
+          "asOf": "2026-10-15T20:59:24.395Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1277,7 +1277,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T16:25:09.167Z",
+          "asOf": "2026-10-15T20:59:25.040Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +1300,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T16:25:09.257Z",
+          "asOf": "2026-10-15T20:59:25.105Z",
           "isStale": false,
           "breakdown": [
             {
