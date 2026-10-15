@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T19:00:52.864Z",
+  "generatedAt": "2026-10-14T21:28:45.077Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -262,11 +262,11 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.46,
+      "thisValue": 2.44,
       "lastValue": 2.45,
-      "changePct": 0.005,
-      "changeAbs": 0.009999999999999787,
-      "direction": "up",
+      "changePct": -0.007,
+      "changeAbs": -0.010000000000000231,
+      "direction": "down",
       "asOf": "2026-10-12T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
@@ -310,13 +310,13 @@
         },
         {
           "period": "Q4 '26",
-          "value": 2.46
+          "value": 2.44
         }
       ],
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.92pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.89pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -374,9 +374,9 @@
       "thisPeriodLabel": "Q2 '26",
       "lastPeriodLabel": "Q1 '26",
       "thisValue": 714,
-      "lastValue": 119,
-      "changePct": 5,
-      "changeAbs": 595,
+      "lastValue": 118,
+      "changePct": 5.0508474576271185,
+      "changeAbs": 596,
       "direction": "up",
       "asOf": "2026-06-30",
       "isStale": false,
@@ -452,13 +452,6 @@
           "direction": "down"
         },
         {
-          "label": "PERSHING SQUARE HOLDCO, L.P.",
-          "thisValue": 0,
-          "lastValue": 0,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
           "label": "WINDACRE PARTNERSHIP LLC",
           "thisValue": 0,
           "lastValue": 0,
@@ -471,13 +464,6 @@
           "lastValue": 0,
           "changePct": null,
           "direction": "flat"
-        },
-        {
-          "label": "Cantillon Capital Management LLC",
-          "thisValue": 0,
-          "lastValue": 1,
-          "changePct": -1,
-          "direction": "down"
         }
       ],
       "secondaryMetrics": [
@@ -490,10 +476,10 @@
           "comparison": "QoQ",
           "thisPeriodLabel": "Q2 '26",
           "lastPeriodLabel": "Q1 '26",
-          "thisValue": 213,
+          "thisValue": 202,
           "lastValue": 163,
-          "changePct": 0.3067484662576687,
-          "changeAbs": 50,
+          "changePct": 0.2392638036809816,
+          "changeAbs": 39,
           "direction": "up",
           "asOf": "2026-06-30",
           "isStale": false,
@@ -511,13 +497,6 @@
               "lastValue": 7,
               "changePct": 1.1428571428571428,
               "direction": "up"
-            },
-            {
-              "label": "Cantillon Capital Management LLC",
-              "thisValue": 11,
-              "lastValue": 0,
-              "changePct": null,
-              "direction": "flat"
             },
             {
               "label": "Aspex Management (HK) Ltd",
@@ -576,13 +555,6 @@
               "direction": "down"
             },
             {
-              "label": "PERSHING SQUARE HOLDCO, L.P.",
-              "thisValue": 0,
-              "lastValue": 0,
-              "changePct": null,
-              "direction": "flat"
-            },
-            {
               "label": "WINDACRE PARTNERSHIP LLC",
               "thisValue": 0,
               "lastValue": 2,
@@ -611,10 +583,10 @@
           "comparison": "QoQ",
           "thisPeriodLabel": "Q2 '26",
           "lastPeriodLabel": "Q1 '26",
-          "thisValue": 865375537793,
-          "lastValue": 742361662143,
-          "changePct": 0.16570612670769092,
-          "changeAbs": 123013875650,
+          "thisValue": 845244731931,
+          "lastValue": 726741343177,
+          "changePct": 0.16306130078681674,
+          "changeAbs": 118503388754,
           "direction": "up",
           "asOf": "2026-06-30",
           "isStale": false,
@@ -628,7 +600,7 @@
       "sourceName": "SEC EDGAR 13F filings",
       "sourceUrl": "https://13f-eo2.pages.dev/",
       "dashboardUrl": "https://13f-eo2.pages.dev/",
-      "notes": "New long positions across 14 watchlist funds. Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.",
+      "notes": "New long positions across 12 funds with comparable filings (clean prior-quarter deltas). Next quarter's 13Fs are due mid-Nov, so this is the latest fully-filed quarter.",
       "status": "ok"
     },
     {
@@ -645,6 +617,7 @@
       "changePct": -0.012117346938775479,
       "changeAbs": -0.19,
       "direction": "down",
+      "changeDisplay": "pp",
       "asOf": "2Q26",
       "isStale": false,
       "breakdown": [
@@ -713,6 +686,7 @@
           "changePct": 0.06153846153846159,
           "changeAbs": 0.4,
           "direction": "up",
+          "changeDisplay": "pp",
           "asOf": "2Q26",
           "isStale": false,
           "breakdown": [],
@@ -736,6 +710,7 @@
           "changePct": -0.012450851900393153,
           "changeAbs": -0.19,
           "direction": "down",
+          "changeDisplay": "pp",
           "asOf": "2Q26",
           "isStale": false,
           "breakdown": [],
@@ -762,9 +737,10 @@
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 2.6,
       "lastValue": 3.4,
-      "changePct": -0.23529411764705876,
+      "changePct": null,
       "changeAbs": -0.8,
       "direction": "down",
+      "changeDisplay": "pts",
       "asOf": "2026-10-14T11:15:57.092Z",
       "isStale": false,
       "breakdown": [
@@ -835,7 +811,7 @@
       "sourceName": "HN/Reddit/StackExchange + SAP docs",
       "sourceUrl": "",
       "dashboardUrl": null,
-      "notes": "Practitioner sentiment (1-5) from HN / Reddit / StackExchange + SAP docs; daily index compared across ~91 days.",
+      "notes": "Practitioner sentiment on a 1-5 scale from HN / Reddit / StackExchange + SAP docs; daily index compared across ~91 days. Change shown as a point delta, not a percentage.",
       "status": "ok"
     },
     {
@@ -947,6 +923,7 @@
           "changePct": null,
           "changeAbs": -1,
           "direction": "down",
+          "changeDisplay": "pp",
           "asOf": "2026-10-13",
           "isStale": false,
           "breakdown": [],
@@ -1145,7 +1122,7 @@
       "changePct": 1.9995930083585198,
       "changeAbs": 842481480356173,
       "direction": "up",
-      "asOf": "2026-10-14T19:00:48.093Z",
+      "asOf": "2026-10-14T21:28:29.386Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1277,7 +1254,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-14T19:00:48.222Z",
+          "asOf": "2026-10-14T21:28:29.481Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +1277,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-14T19:00:48.828Z",
+          "asOf": "2026-10-14T21:28:41.636Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1323,7 +1300,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-14T19:00:48.900Z",
+          "asOf": "2026-10-14T21:28:41.691Z",
           "isStale": false,
           "breakdown": [
             {
@@ -1539,25 +1516,32 @@
       "systemId": "podcast-themes",
       "name": "Podcast Themes",
       "sector": "macro",
-      "metricLabel": "Episodes analysed",
+      "metricLabel": "Quarter themes",
       "unit": "episodes",
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 35,
-      "lastValue": 8,
-      "changePct": 3.375,
-      "changeAbs": 27,
-      "direction": "up",
-      "asOf": "2026-10-14T10:00:00.000Z",
+      "lastValue": null,
+      "changePct": null,
+      "changeAbs": null,
+      "direction": "flat",
+      "asOf": "2026-10-14T19:56:06.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 11,
-          "lastValue": 1,
-          "changePct": 10,
-          "direction": "up"
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "AI Daily",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
         },
         {
           "label": "In Good Company",
@@ -1574,13 +1558,6 @@
           "direction": "flat"
         },
         {
-          "label": "AI Daily",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
           "label": "Odd Lots",
           "thisValue": 4,
           "lastValue": null,
@@ -1590,22 +1567,22 @@
         {
           "label": "All-In",
           "thisValue": 3,
-          "lastValue": 1,
-          "changePct": 2,
-          "direction": "up"
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
         },
         {
           "label": "Invest Like the Best",
           "thisValue": 2,
-          "lastValue": 2,
-          "changePct": 0,
+          "lastValue": null,
+          "changePct": null,
           "direction": "flat"
         },
         {
           "label": "Lenny's",
           "thisValue": 2,
-          "lastValue": 2,
-          "changePct": 0,
+          "lastValue": null,
+          "changePct": null,
           "direction": "flat"
         },
         {
@@ -1616,10 +1593,19 @@
           "direction": "flat"
         }
       ],
+      "highlights": [
+        "Mixed coding reviews for Gemini 4 Argon",
+        "Skepticism about HomeView's AI capabilities",
+        "Match Group CEO on matchmaking algorithms",
+        "AI agents to grow in retail trading",
+        "Polarizing responses to Meta's Muse Wonder",
+        "SpaceX's spectrum move clarifies mobile ambitions"
+      ],
+      "tone": "Tone across 35 episodes — 13 positive, 11 mixed, 7 neutral, 3 cautious",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "Episodes analysed across 9 investor shows, bucketed by publish date (latest quarter is quarter-to-date). Thematic analysis feeds the newsletter (next phase).",
+      "notes": "35 investor-podcast episodes analysed this quarter across 9 shows. Themes feed the newsletter narrative; this is a qualitative read, not a quantitative mover.",
       "status": "ok"
     }
   ]

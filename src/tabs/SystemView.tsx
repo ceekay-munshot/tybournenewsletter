@@ -10,7 +10,8 @@ import { LineArea } from '../components/charts/LineArea';
 import { Table, type Column } from '../components/ui/Table';
 import { iconFor } from '../lib/icons';
 import { sectorColor, directionColor, seriesColor, DIRECTION_COLOR } from '../lib/brand';
-import { signedPct, fmtValue, signedValue, fmtCompact, dateLabel, axisPct } from '../lib/format';
+import { signedPct, fmtValue, signedValue, fmtCompact, dateLabel, axisPct, headlineText } from '../lib/format';
+import { Quote } from 'lucide-react';
 import type { BreakdownRow } from '../types';
 
 type Mode = 'pct' | 'abs';
@@ -24,7 +25,7 @@ export function SystemView({
   onBack: () => void;
   backLabel?: string;
 }) {
-  const [mode, setMode] = useState<Mode>('pct');
+  const [mode, setMode] = useState<Mode>(() => (block.breakdown.some((r) => r.changePct != null) ? 'pct' : 'abs'));
   const Icon = iconFor(block.systemId, block.sector);
   const accent = sectorColor(block.sector);
   const dir = directionColor(block.direction);
@@ -165,16 +166,35 @@ export function SystemView({
 
           <div className="text-right">
             <div className="tnum font-display text-[34px] font-bold leading-none" style={{ color: dir }}>
-              {signedPct(block.changePct)}
+              {headlineText(block.changePct, block.changeAbs, block.changeDisplay)}
             </div>
-            <div className="tnum mt-1.5 text-[13px] text-slate-500">
-              {fmtValue(block.lastValue, block.unit)} <span className="text-slate-300">→</span>{' '}
-              <span className="font-semibold text-slate-700">{fmtValue(block.thisValue, block.unit)}</span>
-            </div>
-            <div className="tnum mt-0.5 text-[11.5px] text-slate-400">{signedValue(block.changeAbs, block.unit)} absolute</div>
+            {block.lastValue != null && (
+              <div className="tnum mt-1.5 text-[13px] text-slate-500">
+                {fmtValue(block.lastValue, block.unit)} <span className="text-slate-300">→</span>{' '}
+                <span className="font-semibold text-slate-700">{fmtValue(block.thisValue, block.unit)}</span>
+              </div>
+            )}
+            {(!block.changeDisplay || block.changeDisplay === 'pct') && block.changeAbs != null && (
+              <div className="tnum mt-0.5 text-[11.5px] text-slate-400">{signedValue(block.changeAbs, block.unit)} absolute</div>
+            )}
           </div>
         </div>
       </Card>
+
+      {/* narrative themes (e.g. podcast) */}
+      {block.highlights && block.highlights.length > 0 && (
+        <Card className="mb-4" accent={accent}>
+          <CardHeader icon={Quote} accent={accent} title="Recurring themes this quarter" subtitle={block.tone} />
+          <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {block.highlights.map((h, i) => (
+              <li key={i} className="flex gap-2 text-[13px] leading-snug text-slate-700">
+                <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: accent }} />
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      )}
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
         {/* breakdown chart */}
@@ -281,7 +301,10 @@ export function SystemView({
 function SecondaryCard({ metric, accent }: { metric: ChangeBlock; accent: string }) {
   const dir = directionColor(metric.direction);
   const bd = (metric.breakdown || []).filter((r) => r.changePct != null);
-  const big = metric.changePct != null ? signedPct(metric.changePct) : fmtValue(metric.thisValue, metric.unit);
+  const big =
+    metric.changePct != null || (metric.changeDisplay && metric.changeAbs != null)
+      ? headlineText(metric.changePct, metric.changeAbs, metric.changeDisplay)
+      : fmtValue(metric.thisValue, metric.unit);
   return (
     <Card accent={accent}>
       <div className="flex items-start justify-between gap-3">

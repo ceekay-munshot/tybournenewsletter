@@ -59,11 +59,12 @@ export async function connect(system) {
     lastPeriodLabel: qLabel(new Date(`${prior.date}T00:00:00Z`)),
     thisValue: thisScore,
     lastValue: priorScore,
-    changePct: pctChange(thisScore, priorScore),
+    changePct: null,
     changeAbs,
+    changeDisplay: 'pts',
     direction: directionOf(changeAbs),
     asOf: d.updatedAt || last.date,
     breakdown,
-    notes: 'Practitioner sentiment (1-5) from HN / Reddit / StackExchange + SAP docs; daily index compared across ~91 days.',
+    notes: 'Practitioner sentiment on a 1-5 scale from HN / Reddit / StackExchange + SAP docs; daily index compared across ~91 days. Change shown as a point delta, not a percentage.',
   });
 }

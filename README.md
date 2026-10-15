@@ -22,9 +22,17 @@ First client: **Tybourne Global Holdings** (published by Munshot).
   table (every headline + secondary metric, sortable), and colour-banded sector sections of
   change cards. Per-sector tabs and a generic per-system drill-down (breakdown chart with a
   % / absolute toggle, trend, detail table, and every secondary metric).
+- **AI newsletter** (`scripts/newsletter.mjs` → `data/newsletter.json`): a quarterly
+  going-into-earnings briefing written by Claude on **Amazon Bedrock**, strictly from the real
+  figures. Optional — with no key it writes an **honest `no-key` state** and the pipeline still
+  succeeds; nothing is fabricated.
+- In-app **Newsletter tab**: an editorial "intelligence edition" built from the real data
+  (masthead, by-the-numbers, movers, per-sector lines, watch list, sources) with the AI prose
+  layered on when available. A prominent **Download PDF** button (header + masthead) prints it
+  via a dedicated `@media print` stylesheet that keeps colour and charts.
 
-The AI-written newsletter and downloadable editorial PDF come next — each new system still
-plugs in with **one config entry + one connector file**; no architectural changes.
+Each new system still plugs in with **one config entry + one connector file**; no architectural
+changes.
 
 ---
 
@@ -34,17 +42,23 @@ plugs in with **one config entry + one connector file**; no architectural change
 clients/<client>/
   client.config.json      # the ONLY client-specific file (sectors + systems + sources)
   data/consolidated.json  # GENERATED + committed (what the UI reads)
+  data/newsletter.json    # GENERATED + committed (AI edition, or honest no-key state)
 scripts/
   consolidate.mjs         # reads config -> runs each connector -> writes consolidated.json
+  newsletter.mjs          # consolidated.json -> Bedrock -> newsletter.json (honest no-key state)
+  render-newsletter-pdf.mjs  # render the Newsletter edition to an A4 PDF (Playwright)
+  send-newsletter-email.mjs  # email the PDF to recipients (skips cleanly if unconfigured)
   connectors/             # one file per connector TYPE
-  lib/                    # http, quarters, changeBlock helpers
+  lib/                    # http, quarters, changeBlock, bedrock helpers
 src/
-  lib/                    # data loader, brand tokens, formatters, chart math, icons
+  lib/                    # data + newsletter loaders, brand tokens, formatters, chart math, icons
   components/ui/          # Card, Tabs, Table, Controls
   components/charts/      # ChartBase, Bars, Columns, LineArea, Sparkline, DivergingBars
-  components/             # Header, Footer, MoversChart, ChangeCard, SectorSection
-  tabs/                   # Overview, SectorTab, SystemView
-.github/workflows/refresh.yml   # re-runs the pipeline every 6h and commits fresh data
+  components/             # Header, Footer, MunshotMark, MoversChart, ChangeCard, SectorSection
+  tabs/                   # Overview, Newsletter, SectorTab, SystemView
+.github/workflows/
+  refresh.yml             # every 6h: consolidate + newsletter, commit fresh data
+  newsletter-email.yml    # quarterly (optional): render PDF + email it; skips if unconfigured
 ```
 
 ## The data contract — `ChangeBlock`
@@ -58,6 +72,7 @@ Every connector returns the same shape (see `src/types.ts`). Key rule: `changePc
 ```bash
 npm install
 npm run consolidate   # run all connectors -> clients/tybourne/data/consolidated.json
+node scripts/newsletter.mjs   # consolidated.json -> AI edition (or honest no-key state)
 npm run dev           # local dev server
 npm run build         # typecheck + production build -> dist/
 npm run preview       # preview the production build
@@ -65,6 +80,45 @@ npm run preview       # preview the production build
 
 The pipeline uses only Node built-ins + global `fetch`, so `npm run consolidate` needs no
 install step (handy for CI). `CLIENT=<id> npm run consolidate` targets another client folder.
+`newsletter.mjs` runs with **no secrets** too — it just writes the honest `no-key` state.
+
+## Secrets & variables
+
+**Everything builds and renders with no secrets at all.** Without them the connectors still run
+(they're keyless) and the newsletter shows the honest `no-key` state. Secrets only *enable* the
+AI writer and the optional quarterly email. Set these in **GitHub → Settings → Secrets and
+variables → Actions**.
+
+### AI newsletter (Amazon Bedrock) — used by `refresh.yml` and `newsletter-email.yml`
+
+| Name | Kind | Required? | What it is |
+| --- | --- | --- | --- |
+| `BEDROCK_API_KEY` | **secret** | to enable AI | Bedrock API key (console-minted), sent as `Authorization: Bearer …`. No AWS SDK / SigV4. |
+| `AWS_REGION` | variable | to enable AI | Region for the Converse endpoint, e.g. `us-east-1`. Defaults to `us-east-1` if unset. |
+| `BEDROCK_MODEL_IDS` | variable | to enable AI | Comma-separated model/inference-profile IDs, tried **in order** (first that works wins). |
+
+Put a **current Claude Sonnet inference profile first**, then older fallbacks, e.g.:
+
+```
+us.anthropic.claude-sonnet-4-5-20250929-v1:0,us.anthropic.claude-3-7-sonnet-20250219-v1:0,us.anthropic.claude-3-5-sonnet-20241022-v2:0
+```
+
+Use the exact IDs enabled in **your** account/region (Bedrock → Model access). The writer falls
+through `400/403/404` to the next ID and retries `429/5xx`; the model that answered is stamped
+into `newsletter.json`. If the key or model list is missing, `newsletter.json` is written with
+`status: "no-key"` — never fabricated.
+
+### Quarterly email (optional) — used by `newsletter-email.yml`
+
+The whole `send` job is **skipped cleanly** (a log line, not a failure) unless both of these are set:
+
+| Name | Kind | Required? | What it is |
+| --- | --- | --- | --- |
+| `EMAIL_TOKEN` | **secret** | to send | Bearer key for the email API (default provider **Resend**, `api.resend.com`). |
+| `NEWSLETTER_RECIPIENTS` | variable | to send | Comma-separated recipient addresses. |
+| `EMAIL_FROM` | variable | optional | `Name <from@domain>` (verified sender). Defaults to a Munshot address. |
+| `EMAIL_API_URL` | variable | optional | Override the email endpoint if not using Resend. |
+| `SITE_URL` | variable | optional | Render the **deployed** route (e.g. `https://tybournenewsletter.pages.dev`) instead of the freshly-built `./dist`. |
 
 ## Deploy (Cloudflare Pages)
 
@@ -87,8 +141,11 @@ new config folder.
 
 ## Branding
 
-The header shows `public/munshot-logo.png` when present and falls back to a built-in
-"Munshot" wordmark otherwise. Drop the real logo at `public/munshot-logo.png` to use it.
+The header **and** the newsletter masthead render `public/munshot-logo.png` when present and
+fall back to a crisp built-in gradient "Munshot" wordmark otherwise (`src/components/MunshotMark.tsx`).
+The automatic fetch of `https://www.muns.io/logo.png` is currently blocked by that host's edge,
+so the branded wordmark fallback is in use — drop the real file at `public/munshot-logo.png` and
+both lockups pick it up automatically, no code change.
 
 ## Systems & sources
 

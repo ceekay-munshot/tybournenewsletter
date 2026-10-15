@@ -1,7 +1,12 @@
 name: Refresh consolidated data
 
-# Re-run the connectors every 6 hours (and on demand) and commit the regenerated
-# data file if anything changed. No secrets — all sources are keyless public GETs.
+# Re-run the connectors every 6 hours (and on demand), regenerate the AI newsletter,
+# and commit the regenerated data files if anything changed.
+#
+# The connectors need no secrets (all sources are keyless public GETs). The AI
+# newsletter writer is OPTIONAL: with the Bedrock key set it writes the editorial
+# edition, and WITHOUT it the pipeline still succeeds and writes the honest
+# "no-key" state — nothing is fabricated. See README "Secrets & variables".
 on:
   schedule:
     - cron: '0 */6 * * *'
@@ -34,6 +39,17 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
+      # Regenerate the AI newsletter from the fresh data. Never blocks the data
+      # commit: no key -> honest no-key state (exit 0); a model error -> honest
+      # error state, still committed. continue-on-error keeps the job green.
+      - name: Generate AI newsletter
+        continue-on-error: true
+        env:
+          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
+        run: node scripts/newsletter.mjs
+
       - name: Commit data if changed
         run: |
           git config user.name "munshot-bot"
@@ -43,7 +59,7 @@ jobs:
             exit 0
           fi
           git add clients/*/data/*.json
-          git commit -m "chore(data): refresh consolidated.json [skip ci]"
+          git commit -m "chore(data): refresh consolidated + newsletter [skip ci]"
           for i in 1 2 3 4; do
             if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
                git push origin "HEAD:${GITHUB_REF_NAME}"; then

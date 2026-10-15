@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { ArrowUpRight, ArrowDownRight, ArrowRight } from 'lucide-react';
 import type { ConsolidatedData, ChangeBlock, Direction, SectorId } from '../types';
 import { Table, type Column } from './ui/Table';
-import { signedPct } from '../lib/format';
+import { headlineText, headlineMagnitude } from '../lib/format';
 import { directionColor, sectorColor } from '../lib/brand';
 
 interface Row {
@@ -13,6 +13,8 @@ interface Row {
   metric: string;
   period: string;
   changePct: number | null;
+  changeAbs: number | null;
+  changeDisplay?: 'pct' | 'pp' | 'pts';
   direction: Direction;
   secondary: boolean;
 }
@@ -25,9 +27,13 @@ const toRow = (b: ChangeBlock, systemId: string, systemName: string, sector: Sec
   metric: b.metricLabel,
   period: `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`,
   changePct: b.changePct,
+  changeAbs: b.changeAbs,
+  changeDisplay: b.changeDisplay,
   direction: b.direction,
   secondary,
 });
+
+const mag = (r: Row) => headlineMagnitude(r.changePct, r.changeAbs, r.changeDisplay);
 
 function flatten(data: ConsolidatedData): Row[] {
   const rows: Row[] = [];
@@ -36,7 +42,7 @@ function flatten(data: ConsolidatedData): Row[] {
     rows.push(toRow(b, b.systemId, b.name, b.sector, false));
     for (const s of b.secondaryMetrics ?? []) rows.push(toRow(s, b.systemId, b.name, b.sector, true));
   }
-  return rows.sort((a, b) => Math.abs(b.changePct ?? 0) - Math.abs(a.changePct ?? 0));
+  return rows.sort((a, b) => Math.abs(mag(b) ?? 0) - Math.abs(mag(a) ?? 0));
 }
 
 const DirIcon = ({ d }: { d: Direction }) => {
@@ -83,10 +89,10 @@ export function MasterTable({ data, onSelect }: { data: ConsolidatedData; onSele
       header: 'Change',
       align: 'right',
       sortable: true,
-      sortValue: (r) => r.changePct ?? 0,
+      sortValue: (r) => mag(r) ?? 0,
       render: (r) => (
         <span className="tnum font-bold" style={{ color: directionColor(r.direction) }}>
-          {r.changePct != null ? signedPct(r.changePct) : '—'}
+          {headlineText(r.changePct, r.changeAbs, r.changeDisplay)}
         </span>
       ),
     },
@@ -104,13 +110,6 @@ export function MasterTable({ data, onSelect }: { data: ConsolidatedData; onSele
   ];
 
   return (
-    <Table
-      columns={columns}
-      rows={rows}
-      getKey={(r) => r.key}
-      onRowClick={(r) => onSelect(r.systemId)}
-      dense
-      maxHeight={520}
-    />
+    <Table columns={columns} rows={rows} getKey={(r) => r.key} onRowClick={(r) => onSelect(r.systemId)} dense maxHeight={520} />
   );
 }

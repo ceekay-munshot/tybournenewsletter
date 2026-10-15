@@ -3,7 +3,7 @@ import type { ConsolidatedData } from '../types';
 export function Footer({ data }: { data: ConsolidatedData }) {
   const sources = [...new Set(data.systems.map((s) => s.sourceName).filter(Boolean))];
   return (
-    <footer className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-6">
+    <footer className="no-print mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-6">
       <div className="border-t border-slate-200 pt-4 text-[11.5px] leading-relaxed text-slate-500">
         <p>
           Published by <span className="font-semibold text-slate-700">{data.client.publishedBy}</span> ·{' '}

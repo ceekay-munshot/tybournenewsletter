@@ -85,6 +85,7 @@ export async function connect(system) {
           lastValue: npl.lastValue,
           changePct: pctChange(npl.thisValue, npl.lastValue),
           changeAbs: npl.thisValue != null && npl.lastValue != null ? Math.round((npl.thisValue - npl.lastValue) * 100) / 100 : null,
+          changeDisplay: 'pp',
           asOf: npl.thisPeriod,
           breakdown: [],
           notes: 'Asset quality: share of the book 90+ days overdue (higher = worse).',
@@ -104,6 +105,7 @@ export async function connect(system) {
           lastValue: uns.lastValue,
           changePct: pctChange(uns.thisValue, uns.lastValue),
           changeAbs: uns.thisValue != null && uns.lastValue != null ? Math.round((uns.thisValue - uns.lastValue) * 100) / 100 : null,
+          changeDisplay: 'pp',
           asOf: uns.thisPeriod,
           breakdown: [],
         })
@@ -119,6 +121,7 @@ export async function connect(system) {
       lastValue: cc.lastValue,
       changePct: pctChange(cc.thisValue, cc.lastValue),
       changeAbs,
+      changeDisplay: 'pp',
       asOf: cc.thisPeriod,
       breakdown,
       secondaryMetrics: secondary,

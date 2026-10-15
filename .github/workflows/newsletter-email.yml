@@ -1,0 +1,101 @@
+name: Email quarterly newsletter
+
+# OPTIONAL. Every quarter (and on demand) regenerate the data + AI newsletter,
+# render the in-app edition to a PDF, and email it to the recipient list.
+#
+# Fully gated: if EMAIL_TOKEN (secret) or NEWSLETTER_RECIPIENTS (var) is not set,
+# the `send` job is skipped cleanly with a log line — the workflow never fails just
+# because email isn't configured. See README "Secrets & variables".
+on:
+  schedule:
+    # ~2nd of Jan / Apr / Jul / Oct, 13:17 UTC (jittered off the hour).
+    - cron: '17 13 2 1,4,7,10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: newsletter-email
+  cancel-in-progress: false
+
+jobs:
+  # Can't reference `secrets` in a job-level `if:`, so decide readiness here and
+  # expose it as an output the `send` job gates on.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.check.outputs.ready }}
+    steps:
+      - id: check
+        env:
+          EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
+          RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
+        run: |
+          if [ -n "$EMAIL_TOKEN" ] && [ -n "$RECIPIENTS" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Email is configured — will render and send."
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::EMAIL_TOKEN or NEWSLETTER_RECIPIENTS not set — skipping quarterly newsletter email (this is expected until configured)."
+          fi
+
+  send:
+    needs: gate
+    if: needs.gate.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Consolidate (all clients)
+        run: node scripts/consolidate.mjs
+
+      - name: Generate AI newsletter
+        continue-on-error: true
+        env:
+          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
+        run: node scripts/newsletter.mjs
+
+      - name: Build site
+        run: npm run build
+
+      - name: Install Chromium for Playwright
+        run: |
+          npm i playwright@1.48.0 --no-save
+          npx --yes playwright@1.48.0 install --with-deps chromium
+
+      - name: Render newsletter PDF
+        env:
+          # Set SITE_URL (repo variable) to render the DEPLOYED route instead of ./dist.
+          SITE_URL: ${{ vars.SITE_URL }}
+          NEWSLETTER_PDF: ${{ github.workspace }}/tybourne-intelligence.pdf
+        run: node scripts/render-newsletter-pdf.mjs
+
+      - name: Email newsletter
+        env:
+          EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          EMAIL_API_URL: ${{ vars.EMAIL_API_URL }}
+          NEWSLETTER_RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
+          NEWSLETTER_PDF: ${{ github.workspace }}/tybourne-intelligence.pdf
+        run: node scripts/send-newsletter-email.mjs
+
+      - name: Upload PDF artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tybourne-intelligence-pdf
+          path: ${{ github.workspace }}/tybourne-intelligence.pdf
+          if-no-files-found: ignore

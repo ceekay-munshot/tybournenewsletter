@@ -60,10 +60,13 @@ export function makeBlock(system, f) {
     changeAbs:
       f.changeAbs ?? (thisValue != null && lastValue != null ? thisValue - lastValue : null),
     direction: f.direction ?? directionOf(changePct),
+    ...(f.changeDisplay ? { changeDisplay: f.changeDisplay } : {}),
     asOf: f.asOf ?? new Date().toISOString(),
     isStale: f.isStale ?? isStale(f.asOf, f.comparison ?? 'QoQ'),
     breakdown: f.breakdown ?? [],
     ...(f.trend && f.trend.length ? { trend: f.trend } : {}),
+    ...(f.highlights && f.highlights.length ? { highlights: f.highlights } : {}),
+    ...(f.tone ? { tone: f.tone } : {}),
     ...(f.secondaryMetrics && f.secondaryMetrics.length ? { secondaryMetrics: f.secondaryMetrics } : {}),
     sourceName: system.sourceName ?? f.sourceName ?? '',
     sourceUrl: f.sourceUrl ?? system.dashboardUrl ?? '',
