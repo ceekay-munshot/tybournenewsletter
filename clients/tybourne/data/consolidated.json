@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T03:27:43.129Z",
+  "generatedAt": "2026-10-15T10:56:55.660Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -272,30 +272,30 @@
       "breakdown": [
         {
           "label": "OpenAI",
-          "thisValue": 5.859,
-          "lastValue": 5.882530120481928,
-          "changePct": -0.004,
+          "thisValue": 5.861,
+          "lastValue": 5.87863590772317,
+          "changePct": -0.003,
           "direction": "down"
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.035,
-          "lastValue": 5.035,
+          "thisValue": 5.025,
+          "lastValue": 5.025,
           "changePct": 0,
           "direction": "flat"
         },
         {
           "label": "Google",
-          "thisValue": 0.51,
-          "lastValue": 0.513595166163142,
+          "thisValue": 0.512,
+          "lastValue": 0.5156092648539778,
           "changePct": -0.007,
           "direction": "down"
         },
         {
           "label": "DeepSeek",
-          "thisValue": 0.248,
-          "lastValue": 0.3208279430789133,
-          "changePct": -0.227,
+          "thisValue": 0.249,
+          "lastValue": 0.3208762886597938,
+          "changePct": -0.224,
           "direction": "down"
         }
       ],
@@ -316,7 +316,7 @@
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.82pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +6.97pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -736,40 +736,40 @@
       "thisPeriodLabel": "Q4 '26",
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 2.6,
-      "lastValue": 3.4,
+      "lastValue": 3.3,
       "changePct": null,
-      "changeAbs": -0.8,
+      "changeAbs": -0.7,
       "direction": "down",
       "changeDisplay": "pts",
-      "asOf": "2026-10-14T11:15:57.092Z",
+      "asOf": "2026-10-15T10:52:58.211Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Partner views",
-          "thisValue": 3.3,
-          "lastValue": 4,
-          "changePct": -0.17500000000000004,
-          "direction": "down"
-        },
-        {
           "label": "Reporting & analytics",
-          "thisValue": 3.1,
+          "thisValue": 3.3,
           "lastValue": 2.7,
-          "changePct": 0.1481481481481481,
+          "changePct": 0.22222222222222207,
           "direction": "up"
         },
         {
+          "label": "Partner views",
+          "thisValue": 3.2,
+          "lastValue": 3.9,
+          "changePct": -0.17948717948717943,
+          "direction": "down"
+        },
+        {
           "label": "Joule (AI copilot)",
-          "thisValue": 3,
+          "thisValue": 3.1,
           "lastValue": 2.9,
-          "changePct": 0.03448275862068969,
+          "changePct": 0.06896551724137938,
           "direction": "up"
         },
         {
           "label": "Customer satisfaction",
-          "thisValue": 2.9,
+          "thisValue": 3.1,
           "lastValue": 5,
-          "changePct": -0.42000000000000004,
+          "changePct": -0.38,
           "direction": "down"
         },
         {
@@ -788,23 +788,23 @@
         },
         {
           "label": "Vs competitors",
-          "thisValue": 2.6,
+          "thisValue": 2.7,
           "lastValue": 3.4,
-          "changePct": -0.23529411764705876,
+          "changePct": -0.2058823529411764,
           "direction": "down"
         },
         {
           "label": "BTP AI platform",
-          "thisValue": 2.3,
-          "lastValue": 3.7,
-          "changePct": -0.37837837837837845,
+          "thisValue": 2.4,
+          "lastValue": 3,
+          "changePct": -0.20000000000000004,
           "direction": "down"
         },
         {
           "label": "Risks & gaps",
           "thisValue": 2.1,
-          "lastValue": 3,
-          "changePct": -0.3,
+          "lastValue": 2.8,
+          "changePct": -0.24999999999999992,
           "direction": "down"
         }
       ],
@@ -1117,12 +1117,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q3 '26",
       "lastPeriodLabel": "Q2 '26",
-      "thisValue": 1263807958711772,
+      "thisValue": 1263807970564016,
       "lastValue": 421326478355599,
-      "changePct": 1.9995930083585198,
-      "changeAbs": 842481480356173,
+      "changePct": 1.9995930364893035,
+      "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T03:27:35.088Z",
+      "asOf": "2026-10-15T10:56:49.666Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1134,9 +1134,9 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 155433792452304,
+          "thisValue": 155433801083559,
           "lastValue": 38549495120143,
-          "changePct": 3.03205779914576,
+          "changePct": 3.032058023046358,
           "direction": "up"
         },
         {
@@ -1169,9 +1169,9 @@
         },
         {
           "label": "Google",
-          "thisValue": 82034409930238,
+          "thisValue": 82034413103222,
           "lastValue": 51427552913035,
-          "changePct": 0.5951451174229463,
+          "changePct": 0.5951451791210793,
           "direction": "up"
         },
         {
@@ -1183,9 +1183,9 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 72200283990945,
+          "thisValue": 72200284038950,
           "lastValue": 64324408433701,
-          "changePct": 0.12243992209211911,
+          "changePct": 0.12243992283841436,
           "direction": "up"
         },
         {
@@ -1236,7 +1236,7 @@
         },
         {
           "period": "Q3 '26",
-          "value": 1263807958711772
+          "value": 1263807970564016
         }
       ],
       "secondaryMetrics": [
@@ -1254,7 +1254,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T03:27:35.143Z",
+          "asOf": "2026-10-15T10:56:49.889Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1277,7 +1277,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T03:27:35.919Z",
+          "asOf": "2026-10-15T10:56:50.229Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +1300,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T03:27:35.940Z",
+          "asOf": "2026-10-15T10:56:50.337Z",
           "isStale": false,
           "breakdown": [
             {
@@ -1455,12 +1455,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 3.5163,
+      "thisValue": 3.5082,
       "lastValue": 3.3819,
-      "changePct": 0.039740974008693426,
-      "changeAbs": 0.1344000000000003,
+      "changePct": 0.03734587066441943,
+      "changeAbs": 0.12630000000000008,
       "direction": "up",
-      "asOf": "2026-10-14",
+      "asOf": "2026-10-15",
       "isStale": false,
       "breakdown": [
         {
@@ -1472,9 +1472,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 7.95,
+          "thisValue": 7.97,
           "lastValue": 6.79,
-          "changePct": 0.170839469808542,
+          "changePct": 0.17378497790868921,
           "direction": "up"
         },
         {
@@ -1486,23 +1486,23 @@
         },
         {
           "label": "H100",
-          "thisValue": 3.5163,
+          "thisValue": 3.5082,
           "lastValue": 3.3819,
-          "changePct": 0.039740974008693426,
+          "changePct": 0.03734587066441943,
           "direction": "up"
         },
         {
           "label": "A100",
-          "thisValue": 1.8375,
+          "thisValue": 1.8156,
           "lastValue": 1.76,
-          "changePct": 0.044034090909090856,
+          "changePct": 0.03159090909090914,
           "direction": "up"
         },
         {
           "label": "L40S",
-          "thisValue": 1.57,
+          "thisValue": 1.5865,
           "lastValue": 1.535,
-          "changePct": 0.022801302931596185,
+          "changePct": 0.0335504885993486,
           "direction": "up"
         }
       ],
@@ -1521,17 +1521,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 34,
+      "thisValue": 37,
       "lastValue": 7,
       "changePct": null,
-      "changeAbs": 27,
+      "changeAbs": 30,
       "direction": "flat",
-      "asOf": "2026-10-15T01:54:00.000Z",
+      "asOf": "2026-10-15T10:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 9,
+          "thisValue": 11,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Odd Lots",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -1565,13 +1572,6 @@
           "direction": "flat"
         },
         {
-          "label": "Odd Lots",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
           "label": "Invest Like the Best",
           "thisValue": 2,
           "lastValue": null,
@@ -1586,6 +1586,13 @@
           "direction": "flat"
         },
         {
+          "label": "BG2",
+          "thisValue": 1,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
           "label": "Cheeky Pint",
           "thisValue": 1,
           "lastValue": null,
@@ -1594,19 +1601,19 @@
         }
       ],
       "highlights": [
+        "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
         "Mixed coding reviews for Gemini 4 Argon",
         "Skepticism about HomeView's AI capabilities",
         "Match Group CEO on matchmaking algorithms",
         "AI agents to grow in retail trading",
-        "Polarizing responses to Meta's Muse Wonder",
-        "SpaceX's spectrum move clarifies mobile ambitions"
+        "Polarizing responses to Meta's Muse Wonder"
       ],
-      "tone": "Tone across 34 episodes — 13 positive, 11 mixed, 5 neutral, 4 cautious",
-      "summary": "Q4 '26 (QTD): 34 investor-podcast episodes across 9 shows. The recurring threads — Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms; AI agents to grow in retail trading. Sentiment ran 13 positive, 11 mixed, 5 neutral, 4 cautious. Last quarter (Q3 '26) ran 7 episodes (3 positive, 2 mixed, 2 cautious), centred on OpenAI Dev Day’s new product is confusing but visionary; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms.",
+      "tone": "Tone across 37 episodes — 13 positive, 11 mixed, 7 neutral, 2 cautious",
+      "summary": "Q4 '26 (QTD): 37 investor-podcast episodes across 10 shows. The recurring threads — Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms. Sentiment ran 13 positive, 11 mixed, 7 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "34 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "37 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
