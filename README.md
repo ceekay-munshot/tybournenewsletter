@@ -120,6 +120,22 @@ The whole `send` job is **skipped cleanly** (a log line, not a failure) unless b
 | `EMAIL_API_URL` | variable | optional | Override the email endpoint if not using Resend. |
 | `SITE_URL` | variable | optional | Render the **deployed** route (e.g. `https://tybournenewsletter.pages.dev`) instead of the freshly-built `./dist`. |
 
+### Monthly SAP research refresh (optional) — used by `sap-research-refresh.yml`
+
+The SAP dashboard scores sentiment daily, but its lifted "Key Findings" come from an expensive
+deep-research pass in the source repo (`ceekay-munshot/sap`) that only runs on demand — so those
+findings go stale unless something re-triggers them. This workflow presses that button on the 1st
+of each month (ahead of the newsletter). It's **gated**: with no token it logs a notice and exits 0.
+
+| Name | Kind | Required? | What it is |
+| --- | --- | --- | --- |
+| `SAP_RESEARCH_DISPATCH_TOKEN` | **secret** | to trigger | A PAT that can send a `repository_dispatch` to `ceekay-munshot/sap` (fine-grained: *Contents* + *Actions* read/write on that repo; or a classic token with `repo`). |
+
+The refreshed findings are committed to the sap repo's `dashboard.json`; the next 6-hourly
+`refresh.yml` run lifts them automatically. **Simpler alternative (no token):** add the same
+`schedule: - cron: '0 6 1 * *'` block directly to `ceekay-munshot/sap`'s `research.yml`, which
+already holds the Firecrawl + model secrets it needs.
+
 ## Deploy (Cloudflare Pages)
 
 - Build command: `npm run build`
