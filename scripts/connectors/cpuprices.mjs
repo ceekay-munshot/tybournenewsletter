@@ -150,5 +150,6 @@ export async function connect(system) {
   block.views = views;
   block.breakdownNoun = 'segment';
   block.subNoun = 'vendor';
+  block.changeNoun = 'Price change';
   return block;
 }

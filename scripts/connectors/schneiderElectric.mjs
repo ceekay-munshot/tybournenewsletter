@@ -265,5 +265,6 @@ export async function connect(system) {
   block.views = views;
   block.breakdownNoun = 'product line';
   block.subNoun = 'brand';
+  block.changeNoun = 'Price change';
   return block;
 }

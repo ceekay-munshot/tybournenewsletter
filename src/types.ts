@@ -10,6 +10,9 @@ export interface BreakdownRow {
   thisValue: number | null;
   lastValue: number | null;
   changePct: number | null;
+  /** Absolute change + how to read it, for pp/pts metrics (e.g. sentiment points). */
+  changeAbs?: number | null;
+  changeDisplay?: 'pct' | 'pp' | 'pts';
   direction: Direction;
   /** Optional second level (e.g. parent brands within a product-line category). */
   sub?: BreakdownRow[];
@@ -22,6 +25,16 @@ export interface BreakdownRow {
 export interface TrendPoint {
   period: string;
   value: number;
+}
+
+/** A lifted narrative insight (e.g. SAP's "why sentiment moved" key findings,
+ *  or a one-line standout read), with an honest "as of" date for staleness. */
+export interface InsightItem {
+  title: string;
+  body?: string;
+  bullets?: string[];
+  asOf?: string;
+  tone?: string;
 }
 
 /** One period's read for a dashboard that supports a Weekly/MoM/QoQ toggle.
@@ -76,6 +89,10 @@ export interface ChangeBlock {
    *  "product line" + "brand" (Schneider) or "segment" + "vendor" (CPU). */
   breakdownNoun?: string;
   subNoun?: string;
+  /** Title for the breakdown chart, e.g. "Price change" or "Sentiment change". */
+  changeNoun?: string;
+  /** Lifted narrative ("why it moved") — shown as cards in the multi-period view. */
+  insights?: InsightItem[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;

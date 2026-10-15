@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, ExternalLink, Clock, Zap } from 'lucide-react';
+import { ChevronLeft, ExternalLink, Clock, Zap, Quote } from 'lucide-react';
 import type { ChangeBlock, BreakdownRow, Comparison } from '../types';
 import { Card, CardHeader, Badge } from './ui/Card';
 import { Segmented } from './ui/Controls';
@@ -7,11 +7,13 @@ import { Legend } from './charts/ChartBase';
 import { DivergingBars, type DivergingDatum } from './charts/DivergingBars';
 import { iconFor } from '../lib/icons';
 import { sectorColor, directionColor, DIRECTION_COLOR } from '../lib/brand';
-import { signedPct, fmtValue, dateLabel, axisPct, headlineText } from '../lib/format';
+import { fmtValue, dateLabel, axisPct, headlineText } from '../lib/format';
 
-/** Drill-down for a dashboard that carries Weekly/MoM/QoQ `views`. One period
- *  toggle drives the whole view; each view shows a price-change-by-segment chart
- *  and a segment→brand detail list. Honest about windows it can't compute yet. */
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
+/** Drill-down for a dashboard that carries Weekly/MoM/QoQ `views`. A period toggle
+ *  drives a change-by-segment chart, a segment→sub detail list, optional lifted
+ *  "why it moved" insights, and a one-line read. Handles % and pp/pts metrics. */
 export function MultiPeriodView({
   block,
   onBack,
@@ -25,11 +27,10 @@ export function MultiPeriodView({
   const Icon = iconFor(block.systemId, block.sector);
   const accent = sectorColor(block.sector);
 
-  const initial =
-    (views.find((v) => v.comparison === block.comparison && v.available)?.comparison ??
-      views.find((v) => v.available)?.comparison ??
-      views[0]?.comparison ??
-      'MoM') as Comparison;
+  const initial = (views.find((v) => v.comparison === block.comparison && v.available)?.comparison ??
+    views.find((v) => v.available)?.comparison ??
+    views[0]?.comparison ??
+    'MoM') as Comparison;
   const [sel, setSel] = useState<Comparison>(initial);
   const view = views.find((v) => v.comparison === sel) ?? views[0];
   if (!view) return null;
@@ -37,21 +38,27 @@ export function MultiPeriodView({
   const dir = directionColor(view.direction);
   const bNoun = block.breakdownNoun ?? 'segment';
   const sNoun = block.subNoun ?? 'group';
-  const bNounCap = bNoun.charAt(0).toUpperCase() + bNoun.slice(1);
-  const priced = view.breakdown.filter((r) => r.changePct != null);
+  const changeNoun = block.changeNoun ?? 'Change';
+  const isPts = view.changeDisplay === 'pts' || view.changeDisplay === 'pp';
+  const dispFor = (r: BreakdownRow) => r.changeDisplay ?? view.changeDisplay;
+  const magOf = (r: BreakdownRow) => (isPts ? (r.changeAbs ?? null) : (r.changePct ?? null));
+  const hasSub = view.breakdown.some((r) => r.sub && r.sub.length);
+
+  const priced = view.breakdown.filter((r) => magOf(r) != null);
   const chartData: DivergingDatum[] = priced.map((r) => ({
     key: r.label,
     label: r.label,
-    value: r.changePct as number,
+    value: magOf(r) as number,
     color: directionColor(r.direction),
-    valueLabel: signedPct(r.changePct),
+    valueLabel: headlineText(r.changePct, r.changeAbs, dispFor(r)),
     tipTitle: r.label,
     tipColor: directionColor(r.direction),
     tipRows: [
-      { label: 'Price', value: `${fmtValue(r.lastValue, block.unit)} → ${fmtValue(r.thisValue, block.unit)}` },
-      { label: 'Change', value: signedPct(r.changePct) },
+      { label: 'Value', value: `${fmtValue(r.lastValue, block.unit)} → ${fmtValue(r.thisValue, block.unit)}` },
+      { label: 'Change', value: headlineText(r.changePct, r.changeAbs, dispFor(r)) },
     ],
   }));
+  const axisFmt = isPts ? (n: number) => `${n > 0 ? '+' : ''}${n.toFixed(1)}` : axisPct;
 
   return (
     <div className="animate-fade-in">
@@ -62,7 +69,6 @@ export function MultiPeriodView({
         <ChevronLeft size={16} /> Back to {backLabel}
       </button>
 
-      {/* headline + period toggle */}
       <Card className="mb-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="min-w-0">
@@ -104,12 +110,8 @@ export function MultiPeriodView({
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2.5">
-          <Segmented
-            value={sel}
-            onChange={(v) => setSel(v)}
-            options={views.map((v) => ({ value: v.comparison, label: v.label }))}
-          />
-          <span className="text-[11.5px] text-slate-400">Weekly / monthly / quarterly — like-for-like</span>
+          <Segmented value={sel} onChange={(v) => setSel(v)} options={views.map((v) => ({ value: v.comparison, label: v.label }))} />
+          <span className="text-[11.5px] text-slate-400">Weekly / monthly / quarterly</span>
         </div>
         {!view.available && (
           <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-[12.5px] text-amber-700 ring-1 ring-amber-100">
@@ -124,8 +126,8 @@ export function MultiPeriodView({
             <CardHeader
               icon={Icon}
               accent={accent}
-              title={`Price change by ${bNoun}`}
-              subtitle={`${view.label}-over-${view.label.toLowerCase()}, like-for-like`}
+              title={`${changeNoun} by ${bNoun}`}
+              subtitle={`${cap(view.label)}-over-${view.label.toLowerCase()}`}
               right={
                 <Legend
                   items={[
@@ -137,28 +139,56 @@ export function MultiPeriodView({
               }
             />
             {chartData.length ? (
-              <DivergingBars data={chartData} axisFormat={axisPct} labelWidth={180} />
+              <DivergingBars data={chartData} axisFormat={axisFmt} labelWidth={190} />
             ) : (
-              <div className="py-8 text-center text-[13px] text-slate-400">No priced categories in this window.</div>
+              <div className="py-8 text-center text-[13px] text-slate-400">Nothing comparable in this window.</div>
             )}
           </Card>
 
           <Card pad={false} className="mb-4">
             <div className="p-4 pb-2">
               <h3 className="font-display text-[15px] font-bold text-slate-900">
-                By {bNoun} and {sNoun}
+                By {bNoun}
+                {hasSub ? ` and ${sNoun}` : ''}
               </h3>
               <p className="text-[12px] text-slate-500">
-                {bNounCap} average, then the move for each {sNoun}. ⚡ = move over 2%.
+                {hasSub ? `${cap(bNoun)} average, then the move for each ${sNoun}. ` : `Each ${bNoun}'s move. `}⚡ = notable move.
               </p>
             </div>
             <div className="flex flex-col gap-2 px-4 pb-4">
               {view.breakdown.map((r) => (
-                <CategoryRow key={r.label} row={r} unit={block.unit} />
+                <CategoryRow key={r.label} row={r} unit={block.unit} disp={view.changeDisplay} />
               ))}
             </div>
           </Card>
         </>
+      )}
+
+      {block.insights && block.insights.length > 0 && (
+        <Card className="mb-4" accent={accent}>
+          <CardHeader icon={Quote} accent={accent} title="Why it moved" subtitle="Lifted from the source research — latest available" />
+          <div className="flex flex-col gap-3">
+            {block.insights.map((ins, i) => (
+              <div key={i} className="rounded-xl bg-white/70 p-3 ring-1 ring-slate-200/70">
+                <div className="flex items-baseline justify-between gap-2">
+                  <div className="font-display text-[13px] font-bold text-slate-900">{ins.title}</div>
+                  {ins.asOf && <div className="tnum shrink-0 text-[10.5px] text-slate-400">as of {dateLabel(ins.asOf)}</div>}
+                </div>
+                {ins.body && <p className="mt-1 text-[12.5px] leading-snug text-slate-600">{ins.body}</p>}
+                {ins.bullets && ins.bullets.length > 0 && (
+                  <ul className="mt-1.5 flex flex-col gap-1">
+                    {ins.bullets.map((b, j) => (
+                      <li key={j} className="flex gap-1.5 text-[12px] leading-snug text-slate-600">
+                        <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: accent }} />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </Card>
       )}
 
       {view.summary && (
@@ -190,9 +220,10 @@ export function MultiPeriodView({
   );
 }
 
-function CategoryRow({ row, unit }: { row: BreakdownRow; unit: string }) {
-  const tracked = row.changePct != null;
+function CategoryRow({ row, unit, disp }: { row: BreakdownRow; unit: string; disp?: 'pct' | 'pp' | 'pts' }) {
+  const tracked = row.changePct != null || row.changeAbs != null;
   const dir = directionColor(row.direction);
+  const chg = headlineText(row.changePct, row.changeAbs, row.changeDisplay ?? disp);
   return (
     <div className="rounded-xl ring-1 ring-slate-200/70">
       <div className="flex items-center justify-between gap-3 px-3 py-2.5">
@@ -211,7 +242,7 @@ function CategoryRow({ row, unit }: { row: BreakdownRow; unit: string }) {
         </div>
         {tracked && (
           <div className="tnum shrink-0 font-bold" style={{ color: dir, fontSize: row.bigMove ? 16 : 14 }}>
-            {signedPct(row.changePct)}
+            {chg}
             {row.bigMove && ' ⚡'}
           </div>
         )}
@@ -222,7 +253,7 @@ function CategoryRow({ row, unit }: { row: BreakdownRow; unit: string }) {
             <span key={b.label} className="inline-flex items-baseline gap-1.5 text-[12px]">
               <span className="text-slate-500">{b.label}</span>
               <span className="tnum font-semibold" style={{ color: directionColor(b.direction) }}>
-                {signedPct(b.changePct)}
+                {headlineText(b.changePct, b.changeAbs, b.changeDisplay ?? disp)}
                 {b.bigMove && ' ⚡'}
               </span>
             </span>
