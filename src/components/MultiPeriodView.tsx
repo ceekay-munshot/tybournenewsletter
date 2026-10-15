@@ -231,9 +231,11 @@ function CategoryRow({ row, unit, disp }: { row: BreakdownRow; unit: string; dis
           <div className={`font-display text-[13.5px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{row.label}</div>
           {tracked ? (
             <>
-              <div className="tnum text-[11.5px] text-slate-500">
-                {fmtValue(row.lastValue, unit)} <span className="text-slate-300">→</span> {fmtValue(row.thisValue, unit)}
-              </div>
+              {(row.lastValue != null || row.thisValue != null) && (
+                <div className="tnum text-[11.5px] text-slate-500">
+                  {fmtValue(row.lastValue, unit)} <span className="text-slate-300">→</span> {fmtValue(row.thisValue, unit)}
+                </div>
+              )}
               {row.note && <div className="text-[10.5px] italic text-amber-600">{row.note}</div>}
             </>
           ) : (
