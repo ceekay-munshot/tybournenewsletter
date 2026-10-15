@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T10:56:55.660Z",
+  "generatedAt": "2026-10-15T16:25:18.576Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -38,26 +38,26 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 678.6894712317667,
+      "thisValue": 678.7485190437602,
       "lastValue": 678.8936405996759,
-      "changePct": -0.000969303849794123,
-      "changeAbs": -0.20416936790923046,
+      "changePct": -0.0005630603985648081,
+      "changeAbs": -0.14512155591569353,
       "direction": "down",
-      "asOf": "2026-10-14T14:33:04.382Z",
+      "asOf": "2026-10-15T14:12:19.309Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Server · Intel",
-          "thisValue": 1199.0604478609625,
+          "thisValue": 1198.792479946524,
           "lastValue": 1201.3436697860964,
-          "changePct": -0.0019005568369459423,
+          "changePct": -0.0021236136700386733,
           "direction": "down"
         },
         {
           "label": "Server · AMD",
-          "thisValue": 2001.4391592920354,
+          "thisValue": 2002.0340707964601,
           "lastValue": 1994.8608849557522,
-          "changePct": 0.0032976105681821136,
+          "changePct": 0.003595832619108744,
           "direction": "up"
         },
         {
@@ -76,16 +76,16 @@
         },
         {
           "label": "Desktop · Intel",
-          "thisValue": 202.16466091245377,
+          "thisValue": 202.31051787916152,
           "lastValue": 201.82913686806413,
-          "changePct": 0.0016624162873419628,
+          "changePct": 0.0023850917591352536,
           "direction": "up"
         },
         {
           "label": "Desktop · AMD",
-          "thisValue": 179.86059210526318,
+          "thisValue": 180.06548245614033,
           "lastValue": 181.07734649122804,
-          "changePct": -0.006719528475218904,
+          "changePct": -0.005588021111943609,
           "direction": "down"
         }
       ],
@@ -108,7 +108,7 @@
         },
         {
           "period": "Oct-26",
-          "value": 678.6894712317667
+          "value": 678.7485190437602
         }
       ],
       "sourceName": "PassMark / cpubenchmark.net (street price)",
@@ -316,7 +316,7 @@
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +6.97pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +7.00pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -1122,7 +1122,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T10:56:49.666Z",
+      "asOf": "2026-10-15T16:25:07.675Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1254,7 +1254,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T10:56:49.889Z",
+          "asOf": "2026-10-15T16:25:07.846Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1277,7 +1277,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T10:56:50.229Z",
+          "asOf": "2026-10-15T16:25:09.167Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +1300,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T10:56:50.337Z",
+          "asOf": "2026-10-15T16:25:09.257Z",
           "isStale": false,
           "breakdown": [
             {
@@ -1479,9 +1479,9 @@
         },
         {
           "label": "H200",
-          "thisValue": 4.615,
+          "thisValue": 4.725,
           "lastValue": 4.5,
-          "changePct": 0.025555555555555602,
+          "changePct": 0.04999999999999992,
           "direction": "up"
         },
         {
@@ -1521,12 +1521,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 37,
+      "thisValue": 38,
       "lastValue": 7,
       "changePct": null,
-      "changeAbs": 30,
+      "changeAbs": 31,
       "direction": "flat",
-      "asOf": "2026-10-15T10:00:00.000Z",
+      "asOf": "2026-10-15T11:50:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1572,6 +1572,13 @@
           "direction": "flat"
         },
         {
+          "label": "Cheeky Pint",
+          "thisValue": 2,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
           "label": "Invest Like the Best",
           "thisValue": 2,
           "lastValue": null,
@@ -1591,29 +1598,22 @@
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
-        },
-        {
-          "label": "Cheeky Pint",
-          "thisValue": 1,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
         }
       ],
       "highlights": [
+        "Seagrass restoration is a major early focus with broad ecological impact",
+        "Emanuel's relentless call routine",
+        "Safety vs Speed in AI Development: Airbags Analogy",
+        "Hyperliquid aims to house all of finance on a permissionless blockchain protocol",
         "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
-        "Mixed coding reviews for Gemini 4 Argon",
-        "Skepticism about HomeView's AI capabilities",
-        "Match Group CEO on matchmaking algorithms",
-        "AI agents to grow in retail trading",
-        "Polarizing responses to Meta's Muse Wonder"
+        "Mixed coding reviews for Gemini 4 Argon"
       ],
-      "tone": "Tone across 37 episodes — 13 positive, 11 mixed, 7 neutral, 2 cautious",
-      "summary": "Q4 '26 (QTD): 37 investor-podcast episodes across 10 shows. The recurring threads — Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms. Sentiment ran 13 positive, 11 mixed, 7 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities.",
+      "tone": "Tone across 38 episodes — 15 positive, 12 mixed, 8 neutral, 2 cautious",
+      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy; Hyperliquid aims to house all of finance on a permissionless blockchain protocol. Sentiment ran 15 positive, 12 mixed, 8 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "37 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "38 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
