@@ -33,36 +33,43 @@ function formatChange(b) {
   return `${r}%`;
 }
 
+/** Format a breakdown row's change honouring its (or the block's) display kind. */
+function formatRow(r, b) {
+  return formatChange({
+    changeDisplay: r.changeDisplay ?? b.changeDisplay,
+    changeAbs: r.changeAbs,
+    changePct: r.changePct,
+  });
+}
+
 function buildData(data) {
   const systems = (data.systems || [])
     .filter((b) => b.status !== 'error')
     .map((b) => {
+      const availableViews = (b.views || []).filter((v) => v.available).map((v) => v.label);
       const row = {
         systemId: b.systemId,
         name: b.name,
-        sector: b.sector,
         metric: b.metricLabel,
         comparison: b.comparison,
-        lastPeriod: b.lastPeriodLabel,
-        thisPeriod: b.thisPeriodLabel,
+        period: `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`,
         change: formatChange(b),
         direction: b.direction,
-        topBreakdown: (b.breakdown || [])
-          .filter((r) => r.changePct != null || r.thisValue != null)
-          .slice(0, 3)
-          .map((r) => ({ label: r.label, change: r.changePct != null ? formatChange({ changePct: r.changePct }) : null })),
+        // the toggles this dashboard honestly supports (so the prose can say so)
+        availableViews: availableViews.length ? availableViews : undefined,
+        // fuller breakdown (up to 8), change formatted the way the UI shows it
+        breakdown: (b.breakdown || [])
+          .filter((r) => r.changePct != null || r.changeAbs != null || r.thisValue != null)
+          .slice(0, 8)
+          .map((r) => ({ label: r.label, change: formatRow(r, b), bigMove: r.bigMove || undefined, note: r.note || undefined })),
+        // the lifted "why it moved" — the generator should ground explanations in these
+        insights: (b.insights || []).map((i) => ({ title: i.title, body: i.body || undefined, bullets: i.bullets || undefined })),
+        summary: b.summary || null,
         notes: b.notes || null,
         source: b.sourceName,
       };
       if (b.highlights?.length) row.themes = b.highlights;
       if (b.tone) row.tone = b.tone;
-      if (b.secondaryMetrics?.length) {
-        row.secondaryMetrics = b.secondaryMetrics.map((s) => ({
-          metric: s.metricLabel,
-          period: `${s.lastPeriodLabel} → ${s.thisPeriodLabel}`,
-          change: formatChange(s),
-        }));
-      }
       return row;
     });
   // NB: no `generatedAt` here — the hash must track the *figures*, not the pipeline
@@ -71,14 +78,17 @@ function buildData(data) {
 }
 
 const SYSTEM_PROMPT =
-  'Write a quarterly going-into-earnings intelligence briefing for Tybourne Global Holdings, published by Munshot. ' +
-  'Use ONLY the numbers in DATA — every figure must appear verbatim, never invent or round differently. ' +
-  'Plain, sharp, buyer-ready English, no hype. Return ONLY the JSON object.';
+  'Write a detailed monthly intelligence briefing for Tybourne Global Holdings, published by Munshot. ' +
+  'Give EVERY dashboard in DATA.systems its own entry in "lines" (match systemId exactly). ' +
+  'Each line is 2-3 sentences: state the exact headline figure with BOTH periods verbatim, name the key breakdown movers, ' +
+  'and explain WHY it moved using that dashboard\'s own `insights` and `summary` — do not invent causes. ' +
+  'Use ONLY numbers present in DATA, verbatim (never re-round). Plain, sharp, buyer-ready English, no hype. ' +
+  'Return ONLY the JSON object.';
 
 const SCHEMA = `{
-  "quarterLabel": "Q4 '26 — going into earnings",
-  "executiveSummary": "4-6 sentences on the biggest cross-sector moves this quarter",
-  "bySector": [ { "sector":"technology", "summary":"2-3 sentences", "systems":[ {"systemId":"...","line":"one sentence naming the exact figure + both periods"} ] } ],
+  "editionLabel": "October 2026 — monthly intelligence",
+  "executiveSummary": "4-6 sentences on the biggest cross-dashboard moves this period",
+  "lines": [ {"systemId":"<exact id from DATA>","line":"2-3 sentences: exact headline figure + both periods, key breakdown movers, and why it moved (grounded in that dashboard's insights)"} ],
   "watchList": [ "3-5 forward-looking bullets, each grounded in a DATA figure" ],
   "methodNote": "one line: where the data comes from; nothing is fabricated" }`;
 
@@ -111,9 +121,9 @@ function parseJson(text) {
 
 const valid = (o) =>
   o &&
-  typeof o.quarterLabel === 'string' &&
+  typeof o.editionLabel === 'string' &&
   typeof o.executiveSummary === 'string' &&
-  Array.isArray(o.bySector) &&
+  Array.isArray(o.lines) &&
   Array.isArray(o.watchList) &&
   typeof o.methodNote === 'string';
 
@@ -147,9 +157,9 @@ async function run() {
       region: s.region,
       dataHash,
       note: `AI newsletter not generated: ${s.reason}. Set a Bedrock key to enable the AI writer.`,
-      quarterLabel: null,
+      editionLabel: null,
       executiveSummary: null,
-      bySector: [],
+      lines: [],
       watchList: [],
       methodNote: null,
     });
@@ -174,9 +184,9 @@ async function run() {
         region: bedrockRegion,
         dataHash,
         note: 'The model returned malformed JSON twice; no newsletter written (nothing fabricated).',
-        quarterLabel: null,
+        editionLabel: null,
         executiveSummary: null,
-        bySector: [],
+        lines: [],
         watchList: [],
         methodNote: null,
       });
@@ -191,9 +201,9 @@ async function run() {
       model: result.modelId,
       region: bedrockRegion,
       dataHash,
-      quarterLabel: parsed.quarterLabel,
+      editionLabel: parsed.editionLabel,
       executiveSummary: parsed.executiveSummary,
-      bySector: parsed.bySector,
+      lines: parsed.lines,
       watchList: parsed.watchList,
       methodNote: parsed.methodNote,
     });
@@ -206,9 +216,9 @@ async function run() {
       region: bedrockRegion,
       dataHash,
       note: `AI newsletter failed: ${e instanceof Error ? e.message : String(e)}`,
-      quarterLabel: null,
+      editionLabel: null,
       executiveSummary: null,
-      bySector: [],
+      lines: [],
       watchList: [],
       methodNote: null,
     });

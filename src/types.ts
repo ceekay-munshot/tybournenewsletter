@@ -143,12 +143,6 @@ export interface NewsletterSystemLine {
   line: string;
 }
 
-export interface NewsletterSector {
-  sector: SectorId | string;
-  summary: string;
-  systems: NewsletterSystemLine[];
-}
-
 export interface Newsletter {
   generatedAt: string;
   status: NewsletterStatus;
@@ -158,9 +152,10 @@ export interface Newsletter {
   dataHash?: string;
   note?: string;
   /** AI-written fields — null/empty unless status === 'ok'. Never fabricated. */
-  quarterLabel: string | null;
+  editionLabel: string | null;
   executiveSummary: string | null;
-  bySector: NewsletterSector[];
+  /** One written line per dashboard (what moved + why), keyed by systemId. */
+  lines: NewsletterSystemLine[];
   watchList: string[];
   methodNote: string | null;
 }

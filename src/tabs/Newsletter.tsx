@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react';
 import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import type { ConsolidatedData, Newsletter, ChangeBlock, SectorDef } from '../types';
+import type { ConsolidatedData, Newsletter, ChangeBlock, BreakdownRow } from '../types';
 import type { NewsletterState } from '../lib/newsletter';
 import { MoversChart } from '../components/MoversChart';
 import { MunshotMark } from '../components/MunshotMark';
-import { SECTOR_ICON, iconFor } from '../lib/icons';
-import { sectorColor, directionColor, shade, withAlpha } from '../lib/brand';
-import { headlineText, headlineMagnitude, fmtValue, signedPct, dateLabel } from '../lib/format';
+import { iconFor } from '../lib/icons';
+import { sectorColor, directionColor, withAlpha } from '../lib/brand';
+import { headlineText, headlineMagnitude, fmtValue, dateLabel } from '../lib/format';
 
 const periodArrow = (b: ChangeBlock) => `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
 
@@ -25,17 +25,13 @@ function factualLine(b: ChangeBlock): string {
   return `${b.metricLabel}: ${verb}${vals} · ${periodArrow(b)}.`;
 }
 
-/** The dominant reporting period across systems — used as an honest fallback title. */
-function deriveQuarterLabel(data: ConsolidatedData): string {
-  const counts = new Map<string, number>();
-  for (const b of data.systems) {
-    if (b.status === 'error') continue;
-    counts.set(b.thisPeriodLabel, (counts.get(b.thisPeriodLabel) ?? 0) + 1);
-  }
-  let best = '';
-  let max = 0;
-  for (const [k, v] of counts) if (v > max) ((max = v), (best = k));
-  return best ? `${best} — going into earnings` : 'Going into earnings';
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/** Honest fallback edition title from the build date, e.g. "October 2026 — monthly intelligence". */
+function deriveEditionLabel(data: ConsolidatedData): string {
+  const d = new Date(data.generatedAt);
+  if (Number.isNaN(d.getTime())) return 'Monthly intelligence edition';
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()} — monthly intelligence`;
 }
 
 // ---------------------------------------------------------------------------
@@ -90,32 +86,30 @@ function NewsletterArticle({
   const nl: Newsletter | null = newsletter.status === 'ready' ? newsletter.data : null;
   const aiOk = nl?.status === 'ok';
 
-  const quarterLabel = (aiOk && nl?.quarterLabel) || deriveQuarterLabel(data);
+  const editionLabel = (aiOk && nl?.editionLabel) || deriveEditionLabel(data);
 
-  // AI line + sector-summary lookups (empty unless status 'ok')
+  // AI per-dashboard line lookup (empty unless status 'ok')
   const aiLine = new Map<string, string>();
-  const aiSectorSummary = new Map<string, string>();
-  if (aiOk && nl) {
-    for (const s of nl.bySector) {
-      if (s.summary) aiSectorSummary.set(String(s.sector), s.summary);
-      for (const sys of s.systems || []) if (sys.line) aiLine.set(sys.systemId, sys.line);
-    }
-  }
+  if (aiOk && nl) for (const s of nl.lines || []) if (s.line) aiLine.set(s.systemId, s.line);
 
-  // "By the numbers" — the biggest plottable movers (real data), largest first.
-  const topMovers = data.systems
+  // All dashboards, ranked by headline magnitude (largest move first). Narrative
+  // dashboards with no plottable headline (e.g. podcast themes) fall to the end.
+  const ranked = data.systems
     .filter((b) => b.status !== 'error')
-    .map((b) => ({ b, mag: headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) }))
-    .filter((x) => x.mag != null)
-    .sort((a, b) => Math.abs(b.mag as number) - Math.abs(a.mag as number))
-    .slice(0, 5)
+    .map((b) => ({ b, mag: Math.abs(headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) ?? -1) }))
+    .sort((a, b) => b.mag - a.mag)
     .map((x) => x.b);
+
+  // "By the numbers" — the biggest plottable movers, largest first.
+  const topMovers = ranked
+    .filter((b) => headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) != null)
+    .slice(0, 5);
 
   const sources = [...new Set(data.systems.map((s) => s.sourceName).filter(Boolean))];
 
   return (
     <article className="nl-root animate-fade-in">
-      <Masthead client={data.client} quarterLabel={quarterLabel} generatedAt={data.generatedAt} onDownloadPdf={onDownloadPdf} />
+      <Masthead client={data.client} editionLabel={editionLabel} generatedAt={data.generatedAt} onDownloadPdf={onDownloadPdf} />
 
       {!aiOk && <EditorNote state={newsletter} />}
       {aiOk && nl && <AiStamp nl={nl} />}
@@ -131,39 +125,34 @@ function NewsletterArticle({
           <p className="mt-2 text-[14px] leading-relaxed text-slate-600">
             The AI editor writes the prose summary here. It is off in this build, so this edition shows the live,
             source-stamped figures only — <span className="font-semibold text-slate-700">nothing is written that the data doesn't say.</span>{' '}
-            See the numbers below and in each sector.
+            See the numbers below and in each dashboard.
           </p>
         )}
       </section>
 
       {/* What moved (chart) */}
       <section className="nl-section mt-7">
-        <SectionLabel icon={TrendingUp}>What moved this quarter</SectionLabel>
+        <SectionLabel icon={TrendingUp}>What moved</SectionLabel>
         <p className="mt-1 text-[12.5px] text-slate-500">
-          Headline change per system, largest first. Green = up, red = down. Mixed units — each bar is labelled.
+          Headline change per dashboard, largest first. Green = up, red = down. Mixed units and windows — each bar is labelled.
         </p>
         <div className="mt-3">
           <MoversChart systems={data.systems} onSelect={onSelect} />
         </div>
       </section>
 
-      {/* One section per sector */}
-      {data.sectors.map((sector) => {
-        const blocks = data.systems
-          .filter((b) => b.sector === sector.id)
-          .sort((a, b) => Math.abs(headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) ?? -1) - Math.abs(headlineMagnitude(a.changePct, a.changeAbs, a.changeDisplay) ?? -1));
-        if (!blocks.length) return null;
-        return (
-          <SectorBlock
-            key={sector.id}
-            sector={sector}
-            blocks={blocks}
-            summary={aiSectorSummary.get(sector.id)}
-            aiLine={aiLine}
-            onSelect={onSelect}
-          />
-        );
-      })}
+      {/* One detailed entry per dashboard, ranked by move size */}
+      <section className="nl-section mt-7">
+        <SectionLabel>Dashboard by dashboard</SectionLabel>
+        <p className="mt-1 text-[12.5px] text-slate-500">
+          Every dashboard, biggest move first: the headline, what changed underneath, and why.
+        </p>
+        <div className="mt-3 flex flex-col gap-2.5">
+          {ranked.map((b) => (
+            <SystemDetail key={b.systemId} b={b} line={aiLine.get(b.systemId)} onSelect={onSelect} />
+          ))}
+        </div>
+      </section>
 
       <WatchList items={aiOk ? nl?.watchList ?? [] : []} enabled={aiOk} />
 
@@ -176,12 +165,12 @@ function NewsletterArticle({
 
 function Masthead({
   client,
-  quarterLabel,
+  editionLabel,
   generatedAt,
   onDownloadPdf,
 }: {
   client: ConsolidatedData['client'];
-  quarterLabel: string;
+  editionLabel: string;
   generatedAt: string;
   onDownloadPdf: () => void;
 }) {
@@ -190,7 +179,7 @@ function Masthead({
       <div className="flex items-center justify-between gap-3">
         <MunshotMark size="sm" />
         <span className="hidden text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400 sm:inline">
-          Quarterly intelligence edition
+          Monthly intelligence edition
         </span>
         <button
           onClick={onDownloadPdf}
@@ -204,7 +193,7 @@ function Masthead({
         <h1 className="nl-title font-display text-[34px] font-bold uppercase leading-none tracking-[0.04em] text-slate-900 sm:text-[46px]">
           {client.shortName} Intelligence
         </h1>
-        <p className="mt-2.5 text-[13.5px] font-medium text-slate-500">{quarterLabel}</p>
+        <p className="mt-2.5 text-[13.5px] font-medium text-slate-500">{editionLabel}</p>
       </div>
 
       <div className="mt-2.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11.5px] text-slate-400">
@@ -278,56 +267,9 @@ function ByTheNumbers({ movers }: { movers: ChangeBlock[] }) {
   );
 }
 
-function SectorBlock({
-  sector,
-  blocks,
-  summary,
-  aiLine,
-  onSelect,
-}: {
-  sector: SectorDef;
-  blocks: ChangeBlock[];
-  summary?: string;
-  aiLine: Map<string, string>;
-  onSelect: (id: string) => void;
-}) {
-  const Icon = SECTOR_ICON[sector.id];
-  return (
-    <section className="nl-section mt-7">
-      <div
-        className="nl-avoid mb-3 flex items-center gap-2.5 rounded-xl px-3 py-2"
-        style={{
-          background: `linear-gradient(90deg, ${withAlpha(sector.color, 0.18)}, ${withAlpha(sector.color, 0.04)})`,
-          boxShadow: `inset 3px 0 0 0 ${sector.color}`,
-        }}
-      >
-        {Icon && (
-          <span className="grid h-7 w-7 place-items-center rounded-lg text-white shadow-sm" style={{ background: sector.color }}>
-            <Icon size={15} strokeWidth={2.4} />
-          </span>
-        )}
-        <h3 className="font-display text-[15px] font-bold" style={{ color: shade(sector.color, -0.45) }}>
-          {sector.label}
-        </h3>
-        <span className="tnum rounded-full px-2 py-0.5 text-[10.5px] font-bold text-white" style={{ background: sector.color }}>
-          {blocks.length}
-        </span>
-      </div>
-
-      {summary && <p className="nl-lede mb-3 text-[13.5px] italic leading-relaxed text-slate-600">{summary}</p>}
-
-      <div className="flex flex-col gap-2.5">
-        {blocks.map((b) => (
-          <SystemDetail key={b.systemId} b={b} line={aiLine.get(b.systemId)} onSelect={onSelect} />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/** A full, document-style entry per system: headline, the narrative line, the COMPLETE
- *  breakdown table, any secondary metrics, and the honest caveat. The newsletter is the
- *  detailed record — the dashboard is the glance. */
+/** A full, document-style entry per dashboard: headline, the narrative line, the COMPLETE
+ *  breakdown table, the lifted "why it moved" insights, and the honest caveat. The
+ *  newsletter is the detailed record — the dashboard is the glance. */
 function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; onSelect: (id: string) => void }) {
   const Icon = iconFor(b.systemId, b.sector);
   const accent = sectorColor(b.sector);
@@ -335,6 +277,10 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
   const narrative = !!b.highlights?.length;
   const body = line || b.summary || factualLine(b);
   const rows = b.breakdown || [];
+  const hasVals = rows.some((r) => r.lastValue != null || r.thisValue != null);
+  const changeOf = (r: BreakdownRow) => headlineText(r.changePct, r.changeAbs, r.changeDisplay ?? b.changeDisplay);
+  const insights = b.insights ?? [];
+  const bNoun = b.breakdownNoun ?? 'breakdown';
 
   return (
     <div className="nl-avoid rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
@@ -382,20 +328,24 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
           <table className="w-full text-[11.5px]">
             <thead>
               <tr className="bg-slate-50 text-left text-slate-500">
-                <th className="px-2.5 py-1.5 font-semibold">Breakdown</th>
-                <th className="px-2.5 py-1.5 text-right font-semibold">{b.lastPeriodLabel}</th>
-                <th className="px-2.5 py-1.5 text-right font-semibold">{b.thisPeriodLabel}</th>
+                <th className="px-2.5 py-1.5 font-semibold capitalize">{bNoun}</th>
+                {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.lastPeriodLabel}</th>}
+                {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.thisPeriodLabel}</th>}
                 <th className="px-2.5 py-1.5 text-right font-semibold">Change</th>
               </tr>
             </thead>
             <tbody>
               {rows.map((r, i) => (
                 <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                  <td className="px-2.5 py-1.5 font-medium text-slate-700">{r.label}</td>
-                  <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>
-                  <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>
+                  <td className="px-2.5 py-1.5 font-medium text-slate-700">
+                    {r.label}
+                    {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
+                  </td>
+                  {hasVals && <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>}
+                  {hasVals && <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>}
                   <td className="tnum px-2.5 py-1.5 text-right font-bold" style={{ color: directionColor(r.direction) }}>
-                    {signedPct(r.changePct)}
+                    {changeOf(r)}
+                    {r.bigMove && ' ⚡'}
                   </td>
                 </tr>
               ))}
@@ -404,16 +354,27 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
         </div>
       ) : null}
 
-      {b.secondaryMetrics && b.secondaryMetrics.length > 0 && (
-        <div className="mt-2.5 border-t border-dashed border-slate-200 pt-2">
-          <div className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Also moved</div>
-          <div className="mt-1 grid grid-cols-1 gap-x-4 gap-y-1 sm:grid-cols-2">
-            {b.secondaryMetrics.map((m) => (
-              <div key={m.metricLabel} className="flex items-baseline justify-between gap-2 text-[12px]">
-                <span className="min-w-0 truncate text-slate-600">{m.metricLabel}</span>
-                <span className="tnum shrink-0 font-semibold" style={{ color: directionColor(m.direction) }}>
-                  {headlineText(m.changePct, m.changeAbs, m.changeDisplay)}
-                </span>
+      {/* Lifted "why it moved" — the research/explanation behind the move */}
+      {insights.length > 0 && (
+        <div className="mt-2.5 border-t border-dashed border-slate-200 pt-2.5">
+          <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-slate-400">
+            <Quote size={11} style={{ color: accent }} /> Why it moved
+          </div>
+          <div className="mt-1.5 flex flex-col gap-2">
+            {insights.map((ins, i) => (
+              <div key={i}>
+                <div className="text-[12px] font-bold text-slate-800">{ins.title}</div>
+                {ins.body && <p className="text-[11.5px] leading-snug text-slate-600">{ins.body}</p>}
+                {ins.bullets && ins.bullets.length > 0 && (
+                  <ul className="mt-0.5 flex flex-col gap-0.5">
+                    {ins.bullets.map((bl, j) => (
+                      <li key={j} className="flex gap-1.5 text-[11.5px] leading-snug text-slate-600">
+                        <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: accent }} />
+                        <span>{bl}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
