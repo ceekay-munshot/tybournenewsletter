@@ -46,7 +46,7 @@ export function useTip() {
 /** Styled, colourful hover tooltip positioned inside a relative chart frame. */
 export function ChartTooltip({ tip, frameWidth }: { tip: TipState | null; frameWidth: number }) {
   if (!tip) return null;
-  const TIP_W = 236;
+  const TIP_W = 252;
   let left = tip.x + 14;
   if (left + TIP_W > frameWidth) left = tip.x - TIP_W - 14;
   if (left < 4) left = 4;
@@ -64,15 +64,31 @@ export function ChartTooltip({ tip, frameWidth }: { tip: TipState | null; frameW
           </span>
         </div>
         <div className="px-3 py-2">
-          {tip.content.rows.map((r, i) => (
-            <div key={i} className="flex items-center justify-between gap-3 py-0.5 text-[12px]">
-              <span className="flex items-center gap-1.5 text-slate-500">
-                {r.color && <span className="h-2 w-2 rounded-sm" style={{ background: r.color }} />}
-                {r.label}
-              </span>
-              <span className="tnum font-semibold text-slate-900">{r.value}</span>
-            </div>
-          ))}
+          {tip.content.rows.map((r, i) => {
+            // Long values (e.g. "118 positions → 714 positions") get their own line so
+            // the label/value don't collide and wrap mid-word.
+            const stacked = r.value.length > 16;
+            if (stacked) {
+              return (
+                <div key={i} className="py-0.5 text-[12px]">
+                  <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+                    {r.color && <span className="h-2 w-2 rounded-sm" style={{ background: r.color }} />}
+                    {r.label}
+                  </div>
+                  <div className="tnum mt-0.5 font-semibold leading-snug text-slate-900">{r.value}</div>
+                </div>
+              );
+            }
+            return (
+              <div key={i} className="flex items-center justify-between gap-3 py-0.5 text-[12px]">
+                <span className="flex items-center gap-1.5 text-slate-500">
+                  {r.color && <span className="h-2 w-2 rounded-sm" style={{ background: r.color }} />}
+                  {r.label}
+                </span>
+                <span className="tnum font-semibold text-slate-900">{r.value}</span>
+              </div>
+            );
+          })}
           {tip.content.note && (
             <p className="mt-1.5 border-t border-dashed border-black/10 pt-1.5 text-[11px] italic leading-snug text-slate-500">
               {tip.content.note}

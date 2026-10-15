@@ -4,7 +4,6 @@ import { useConsolidated, systemById } from './lib/data';
 import { useNewsletter } from './lib/newsletter';
 import type { SectorId } from './types';
 import { Header } from './components/Header';
-import { Footer } from './components/Footer';
 import { Tabs, type TabDef } from './components/ui/Tabs';
 import { SECTOR_ICON } from './lib/icons';
 import { Overview } from './tabs/Overview';
@@ -84,8 +83,6 @@ export default function App() {
           <SectorTab data={data} sector={data.sectors.find((s) => s.id === tab)!} onSelect={openSystem} />
         )}
       </main>
-
-      <Footer data={data} />
 
       <NewsletterModal
         data={data}
