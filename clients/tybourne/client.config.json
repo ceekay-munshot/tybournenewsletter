@@ -17,7 +17,7 @@
       "source": { "signal": "https://ai-compute-pricing.pages.dev/api/pricing-share-signal", "history": "https://ai-compute-pricing.pages.dev/api/pricing-history?metric=input&view=basket&range=400" },
       "sourceName": "pricepertoken.com / getdeploying.com", "dashboardUrl": "https://ai-compute-pricing.pages.dev/" },
     { "id": "schneider-electric", "name": "Schneider Electric", "sector": "industrial", "metricLabel": "Data-centre equipment price", "connector": "schneiderElectric",
-      "source": { "base": "https://raw.githubusercontent.com/ceekay-munshot/Schneider-Electric/main/public/data", "slugs": ["ups", "rack-pdus", "dcim"] },
+      "source": { "base": "https://raw.githubusercontent.com/ceekay-munshot/Schneider-Electric/main/public/data", "slugs": ["ups", "busway", "rack-pdus", "rack-systems", "pod-modular", "dcim"] },
       "sourceName": "Graybar distributor pricing", "dashboardUrl": null },
     { "id": "thirteen-f", "name": "13F Fund Holdings", "sector": "financial", "metricLabel": "New buys this quarter", "connector": "thirteenF",
       "source": { "base": "https://13f-eo2.pages.dev/data", "watchlist": "https://raw.githubusercontent.com/ceekay-munshot/13F/main/shared/watchlist.mjs" },

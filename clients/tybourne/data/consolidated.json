@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T03:27:43.129Z",
+  "generatedAt": "2026-10-15T12:27:41.571Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -272,30 +272,30 @@
       "breakdown": [
         {
           "label": "OpenAI",
-          "thisValue": 5.859,
-          "lastValue": 5.882530120481928,
-          "changePct": -0.004,
+          "thisValue": 5.861,
+          "lastValue": 5.87863590772317,
+          "changePct": -0.003,
           "direction": "down"
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.035,
-          "lastValue": 5.035,
+          "thisValue": 5.025,
+          "lastValue": 5.025,
           "changePct": 0,
           "direction": "flat"
         },
         {
           "label": "Google",
-          "thisValue": 0.51,
-          "lastValue": 0.513595166163142,
+          "thisValue": 0.512,
+          "lastValue": 0.5156092648539778,
           "changePct": -0.007,
           "direction": "down"
         },
         {
           "label": "DeepSeek",
-          "thisValue": 0.248,
-          "lastValue": 0.3208279430789133,
-          "changePct": -0.227,
+          "thisValue": 0.249,
+          "lastValue": 0.3208762886597938,
+          "changePct": -0.224,
           "direction": "down"
         }
       ],
@@ -316,7 +316,7 @@
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Biggest price cut: DeepSeek (-22.7% input · share +6.82pp). Equal-weighted basket, QTD.",
+      "notes": "Biggest price cut: DeepSeek (-22.4% input · share +7.01pp). Equal-weighted basket, QTD.",
       "status": "ok"
     },
     {
@@ -325,44 +325,861 @@
       "sector": "industrial",
       "metricLabel": "Data-centre equipment price",
       "unit": "$",
-      "comparison": "QoQ",
-      "thisPeriodLabel": "Q4 '26 (QTD)",
-      "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2816.5204186602896,
-      "lastValue": 2824.0310167464136,
-      "changePct": -0.0014923967378016644,
-      "changeAbs": -7.510598086123991,
-      "direction": "down",
+      "comparison": "MoM",
+      "thisPeriodLabel": "12 Oct",
+      "lastPeriodLabel": "14 Sep",
+      "thisValue": 3073.2769230769254,
+      "lastValue": 3016.4220735785975,
+      "changePct": 0.014856325825967003,
+      "changeAbs": 56.854849498327894,
+      "direction": "up",
       "asOf": "2026-10-12T15:39:55.296Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "UPS",
-          "thisValue": 3775.3928290766253,
-          "lastValue": 3789.360157170927,
-          "changePct": -0.003685933116668796,
-          "direction": "down"
+          "thisValue": 4101.903683127577,
+          "lastValue": 3997.6374485596752,
+          "changePct": 0.02608196363716483,
+          "direction": "up",
+          "bigMove": true,
+          "sub": [
+            {
+              "label": "Schneider",
+              "thisValue": 5863.917637130801,
+              "lastValue": 5670.487932489453,
+              "changePct": 0.03411165087453579,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Vertiv",
+              "thisValue": 2661.604823529412,
+              "lastValue": 2580.8238823529414,
+              "changePct": 0.03130044701183658,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Eaton",
+              "thisValue": 2305.4758125000003,
+              "lastValue": 2317.331500000001,
+              "changePct": -0.005116094740869329,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Chatsworth",
+              "thisValue": 2166.0425,
+              "lastValue": 2200.7725,
+              "changePct": -0.01578082241576538,
+              "direction": "down",
+              "bigMove": false
+            }
+          ]
+        },
+        {
+          "label": "Busway / Power Distribution",
+          "thisValue": 3912.050853658538,
+          "lastValue": 3922.1837804878055,
+          "changePct": -0.002583491084654694,
+          "direction": "down",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Schneider",
+              "thisValue": 3934.443703703705,
+              "lastValue": 3938.0679012345695,
+              "changePct": -0.0009202983853397371,
+              "direction": "down",
+              "bigMove": false
+            }
+          ]
         },
         {
           "label": "Rack PDUs",
-          "thisValue": 1323.96366972477,
-          "lastValue": 1321.423883792048,
-          "changePct": 0.0019220069834318832,
-          "direction": "up"
+          "thisValue": 1344.7296048632209,
+          "lastValue": 1341.2149848024312,
+          "changePct": 0.0026204747938358016,
+          "direction": "up",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Schneider",
+              "thisValue": 1736.4825925925927,
+              "lastValue": 1733.6408333333336,
+              "changePct": 0.0016391856978790432,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Legrand",
+              "thisValue": 1555.692432432432,
+              "lastValue": 1555.692432432432,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false
+            },
+            {
+              "label": "Chatsworth",
+              "thisValue": 1519.4219999999998,
+              "lastValue": 1514.214,
+              "changePct": 0.0034394081681980593,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Vertiv",
+              "thisValue": 875.3203030303031,
+              "lastValue": 866.3912121212119,
+              "changePct": 0.010306072804258756,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Eaton",
+              "thisValue": 769.4666037735852,
+              "lastValue": 770.9466037735853,
+              "changePct": -0.001919717906215293,
+              "direction": "down",
+              "bigMove": false
+            }
+          ]
         },
         {
-          "label": "DCIM",
+          "label": "Rack Systems",
+          "thisValue": 1038.5272418300674,
+          "lastValue": 1037.4280653594783,
+          "changePct": 0.0010595206620019725,
+          "direction": "up",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Schneider",
+              "thisValue": 2184.771414141415,
+              "lastValue": 2190.4334343434352,
+              "changePct": -0.0025848857642722673,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Panduit",
+              "thisValue": 1350.0130097087367,
+              "lastValue": 1351.4824271844652,
+              "changePct": -0.0010872634717047217,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Eaton",
+              "thisValue": 1013.5549500000006,
+              "lastValue": 1005.7972500000003,
+              "changePct": 0.007712985892534841,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Chatsworth",
+              "thisValue": 651.291019283746,
+              "lastValue": 651.2876584022035,
+              "changePct": 0.0000051603642401175475,
+              "direction": "flat",
+              "bigMove": false
+            }
+          ],
+          "note": "priced to 28 Sep"
+        },
+        {
+          "label": "Pod & Modular",
+          "thisValue": 14760.23,
+          "lastValue": 14760.23,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false,
+          "sub": [],
+          "note": "only 1 priced item"
+        },
+        {
+          "label": "DCIM Software",
+          "thisValue": 6322.306666666666,
+          "lastValue": 6322.306666666666,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Schneider",
+              "thisValue": 6322.306666666666,
+              "lastValue": 6322.306666666666,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false
+            }
+          ],
+          "note": "only 3 priced items"
+        },
+        {
+          "label": "Liquid Cooling (Motivair)",
           "thisValue": null,
           "lastValue": null,
           "changePct": null,
-          "direction": "flat"
+          "direction": "flat",
+          "note": "Sold direct — not distributed by Graybar"
+        },
+        {
+          "label": "Reference Designs & Integration",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat",
+          "note": "An engineering service — no catalogue price"
+        },
+        {
+          "label": "Sustainability & Energy Mgmt",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat",
+          "note": "SaaS / advisory sold direct by Schneider"
         }
       ],
+      "summary": "Month-on-month like-for-like price up 1.5% across 3 solidly-priced categories; 1 moved more than 2%.",
       "sourceName": "Graybar distributor pricing",
       "sourceUrl": "https://www.graybar.com/search/?q=query%3Aups%3Bsort%3Arelevance%3Bbrands%3ATripp+Lite+%28Eaton%29%3Bbrands%3AAPC+%28Schneider+Electric%29%3Bbrands%3ALiebert+%28Vertiv%29%3Bbrands%3AEaton%3Bbrands%3AChatsworth&text=ups&enablePartNumberSearch=",
       "dashboardUrl": null,
-      "notes": "Like-for-like: mean over items priced in both quarters, only priced categories. Excluded from headline (too few comparable items): DCIM.",
-      "status": "ok"
+      "notes": "Graybar distributor list price, like-for-like (only items priced in both captures). Six data-centre product lines, split by parent brand. Weekly/monthly/quarterly compares each category’s latest priced capture to the nearest earlier capture in that window. 3 software/service lines are sold direct (not via Graybar), so they carry no price.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": true,
+          "thisPeriodLabel": "12 Oct",
+          "lastPeriodLabel": "5 Oct",
+          "thisValue": 3016.5575190424393,
+          "lastValue": 3025.9831011969554,
+          "changePct": -0.0025977612181351567,
+          "changeAbs": -9.425582154516178,
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "UPS",
+              "thisValue": 3963.076798418976,
+              "lastValue": 3979.327233201585,
+              "changePct": -0.0040837141130347565,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 5560.430485829958,
+                  "lastValue": 5563.8691902834,
+                  "changePct": -0.0006180419301457925,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 2653.338351648352,
+                  "lastValue": 2672.4048351648353,
+                  "changePct": -0.007134579037426202,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 2327.8815243902445,
+                  "lastValue": 2362.233231707318,
+                  "changePct": -0.014542047269500738,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 2166.0425,
+                  "lastValue": 2167.2,
+                  "changePct": -0.0005340992986340901,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Busway / Power Distribution",
+              "thisValue": 3832.675882352942,
+              "lastValue": 3832.8080000000004,
+              "changePct": -0.000034470197061343555,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 3853.3240476190485,
+                  "lastValue": 3853.4577380952387,
+                  "changePct": -0.00003469364017373418,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack PDUs",
+              "thisValue": 1344.884298780487,
+              "lastValue": 1346.1896646341456,
+              "changePct": -0.0009696745473183181,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 1740.0183018867924,
+                  "lastValue": 1741.8977358490567,
+                  "changePct": -0.0010789576928568847,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Legrand",
+                  "thisValue": 1639.0384374999996,
+                  "lastValue": 1639.0384374999996,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 1363.6620895522387,
+                  "lastValue": 1363.6620895522387,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 942.9964062500002,
+                  "lastValue": 942.5046875000002,
+                  "changePct": 0.0005217149118953513,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 890.0635593220339,
+                  "lastValue": 894.4772881355932,
+                  "changePct": -0.004934422452200022,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack Systems",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "no comparable price in this window"
+            },
+            {
+              "label": "Pod & Modular",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "no comparable price in this window"
+            },
+            {
+              "label": "DCIM Software",
+              "thisValue": 6322.306666666666,
+              "lastValue": 6322.306666666666,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 6322.306666666666,
+                  "lastValue": 6322.306666666666,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ],
+              "note": "only 3 priced items"
+            },
+            {
+              "label": "Liquid Cooling (Motivair)",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "Sold direct — not distributed by Graybar"
+            },
+            {
+              "label": "Reference Designs & Integration",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "An engineering service — no catalogue price"
+            },
+            {
+              "label": "Sustainability & Energy Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "SaaS / advisory sold direct by Schneider"
+            }
+          ],
+          "summary": "Week-on-week like-for-like price down 0.3% across 3 solidly-priced categories."
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "12 Oct",
+          "lastPeriodLabel": "14 Sep",
+          "thisValue": 3073.2769230769254,
+          "lastValue": 3016.4220735785975,
+          "changePct": 0.014856325825967003,
+          "changeAbs": 56.854849498327894,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "UPS",
+              "thisValue": 4101.903683127577,
+              "lastValue": 3997.6374485596752,
+              "changePct": 0.02608196363716483,
+              "direction": "up",
+              "bigMove": true,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 5863.917637130801,
+                  "lastValue": 5670.487932489453,
+                  "changePct": 0.03411165087453579,
+                  "direction": "up",
+                  "bigMove": true
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 2661.604823529412,
+                  "lastValue": 2580.8238823529414,
+                  "changePct": 0.03130044701183658,
+                  "direction": "up",
+                  "bigMove": true
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 2305.4758125000003,
+                  "lastValue": 2317.331500000001,
+                  "changePct": -0.005116094740869329,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 2166.0425,
+                  "lastValue": 2200.7725,
+                  "changePct": -0.01578082241576538,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Busway / Power Distribution",
+              "thisValue": 3912.050853658538,
+              "lastValue": 3922.1837804878055,
+              "changePct": -0.002583491084654694,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 3934.443703703705,
+                  "lastValue": 3938.0679012345695,
+                  "changePct": -0.0009202983853397371,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack PDUs",
+              "thisValue": 1344.7296048632209,
+              "lastValue": 1341.2149848024312,
+              "changePct": 0.0026204747938358016,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 1736.4825925925927,
+                  "lastValue": 1733.6408333333336,
+                  "changePct": 0.0016391856978790432,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Legrand",
+                  "thisValue": 1555.692432432432,
+                  "lastValue": 1555.692432432432,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 1519.4219999999998,
+                  "lastValue": 1514.214,
+                  "changePct": 0.0034394081681980593,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 875.3203030303031,
+                  "lastValue": 866.3912121212119,
+                  "changePct": 0.010306072804258756,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 769.4666037735852,
+                  "lastValue": 770.9466037735853,
+                  "changePct": -0.001919717906215293,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack Systems",
+              "thisValue": 1038.5272418300674,
+              "lastValue": 1037.4280653594783,
+              "changePct": 0.0010595206620019725,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 2184.771414141415,
+                  "lastValue": 2190.4334343434352,
+                  "changePct": -0.0025848857642722673,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Panduit",
+                  "thisValue": 1350.0130097087367,
+                  "lastValue": 1351.4824271844652,
+                  "changePct": -0.0010872634717047217,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 1013.5549500000006,
+                  "lastValue": 1005.7972500000003,
+                  "changePct": 0.007712985892534841,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 651.291019283746,
+                  "lastValue": 651.2876584022035,
+                  "changePct": 0.0000051603642401175475,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ],
+              "note": "priced to 28 Sep"
+            },
+            {
+              "label": "Pod & Modular",
+              "thisValue": 14760.23,
+              "lastValue": 14760.23,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [],
+              "note": "only 1 priced item"
+            },
+            {
+              "label": "DCIM Software",
+              "thisValue": 6322.306666666666,
+              "lastValue": 6322.306666666666,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 6322.306666666666,
+                  "lastValue": 6322.306666666666,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ],
+              "note": "only 3 priced items"
+            },
+            {
+              "label": "Liquid Cooling (Motivair)",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "Sold direct — not distributed by Graybar"
+            },
+            {
+              "label": "Reference Designs & Integration",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "An engineering service — no catalogue price"
+            },
+            {
+              "label": "Sustainability & Energy Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "SaaS / advisory sold direct by Schneider"
+            }
+          ],
+          "summary": "Month-on-month like-for-like price up 1.5% across 3 solidly-priced categories; 1 moved more than 2%."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "12 Oct",
+          "lastPeriodLabel": "13 Jul",
+          "thisValue": 3076.4157397107924,
+          "lastValue": 3042.079788654062,
+          "changePct": 0.012453673092711802,
+          "changeAbs": 34.33595105673021,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "UPS",
+              "thisValue": 4054.6784661354627,
+              "lastValue": 4015.4735856573743,
+              "changePct": 0.009763451219831683,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 5744.862653061224,
+                  "lastValue": 5640.26151020408,
+                  "changePct": 0.018545442027449354,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 2704.50183908046,
+                  "lastValue": 2704.2786206896562,
+                  "changePct": 0.00008254267481753373,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 2313.2615060240964,
+                  "lastValue": 2348.3953012048196,
+                  "changePct": -0.014960767108798987,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 2166.0425,
+                  "lastValue": 2199.4525000000003,
+                  "changePct": -0.015190143910814307,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Busway / Power Distribution",
+              "thisValue": 3832.675882352942,
+              "lastValue": 3776.595882352942,
+              "changePct": 0.0148493515713575,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 3853.3240476190485,
+                  "lastValue": 3790.536309523811,
+                  "changePct": 0.0165643415517435,
+                  "direction": "up",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack PDUs",
+              "thisValue": 1296.3836858974355,
+              "lastValue": 1275.8055769230766,
+              "changePct": 0.016129502289830185,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 1750.294519230769,
+                  "lastValue": 1745.7778846153847,
+                  "changePct": 0.0025871759833751627,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Legrand",
+                  "thisValue": 1556.8549999999998,
+                  "lastValue": 1556.8549999999998,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 1326.2327272727273,
+                  "lastValue": 1233.4892727272727,
+                  "changePct": 0.07518788902022368,
+                  "direction": "up",
+                  "bigMove": true
+                },
+                {
+                  "label": "Vertiv",
+                  "thisValue": 870.288870967742,
+                  "lastValue": 844.715322580645,
+                  "changePct": 0.030274753758424384,
+                  "direction": "up",
+                  "bigMove": true
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 718.065272727273,
+                  "lastValue": 731.4436363636364,
+                  "changePct": -0.018290354815134822,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Rack Systems",
+              "thisValue": 1020.5722086720883,
+              "lastValue": 996.2620867208678,
+              "changePct": 0.024401332014184814,
+              "direction": "up",
+              "bigMove": true,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 2229.1489898989903,
+                  "lastValue": 2235.713232323233,
+                  "changePct": -0.0029360842568443416,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "Panduit",
+                  "thisValue": 1366.933372093023,
+                  "lastValue": 1347.5133720930235,
+                  "changePct": 0.014411730823743535,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "Eaton",
+                  "thisValue": 990.1000497512446,
+                  "lastValue": 966.7546268656713,
+                  "changePct": 0.024148240139549984,
+                  "direction": "up",
+                  "bigMove": true
+                },
+                {
+                  "label": "Chatsworth",
+                  "thisValue": 613.4379545454541,
+                  "lastValue": 578.6988068181821,
+                  "changePct": 0.06002975523360025,
+                  "direction": "up",
+                  "bigMove": true
+                }
+              ],
+              "note": "priced to 28 Sep"
+            },
+            {
+              "label": "Pod & Modular",
+              "thisValue": 14760.23,
+              "lastValue": 14760.23,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [],
+              "note": "only 1 priced item"
+            },
+            {
+              "label": "DCIM Software",
+              "thisValue": 6322.306666666666,
+              "lastValue": 6322.306666666666,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Schneider",
+                  "thisValue": 6322.306666666666,
+                  "lastValue": 6322.306666666666,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ],
+              "note": "only 3 priced items"
+            },
+            {
+              "label": "Liquid Cooling (Motivair)",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "Sold direct — not distributed by Graybar"
+            },
+            {
+              "label": "Reference Designs & Integration",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "An engineering service — no catalogue price"
+            },
+            {
+              "label": "Sustainability & Energy Mgmt",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": null,
+              "direction": "flat",
+              "note": "SaaS / advisory sold direct by Schneider"
+            }
+          ],
+          "summary": "Quarter-on-quarter like-for-like price up 1.2% across 3 solidly-priced categories; 1 moved more than 2%."
+        }
+      ]
     },
     {
       "systemId": "thirteen-f",
@@ -736,40 +1553,40 @@
       "thisPeriodLabel": "Q4 '26",
       "lastPeriodLabel": "Q3 '26",
       "thisValue": 2.6,
-      "lastValue": 3.4,
+      "lastValue": 3.3,
       "changePct": null,
-      "changeAbs": -0.8,
+      "changeAbs": -0.7,
       "direction": "down",
       "changeDisplay": "pts",
-      "asOf": "2026-10-14T11:15:57.092Z",
+      "asOf": "2026-10-15T10:52:58.211Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Partner views",
-          "thisValue": 3.3,
-          "lastValue": 4,
-          "changePct": -0.17500000000000004,
-          "direction": "down"
-        },
-        {
           "label": "Reporting & analytics",
-          "thisValue": 3.1,
+          "thisValue": 3.3,
           "lastValue": 2.7,
-          "changePct": 0.1481481481481481,
+          "changePct": 0.22222222222222207,
           "direction": "up"
         },
         {
+          "label": "Partner views",
+          "thisValue": 3.2,
+          "lastValue": 3.9,
+          "changePct": -0.17948717948717943,
+          "direction": "down"
+        },
+        {
           "label": "Joule (AI copilot)",
-          "thisValue": 3,
+          "thisValue": 3.1,
           "lastValue": 2.9,
-          "changePct": 0.03448275862068969,
+          "changePct": 0.06896551724137938,
           "direction": "up"
         },
         {
           "label": "Customer satisfaction",
-          "thisValue": 2.9,
+          "thisValue": 3.1,
           "lastValue": 5,
-          "changePct": -0.42000000000000004,
+          "changePct": -0.38,
           "direction": "down"
         },
         {
@@ -788,23 +1605,23 @@
         },
         {
           "label": "Vs competitors",
-          "thisValue": 2.6,
+          "thisValue": 2.7,
           "lastValue": 3.4,
-          "changePct": -0.23529411764705876,
+          "changePct": -0.2058823529411764,
           "direction": "down"
         },
         {
           "label": "BTP AI platform",
-          "thisValue": 2.3,
-          "lastValue": 3.7,
-          "changePct": -0.37837837837837845,
+          "thisValue": 2.4,
+          "lastValue": 3,
+          "changePct": -0.20000000000000004,
           "direction": "down"
         },
         {
           "label": "Risks & gaps",
           "thisValue": 2.1,
-          "lastValue": 3,
-          "changePct": -0.3,
+          "lastValue": 2.8,
+          "changePct": -0.24999999999999992,
           "direction": "down"
         }
       ],
@@ -1117,12 +1934,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q3 '26",
       "lastPeriodLabel": "Q2 '26",
-      "thisValue": 1263807958711772,
+      "thisValue": 1263807970564016,
       "lastValue": 421326478355599,
-      "changePct": 1.9995930083585198,
-      "changeAbs": 842481480356173,
+      "changePct": 1.9995930364893035,
+      "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T03:27:35.088Z",
+      "asOf": "2026-10-15T12:27:36.432Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1134,9 +1951,9 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 155433792452304,
+          "thisValue": 155433801083559,
           "lastValue": 38549495120143,
-          "changePct": 3.03205779914576,
+          "changePct": 3.032058023046358,
           "direction": "up"
         },
         {
@@ -1169,9 +1986,9 @@
         },
         {
           "label": "Google",
-          "thisValue": 82034409930238,
+          "thisValue": 82034413103222,
           "lastValue": 51427552913035,
-          "changePct": 0.5951451174229463,
+          "changePct": 0.5951451791210793,
           "direction": "up"
         },
         {
@@ -1183,9 +2000,9 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 72200283990945,
+          "thisValue": 72200284038950,
           "lastValue": 64324408433701,
-          "changePct": 0.12243992209211911,
+          "changePct": 0.12243992283841436,
           "direction": "up"
         },
         {
@@ -1236,7 +2053,7 @@
         },
         {
           "period": "Q3 '26",
-          "value": 1263807958711772
+          "value": 1263807970564016
         }
       ],
       "secondaryMetrics": [
@@ -1254,7 +2071,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T03:27:35.143Z",
+          "asOf": "2026-10-15T12:27:36.552Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1277,7 +2094,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T03:27:35.919Z",
+          "asOf": "2026-10-15T12:27:37.073Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -1300,7 +2117,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T03:27:35.940Z",
+          "asOf": "2026-10-15T12:27:37.168Z",
           "isStale": false,
           "breakdown": [
             {
@@ -1455,12 +2272,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 3.5163,
+      "thisValue": 3.5082,
       "lastValue": 3.3819,
-      "changePct": 0.039740974008693426,
-      "changeAbs": 0.1344000000000003,
+      "changePct": 0.03734587066441943,
+      "changeAbs": 0.12630000000000008,
       "direction": "up",
-      "asOf": "2026-10-14",
+      "asOf": "2026-10-15",
       "isStale": false,
       "breakdown": [
         {
@@ -1472,37 +2289,37 @@
         },
         {
           "label": "B200",
-          "thisValue": 7.95,
+          "thisValue": 7.97,
           "lastValue": 6.79,
-          "changePct": 0.170839469808542,
+          "changePct": 0.17378497790868921,
           "direction": "up"
         },
         {
           "label": "H200",
-          "thisValue": 4.615,
+          "thisValue": 4.725,
           "lastValue": 4.5,
-          "changePct": 0.025555555555555602,
+          "changePct": 0.04999999999999992,
           "direction": "up"
         },
         {
           "label": "H100",
-          "thisValue": 3.5163,
+          "thisValue": 3.5082,
           "lastValue": 3.3819,
-          "changePct": 0.039740974008693426,
+          "changePct": 0.03734587066441943,
           "direction": "up"
         },
         {
           "label": "A100",
-          "thisValue": 1.8375,
+          "thisValue": 1.8156,
           "lastValue": 1.76,
-          "changePct": 0.044034090909090856,
+          "changePct": 0.03159090909090914,
           "direction": "up"
         },
         {
           "label": "L40S",
-          "thisValue": 1.57,
+          "thisValue": 1.5865,
           "lastValue": 1.535,
-          "changePct": 0.022801302931596185,
+          "changePct": 0.0335504885993486,
           "direction": "up"
         }
       ],
@@ -1521,17 +2338,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 34,
+      "thisValue": 38,
       "lastValue": 7,
       "changePct": null,
-      "changeAbs": 27,
+      "changeAbs": 31,
       "direction": "flat",
-      "asOf": "2026-10-15T01:54:00.000Z",
+      "asOf": "2026-10-15T11:50:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 9,
+          "thisValue": 11,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Odd Lots",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -1565,8 +2389,8 @@
           "direction": "flat"
         },
         {
-          "label": "Odd Lots",
-          "thisValue": 4,
+          "label": "Cheeky Pint",
+          "thisValue": 2,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -1586,7 +2410,7 @@
           "direction": "flat"
         },
         {
-          "label": "Cheeky Pint",
+          "label": "BG2",
           "thisValue": 1,
           "lastValue": null,
           "changePct": null,
@@ -1594,19 +2418,19 @@
         }
       ],
       "highlights": [
+        "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
         "Mixed coding reviews for Gemini 4 Argon",
         "Skepticism about HomeView's AI capabilities",
         "Match Group CEO on matchmaking algorithms",
         "AI agents to grow in retail trading",
-        "Polarizing responses to Meta's Muse Wonder",
-        "SpaceX's spectrum move clarifies mobile ambitions"
+        "Polarizing responses to Meta's Muse Wonder"
       ],
-      "tone": "Tone across 34 episodes — 13 positive, 11 mixed, 5 neutral, 4 cautious",
-      "summary": "Q4 '26 (QTD): 34 investor-podcast episodes across 9 shows. The recurring threads — Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms; AI agents to grow in retail trading. Sentiment ran 13 positive, 11 mixed, 5 neutral, 4 cautious. Last quarter (Q3 '26) ran 7 episodes (3 positive, 2 mixed, 2 cautious), centred on OpenAI Dev Day’s new product is confusing but visionary; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms.",
+      "tone": "Tone across 38 episodes — 13 positive, 11 mixed, 7 neutral, 2 cautious",
+      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities; Match Group CEO on matchmaking algorithms. Sentiment ran 13 positive, 11 mixed, 7 neutral, 2 cautious. Last quarter (Q3 '26) ran 7 episodes (3 cautious, 3 positive, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context. New to the conversation this quarter: Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes; Mixed coding reviews for Gemini 4 Argon; Skepticism about HomeView's AI capabilities.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "34 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "38 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]

@@ -11,11 +11,41 @@ export interface BreakdownRow {
   lastValue: number | null;
   changePct: number | null;
   direction: Direction;
+  /** Optional second level (e.g. parent brands within a product-line category). */
+  sub?: BreakdownRow[];
+  /** Flagged when the move is large enough to call out. */
+  bigMove?: boolean;
+  /** Honest note when there's no change to show (e.g. "not distributed"). */
+  note?: string;
 }
 
 export interface TrendPoint {
   period: string;
   value: number;
+}
+
+/** One period's read for a dashboard that supports a Weekly/MoM/QoQ toggle.
+ *  When a ChangeBlock carries `views`, the UI renders a toggle and these self-
+ *  contained period views replace the single-period breakdown. */
+export interface PeriodView {
+  comparison: Comparison;
+  /** Short toggle label, e.g. "Week" | "Month" | "Quarter". */
+  label: string;
+  /** false => this window can't be computed yet (shown greyed, never faked). */
+  available: boolean;
+  unavailableReason?: string;
+  thisPeriodLabel: string;
+  lastPeriodLabel: string;
+  thisValue: number | null;
+  lastValue: number | null;
+  changePct: number | null;
+  changeAbs: number | null;
+  changeDisplay?: 'pct' | 'pp' | 'pts';
+  direction: Direction;
+  bigMove?: boolean;
+  breakdown: BreakdownRow[];
+  summary?: string;
+  notes?: string;
 }
 
 export interface ChangeBlock {
@@ -38,6 +68,10 @@ export interface ChangeBlock {
   isStale?: boolean;
   breakdown: BreakdownRow[];
   trend?: TrendPoint[];
+  /** Weekly/MoM/QoQ toggle views. When present the dashboard renders a period
+   *  toggle and these drive the drill-down (the top-level fields stay as the
+   *  default view so the overview table/cards/movers keep working). */
+  views?: PeriodView[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;

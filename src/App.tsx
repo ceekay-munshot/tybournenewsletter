@@ -7,6 +7,7 @@ import { Sidebar } from './components/Sidebar';
 import { Overview } from './tabs/Overview';
 import { NewsletterModal } from './tabs/Newsletter';
 import { SystemView } from './tabs/SystemView';
+import { MultiPeriodView } from './components/MultiPeriodView';
 
 /** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
  *  Used by the quarterly email render and shareable links. */
@@ -54,7 +55,11 @@ export default function App() {
 
         <main className="min-w-0 flex-1 px-4 py-5 sm:px-6">
           {selected ? (
-            <SystemView block={selected} onBack={showOverview} backLabel="Overview" />
+            selected.views && selected.views.length ? (
+              <MultiPeriodView block={selected} onBack={showOverview} backLabel="Overview" />
+            ) : (
+              <SystemView block={selected} onBack={showOverview} backLabel="Overview" />
+            )
           ) : (
             <Overview data={data} onSelect={openSystem} />
           )}
