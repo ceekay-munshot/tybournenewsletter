@@ -8,8 +8,8 @@
 export const REPO_LABEL: Record<string, string> = {
   'cpu-prices': 'cpuprices',
   'taiwan-semi-revenue': 'taiwan-semicon-revenue-tracker',
-  'ai-compute-pricing': 'AI-Compute-Pricing · Model Pricing',
-  'gpu-cloud-pricing': 'AI-Compute-Pricing · GPU',
+  'ai-compute-pricing': 'Model Pricing · AI-Compute-Pricing',
+  'gpu-cloud-pricing': 'GPU Pricing · AI-Compute-Pricing',
   'schneider-electric': 'schneider-electric',
   'thirteen-f': '13F',
   nubank: 'nubankdash',
