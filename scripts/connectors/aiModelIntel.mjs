@@ -1,164 +1,289 @@
-// AI Model Intelligence — OpenRouter model token usage rolled to complete quarters (QoQ),
-// plus Gemini rank (snapshot), Alphabet search-rev growth (SEC), and AI app-download share (UBS).
+// AI Model Intelligence — OpenRouter model-token volume AND provider share, at three
+// windows (Weekly / MoM / QoQ, default MoM). The headline is total routed tokens (the
+// market is growing fast); the breakdown is each provider's token volume with its share
+// shift alongside — the "volume + share" view. This is the honest fix for the old
+// "Gemini went to zero" read: Google's tokens didn't vanish, its SHARE fell as the pie
+// tripled, and on consumer app downloads / Alphabet results Google is still strong — all
+// surfaced in "Why it moved".
 import { getJson } from '../lib/http.mjs';
-import { quarterOf, quarterLabel } from '../lib/quarters.mjs';
+import { quarterOf, quarterLabel, monthOf, monthLabel } from '../lib/quarters.mjs';
 import { makeBlock, directionOf, pctChange } from '../lib/changeBlock.mjs';
 
 const PROV_LABEL = {
   openai: 'OpenAI',
   anthropic: 'Anthropic',
-  google: 'Google',
+  google: 'Google (Gemini)',
   deepseek: 'DeepSeek',
+  'x-ai': 'xAI',
   xai: 'xAI',
   'z-ai': 'Z.ai',
   stepfun: 'StepFun',
   xiaomi: 'Xiaomi',
   tencent: 'Tencent',
   nvidia: 'Nvidia',
-  'meta-llama': 'Meta',
+  'meta-llama': 'Meta (Llama)',
+  meta: 'Meta',
   mistralai: 'Mistral',
+  qwen: 'Qwen (Alibaba)',
+  moonshotai: 'Moonshot (Kimi)',
+  minimax: 'MiniMax',
+  microsoft: 'Microsoft',
+  'arcee-ai': 'Arcee',
+  nousresearch: 'Nous',
+  tngtech: 'TNG',
+  openrouter: 'OpenRouter',
+  poolside: 'Poolside',
+  stealth: 'Stealth / cloaked',
   others: 'Others',
 };
 const plabel = (p) => PROV_LABEL[p] || p;
+const T = (n) => (n == null ? '—' : `${(n / 1e12).toFixed(1)}T`);
+const VOL_BIG = 0.25; // a >=25% monthly token swing is a big move
+const PP_BIG = 1.5; // or a >=1.5pp share shift
+
+const provEntries = (w) => {
+  const pv = w.providers;
+  if (Array.isArray(pv)) return pv.map((e) => (Array.isArray(e) ? e : [e.name, e.value]));
+  if (pv && typeof pv === 'object') return Object.entries(pv);
+  return [];
+};
+
+// Group weeks into period buckets. Each bucket carries total, week count, per-provider
+// tokens and per-provider week count (so we only trust a provider that's broken out
+// across enough of the period — otherwise it hides in "others" and would read as ±∞).
+function bucketWeeks(weeks, keyFn) {
+  const b = {};
+  for (const w of weeks) {
+    const k = keyFn(w);
+    if (!k) continue;
+    const e = (b[k] ??= { total: 0, weeks: 0, prov: {}, provWeeks: {} });
+    e.total += w.totalRaw || 0;
+    e.weeks += 1;
+    for (const [name, val] of provEntries(w)) {
+      e.prov[name] = (e.prov[name] || 0) + (val || 0);
+      e.provWeeks[name] = (e.provWeeks[name] || 0) + 1;
+    }
+  }
+  return b;
+}
+
+function buildView(buckets, thisKey, lastKey, comparison, label, thisLabel, lastLabel) {
+  if (!thisKey || !lastKey || !buckets[thisKey] || !buckets[lastKey]) {
+    return unavailable(comparison, label, 'Not enough complete periods for this window yet.');
+  }
+  const tB = buckets[thisKey];
+  const lB = buckets[lastKey];
+  const changePct = pctChange(tB.total, lB.total);
+  const minEach = Math.max(1, Math.floor(Math.min(tB.weeks, lB.weeks) / 2));
+
+  // providers broken out across enough weeks of BOTH periods are "tracked"; the rest
+  // (plus the feed's own "others") fold into a single Others row so totals stay honest.
+  const names = new Set([...Object.keys(tB.prov), ...Object.keys(lB.prov)]);
+  names.delete('others');
+  const tracked = [...names].filter(
+    (p) => (tB.provWeeks[p] || 0) >= minEach && (lB.provWeeks[p] || 0) >= minEach && (tB.prov[p] || 0) > 0 && (lB.prov[p] || 0) > 0
+  );
+
+  let tTrack = 0;
+  let lTrack = 0;
+  const rows = tracked.map((p) => {
+    const tv = tB.prov[p] || 0;
+    const lv = lB.prov[p] || 0;
+    tTrack += tv;
+    lTrack += lv;
+    return provRow(p, tv, lv, tB.total, lB.total);
+  });
+  // Others = whatever the tracked providers don't cover (includes feed "others" + flippers).
+  const tOther = Math.max(0, tB.total - tTrack);
+  const lOther = Math.max(0, lB.total - lTrack);
+  if (tOther > 0 || lOther > 0) rows.push(provRow('others', tOther, lOther, tB.total, lB.total));
+  rows.sort((a, b) => (b.thisValue ?? 0) - (a.thisValue ?? 0));
+
+  const gainers = rows.filter((r) => r.direction === 'up' && r.label !== 'Others').length;
+  const fallers = rows.filter((r) => r.direction === 'down' && r.label !== 'Others').length;
+  const summary =
+    changePct != null
+      ? `${cap(label)}-on-${label.toLowerCase()} routed tokens ${changePct >= 0 ? 'up' : 'down'} ${Math.abs(
+          changePct * 100
+        ).toFixed(1)}% to ${T(tB.total)} (${lastLabel} → ${thisLabel}) — ${gainers} providers grew volume, ${fallers} shrank, and share shifted toward lower-cost open-weight models.`
+      : undefined;
+
+  return {
+    comparison,
+    label,
+    available: changePct != null,
+    thisPeriodLabel: thisLabel,
+    lastPeriodLabel: lastLabel,
+    thisValue: tB.total,
+    lastValue: lB.total,
+    changePct,
+    direction: directionOf(changePct),
+    bigMove: changePct != null && Math.abs(changePct) >= 0.3,
+    breakdown: rows,
+    summary,
+  };
+}
+
+function provRow(p, tv, lv, tTotal, lTotal) {
+  const volc = pctChange(tv, lv);
+  const ts = tTotal ? (tv / tTotal) * 100 : null;
+  const ls = lTotal ? (lv / lTotal) * 100 : null;
+  const pp = ts != null && ls != null ? ts - ls : null;
+  const note =
+    ts != null && ls != null
+      ? `share ${ls.toFixed(1)}% → ${ts.toFixed(1)}% (${pp >= 0 ? '+' : ''}${pp.toFixed(1)}pp)`
+      : undefined;
+  return {
+    label: plabel(p),
+    thisValue: tv,
+    lastValue: lv,
+    changePct: volc,
+    direction: directionOf(volc),
+    bigMove: (volc != null && Math.abs(volc) >= VOL_BIG) || (pp != null && Math.abs(pp) >= PP_BIG),
+    note,
+  };
+}
+
+function unavailable(comparison, label, reason) {
+  return {
+    comparison,
+    label,
+    available: false,
+    unavailableReason: reason,
+    thisPeriodLabel: '—',
+    lastPeriodLabel: '—',
+    thisValue: null,
+    lastValue: null,
+    changePct: null,
+    changeAbs: null,
+    direction: 'flat',
+    breakdown: [],
+  };
+}
+
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const M3 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const wkLabel = (s) => {
+  const d = new Date(`${s}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? s : `wk ${d.getUTCDate()} ${M3[d.getUTCMonth()]}`;
+};
+
+async function buildInsights(system, view) {
+  const out = [];
+
+  // 1) the market story (lead) — framed by who gained vs gave up SHARE (pp), not raw volume
+  const rows = view?.breakdown || [];
+  const ppOf = (r) =>
+    view.thisValue && view.lastValue && r.thisValue != null && r.lastValue != null
+      ? (r.thisValue / view.thisValue - r.lastValue / view.lastValue) * 100
+      : null;
+  const withPp = rows
+    .filter((r) => r.label !== 'Others' && ppOf(r) != null)
+    .map((r) => ({ label: r.label, pp: ppOf(r) }));
+  const gained = withPp.filter((r) => r.pp > 0).sort((a, b) => b.pp - a.pp).slice(0, 3);
+  const lost = withPp.filter((r) => r.pp < 0).sort((a, b) => a.pp - b.pp).slice(0, 3);
+  const ppTxt = (r) => `${r.label} (${r.pp >= 0 ? '+' : ''}${r.pp.toFixed(1)}pp)`;
+  if (rows.length) {
+    out.push({
+      title: 'The market is the story, not any one model',
+      body: `Total routed tokens reached ${T(view.thisValue)} (${
+        view.changePct != null ? `${view.changePct >= 0 ? '+' : ''}${(view.changePct * 100).toFixed(0)}%` : '—'
+      } ${view.label.toLowerCase()}-on-${view.label.toLowerCase()}). As the pie grew, share moved toward lower-cost and open-weight models${
+        gained.length ? ` — ${gained.map(ppTxt).join(', ')} gained` : ''
+      }${lost.length ? `, while ${lost.map(ppTxt).join(', ')} gave up ground` : ''}. A falling share here can sit on top of flat or only slightly lower volume.`,
+    });
+  }
+
+  // 2) Gemini in context — the explicit "it didn't go to zero" card, multi-source
+  const [snap, fil, ubs] = await Promise.all([
+    getJson(system.source.snapshot).catch(() => null),
+    getJson(system.source.filings).catch(() => null),
+    getJson(system.source.ubs).catch(() => null),
+  ]);
+  const bullets = [];
+  const g = rows.find((r) => r.label.startsWith('Google'));
+  if (g && g.note) bullets.push(`OpenRouter developer tokens: Google ${g.note}, ${T(g.thisValue)} routed — down, but far from gone.`);
+  const gh = snap?.summary?.geminiHighest;
+  if (gh?.rank != null) bullets.push(`Top Gemini model on OpenRouter: ${gh.model}, ranked #${gh.rank} by tokens.`);
+  if (ubs?.series) {
+    const share = (app) => {
+      const s = ubs.series.find((x) => x.app === app);
+      const last = s?.points?.[s.points.length - 1];
+      return last ? (last.value * 100).toFixed(1) : null;
+    };
+    const gm = share('Gemini');
+    const cg = share('ChatGPT');
+    const cl = share('Claude');
+    if (gm) bullets.push(`Consumer app downloads (UBS): Gemini ${gm}% — #2 behind ChatGPT ${cg}% and ahead of Claude ${cl}%.`);
+  }
+  if (fil?.searchRevenueGrowth) {
+    bullets.push(
+      `Alphabet ${fil.period || ''}: search revenue ${fil.searchRevenueGrowth} YoY${
+        fil.totalRevenue ? `, total revenue ${fil.totalRevenue} (${fil.totalRevenueGrowth} YoY)` : ''
+      }.`
+    );
+  }
+  if (bullets.length) {
+    out.push({
+      title: 'Gemini in context — it didn’t go to zero',
+      body: 'OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.',
+      bullets,
+      asOf: snap?.scrapedAt || fil?.fetchedAt,
+    });
+  }
+  return out;
+}
 
 export async function connect(system) {
   const usage = await getJson(system.source.usage);
-  const weeks = usage?.weeks || [];
-  if (weeks.length < 2) throw new Error('no usage weeks');
+  const allWeeks = usage?.weeks || [];
+  const weeks = allWeeks.filter((w) => w && w.start);
+  if (weeks.length < 8) throw new Error('not enough usage weeks');
 
-  const sumQ = {};
-  const cntQ = {};
-  const provQ = {};
-  for (const w of weeks) {
-    const q = quarterOf(w.start);
-    sumQ[q] = (sumQ[q] || 0) + (w.totalRaw || 0);
-    cntQ[q] = (cntQ[q] || 0) + 1;
-    provQ[q] = provQ[q] || {};
-    const pv = w.providers;
-    const entries = Array.isArray(pv)
-      ? pv.map((e) => (Array.isArray(e) ? e : [e.name, e.value]))
-      : pv && typeof pv === 'object'
-        ? Object.entries(pv)
-        : [];
-    for (const [name, val] of entries) {
-      provQ[q][name] = (provQ[q][name] || 0) + (val || 0);
-    }
-  }
-  const completeQs = Object.keys(sumQ)
-    .filter((q) => cntQ[q] >= 12)
-    .sort();
-  const thisQ = completeQs[completeQs.length - 1];
-  const lastQ = completeQs[completeQs.length - 2];
-  if (!thisQ || !lastQ) throw new Error('need two complete quarters of usage');
+  // --- MoM: complete calendar months (>=4 weeks), excluding the current partial month ---
+  const months = bucketWeeks(weeks, (w) => monthOf(w.start));
+  const completeMonths = Object.keys(months).filter((m) => months[m].weeks >= 4).sort();
+  const tM = completeMonths[completeMonths.length - 1];
+  const lM = completeMonths[completeMonths.length - 2];
+  const momView = buildView(months, tM, lM, 'MoM', 'Month', monthLabel(tM), monthLabel(lM));
 
-  const breakdown = Object.keys(provQ[thisQ] || {})
-    .map((p) => {
-      const tv = provQ[thisQ][p] || 0;
-      const lv = provQ[lastQ]?.[p] ?? null;
-      return { label: plabel(p), thisValue: tv, lastValue: lv, changePct: pctChange(tv, lv), direction: directionOf(pctChange(tv, lv)) };
-    })
-    .sort((a, b) => (b.thisValue ?? 0) - (a.thisValue ?? 0));
+  // --- WoW: the last two fully-reported (non-partial) weeks ---
+  const fullWeeks = weeks.filter((w) => !w.partial).sort((a, b) => String(a.start).localeCompare(String(b.start)));
+  const wkBuckets = bucketWeeks(fullWeeks, (w) => w.start);
+  const wkKeys = Object.keys(wkBuckets).sort();
+  const tW = wkKeys[wkKeys.length - 1];
+  const lW = wkKeys[wkKeys.length - 2];
+  const wowView = buildView(wkBuckets, tW, lW, 'WoW', 'Week', wkLabel(tW), wkLabel(lW));
 
-  const trend = completeQs.slice(-6).map((q) => ({ period: quarterLabel(q), value: sumQ[q] }));
+  // --- QoQ: complete calendar quarters (>=12 weeks) ---
+  const quarters = bucketWeeks(weeks, (w) => quarterOf(w.start));
+  const completeQ = Object.keys(quarters).filter((q) => quarters[q].weeks >= 12).sort();
+  const tQ = completeQ[completeQ.length - 1];
+  const lQ = completeQ[completeQ.length - 2];
+  const qoqView = buildView(quarters, tQ, lQ, 'QoQ', 'Quarter', quarterLabel(tQ), quarterLabel(lQ));
 
-  const secondary = [];
-  const snap = await getJson(system.source.snapshot).catch(() => null);
-  const gh = snap?.summary?.geminiHighest;
-  if (gh?.rank != null) {
-    secondary.push(
-      makeBlock(system, {
-        metricLabel: 'Gemini best rank (snapshot)',
-        unit: 'rank',
-        comparison: 'QoQ',
-        thisPeriodLabel: 'snapshot',
-        lastPeriodLabel: '—',
-        thisValue: gh.rank,
-        lastValue: null,
-        changePct: null,
-        direction: 'flat',
-        asOf: snap.scrapedAt || new Date().toISOString(),
-        breakdown: [],
-        notes: `Highest-ranked Gemini model on OpenRouter: ${gh.model} (point-in-time snapshot, not a period change).`,
-      })
-    );
-  }
-  const fil = await getJson(system.source.filings).catch(() => null);
-  if (fil?.searchRevenueGrowth) {
-    const g = parseFloat(String(fil.searchRevenueGrowth).replace(/[%+]/g, ''));
-    if (Number.isFinite(g)) {
-      secondary.push(
-        makeBlock(system, {
-          metricLabel: 'Alphabet search revenue (YoY)',
-          unit: '% YoY',
-          comparison: 'QoQ',
-          thisPeriodLabel: fil.period || 'latest',
-          lastPeriodLabel: 'year ago',
-          thisValue: g,
-          lastValue: null,
-          changePct: null,
-          changeAbs: null,
-          direction: directionOf(g),
-          asOf: fil.fetchedAt || new Date().toISOString(),
-          breakdown: [],
-          notes: `Reported in Alphabet ${fil.period || ''} results (${fil.searchRevenueGrowth} YoY).`,
-        })
-      );
-    }
-  }
-  const ubs = await getJson(system.source.ubs).catch(() => null);
-  if (ubs?.series) {
-    const pick = (app) => ubs.series.find((s) => s.app === app);
-    const qmean = (pts, q) => {
-      const vals = (pts || []).filter((p) => quarterOf(p.snapshot_date) === q).map((p) => p.value);
-      return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
-    };
-    const cg = pick('ChatGPT');
-    const gm = pick('Gemini');
-    if (cg) {
-      const qs = [...new Set(cg.points.map((p) => quarterOf(p.snapshot_date)))].sort();
-      const tQ = qs[qs.length - 1];
-      const lQ = qs[qs.length - 2];
-      const cgT = qmean(cg.points, tQ);
-      const cgL = qmean(cg.points, lQ);
-      const bd = [];
-      for (const [nm, s] of [['ChatGPT', cg], ['Gemini', gm]]) {
-        if (!s) continue;
-        const t = qmean(s.points, tQ);
-        const l = qmean(s.points, lQ);
-        bd.push({ label: nm, thisValue: t != null ? t * 100 : null, lastValue: l != null ? l * 100 : null, changePct: pctChange(t, l), direction: directionOf(pctChange(t, l)) });
-      }
-      secondary.push(
-        makeBlock(system, {
-          metricLabel: 'AI app download share — ChatGPT',
-          unit: '% share',
-          comparison: 'QoQ',
-          thisPeriodLabel: quarterLabel(tQ),
-          lastPeriodLabel: quarterLabel(lQ),
-          thisValue: cgT != null ? cgT * 100 : null,
-          lastValue: cgL != null ? cgL * 100 : null,
-          changePct: pctChange(cgT, cgL),
-          changeAbs: cgT != null && cgL != null ? Math.round((cgT - cgL) * 1000) / 10 : null,
-          direction: directionOf(cgT != null && cgL != null ? cgT - cgL : null),
-          asOf: ubs.fetchedAt || new Date().toISOString(),
-          breakdown: bd,
-          notes: 'Global AI-app download share (UBS Evidence Lab), quarterly mean of weekly snapshots.',
-        })
-      );
-    }
-  }
+  const views = [wowView, momView, qoqView];
+  const def = momView.available ? momView : qoqView.available ? qoqView : wowView.available ? wowView : views[1];
+  const insights = await buildInsights(system, def);
 
-  return makeBlock(system, {
+  const block = makeBlock(system, {
     unit: 'tokens',
-    comparison: 'QoQ',
-    thisPeriodLabel: quarterLabel(thisQ),
-    lastPeriodLabel: quarterLabel(lastQ),
-    thisValue: sumQ[thisQ],
-    lastValue: sumQ[lastQ],
-    changePct: pctChange(sumQ[thisQ], sumQ[lastQ]),
+    comparison: def.comparison,
+    thisPeriodLabel: def.thisPeriodLabel,
+    lastPeriodLabel: def.lastPeriodLabel,
+    thisValue: def.thisValue,
+    lastValue: def.lastValue,
+    changePct: def.changePct,
+    direction: def.direction,
     asOf: usage.updatedAt || new Date().toISOString(),
-    breakdown,
-    trend,
-    secondaryMetrics: secondary,
-    notes: 'OpenRouter model token volume, weekly data rolled to complete quarters. AI-crawler share omitted (Cloudflare Radar token is down).',
+    breakdown: def.breakdown,
+    summary: def.summary,
+    notes:
+      'OpenRouter routed model-token volume, weekly data rolled to complete weeks / months / quarters. Each provider row shows token volume change with its share shift alongside. Providers not consistently broken out fold into Others so totals stay honest. "Why it moved" adds the consumer-app and Alphabet-filing context for Google/Gemini.',
   });
+  block.views = views;
+  block.breakdownNoun = 'provider';
+  block.changeNoun = 'Token volume change';
+  block.insights = insights;
+  return block;
 }

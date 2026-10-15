@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T13:10:57.926Z",
+  "generatedAt": "2026-10-15T13:17:44.198Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2961,222 +2961,423 @@
       "sector": "technology",
       "metricLabel": "AI model token usage",
       "unit": "tokens",
-      "comparison": "QoQ",
-      "thisPeriodLabel": "Q3 '26",
-      "lastPeriodLabel": "Q2 '26",
-      "thisValue": 1263807970564016,
-      "lastValue": 421326478355599,
-      "changePct": 1.9995930364893035,
-      "changeAbs": 842481492208417,
+      "comparison": "MoM",
+      "thisPeriodLabel": "Sep '26",
+      "lastPeriodLabel": "Aug '26",
+      "thisValue": 567359447215877,
+      "lastValue": 466224823981312,
+      "changePct": 0.21692243319634744,
+      "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-15T13:10:54.215Z",
+      "asOf": "2026-10-15T13:17:40.797Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "DeepSeek",
-          "thisValue": 267532506364687,
-          "lastValue": 64532038330073,
-          "changePct": 3.145731535648897,
-          "direction": "up"
+          "thisValue": 127448773263517,
+          "lastValue": 100336709294663,
+          "changePct": 0.27021081476005826,
+          "direction": "up",
+          "bigMove": true,
+          "note": "share 21.5% → 22.5% (+0.9pp)"
         },
         {
           "label": "OpenAI",
-          "thisValue": 155433801083559,
-          "lastValue": 38549495120143,
-          "changePct": 3.032058023046358,
-          "direction": "up"
-        },
-        {
-          "label": "Others",
-          "thisValue": 143818731432089,
-          "lastValue": 57849726067508,
-          "changePct": 1.4860745453532327,
-          "direction": "up"
-        },
-        {
-          "label": "Tencent",
-          "thisValue": 142177083183398,
-          "lastValue": 32511786371238,
-          "changePct": 3.373093547058273,
-          "direction": "up"
+          "thisValue": 78143909427722,
+          "lastValue": 59713148035446,
+          "changePct": 0.3086549947314018,
+          "direction": "up",
+          "bigMove": true,
+          "note": "share 12.8% → 13.8% (+1.0pp)"
         },
         {
           "label": "Z.ai",
-          "thisValue": 127127029767205,
-          "lastValue": 17143688181154,
-          "changePct": 6.415383925785312,
-          "direction": "up"
+          "thisValue": 70878297767449,
+          "lastValue": 41211490665090,
+          "changePct": 0.7198673628054316,
+          "direction": "up",
+          "bigMove": true,
+          "note": "share 8.8% → 12.5% (+3.7pp)"
+        },
+        {
+          "label": "Others",
+          "thisValue": 69558082154498,
+          "lastValue": 63023178637140,
+          "changePct": 0.10369047799037759,
+          "direction": "up",
+          "bigMove": false,
+          "note": "share 13.5% → 12.3% (-1.3pp)"
+        },
+        {
+          "label": "Tencent",
+          "thisValue": 58737559244240,
+          "lastValue": 54690796177433,
+          "changePct": 0.07399349341483552,
+          "direction": "up",
+          "bigMove": false,
+          "note": "share 11.7% → 10.4% (-1.4pp)"
+        },
+        {
+          "label": "Stealth / cloaked",
+          "thisValue": 52519697214268,
+          "lastValue": 27249371613580,
+          "changePct": 0.9273727834550973,
+          "direction": "up",
+          "bigMove": true,
+          "note": "share 5.8% → 9.3% (+3.4pp)"
         },
         {
           "label": "Xiaomi",
-          "thisValue": 104334153298663,
-          "lastValue": 26519491073576,
-          "changePct": 2.934244175696926,
-          "direction": "up"
+          "thisValue": 37069116417997,
+          "lastValue": 32829548989946,
+          "changePct": 0.12913876548682898,
+          "direction": "up",
+          "bigMove": false,
+          "note": "share 7.0% → 6.5% (-0.5pp)"
         },
         {
-          "label": "Google",
-          "thisValue": 82034413103222,
-          "lastValue": 51427552913035,
-          "changePct": 0.5951451791210793,
-          "direction": "up"
-        },
-        {
-          "label": "stealth",
-          "thisValue": 79769068827848,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Anthropic",
-          "thisValue": 72200284038950,
-          "lastValue": 64324408433701,
-          "changePct": 0.12243992283841436,
-          "direction": "up"
+          "label": "Google (Gemini)",
+          "thisValue": 28072152585494,
+          "lastValue": 35824615743301,
+          "changePct": -0.21640045530025445,
+          "direction": "down",
+          "bigMove": true,
+          "note": "share 7.7% → 4.9% (-2.7pp)"
         },
         {
           "label": "Nvidia",
-          "thisValue": 60514423360253,
-          "lastValue": 2390738058542,
-          "changePct": 24.31202577548706,
-          "direction": "up"
+          "thisValue": 23747738791318,
+          "lastValue": 24722386718262,
+          "changePct": -0.039423698773551036,
+          "direction": "down",
+          "bigMove": false,
+          "note": "share 5.3% → 4.2% (-1.1pp)"
         },
         {
-          "label": "minimax",
-          "thisValue": 20036431126892,
-          "lastValue": 29096800318289,
-          "changePct": -0.3113871316531681,
-          "direction": "down"
-        },
-        {
-          "label": "meta",
-          "thisValue": 4864149849700,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "poolside",
-          "thisValue": 3965895127550,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
+          "label": "Anthropic",
+          "thisValue": 21184120349374,
+          "lastValue": 26623578106451,
+          "changePct": -0.20430979394760607,
+          "direction": "down",
+          "bigMove": true,
+          "note": "share 5.7% → 3.7% (-2.0pp)"
         }
       ],
-      "trend": [
-        {
-          "period": "Q3 '25",
-          "value": 49990931958678
-        },
-        {
-          "period": "Q4 '25",
-          "value": 74302746515446
-        },
-        {
-          "period": "Q1 '26",
-          "value": 181794586973975
-        },
-        {
-          "period": "Q2 '26",
-          "value": 421326478355599
-        },
-        {
-          "period": "Q3 '26",
-          "value": 1263807970564016
-        }
-      ],
-      "secondaryMetrics": [
-        {
-          "systemId": "ai-model-intel",
-          "name": "AI Model Intelligence",
-          "sector": "technology",
-          "metricLabel": "Gemini best rank (snapshot)",
-          "unit": "rank",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "snapshot",
-          "lastPeriodLabel": "—",
-          "thisValue": 17,
-          "lastValue": null,
-          "changePct": null,
-          "changeAbs": null,
-          "direction": "flat",
-          "asOf": "2026-10-15T13:10:54.315Z",
-          "isStale": false,
-          "breakdown": [],
-          "sourceName": "OpenRouter / UBS / SEC",
-          "sourceUrl": "https://google-dash-git.pages.dev/",
-          "dashboardUrl": "https://google-dash-git.pages.dev/",
-          "notes": "Highest-ranked Gemini model on OpenRouter: Gemini 3.8 Flash 0902 (point-in-time snapshot, not a period change).",
-          "status": "ok"
-        },
-        {
-          "systemId": "ai-model-intel",
-          "name": "AI Model Intelligence",
-          "sector": "technology",
-          "metricLabel": "Alphabet search revenue (YoY)",
-          "unit": "% YoY",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "Q2 2026",
-          "lastPeriodLabel": "year ago",
-          "thisValue": 17,
-          "lastValue": null,
-          "changePct": null,
-          "changeAbs": null,
-          "direction": "up",
-          "asOf": "2026-10-15T13:10:54.978Z",
-          "isStale": false,
-          "breakdown": [],
-          "sourceName": "OpenRouter / UBS / SEC",
-          "sourceUrl": "https://google-dash-git.pages.dev/",
-          "dashboardUrl": "https://google-dash-git.pages.dev/",
-          "notes": "Reported in Alphabet Q2 2026 results (+17% YoY).",
-          "status": "ok"
-        },
-        {
-          "systemId": "ai-model-intel",
-          "name": "AI Model Intelligence",
-          "sector": "technology",
-          "metricLabel": "AI app download share — ChatGPT",
-          "unit": "% share",
-          "comparison": "QoQ",
-          "thisPeriodLabel": "Q4 '26",
-          "lastPeriodLabel": "Q3 '26",
-          "thisValue": 42.28,
-          "lastValue": 41.709999999999994,
-          "changePct": 0.013665787580916076,
-          "changeAbs": 0.6,
-          "direction": "up",
-          "asOf": "2026-10-15T13:10:55.042Z",
-          "isStale": false,
-          "breakdown": [
-            {
-              "label": "ChatGPT",
-              "thisValue": 42.28,
-              "lastValue": 41.709999999999994,
-              "changePct": 0.013665787580916076,
-              "direction": "up"
-            },
-            {
-              "label": "Gemini",
-              "thisValue": 16.869999999999997,
-              "lastValue": 15.886153846153844,
-              "changePct": 0.061931047840402924,
-              "direction": "up"
-            }
-          ],
-          "sourceName": "OpenRouter / UBS / SEC",
-          "sourceUrl": "https://google-dash-git.pages.dev/",
-          "dashboardUrl": "https://google-dash-git.pages.dev/",
-          "notes": "Global AI-app download share (UBS Evidence Lab), quarterly mean of weekly snapshots.",
-          "status": "ok"
-        }
-      ],
+      "summary": "Month-on-month routed tokens up 21.7% to 567.4T (Aug '26 → Sep '26) — 6 providers grew volume, 3 shrank, and share shifted toward lower-cost open-weight models.",
       "sourceName": "OpenRouter / UBS / SEC",
       "sourceUrl": "https://google-dash-git.pages.dev/",
       "dashboardUrl": "https://google-dash-git.pages.dev/",
-      "notes": "OpenRouter model token volume, weekly data rolled to complete quarters. AI-crawler share omitted (Cloudflare Radar token is down).",
-      "status": "ok"
+      "notes": "OpenRouter routed model-token volume, weekly data rolled to complete weeks / months / quarters. Each provider row shows token volume change with its share shift alongside. Providers not consistently broken out fold into Others so totals stay honest. \"Why it moved\" adds the consumer-app and Alphabet-filing context for Google/Gemini.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": true,
+          "thisPeriodLabel": "wk 5 Oct",
+          "lastPeriodLabel": "wk 28 Sep",
+          "thisValue": 171842501724714,
+          "lastValue": 165856049857563,
+          "changePct": 0.036094262900220754,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "DeepSeek",
+              "thisValue": 51558217615487,
+              "lastValue": 36927803319501,
+              "changePct": 0.3961896723020052,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 22.3% → 30.0% (+7.7pp)"
+            },
+            {
+              "label": "Others",
+              "thisValue": 33669260429690,
+              "lastValue": 54989695908805,
+              "changePct": -0.38771691908376515,
+              "direction": "down",
+              "bigMove": true,
+              "note": "share 33.2% → 19.6% (-13.6pp)"
+            },
+            {
+              "label": "Z.ai",
+              "thisValue": 18106871817629,
+              "lastValue": 14474462790807,
+              "changePct": 0.25095294238685045,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 8.7% → 10.5% (+1.8pp)"
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 17093479551360,
+              "lastValue": 18846676036378,
+              "changePct": -0.093024174747524,
+              "direction": "down",
+              "bigMove": false,
+              "note": "share 11.4% → 9.9% (-1.4pp)"
+            },
+            {
+              "label": "Xiaomi",
+              "thisValue": 13693646065042,
+              "lastValue": 12093640054979,
+              "changePct": 0.13230144131867652,
+              "direction": "up",
+              "bigMove": false,
+              "note": "share 7.3% → 8.0% (+0.7pp)"
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 11669477680471,
+              "lastValue": 6450208456391,
+              "changePct": 0.8091628757995627,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 3.9% → 6.8% (+2.9pp)"
+            },
+            {
+              "label": "Tencent",
+              "thisValue": 10800743818481,
+              "lastValue": 8587759203903,
+              "changePct": 0.2576905758573475,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 5.2% → 6.3% (+1.1pp)"
+            },
+            {
+              "label": "Nvidia",
+              "thisValue": 8534629676864,
+              "lastValue": 6719345475513,
+              "changePct": 0.27015789081933,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 4.1% → 5.0% (+0.9pp)"
+            },
+            {
+              "label": "Google (Gemini)",
+              "thisValue": 6716175069690,
+              "lastValue": 6766458611286,
+              "changePct": -0.007431293751229102,
+              "direction": "down",
+              "bigMove": false,
+              "note": "share 4.1% → 3.9% (-0.2pp)"
+            }
+          ],
+          "summary": "Week-on-week routed tokens up 3.6% to 171.8T (wk 28 Sep → wk 5 Oct) — 6 providers grew volume, 2 shrank, and share shifted toward lower-cost open-weight models."
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "Sep '26",
+          "lastPeriodLabel": "Aug '26",
+          "thisValue": 567359447215877,
+          "lastValue": 466224823981312,
+          "changePct": 0.21692243319634744,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "DeepSeek",
+              "thisValue": 127448773263517,
+              "lastValue": 100336709294663,
+              "changePct": 0.27021081476005826,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 21.5% → 22.5% (+0.9pp)"
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 78143909427722,
+              "lastValue": 59713148035446,
+              "changePct": 0.3086549947314018,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 12.8% → 13.8% (+1.0pp)"
+            },
+            {
+              "label": "Z.ai",
+              "thisValue": 70878297767449,
+              "lastValue": 41211490665090,
+              "changePct": 0.7198673628054316,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 8.8% → 12.5% (+3.7pp)"
+            },
+            {
+              "label": "Others",
+              "thisValue": 69558082154498,
+              "lastValue": 63023178637140,
+              "changePct": 0.10369047799037759,
+              "direction": "up",
+              "bigMove": false,
+              "note": "share 13.5% → 12.3% (-1.3pp)"
+            },
+            {
+              "label": "Tencent",
+              "thisValue": 58737559244240,
+              "lastValue": 54690796177433,
+              "changePct": 0.07399349341483552,
+              "direction": "up",
+              "bigMove": false,
+              "note": "share 11.7% → 10.4% (-1.4pp)"
+            },
+            {
+              "label": "Stealth / cloaked",
+              "thisValue": 52519697214268,
+              "lastValue": 27249371613580,
+              "changePct": 0.9273727834550973,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 5.8% → 9.3% (+3.4pp)"
+            },
+            {
+              "label": "Xiaomi",
+              "thisValue": 37069116417997,
+              "lastValue": 32829548989946,
+              "changePct": 0.12913876548682898,
+              "direction": "up",
+              "bigMove": false,
+              "note": "share 7.0% → 6.5% (-0.5pp)"
+            },
+            {
+              "label": "Google (Gemini)",
+              "thisValue": 28072152585494,
+              "lastValue": 35824615743301,
+              "changePct": -0.21640045530025445,
+              "direction": "down",
+              "bigMove": true,
+              "note": "share 7.7% → 4.9% (-2.7pp)"
+            },
+            {
+              "label": "Nvidia",
+              "thisValue": 23747738791318,
+              "lastValue": 24722386718262,
+              "changePct": -0.039423698773551036,
+              "direction": "down",
+              "bigMove": false,
+              "note": "share 5.3% → 4.2% (-1.1pp)"
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 21184120349374,
+              "lastValue": 26623578106451,
+              "changePct": -0.20430979394760607,
+              "direction": "down",
+              "bigMove": true,
+              "note": "share 5.7% → 3.7% (-2.0pp)"
+            }
+          ],
+          "summary": "Month-on-month routed tokens up 21.7% to 567.4T (Aug '26 → Sep '26) — 6 providers grew volume, 3 shrank, and share shifted toward lower-cost open-weight models."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q3 '26",
+          "lastPeriodLabel": "Q2 '26",
+          "thisValue": 1263807970564016,
+          "lastValue": 421326478355599,
+          "changePct": 1.9995930364893035,
+          "direction": "up",
+          "bigMove": true,
+          "breakdown": [
+            {
+              "label": "Others",
+              "thisValue": 312968699724332,
+              "lastValue": 126318017932679,
+              "changePct": 1.4776251626361665,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 30.0% → 24.8% (-5.2pp)"
+            },
+            {
+              "label": "DeepSeek",
+              "thisValue": 267532506364687,
+              "lastValue": 64532038330073,
+              "changePct": 3.145731535648897,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 15.3% → 21.2% (+5.9pp)"
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 155433801083559,
+              "lastValue": 38549495120143,
+              "changePct": 3.032058023046358,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 9.1% → 12.3% (+3.1pp)"
+            },
+            {
+              "label": "Tencent",
+              "thisValue": 142177083183398,
+              "lastValue": 32511786371238,
+              "changePct": 3.373093547058273,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 7.7% → 11.2% (+3.5pp)"
+            },
+            {
+              "label": "Z.ai",
+              "thisValue": 127127029767205,
+              "lastValue": 17143688181154,
+              "changePct": 6.415383925785312,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 4.1% → 10.1% (+6.0pp)"
+            },
+            {
+              "label": "Xiaomi",
+              "thisValue": 104334153298663,
+              "lastValue": 26519491073576,
+              "changePct": 2.934244175696926,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 6.3% → 8.3% (+2.0pp)"
+            },
+            {
+              "label": "Google (Gemini)",
+              "thisValue": 82034413103222,
+              "lastValue": 51427552913035,
+              "changePct": 0.5951451791210793,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 12.2% → 6.5% (-5.7pp)"
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 72200284038950,
+              "lastValue": 64324408433701,
+              "changePct": 0.12243992283841436,
+              "direction": "up",
+              "bigMove": true,
+              "note": "share 15.3% → 5.7% (-9.6pp)"
+            }
+          ],
+          "summary": "Quarter-on-quarter routed tokens up 200.0% to 1263.8T (Q2 '26 → Q3 '26) — 7 providers grew volume, 0 shrank, and share shifted toward lower-cost open-weight models."
+        }
+      ],
+      "breakdownNoun": "provider",
+      "changeNoun": "Token volume change",
+      "insights": [
+        {
+          "title": "The market is the story, not any one model",
+          "body": "Total routed tokens reached 567.4T (+22% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — Z.ai (+3.7pp), Stealth / cloaked (+3.4pp), OpenAI (+1.0pp) gained, while Google (Gemini) (-2.7pp), Anthropic (-2.0pp), Tencent (-1.4pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
+        },
+        {
+          "title": "Gemini in context — it didn’t go to zero",
+          "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
+          "bullets": [
+            "OpenRouter developer tokens: Google share 7.7% → 4.9% (-2.7pp), 28.1T routed — down, but far from gone.",
+            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #17 by tokens.",
+            "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
+            "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
+          ],
+          "asOf": "2026-10-15T13:17:40.954Z"
+        }
+      ]
     },
     {
       "systemId": "ti-chip-prices",
