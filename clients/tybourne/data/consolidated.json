@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T12:53:29.428Z",
+  "generatedAt": "2026-10-15T13:03:33.761Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -425,135 +425,329 @@
       "sector": "technology",
       "metricLabel": "Supply-chain revenue",
       "unit": "TWD bn",
-      "comparison": "QoQ",
-      "thisPeriodLabel": "Q3 '26",
-      "lastPeriodLabel": "Q2 '26",
-      "thisValue": 8186.813691,
-      "lastValue": 7078.40981,
-      "changePct": 0.15658939094400923,
-      "changeAbs": 1108.4038810000002,
+      "comparison": "MoM",
+      "thisPeriodLabel": "Sep '26",
+      "lastPeriodLabel": "Aug '26",
+      "thisValue": 2768.942852,
+      "lastValue": 2675.5812829205015,
+      "changePct": 0.03489393862764299,
+      "changeAbs": 93.36156907949862,
       "direction": "up",
       "asOf": "2026-09-01",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Rack / ODM",
-          "thisValue": 5718.353762,
-          "lastValue": 4859.376748,
-          "changePct": 0.17676691035605213,
-          "direction": "up"
+          "label": "Semi Equip / Consumables",
+          "thisValue": 1.902928,
+          "lastValue": 1.7389454445764416,
+          "changePct": 0.0943,
+          "direction": "up",
+          "bigMove": true
         },
         {
-          "label": "AI Silicon",
-          "thisValue": 1539.185923,
-          "lastValue": 1291.916962,
-          "changePct": 0.19139694599040336,
-          "direction": "up"
-        },
-        {
-          "label": "Advanced Packaging / Test",
-          "thisValue": 201.089119,
-          "lastValue": 231.952699,
-          "changePct": -0.13305980112781524,
-          "direction": "down"
-        },
-        {
-          "label": "Power / Data Center Electrical",
-          "thisValue": 196.519329,
-          "lastValue": 244.403548,
-          "changePct": -0.19592276540928122,
-          "direction": "down"
-        },
-        {
-          "label": "Substrate / AI PCB / Materials",
-          "thisValue": 174.170662,
-          "lastValue": 140.554934,
-          "changePct": 0.23916433983029006,
-          "direction": "up"
-        },
-        {
-          "label": "Networking",
-          "thisValue": 120.74371,
-          "lastValue": 95.537694,
-          "changePct": 0.26383320493375095,
-          "direction": "up"
-        },
-        {
-          "label": "Legacy / Mature Node Control Group",
-          "thisValue": 111.283935,
-          "lastValue": 100.267691,
-          "changePct": 0.10986833236241574,
-          "direction": "up"
-        },
-        {
-          "label": "Thermal",
-          "thisValue": 84.51586,
-          "lastValue": 70.513393,
-          "changePct": 0.19857882884745046,
-          "direction": "up"
-        },
-        {
-          "label": "Semi Equipment / Consumables",
-          "thisValue": 21.364667,
-          "lastValue": 25.633783,
-          "changePct": -0.16654256611285195,
-          "direction": "down"
+          "label": "Legacy / Mature Node",
+          "thisValue": 38.9192,
+          "lastValue": 37.14727498329675,
+          "changePct": 0.04769999999999999,
+          "direction": "up",
+          "bigMove": false
         },
         {
           "label": "Analog Cycle",
-          "thisValue": 19.586724,
-          "lastValue": 18.252358,
-          "changePct": 0.07310649944516753,
-          "direction": "up"
+          "thisValue": 6.712614,
+          "lastValue": 6.412508597630875,
+          "changePct": 0.046799999999999994,
+          "direction": "up",
+          "bigMove": false
+        },
+        {
+          "label": "Rack / ODM",
+          "thisValue": 2026.47403,
+          "lastValue": 1936.4300334448162,
+          "changePct": 0.04650000000000001,
+          "direction": "up",
+          "bigMove": false
+        },
+        {
+          "label": "Thermal",
+          "thisValue": 29.00528,
+          "lastValue": 27.822810551558753,
+          "changePct": 0.0425,
+          "direction": "up",
+          "bigMove": false
+        },
+        {
+          "label": "Substrate / AI PCB",
+          "thisValue": 60.269806,
+          "lastValue": 58.43494861353499,
+          "changePct": 0.031400000000000004,
+          "direction": "up",
+          "bigMove": false
+        },
+        {
+          "label": "AI Silicon",
+          "thisValue": 528.981336,
+          "lastValue": 529.4048598879103,
+          "changePct": -0.0008,
+          "direction": "down",
+          "bigMove": false
+        },
+        {
+          "label": "Networking",
+          "thisValue": 40.398562,
+          "lastValue": 40.872685147713476,
+          "changePct": -0.0116,
+          "direction": "down",
+          "bigMove": false
+        },
+        {
+          "label": "Adv Packaging / Test",
+          "thisValue": 15.0172,
+          "lastValue": 15.25673067154323,
+          "changePct": -0.015700000000000002,
+          "direction": "down",
+          "bigMove": false
+        },
+        {
+          "label": "Power / DC Electrical",
+          "thisValue": 21.261896,
+          "lastValue": 22.06048557792073,
+          "changePct": -0.0362,
+          "direction": "down",
+          "bigMove": true
         }
       ],
-      "trend": [
-        {
-          "period": "Dec '25",
-          "value": 2091.234959
-        },
-        {
-          "period": "Jan '26",
-          "value": 1955.314715
-        },
-        {
-          "period": "Feb '26",
-          "value": 1746.007925
-        },
-        {
-          "period": "Mar '26",
-          "value": 2337.31626
-        },
-        {
-          "period": "Apr '26",
-          "value": 2303.310696
-        },
-        {
-          "period": "May '26",
-          "value": 2318.222711
-        },
-        {
-          "period": "Jun '26",
-          "value": 2456.876403
-        },
-        {
-          "period": "Jul '26",
-          "value": 2587.604922
-        },
-        {
-          "period": "Aug '26",
-          "value": 2830.265917
-        },
-        {
-          "period": "Sep '26",
-          "value": 2768.942852
-        }
-      ],
+      "summary": "Month-on-month revenue up 3.5% like-for-like (Aug '26 → Sep '26) — 6 of 10 supply-chain stages firmer, 4 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move.",
       "sourceName": "Taiwan MOPS / TWSE monthly filings",
       "sourceUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
       "dashboardUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
-      "notes": "Excludes Wiwynn (consolidated into Wistron). Monthly filings summed into calendar quarters.",
-      "status": "ok"
+      "notes": "TWSE/MOPS monthly filings, grouped by supply-chain stage. Headline & breakdown are like-for-like (only companies that filed both periods) so late filers don’t distort the move. Excludes Wiwynn (consolidated into Wistron). Monthly cadence — no weekly series.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": false,
+          "unavailableReason": "Taiwan issuers file revenue monthly — there is no weekly series.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "Sep '26",
+          "lastPeriodLabel": "Aug '26",
+          "thisValue": 2768.942852,
+          "lastValue": 2675.5812829205015,
+          "changePct": 0.03489393862764299,
+          "changeAbs": 93.3615690794983,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Semi Equip / Consumables",
+              "thisValue": 1.902928,
+              "lastValue": 1.7389454445764416,
+              "changePct": 0.0943,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Legacy / Mature Node",
+              "thisValue": 38.9192,
+              "lastValue": 37.14727498329675,
+              "changePct": 0.04769999999999999,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Analog Cycle",
+              "thisValue": 6.712614,
+              "lastValue": 6.412508597630875,
+              "changePct": 0.046799999999999994,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Rack / ODM",
+              "thisValue": 2026.47403,
+              "lastValue": 1936.4300334448162,
+              "changePct": 0.04650000000000001,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Thermal",
+              "thisValue": 29.00528,
+              "lastValue": 27.822810551558753,
+              "changePct": 0.0425,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Substrate / AI PCB",
+              "thisValue": 60.269806,
+              "lastValue": 58.43494861353499,
+              "changePct": 0.031400000000000004,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "AI Silicon",
+              "thisValue": 528.981336,
+              "lastValue": 529.4048598879103,
+              "changePct": -0.0008,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Networking",
+              "thisValue": 40.398562,
+              "lastValue": 40.872685147713476,
+              "changePct": -0.0116,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Adv Packaging / Test",
+              "thisValue": 15.0172,
+              "lastValue": 15.25673067154323,
+              "changePct": -0.015700000000000002,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "Power / DC Electrical",
+              "thisValue": 21.261896,
+              "lastValue": 22.06048557792073,
+              "changePct": -0.0362,
+              "direction": "down",
+              "bigMove": true
+            }
+          ],
+          "summary": "Month-on-month revenue up 3.5% like-for-like (Aug '26 → Sep '26) — 6 of 10 supply-chain stages firmer, 4 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q3 '26 (QTD)",
+          "lastPeriodLabel": "Q2 '26",
+          "thisValue": 7883.157841,
+          "lastValue": 6683.264798,
+          "changePct": 0.17953695974444614,
+          "changeAbs": 1199.893043,
+          "direction": "up",
+          "bigMove": true,
+          "breakdown": [
+            {
+              "label": "Networking",
+              "thisValue": 120.74371,
+              "lastValue": 95.537694,
+              "changePct": 0.26383320493375106,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Substrate / AI PCB",
+              "thisValue": 174.170662,
+              "lastValue": 140.554934,
+              "changePct": 0.23916433983029012,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Thermal",
+              "thisValue": 84.51586,
+              "lastValue": 70.513393,
+              "changePct": 0.1985788288474503,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "AI Silicon",
+              "thisValue": 1539.185923,
+              "lastValue": 1291.916962,
+              "changePct": 0.19139694599040336,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Rack / ODM",
+              "thisValue": 5718.353762,
+              "lastValue": 4859.376748,
+              "changePct": 0.1767669103560521,
+              "direction": "up",
+              "bigMove": true
+            },
+            {
+              "label": "Semi Equip / Consumables",
+              "thisValue": 5.399133,
+              "lastValue": 4.808373,
+              "changePct": 0.12286068489279015,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Legacy / Mature Node",
+              "thisValue": 111.283935,
+              "lastValue": 100.267691,
+              "changePct": 0.10986833236241572,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Adv Packaging / Test",
+              "thisValue": 45.058044,
+              "lastValue": 40.889177,
+              "changePct": 0.10195526801627726,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Analog Cycle",
+              "thisValue": 19.586724,
+              "lastValue": 18.252358,
+              "changePct": 0.07310649944516757,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "Power / DC Electrical",
+              "thisValue": 64.860088,
+              "lastValue": 61.147468,
+              "changePct": 0.06071584190534267,
+              "direction": "up",
+              "bigMove": false
+            }
+          ],
+          "summary": "Quarter-on-quarter revenue up 18.0% (Q2 '26 → Q3 '26, quarter-to-date), like-for-like across 32 companies. The latest month is still filling in, so this quarter will firm up as remaining filings land."
+        }
+      ],
+      "breakdownNoun": "supply-chain stage",
+      "changeNoun": "Revenue change",
+      "insights": [
+        {
+          "title": "Power / DC Electrical is the standout — -3.6% MoM",
+          "body": "It moved against the rest of the supply chain (peers around +4.3%). Worth a look at whether this is a one-month timing effect or a genuine turn."
+        },
+        {
+          "title": "Who is accelerating vs fading",
+          "body": "Year-on-year growth acceleration by company in the latest month — the names pulling each stage up or down.",
+          "bullets": [
+            "Accelerating: Alchip +222ppt (AI Silicon, YoY 496%); Elite Material +39ppt (Substrate / AI PCB, YoY 169%); Inventec +27ppt (Rack / ODM, YoY 63%)",
+            "Decelerating: Quanta -101ppt (Rack / ODM, YoY 77%); Wistron -79ppt (Rack / ODM, YoY 87%); Auras -44ppt (Thermal, YoY 23%)"
+          ],
+          "asOf": "2026-09-01"
+        }
+      ]
     },
     {
       "systemId": "ai-compute-pricing",
@@ -2703,7 +2897,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T12:53:24.713Z",
+      "asOf": "2026-10-15T13:03:28.814Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2835,7 +3029,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T12:53:25.084Z",
+          "asOf": "2026-10-15T13:03:28.932Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2858,7 +3052,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T12:53:25.979Z",
+          "asOf": "2026-10-15T13:03:30.130Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2881,7 +3075,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T12:53:26.018Z",
+          "asOf": "2026-10-15T13:03:30.199Z",
           "isStale": false,
           "breakdown": [
             {

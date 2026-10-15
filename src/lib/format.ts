@@ -72,8 +72,11 @@ export function fmtValue(n: number | null | undefined, unit: string): string {
     case '$/1M tokens':
     case '$/GPU-hr':
       return usd(n, Math.abs(n) >= 1000 ? 0 : 2);
-    case 'TWD bn':
-      return `${n.toLocaleString('en-US', { maximumFractionDigits: 0 })} bn TWD`;
+    case 'TWD bn': {
+      // small stages (a few bn) keep a decimal so they don't look static next to a real change
+      const dp = Math.abs(n) >= 100 ? 0 : 1;
+      return `${n.toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp })} bn TWD`;
+    }
     case 'tokens':
       return `${fmtCompact(n)} tokens`;
     case '%':

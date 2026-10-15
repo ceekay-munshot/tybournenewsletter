@@ -11,7 +11,7 @@
       "source": { "api": "https://cpuprices-bzr.pages.dev/api/period-aggregates" },
       "sourceName": "PassMark / cpubenchmark.net (street price)", "dashboardUrl": "https://cpuprices-bzr.pages.dev/" },
     { "id": "taiwan-semi-revenue", "name": "Taiwan Semiconductor Revenue", "sector": "technology", "metricLabel": "Supply-chain revenue", "connector": "taiwanSemiRevenue",
-      "source": { "url": "https://taiwan-semicon-revenue.tech-441.workers.dev/data/analytics.json" },
+      "source": { "url": "https://taiwan-semicon-revenue.tech-441.workers.dev/data/analytics.json", "heatmap": "https://taiwan-semicon-revenue.tech-441.workers.dev/data/heatmap.json" },
       "sourceName": "Taiwan MOPS / TWSE monthly filings", "dashboardUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/" },
     { "id": "ai-compute-pricing", "name": "AI Compute Pricing", "sector": "technology", "metricLabel": "Model price ($/1M tokens)", "connector": "aiComputePricing",
       "source": { "signal": "https://ai-compute-pricing.pages.dev/api/pricing-share-signal", "history": "https://ai-compute-pricing.pages.dev/api/pricing-history?metric=input&view=basket&range=400" },
