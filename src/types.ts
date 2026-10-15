@@ -72,6 +72,10 @@ export interface ChangeBlock {
    *  toggle and these drive the drill-down (the top-level fields stay as the
    *  default view so the overview table/cards/movers keep working). */
   views?: PeriodView[];
+  /** Labels for the two breakdown dimensions in the multi-period view, e.g.
+   *  "product line" + "brand" (Schneider) or "segment" + "vendor" (CPU). */
+  breakdownNoun?: string;
+  subNoun?: string;
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;

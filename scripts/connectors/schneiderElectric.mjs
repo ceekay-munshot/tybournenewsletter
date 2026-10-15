@@ -263,5 +263,7 @@ export async function connect(system) {
     notes,
   });
   block.views = views;
+  block.breakdownNoun = 'product line';
+  block.subNoun = 'brand';
   return block;
 }

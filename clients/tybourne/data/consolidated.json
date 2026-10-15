@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T12:27:41.571Z",
+  "generatedAt": "2026-10-15T12:37:56.168Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -35,87 +35,388 @@
       "sector": "technology",
       "metricLabel": "CPU average price",
       "unit": "$",
-      "comparison": "QoQ",
-      "thisPeriodLabel": "Q4 '26 (QTD)",
-      "lastPeriodLabel": "Q3 '26",
-      "thisValue": 678.6894712317667,
-      "lastValue": 678.8936405996759,
+      "comparison": "MoM",
+      "thisPeriodLabel": "Oct-26",
+      "lastPeriodLabel": "Sep-26",
+      "thisValue": null,
+      "lastValue": null,
       "changePct": -0.000969303849794123,
-      "changeAbs": -0.20416936790923046,
+      "changeAbs": null,
       "direction": "down",
       "asOf": "2026-10-14T14:33:04.382Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Server · Intel",
-          "thisValue": 1199.0604478609625,
-          "lastValue": 1201.3436697860964,
-          "changePct": -0.0019005568369459423,
-          "direction": "down"
+          "label": "Server",
+          "thisValue": 1385.2386704312114,
+          "lastValue": 1385.4657340862423,
+          "changePct": -0.000694411217275572,
+          "direction": "down",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Intel",
+              "thisValue": 1199.0604478609625,
+              "lastValue": 1201.3436697860964,
+              "changePct": -0.0019005568369459423,
+              "direction": "down",
+              "bigMove": false
+            },
+            {
+              "label": "AMD",
+              "thisValue": 2001.4391592920354,
+              "lastValue": 1994.8608849557522,
+              "changePct": 0.0032976105681821136,
+              "direction": "up",
+              "bigMove": false
+            }
+          ]
         },
         {
-          "label": "Server · AMD",
-          "thisValue": 2001.4391592920354,
-          "lastValue": 1994.8608849557522,
-          "changePct": 0.0032976105681821136,
-          "direction": "up"
-        },
-        {
-          "label": "Laptop · Intel",
-          "thisValue": 395.4417171717172,
-          "lastValue": 395.4417171717172,
+          "label": "Laptop",
+          "thisValue": 351.5911013215859,
+          "lastValue": 351.5911013215859,
           "changePct": 0,
-          "direction": "flat"
+          "direction": "flat",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Intel",
+              "thisValue": 395.4417171717172,
+              "lastValue": 395.4417171717172,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false
+            },
+            {
+              "label": "AMD",
+              "thisValue": 52.19724137931034,
+              "lastValue": 52.19724137931034,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false
+            }
+          ]
         },
         {
-          "label": "Laptop · AMD",
-          "thisValue": 52.19724137931034,
-          "lastValue": 52.19724137931034,
-          "changePct": 0,
-          "direction": "flat"
-        },
-        {
-          "label": "Desktop · Intel",
-          "thisValue": 202.16466091245377,
-          "lastValue": 201.82913686806413,
-          "changePct": 0.0016624162873419628,
-          "direction": "up"
-        },
-        {
-          "label": "Desktop · AMD",
-          "thisValue": 179.86059210526318,
-          "lastValue": 181.07734649122804,
-          "changePct": -0.006719528475218904,
-          "direction": "down"
+          "label": "Desktop",
+          "thisValue": 194.1373086029992,
+          "lastValue": 194.36045777426992,
+          "changePct": -0.0013542899571156184,
+          "direction": "down",
+          "bigMove": false,
+          "sub": [
+            {
+              "label": "Intel",
+              "thisValue": 202.16466091245377,
+              "lastValue": 201.82913686806413,
+              "changePct": 0.0016624162873419628,
+              "direction": "up",
+              "bigMove": false
+            },
+            {
+              "label": "AMD",
+              "thisValue": 179.86059210526318,
+              "lastValue": 181.07734649122804,
+              "changePct": -0.006719528475218904,
+              "direction": "down",
+              "bigMove": false
+            }
+          ]
         }
       ],
-      "trend": [
-        {
-          "period": "Jun-26",
-          "value": 665.0641209016394
-        },
-        {
-          "period": "Jul-26",
-          "value": 672.810454730832
-        },
-        {
-          "period": "Aug-26",
-          "value": 672.6178024439919
-        },
-        {
-          "period": "Sep-26",
-          "value": 678.5789979674796
-        },
-        {
-          "period": "Oct-26",
-          "value": 678.6894712317667
-        }
-      ],
+      "summary": "Month-on-month CPU street price down 0.1% across server / laptop / desktop (Intel & AMD).",
       "sourceName": "PassMark / cpubenchmark.net (street price)",
       "sourceUrl": "https://cpuprices-bzr.pages.dev/",
       "dashboardUrl": "https://cpuprices-bzr.pages.dev/",
-      "notes": "PassMark street price, not direct vendor retail. Headline is the SKU-weighted mean of 6 segment×vendor cohort changes.",
-      "status": "ok"
+      "notes": "PassMark / CPUbenchmark is a benchmark and market-share proxy source. Its price column is an observed street price, not a direct vendor retail price like Newegg, CDW, Provantage, or Arrow. Server/Laptop/Desktop × Intel/AMD, like-for-like (items priced in both captures). Green = price up (higher cost). Weekly/monthly/quarterly from PassMark street-price aggregates.",
+      "status": "ok",
+      "views": [
+        {
+          "comparison": "WoW",
+          "label": "Week",
+          "available": true,
+          "thisPeriodLabel": "Oct 12-18",
+          "lastPeriodLabel": "Oct 5-11",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": 0.003583251057955424,
+          "changeAbs": null,
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Server",
+              "thisValue": 1385.2386704312114,
+              "lastValue": 1383.3532700205337,
+              "changePct": 0.0015752357945917712,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 1199.0604478609625,
+                  "lastValue": 1196.60689171123,
+                  "changePct": 0.0020504278946813174,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 2001.4391592920354,
+                  "lastValue": 2001.434203539823,
+                  "changePct": 0.0000024761004900876685,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Laptop",
+              "thisValue": 351.5911013215859,
+              "lastValue": 351.5911013215859,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 395.4417171717172,
+                  "lastValue": 395.4417171717172,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 52.19724137931034,
+                  "lastValue": 52.19724137931034,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Desktop",
+              "thisValue": 194.1373086029992,
+              "lastValue": 192.98089187056038,
+              "changePct": 0.0057688902502775075,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 202.16466091245377,
+                  "lastValue": 200.34948212083847,
+                  "changePct": 0.009060062309122844,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 179.86059210526318,
+                  "lastValue": 179.8757894736842,
+                  "changePct": -0.00008448812630926599,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            }
+          ],
+          "summary": "Week-on-week CPU street price up 0.4% across server / laptop / desktop (Intel & AMD)."
+        },
+        {
+          "comparison": "MoM",
+          "label": "Month",
+          "available": true,
+          "thisPeriodLabel": "Oct-26",
+          "lastPeriodLabel": "Sep-26",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": -0.000969303849794123,
+          "changeAbs": null,
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Server",
+              "thisValue": 1385.2386704312114,
+              "lastValue": 1385.4657340862423,
+              "changePct": -0.000694411217275572,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 1199.0604478609625,
+                  "lastValue": 1201.3436697860964,
+                  "changePct": -0.0019005568369459423,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 2001.4391592920354,
+                  "lastValue": 1994.8608849557522,
+                  "changePct": 0.0032976105681821136,
+                  "direction": "up",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Laptop",
+              "thisValue": 351.5911013215859,
+              "lastValue": 351.5911013215859,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 395.4417171717172,
+                  "lastValue": 395.4417171717172,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 52.19724137931034,
+                  "lastValue": 52.19724137931034,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Desktop",
+              "thisValue": 194.1373086029992,
+              "lastValue": 194.36045777426992,
+              "changePct": -0.0013542899571156184,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 202.16466091245377,
+                  "lastValue": 201.82913686806413,
+                  "changePct": 0.0016624162873419628,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 179.86059210526318,
+                  "lastValue": 181.07734649122804,
+                  "changePct": -0.006719528475218904,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            }
+          ],
+          "summary": "Month-on-month CPU street price down 0.1% across server / laptop / desktop (Intel & AMD)."
+        },
+        {
+          "comparison": "QoQ",
+          "label": "Quarter",
+          "available": true,
+          "thisPeriodLabel": "Q4-26",
+          "lastPeriodLabel": "Q3-26",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": -0.000969303849794123,
+          "changeAbs": null,
+          "direction": "down",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Server",
+              "thisValue": 1385.2386704312114,
+              "lastValue": 1385.4657340862423,
+              "changePct": -0.000694411217275572,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 1199.0604478609625,
+                  "lastValue": 1201.3436697860964,
+                  "changePct": -0.0019005568369459423,
+                  "direction": "down",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 2001.4391592920354,
+                  "lastValue": 1994.8608849557522,
+                  "changePct": 0.0032976105681821136,
+                  "direction": "up",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Laptop",
+              "thisValue": 351.5911013215859,
+              "lastValue": 351.5911013215859,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 395.4417171717172,
+                  "lastValue": 395.4417171717172,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 52.19724137931034,
+                  "lastValue": 52.19724137931034,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false
+                }
+              ]
+            },
+            {
+              "label": "Desktop",
+              "thisValue": 194.1373086029992,
+              "lastValue": 194.36045777426992,
+              "changePct": -0.0013542899571156184,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 202.16466091245377,
+                  "lastValue": 201.82913686806413,
+                  "changePct": 0.0016624162873419628,
+                  "direction": "up",
+                  "bigMove": false
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 179.86059210526318,
+                  "lastValue": 181.07734649122804,
+                  "changePct": -0.006719528475218904,
+                  "direction": "down",
+                  "bigMove": false
+                }
+              ]
+            }
+          ],
+          "summary": "Quarter-on-quarter CPU street price down 0.1% across server / laptop / desktop (Intel & AMD)."
+        }
+      ],
+      "breakdownNoun": "segment",
+      "subNoun": "vendor"
     },
     {
       "systemId": "taiwan-semi-revenue",
@@ -1179,7 +1480,9 @@
           ],
           "summary": "Quarter-on-quarter like-for-like price up 1.2% across 3 solidly-priced categories; 1 moved more than 2%."
         }
-      ]
+      ],
+      "breakdownNoun": "product line",
+      "subNoun": "brand"
     },
     {
       "systemId": "thirteen-f",
@@ -1939,7 +2242,7 @@
       "changePct": 1.9995930364893035,
       "changeAbs": 842481492208417,
       "direction": "up",
-      "asOf": "2026-10-15T12:27:36.432Z",
+      "asOf": "2026-10-15T12:37:51.912Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2071,7 +2374,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "flat",
-          "asOf": "2026-10-15T12:27:36.552Z",
+          "asOf": "2026-10-15T12:37:52.034Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2094,7 +2397,7 @@
           "changePct": null,
           "changeAbs": null,
           "direction": "up",
-          "asOf": "2026-10-15T12:27:37.073Z",
+          "asOf": "2026-10-15T12:37:52.674Z",
           "isStale": false,
           "breakdown": [],
           "sourceName": "OpenRouter / UBS / SEC",
@@ -2117,7 +2420,7 @@
           "changePct": 0.013665787580916076,
           "changeAbs": 0.6,
           "direction": "up",
-          "asOf": "2026-10-15T12:27:37.168Z",
+          "asOf": "2026-10-15T12:37:52.739Z",
           "isStale": false,
           "breakdown": [
             {

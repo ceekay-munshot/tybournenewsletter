@@ -35,6 +35,9 @@ export function MultiPeriodView({
   if (!view) return null;
 
   const dir = directionColor(view.direction);
+  const bNoun = block.breakdownNoun ?? 'segment';
+  const sNoun = block.subNoun ?? 'group';
+  const bNounCap = bNoun.charAt(0).toUpperCase() + bNoun.slice(1);
   const priced = view.breakdown.filter((r) => r.changePct != null);
   const chartData: DivergingDatum[] = priced.map((r) => ({
     key: r.label,
@@ -121,7 +124,7 @@ export function MultiPeriodView({
             <CardHeader
               icon={Icon}
               accent={accent}
-              title="Price change by product line"
+              title={`Price change by ${bNoun}`}
               subtitle={`${view.label}-over-${view.label.toLowerCase()}, like-for-like`}
               right={
                 <Legend
@@ -142,9 +145,11 @@ export function MultiPeriodView({
 
           <Card pad={false} className="mb-4">
             <div className="p-4 pb-2">
-              <h3 className="font-display text-[15px] font-bold text-slate-900">By product line and brand</h3>
+              <h3 className="font-display text-[15px] font-bold text-slate-900">
+                By {bNoun} and {sNoun}
+              </h3>
               <p className="text-[12px] text-slate-500">
-                Category average, then the move for each parent brand (Schneider / Eaton / Vertiv …). ⚡ = move over 2%.
+                {bNounCap} average, then the move for each {sNoun}. ⚡ = move over 2%.
               </p>
             </div>
             <div className="flex flex-col gap-2 px-4 pb-4">
