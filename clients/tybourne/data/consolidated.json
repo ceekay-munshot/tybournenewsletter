@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T02:09:33.956Z",
+  "generatedAt": "2026-10-16T03:23:38.999Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -767,14 +767,6 @@
       "isStale": false,
       "breakdown": [
         {
-          "label": "DeepSeek",
-          "thisValue": 0.249,
-          "lastValue": 0.3208762886597938,
-          "changePct": -0.224,
-          "direction": "down",
-          "bigMove": true
-        },
-        {
           "label": "Google",
           "thisValue": 0.512,
           "lastValue": 0.5156092648539778,
@@ -799,11 +791,11 @@
           "bigMove": false
         }
       ],
-      "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: DeepSeek -22.4%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.",
+      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary. NOTE: the pricing source reported a degraded fetch this run, so some providers may be missing from the breakdown — it refreshes automatically.",
       "status": "ok",
       "views": [
         {
@@ -848,14 +840,6 @@
           "bigMove": false,
           "breakdown": [
             {
-              "label": "DeepSeek",
-              "thisValue": 0.249,
-              "lastValue": 0.3208762886597938,
-              "changePct": -0.224,
-              "direction": "down",
-              "bigMove": true
-            },
-            {
               "label": "Google",
               "thisValue": 0.512,
               "lastValue": 0.5156092648539778,
@@ -880,17 +864,12 @@
               "bigMove": false
             }
           ],
-          "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: DeepSeek -22.4%. List prices are otherwise flat month-to-month."
+          "summary": "Quarter-on-quarter input price down 1.2% (output -0.3%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month."
         }
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [
-        {
-          "title": "Biggest price cut — DeepSeek",
-          "body": "-22.4% input · share +7.08pp"
-        }
-      ]
+      "insights": []
     },
     {
       "systemId": "schneider-electric",
@@ -4552,7 +4531,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-16T02:09:17.928Z",
+      "asOf": "2026-10-16T03:23:21.685Z",
       "isStale": false,
       "breakdown": [
         {
@@ -4958,7 +4937,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-16T02:09:18.028Z"
+          "asOf": "2026-10-16T03:23:21.762Z"
         }
       ]
     },
@@ -6224,17 +6203,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 37,
+      "thisValue": 33,
       "lastValue": 6,
       "changePct": null,
-      "changeAbs": 31,
+      "changeAbs": 27,
       "direction": "flat",
-      "asOf": "2026-10-15T22:35:40.000Z",
+      "asOf": "2026-10-16T03:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 10,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "In Good Company",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -6255,20 +6241,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "In Good Company",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Sources",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -6311,12 +6283,12 @@
         "Hyperliquid aims to house all of finance on a permissionless blockchain protocol",
         "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes"
       ],
-      "tone": "Tone across 37 episodes — 15 positive, 13 mixed, 6 neutral, 3 cautious",
-      "summary": "Q4 '26 (QTD): 37 investor-podcast episodes across 10 shows. The recurring threads — Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 15 positive, 13 mixed, 6 neutral, 3 cautious. Last quarter (Q3 '26) ran 6 episodes (3 positive, 2 cautious, 1 mixed), centred on Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context; Gabe Stengel's vision for AI transforming investing. New to the conversation this quarter: Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
+      "tone": "Tone across 33 episodes — 13 mixed, 11 positive, 5 neutral, 3 cautious",
+      "summary": "Q4 '26 (QTD): 33 investor-podcast episodes across 9 shows. The recurring threads — Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 13 mixed, 11 positive, 5 neutral, 3 cautious. Last quarter (Q3 '26) ran 6 episodes (3 positive, 2 cautious, 1 mixed), centred on Instinct personal assistant platform; Molly Graham revisits her \"give away your Legos\" career advice in an AI context; Gabe Stengel's vision for AI transforming investing. New to the conversation this quarter: Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "37 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "33 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
