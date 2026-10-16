@@ -7,7 +7,7 @@
 // Colour note: green = price UP (higher cost for the buyer) — matches the source
 // dashboard's own convention, not the usual "green = good".
 import { getJson } from '../lib/http.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE = 0.02; // |change| >= 2% flags a big move
 const MIN_COHORT = 10; // a cell below this many matched SKUs is flagged "thin", kept out of the headline
@@ -20,9 +20,7 @@ const PERIODS = [
   { comparison: 'QoQ', label: 'Quarter', key: 'quarterly' },
 ];
 
-function buildView(arr, comparison, label) {
-  const cur = Array.isArray(arr) ? arr[0] : null;
-  const prior = Array.isArray(arr) ? arr[1] : null;
+function buildView(cur, prior, comparison, label) {
   const cells = (cur && Array.isArray(cur.matched_vs_prior) ? cur.matched_vs_prior : []).filter(
     (c) => c && c.prior_avg_cents && c.current_avg_cents != null
   );
@@ -127,7 +125,23 @@ export async function connect(system) {
   if (!res?.success || !res?.data) throw new Error('period-aggregates returned no data');
   const d = res.data;
 
-  const views = PERIODS.map((p) => buildView(d[p.key], p.comparison, p.label));
+  const views = PERIODS.map((p) => {
+    const arr = Array.isArray(d[p.key]) ? d[p.key] : [];
+    const latest = buildView(arr[0], arr[1], p.comparison, p.label);
+    // one step further back, so the table shows two consecutive periods of trend
+    if (latest.available && arr[2]) {
+      const prior = buildView(arr[1], arr[2], p.comparison, p.label);
+      if (prior.available) {
+        attachPrev(latest.breakdown, prior.breakdown);
+        latest.prevLabel = prior.lastPeriodLabel;
+        latest.prevValue = prior.lastValue; // the Aug value (prior pair's "from")
+        latest.prevChangePct = prior.changePct;
+        latest.prevChangeAbs = prior.changeAbs;
+        latest.prevDirection = prior.direction;
+      }
+    }
+    return latest;
+  });
   const def = views.find((v) => v.comparison === 'MoM' && v.available) || views.find((v) => v.available) || views[1];
   const asOf = d.monthly?.[0]?.last_scraped_at || d.monthly?.[0]?.period_start || new Date().toISOString();
 

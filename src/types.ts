@@ -14,6 +14,13 @@ export interface BreakdownRow {
   changeAbs?: number | null;
   changeDisplay?: 'pct' | 'pp' | 'pts';
   direction: Direction;
+  /** The step BEFORE last — the prior comparison, so the table shows two consecutive
+   *  periods of trend. prevValue is the value one period before lastValue; prevChangePct/
+   *  prevChangeAbs are the move from prevValue → lastValue. */
+  prevValue?: number | null;
+  prevChangePct?: number | null;
+  prevChangeAbs?: number | null;
+  prevDirection?: Direction;
   /** Optional second level (e.g. parent brands within a product-line category). */
   sub?: BreakdownRow[];
   /** Flagged when the move is large enough to call out. */
@@ -56,6 +63,14 @@ export interface PeriodView {
   changeDisplay?: 'pct' | 'pp' | 'pts';
   direction: Direction;
   bigMove?: boolean;
+  /** The prior comparison (one step further back) so the headline + table show two
+   *  consecutive periods. prevLabel is the period before lastPeriodLabel (e.g. "Aug '26"),
+   *  prevValue its overall value, prevChangePct/prevChangeAbs the prevLabel→lastPeriodLabel move. */
+  prevLabel?: string;
+  prevValue?: number | null;
+  prevChangePct?: number | null;
+  prevChangeAbs?: number | null;
+  prevDirection?: Direction;
   breakdown: BreakdownRow[];
   summary?: string;
   notes?: string;
@@ -77,6 +92,13 @@ export interface ChangeBlock {
   direction: Direction;
   /** How the headline change should read: percent (default), percentage points, or points. */
   changeDisplay?: 'pct' | 'pp' | 'pts';
+  /** The prior comparison (mirrors the default view) so the overview + newsletter can show
+   *  two consecutive periods of trend. Copied from the default view in consolidation. */
+  prevLabel?: string;
+  prevValue?: number | null;
+  prevChangePct?: number | null;
+  prevChangeAbs?: number | null;
+  prevDirection?: Direction;
   asOf: string;
   isStale?: boolean;
   breakdown: BreakdownRow[];

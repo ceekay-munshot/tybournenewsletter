@@ -48,6 +48,24 @@ export function MultiPeriodView({
   const hasVals = view.breakdown.some(
     (r) => r.lastValue != null || r.thisValue != null || (r.sub ?? []).some((s) => s.lastValue != null || s.thisValue != null)
   );
+  // The prior comparison (one step further back) — shown as an extra value + change
+  // column so the table reads as two consecutive periods of trend. Adaptive: only
+  // appears when the connector supplies it.
+  const subsOf = (r: BreakdownRow) => r.sub ?? [];
+  const showPrevVal =
+    hasVals &&
+    (view.prevValue != null || view.breakdown.some((r) => r.prevValue != null || subsOf(r).some((s) => s.prevValue != null)));
+  const showPrevChg =
+    view.prevChangePct != null ||
+    view.prevChangeAbs != null ||
+    view.breakdown.some(
+      (r) =>
+        r.prevChangePct != null ||
+        r.prevChangeAbs != null ||
+        subsOf(r).some((s) => s.prevChangePct != null || s.prevChangeAbs != null)
+    );
+  const prevArrow = view.prevLabel ? `${view.prevLabel} → ${view.lastPeriodLabel}` : 'Prior';
+  const thisArrow = `${view.lastPeriodLabel} → ${view.thisPeriodLabel}`;
 
   const priced = view.breakdown.filter((r) => magOf(r) != null);
   const chartData: DivergingDatum[] = priced.map((r) => ({
@@ -107,8 +125,21 @@ export function MultiPeriodView({
             </div>
             {view.available && view.lastValue != null && (
               <div className="tnum mt-1.5 text-[13px] text-slate-500">
+                {view.prevValue != null && (
+                  <>
+                    {fmtValue(view.prevValue, block.unit)} <span className="text-slate-300">→</span>{' '}
+                  </>
+                )}
                 {fmtValue(view.lastValue, block.unit)} <span className="text-slate-300">→</span>{' '}
                 <span className="font-semibold text-slate-700">{fmtValue(view.thisValue, block.unit)}</span>
+              </div>
+            )}
+            {view.available && (view.prevChangePct != null || view.prevChangeAbs != null) && (
+              <div className="tnum mt-1 text-[11.5px] text-slate-400">
+                prior {prevArrow}:{' '}
+                <span className="font-semibold" style={{ color: directionColor(view.prevDirection ?? 'flat') }}>
+                  {headlineText(view.prevChangePct, view.prevChangeAbs, view.changeDisplay)}
+                </span>
               </div>
             )}
           </div>
@@ -165,14 +196,24 @@ export function MultiPeriodView({
                 <thead>
                   <tr className="border-b border-slate-200 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-400">
                     <th className="py-2 pr-3 capitalize">{bNoun}</th>
+                    {showPrevVal && <th className="whitespace-nowrap px-3 py-2 text-right font-medium text-slate-400">{view.prevLabel}</th>}
                     {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.lastPeriodLabel}</th>}
                     {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.thisPeriodLabel}</th>}
-                    <th className="whitespace-nowrap py-2 pl-3 text-right">{changeNoun}</th>
+                    {showPrevChg && <th className="whitespace-nowrap px-3 py-2 text-right font-medium text-slate-400">{prevArrow}</th>}
+                    <th className="whitespace-nowrap py-2 pl-3 text-right">{showPrevChg ? thisArrow : changeNoun}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {view.breakdown.map((r) => (
-                    <BreakdownRows key={r.label} row={r} unit={block.unit} disp={view.changeDisplay} hasVals={hasVals} />
+                    <BreakdownRows
+                      key={r.label}
+                      row={r}
+                      unit={block.unit}
+                      disp={view.changeDisplay}
+                      hasVals={hasVals}
+                      showPrevVal={showPrevVal}
+                      showPrevChg={showPrevChg}
+                    />
                   ))}
                 </tbody>
               </table>
@@ -237,70 +278,77 @@ export function MultiPeriodView({
   );
 }
 
-/** One breakdown item as a table row, with any sub-dimension items as indented sub-rows. */
+/** One breakdown item as a table row, with any sub-dimension items as indented sub-rows.
+ *  Columns: name · [prior value · last value · this value] · [prior change · this change]. */
 function BreakdownRows({
   row,
   unit,
   disp,
   hasVals,
+  showPrevVal,
+  showPrevChg,
 }: {
   row: BreakdownRow;
   unit: string;
   disp?: 'pct' | 'pp' | 'pts';
   hasVals: boolean;
+  showPrevVal: boolean;
+  showPrevChg: boolean;
 }) {
-  const tracked = row.changePct != null || row.changeAbs != null;
-  const dir = directionColor(row.direction);
-  const chg = headlineText(row.changePct, row.changeAbs, row.changeDisplay ?? disp);
+  const prevChg = (r: BreakdownRow) => headlineText(r.prevChangePct, r.prevChangeAbs, r.changeDisplay ?? disp);
+  const prevTracked = (r: BreakdownRow) => r.prevChangePct != null || r.prevChangeAbs != null;
   return (
     <>
-      <tr className="border-b border-slate-100">
-        <td className="py-2.5 pr-3 align-top">
-          <span className={`font-display text-[13px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{row.label}</span>
-          {row.note && <span className="ml-1.5 text-[10.5px] italic text-amber-600">{row.note}</span>}
-          {!tracked && !row.note && <span className="ml-1.5 text-[11px] italic text-slate-400">not tracked</span>}
+      {rowCells(row, false)}
+      {(row.sub ?? []).map((s) => rowCells(s, true))}
+    </>
+  );
+
+  function rowCells(r: BreakdownRow, isSub: boolean) {
+    const tracked = r.changePct != null || r.changeAbs != null;
+    const chg = headlineText(r.changePct, r.changeAbs, r.changeDisplay ?? disp);
+    const vpad = isSub ? 'py-1.5' : 'py-2.5';
+    const valCls = isSub ? 'text-slate-400' : 'text-slate-500';
+    const thisValCls = isSub ? 'text-slate-600' : 'font-semibold text-slate-800';
+    return (
+      <tr key={r.label} className={`border-b border-slate-100 ${isSub ? 'bg-slate-50/50' : ''}`}>
+        <td className={`${isSub ? 'pl-4' : ''} pr-3 ${vpad} align-top ${isSub ? 'text-slate-500' : ''}`}>
+          {isSub && <span className="mr-1 text-slate-300">└</span>}
+          <span className={isSub ? '' : `font-display text-[13px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{r.label}</span>
+          {r.note && <span className="ml-1.5 text-[10px] italic text-amber-600">{r.note}</span>}
+          {!isSub && !tracked && !r.note && <span className="ml-1.5 text-[11px] italic text-slate-400">not tracked</span>}
         </td>
-        {hasVals && (
-          <td className="tnum whitespace-nowrap px-3 py-2.5 text-right align-top text-slate-500">
-            {row.lastValue != null ? fmtValue(row.lastValue, unit) : ''}
+        {showPrevVal && (
+          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top text-slate-400`}>
+            {r.prevValue != null ? fmtValue(r.prevValue, unit) : ''}
           </td>
         )}
         {hasVals && (
-          <td className="tnum whitespace-nowrap px-3 py-2.5 text-right align-top font-semibold text-slate-800">
-            {row.thisValue != null ? fmtValue(row.thisValue, unit) : ''}
+          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top ${valCls}`}>
+            {r.lastValue != null ? fmtValue(r.lastValue, unit) : ''}
+          </td>
+        )}
+        {hasVals && (
+          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top ${thisValCls}`}>
+            {r.thisValue != null ? fmtValue(r.thisValue, unit) : ''}
+          </td>
+        )}
+        {showPrevChg && (
+          <td
+            className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top`}
+            style={{ color: prevTracked(r) ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
+          >
+            {prevTracked(r) ? prevChg(r) : ''}
           </td>
         )}
         <td
-          className="tnum whitespace-nowrap py-2.5 pl-3 text-right align-top font-bold"
-          style={{ color: tracked ? dir : '#94A3B8', fontSize: row.bigMove ? 14.5 : 13 }}
+          className={`tnum whitespace-nowrap pl-3 ${vpad} text-right align-top ${isSub ? 'font-semibold' : 'font-bold'}`}
+          style={{ color: tracked ? directionColor(r.direction) : '#94A3B8', fontSize: !isSub && r.bigMove ? 14.5 : 13 }}
         >
-          {tracked ? chg : '—'}
-          {row.bigMove && ' ⚡'}
+          {tracked ? chg : isSub ? '' : '—'}
+          {r.bigMove && ' ⚡'}
         </td>
       </tr>
-      {(row.sub ?? []).map((s) => (
-        <tr key={s.label} className="border-b border-slate-100 bg-slate-50/50">
-          <td className="py-1.5 pl-4 pr-3 align-top text-slate-500">
-            <span className="mr-1 text-slate-300">└</span>
-            {s.label}
-            {s.note && <span className="ml-1.5 text-[10px] italic text-amber-600">{s.note}</span>}
-          </td>
-          {hasVals && (
-            <td className="tnum whitespace-nowrap px-3 py-1.5 text-right align-top text-slate-400">
-              {s.lastValue != null ? fmtValue(s.lastValue, unit) : ''}
-            </td>
-          )}
-          {hasVals && (
-            <td className="tnum whitespace-nowrap px-3 py-1.5 text-right align-top text-slate-600">
-              {s.thisValue != null ? fmtValue(s.thisValue, unit) : ''}
-            </td>
-          )}
-          <td className="tnum whitespace-nowrap py-1.5 pl-3 text-right align-top font-semibold" style={{ color: directionColor(s.direction) }}>
-            {headlineText(s.changePct, s.changeAbs, s.changeDisplay ?? disp)}
-            {s.bigMove && ' ⚡'}
-          </td>
-        </tr>
-      ))}
-    </>
-  );
+    );
+  }
 }

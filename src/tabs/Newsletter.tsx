@@ -279,8 +279,15 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
   const rows = b.breakdown || [];
   const hasVals = rows.some((r) => r.lastValue != null || r.thisValue != null);
   const changeOf = (r: BreakdownRow) => headlineText(r.changePct, r.changeAbs, r.changeDisplay ?? b.changeDisplay);
+  const prevChangeOf = (r: BreakdownRow) => headlineText(r.prevChangePct, r.prevChangeAbs, r.changeDisplay ?? b.changeDisplay);
   const insights = b.insights ?? [];
   const bNoun = b.breakdownNoun ?? 'breakdown';
+  // two-period trend columns (prior value + prior change), adaptive like the dashboard table
+  const showPrevVal = hasVals && (b.prevValue != null || rows.some((r) => r.prevValue != null));
+  const showPrevChg =
+    b.prevChangePct != null || b.prevChangeAbs != null || rows.some((r) => r.prevChangePct != null || r.prevChangeAbs != null);
+  const prevArrow = b.prevLabel ? `${b.prevLabel} → ${b.lastPeriodLabel}` : 'Prior';
+  const thisArrow = `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
 
   return (
     <div className="nl-avoid rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
@@ -305,7 +312,16 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
             </div>
             {b.lastValue != null && (
               <div className="tnum mt-0.5 text-[10.5px] text-slate-400">
+                {b.prevValue != null && <>{fmtValue(b.prevValue, b.unit)} → </>}
                 {fmtValue(b.lastValue, b.unit)} → {fmtValue(b.thisValue, b.unit)}
+              </div>
+            )}
+            {(b.prevChangePct != null || b.prevChangeAbs != null) && (
+              <div className="tnum mt-0.5 text-[10px] text-slate-400">
+                prior {prevArrow}:{' '}
+                <span style={{ color: directionColor(b.prevDirection ?? 'flat') }}>
+                  {headlineText(b.prevChangePct, b.prevChangeAbs, b.changeDisplay)}
+                </span>
               </div>
             )}
           </div>
@@ -329,26 +345,42 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
             <thead>
               <tr className="bg-slate-50 text-left text-slate-500">
                 <th className="px-2.5 py-1.5 font-semibold capitalize">{bNoun}</th>
+                {showPrevVal && <th className="px-2.5 py-1.5 text-right font-medium text-slate-400">{b.prevLabel}</th>}
                 {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.lastPeriodLabel}</th>}
                 {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.thisPeriodLabel}</th>}
-                <th className="px-2.5 py-1.5 text-right font-semibold">Change</th>
+                {showPrevChg && <th className="whitespace-nowrap px-2.5 py-1.5 text-right font-medium text-slate-400">{prevArrow}</th>}
+                <th className="whitespace-nowrap px-2.5 py-1.5 text-right font-semibold">{showPrevChg ? thisArrow : 'Change'}</th>
               </tr>
             </thead>
             <tbody>
-              {rows.map((r, i) => (
-                <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                  <td className="px-2.5 py-1.5 font-medium text-slate-700">
-                    {r.label}
-                    {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
-                  </td>
-                  {hasVals && <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>}
-                  {hasVals && <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>}
-                  <td className="tnum px-2.5 py-1.5 text-right font-bold" style={{ color: directionColor(r.direction) }}>
-                    {changeOf(r)}
-                    {r.bigMove && ' ⚡'}
-                  </td>
-                </tr>
-              ))}
+              {rows.map((r, i) => {
+                const prevTracked = r.prevChangePct != null || r.prevChangeAbs != null;
+                return (
+                  <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
+                    <td className="px-2.5 py-1.5 font-medium text-slate-700">
+                      {r.label}
+                      {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
+                    </td>
+                    {showPrevVal && (
+                      <td className="tnum px-2.5 py-1.5 text-right text-slate-400">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
+                    )}
+                    {hasVals && <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>}
+                    {hasVals && <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>}
+                    {showPrevChg && (
+                      <td
+                        className="tnum px-2.5 py-1.5 text-right"
+                        style={{ color: prevTracked ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
+                      >
+                        {prevTracked ? prevChangeOf(r) : ''}
+                      </td>
+                    )}
+                    <td className="tnum px-2.5 py-1.5 text-right font-bold" style={{ color: directionColor(r.direction) }}>
+                      {changeOf(r)}
+                      {r.bigMove && ' ⚡'}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

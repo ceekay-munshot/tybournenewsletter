@@ -27,6 +27,55 @@ export function isStale(asOf, comparison) {
   return days > periodDays * 1.5;
 }
 
+/** Attach the PRIOR comparison onto a latest breakdown so the UI can show two consecutive
+ *  periods of trend. `latestRows` and `priorRows` are the SAME breakdown computed for the
+ *  latest period-pair and the one before it; matched by label, recursively through subs.
+ *  Each latest row gains: prevValue (the prior pair's lastValue), prevChangePct/prevChangeAbs
+ *  (the prior pair's move) and prevDirection. Rows with no prior match are left untouched. */
+export function attachPrev(latestRows, priorRows) {
+  const pm = new Map((priorRows || []).map((r) => [r.label, r]));
+  for (const r of latestRows || []) {
+    const p = pm.get(r.label);
+    if (p) {
+      r.prevValue = p.lastValue ?? null;
+      r.prevChangePct = p.changePct ?? null;
+      r.prevChangeAbs = p.changeAbs ?? null;
+      r.prevDirection = p.direction ?? directionOf(p.changePct ?? null);
+    }
+    if (r.sub && p?.sub) attachPrev(r.sub, p.sub);
+  }
+  return latestRows;
+}
+
+/** True when prevValue → lastValue genuinely chains with the prior change. For like-for-like
+ *  basket metrics (CPU/Schneider) the three values come from shifting baskets, so the chain
+ *  can't close — we then keep the honest prior CHANGE but drop the misleading prior VALUE. */
+function chainsPrev(prevValue, lastValue, pct, abs, display) {
+  if (prevValue == null || lastValue == null || !Number.isFinite(prevValue) || !Number.isFinite(lastValue)) return false;
+  if (display === 'pp' || display === 'pts') {
+    if (abs == null) return false;
+    return Math.abs(lastValue - (prevValue + abs)) <= 0.05 + Math.abs(lastValue) * 0.005;
+  }
+  if (pct == null || prevValue === 0) return false;
+  return Math.abs(lastValue - prevValue * (1 + pct)) <= Math.abs(lastValue) * 0.015 + 1e-9;
+}
+
+/** Drop a prior VALUE that doesn't chain cleanly with its prior change (keeps the change).
+ *  Applied to the headline + every breakdown row/sub of a view. */
+export function reconcilePrev(view) {
+  const fix = (o, display) => {
+    if (o.prevValue != null && !chainsPrev(o.prevValue, o.lastValue, o.prevChangePct, o.prevChangeAbs, display)) {
+      o.prevValue = null;
+    }
+  };
+  fix(view, view.changeDisplay);
+  for (const r of view.breakdown || []) {
+    fix(r, r.changeDisplay ?? view.changeDisplay);
+    for (const s of r.sub || []) fix(s, s.changeDisplay ?? view.changeDisplay);
+  }
+  return view;
+}
+
 /** One breakdown row. Pass an explicit changePct to override the derived one (e.g. API-reported). */
 export function mkBreakdown(label, thisValue, lastValue, changePctOverride) {
   const changePct =

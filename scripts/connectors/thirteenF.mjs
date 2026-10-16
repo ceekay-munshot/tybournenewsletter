@@ -107,29 +107,32 @@ export async function connect(system) {
     periodsDesc[0];
   const priorPeriod = periodsDesc.filter((p) => p < target)[0] || null;
 
-  // Fetch each fund's holdings for the target quarter (columnar) + its exits list.
-  const funds = (
-    await Promise.all(
-      watch.map(async (f) => {
-        try {
-          const h = await getJson(`${base}/fund/${f.cik}/${target}.json`);
-          const holdings = parseCols(h?.data).filter((r) => r.ticker);
-          const exits = Array.isArray(h?.exits) ? h.exits : [];
-          if (!holdings.length && !exits.length) return null;
-          return {
-            cik: f.cik,
-            name: h?.name || f.label,
-            holdings,
-            exits,
-            isNuveen: f.cik === NUVEEN_CIK,
-            totalPositions: h?.total ?? holdings.length,
-          };
-        } catch {
-          return null;
-        }
-      })
-    )
-  ).filter(Boolean);
+  // Fetch each watchlist fund's holdings (columnar) + exits for a given quarter.
+  const fetchFundsFor = async (period) =>
+    (
+      await Promise.all(
+        watch.map(async (f) => {
+          try {
+            const h = await getJson(`${base}/fund/${f.cik}/${period}.json`);
+            const holdings = parseCols(h?.data).filter((r) => r.ticker);
+            const exits = Array.isArray(h?.exits) ? h.exits : [];
+            if (!holdings.length && !exits.length) return null;
+            return {
+              cik: f.cik,
+              name: h?.name || f.label,
+              holdings,
+              exits,
+              isNuveen: f.cik === NUVEEN_CIK,
+              totalPositions: h?.total ?? holdings.length,
+            };
+          } catch {
+            return null;
+          }
+        })
+      )
+    ).filter(Boolean);
+
+  const funds = await fetchFundsFor(target);
   if (!funds.length) throw new Error('no watchlist holdings resolved for the target quarter');
   const nFunds = funds.length;
 
@@ -167,20 +170,53 @@ export async function connect(system) {
     ? convPps.reduce((a, b) => a + b, 0) / convPps.length
     : median(consensus.map((c) => c.avgPp));
 
+  // ---- prior quarter (one step back) for the two-period trend ----
+  // The target quarter's holdings carry dWeightPp = prior→target move; the quarter BEFORE
+  // carries dWeightPp = prior-prior→prior. Fetch it so each consensus name and each fund
+  // shows its move in both quarters.
+  const prevPeriod = priorPeriod ? periodsDesc.filter((p) => p < priorPeriod)[0] || null : null;
+  const priorByTicker = new Map();
+  let priorHeadlinePp = null;
+  if (priorPeriod) {
+    const priorFunds = await fetchFundsFor(priorPeriod);
+    for (const f of priorFunds) {
+      for (const h of f.holdings) {
+        if (h.dWeightPp == null) continue;
+        const e = priorByTicker.get(h.ticker) || { vals: [], perFund: new Map() };
+        e.vals.push(h.dWeightPp);
+        e.perFund.set(f.name, h.dWeightPp);
+        priorByTicker.set(h.ticker, e);
+      }
+    }
+    const pp = [];
+    for (const f of priorFunds) {
+      if (f.isNuveen) continue;
+      for (const h of f.holdings) if (consensusTickers.has(h.ticker) && h.dWeightPp != null) pp.push(h.dWeightPp);
+    }
+    priorHeadlinePp = pp.length ? pp.reduce((a, b) => a + b, 0) / pp.length : null;
+  }
+
   const breakdown = consensus.slice(0, TOP_N).map((c) => {
+    const prior = priorByTicker.get(c.ticker);
+    const prevAvg = prior && prior.vals.length ? median(prior.vals) : null;
     const subs = c.holders
       .filter((h) => h.dWeightPp != null)
       .sort((a, b) => Math.abs(b.dWeightPp) - Math.abs(a.dWeightPp))
       .slice(0, 6)
-      .map((h) => ({
-        label: h.fund,
-        thisValue: null,
-        lastValue: null,
-        changePct: null,
-        changeAbs: h.dWeightPp,
-        changeDisplay: 'pp',
-        direction: directionOf(h.dWeightPp),
-      }));
+      .map((h) => {
+        const pv = prior?.perFund.get(h.fund);
+        return {
+          label: h.fund,
+          thisValue: null,
+          lastValue: null,
+          changePct: null,
+          changeAbs: h.dWeightPp,
+          changeDisplay: 'pp',
+          direction: directionOf(h.dWeightPp),
+          prevChangeAbs: pv ?? null,
+          prevDirection: directionOf(pv ?? null),
+        };
+      });
     return {
       label: c.ticker,
       thisValue: null,
@@ -189,6 +225,8 @@ export async function connect(system) {
       changeAbs: c.avgPp,
       changeDisplay: 'pp',
       direction: directionOf(c.avgPp),
+      prevChangeAbs: prevAvg,
+      prevDirection: directionOf(prevAvg),
       bigMove: Math.abs(c.avgPp) >= BIG_PP || (c.n >= 5 && (c.trims === c.n || c.adds === c.n)),
       note: `${c.n} funds · ${c.adds} adding / ${c.trims} trimming${c.sector ? ` · ${c.sector}` : ''}`,
       sub: subs,
@@ -286,6 +324,9 @@ export async function connect(system) {
     changeDisplay: 'pp',
     direction: directionOf(headlinePp),
     bigMove: headlinePp != null && Math.abs(headlinePp) >= 0.3,
+    prevLabel: prevPeriod ? quarterLabel(quarterOf(prevPeriod)) : undefined,
+    prevChangeAbs: priorHeadlinePp,
+    prevDirection: directionOf(priorHeadlinePp),
     breakdown,
     summary: `${consensus.length} names are held by ${MIN_CONSENSUS}+ of the ${nFunds} watchlist funds. On balance those shared positions were ${
       headlinePp == null ? 'little changed' : headlinePp >= 0 ? `added to (typical ${pp(headlinePp)})` : `trimmed (typical ${pp(headlinePp)})`

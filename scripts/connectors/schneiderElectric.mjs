@@ -10,7 +10,7 @@
 // but flagged "thin" and kept OUT of the headline; a category priced only to an old date
 // is stamped with that date.
 import { getJson } from '../lib/http.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const DAY = 864e5;
 const MIN_MATCHED = 5; // a category needs >= this many items priced in both captures to count toward the headline
@@ -49,20 +49,28 @@ const fmtShort = (iso) => {
 
 /** Compare a category's latest PRICED capture to the nearest earlier capture inside the
  *  window [0.5×, 2×] days that has usable overlap. Like-for-like over shared items. */
-function compareCat(history, days) {
+function compareCat(history, days, anchor) {
   // only captures that actually carry a price map
   const hist = (Array.isArray(history) ? history : []).filter(
     (e) => e && e.captured_at && e.prices && Object.keys(e.prices).length
   );
   if (hist.length < 2) return { active: false };
-  const latest = hist[hist.length - 1];
+  // `anchor` lets us treat an EARLIER capture as "latest" so we can compute the prior
+  // comparison (base-vs-base-before) — used for the two-period trend. Default = newest.
+  let anchorIdx = hist.length - 1;
+  if (anchor) {
+    const i = hist.findIndex((e) => e.captured_at === anchor.captured_at);
+    if (i < 1) return { active: false };
+    anchorIdx = i;
+  }
+  const latest = hist[anchorIdx];
   const tLatest = new Date(latest.captured_at).getTime();
   const now = latest.prices;
   const lo = 0.5 * days * DAY;
   const hi = 2 * days * DAY;
 
   const cands = [];
-  for (const h of hist.slice(0, -1)) {
+  for (const h of hist.slice(0, anchorIdx)) {
     const gap = tLatest - new Date(h.captured_at).getTime();
     if (gap < lo || gap > hi) continue;
     const matched = Object.keys(now).filter((k) => typeof h.prices[k] === 'number').length;
@@ -115,6 +123,7 @@ function compareCat(history, days) {
     thenMean,
     changePct,
     brands,
+    base, // the baseline capture object, so the caller can re-anchor for the prior period
     baseDate: base.captured_at,
     latestDate: latest.captured_at,
   };
@@ -157,6 +166,12 @@ export async function connect(system) {
     let wThen = 0;
     let primaryBase = null;
     let primaryMatched = -1;
+    // the prior comparison (one window further back), blended the same way for the trend
+    let wSumPrior = 0;
+    let wPctPrior = 0;
+    let wThenPrior = 0;
+    let primaryBasePrior = null;
+    let primaryMatchedPrior = -1;
 
     for (const slug of slugs) {
       const d = data[slug];
@@ -177,7 +192,7 @@ export async function connect(system) {
       const noteParts = [];
       if (r.thin) noteParts.push(`only ${r.matched} priced item${r.matched === 1 ? '' : 's'}`);
       if (staleDays > STALE_DAYS) noteParts.push(`priced to ${fmtShort(r.latestDate)}`);
-      rows.push({
+      const row = {
         label: lbl,
         thisValue: r.nowMean,
         lastValue: r.thenMean,
@@ -186,7 +201,18 @@ export async function connect(system) {
         bigMove: r.changePct != null && Math.abs(r.changePct) >= BIG_MOVE,
         sub: r.brands,
         note: noteParts.length ? noteParts.join(' · ') : undefined,
-      });
+      };
+      rows.push(row);
+
+      // prior comparison: re-anchor at this category's baseline capture and look one window further back
+      const rPrior = r.base ? compareCat(d.history, days, r.base) : { active: false };
+      if (rPrior.active && rPrior.changePct != null) {
+        row.prevValue = rPrior.thenMean;
+        row.prevChangePct = rPrior.changePct;
+        row.prevDirection = directionOf(rPrior.changePct);
+        attachPrev(r.brands, rPrior.brands); // brands matched by label, recursively
+      }
+
       // headline weighting: only solid categories — enough matched items AND fresh
       // (no thin/stale caveat). Keeps the blended "this period" number honest.
       if (r.changePct != null && noteParts.length === 0) {
@@ -197,6 +223,16 @@ export async function connect(system) {
         if (r.matched > primaryMatched) {
           primaryMatched = r.matched;
           primaryBase = r.baseDate;
+        }
+        // blend the prior change the same way (same weight) so Aug→Sep→Oct reconciles
+        if (rPrior.active && rPrior.changePct != null) {
+          wSumPrior += r.matched;
+          wPctPrior += rPrior.changePct * r.matched;
+          wThenPrior += rPrior.thenMean * r.matched;
+          if (r.matched > primaryMatchedPrior) {
+            primaryMatchedPrior = r.matched;
+            primaryBasePrior = rPrior.baseDate;
+          }
         }
       }
     }
@@ -221,6 +257,10 @@ export async function connect(system) {
         }.`
       : undefined;
 
+    const activePrior = wSumPrior > 0;
+    const prevChangePct = activePrior ? wPctPrior / wSumPrior : null;
+    const prevValue = activePrior ? wThenPrior / wSumPrior : null;
+
     return {
       comparison,
       label,
@@ -234,6 +274,10 @@ export async function connect(system) {
       changeAbs: thisValue != null && lastValue != null ? thisValue - lastValue : null,
       direction: directionOf(changePct),
       bigMove,
+      prevLabel: primaryBasePrior ? fmtShort(primaryBasePrior) : undefined,
+      prevValue,
+      prevChangePct,
+      prevDirection: directionOf(prevChangePct),
       breakdown: rows,
       summary,
     };

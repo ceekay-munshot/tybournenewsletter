@@ -5,7 +5,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { errorBlock } from './lib/changeBlock.mjs';
+import { errorBlock, reconcilePrev } from './lib/changeBlock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -51,6 +51,22 @@ async function run() {
     try {
       const mod = await load();
       const block = await mod.connect(system);
+      // Two-period trend: drop any prior VALUE that doesn't chain cleanly (like-for-like
+      // basket shift), keeping the honest prior change. Then mirror the default view's prior
+      // fields onto the block so the overview + newsletter can read them. No-op without `views`.
+      if (Array.isArray(block.views)) {
+        for (const v of block.views) reconcilePrev(v);
+        const dv =
+          block.views.find((v) => v.comparison === block.comparison && v.available) ||
+          block.views.find((v) => v.available);
+        if (dv) {
+          block.prevLabel = dv.prevLabel;
+          block.prevValue = dv.prevValue ?? null;
+          block.prevChangePct = dv.prevChangePct ?? null;
+          block.prevChangeAbs = dv.prevChangeAbs ?? null;
+          block.prevDirection = dv.prevDirection;
+        }
+      }
       blocks.push(block);
       const sec = block.secondaryMetrics?.length ? ` +${block.secondaryMetrics.length} more` : '';
       if (block.status === 'ok') {
