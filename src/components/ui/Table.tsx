@@ -71,7 +71,7 @@ export function Table<Row>({
                 <th
                   key={c.key}
                   onClick={() => toggleSort(c)}
-                  className={`${cellPad} text-${c.align ?? 'left'} text-[11px] font-semibold uppercase tracking-wide ${
+                  className={`${cellPad} border-r border-white/10 last:border-r-0 text-${c.align ?? 'left'} text-[11px] font-semibold uppercase tracking-wide ${
                     c.sortable ? 'cursor-pointer select-none hover:bg-white/10' : ''
                   }`}
                   style={{ width: c.width }}
@@ -109,7 +109,7 @@ export function Table<Row>({
                 style={{ background: isActive ? 'rgba(99,102,241,0.08)' : i % 2 ? '#F8FAFC' : '#FFFFFF' }}
               >
                 {columns.map((c) => (
-                  <td key={c.key} className={`${cellPad} text-${c.align ?? 'left'} align-middle`}>
+                  <td key={c.key} className={`${cellPad} border-r border-slate-100 last:border-r-0 text-${c.align ?? 'left'} align-middle`}>
                     {c.render(r, i)}
                   </td>
                 ))}

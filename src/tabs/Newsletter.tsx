@@ -341,15 +341,15 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
         </ul>
       ) : rows.length > 0 ? (
         <div className="mt-2.5 overflow-hidden rounded-lg ring-1 ring-slate-200/70">
-          <table className="w-full text-[11.5px]">
+          <table className="w-full border-collapse text-[11.5px]">
             <thead>
-              <tr className="bg-slate-50 text-left text-slate-500">
-                <th className="px-2.5 py-1.5 font-semibold capitalize">{bNoun}</th>
-                {showPrevVal && <th className="px-2.5 py-1.5 text-right font-medium text-slate-400">{b.prevLabel}</th>}
-                {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.lastPeriodLabel}</th>}
-                {hasVals && <th className="px-2.5 py-1.5 text-right font-semibold">{b.thisPeriodLabel}</th>}
-                {showPrevChg && <th className="whitespace-nowrap px-2.5 py-1.5 text-right font-medium text-slate-400">{prevArrow}</th>}
-                <th className="whitespace-nowrap px-2.5 py-1.5 text-right font-semibold">{showPrevChg ? thisArrow : 'Change'}</th>
+              <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+                <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
+                {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
+                {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
+                {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
+                {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
+                <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
               </tr>
             </thead>
             <tbody>
@@ -357,24 +357,24 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
                 const prevTracked = r.prevChangePct != null || r.prevChangeAbs != null;
                 return (
                   <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                    <td className="px-2.5 py-1.5 font-medium text-slate-700">
+                    <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
                       {r.label}
                       {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
                     </td>
                     {showPrevVal && (
-                      <td className="tnum px-2.5 py-1.5 text-right text-slate-400">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
+                      <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-400 last:border-r-0">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
                     )}
-                    {hasVals && <td className="tnum px-2.5 py-1.5 text-right text-slate-500">{fmtValue(r.lastValue, b.unit)}</td>}
-                    {hasVals && <td className="tnum px-2.5 py-1.5 text-right font-semibold text-slate-800">{fmtValue(r.thisValue, b.unit)}</td>}
+                    {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-500 last:border-r-0">{fmtValue(r.lastValue, b.unit)}</td>}
+                    {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-semibold text-slate-800 last:border-r-0">{fmtValue(r.thisValue, b.unit)}</td>}
                     {showPrevChg && (
                       <td
-                        className="tnum px-2.5 py-1.5 text-right"
+                        className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0"
                         style={{ color: prevTracked ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
                       >
                         {prevTracked ? prevChangeOf(r) : ''}
                       </td>
                     )}
-                    <td className="tnum px-2.5 py-1.5 text-right font-bold" style={{ color: directionColor(r.direction) }}>
+                    <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0" style={{ color: directionColor(r.direction) }}>
                       {changeOf(r)}
                       {r.bigMove && ' ⚡'}
                     </td>

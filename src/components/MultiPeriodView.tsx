@@ -191,16 +191,17 @@ export function MultiPeriodView({
                 {hasSub ? `${cap(bNoun)}, then the move for each ${sNoun}. ` : `Each ${bNoun}'s move. `}⚡ = notable move.
               </p>
             </div>
-            <div className="overflow-x-auto px-4 pb-4">
+            <div className="px-4 pb-4">
+              <div className="overflow-x-auto rounded-lg border border-slate-200">
               <table className="w-full border-collapse text-[12.5px]">
                 <thead>
-                  <tr className="border-b border-slate-200 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-400">
-                    <th className="py-2 pr-3 capitalize">{bNoun}</th>
-                    {showPrevVal && <th className="whitespace-nowrap px-3 py-2 text-right font-medium text-slate-400">{view.prevLabel}</th>}
-                    {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.lastPeriodLabel}</th>}
-                    {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.thisPeriodLabel}</th>}
-                    {showPrevChg && <th className="whitespace-nowrap px-3 py-2 text-right font-medium text-slate-400">{prevArrow}</th>}
-                    <th className="whitespace-nowrap py-2 pl-3 text-right">{showPrevChg ? thisArrow : changeNoun}</th>
+                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-500">
+                    <th className="border-r border-slate-200 px-3 py-2.5 capitalize last:border-r-0">{bNoun}</th>
+                    {showPrevVal && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{view.prevLabel}</th>}
+                    {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.lastPeriodLabel}</th>}
+                    {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.thisPeriodLabel}</th>}
+                    {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
+                    <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{showPrevChg ? thisArrow : changeNoun}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -217,6 +218,7 @@ export function MultiPeriodView({
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           </Card>
         </>
@@ -312,37 +314,37 @@ function BreakdownRows({
     const thisValCls = isSub ? 'text-slate-600' : 'font-semibold text-slate-800';
     return (
       <tr key={r.label} className={`border-b border-slate-100 ${isSub ? 'bg-slate-50/50' : ''}`}>
-        <td className={`${isSub ? 'pl-4' : ''} pr-3 ${vpad} align-top ${isSub ? 'text-slate-500' : ''}`}>
+        <td className={`border-r border-slate-100 ${isSub ? 'pl-5' : 'pl-3'} pr-3 ${vpad} align-top last:border-r-0 ${isSub ? 'text-slate-500' : ''}`}>
           {isSub && <span className="mr-1 text-slate-300">└</span>}
           <span className={isSub ? '' : `font-display text-[13px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{r.label}</span>
           {r.note && <span className="ml-1.5 text-[10px] italic text-amber-600">{r.note}</span>}
           {!isSub && !tracked && !r.note && <span className="ml-1.5 text-[11px] italic text-slate-400">not tracked</span>}
         </td>
         {showPrevVal && (
-          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top text-slate-400`}>
+          <td className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top text-slate-400 last:border-r-0`}>
             {r.prevValue != null ? fmtValue(r.prevValue, unit) : ''}
           </td>
         )}
         {hasVals && (
-          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top ${valCls}`}>
+          <td className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0 ${valCls}`}>
             {r.lastValue != null ? fmtValue(r.lastValue, unit) : ''}
           </td>
         )}
         {hasVals && (
-          <td className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top ${thisValCls}`}>
+          <td className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0 ${thisValCls}`}>
             {r.thisValue != null ? fmtValue(r.thisValue, unit) : ''}
           </td>
         )}
         {showPrevChg && (
           <td
-            className={`tnum whitespace-nowrap px-3 ${vpad} text-right align-top`}
+            className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0`}
             style={{ color: prevTracked(r) ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
           >
             {prevTracked(r) ? prevChg(r) : ''}
           </td>
         )}
         <td
-          className={`tnum whitespace-nowrap pl-3 ${vpad} text-right align-top ${isSub ? 'font-semibold' : 'font-bold'}`}
+          className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0 ${isSub ? 'font-semibold' : 'font-bold'}`}
           style={{ color: tracked ? directionColor(r.direction) : '#94A3B8', fontSize: !isSub && r.bigMove ? 14.5 : 13 }}
         >
           {tracked ? chg : isSub ? '' : '—'}
