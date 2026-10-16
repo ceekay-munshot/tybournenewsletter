@@ -45,12 +45,12 @@ async function run() {
   }
 
   // Pull the edition label + client name for the subject/body (real data only).
-  let quarterLabel = 'quarterly edition';
+  let editionLabel = 'monthly edition';
   let clientName = 'Tybourne Global Holdings';
   let status = 'unknown';
   try {
     const nl = JSON.parse(await readFile(resolve(ROOT, `clients/${CLIENT}/data/newsletter.json`), 'utf8'));
-    if (nl.quarterLabel) quarterLabel = nl.quarterLabel;
+    if (nl.editionLabel) editionLabel = nl.editionLabel;
     if (nl.status) status = nl.status;
   } catch {
     /* newsletter.json optional for the email */
@@ -63,7 +63,7 @@ async function run() {
   }
 
   const pdfB64 = (await readFile(PDF)).toString('base64');
-  const subject = `${clientName} — Intelligence edition (${quarterLabel})`;
+  const subject = `${clientName} — Intelligence edition (${editionLabel})`;
   const editionNote =
     status === 'ok'
       ? 'The AI editorial edition is attached.'
@@ -71,7 +71,7 @@ async function run() {
   const html =
     `<div style="font-family:Inter,system-ui,sans-serif;color:#334155;line-height:1.6">` +
     `<h2 style="font-family:'Space Grotesk',Inter,sans-serif;color:#0f172a;margin:0 0 6px">${clientName} Intelligence</h2>` +
-    `<p style="margin:0 0 12px;color:#64748b">${quarterLabel}</p>` +
+    `<p style="margin:0 0 12px;color:#64748b">${editionLabel}</p>` +
     `<p style="margin:0 0 12px">${editionNote}</p>` +
     `<p style="margin:0;color:#94a3b8;font-size:13px">Published by Munshot · 100% real data, every figure source-stamped.</p>` +
     `</div>`;

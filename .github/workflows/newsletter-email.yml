@@ -1,6 +1,6 @@
-name: Email quarterly newsletter
+name: Email monthly newsletter
 
-# OPTIONAL. Every quarter (and on demand) regenerate the data + AI newsletter,
+# OPTIONAL. Every month (and on demand) regenerate the data + AI newsletter,
 # render the in-app edition to a PDF, and email it to the recipient list.
 #
 # Fully gated: if EMAIL_TOKEN (secret) or NEWSLETTER_RECIPIENTS (var) is not set,
@@ -8,8 +8,9 @@ name: Email quarterly newsletter
 # because email isn't configured. See README "Secrets & variables".
 on:
   schedule:
-    # ~2nd of Jan / Apr / Jul / Oct, 13:17 UTC (jittered off the hour).
-    - cron: '17 13 2 1,4,7,10 *'
+    # 2nd of each month, 13:17 UTC (jittered off the hour). The SAP deep-research
+    # refresh runs on the 1st, so its fresh findings are already in by now.
+    - cron: '17 13 2 * *'
   workflow_dispatch:
 
 permissions:

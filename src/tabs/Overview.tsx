@@ -1,41 +1,26 @@
 import type { ConsolidatedData } from '../types';
-import { PageHeader, Card, CardHeader } from '../components/ui/Card';
-import { Legend } from '../components/charts/ChartBase';
-import { MoversChart } from '../components/MoversChart';
+import { PageHeader, Card } from '../components/ui/Card';
 import { MasterTable } from '../components/MasterTable';
-import { SectorSection } from '../components/SectorSection';
-import { bySector } from '../lib/data';
-import { DIRECTION_COLOR } from '../lib/brand';
-import { TrendingUp, Table2 } from 'lucide-react';
+import { ChangeCard } from '../components/ChangeCard';
+import { headlineMagnitude } from '../lib/format';
+import { Table2 } from 'lucide-react';
 
+/** The landing view: a single "everything that moved" table (the client's
+ *  preferred at-a-glance), then one card per dashboard, ranked by how much it
+ *  moved. No sector grouping — dashboards stand on their own. */
 export function Overview({ data, onSelect }: { data: ConsolidatedData; onSelect: (id: string) => void }) {
-  const liveCount = data.systems.filter((s) => s.status !== 'error' && s.changePct != null).length;
+  const cards = [...data.systems].sort(
+    (a, b) =>
+      Math.abs(headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) ?? -1) -
+      Math.abs(headlineMagnitude(a.changePct, a.changeAbs, a.changeDisplay) ?? -1)
+  );
 
   return (
     <div className="animate-fade-in">
       <PageHeader
-        title="Going into earnings — what moved."
-        subtitle={`${liveCount} live system${liveCount === 1 ? '' : 's'} across ${data.sectors.length} sectors. Every figure is real and source-stamped — click any system to open its breakdown.`}
+        title="What moved — across every dashboard."
+        subtitle={`${data.systems.length} dashboards tracked. Every figure is real and source-stamped — pick a dashboard on the left, or click any row to drill in.`}
       />
-
-      <Card className="mb-5">
-        <CardHeader
-          icon={TrendingUp}
-          accent="#6366F1"
-          title="Biggest movers this quarter"
-          subtitle="Headline change per system, largest first. Green = up, red = down."
-          right={
-            <Legend
-              items={[
-                { label: 'Up', color: DIRECTION_COLOR.up },
-                { label: 'Down', color: DIRECTION_COLOR.down },
-                { label: 'Flat', color: DIRECTION_COLOR.flat },
-              ]}
-            />
-          }
-        />
-        <MoversChart systems={data.systems} onSelect={onSelect} />
-      </Card>
 
       <Card className="mb-5" pad={false}>
         <div className="flex items-center gap-2.5 p-4 pb-2">
@@ -44,7 +29,9 @@ export function Overview({ data, onSelect }: { data: ConsolidatedData; onSelect:
           </span>
           <div>
             <h3 className="font-display text-[15px] font-bold text-slate-900">Everything that moved</h3>
-            <p className="text-[12px] text-slate-500">Every headline and secondary metric across all systems — click a column to sort, click a row to drill in.</p>
+            <p className="text-[12px] text-slate-500">
+              Every headline and secondary metric across all dashboards — click a column to sort, click a row to drill in.
+            </p>
           </div>
         </div>
         <div className="px-4 pb-4">
@@ -52,9 +39,9 @@ export function Overview({ data, onSelect }: { data: ConsolidatedData; onSelect:
         </div>
       </Card>
 
-      <div className="flex flex-col gap-5">
-        {data.sectors.map((sector) => (
-          <SectorSection key={sector.id} sector={sector} blocks={bySector(data, sector.id)} onSelect={onSelect} />
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((b) => (
+          <ChangeCard key={b.systemId} block={b} onSelect={onSelect} />
         ))}
       </div>
     </div>

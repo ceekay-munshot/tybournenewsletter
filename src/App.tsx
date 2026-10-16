@@ -1,20 +1,16 @@
 import { useState } from 'react';
-import { LayoutGrid, AlertTriangle } from 'lucide-react';
+import { AlertTriangle } from 'lucide-react';
 import { useConsolidated, systemById } from './lib/data';
 import { useNewsletter } from './lib/newsletter';
-import type { SectorId } from './types';
 import { Header } from './components/Header';
-import { Tabs, type TabDef } from './components/ui/Tabs';
-import { SECTOR_ICON } from './lib/icons';
+import { Sidebar } from './components/Sidebar';
 import { Overview } from './tabs/Overview';
 import { NewsletterModal } from './tabs/Newsletter';
-import { SectorTab } from './tabs/SectorTab';
 import { SystemView } from './tabs/SystemView';
-
-type TabKey = 'overview' | SectorId;
+import { MultiPeriodView } from './components/MultiPeriodView';
 
 /** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
- *  Used by the quarterly email render and shareable links. */
+ *  Used by the monthly email render and shareable links. */
 function wantsNewsletter(): boolean {
   if (typeof window === 'undefined') return false;
   const q = new URLSearchParams(window.location.search).get('edition') ?? '';
@@ -25,7 +21,6 @@ function wantsNewsletter(): boolean {
 export default function App() {
   const state = useConsolidated();
   const newsletter = useNewsletter();
-  const [tab, setTab] = useState<TabKey>('overview');
   const [systemId, setSystemId] = useState<string | null>(null);
   const [nlOpen, setNlOpen] = useState<boolean>(wantsNewsletter);
 
@@ -33,28 +28,15 @@ export default function App() {
   if (state.status === 'error') return <ErrorScreen message={state.error} />;
 
   const data = state.data;
-
-  const tabs: TabDef<TabKey>[] = [
-    { key: 'overview', label: 'Overview', icon: LayoutGrid, color: '#6366F1' },
-    ...data.sectors.map((s) => ({
-      key: s.id as TabKey,
-      label: s.label,
-      icon: SECTOR_ICON[s.id],
-      color: s.color,
-      badge: String(data.systems.filter((x) => x.sector === s.id).length),
-    })),
-  ];
-
-  const activeTabLabel = tabs.find((t) => t.key === tab)?.label ?? 'Overview';
   const selected = systemId ? systemById(data, systemId) : undefined;
 
   const openSystem = (id: string) => {
     setSystemId(id);
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  const changeTab = (t: TabKey) => {
+  const showOverview = () => {
     setSystemId(null);
-    setTab(t);
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Download PDF: open the newsletter modal, then the browser's print dialog.
@@ -68,21 +50,21 @@ export default function App() {
     <div className={`flex min-h-screen flex-col${nlOpen ? ' print-only-newsletter' : ''}`}>
       <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
 
-      <div className="no-print sticky top-[53px] z-30 border-b border-slate-200/80 bg-white/70 backdrop-blur-md">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Tabs tabs={tabs} active={tab} onChange={changeTab} />
-        </div>
-      </div>
+      <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col md:flex-row">
+        <Sidebar systems={data.systems} activeId={systemId} onOverview={showOverview} onSelect={openSystem} />
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-5 sm:px-6">
-        {selected ? (
-          <SystemView block={selected} onBack={() => setSystemId(null)} backLabel={activeTabLabel} />
-        ) : tab === 'overview' ? (
-          <Overview data={data} onSelect={openSystem} />
-        ) : (
-          <SectorTab data={data} sector={data.sectors.find((s) => s.id === tab)!} onSelect={openSystem} />
-        )}
-      </main>
+        <main className="min-w-0 flex-1 px-4 py-5 sm:px-6">
+          {selected ? (
+            selected.views && selected.views.length ? (
+              <MultiPeriodView block={selected} onBack={showOverview} backLabel="Overview" />
+            ) : (
+              <SystemView block={selected} onBack={showOverview} backLabel="Overview" />
+            )
+          ) : (
+            <Overview data={data} onSelect={openSystem} />
+          )}
+        </main>
+      </div>
 
       <NewsletterModal
         data={data}

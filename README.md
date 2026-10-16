@@ -1,6 +1,6 @@
 # Munshot Consolidated Intelligence Dashboard
 
-A **config-driven, multi-client** quarterly intelligence dashboard. It consolidates many
+A **config-driven, multi-client** monthly intelligence dashboard. It consolidates many
 single-topic data sources into **one view** that shows, per topic, **what changed** from
 one period to the next going into earnings — with breakdowns, trends and source stamps.
 
@@ -22,7 +22,7 @@ First client: **Tybourne Global Holdings** (published by Munshot).
   table (every headline + secondary metric, sortable), and colour-banded sector sections of
   change cards. Per-sector tabs and a generic per-system drill-down (breakdown chart with a
   % / absolute toggle, trend, detail table, and every secondary metric).
-- **AI newsletter** (`scripts/newsletter.mjs` → `data/newsletter.json`): a quarterly
+- **AI newsletter** (`scripts/newsletter.mjs` → `data/newsletter.json`): a monthly
   going-into-earnings briefing written by Claude on **Amazon Bedrock**, strictly from the real
   figures. Optional — with no key it writes an **honest `no-key` state** and the pipeline still
   succeeds; nothing is fabricated.
@@ -58,7 +58,7 @@ src/
   tabs/                   # Overview, Newsletter, SectorTab, SystemView
 .github/workflows/
   refresh.yml             # every 6h: consolidate + newsletter, commit fresh data
-  newsletter-email.yml    # quarterly (optional): render PDF + email it; skips if unconfigured
+  newsletter-email.yml    # monthly (optional): render PDF + email it; skips if unconfigured
 ```
 
 ## The data contract — `ChangeBlock`
@@ -86,7 +86,7 @@ install step (handy for CI). `CLIENT=<id> npm run consolidate` targets another c
 
 **Everything builds and renders with no secrets at all.** Without them the connectors still run
 (they're keyless) and the newsletter shows the honest `no-key` state. Secrets only *enable* the
-AI writer and the optional quarterly email. Set these in **GitHub → Settings → Secrets and
+AI writer and the optional monthly email. Set these in **GitHub → Settings → Secrets and
 variables → Actions**.
 
 ### AI newsletter (Amazon Bedrock) — used by `refresh.yml` and `newsletter-email.yml`
@@ -108,7 +108,7 @@ through `400/403/404` to the next ID and retries `429/5xx`; the model that answe
 into `newsletter.json`. If the key or model list is missing, `newsletter.json` is written with
 `status: "no-key"` — never fabricated.
 
-### Quarterly email (optional) — used by `newsletter-email.yml`
+### Monthly email (optional) — used by `newsletter-email.yml`
 
 The whole `send` job is **skipped cleanly** (a log line, not a failure) unless both of these are set:
 
@@ -119,6 +119,22 @@ The whole `send` job is **skipped cleanly** (a log line, not a failure) unless b
 | `EMAIL_FROM` | variable | optional | `Name <from@domain>` (verified sender). Defaults to a Munshot address. |
 | `EMAIL_API_URL` | variable | optional | Override the email endpoint if not using Resend. |
 | `SITE_URL` | variable | optional | Render the **deployed** route (e.g. `https://tybournenewsletter.pages.dev`) instead of the freshly-built `./dist`. |
+
+### Monthly SAP research refresh (optional) — used by `sap-research-refresh.yml`
+
+The SAP dashboard scores sentiment daily, but its lifted "Key Findings" come from an expensive
+deep-research pass in the source repo (`ceekay-munshot/sap`) that only runs on demand — so those
+findings go stale unless something re-triggers them. This workflow presses that button on the 1st
+of each month (ahead of the newsletter). It's **gated**: with no token it logs a notice and exits 0.
+
+| Name | Kind | Required? | What it is |
+| --- | --- | --- | --- |
+| `SAP_RESEARCH_DISPATCH_TOKEN` | **secret** | to trigger | A PAT that can send a `repository_dispatch` to `ceekay-munshot/sap` (fine-grained: *Contents* + *Actions* read/write on that repo; or a classic token with `repo`). |
+
+The refreshed findings are committed to the sap repo's `dashboard.json`; the next 6-hourly
+`refresh.yml` run lifts them automatically. **Simpler alternative (no token):** add the same
+`schedule: - cron: '0 6 1 * *'` block directly to `ceekay-munshot/sap`'s `research.yml`, which
+already holds the Firecrawl + model secrets it needs.
 
 ## Deploy (Cloudflare Pages)
 

@@ -10,12 +10,55 @@ export interface BreakdownRow {
   thisValue: number | null;
   lastValue: number | null;
   changePct: number | null;
+  /** Absolute change + how to read it, for pp/pts metrics (e.g. sentiment points). */
+  changeAbs?: number | null;
+  changeDisplay?: 'pct' | 'pp' | 'pts';
   direction: Direction;
+  /** Optional second level (e.g. parent brands within a product-line category). */
+  sub?: BreakdownRow[];
+  /** Flagged when the move is large enough to call out. */
+  bigMove?: boolean;
+  /** Honest note when there's no change to show (e.g. "not distributed"). */
+  note?: string;
 }
 
 export interface TrendPoint {
   period: string;
   value: number;
+}
+
+/** A lifted narrative insight (e.g. SAP's "why sentiment moved" key findings,
+ *  or a one-line standout read), with an honest "as of" date for staleness. */
+export interface InsightItem {
+  title: string;
+  body?: string;
+  bullets?: string[];
+  asOf?: string;
+  tone?: string;
+}
+
+/** One period's read for a dashboard that supports a Weekly/MoM/QoQ toggle.
+ *  When a ChangeBlock carries `views`, the UI renders a toggle and these self-
+ *  contained period views replace the single-period breakdown. */
+export interface PeriodView {
+  comparison: Comparison;
+  /** Short toggle label, e.g. "Week" | "Month" | "Quarter". */
+  label: string;
+  /** false => this window can't be computed yet (shown greyed, never faked). */
+  available: boolean;
+  unavailableReason?: string;
+  thisPeriodLabel: string;
+  lastPeriodLabel: string;
+  thisValue: number | null;
+  lastValue: number | null;
+  changePct: number | null;
+  changeAbs: number | null;
+  changeDisplay?: 'pct' | 'pp' | 'pts';
+  direction: Direction;
+  bigMove?: boolean;
+  breakdown: BreakdownRow[];
+  summary?: string;
+  notes?: string;
 }
 
 export interface ChangeBlock {
@@ -38,6 +81,22 @@ export interface ChangeBlock {
   isStale?: boolean;
   breakdown: BreakdownRow[];
   trend?: TrendPoint[];
+  /** Weekly/MoM/QoQ toggle views. When present the dashboard renders a period
+   *  toggle and these drive the drill-down (the top-level fields stay as the
+   *  default view so the overview table/cards/movers keep working). */
+  views?: PeriodView[];
+  /** Labels for the two breakdown dimensions in the multi-period view, e.g.
+   *  "product line" + "brand" (Schneider) or "segment" + "vendor" (CPU). */
+  breakdownNoun?: string;
+  subNoun?: string;
+  /** Title for the breakdown chart, e.g. "Price change" or "Sentiment change". */
+  changeNoun?: string;
+  /** Optional override for the breakdown chart's subtitle. When set, replaces the
+   *  default "<Period>-over-<period>" line — used when the breakdown is a separate
+   *  lens from the headline (e.g. a lagged regional snapshot). */
+  breakdownSubtitle?: string;
+  /** Lifted narrative ("why it moved") — shown as cards in the multi-period view. */
+  insights?: InsightItem[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;
@@ -84,12 +143,6 @@ export interface NewsletterSystemLine {
   line: string;
 }
 
-export interface NewsletterSector {
-  sector: SectorId | string;
-  summary: string;
-  systems: NewsletterSystemLine[];
-}
-
 export interface Newsletter {
   generatedAt: string;
   status: NewsletterStatus;
@@ -99,9 +152,10 @@ export interface Newsletter {
   dataHash?: string;
   note?: string;
   /** AI-written fields — null/empty unless status === 'ok'. Never fabricated. */
-  quarterLabel: string | null;
+  editionLabel: string | null;
   executiveSummary: string | null;
-  bySector: NewsletterSector[];
+  /** One written line per dashboard (what moved + why), keyed by systemId. */
+  lines: NewsletterSystemLine[];
   watchList: string[];
   methodNote: string | null;
 }
