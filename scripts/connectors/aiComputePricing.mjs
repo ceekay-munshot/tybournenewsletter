@@ -79,6 +79,38 @@ export async function connect(system) {
     summary: qoqSummary,
   };
 
+  // --- Prior QoQ (one quarter further back) so the table shows two consecutive periods of trend ---
+  // Headline uses the clean basket series (histIn.quarters), which chains across quarters:
+  // prior pair = quarters[1] vs quarters[2]; prevValue = the Q2 basket average (prior pair's "from").
+  const q2 = qIn[2];
+  const priorQoq = q2
+    ? lastQ.avg != null && q2.avg
+      ? (lastQ.avg - q2.avg) / q2.avg
+      : (lastQ.qoq ?? null)
+    : null;
+  if (q2 && priorQoq != null) {
+    qoqView.prevLabel = quarterLabel(q2.id);
+    qoqView.prevValue = q2.avg ?? null;
+    qoqView.prevChangePct = priorQoq;
+    qoqView.prevChangeAbs = lastQ.avg != null && q2.avg != null ? lastQ.avg - q2.avg : null;
+    qoqView.prevDirection = directionOf(priorQoq);
+  }
+
+  // Per-provider prior move from sig.quarters[1] (its priceQoq = the Q2->Q3 move). Each row's
+  // `avg` is over that quarter's own matched-model basket, so provider averages do NOT chain
+  // across quarters the way the clean series does. We therefore derive prevValue from the row's
+  // own lastValue + the prior move — exactly as the existing lastValue is derived from avg +
+  // priceQoq — so prevValue -> lastValue equals prevChangePct (the contract), while prevChangePct
+  // itself stays the honest reported quarterly move.
+  const priorProv = new Map((sig?.quarters?.[1]?.rows || []).map((r) => [r.label || r.slug, r]));
+  for (const row of rows) {
+    const pq = priorProv.get(row.label)?.priceQoq ?? null;
+    if (pq == null) continue;
+    row.prevChangePct = pq;
+    row.prevDirection = directionOf(pq);
+    row.prevValue = row.lastValue != null && 1 + pq !== 0 ? row.lastValue / (1 + pq) : null;
+  }
+
   const views = [
     flatView('WoW', 'Week', 'No weekly model-price series.'),
     flatView(

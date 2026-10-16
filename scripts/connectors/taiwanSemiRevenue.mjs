@@ -8,7 +8,7 @@
 // EXCLUDE Wiwynn (ticker 6669) — it consolidates into Wistron and would double-count.
 import { getJson } from '../lib/http.mjs';
 import { monthLabel, quarterLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const isWiwynn = (r) => String(r.ticker) === '6669' || /wiwynn/i.test(r.company_name || r.display_name || '');
 const toBn = (thousands) => (thousands == null ? null : thousands / 1e6); // TWD thousands -> TWD bn
@@ -50,13 +50,14 @@ function robustZ(values) {
 }
 
 // ---- MoM view from the heatmap's weighted mom_pct cells (SQL already does like-for-like) ----
-function buildMoMView(heatmap) {
+function buildMoMView(heatmap, back = 0) {
   const subset = heatmap?.tier_subsets?.[''] || {};
   const cells = subset['mom_pct|weighted']?.cells || [];
   if (!cells.length) return unavailable('MoM', 'Month', 'No monthly stage data yet.');
 
   const months = [...new Set(cells.map((c) => c.month))].sort();
-  const latest = months[months.length - 1];
+  const latest = months[months.length - 1 - back];
+  if (!latest) return unavailable('MoM', 'Month', 'No monthly stage data yet.');
   const live = cells.filter((c) => c.month === latest && c.value != null && c.revenue != null);
   if (!live.length) return unavailable('MoM', 'Month', 'No monthly stage data yet.');
 
@@ -69,7 +70,7 @@ function buildMoMView(heatmap) {
     priT += c.revenue / (1 + c.value / 100);
   }
   const changePct = priT ? (curT - priT) / priT : null;
-  const prevMonth = months[months.length - 2];
+  const prevMonth = months[months.length - 2 - back];
 
   const rows = live
     .map((c) => {
@@ -119,11 +120,11 @@ function buildMoMView(heatmap) {
 }
 
 // ---- QoQ view from analytics rows, like-for-like on companies present in all 3 months of both quarters ----
-function buildQoQView(rows) {
+function buildQoQView(rows, back = 0) {
   const quarters = [...new Set(rows.map((r) => qOf(r.month)).filter(Boolean))].sort();
-  if (quarters.length < 2) return unavailable('QoQ', 'Quarter', 'Not enough history for a quarter comparison.');
-  const thisQ = quarters[quarters.length - 1];
-  const lastQ = quarters[quarters.length - 2];
+  if (quarters.length < 2 + back) return unavailable('QoQ', 'Quarter', 'Not enough history for a quarter comparison.');
+  const thisQ = quarters[quarters.length - 1 - back];
+  const lastQ = quarters[quarters.length - 2 - back];
   const tm = new Set(qMonths(thisQ));
   const lm = new Set(qMonths(lastQ));
 
@@ -218,6 +219,50 @@ function unavailable(comparison, label, reason) {
   };
 }
 
+// Two consecutive values chain only when the shared middle period matches: the latest pair's
+// "from" value (its lastValue, derived like-for-like) must equal the prior pair's "to" value
+// (its thisValue). A gap means the reporting cohort shifted between the two pairs.
+const MIDDLE_TOL = 0.02; // 2% — rounding noise vs a genuine cohort/filing change
+function comparableMiddle(a, b) {
+  if (a == null || b == null) return false;
+  return Math.abs(a - b) / Math.max(Math.abs(a), Math.abs(b), 1e-9) <= MIDDLE_TOL;
+}
+
+// Attach the prior period-pair for the two-period trend — HONESTLY. These figures are
+// like-for-like (only companies that filed both months/quarters), so when a big filer is late
+// (e.g. an incomplete latest month, which the connector already flags) the latest pair's cohort
+// shrinks and its derived middle value no longer matches the prior pair's. Chaining those would
+// imply a huge fake move, so prev* is kept only where the middle is comparable; late-filer stages
+// honestly show no prior (the UI degrades gracefully). The headline value/change prior is set only
+// when the whole roll-up is comparable; prevLabel is still set as the prior column's header
+// whenever any stage carries a prior.
+function attachPriorTrend(latest, prior) {
+  if (!latest?.available || !prior?.available) return latest;
+  attachPrev(latest.breakdown, prior.breakdown);
+  const priorByLabel = new Map((prior.breakdown || []).map((r) => [r.label, r]));
+  let anyRow = false;
+  for (const r of latest.breakdown || []) {
+    const p = priorByLabel.get(r.label);
+    if (r.prevValue !== undefined && comparableMiddle(r.lastValue, p?.thisValue)) {
+      anyRow = true;
+    } else {
+      delete r.prevValue;
+      delete r.prevChangePct;
+      delete r.prevChangeAbs;
+      delete r.prevDirection;
+    }
+  }
+  if (!anyRow) return latest; // no comparable prior at all — leave the view single-period
+  latest.prevLabel = prior.lastPeriodLabel; // header for the prior column of the stages that kept it
+  if (comparableMiddle(latest.lastValue, prior.thisValue)) {
+    latest.prevValue = prior.lastValue;
+    latest.prevChangePct = prior.changePct;
+    latest.prevChangeAbs = prior.changeAbs;
+    latest.prevDirection = prior.direction;
+  }
+  return latest;
+}
+
 // "Why it moved": the stage that diverges most from the pack (robust-z), plus the companies
 // accelerating / decelerating hardest on a YoY basis in the latest month (the real drivers).
 function buildInsights(momView, rows) {
@@ -276,7 +321,11 @@ export async function connect(system) {
   if (!rows.length) throw new Error('analytics.json returned no rows');
 
   const momView = buildMoMView(heatmap);
+  // one real step back (the month before latest: Jul→Aug), so the table shows two consecutive months
+  if (momView.available) attachPriorTrend(momView, buildMoMView(heatmap, 1));
   const qoqView = buildQoQView(rows);
+  // one real step back (lastQ vs the quarter before it), so the table shows two consecutive quarters
+  if (qoqView.available) attachPriorTrend(qoqView, buildQoQView(rows, 1));
   const views = [
     unavailable('WoW', 'Week', 'Taiwan issuers file revenue monthly — there is no weekly series.'),
     momView,

@@ -11,7 +11,7 @@ import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const GRAPH = ['loans.ts', 'datasets.ts', 'absolutes.ts', 'ifdata.ts', 'bcb.ts'];
 const isQuarter = (p) => /^[1-4]Q\d{2}$/.test(p);
@@ -20,14 +20,14 @@ const pp1 = (v) => `${v >= 0 ? '+' : ''}${v.toFixed(2)}pp`;
 const round2 = (n) => (n == null ? null : Math.round(n * 100) / 100);
 
 /** latest two QUARTERLY points of series `name` in a ChartData. */
-function lastTwoQ(chart, name) {
+function lastTwoQ(chart, name, back = 0) {
   if (!chart?.periods || !chart?.series) return null;
   const s = chart.series.find((x) => x.name === name);
   if (!s) return null;
   const qi = chart.periods.map((p, i) => (isQuarter(p) ? i : -1)).filter((i) => i >= 0 && s.values[i] != null);
-  if (qi.length < 2) return null;
-  const t = qi[qi.length - 1];
-  const l = qi[qi.length - 2];
+  if (qi.length < 2 + back) return null;
+  const t = qi[qi.length - 1 - back];
+  const l = qi[qi.length - 2 - back];
   return { thisPeriod: chart.periods[t], lastPeriod: chart.periods[l], thisValue: s.values[t], lastValue: s.values[l] };
 }
 
@@ -92,6 +92,19 @@ export async function connect(system) {
       })
       .filter(Boolean)
       .sort((a, b) => (b.thisValue ?? 0) - (a.thisValue ?? 0));
+
+    // Prior comparison: the quarter before (quarter[-2] vs quarter[-3]) per issuer, so the
+    // table shows two consecutive quarters of share. attachPrev matches issuers by label.
+    const priorBreakdown = (mod.creditCardShare.series || [])
+      .map((s) => {
+        const t = lastTwoQ(mod.creditCardShare, s.name, 1);
+        if (!t) return null;
+        const ca = round2(t.thisValue - t.lastValue);
+        return { label: s.name, thisValue: t.thisValue, lastValue: t.lastValue, changePct: null, changeAbs: ca, direction: directionOf(ca) };
+      })
+      .filter(Boolean);
+    attachPrev(breakdown, priorBreakdown);
+    const ccPrior = lastTwoQ(mod.creditCardShare, 'Nu', 1);
 
     const gainers = breakdown.filter((r) => r.direction === 'up').length;
     const summary = `Nu holds ${cc.thisValue}% of the Brazilian credit-card market (${qLabel(cc.thisPeriod)}), ${
@@ -178,6 +191,15 @@ export async function connect(system) {
       breakdown,
       summary,
     };
+    // prior quarter pp move (quarter[-3] → quarter[-2]) for the headline two-period trend
+    if (ccPrior) {
+      const prevAbs = round2(ccPrior.thisValue - ccPrior.lastValue);
+      qoqView.prevLabel = qLabel(ccPrior.lastPeriod);
+      qoqView.prevValue = ccPrior.lastValue;
+      qoqView.prevChangePct = null;
+      qoqView.prevChangeAbs = prevAbs;
+      qoqView.prevDirection = directionOf(prevAbs);
+    }
     const unavailable = (comparison, label) => ({
       comparison,
       label,

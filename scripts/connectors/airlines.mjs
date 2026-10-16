@@ -94,6 +94,34 @@ export async function connect(system) {
       )
     : { comparison: 'QoQ', label: 'Quarter', available: false, unavailableReason: 'No complete quarter yet.', breakdown: [], thisPeriodLabel: '—', lastPeriodLabel: '—', thisValue: null, lastValue: null, changePct: null, direction: 'flat' };
 
+  // --- prior-period headline: the SAME granularity one period earlier (e.g. the MoM view's
+  //     Sep YoY gets Aug YoY attached), so the headline shows two consecutive YoY reads ---
+  const completeMonthsSorted = Object.keys(monthDates).filter((m) => monthDates[m].length >= 27).sort();
+  const completeQuartersSorted = Object.keys(quarterDates).filter((q) => quarterDates[q].length >= 85).sort();
+  const priorMonth = completeMonthsSorted[completeMonthsSorted.length - 2];
+  const priorQuarter = completeQuartersSorted[completeQuartersSorted.length - 2];
+  const prevWeekDates = days.length >= 14 ? days.slice(-14, -7).map((d) => d.date) : null;
+  const wkPrior = prevWeekDates
+    ? yoyView(byDate, prevWeekDates, 'WoW', 'Week', `wk to ${dayMon(prevWeekDates[prevWeekDates.length - 1])}`, 'yr earlier')
+    : null;
+  const moPrior = priorMonth
+    ? yoyView(byDate, monthDates[priorMonth], 'MoM', 'Month', monthLabel(priorMonth), monthLabel(monthsBack(priorMonth, 12)))
+    : null;
+  const qtPrior = priorQuarter
+    ? yoyView(byDate, quarterDates[priorQuarter], 'QoQ', 'Quarter', quarterLabel(priorQuarter), quarterLabel(`${Number(priorQuarter.slice(0, 4)) - 1}-${priorQuarter.slice(5)}`))
+    : null;
+  const attachHead = (view, prior) => {
+    if (view.available && prior?.available) {
+      view.prevLabel = prior.thisPeriodLabel; // e.g. "Aug '26"
+      view.prevValue = prior.thisValue; // prior period's mean (its YoY "this" level)
+      view.prevChangePct = prior.changePct;
+      view.prevDirection = prior.direction;
+    }
+  };
+  attachHead(wk, wkPrior);
+  attachHead(mo, moPrior);
+  attachHead(qt, qtPrior);
+
   // --- regional breakdown: IATA RPK YoY by world region (latest available month) ---
   let regionRows = [];
   let iataMonth = null;
@@ -112,7 +140,7 @@ export async function connect(system) {
         const v = arr[arr.length - 1];
         const prev = arr[arr.length - 2];
         const share = shares[r];
-        return {
+        const row = {
           label: r,
           thisValue: null,
           lastValue: null,
@@ -123,6 +151,13 @@ export async function connect(system) {
             v != null && prev != null ? `${share != null ? ' · ' : ''}${v - prev >= 0 ? '+' : ''}${(v - prev).toFixed(1)}pp vs prior mo` : ''
           }`,
         };
+        // prior IATA month (one step back): the region's YoY the month before — a YoY %, so prevValue stays null
+        if (prev != null) {
+          row.prevValue = null;
+          row.prevChangePct = prev / 100;
+          row.prevDirection = directionOf(prev / 100);
+        }
+        return row;
       })
       .sort((a, b) => (b.changePct ?? -9) - (a.changePct ?? -9));
     const ind = ry['Industry'];

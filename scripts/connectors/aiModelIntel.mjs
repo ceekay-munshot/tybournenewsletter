@@ -7,7 +7,7 @@
 // surfaced in "Why it moved".
 import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, monthOf, monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, pctChange } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, pctChange, attachPrev } from '../lib/changeBlock.mjs';
 
 const PROV_LABEL = {
   openai: 'OpenAI',
@@ -122,6 +122,29 @@ function buildView(buckets, thisKey, lastKey, comparison, label, thisLabel, last
     breakdown: rows,
     summary,
   };
+}
+
+// Attach the prior comparison (one bucket further back) so the headline + table show two
+// consecutive periods of trend. The latest view used keys[last] vs keys[last-1]; the prior
+// view is keys[last-1] vs keys[last-2], built the SAME way, then merged onto the latest by
+// label. Left unset when there's no third complete bucket yet (honest: not enough history).
+function attachPrior(latest, buckets, keys, comparison, label, labelFn) {
+  if (!latest.available || !Array.isArray(keys) || keys.length < 3) return;
+  const lastKey = keys[keys.length - 2];
+  const prevKey = keys[keys.length - 3];
+  const prior = buildView(buckets, lastKey, prevKey, comparison, label, labelFn(lastKey), labelFn(prevKey));
+  if (!prior.available) return;
+  // "Others" is a residual whose membership shifts between period-pairs (the tracked-provider
+  // set differs), so its level doesn't chain cleanly. Exclude it from the merge: only
+  // consistently-tracked providers get a prior comparison, and the latest Others row is left
+  // without prev* — honest, since there is no comparable prior residual. The headline uses
+  // the bucket TOTAL (not a residual), so it still chains correctly.
+  attachPrev(latest.breakdown, prior.breakdown.filter((r) => r.label !== plabel('others')));
+  latest.prevLabel = prior.lastPeriodLabel;
+  latest.prevValue = prior.lastValue;
+  latest.prevChangePct = prior.changePct;
+  latest.prevChangeAbs = prior.changeAbs;
+  latest.prevDirection = prior.direction;
 }
 
 function provRow(p, tv, lv, tTotal, lTotal) {
@@ -246,6 +269,7 @@ export async function connect(system) {
   const tM = completeMonths[completeMonths.length - 1];
   const lM = completeMonths[completeMonths.length - 2];
   const momView = buildView(months, tM, lM, 'MoM', 'Month', monthLabel(tM), monthLabel(lM));
+  attachPrior(momView, months, completeMonths, 'MoM', 'Month', monthLabel);
 
   // --- WoW: the last two fully-reported (non-partial) weeks ---
   const fullWeeks = weeks.filter((w) => !w.partial).sort((a, b) => String(a.start).localeCompare(String(b.start)));
@@ -254,6 +278,7 @@ export async function connect(system) {
   const tW = wkKeys[wkKeys.length - 1];
   const lW = wkKeys[wkKeys.length - 2];
   const wowView = buildView(wkBuckets, tW, lW, 'WoW', 'Week', wkLabel(tW), wkLabel(lW));
+  attachPrior(wowView, wkBuckets, wkKeys, 'WoW', 'Week', wkLabel);
 
   // --- QoQ: complete calendar quarters (>=12 weeks) ---
   const quarters = bucketWeeks(weeks, (w) => quarterOf(w.start));
@@ -261,6 +286,7 @@ export async function connect(system) {
   const tQ = completeQ[completeQ.length - 1];
   const lQ = completeQ[completeQ.length - 2];
   const qoqView = buildView(quarters, tQ, lQ, 'QoQ', 'Quarter', quarterLabel(tQ), quarterLabel(lQ));
+  attachPrior(qoqView, quarters, completeQ, 'QoQ', 'Quarter', quarterLabel);
 
   const views = [wowView, momView, qoqView];
   const def = momView.available ? momView : qoqView.available ? qoqView : wowView.available ? wowView : views[1];

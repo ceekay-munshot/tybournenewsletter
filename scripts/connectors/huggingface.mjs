@@ -6,7 +6,7 @@
 // two full quarters we don't have yet — shown honestly as unavailable.
 import { getJson } from '../lib/http.mjs';
 import { monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const UC_LABEL = {
   '3d-gaming': '3D / gaming',
@@ -196,6 +196,29 @@ export async function connect(system) {
   const wowView = week0
     ? viewFrom(week0, 'WoW', 'Week', weekLabel, prevWeekLabel)
     : unavailable('WoW', 'Week', 'No weekly entry yet.');
+
+  // one period further back (months[1] / weeks[1]), so the headline + table show two
+  // consecutive periods of trend. Left unset when that prior entry isn't a valid comparison.
+  if (momView.available && months[1]) {
+    const momPrior = viewFrom(months[1], 'MoM', 'Month', monthLabel, prevMonthLabel);
+    if (momPrior.available) {
+      attachPrev(momView.breakdown, momPrior.breakdown);
+      momView.prevLabel = momPrior.lastPeriodLabel; // the period before lastPeriodLabel
+      momView.prevValue = momPrior.lastValue; // the period before last (oldest total)
+      momView.prevChangePct = momPrior.changePct;
+      momView.prevDirection = momPrior.direction;
+    }
+  }
+  if (wowView.available && weeks[1]) {
+    const wowPrior = viewFrom(weeks[1], 'WoW', 'Week', weekLabel, prevWeekLabel);
+    if (wowPrior.available) {
+      attachPrev(wowView.breakdown, wowPrior.breakdown);
+      wowView.prevLabel = wowPrior.lastPeriodLabel; // the period before lastPeriodLabel
+      wowView.prevValue = wowPrior.lastValue;
+      wowView.prevChangePct = wowPrior.changePct;
+      wowView.prevDirection = wowPrior.direction;
+    }
+  }
   const qoqView = unavailable(
     'QoQ',
     'Quarter',

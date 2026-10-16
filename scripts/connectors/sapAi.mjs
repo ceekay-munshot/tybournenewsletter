@@ -5,7 +5,7 @@
 // from the daily scores.
 import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, monthOf, monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE_PTS = 0.2; // a >=0.2-point move on a 1-5 scale is notable
 const round2 = (n) => (n == null || !Number.isFinite(n) ? null : Math.round(n * 100) / 100);
@@ -52,6 +52,22 @@ const lastTwoKeys = (days, keyFn, valFn) => {
   }
   const keys = [...seen].sort();
   return [keys[keys.length - 1] ?? null, keys[keys.length - 2] ?? null];
+};
+
+// The scored period immediately BEFORE `target` (one step further back), so a window can show
+// two consecutive periods of trend. Same key universe as lastTwoKeys. null when none precedes it.
+const keyBefore = (days, keyFn, valFn, target) => {
+  if (!target) return null;
+  const seen = new Set();
+  for (const d of days) {
+    const v = valFn(d);
+    if (v == null || !Number.isFinite(v) || !d.date) continue;
+    const k = keyFn(d.date);
+    if (k) seen.add(k);
+  }
+  const keys = [...seen].sort();
+  const i = keys.indexOf(target);
+  return i > 0 ? keys[i - 1] : null;
 };
 
 export async function connect(system) {
@@ -120,6 +136,40 @@ export async function connect(system) {
           ).toFixed(2)} pts to ${oThis?.toFixed(2)}/5 — ${softer} topic${softer === 1 ? '' : 's'} softer, ${firmer} firmer.`
         : undefined;
 
+    // --- PRIOR pts comparison (one period further back) so the headline + table show two
+    // consecutive periods. Same shape as the latest, computed for lastKey vs the key before it,
+    // then merged onto the latest rows by label. prevValue is the oldest overall score; prevChangeAbs
+    // is the lastKey-minus-prevKey pts delta. Left unset when there's no third scored period yet. ---
+    let prevLabel;
+    let prevValue = null;
+    let prevChangeAbs = null;
+    let prevDirection;
+    const prevKey = keyBefore(days, keyFn, (d) => d.overall?.score, lastKey);
+    if (changeAbs != null && prevKey) {
+      const oLastLast = round2(avgIn(days, prevKey, keyFn, (d) => d.overall?.score));
+      if (oLastLast != null && oLast != null) {
+        const priorRows = topicIds.map((id) => {
+          const l = round2(avgIn(days, lastKey, keyFn, (d) => d.topics?.[id]?.score));
+          const ll = round2(avgIn(days, prevKey, keyFn, (d) => d.topics?.[id]?.score));
+          const ca = l != null && ll != null ? round2(l - ll) : null;
+          return {
+            label: labelOf[id],
+            thisValue: l,
+            lastValue: ll,
+            changePct: null,
+            changeAbs: ca,
+            changeDisplay: 'pts',
+            direction: directionOf(ca),
+          };
+        });
+        attachPrev(rows, priorRows);
+        prevLabel = labelFn(prevKey);
+        prevValue = oLastLast;
+        prevChangeAbs = round2(oLast - oLastLast);
+        prevDirection = directionOf(prevChangeAbs);
+      }
+    }
+
     return {
       comparison,
       label,
@@ -133,6 +183,7 @@ export async function connect(system) {
       changeDisplay: 'pts',
       direction: directionOf(changeAbs),
       bigMove: changeAbs != null && Math.abs(changeAbs) >= BIG_MOVE_PTS,
+      ...(prevLabel ? { prevLabel, prevValue, prevChangeAbs, prevDirection } : {}),
       breakdown: rows,
       summary,
     };

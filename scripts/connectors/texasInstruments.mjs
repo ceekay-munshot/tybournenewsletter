@@ -5,7 +5,7 @@
 // legacy single-SKU path that produced the +126% / -22.7% artifacts. The headline is the
 // latest CLOSED period; the breakdown is by product group with each category's move.
 import { getJson } from '../lib/http.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
 
 const MOM_BIG = 0.01; // a >=1% monthly catalog move is notable (TI list prices move slowly)
 const QOQ_BIG = 0.02;
@@ -41,12 +41,12 @@ function unavailable(comparison, label, reason) {
   };
 }
 
-function buildView(data, comparison, label, big) {
+function buildView(data, comparison, label, big, back = 0) {
   const rows = Array.isArray(data?.rows) ? data.rows : [];
   const cols = Array.isArray(data?.columns) ? data.columns : [];
   const closed = rows.filter((r) => !r.liveToDate && !r.bridgeRow);
-  const cur = closed[closed.length - 1];
-  const prev = closed[closed.length - 2];
+  const cur = closed[closed.length - 1 - back];
+  const prev = closed[closed.length - 2 - back];
   if (!cur || !cols.length) return unavailable(comparison, label, 'No closed period for this window yet.');
 
   const catPct = (id) => {
@@ -181,6 +181,30 @@ export async function connect(system) {
 
   const momView = buildView(mom, 'MoM', 'Month', MOM_BIG);
   const qoqView = qoq ? buildView(qoq, 'QoQ', 'Quarter', QOQ_BIG) : unavailable('QoQ', 'Quarter', 'No quarterly series.');
+
+  // one closed period further back, so the headline + table show two consecutive periods of trend
+  if (momView.available) {
+    const momPrior = buildView(mom, 'MoM', 'Month', MOM_BIG, 1);
+    if (momPrior.available) {
+      attachPrev(momView.breakdown, momPrior.breakdown);
+      momView.prevLabel = momPrior.lastPeriodLabel; // the period before lastPeriodLabel
+      momView.prevValue = momPrior.lastValue; // % only, no comparable level column — stays null
+      momView.prevChangePct = momPrior.changePct;
+      momView.prevChangeAbs = momPrior.changeAbs;
+      momView.prevDirection = momPrior.direction;
+    }
+  }
+  if (qoqView.available) {
+    const qoqPrior = buildView(qoq, 'QoQ', 'Quarter', QOQ_BIG, 1);
+    if (qoqPrior.available) {
+      attachPrev(qoqView.breakdown, qoqPrior.breakdown);
+      qoqView.prevLabel = qoqPrior.lastPeriodLabel; // the period before lastPeriodLabel
+      qoqView.prevValue = qoqPrior.lastValue;
+      qoqView.prevChangePct = qoqPrior.changePct;
+      qoqView.prevChangeAbs = qoqPrior.changeAbs;
+      qoqView.prevDirection = qoqPrior.direction;
+    }
+  }
   // Weekly is intentionally not offered: TI list/catalog prices are set and change
   // infrequently (indices sit flat for weeks), so the weekly signal here is dominated by
   // capture/overlay noise rather than real moves — the honest windows are MoM and QoQ.
