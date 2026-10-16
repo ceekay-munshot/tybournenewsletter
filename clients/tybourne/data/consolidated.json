@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T16:11:52.262Z",
+  "generatedAt": "2026-10-16T20:35:11.804Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1012,10 +1012,10 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.41,
+      "thisValue": 2.43,
       "lastValue": 2.45,
-      "changePct": -0.01632653061224491,
-      "changeAbs": -0.040000000000000036,
+      "changePct": -0.008163265306122455,
+      "changeAbs": -0.020000000000000018,
       "direction": "down",
       "asOf": "2026-10-14T00:00:00.000Z",
       "isStale": false,
@@ -1065,7 +1065,7 @@
           "prevValue": 5.024
         }
       ],
-      "summary": "Quarter-on-quarter input price down 1.6% (output -0.6%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1106,10 +1106,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.41,
+          "thisValue": 2.43,
           "lastValue": 2.45,
-          "changePct": -0.01632653061224491,
-          "changeAbs": -0.040000000000000036,
+          "changePct": -0.008163265306122455,
+          "changeAbs": -0.020000000000000018,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -1158,7 +1158,7 @@
               "prevValue": 5.024
             }
           ],
-          "summary": "Quarter-on-quarter input price down 1.6% (output -0.6%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1171,7 +1171,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-22.0% input · share +7.29pp"
+          "body": "-22.0% input · share +7.40pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -5035,7 +5035,7 @@
       "changePct": -0.009730154106102921,
       "changeAbs": -23129,
       "direction": "down",
-      "asOf": "2026-10-14",
+      "asOf": "2026-10-15",
       "isStale": false,
       "breakdown": [
         {
@@ -5122,16 +5122,16 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk to 14 Oct",
+          "thisPeriodLabel": "wk to 15 Oct",
           "lastPeriodLabel": "yr earlier",
-          "thisValue": 2645804,
-          "lastValue": 2711720,
-          "changePct": -0.024307611226992445,
+          "thisValue": 2634173,
+          "lastValue": 2701076,
+          "changePct": -0.024769125064504793,
           "direction": "down",
           "bigMove": false,
-          "prevLabel": "wk to 7 Oct",
+          "prevLabel": "wk to 8 Oct",
           "prevValue": null,
-          "prevChangePct": -0.013616475957536373,
+          "prevChangePct": -0.020381657364384593,
           "prevDirection": "down",
           "breakdown": [
             {
@@ -5207,7 +5207,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput down 2.4% year-on-year (wk to 14 Oct vs yr earlier), running at 2.65M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput down 2.5% year-on-year (wk to 15 Oct vs yr earlier), running at 2.63M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -5398,7 +5398,7 @@
       "insights": [
         {
           "title": "US demand: current and roughly flat",
-          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 14. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
+          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 15. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
         },
         {
           "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
@@ -5413,7 +5413,7 @@
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to Oct '26 14. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to Oct '26 15. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Aug '26",
@@ -5707,7 +5707,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-16T16:11:28.761Z",
+      "asOf": "2026-10-16T20:34:48.713Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6245,7 +6245,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-16T16:11:28.924Z"
+          "asOf": "2026-10-16T20:34:48.807Z"
         }
       ],
       "prevLabel": "Jul '26",
