@@ -43,6 +43,11 @@ export function MultiPeriodView({
   const dispFor = (r: BreakdownRow) => r.changeDisplay ?? view.changeDisplay;
   const magOf = (r: BreakdownRow) => (isPts ? (r.changeAbs ?? null) : (r.changePct ?? null));
   const hasSub = view.breakdown.some((r) => r.sub && r.sub.length);
+  // Show the value columns only when some row (or its sub-rows) carries comparable
+  // values — a pp-only breakdown (e.g. 13F) then renders a clean two-column table.
+  const hasVals = view.breakdown.some(
+    (r) => r.lastValue != null || r.thisValue != null || (r.sub ?? []).some((s) => s.lastValue != null || s.thisValue != null)
+  );
 
   const priced = view.breakdown.filter((r) => magOf(r) != null);
   const chartData: DivergingDatum[] = priced.map((r) => ({
@@ -152,13 +157,25 @@ export function MultiPeriodView({
                 {hasSub ? ` and ${sNoun}` : ''}
               </h3>
               <p className="text-[12px] text-slate-500">
-                {hasSub ? `${cap(bNoun)} average, then the move for each ${sNoun}. ` : `Each ${bNoun}'s move. `}⚡ = notable move.
+                {hasSub ? `${cap(bNoun)}, then the move for each ${sNoun}. ` : `Each ${bNoun}'s move. `}⚡ = notable move.
               </p>
             </div>
-            <div className="flex flex-col gap-2 px-4 pb-4">
-              {view.breakdown.map((r) => (
-                <CategoryRow key={r.label} row={r} unit={block.unit} disp={view.changeDisplay} />
-              ))}
+            <div className="overflow-x-auto px-4 pb-4">
+              <table className="w-full border-collapse text-[12.5px]">
+                <thead>
+                  <tr className="border-b border-slate-200 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-400">
+                    <th className="py-2 pr-3 capitalize">{bNoun}</th>
+                    {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.lastPeriodLabel}</th>}
+                    {hasVals && <th className="whitespace-nowrap px-3 py-2 text-right">{view.thisPeriodLabel}</th>}
+                    <th className="whitespace-nowrap py-2 pl-3 text-right">{changeNoun}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {view.breakdown.map((r) => (
+                    <BreakdownRows key={r.label} row={r} unit={block.unit} disp={view.changeDisplay} hasVals={hasVals} />
+                  ))}
+                </tbody>
+              </table>
             </div>
           </Card>
         </>
@@ -220,48 +237,70 @@ export function MultiPeriodView({
   );
 }
 
-function CategoryRow({ row, unit, disp }: { row: BreakdownRow; unit: string; disp?: 'pct' | 'pp' | 'pts' }) {
+/** One breakdown item as a table row, with any sub-dimension items as indented sub-rows. */
+function BreakdownRows({
+  row,
+  unit,
+  disp,
+  hasVals,
+}: {
+  row: BreakdownRow;
+  unit: string;
+  disp?: 'pct' | 'pp' | 'pts';
+  hasVals: boolean;
+}) {
   const tracked = row.changePct != null || row.changeAbs != null;
   const dir = directionColor(row.direction);
   const chg = headlineText(row.changePct, row.changeAbs, row.changeDisplay ?? disp);
   return (
-    <div className="rounded-xl ring-1 ring-slate-200/70">
-      <div className="flex items-center justify-between gap-3 px-3 py-2.5">
-        <div className="min-w-0">
-          <div className={`font-display text-[13.5px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{row.label}</div>
-          {tracked ? (
-            <>
-              {(row.lastValue != null || row.thisValue != null) && (
-                <div className="tnum text-[11.5px] text-slate-500">
-                  {fmtValue(row.lastValue, unit)} <span className="text-slate-300">→</span> {fmtValue(row.thisValue, unit)}
-                </div>
-              )}
-              {row.note && <div className="text-[10.5px] italic text-amber-600">{row.note}</div>}
-            </>
-          ) : (
-            <div className="text-[11.5px] italic text-slate-400">{row.note ?? 'not tracked'}</div>
-          )}
-        </div>
-        {tracked && (
-          <div className="tnum shrink-0 font-bold" style={{ color: dir, fontSize: row.bigMove ? 16 : 14 }}>
-            {chg}
-            {row.bigMove && ' ⚡'}
-          </div>
+    <>
+      <tr className="border-b border-slate-100">
+        <td className="py-2.5 pr-3 align-top">
+          <span className={`font-display text-[13px] font-bold ${tracked ? 'text-slate-900' : 'text-slate-400'}`}>{row.label}</span>
+          {row.note && <span className="ml-1.5 text-[10.5px] italic text-amber-600">{row.note}</span>}
+          {!tracked && !row.note && <span className="ml-1.5 text-[11px] italic text-slate-400">not tracked</span>}
+        </td>
+        {hasVals && (
+          <td className="tnum whitespace-nowrap px-3 py-2.5 text-right align-top text-slate-500">
+            {row.lastValue != null ? fmtValue(row.lastValue, unit) : ''}
+          </td>
         )}
-      </div>
-      {row.sub && row.sub.length > 0 && (
-        <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-dashed border-slate-200 px-3 py-2">
-          {row.sub.map((b) => (
-            <span key={b.label} className="inline-flex items-baseline gap-1.5 text-[12px]">
-              <span className="text-slate-500">{b.label}</span>
-              <span className="tnum font-semibold" style={{ color: directionColor(b.direction) }}>
-                {headlineText(b.changePct, b.changeAbs, b.changeDisplay ?? disp)}
-                {b.bigMove && ' ⚡'}
-              </span>
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
+        {hasVals && (
+          <td className="tnum whitespace-nowrap px-3 py-2.5 text-right align-top font-semibold text-slate-800">
+            {row.thisValue != null ? fmtValue(row.thisValue, unit) : ''}
+          </td>
+        )}
+        <td
+          className="tnum whitespace-nowrap py-2.5 pl-3 text-right align-top font-bold"
+          style={{ color: tracked ? dir : '#94A3B8', fontSize: row.bigMove ? 14.5 : 13 }}
+        >
+          {tracked ? chg : '—'}
+          {row.bigMove && ' ⚡'}
+        </td>
+      </tr>
+      {(row.sub ?? []).map((s) => (
+        <tr key={s.label} className="border-b border-slate-100 bg-slate-50/50">
+          <td className="py-1.5 pl-4 pr-3 align-top text-slate-500">
+            <span className="mr-1 text-slate-300">└</span>
+            {s.label}
+            {s.note && <span className="ml-1.5 text-[10px] italic text-amber-600">{s.note}</span>}
+          </td>
+          {hasVals && (
+            <td className="tnum whitespace-nowrap px-3 py-1.5 text-right align-top text-slate-400">
+              {s.lastValue != null ? fmtValue(s.lastValue, unit) : ''}
+            </td>
+          )}
+          {hasVals && (
+            <td className="tnum whitespace-nowrap px-3 py-1.5 text-right align-top text-slate-600">
+              {s.thisValue != null ? fmtValue(s.thisValue, unit) : ''}
+            </td>
+          )}
+          <td className="tnum whitespace-nowrap py-1.5 pl-3 text-right align-top font-semibold" style={{ color: directionColor(s.direction) }}>
+            {headlineText(s.changePct, s.changeAbs, s.changeDisplay ?? disp)}
+            {s.bigMove && ' ⚡'}
+          </td>
+        </tr>
+      ))}
+    </>
   );
 }
