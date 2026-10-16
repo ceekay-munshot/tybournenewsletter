@@ -23,7 +23,7 @@ export function Header({
               {client.name}
             </div>
             <div className="truncate text-[11px] leading-tight text-slate-500">
-              Consolidated quarterly intelligence
+              Consolidated monthly intelligence
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export function Header({
           </span>
           <button
             onClick={onOpenNewsletter}
-            title="Open the quarterly newsletter"
+            title="Open the monthly newsletter"
             className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-2.5 py-1.5 text-[12px] font-semibold text-white shadow-sm transition hover:bg-slate-700 sm:px-3"
           >
             <Newspaper size={14} strokeWidth={2.4} />

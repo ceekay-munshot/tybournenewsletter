@@ -266,9 +266,11 @@ function buildInsights(momView, rows) {
 }
 
 export async function connect(system) {
-  const [heatmap, analytics] = await Promise.all([
+  const metaUrl = system.source.url.replace('analytics.json', 'meta.json');
+  const [heatmap, analytics, meta] = await Promise.all([
     getJson(system.source.heatmap),
     getJson(system.source.url),
+    getJson(metaUrl).catch(() => null),
   ]);
   const rows = (Array.isArray(analytics?.rows) ? analytics.rows : []).filter((r) => !isWiwynn(r));
   if (!rows.length) throw new Error('analytics.json returned no rows');
@@ -284,6 +286,10 @@ export async function connect(system) {
   const def = momView.available ? momView : qoqView.available ? qoqView : views[1];
   const insights = buildInsights(momView, rows);
   const latestMonth = momView._latestMonth || [...new Set(rows.map((r) => r.month))].sort().pop();
+  // "as of" = when the latest month's filings were last confirmed (monthly data inherently
+  // lags, so the month-start would wrongly read as stale). Fall back to the month-start.
+  const freshness = Array.isArray(meta?.freshness) ? meta.freshness.find((f) => f.month === latestMonth) : null;
+  const asOf = freshness?.last_seen_utc || `${latestMonth}-01`;
 
   // strip internal scratch fields before emitting
   for (const v of views) {
@@ -301,7 +307,7 @@ export async function connect(system) {
     lastValue: def.lastValue,
     changePct: def.changePct,
     direction: def.direction,
-    asOf: `${latestMonth}-01`,
+    asOf,
     breakdown: def.breakdown,
     summary: def.summary,
     notes:

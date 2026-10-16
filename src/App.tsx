@@ -10,7 +10,7 @@ import { SystemView } from './tabs/SystemView';
 import { MultiPeriodView } from './components/MultiPeriodView';
 
 /** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
- *  Used by the quarterly email render and shareable links. */
+ *  Used by the monthly email render and shareable links. */
 function wantsNewsletter(): boolean {
   if (typeof window === 'undefined') return false;
   const q = new URLSearchParams(window.location.search).get('edition') ?? '';

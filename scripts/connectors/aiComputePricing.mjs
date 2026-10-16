@@ -99,6 +99,15 @@ export async function connect(system) {
     asOf = d.toISOString();
   }
 
+  // The signal endpoint can report a degraded fetch (some providers temporarily
+  // failed) and then return fewer provider rows. Surface that honestly so a thin
+  // run is explained rather than looking like real data — the 6-hourly refresh
+  // self-heals once the source recovers.
+  const degraded = sig?.degraded === true || (Array.isArray(sig?.providerErrors) && sig.providerErrors.length > 0);
+  const degradedNote = degraded
+    ? ` NOTE: the pricing source reported a degraded fetch this run, so some providers may be missing from the breakdown — it refreshes automatically.`
+    : '';
+
   const block = makeBlock(system, {
     unit: '$/1M tokens',
     comparison: 'QoQ',
@@ -112,7 +121,8 @@ export async function connect(system) {
     breakdown: rows,
     summary: qoqSummary,
     notes:
-      'Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.',
+      'Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.' +
+      degradedNote,
   });
   block.views = views;
   block.breakdownNoun = 'provider';

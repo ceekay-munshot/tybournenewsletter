@@ -1,6 +1,6 @@
 # Munshot Consolidated Intelligence Dashboard
 
-A **config-driven, multi-client** quarterly intelligence dashboard. It consolidates many
+A **config-driven, multi-client** monthly intelligence dashboard. It consolidates many
 single-topic data sources into **one view** that shows, per topic, **what changed** from
 one period to the next going into earnings — with breakdowns, trends and source stamps.
 
