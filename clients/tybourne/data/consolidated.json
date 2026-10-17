@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T15:04:26.996Z",
+  "generatedAt": "2026-10-17T20:13:05.925Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1019,8 +1019,53 @@
       "direction": "down",
       "asOf": "2026-10-15T00:00:00.000Z",
       "isStale": false,
-      "breakdown": [],
-      "summary": "Quarter-on-quarter input price down 0.4% (output -0.2%). List prices are otherwise flat month-to-month.",
+      "breakdown": [
+        {
+          "label": "DeepSeek",
+          "thisValue": 0.249,
+          "lastValue": 0.32046332046332043,
+          "changePct": -0.223,
+          "direction": "down",
+          "bigMove": true,
+          "prevChangePct": 0.052,
+          "prevDirection": "up",
+          "prevValue": 0.30462292819707265
+        },
+        {
+          "label": "Google",
+          "thisValue": 0.516,
+          "lastValue": 0.5196374622356495,
+          "changePct": -0.007,
+          "direction": "down",
+          "bigMove": false,
+          "prevChangePct": -0.002,
+          "prevDirection": "down",
+          "prevValue": 0.5206788198754003
+        },
+        {
+          "label": "OpenAI",
+          "thisValue": 5.865,
+          "lastValue": 5.882647943831495,
+          "changePct": -0.003,
+          "direction": "down",
+          "bigMove": false,
+          "prevChangePct": 0,
+          "prevDirection": "flat",
+          "prevValue": 5.882647943831495
+        },
+        {
+          "label": "Anthropic",
+          "thisValue": 5.023,
+          "lastValue": 5.023,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false,
+          "prevChangePct": 0,
+          "prevDirection": "flat",
+          "prevValue": 5.023
+        }
+      ],
+      "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1067,8 +1112,53 @@
           "changeAbs": -0.010000000000000231,
           "direction": "down",
           "bigMove": false,
-          "breakdown": [],
-          "summary": "Quarter-on-quarter input price down 0.4% (output -0.2%). List prices are otherwise flat month-to-month.",
+          "breakdown": [
+            {
+              "label": "DeepSeek",
+              "thisValue": 0.249,
+              "lastValue": 0.32046332046332043,
+              "changePct": -0.223,
+              "direction": "down",
+              "bigMove": true,
+              "prevChangePct": 0.052,
+              "prevDirection": "up",
+              "prevValue": 0.30462292819707265
+            },
+            {
+              "label": "Google",
+              "thisValue": 0.516,
+              "lastValue": 0.5196374622356495,
+              "changePct": -0.007,
+              "direction": "down",
+              "bigMove": false,
+              "prevChangePct": -0.002,
+              "prevDirection": "down",
+              "prevValue": 0.5206788198754003
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 5.865,
+              "lastValue": 5.882647943831495,
+              "changePct": -0.003,
+              "direction": "down",
+              "bigMove": false,
+              "prevChangePct": 0,
+              "prevDirection": "flat",
+              "prevValue": 5.882647943831495
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 5.023,
+              "lastValue": 5.023,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "prevChangePct": 0,
+              "prevDirection": "flat",
+              "prevValue": 5.023
+            }
+          ],
+          "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1078,7 +1168,12 @@
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [],
+      "insights": [
+        {
+          "title": "Biggest price cut — DeepSeek",
+          "body": "-22.3% input · share +7.76pp"
+        }
+      ],
       "prevLabel": "Q2 '26",
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
@@ -5612,7 +5707,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-17T15:04:03.878Z",
+      "asOf": "2026-10-17T20:12:47.384Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6150,7 +6245,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-17T15:04:03.989Z"
+          "asOf": "2026-10-17T20:12:47.482Z"
         }
       ],
       "prevLabel": "Jul '26",
