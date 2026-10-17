@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T20:35:11.804Z",
+  "generatedAt": "2026-10-17T03:13:58.852Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1019,53 +1019,8 @@
       "direction": "down",
       "asOf": "2026-10-14T00:00:00.000Z",
       "isStale": false,
-      "breakdown": [
-        {
-          "label": "DeepSeek",
-          "thisValue": 0.25,
-          "lastValue": 0.3205128205128205,
-          "changePct": -0.22,
-          "direction": "down",
-          "bigMove": true,
-          "prevChangePct": 0.052,
-          "prevDirection": "up",
-          "prevValue": 0.3046699814760651
-        },
-        {
-          "label": "Google",
-          "thisValue": 0.514,
-          "lastValue": 0.5176233635448138,
-          "changePct": -0.007,
-          "direction": "down",
-          "bigMove": false,
-          "prevChangePct": -0.002,
-          "prevDirection": "down",
-          "prevValue": 0.518660684914643
-        },
-        {
-          "label": "OpenAI",
-          "thisValue": 5.863,
-          "lastValue": 5.880641925777333,
-          "changePct": -0.003,
-          "direction": "down",
-          "bigMove": false,
-          "prevChangePct": 0,
-          "prevDirection": "flat",
-          "prevValue": 5.880641925777333
-        },
-        {
-          "label": "Anthropic",
-          "thisValue": 5.024,
-          "lastValue": 5.024,
-          "changePct": 0,
-          "direction": "flat",
-          "bigMove": false,
-          "prevChangePct": 0,
-          "prevDirection": "flat",
-          "prevValue": 5.024
-        }
-      ],
-      "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
+      "breakdown": [],
+      "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%). List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1112,53 +1067,8 @@
           "changeAbs": -0.020000000000000018,
           "direction": "down",
           "bigMove": false,
-          "breakdown": [
-            {
-              "label": "DeepSeek",
-              "thisValue": 0.25,
-              "lastValue": 0.3205128205128205,
-              "changePct": -0.22,
-              "direction": "down",
-              "bigMove": true,
-              "prevChangePct": 0.052,
-              "prevDirection": "up",
-              "prevValue": 0.3046699814760651
-            },
-            {
-              "label": "Google",
-              "thisValue": 0.514,
-              "lastValue": 0.5176233635448138,
-              "changePct": -0.007,
-              "direction": "down",
-              "bigMove": false,
-              "prevChangePct": -0.002,
-              "prevDirection": "down",
-              "prevValue": 0.518660684914643
-            },
-            {
-              "label": "OpenAI",
-              "thisValue": 5.863,
-              "lastValue": 5.880641925777333,
-              "changePct": -0.003,
-              "direction": "down",
-              "bigMove": false,
-              "prevChangePct": 0,
-              "prevDirection": "flat",
-              "prevValue": 5.880641925777333
-            },
-            {
-              "label": "Anthropic",
-              "thisValue": 5.024,
-              "lastValue": 5.024,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevChangePct": 0,
-              "prevDirection": "flat",
-              "prevValue": 5.024
-            }
-          ],
-          "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%); biggest move: DeepSeek -22.0%. List prices are otherwise flat month-to-month.",
+          "breakdown": [],
+          "summary": "Quarter-on-quarter input price down 0.8% (output -0.2%). List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1168,12 +1078,7 @@
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [
-        {
-          "title": "Biggest price cut — DeepSeek",
-          "body": "-22.0% input · share +7.40pp"
-        }
-      ],
+      "insights": [],
       "prevLabel": "Q2 '26",
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
@@ -5707,7 +5612,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-16T20:34:48.713Z",
+      "asOf": "2026-10-17T03:13:40.709Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6245,7 +6150,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-16T20:34:48.807Z"
+          "asOf": "2026-10-17T03:13:40.802Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -7974,30 +7879,23 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 36,
-      "lastValue": 5,
+      "thisValue": 35,
+      "lastValue": 4,
       "changePct": null,
       "changeAbs": 31,
       "direction": "flat",
-      "asOf": "2026-10-16T09:00:00.000Z",
+      "asOf": "2026-10-17T01:51:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 11,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
         },
         {
-          "label": "Odd Lots",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "In Good Company",
+          "label": "All-In",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8011,7 +7909,14 @@
           "direction": "flat"
         },
         {
-          "label": "All-In",
+          "label": "Odd Lots",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "In Good Company",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8054,12 +7959,12 @@
         "Safety vs Speed in AI Development: Airbags Analogy",
         "Hyperliquid aims to house all of finance on a permissionless blockchain protocol"
       ],
-      "tone": "Tone across 36 episodes — 13 positive, 12 mixed, 7 neutral, 2 cautious",
-      "summary": "Q4 '26 (QTD): 36 investor-podcast episodes across 9 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine. Sentiment ran 13 positive, 12 mixed, 7 neutral, 2 cautious. Last quarter (Q3 '26) ran 5 episodes (3 positive, 1 cautious, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Gabe Stengel's vision for AI transforming investing. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact.",
+      "tone": "Tone across 35 episodes — 12 positive, 11 mixed, 5 neutral, 3 cautious",
+      "summary": "Q4 '26 (QTD): 35 investor-podcast episodes across 9 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine. Sentiment ran 12 positive, 11 mixed, 5 neutral, 3 cautious. Last quarter (Q3 '26) ran 4 episodes (3 positive, 1 mixed), centred on Instinct personal assistant platform; Gabe Stengel's vision for AI transforming investing; Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "36 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "35 investor-podcast episodes analysed this quarter across 9 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
