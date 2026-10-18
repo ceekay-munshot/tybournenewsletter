@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T20:13:05.925Z",
+  "generatedAt": "2026-10-18T03:17:29.183Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1021,17 +1021,6 @@
       "isStale": false,
       "breakdown": [
         {
-          "label": "DeepSeek",
-          "thisValue": 0.249,
-          "lastValue": 0.32046332046332043,
-          "changePct": -0.223,
-          "direction": "down",
-          "bigMove": true,
-          "prevChangePct": 0.052,
-          "prevDirection": "up",
-          "prevValue": 0.30462292819707265
-        },
-        {
           "label": "Google",
           "thisValue": 0.516,
           "lastValue": 0.5196374622356495,
@@ -1065,11 +1054,11 @@
           "prevValue": 5.023
         }
       ],
-      "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.",
+      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary. NOTE: the pricing source reported a degraded fetch this run, so some providers may be missing from the breakdown — it refreshes automatically.",
       "status": "ok",
       "views": [
         {
@@ -1114,17 +1103,6 @@
           "bigMove": false,
           "breakdown": [
             {
-              "label": "DeepSeek",
-              "thisValue": 0.249,
-              "lastValue": 0.32046332046332043,
-              "changePct": -0.223,
-              "direction": "down",
-              "bigMove": true,
-              "prevChangePct": 0.052,
-              "prevDirection": "up",
-              "prevValue": 0.30462292819707265
-            },
-            {
               "label": "Google",
               "thisValue": 0.516,
               "lastValue": 0.5196374622356495,
@@ -1158,7 +1136,7 @@
               "prevValue": 5.023
             }
           ],
-          "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 0.4% (output +0.0%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1168,12 +1146,7 @@
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [
-        {
-          "title": "Biggest price cut — DeepSeek",
-          "body": "-22.3% input · share +7.76pp"
-        }
-      ],
+      "insights": [],
       "prevLabel": "Q2 '26",
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
@@ -5707,7 +5680,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-17T20:12:47.384Z",
+      "asOf": "2026-10-18T03:17:07.109Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6245,7 +6218,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-17T20:12:47.482Z"
+          "asOf": "2026-10-18T03:17:07.194Z"
         }
       ],
       "prevLabel": "Jul '26",
