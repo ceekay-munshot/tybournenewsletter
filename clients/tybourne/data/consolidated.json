@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T15:29:52.241Z",
+  "generatedAt": "2026-10-18T20:11:27.650Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1021,15 +1021,15 @@
       "isStale": false,
       "breakdown": [
         {
-          "label": "Google",
-          "thisValue": 0.518,
-          "lastValue": 0.5216515609264855,
-          "changePct": -0.007,
+          "label": "OpenAI",
+          "thisValue": 5.866,
+          "lastValue": 5.883650952858575,
+          "changePct": -0.003,
           "direction": "down",
           "bigMove": false,
-          "prevChangePct": -0.002,
-          "prevDirection": "down",
-          "prevValue": 0.5226969548361577
+          "prevChangePct": 0,
+          "prevDirection": "flat",
+          "prevValue": 5.883650952858575
         },
         {
           "label": "Anthropic",
@@ -1043,7 +1043,7 @@
           "prevValue": 5.022
         }
       ],
-      "summary": "Quarter-on-quarter input price down 1.2% (output -0.4%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 1.2% (output -0.4%); biggest move: OpenAI -0.3%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1092,15 +1092,15 @@
           "bigMove": false,
           "breakdown": [
             {
-              "label": "Google",
-              "thisValue": 0.518,
-              "lastValue": 0.5216515609264855,
-              "changePct": -0.007,
+              "label": "OpenAI",
+              "thisValue": 5.866,
+              "lastValue": 5.883650952858575,
+              "changePct": -0.003,
               "direction": "down",
               "bigMove": false,
-              "prevChangePct": -0.002,
-              "prevDirection": "down",
-              "prevValue": 0.5226969548361577
+              "prevChangePct": 0,
+              "prevDirection": "flat",
+              "prevValue": 5.883650952858575
             },
             {
               "label": "Anthropic",
@@ -1114,7 +1114,7 @@
               "prevValue": 5.022
             }
           ],
-          "summary": "Quarter-on-quarter input price down 1.2% (output -0.4%); biggest move: Google -0.7%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 1.2% (output -0.4%); biggest move: OpenAI -0.3%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -5658,7 +5658,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-18T15:29:29.516Z",
+      "asOf": "2026-10-18T20:11:07.858Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6196,7 +6196,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-18T15:29:29.599Z"
+          "asOf": "2026-10-18T20:11:07.928Z"
         }
       ],
       "prevLabel": "Jul '26",
