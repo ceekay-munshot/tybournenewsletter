@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T22:03:24.049Z",
+  "generatedAt": "2026-10-20T03:40:21.293Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1012,12 +1012,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.41,
+      "thisValue": 2.4,
       "lastValue": 2.45,
-      "changePct": -0.01632653061224491,
-      "changeAbs": -0.040000000000000036,
+      "changePct": -0.02040816326530623,
+      "changeAbs": -0.050000000000000266,
       "direction": "down",
-      "asOf": "2026-10-17T00:00:00.000Z",
+      "asOf": "2026-10-18T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -1065,7 +1065,7 @@
           "prevValue": 5.021
         }
       ],
-      "summary": "Quarter-on-quarter input price down 1.6% (output -0.6%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.0% (output -0.9%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1106,10 +1106,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.41,
+          "thisValue": 2.4,
           "lastValue": 2.45,
-          "changePct": -0.01632653061224491,
-          "changeAbs": -0.040000000000000036,
+          "changePct": -0.02040816326530623,
+          "changeAbs": -0.050000000000000266,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -1158,7 +1158,7 @@
               "prevValue": 5.021
             }
           ],
-          "summary": "Quarter-on-quarter input price down 1.6% (output -0.6%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.0% (output -0.9%); biggest move: DeepSeek -22.3%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1171,7 +1171,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-22.3% input · share +9.26pp"
+          "body": "-22.3% input · share +9.22pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -5663,7 +5663,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-19T22:03:05.061Z",
+      "asOf": "2026-10-20T03:39:58.619Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6206,11 +6206,11 @@
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
             "OpenRouter developer tokens: Google share 7.7% → 4.9% (-2.7pp), 28.1T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #19 by tokens.",
+            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #21 by tokens.",
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-19T22:03:05.142Z"
+          "asOf": "2026-10-20T03:39:58.699Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -7944,12 +7944,19 @@
       "changePct": null,
       "changeAbs": 32,
       "direction": "flat",
-      "asOf": "2026-10-19T20:02:07.000Z",
+      "asOf": "2026-10-19T20:43:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 11,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "All-In",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -7963,13 +7970,6 @@
         },
         {
           "label": "Odd Lots",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "All-In",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8026,8 +8026,8 @@
         "Safety vs Speed in AI Development: Airbags Analogy",
         "Hyperliquid aims to house all of finance on a permissionless blockchain protocol"
       ],
-      "tone": "Tone across 37 episodes — 12 positive, 7 mixed, 6 neutral, 1 cautious",
-      "summary": "Q4 '26 (QTD): 37 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine. Sentiment ran 12 positive, 7 mixed, 6 neutral, 1 cautious. Last quarter (Q3 '26) ran 5 episodes (3 positive, 1 cautious, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Gabe Stengel's vision for AI transforming investing. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact.",
+      "tone": "Tone across 37 episodes — 12 positive, 6 neutral, 6 mixed, 1 cautious",
+      "summary": "Q4 '26 (QTD): 37 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine. Sentiment ran 12 positive, 6 neutral, 6 mixed, 1 cautious. Last quarter (Q3 '26) ran 5 episodes (3 positive, 1 cautious, 1 mixed), centred on Definition of Frontier Overhangs; Instinct personal assistant platform; Gabe Stengel's vision for AI transforming investing. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
