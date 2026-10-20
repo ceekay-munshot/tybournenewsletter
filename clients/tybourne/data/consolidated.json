@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T16:27:18.636Z",
+  "generatedAt": "2026-10-20T21:19:41.354Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1065,7 +1065,7 @@
           "prevValue": 5.02
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.0% (output -0.9%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.0% (output -1.1%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1158,7 +1158,7 @@
               "prevValue": 5.02
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.0% (output -0.9%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.0% (output -1.1%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1171,7 +1171,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-22.1% input · share +8.56pp"
+          "body": "-22.1% input · share +8.61pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -4991,7 +4991,7 @@
       "changePct": -0.009730154106102921,
       "changeAbs": -23129,
       "direction": "down",
-      "asOf": "2026-10-18",
+      "asOf": "2026-10-19",
       "isStale": false,
       "breakdown": [
         {
@@ -5078,16 +5078,16 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk to 18 Oct",
+          "thisPeriodLabel": "wk to 19 Oct",
           "lastPeriodLabel": "yr earlier",
-          "thisValue": 2630931,
-          "lastValue": 2680453,
-          "changePct": -0.018475393261043877,
+          "thisValue": 2615893,
+          "lastValue": 2668993,
+          "changePct": -0.0198953013533085,
           "direction": "down",
           "bigMove": false,
-          "prevLabel": "wk to 11 Oct",
+          "prevLabel": "wk to 12 Oct",
           "prevValue": null,
-          "prevChangePct": -0.02506659526198768,
+          "prevChangePct": -0.023401978299960314,
           "prevDirection": "down",
           "breakdown": [
             {
@@ -5163,7 +5163,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput down 1.8% year-on-year (wk to 18 Oct vs yr earlier), running at 2.63M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput down 2.0% year-on-year (wk to 19 Oct vs yr earlier), running at 2.62M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -5354,7 +5354,7 @@
       "insights": [
         {
           "title": "US demand: current and roughly flat",
-          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 18. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
+          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 19. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
         },
         {
           "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
@@ -5369,7 +5369,7 @@
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to Oct '26 18. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to Oct '26 19. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Aug '26",
@@ -5663,7 +5663,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-20T16:26:55.276Z",
+      "asOf": "2026-10-20T21:19:24.365Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6210,7 +6210,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-20T16:26:55.372Z"
+          "asOf": "2026-10-20T21:19:24.510Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -6233,7 +6233,7 @@
       "changePct": 0.0015060072917388947,
       "changeAbs": null,
       "direction": "up",
-      "asOf": "2026-10-15T00:00:00Z",
+      "asOf": "2026-10-20T00:00:00Z",
       "isStale": false,
       "breakdown": [
         {
@@ -7944,12 +7944,19 @@
       "changePct": null,
       "changeAbs": 37,
       "direction": "flat",
-      "asOf": "2026-10-20T13:05:00.000Z",
+      "asOf": "2026-10-20T20:16:23.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 12,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "AI Daily",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -7963,13 +7970,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "AI Daily",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8020,14 +8020,14 @@
       ],
       "highlights": [
         "Comparison of dating algorithm to deck of cards",
-        "Anthropic’s revenue surge",
         "Seagrass restoration is a major early focus with broad ecological impact",
         "Emanuel's relentless call routine",
         "Safety vs Speed in AI Development: Airbags Analogy",
-        "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes"
+        "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
+        "Skepticism about HomeView's AI capabilities"
       ],
-      "tone": "Tone across 40 episodes — 12 positive, 6 mixed, 5 neutral, 1 cautious",
-      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine. Sentiment ran 12 positive, 6 mixed, 5 neutral, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Anthropic’s revenue surge; Seagrass restoration is a major early focus with broad ecological impact.",
+      "tone": "Tone across 40 episodes — 12 positive, 5 neutral, 5 mixed, 1 cautious",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 12 positive, 5 neutral, 5 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
