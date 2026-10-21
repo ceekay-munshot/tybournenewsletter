@@ -10,7 +10,7 @@
 // but flagged "thin" and kept OUT of the headline; a category priced only to an old date
 // is stamped with that date.
 import { getJson } from '../lib/http.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const DAY = 864e5;
 const MIN_MATCHED = 5; // a category needs >= this many items priced in both captures to count toward the headline
@@ -126,6 +126,109 @@ function compareCat(history, days, anchor) {
     base, // the baseline capture object, so the caller can re-anchor for the prior period
     baseDate: base.captured_at,
     latestDate: latest.captured_at,
+  };
+}
+
+// Build a blended period-view anchored `back` windows before the newest capture, in the SAME
+// shape as the default views[] rows (a category row per product line with brand subs, plus the
+// honest "not tracked" UNAVAILABLE lines), so attachSeries can line the last N periods up by
+// label. back=0 is the default/newest view (the caller supplies that one directly). Each step
+// goes one window further back PER CATEGORY by re-anchoring compareCat at the previous
+// comparison's base capture — the exact mechanism the two-period prev* trend uses, generalised
+// to N steps. A category whose chain runs out of in-window captures drops to a null row (honest).
+//
+// Staleness is judged WITHIN this column — against the freshest category in the same column, the
+// generalisation of the default view's "vs the newest capture overall" test. Judging it against
+// the global newest would (correctly) mark every earlier column stale and empty the blend.
+function buildPeriodViewBack({ slugs, data, labelOf, days, comparison, label }, back) {
+  // pass 1: step each category `back` windows back, and find this column's freshest capture
+  const entries = [];
+  let columnNewest = 0;
+  for (const slug of slugs) {
+    const d = data[slug];
+    const lbl = labelOf[slug] || slug;
+    let r = d ? compareCat(d.history, days) : { active: false };
+    for (let step = 0; step < back && r.active; step++) {
+      r = r.base ? compareCat(d.history, days, r.base) : { active: false };
+    }
+    entries.push({ lbl, d, r });
+    if (r.active) {
+      const t = new Date(r.latestDate).getTime();
+      if (t > columnNewest) columnNewest = t;
+    }
+  }
+
+  // pass 2: build rows + headline weighting, exactly as the default view does
+  const rows = [];
+  let wSum = 0;
+  let wPct = 0;
+  let wNow = 0;
+  let wThen = 0;
+  let primaryBase = null;
+  let primaryLatest = null;
+  let primaryMatched = -1;
+
+  for (const { lbl, d, r } of entries) {
+    if (!r.active) {
+      rows.push({
+        label: lbl,
+        thisValue: null,
+        lastValue: null,
+        changePct: null,
+        direction: 'flat',
+        note: d ? 'no comparable price in this window' : 'could not load',
+      });
+      continue;
+    }
+    const staleDays = columnNewest ? (columnNewest - new Date(r.latestDate).getTime()) / DAY : 0;
+    const noteParts = [];
+    if (r.thin) noteParts.push(`only ${r.matched} priced item${r.matched === 1 ? '' : 's'}`);
+    if (staleDays > STALE_DAYS) noteParts.push(`priced to ${fmtShort(r.latestDate)}`);
+    rows.push({
+      label: lbl,
+      thisValue: r.nowMean,
+      lastValue: r.thenMean,
+      changePct: r.changePct,
+      direction: directionOf(r.changePct),
+      bigMove: r.changePct != null && Math.abs(r.changePct) >= BIG_MOVE,
+      sub: r.brands,
+      note: noteParts.length ? noteParts.join(' · ') : undefined,
+    });
+    // headline weighting: only solid categories (enough matched items AND fresh) — same rule as the default view
+    if (r.changePct != null && noteParts.length === 0) {
+      wSum += r.matched;
+      wPct += r.changePct * r.matched;
+      wNow += r.nowMean * r.matched;
+      wThen += r.thenMean * r.matched;
+      if (r.matched > primaryMatched) {
+        primaryMatched = r.matched;
+        primaryBase = r.baseDate;
+        primaryLatest = r.latestDate;
+      }
+    }
+  }
+
+  for (const u of UNAVAILABLE) {
+    rows.push({ label: u.label, thisValue: null, lastValue: null, changePct: null, direction: 'flat', note: u.note });
+  }
+
+  const active = wSum > 0;
+  const changePct = active ? wPct / wSum : null;
+  const thisValue = active ? wNow / wSum : null;
+  const lastValue = active ? wThen / wSum : null;
+  return {
+    comparison,
+    label,
+    available: active,
+    thisPeriodLabel: primaryLatest ? fmtShort(primaryLatest) : '—',
+    lastPeriodLabel: primaryBase ? fmtShort(primaryBase) : '—',
+    thisValue,
+    lastValue,
+    changePct,
+    changeAbs: thisValue != null && lastValue != null ? thisValue - lastValue : null,
+    direction: directionOf(changePct),
+    bigMove: changePct != null && Math.abs(changePct) >= BIG_MOVE,
+    breakdown: rows,
   };
 }
 
@@ -282,6 +385,24 @@ export async function connect(system) {
       summary,
     };
   });
+
+  // Multi-period series (additive): show the last N periods as columns alongside the existing
+  // single-/two-period headline. The newest column reuses the view just built (so its newest
+  // series point is identical to the view's own headline/rows), and each earlier column steps
+  // one window back per category via buildPeriodViewBack. WoW/MoM get 4 periods, QoQ gets 3;
+  // attachSeries matches product lines + brand subs by label and no-ops with <2 available periods.
+  for (const v of views) {
+    if (!v.available) continue;
+    const period = PERIODS.find((p) => p.comparison === v.comparison);
+    const n = v.comparison === 'QoQ' ? 3 : 4;
+    const periodViews = [v];
+    for (let back = 1; back < n; back++) {
+      periodViews.push(
+        buildPeriodViewBack({ slugs, data, labelOf, days: period.days, comparison: v.comparison, label: v.label }, back)
+      );
+    }
+    attachSeries(v, periodViews);
+  }
 
   const def = views.find((v) => v.comparison === 'MoM' && v.available) || views.find((v) => v.available) || views[1];
 

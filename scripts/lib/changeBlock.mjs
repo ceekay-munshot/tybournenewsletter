@@ -173,6 +173,31 @@ export function attachSeries(latest, viewsNewestFirst) {
     changeAbs: src ? src.changeAbs ?? null : null,
     direction: src ? src.direction ?? directionOf(src.changePct ?? src.changeAbs ?? null) : 'flat',
   });
+  // A value only belongs in the series if it CHAINS to the next period via that period's
+  // change. Like-for-like metrics (Taiwan, Schneider) compare only items present in both
+  // periods, so when the basket shifts (e.g. a late filer drops out) the raw level is no
+  // longer comparable — anchor on the newest value and null any older value that doesn't
+  // chain (and everything older than the break). The honest % change is always kept.
+  const reconcile = (series) => {
+    for (let i = series.length - 2; i >= 0; i--) {
+      const cur = series[i];
+      const next = series[i + 1];
+      if (cur.value == null) continue;
+      if (next.value == null) {
+        cur.value = null;
+        continue;
+      }
+      const pct = next.changePct;
+      const abs = next.changeAbs;
+      let chains = true;
+      if (pct != null && cur.value !== 0) {
+        chains = Math.abs(next.value - cur.value * (1 + pct)) <= Math.abs(next.value) * 0.015 + 1e-9;
+      } else if (abs != null) {
+        chains = Math.abs(next.value - (cur.value + abs)) <= 0.05 + Math.abs(next.value) * 0.005;
+      }
+      if (!chains) cur.value = null;
+    }
+  };
   latest.series = ordered.map((v) => ({
     label: v.thisPeriodLabel,
     value: v.thisValue ?? null,
@@ -180,12 +205,15 @@ export function attachSeries(latest, viewsNewestFirst) {
     changeAbs: v.changeAbs ?? null,
     direction: v.direction ?? 'flat',
   }));
+  reconcile(latest.series);
   for (const r of latest.breakdown || []) {
     r.series = ordered.map((v) => pt(v, (v.breakdown || []).find((x) => x.label === r.label)));
+    reconcile(r.series);
     for (const s of r.sub || []) {
       s.series = ordered.map((v) =>
         pt(v, (v.breakdown || []).find((x) => x.label === r.label)?.sub?.find((y) => y.label === s.label))
       );
+      reconcile(s.series);
     }
   }
 }

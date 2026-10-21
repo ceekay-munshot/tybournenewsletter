@@ -5,7 +5,7 @@
 // from the daily scores.
 import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, monthOf, monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE_PTS = 0.2; // a >=0.2-point move on a 1-5 scale is notable
 const round2 = (n) => (n == null || !Number.isFinite(n) ? null : Math.round(n * 100) / 100);
@@ -85,6 +85,87 @@ export async function connect(system) {
   const topicIds = [...trendTopics];
   const labelOf = {};
   for (const id of topicIds) labelOf[id] = dashTopics[id]?.label || id;
+
+  // Every scored period key for a given window, oldest->newest (same universe + filter as
+  // lastTwoKeys / keyBefore, so the newest pair is exactly the main view's this/last).
+  const allKeys = (keyFn, valFn) => {
+    const seen = new Set();
+    for (const d of days) {
+      const v = valFn(d);
+      if (v == null || !Number.isFinite(v) || !d.date) continue;
+      const k = keyFn(d.date);
+      if (k) seen.add(k);
+    }
+    return [...seen].sort();
+  };
+
+  // Rebuild one window's view for an arbitrary (thisKey, lastKey) pair, in the SAME shape the
+  // main loop produces (overall pts headline + per-topic pts breakdown). Used only to assemble
+  // the last-N-periods series — it carries no prev* (the main loop still owns that). This mirrors
+  // the inline builder exactly, so the newest series point equals the live view's thisValue/change.
+  const buildBaseView = (thisKey, lastKey, comparison, label, keyFn, labelFn) => {
+    if (!thisKey || !lastKey) {
+      return {
+        comparison,
+        label,
+        available: false,
+        unavailableReason: 'Not enough history for this window yet.',
+        thisPeriodLabel: '—',
+        lastPeriodLabel: '—',
+        thisValue: null,
+        lastValue: null,
+        changePct: null,
+        changeAbs: null,
+        changeDisplay: 'pts',
+        direction: 'flat',
+        breakdown: [],
+      };
+    }
+    const oThis = round2(avgIn(days, thisKey, keyFn, (d) => d.overall?.score));
+    const oLast = round2(avgIn(days, lastKey, keyFn, (d) => d.overall?.score));
+    const changeAbs = oThis != null && oLast != null ? round2(oThis - oLast) : null;
+    const rows = topicIds
+      .map((id) => {
+        const t = round2(avgIn(days, thisKey, keyFn, (d) => d.topics?.[id]?.score));
+        const l = round2(avgIn(days, lastKey, keyFn, (d) => d.topics?.[id]?.score));
+        const ca = t != null && l != null ? round2(t - l) : null;
+        return {
+          label: labelOf[id],
+          thisValue: t,
+          lastValue: l,
+          changePct: null,
+          changeAbs: ca,
+          changeDisplay: 'pts',
+          direction: directionOf(ca),
+          bigMove: ca != null && Math.abs(ca) >= BIG_MOVE_PTS,
+        };
+      })
+      .sort((a, b) => Math.abs(b.changeAbs ?? 0) - Math.abs(a.changeAbs ?? 0));
+    const softer = rows.filter((r) => r.direction === 'down').length;
+    const firmer = rows.filter((r) => r.direction === 'up').length;
+    const summary =
+      changeAbs != null
+        ? `${label}-on-${label.toLowerCase()} overall SAP-AI sentiment ${changeAbs >= 0 ? 'up' : 'down'} ${Math.abs(
+            changeAbs
+          ).toFixed(2)} pts to ${oThis?.toFixed(2)}/5 — ${softer} topic${softer === 1 ? '' : 's'} softer, ${firmer} firmer.`
+        : undefined;
+    return {
+      comparison,
+      label,
+      available: changeAbs != null,
+      thisPeriodLabel: labelFn(thisKey),
+      lastPeriodLabel: labelFn(lastKey),
+      thisValue: oThis,
+      lastValue: oLast,
+      changePct: null,
+      changeAbs,
+      changeDisplay: 'pts',
+      direction: directionOf(changeAbs),
+      bigMove: changeAbs != null && Math.abs(changeAbs) >= BIG_MOVE_PTS,
+      breakdown: rows,
+      summary,
+    };
+  };
 
   const views = PERIODS.map(({ comparison, label, keyFn, labelFn }) => {
     const [thisKey, lastKey] = lastTwoKeys(days, keyFn, (d) => d.overall?.score);
@@ -188,6 +269,24 @@ export async function connect(system) {
       summary,
     };
   });
+
+  // last-N periods as a series (value + pts change per column), additive — matched by label,
+  // newest-first (view k = keys[last-k] vs keys[last-k-1]). WoW/MoM show 4 columns, QoQ 3;
+  // attachSeries no-ops a window with fewer than 2 scored periods.
+  const SERIES_N = { WoW: 4, MoM: 4, QoQ: 3 };
+  for (const { comparison, label, keyFn, labelFn } of PERIODS) {
+    const view = views.find((v) => v.comparison === comparison);
+    if (!view || !view.available) continue;
+    const keys = allKeys(keyFn, (d) => d.overall?.score);
+    const vs = [];
+    for (let k = 0; k < (SERIES_N[comparison] ?? 4); k++) {
+      const ti = keys.length - 1 - k;
+      const li = ti - 1;
+      if (li < 0) break;
+      vs.push(buildBaseView(keys[ti], keys[li], comparison, label, keyFn, labelFn));
+    }
+    attachSeries(view, vs);
+  }
 
   const def = views.find((v) => v.comparison === 'MoM' && v.available) || views.find((v) => v.available) || views[1];
 

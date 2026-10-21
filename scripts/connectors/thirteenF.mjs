@@ -11,7 +11,7 @@
 // mechanical churn doesn't swamp the concentrated managers' conviction signal.
 import { getJson, getText } from '../lib/http.mjs';
 import { quarterOf, quarterLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachSeries } from '../lib/changeBlock.mjs';
 
 const NUVEEN_CIK = '0001871926';
 const MIN_CONSENSUS = 3; // held by >=3 watchlist funds
@@ -132,43 +132,114 @@ export async function connect(system) {
       )
     ).filter(Boolean);
 
+  // ---- reusable builders (so the main QoQ view AND the back-quarter series views that
+  // feed attachSeries are built by the SAME logic) ----
+  // consensus vote + Nuveen-robust headline pp from a quarter's resolved funds.
+  const buildConsensus = (fundsFor) => {
+    const byTicker = new Map();
+    for (const f of fundsFor) {
+      for (const h of f.holdings) {
+        const e = byTicker.get(h.ticker) || { ticker: h.ticker, name: h.name, sector: sectorOf(h.ticker), holders: [] };
+        e.holders.push({ fund: f.name, action: h.action, dWeightPp: h.dWeightPp ?? null, weight: h.weight ?? null });
+        byTicker.set(h.ticker, e);
+      }
+    }
+    const consensus = [...byTicker.values()]
+      .filter((e) => e.holders.length >= MIN_CONSENSUS)
+      .map((e) => {
+        const adds = e.holders.filter((h) => BUY.has(h.action)).length;
+        const trims = e.holders.filter((h) => TRIM.has(h.action)).length;
+        const avgPp = median(e.holders.map((h) => h.dWeightPp).filter((v) => v != null));
+        return { ...e, n: e.holders.length, adds, trims, avgPp: avgPp ?? 0 };
+      })
+      .sort((a, b) => b.n - a.n || Math.abs(b.avgPp) - Math.abs(a.avgPp));
+    const consensusTickers = new Set(consensus.map((c) => c.ticker));
+    const convPps = [];
+    for (const f of fundsFor) {
+      if (f.isNuveen) continue;
+      for (const h of f.holdings) {
+        if (consensusTickers.has(h.ticker) && h.dWeightPp != null) convPps.push(h.dWeightPp);
+      }
+    }
+    const headlinePp = convPps.length
+      ? convPps.reduce((a, b) => a + b, 0) / convPps.length
+      : median(consensus.map((c) => c.avgPp));
+    return { consensus, consensusTickers, headlinePp };
+  };
+
+  // consensus-name breakdown rows (+ per-fund subs). priorByTicker (optional) adds the
+  // one-quarter-back prev* onto each row/sub; omit it for the throwaway series views.
+  const buildBreakdown = (consensus, priorByTicker = null) =>
+    consensus.slice(0, TOP_N).map((c) => {
+      const prior = priorByTicker?.get(c.ticker);
+      const prevAvg = prior && prior.vals.length ? median(prior.vals) : null;
+      const subs = c.holders
+        .filter((h) => h.dWeightPp != null)
+        .sort((a, b) => Math.abs(b.dWeightPp) - Math.abs(a.dWeightPp))
+        .slice(0, 6)
+        .map((h) => {
+          const pv = prior?.perFund.get(h.fund);
+          return {
+            label: h.fund,
+            thisValue: null,
+            lastValue: null,
+            changePct: null,
+            changeAbs: h.dWeightPp,
+            changeDisplay: 'pp',
+            direction: directionOf(h.dWeightPp),
+            prevChangeAbs: pv ?? null,
+            prevDirection: directionOf(pv ?? null),
+          };
+        });
+      return {
+        label: c.ticker,
+        thisValue: null,
+        lastValue: null,
+        changePct: null,
+        changeAbs: c.avgPp,
+        changeDisplay: 'pp',
+        direction: directionOf(c.avgPp),
+        prevChangeAbs: prevAvg,
+        prevDirection: directionOf(prevAvg),
+        bigMove: Math.abs(c.avgPp) >= BIG_PP || (c.n >= 5 && (c.trims === c.n || c.adds === c.n)),
+        note: `${c.n} funds · ${c.adds} adding / ${c.trims} trimming${c.sector ? ` · ${c.sector}` : ''}`,
+        sub: subs,
+      };
+    });
+
+  // a full QoQ view (headline + consensus breakdown rows + per-fund subs) from an
+  // already-computed consensus, and the async fetch-and-build for a given quarter.
+  const makeQoQView = (consensus, headlinePp, period, priorP) => ({
+    comparison: 'QoQ',
+    label: 'Quarter',
+    available: headlinePp != null,
+    thisPeriodLabel: quarterLabel(quarterOf(period)),
+    lastPeriodLabel: priorP ? quarterLabel(quarterOf(priorP)) : '—',
+    thisValue: null,
+    lastValue: null,
+    changePct: null,
+    changeAbs: headlinePp,
+    changeDisplay: 'pp',
+    direction: directionOf(headlinePp),
+    breakdown: buildBreakdown(consensus),
+  });
+  const viewForPeriod = async (period, priorP) => {
+    if (!period) return null;
+    const fs = await fetchFundsFor(period);
+    if (!fs.length) return null;
+    const { consensus, headlinePp } = buildConsensus(fs);
+    return makeQoQView(consensus, headlinePp, period, priorP);
+  };
+
   const funds = await fetchFundsFor(target);
   if (!funds.length) throw new Error('no watchlist holdings resolved for the target quarter');
   const nFunds = funds.length;
 
-  // ---- consensus: ticker -> which funds hold it, their action + weight move ----
-  const byTicker = new Map();
-  for (const f of funds) {
-    for (const h of f.holdings) {
-      const e = byTicker.get(h.ticker) || { ticker: h.ticker, name: h.name, sector: sectorOf(h.ticker), holders: [] };
-      e.holders.push({ fund: f.name, action: h.action, dWeightPp: h.dWeightPp ?? null, weight: h.weight ?? null });
-      byTicker.set(h.ticker, e);
-    }
-  }
-  const consensus = [...byTicker.values()]
-    .filter((e) => e.holders.length >= MIN_CONSENSUS)
-    .map((e) => {
-      const adds = e.holders.filter((h) => BUY.has(h.action)).length;
-      const trims = e.holders.filter((h) => TRIM.has(h.action)).length;
-      const avgPp = median(e.holders.map((h) => h.dWeightPp).filter((v) => v != null));
-      return { ...e, n: e.holders.length, adds, trims, avgPp: avgPp ?? 0 };
-    })
-    .sort((a, b) => b.n - a.n || Math.abs(b.avgPp) - Math.abs(a.avgPp));
-
+  // ---- consensus vote + Nuveen-robust headline pp for the target quarter ----
   // headline = the average weight move across every concentrated-manager position in a
   // consensus name (ex-Nuveen) — a Nuveen-robust read on whether these shared high-conviction
   // names are, on balance, being added to or trimmed this quarter.
-  const consensusTickers = new Set(consensus.map((c) => c.ticker));
-  const convPps = [];
-  for (const f of funds) {
-    if (f.isNuveen) continue;
-    for (const h of f.holdings) {
-      if (consensusTickers.has(h.ticker) && h.dWeightPp != null) convPps.push(h.dWeightPp);
-    }
-  }
-  const headlinePp = convPps.length
-    ? convPps.reduce((a, b) => a + b, 0) / convPps.length
-    : median(consensus.map((c) => c.avgPp));
+  const { consensus, consensusTickers, headlinePp } = buildConsensus(funds);
 
   // ---- prior quarter (one step back) for the two-period trend ----
   // The target quarter's holdings carry dWeightPp = prior→target move; the quarter BEFORE
@@ -196,42 +267,7 @@ export async function connect(system) {
     priorHeadlinePp = pp.length ? pp.reduce((a, b) => a + b, 0) / pp.length : null;
   }
 
-  const breakdown = consensus.slice(0, TOP_N).map((c) => {
-    const prior = priorByTicker.get(c.ticker);
-    const prevAvg = prior && prior.vals.length ? median(prior.vals) : null;
-    const subs = c.holders
-      .filter((h) => h.dWeightPp != null)
-      .sort((a, b) => Math.abs(b.dWeightPp) - Math.abs(a.dWeightPp))
-      .slice(0, 6)
-      .map((h) => {
-        const pv = prior?.perFund.get(h.fund);
-        return {
-          label: h.fund,
-          thisValue: null,
-          lastValue: null,
-          changePct: null,
-          changeAbs: h.dWeightPp,
-          changeDisplay: 'pp',
-          direction: directionOf(h.dWeightPp),
-          prevChangeAbs: pv ?? null,
-          prevDirection: directionOf(pv ?? null),
-        };
-      });
-    return {
-      label: c.ticker,
-      thisValue: null,
-      lastValue: null,
-      changePct: null,
-      changeAbs: c.avgPp,
-      changeDisplay: 'pp',
-      direction: directionOf(c.avgPp),
-      prevChangeAbs: prevAvg,
-      prevDirection: directionOf(prevAvg),
-      bigMove: Math.abs(c.avgPp) >= BIG_PP || (c.n >= 5 && (c.trims === c.n || c.adds === c.n)),
-      note: `${c.n} funds · ${c.adds} adding / ${c.trims} trimming${c.sector ? ` · ${c.sector}` : ''}`,
-      sub: subs,
-    };
-  });
+  const breakdown = buildBreakdown(consensus, priorByTicker);
 
   // ---- sector $ flows (ex-Nuveen, to isolate the concentrated managers' rotation) ----
   const secFlow = new Map();
@@ -373,6 +409,20 @@ export async function connect(system) {
       headlinePp == null ? 'little changed' : headlinePp >= 0 ? `added to (typical ${pp(headlinePp)})` : `trimmed (typical ${pp(headlinePp)})`
     } — ${buys.length} building conviction, ${sells.length} being lightened. Most-owned: ${consensus.slice(0, 3).map((c) => `${c.ticker} (${c.n})`).join(', ')}.`,
   };
+
+  // ---- last 3 quarters as a series (change-only pp columns) ----
+  // Each quarter's holdings carry dWeightPp = (prior quarter → that quarter), so the QoQ view
+  // for quarter P is built from fetchFundsFor(P). Target reuses the consensus already computed;
+  // prior/prev are fetched and built by the same logic. Any older quarter that can't be
+  // resolved returns null and simply drops out (attachSeries then no-ops or partials — honest).
+  const prevPrevPeriod = prevPeriod ? periodsDesc.filter((p) => p < prevPeriod)[0] || null : null;
+  const seriesViews = [
+    makeQoQView(consensus, headlinePp, target, priorPeriod),
+    await viewForPeriod(priorPeriod, prevPeriod),
+    await viewForPeriod(prevPeriod, prevPrevPeriod),
+  ];
+  attachSeries(qoqView, seriesViews);
+
   const views = [
     unavailable('WoW', 'Week', '13F positions are disclosed quarterly — there is no weekly view.'),
     unavailable('MoM', 'Month', '13F positions are disclosed quarterly — there is no monthly view.'),

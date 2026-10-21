@@ -5,7 +5,7 @@
 // (e.g. DeepSeek's big input-price cut). Output price is carried in the summary.
 import { getJson } from '../lib/http.mjs';
 import { quarterLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachSeries } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE = 0.05; // list prices are sticky — a >=5% move is a real cut/hike
 
@@ -110,6 +110,53 @@ export async function connect(system) {
     row.prevDirection = directionOf(pq);
     row.prevValue = row.lastValue != null && 1 + pq !== 0 ? row.lastValue / (1 + pq) : null;
   }
+
+  // last-3 quarters as a series (QoQ value + change per column), additive — one column per
+  // quarter, newest-first. Built the SAME way the headline/rows above are derived, just stepped
+  // back: headline from the clean basket series (qIn[i] vs qIn[i+1]); per-provider rows from that
+  // quarter's own sig.quarters[i] (avg + reported priceQoq), so index i=0 reproduces the live view.
+  // attachSeries matches rows by label (a provider missing from an older quarter simply has no
+  // point there) and no-ops below 2 quarters.
+  const buildQoqView = (i) => {
+    const tQ = qIn[i];
+    const lQ = qIn[i + 1];
+    const q = tQ.avg != null && lQ.avg ? (tQ.avg - lQ.avg) / lQ.avg : (tQ.qoq ?? null);
+    const rws = (sig?.quarters?.[i]?.rows || [])
+      .map((r) => {
+        const rq = r.priceQoq ?? null;
+        const avg = r.avg ?? null;
+        const last = avg != null && rq != null && 1 + rq !== 0 ? avg / (1 + rq) : null;
+        return {
+          label: r.label || r.slug,
+          thisValue: avg,
+          lastValue: last,
+          changePct: rq,
+          direction: directionOf(rq),
+          bigMove: rq != null && Math.abs(rq) >= BIG_MOVE,
+        };
+      })
+      .sort((a, b) => Math.abs(b.changePct ?? 0) - Math.abs(a.changePct ?? 0));
+    return {
+      comparison: 'QoQ',
+      label: 'Quarter',
+      available: true,
+      thisPeriodLabel: quarterLabel(tQ.id) + (tQ.partial ? ' (QTD)' : ''),
+      lastPeriodLabel: quarterLabel(lQ.id),
+      thisValue: tQ.avg ?? null,
+      lastValue: lQ.avg ?? null,
+      changePct: q,
+      changeAbs: tQ.avg != null && lQ.avg != null ? tQ.avg - lQ.avg : null,
+      direction: directionOf(q),
+      bigMove: q != null && Math.abs(q) >= BIG_MOVE,
+      breakdown: rws,
+    };
+  };
+  const qoqSeries = [];
+  for (let i = 0; i < 3; i++) {
+    if (!qIn[i] || !qIn[i + 1]) break;
+    qoqSeries.push(buildQoqView(i));
+  }
+  attachSeries(qoqView, qoqSeries);
 
   const views = [
     flatView('WoW', 'Week', 'No weekly model-price series.'),

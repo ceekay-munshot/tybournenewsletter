@@ -4,7 +4,7 @@
 // each as this-month vs last-month (with the current month flagged MTD).
 import { getJson } from '../lib/http.mjs';
 import { quarterLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE = 0.02;
 const SKU_ORDER = ['Nvidia H100', 'Nvidia H200', 'Nvidia B200', 'Nvidia GB200', 'Nvidia A100', 'Nvidia L40S'];
@@ -111,6 +111,13 @@ export async function connect(system) {
   attachPriorView(monthly, seriesView(d.monthly.series, 'MoM', 'Month', (e) => e?.label, 1));
   const quarterly = seriesView(d.quarterly?.series, 'QoQ', 'Quarter', (e) => (e?.period ? quarterLabel(e.period) : e?.label));
   attachPriorView(quarterly, seriesView(d.quarterly?.series, 'QoQ', 'Quarter', (e) => (e?.period ? quarterLabel(e.period) : e?.label), 1));
+  // last up-to-4 months / up-to-3 quarters as a per-period series (value + change columns),
+  // additive to the two-period prev* trend above. Reuses seriesView at a back offset (newest
+  // first); attachSeries matches rows by SKU label and no-ops with <2 available periods.
+  const momLabel = (e) => e?.label;
+  const qtrLabel = (e) => (e?.period ? quarterLabel(e.period) : e?.label);
+  if (monthly.available) attachSeries(monthly, [0, 1, 2, 3].map((back) => seriesView(d.monthly.series, 'MoM', 'Month', momLabel, back)));
+  if (quarterly.available) attachSeries(quarterly, [0, 1, 2].map((back) => seriesView(d.quarterly?.series, 'QoQ', 'Quarter', qtrLabel, back)));
   const views = [
     unavail('WoW', 'Week', 'GPU rental is tracked monthly here — no weekly series.'),
     monthly,

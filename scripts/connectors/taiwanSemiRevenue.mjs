@@ -8,7 +8,7 @@
 // EXCLUDE Wiwynn (ticker 6669) — it consolidates into Wistron and would double-count.
 import { getJson } from '../lib/http.mjs';
 import { monthLabel, quarterLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const isWiwynn = (r) => String(r.ticker) === '6669' || /wiwynn/i.test(r.company_name || r.display_name || '');
 const toBn = (thousands) => (thousands == null ? null : thousands / 1e6); // TWD thousands -> TWD bn
@@ -326,6 +326,11 @@ export async function connect(system) {
   const qoqView = buildQoQView(rows);
   // one real step back (lastQ vs the quarter before it), so the table shows two consecutive quarters
   if (qoqView.available) attachPriorTrend(qoqView, buildQoQView(rows, 1));
+  // last up-to-4 months / up-to-3 quarters as a per-period series (value + change columns),
+  // additive to the two-period prev* trend above. Reuses the same view-builders at a back
+  // offset (newest first); attachSeries matches rows by label and no-ops with <2 available periods.
+  if (momView.available) attachSeries(momView, [0, 1, 2, 3].map((back) => buildMoMView(heatmap, back)));
+  if (qoqView.available) attachSeries(qoqView, [0, 1, 2].map((back) => buildQoQView(rows, back)));
   const views = [
     unavailable('WoW', 'Week', 'Taiwan issuers file revenue monthly — there is no weekly series.'),
     momView,

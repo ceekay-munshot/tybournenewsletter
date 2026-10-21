@@ -7,7 +7,7 @@
 // surfaced in "Why it moved".
 import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, monthOf, monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, pctChange, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, pctChange, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const PROV_LABEL = {
   openai: 'OpenAI',
@@ -147,6 +147,22 @@ function attachPrior(latest, buckets, keys, comparison, label, labelFn) {
   latest.prevDirection = prior.direction;
 }
 
+// Build the last-N period-views NEWEST-FIRST (view k = keys[last-k] vs keys[last-k-1]) so the
+// table can show one column per period. Reuses buildView, so each column is the SAME shape as
+// the live view (full breakdown with volume + share). attachSeries matches rows across periods
+// by label (so the shifting-membership "Others" row simply carries points only where it exists)
+// and no-ops below 2 available views. `keys` are oldest->first, as the existing code sorts them.
+function seriesViews(buckets, keys, comparison, label, labelFn, n) {
+  const vs = [];
+  for (let k = 0; k < n; k++) {
+    const ti = keys.length - 1 - k;
+    const li = ti - 1;
+    if (li < 0) break;
+    vs.push(buildView(buckets, keys[ti], keys[li], comparison, label, labelFn(keys[ti]), labelFn(keys[li])));
+  }
+  return vs;
+}
+
 function provRow(p, tv, lv, tTotal, lTotal) {
   const volc = pctChange(tv, lv);
   const ts = tTotal ? (tv / tTotal) * 100 : null;
@@ -270,6 +286,7 @@ export async function connect(system) {
   const lM = completeMonths[completeMonths.length - 2];
   const momView = buildView(months, tM, lM, 'MoM', 'Month', monthLabel(tM), monthLabel(lM));
   attachPrior(momView, months, completeMonths, 'MoM', 'Month', monthLabel);
+  attachSeries(momView, seriesViews(months, completeMonths, 'MoM', 'Month', monthLabel, 4));
 
   // --- WoW: the last two fully-reported (non-partial) weeks ---
   const fullWeeks = weeks.filter((w) => !w.partial).sort((a, b) => String(a.start).localeCompare(String(b.start)));
@@ -279,6 +296,7 @@ export async function connect(system) {
   const lW = wkKeys[wkKeys.length - 2];
   const wowView = buildView(wkBuckets, tW, lW, 'WoW', 'Week', wkLabel(tW), wkLabel(lW));
   attachPrior(wowView, wkBuckets, wkKeys, 'WoW', 'Week', wkLabel);
+  attachSeries(wowView, seriesViews(wkBuckets, wkKeys, 'WoW', 'Week', wkLabel, 4));
 
   // --- QoQ: complete calendar quarters (>=12 weeks) ---
   const quarters = bucketWeeks(weeks, (w) => quarterOf(w.start));
@@ -287,6 +305,7 @@ export async function connect(system) {
   const lQ = completeQ[completeQ.length - 2];
   const qoqView = buildView(quarters, tQ, lQ, 'QoQ', 'Quarter', quarterLabel(tQ), quarterLabel(lQ));
   attachPrior(qoqView, quarters, completeQ, 'QoQ', 'Quarter', quarterLabel);
+  attachSeries(qoqView, seriesViews(quarters, completeQ, 'QoQ', 'Quarter', quarterLabel, 3));
 
   const views = [wowView, momView, qoqView];
   const def = momView.available ? momView : qoqView.available ? qoqView : wowView.available ? wowView : views[1];

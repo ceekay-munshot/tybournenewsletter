@@ -152,7 +152,7 @@ export async function connect(system) {
       }
     }
     // last 4 periods as a series (value + change columns)
-    if (latest.available) attachSeries(latest, arr, p.comparison, p.label, 4);
+    if (latest.available) attachSeries4(latest, arr, p.comparison, p.label, 4);
     return latest;
   });
   const def = views.find((v) => v.comparison === 'MoM' && v.available) || views.find((v) => v.available) || views[1];

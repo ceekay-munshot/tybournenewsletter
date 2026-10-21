@@ -11,7 +11,7 @@ import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const GRAPH = ['loans.ts', 'datasets.ts', 'absolutes.ts', 'ifdata.ts', 'bcb.ts'];
 const isQuarter = (p) => /^[1-4]Q\d{2}$/.test(p);
@@ -200,6 +200,51 @@ export async function connect(system) {
       qoqView.prevChangeAbs = prevAbs;
       qoqView.prevDirection = directionOf(prevAbs);
     }
+
+    // ---- last 3 quarters as a series (change-only pp columns) ----
+    // Rebuild the full QoQ view at back = 0, 1, 2 (newest first) with the same lastTwoQ
+    // logic the headline/breakdown use, then attach. attachSeries matches issuers by label.
+    const buildQoQView = (back) => {
+      const c = lastTwoQ(mod.creditCardShare, 'Nu', back);
+      if (!c) return null;
+      const hAbs = round2(c.thisValue - c.lastValue);
+      const bd = (mod.creditCardShare.series || [])
+        .map((s) => {
+          const t = lastTwoQ(mod.creditCardShare, s.name, back);
+          if (!t) return null;
+          const ca = round2(t.thisValue - t.lastValue);
+          return {
+            label: s.name,
+            thisValue: t.thisValue,
+            lastValue: t.lastValue,
+            changePct: null,
+            changeAbs: ca,
+            changeDisplay: 'pp',
+            direction: directionOf(ca),
+            bigMove: ca != null && Math.abs(ca) >= 0.3,
+            note: s.name === 'Nu' ? 'Nubank' : undefined,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => (b.thisValue ?? 0) - (a.thisValue ?? 0));
+      return {
+        comparison: 'QoQ',
+        label: 'Quarter',
+        available: true,
+        thisPeriodLabel: qLabel(c.thisPeriod),
+        lastPeriodLabel: qLabel(c.lastPeriod),
+        thisValue: c.thisValue,
+        lastValue: c.lastValue,
+        changePct: null,
+        changeAbs: hAbs,
+        changeDisplay: 'pp',
+        direction: directionOf(hAbs),
+        bigMove: hAbs != null && Math.abs(hAbs) >= 0.3,
+        breakdown: bd,
+      };
+    };
+    attachSeries(qoqView, [buildQoQView(0), buildQoQView(1), buildQoQView(2)]);
+
     const unavailable = (comparison, label) => ({
       comparison,
       label,
