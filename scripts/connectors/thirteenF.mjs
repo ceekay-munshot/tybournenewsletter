@@ -311,6 +311,47 @@ export async function connect(system) {
     });
   }
 
+  // ---- supporting tables (sector flows + entries/exits) — surfaced as tables now that
+  // the narrative "why it moved" card is gone from non-SAP dashboards ----
+  const auxTables = [];
+  if (sectorRanked.length) {
+    auxTables.push({
+      title: 'Sector flows — net $ rotated this quarter',
+      subtitle: 'Net dollars the concentrated managers moved in / out by sector (ex-Nuveen).',
+      headers: ['Sector', 'Net $ flow'],
+      rows: sectorRanked.slice(0, 12).map((x) => [
+        { text: x.s },
+        { text: `${x.v >= 0 ? '+' : ''}${fmtUsd(x.v)}`, tone: directionOf(x.v) },
+      ]),
+    });
+  }
+  if (entries.length) {
+    auxTables.push({
+      title: 'New positions this quarter',
+      subtitle: 'Watchlist managers opening a brand-new position (ex-Nuveen).',
+      headers: ['Fund', 'Ticker', 'Weight'],
+      align: ['left', 'left', 'right'],
+      rows: entries.slice(0, 10).map((e) => [
+        { text: e.fund },
+        { text: e.ticker, bold: true },
+        { text: e.weight ? `${e.weight.toFixed(1)}%` : '—', tone: 'up' },
+      ]),
+    });
+  }
+  if (exits.length) {
+    auxTables.push({
+      title: 'Exits this quarter',
+      subtitle: 'Watchlist managers fully exiting a position (ex-Nuveen).',
+      headers: ['Fund', 'Ticker', 'Was'],
+      align: ['left', 'left', 'right'],
+      rows: exits.slice(0, 10).map((e) => [
+        { text: e.fund },
+        { text: e.ticker, bold: true },
+        { text: e.weightPrior ? `${e.weightPrior.toFixed(1)}%` : '—', tone: 'down' },
+      ]),
+    });
+  }
+
   const qoqView = {
     comparison: 'QoQ',
     label: 'Quarter',
@@ -362,5 +403,6 @@ export async function connect(system) {
   block.subNoun = 'fund';
   block.changeNoun = 'Avg weight change';
   block.insights = insights;
+  block.auxTables = auxTables;
   return block;
 }

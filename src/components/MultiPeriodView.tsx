@@ -3,6 +3,7 @@ import { ChevronLeft, Clock, Zap, Quote } from 'lucide-react';
 import type { ChangeBlock, BreakdownRow, Comparison } from '../types';
 import { Card, CardHeader, Badge } from './ui/Card';
 import { Segmented } from './ui/Controls';
+import { AuxTableCard } from './AuxTableCard';
 import { iconFor } from '../lib/icons';
 import { sectorColor, directionColor } from '../lib/brand';
 import { fmtValue, dateLabel, headlineText } from '../lib/format';
@@ -184,6 +185,10 @@ export function MultiPeriodView({
           </Card>
         </>
       )}
+
+      {block.auxTables?.map((t, i) => (
+        <AuxTableCard key={i} table={t} />
+      ))}
 
       {block.systemId === 'sap-ai' && block.insights && block.insights.length > 0 && (
         <Card className="mb-4" accent={accent}>

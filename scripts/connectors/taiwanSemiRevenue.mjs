@@ -340,6 +340,40 @@ export async function connect(system) {
   const freshness = Array.isArray(meta?.freshness) ? meta.freshness.find((f) => f.month === latestMonth) : null;
   const asOf = freshness?.last_seen_utc || `${latestMonth}-01`;
 
+  // accelerating / decelerating companies (YoY, latest month) — surfaced as tables now
+  // that the narrative "why it moved" card is gone from non-SAP dashboards.
+  const auxTables = [];
+  const accelRows = rows
+    .filter((r) => r.month === latestMonth && r.yoy_acceleration_ppt != null)
+    .sort((a, b) => b.yoy_acceleration_ppt - a.yoy_acceleration_ppt);
+  if (accelRows.length >= 2) {
+    const mk = (r) => [
+      { text: r.company_name },
+      { text: shortStage(r.bucket) },
+      {
+        text: `${r.yoy_acceleration_ppt >= 0 ? '+' : ''}${r.yoy_acceleration_ppt.toFixed(0)}ppt`,
+        tone: r.yoy_acceleration_ppt >= 0 ? 'up' : 'down',
+      },
+      { text: r.yoy_pct != null ? `${r.yoy_pct >= 0 ? '+' : ''}${r.yoy_pct.toFixed(0)}%` : '—' },
+    ];
+    const headers = ['Company', 'Stage', 'YoY accel', 'YoY growth'];
+    const align = ['left', 'left', 'right', 'right'];
+    auxTables.push({
+      title: `Accelerating — fastest YoY pickup (${latestMonth})`,
+      subtitle: 'Companies whose year-on-year growth accelerated most this month, by stage.',
+      headers,
+      align,
+      rows: accelRows.slice(0, 6).map(mk),
+    });
+    auxTables.push({
+      title: `Decelerating — fastest YoY fade (${latestMonth})`,
+      subtitle: 'Companies whose year-on-year growth decelerated most this month, by stage.',
+      headers,
+      align,
+      rows: accelRows.slice(-6).reverse().map(mk),
+    });
+  }
+
   // strip internal scratch fields before emitting
   for (const v of views) {
     delete v._latestMonth;
@@ -366,5 +400,6 @@ export async function connect(system) {
   block.breakdownNoun = 'supply-chain stage';
   block.changeNoun = 'Revenue change';
   block.insights = insights;
+  block.auxTables = auxTables;
   return block;
 }

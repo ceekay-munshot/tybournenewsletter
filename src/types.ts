@@ -34,6 +34,25 @@ export interface TrendPoint {
   value: number;
 }
 
+/** One cell in a supporting table — pre-formatted text plus optional direction colour. */
+export interface AuxCell {
+  text: string;
+  tone?: Direction;
+  bold?: boolean;
+}
+
+/** A generic supporting table rendered as a bordered table under the main breakdown
+ *  (e.g. 13F sector flows / entries / exits, Taiwan accelerating vs decelerating).
+ *  Cells are pre-formatted in the connector so the renderer stays dumb. */
+export interface AuxTable {
+  title: string;
+  subtitle?: string;
+  headers: string[];
+  /** Per-column alignment; defaults to left for column 0, right for the rest. */
+  align?: ('left' | 'right')[];
+  rows: AuxCell[][];
+}
+
 /** A lifted narrative insight (e.g. SAP's "why sentiment moved" key findings,
  *  or a one-line standout read), with an honest "as of" date for staleness. */
 export interface InsightItem {
@@ -119,6 +138,9 @@ export interface ChangeBlock {
   breakdownSubtitle?: string;
   /** Lifted narrative ("why it moved") — shown as cards in the multi-period view. */
   insights?: InsightItem[];
+  /** Supporting tables rendered under the main breakdown (sector flows, entries/exits,
+   *  accelerating vs decelerating, etc.). */
+  auxTables?: AuxTable[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:43:07.493Z",
+  "generatedAt": "2026-10-21T16:54:22.235Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -996,6 +996,224 @@
             "Decelerating: Quanta -101ppt (Rack / ODM, YoY 77%); Wistron -79ppt (Rack / ODM, YoY 87%); Auras -44ppt (Thermal, YoY 23%)"
           ],
           "asOf": "2026-09-01"
+        }
+      ],
+      "auxTables": [
+        {
+          "title": "Accelerating — fastest YoY pickup (2026-09)",
+          "subtitle": "Companies whose year-on-year growth accelerated most this month, by stage.",
+          "headers": [
+            "Company",
+            "Stage",
+            "YoY accel",
+            "YoY growth"
+          ],
+          "align": [
+            "left",
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Alchip"
+              },
+              {
+                "text": "AI Silicon"
+              },
+              {
+                "text": "+222ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+496%"
+              }
+            ],
+            [
+              {
+                "text": "Elite Material"
+              },
+              {
+                "text": "Substrate / AI PCB"
+              },
+              {
+                "text": "+39ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+169%"
+              }
+            ],
+            [
+              {
+                "text": "Inventec"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "+27ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+63%"
+              }
+            ],
+            [
+              {
+                "text": "Gigabyte"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "+27ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+125%"
+              }
+            ],
+            [
+              {
+                "text": "Gudeng"
+              },
+              {
+                "text": "Semi Equip / Consumables"
+              },
+              {
+                "text": "+18ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+68%"
+              }
+            ],
+            [
+              {
+                "text": "PSMC"
+              },
+              {
+                "text": "Legacy / Mature Node"
+              },
+              {
+                "text": "+18ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+94%"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Decelerating — fastest YoY fade (2026-09)",
+          "subtitle": "Companies whose year-on-year growth decelerated most this month, by stage.",
+          "headers": [
+            "Company",
+            "Stage",
+            "YoY accel",
+            "YoY growth"
+          ],
+          "align": [
+            "left",
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Quanta"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "-101ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+77%"
+              }
+            ],
+            [
+              {
+                "text": "Wistron"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "-79ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+87%"
+              }
+            ],
+            [
+              {
+                "text": "Auras"
+              },
+              {
+                "text": "Thermal"
+              },
+              {
+                "text": "-44ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+23%"
+              }
+            ],
+            [
+              {
+                "text": "VIS"
+              },
+              {
+                "text": "Legacy / Mature Node"
+              },
+              {
+                "text": "-25ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+16%"
+              }
+            ],
+            [
+              {
+                "text": "Gold Circuit Electronics"
+              },
+              {
+                "text": "Substrate / AI PCB"
+              },
+              {
+                "text": "-21ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+55%"
+              }
+            ],
+            [
+              {
+                "text": "Chipbond"
+              },
+              {
+                "text": "Adv Packaging / Test"
+              },
+              {
+                "text": "-16ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+28%"
+              }
+            ]
+          ]
         }
       ],
       "prevLabel": "Jul '26",
@@ -4028,6 +4246,418 @@
           "body": "Nuveen is a large diversified manager (~3,735 positions). Per the client it stays in — it counts as one fund in the consensus vote above — but its mechanical position churn is kept out of the dollar-flow and single-fund-move totals so it doesn't swamp the concentrated managers' signal."
         }
       ],
+      "auxTables": [
+        {
+          "title": "Sector flows — net $ rotated this quarter",
+          "subtitle": "Net dollars the concentrated managers moved in / out by sector (ex-Nuveen).",
+          "headers": [
+            "Sector",
+            "Net $ flow"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Software & IT Services"
+              },
+              {
+                "text": "+$21.2B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Banks & Lending"
+              },
+              {
+                "text": "+$8.3B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Computers & Hardware"
+              },
+              {
+                "text": "+$8.1B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Energy"
+              },
+              {
+                "text": "$-7.8B",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Electronics & Instruments"
+              },
+              {
+                "text": "+$4.2B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Semiconductors"
+              },
+              {
+                "text": "$-3.1B",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Transport & Logistics"
+              },
+              {
+                "text": "+$3.0B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Capital Markets"
+              },
+              {
+                "text": "$-2.8B",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Health Care"
+              },
+              {
+                "text": "+$2.2B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Industrials"
+              },
+              {
+                "text": "+$1.6B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Consumer Staples"
+              },
+              {
+                "text": "+$1.0B",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Real Estate"
+              },
+              {
+                "text": "$-928M",
+                "tone": "down"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "New positions this quarter",
+          "subtitle": "Watchlist managers opening a brand-new position (ex-Nuveen).",
+          "headers": [
+            "Fund",
+            "Ticker",
+            "Weight"
+          ],
+          "align": [
+            "left",
+            "left",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Aspex"
+              },
+              {
+                "text": "QCOM",
+                "bold": true
+              },
+              {
+                "text": "13.2%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "SurgoCap"
+              },
+              {
+                "text": "INTC",
+                "bold": true
+              },
+              {
+                "text": "8.3%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "NBIS",
+                "bold": true
+              },
+              {
+                "text": "7.2%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Avantyr"
+              },
+              {
+                "text": "MSGS",
+                "bold": true
+              },
+              {
+                "text": "6.9%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "STX",
+                "bold": true
+              },
+              {
+                "text": "5.9%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "HD",
+                "bold": true
+              },
+              {
+                "text": "5.6%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Foxhaven"
+              },
+              {
+                "text": "NVDA",
+                "bold": true
+              },
+              {
+                "text": "5.4%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "AMAT",
+                "bold": true
+              },
+              {
+                "text": "5.3%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "LIN",
+                "bold": true
+              },
+              {
+                "text": "4.9%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "SurgoCap"
+              },
+              {
+                "text": "AGX",
+                "bold": true
+              },
+              {
+                "text": "3.9%",
+                "tone": "up"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Exits this quarter",
+          "subtitle": "Watchlist managers fully exiting a position (ex-Nuveen).",
+          "headers": [
+            "Fund",
+            "Ticker",
+            "Was"
+          ],
+          "align": [
+            "left",
+            "left",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Aspex"
+              },
+              {
+                "text": "NVDA",
+                "bold": true
+              },
+              {
+                "text": "13.1%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Avantyr"
+              },
+              {
+                "text": "ASML",
+                "bold": true
+              },
+              {
+                "text": "8.5%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "VST",
+                "bold": true
+              },
+              {
+                "text": "7.4%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "SurgoCap"
+              },
+              {
+                "text": "NVDA",
+                "bold": true
+              },
+              {
+                "text": "5.9%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "TLN",
+                "bold": true
+              },
+              {
+                "text": "4.6%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Foxhaven"
+              },
+              {
+                "text": "NFLX",
+                "bold": true
+              },
+              {
+                "text": "4.4%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Darsana"
+              },
+              {
+                "text": "SGI",
+                "bold": true
+              },
+              {
+                "text": "4.2%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "CLH",
+                "bold": true
+              },
+              {
+                "text": "4.0%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Foxhaven"
+              },
+              {
+                "text": "RBLX",
+                "bold": true
+              },
+              {
+                "text": "3.8%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Lone Pine"
+              },
+              {
+                "text": "THC",
+                "bold": true
+              },
+              {
+                "text": "3.4%",
+                "tone": "down"
+              }
+            ]
+          ]
+        }
+      ],
       "prevLabel": "Q4 '25",
       "prevValue": null,
       "prevChangePct": null,
@@ -5663,7 +6293,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T16:42:43.991Z",
+      "asOf": "2026-10-21T16:54:10.207Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6210,7 +6840,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T16:42:44.101Z"
+          "asOf": "2026-10-21T16:54:10.317Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -7944,12 +8574,19 @@
       "changePct": null,
       "changeAbs": 37,
       "direction": "flat",
-      "asOf": "2026-10-21T10:00:00.000Z",
+      "asOf": "2026-10-21T15:13:50.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 12,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Sources",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -7977,13 +8614,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Sources",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8030,8 +8660,8 @@
         "SpaceX's spectrum move clarifies mobile ambitions",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "tone": "Tone across 40 episodes — 11 positive, 5 neutral, 4 mixed, 1 cautious",
-      "thisTone": "11 positive, 5 neutral, 4 mixed, 1 cautious",
+      "tone": "Tone across 40 episodes — 10 positive, 5 neutral, 4 mixed, 1 cautious",
+      "thisTone": "10 positive, 5 neutral, 4 mixed, 1 cautious",
       "prevHighlights": [
         "Instinct personal assistant platform",
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
@@ -8050,7 +8680,7 @@
         "SpaceX's spectrum move clarifies mobile ambitions",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 11 positive, 5 neutral, 4 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 10 positive, 5 neutral, 4 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
