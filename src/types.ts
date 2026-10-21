@@ -21,6 +21,9 @@ export interface BreakdownRow {
   prevChangePct?: number | null;
   prevChangeAbs?: number | null;
   prevDirection?: Direction;
+  /** The last N periods (oldest→newest) for this row — renders as value + change columns
+   *  when present, superseding the single prev/last/this triple. */
+  series?: SeriesPoint[];
   /** Optional second level (e.g. parent brands within a product-line category). */
   sub?: BreakdownRow[];
   /** Flagged when the move is large enough to call out. */
@@ -32,6 +35,17 @@ export interface BreakdownRow {
 export interface TrendPoint {
   period: string;
   value: number;
+}
+
+/** One point in a multi-period trend — a period's value plus the change INTO it from the
+ *  previous point. A `series` of these renders the last N periods as value + change
+ *  columns (the founder's "last 3-4 periods" view). The first point carries no change. */
+export interface SeriesPoint {
+  label: string;
+  value: number | null;
+  changePct: number | null;
+  changeAbs: number | null;
+  direction: Direction;
 }
 
 /** One cell in a supporting table — pre-formatted text plus optional direction colour. */
@@ -90,6 +104,9 @@ export interface PeriodView {
   prevChangePct?: number | null;
   prevChangeAbs?: number | null;
   prevDirection?: Direction;
+  /** The last N periods (oldest→newest) for the headline — when present the table shows
+   *  these as value + change columns instead of the prev/last/this triple. */
+  series?: SeriesPoint[];
   breakdown: BreakdownRow[];
   summary?: string;
   notes?: string;

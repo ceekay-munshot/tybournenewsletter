@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, Clock, Zap, Quote } from 'lucide-react';
-import type { ChangeBlock, BreakdownRow, Comparison } from '../types';
+import type { ChangeBlock, BreakdownRow, Comparison, SeriesPoint } from '../types';
 import { Card, CardHeader, Badge } from './ui/Card';
 import { Segmented } from './ui/Controls';
 import { AuxTableCard } from './AuxTableCard';
@@ -65,6 +65,19 @@ export function MultiPeriodView({
     );
   const prevArrow = view.prevLabel ? `${view.prevLabel} → ${view.lastPeriodLabel}` : 'Prior';
   const thisArrow = `${view.lastPeriodLabel} → ${view.thisPeriodLabel}`;
+
+  // Multi-period series (last N periods). When present it supersedes the prev/last/this
+  // triple — the table shows one value column per period plus a change column per step.
+  const useSeries = Array.isArray(view.series) && view.series.length >= 2;
+  const sLabels = useSeries ? view.series!.map((p) => p.label) : [];
+  const seriesHasVals =
+    useSeries &&
+    (view.series!.some((p) => p.value != null) ||
+      view.breakdown.some(
+        (r) =>
+          (r.series ?? []).some((p) => p.value != null) ||
+          subsOf(r).some((s) => (s.series ?? []).some((p) => p.value != null))
+      ));
 
   return (
     <div className="animate-fade-in">
@@ -157,29 +170,60 @@ export function MultiPeriodView({
             <div className="px-4 pb-4">
               <div className="overflow-x-auto rounded-lg border border-slate-200">
               <table className="w-full border-collapse text-[12.5px]">
-                <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-500">
-                    <th className="border-r border-slate-200 px-3 py-2.5 capitalize last:border-r-0">{bNoun}</th>
-                    {showPrevVal && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{view.prevLabel}</th>}
-                    {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.lastPeriodLabel}</th>}
-                    {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.thisPeriodLabel}</th>}
-                    {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
-                    <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{showPrevChg ? thisArrow : changeNoun}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {view.breakdown.map((r) => (
-                    <BreakdownRows
-                      key={r.label}
-                      row={r}
-                      unit={block.unit}
-                      disp={view.changeDisplay}
-                      hasVals={hasVals}
-                      showPrevVal={showPrevVal}
-                      showPrevChg={showPrevChg}
-                    />
-                  ))}
-                </tbody>
+                {useSeries ? (
+                  <>
+                    <thead>
+                      <tr className="border-b border-slate-200 bg-slate-50 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-500">
+                        <th className="border-r border-slate-200 px-3 py-2.5 capitalize last:border-r-0">{bNoun}</th>
+                        {seriesHasVals &&
+                          sLabels.map((l, i) => (
+                            <th key={`v${i}`} className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">
+                              {l}
+                            </th>
+                          ))}
+                        {sLabels.slice(1).map((l, i) => (
+                          <th
+                            key={`c${i}`}
+                            className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0"
+                          >
+                            {sLabels[i]} → {l}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {view.breakdown.map((r) => (
+                        <SeriesRows key={r.label} row={r} unit={block.unit} disp={view.changeDisplay} hasVals={seriesHasVals} nPeriods={sLabels.length} />
+                      ))}
+                    </tbody>
+                  </>
+                ) : (
+                  <>
+                    <thead>
+                      <tr className="border-b border-slate-200 bg-slate-50 text-left text-[10.5px] font-semibold uppercase tracking-wide text-slate-500">
+                        <th className="border-r border-slate-200 px-3 py-2.5 capitalize last:border-r-0">{bNoun}</th>
+                        {showPrevVal && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{view.prevLabel}</th>}
+                        {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.lastPeriodLabel}</th>}
+                        {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.thisPeriodLabel}</th>}
+                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
+                        <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{showPrevChg ? thisArrow : changeNoun}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {view.breakdown.map((r) => (
+                        <BreakdownRows
+                          key={r.label}
+                          row={r}
+                          unit={block.unit}
+                          disp={view.changeDisplay}
+                          hasVals={hasVals}
+                          showPrevVal={showPrevVal}
+                          showPrevChg={showPrevChg}
+                        />
+                      ))}
+                    </tbody>
+                  </>
+                )}
               </table>
               </div>
             </div>
@@ -327,6 +371,69 @@ function BreakdownRows({
           {tracked ? chg : isSub ? '' : '—'}
           {r.bigMove && ' ⚡'}
         </td>
+      </tr>
+    );
+  }
+}
+
+/** A breakdown row rendered as a multi-period series: one value column per period plus a
+ *  change column per step. Pads to nPeriods so every row's columns line up. */
+function SeriesRows({
+  row,
+  unit,
+  disp,
+  hasVals,
+  nPeriods,
+}: {
+  row: BreakdownRow;
+  unit: string;
+  disp?: 'pct' | 'pp' | 'pts';
+  hasVals: boolean;
+  nPeriods: number;
+}) {
+  return (
+    <>
+      {rowCells(row, false)}
+      {(row.sub ?? []).map((s) => rowCells(s, true))}
+    </>
+  );
+
+  function rowCells(r: BreakdownRow, isSub: boolean) {
+    const vpad = isSub ? 'py-1.5' : 'py-2.5';
+    const valCls = isSub ? 'text-slate-400' : 'text-slate-500';
+    const lastValCls = isSub ? 'text-slate-600' : 'font-semibold text-slate-800';
+    const pts: (SeriesPoint | null)[] = Array.from({ length: nPeriods }, (_, i) => r.series?.[i] ?? null);
+    const d = r.changeDisplay ?? disp;
+    return (
+      <tr key={r.label} className={`border-b border-slate-100 ${isSub ? 'bg-slate-50/50' : ''}`}>
+        <td className={`border-r border-slate-100 ${isSub ? 'pl-5' : 'pl-3'} pr-3 ${vpad} align-top last:border-r-0 ${isSub ? 'text-slate-500' : ''}`}>
+          {isSub && <span className="mr-1 text-slate-300">└</span>}
+          <span className={isSub ? '' : 'font-display text-[13px] font-bold text-slate-900'}>{r.label}</span>
+          {r.note && <span className="ml-1.5 text-[10px] italic text-amber-600">{r.note}</span>}
+        </td>
+        {hasVals &&
+          pts.map((p, i) => (
+            <td
+              key={`v${i}`}
+              className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0 ${
+                i === nPeriods - 1 ? lastValCls : valCls
+              }`}
+            >
+              {p && p.value != null ? fmtValue(p.value, unit) : ''}
+            </td>
+          ))}
+        {pts.slice(1).map((p, i) => {
+          const tracked = p != null && (p.changePct != null || p.changeAbs != null);
+          return (
+            <td
+              key={`c${i}`}
+              className={`tnum whitespace-nowrap border-r border-slate-100 px-3 ${vpad} text-right align-top last:border-r-0 ${isSub ? 'font-semibold' : 'font-bold'}`}
+              style={{ color: tracked ? directionColor(p!.direction) : '#CBD5E1' }}
+            >
+              {tracked ? headlineText(p!.changePct, p!.changeAbs, d) : ''}
+            </td>
+          );
+        })}
       </tr>
     );
   }

@@ -7,7 +7,7 @@
 // Colour note: green = price UP (higher cost for the buyer) — matches the source
 // dashboard's own convention, not the usual "green = good".
 import { getJson } from '../lib/http.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const BIG_MOVE = 0.02; // |change| >= 2% flags a big move
 const MIN_COHORT = 10; // a cell below this many matched SKUs is flagged "thin", kept out of the headline
@@ -120,6 +120,17 @@ function buildView(cur, prior, comparison, label) {
   };
 }
 
+// Build the last-N period-views (arr[k] vs arr[k+1], newest first) and attach them as a
+// series to the latest view + its rows, so the table shows one column per period.
+function attachSeries4(latest, arr, comparison, label, n = 4) {
+  const vs = [];
+  for (let k = 0; k < n; k++) {
+    if (!arr[k] || !arr[k + 1]) break;
+    vs.push(buildView(arr[k], arr[k + 1], comparison, label));
+  }
+  attachSeries(latest, vs);
+}
+
 export async function connect(system) {
   const res = await getJson(system.source.api);
   if (!res?.success || !res?.data) throw new Error('period-aggregates returned no data');
@@ -140,6 +151,8 @@ export async function connect(system) {
         latest.prevDirection = prior.direction;
       }
     }
+    // last 4 periods as a series (value + change columns)
+    if (latest.available) attachSeries(latest, arr, p.comparison, p.label, 4);
     return latest;
   });
   const def = views.find((v) => v.comparison === 'MoM' && v.available) || views.find((v) => v.available) || views[1];

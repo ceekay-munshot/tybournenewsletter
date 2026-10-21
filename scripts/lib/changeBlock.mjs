@@ -157,3 +157,57 @@ export function errorBlock(system, reason) {
     statusReason: reason,
   };
 }
+
+/** Assemble a last-N-periods series onto `latest` and each of its breakdown rows (+sub)
+ *  from an array of period-views (NEWEST FIRST). Each view is a full view object with a
+ *  .breakdown (rows, each with optional .sub), .thisPeriodLabel, .thisValue, .changePct,
+ *  .changeAbs, .direction. Rows are matched across periods by label; needs >=2 views. */
+export function attachSeries(latest, viewsNewestFirst) {
+  const vs = (viewsNewestFirst || []).filter((v) => v && v.available);
+  if (vs.length < 2) return;
+  const ordered = vs.slice().reverse(); // oldest -> newest
+  const pt = (v, src) => ({
+    label: v.thisPeriodLabel,
+    value: src ? src.thisValue ?? null : null,
+    changePct: src ? src.changePct ?? null : null,
+    changeAbs: src ? src.changeAbs ?? null : null,
+    direction: src ? src.direction ?? directionOf(src.changePct ?? src.changeAbs ?? null) : 'flat',
+  });
+  latest.series = ordered.map((v) => ({
+    label: v.thisPeriodLabel,
+    value: v.thisValue ?? null,
+    changePct: v.changePct ?? null,
+    changeAbs: v.changeAbs ?? null,
+    direction: v.direction ?? 'flat',
+  }));
+  for (const r of latest.breakdown || []) {
+    r.series = ordered.map((v) => pt(v, (v.breakdown || []).find((x) => x.label === r.label)));
+    for (const s of r.sub || []) {
+      s.series = ordered.map((v) =>
+        pt(v, (v.breakdown || []).find((x) => x.label === r.label)?.sub?.find((y) => y.label === s.label))
+      );
+    }
+  }
+}
+
+/** Build a SeriesPoint[] (oldest→newest) from an array of { label, value } points — the
+ *  change INTO each point is derived from the chaining values. `display` picks the metric:
+ *  'pct' → changePct = (v-prev)/prev (a fraction); 'pp'|'pts' → changeAbs = v - prev.
+ *  The first point carries no change. Pass the last N periods in chronological order. */
+export function buildSeries(points, display = 'pct') {
+  const pts = Array.isArray(points) ? points : [];
+  const out = [];
+  for (let i = 0; i < pts.length; i++) {
+    const v = pts[i]?.value ?? null;
+    const prev = i > 0 ? pts[i - 1]?.value ?? null : null;
+    let changePct = null;
+    let changeAbs = null;
+    if (i > 0 && v != null && prev != null && Number.isFinite(v) && Number.isFinite(prev)) {
+      if (display === 'pp' || display === 'pts') changeAbs = v - prev;
+      else if (prev !== 0) changePct = (v - prev) / prev;
+    }
+    const dir = display === 'pp' || display === 'pts' ? directionOf(changeAbs) : directionOf(changePct);
+    out.push({ label: pts[i]?.label ?? '', value: v, changePct, changeAbs, direction: dir });
+  }
+  return out;
+}
