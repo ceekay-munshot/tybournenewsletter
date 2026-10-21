@@ -20,19 +20,21 @@ export function MultiPeriodView({
   backLabel = 'Overview',
 }: {
   block: ChangeBlock;
-  onBack: () => void;
+  onBack?: () => void;
   backLabel?: string;
 }) {
   const views = block.views ?? [];
+  // Only offer periods that actually exist for this system — an unavailable window
+  // (e.g. no weekly series) is never shown as a dead toggle option.
+  const availViews = views.filter((v) => v.available);
   const Icon = iconFor(block.systemId, block.sector);
   const accent = sectorColor(block.sector);
 
-  const initial = (views.find((v) => v.comparison === block.comparison && v.available)?.comparison ??
-    views.find((v) => v.available)?.comparison ??
-    views[0]?.comparison ??
+  const initial = (availViews.find((v) => v.comparison === block.comparison)?.comparison ??
+    availViews[0]?.comparison ??
     'MoM') as Comparison;
   const [sel, setSel] = useState<Comparison>(initial);
-  const view = views.find((v) => v.comparison === sel) ?? views[0];
+  const view = availViews.find((v) => v.comparison === sel) ?? availViews[0] ?? views[0];
   if (!view) return null;
 
   const dir = directionColor(view.direction);
@@ -85,12 +87,14 @@ export function MultiPeriodView({
 
   return (
     <div className="animate-fade-in">
-      <button
-        onClick={onBack}
-        className="mb-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-slate-500 transition hover:text-slate-800"
-      >
-        <ChevronLeft size={16} /> Back to {backLabel}
-      </button>
+      {onBack && (
+        <button
+          onClick={onBack}
+          className="mb-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-slate-500 transition hover:text-slate-800"
+        >
+          <ChevronLeft size={16} /> Back to {backLabel}
+        </button>
+      )}
 
       <Card className="mb-4">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -145,14 +149,15 @@ export function MultiPeriodView({
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-2.5">
-          <Segmented value={sel} onChange={(v) => setSel(v)} options={views.map((v) => ({ value: v.comparison, label: v.label }))} />
-          <span className="text-[11.5px] text-slate-400">Weekly / monthly / quarterly</span>
-        </div>
-        {!view.available && (
-          <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-[12.5px] text-amber-700 ring-1 ring-amber-100">
-            {view.unavailableReason ?? 'Not enough data for this window yet.'}
-          </p>
+        {availViews.length > 1 && (
+          <div className="mt-4 flex flex-wrap items-center gap-2.5">
+            <Segmented
+              value={sel}
+              onChange={(v) => setSel(v)}
+              options={availViews.map((v) => ({ value: v.comparison, label: v.label }))}
+            />
+            <span className="text-[11.5px] text-slate-400">{availViews.map((v) => v.label.toLowerCase()).join(' / ')}</span>
+          </div>
         )}
       </Card>
 

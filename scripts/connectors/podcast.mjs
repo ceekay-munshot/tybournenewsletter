@@ -24,7 +24,7 @@ const SHOW_LABEL = {
 };
 
 /** Recurring themes (deduped key highlights, newest first) + tone counts for a set of episodes. */
-function digest(episodes) {
+function digest(episodes, cap = 10) {
   const themes = [];
   const seen = new Set();
   const recent = [...episodes].sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
@@ -39,7 +39,7 @@ function digest(episodes) {
       seen.add(norm);
       themes.push(title);
     }
-    if (themes.length >= 6) break;
+    if (themes.length >= cap) break;
   }
   const toneCount = {};
   for (const e of episodes) {
@@ -101,7 +101,8 @@ export async function connect(system) {
   const asOf = dated.map((e) => e.publishedAt).sort().slice(-1)[0];
 
   // Consolidated note — the quarter-over-quarter read, built from the real themes + tone.
-  const newThemes = cur.themes.filter((t) => !prev.themes.some((p) => p.toLowerCase() === t.toLowerCase())).slice(0, 3);
+  const newThemesAll = cur.themes.filter((t) => !prev.themes.some((p) => p.toLowerCase() === t.toLowerCase()));
+  const newThemes = newThemesAll.slice(0, 3);
   const parts = [`${thisLabel}: ${cur.count} investor-podcast episodes across ${Object.keys(showCount).length} shows.`];
   if (cur.themes.length) parts.push(`The recurring threads — ${cur.themes.slice(0, 4).join('; ')}.`);
   if (toneStr(cur.toneCount)) parts.push(`Sentiment ran ${toneStr(cur.toneCount)}.`);
@@ -126,6 +127,10 @@ export async function connect(system) {
     asOf,
     highlights: cur.themes,
     tone,
+    thisTone: toneStr(cur.toneCount) || undefined,
+    prevHighlights: prev.themes,
+    prevTone: toneStr(prev.toneCount) || undefined,
+    newHighlights: newThemesAll.slice(0, 10),
     summary,
     breakdown,
     notes: `${cur.count} investor-podcast episodes analysed this quarter across ${Object.keys(showCount).length} shows. A qualitative read of the quarter's narrative, not a quantitative mover.`,

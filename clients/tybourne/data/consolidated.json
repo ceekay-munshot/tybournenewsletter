@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T11:16:49.911Z",
+  "generatedAt": "2026-10-21T13:37:30.319Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1171,7 +1171,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-21.8% input · share +8.53pp"
+          "body": "-21.8% input · share +8.52pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -5663,7 +5663,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T11:16:26.675Z",
+      "asOf": "2026-10-21T13:37:14.210Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6210,7 +6210,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T11:16:26.724Z"
+          "asOf": "2026-10-21T13:37:14.308Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -7939,17 +7939,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 38,
+      "thisValue": 40,
       "lastValue": 3,
       "changePct": null,
-      "changeAbs": 35,
+      "changeAbs": 37,
       "direction": "flat",
-      "asOf": "2026-10-21T03:00:00.000Z",
+      "asOf": "2026-10-21T10:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 10,
+          "thisValue": 12,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Odd Lots",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -7963,13 +7970,6 @@
         },
         {
           "label": "AI Daily",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Odd Lots",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8024,14 +8024,37 @@
         "Emanuel's relentless call routine",
         "Safety vs Speed in AI Development: Airbags Analogy",
         "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
-        "Skepticism about HomeView's AI capabilities"
+        "Skepticism about HomeView's AI capabilities",
+        "Match Group CEO on matchmaking algorithms",
+        "AI agents to grow in retail trading",
+        "SpaceX's spectrum move clarifies mobile ambitions",
+        "Nubank serves 140 million customers in Latin America"
       ],
-      "tone": "Tone across 38 episodes — 11 positive, 5 mixed, 4 neutral, 1 cautious",
-      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 11 positive, 5 mixed, 4 neutral, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
+      "tone": "Tone across 40 episodes — 11 positive, 5 neutral, 4 mixed, 1 cautious",
+      "thisTone": "11 positive, 5 neutral, 4 mixed, 1 cautious",
+      "prevHighlights": [
+        "Instinct personal assistant platform",
+        "Home Depot outperforms Apple since IPO with 25% compounding returns",
+        "Disney was worth more dead than alive in 1984"
+      ],
+      "prevTone": "2 positive, 1 mixed",
+      "newHighlights": [
+        "Comparison of dating algorithm to deck of cards",
+        "Seagrass restoration is a major early focus with broad ecological impact",
+        "Emanuel's relentless call routine",
+        "Safety vs Speed in AI Development: Airbags Analogy",
+        "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
+        "Skepticism about HomeView's AI capabilities",
+        "Match Group CEO on matchmaking algorithms",
+        "AI agents to grow in retail trading",
+        "SpaceX's spectrum move clarifies mobile ambitions",
+        "Nubank serves 140 million customers in Latin America"
+      ],
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 11 positive, 5 neutral, 4 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "38 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]

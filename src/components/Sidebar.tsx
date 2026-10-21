@@ -1,4 +1,4 @@
-import { LayoutGrid, type LucideIcon } from 'lucide-react';
+import { type LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 import type { ChangeBlock } from '../types';
 import { iconFor } from '../lib/icons';
@@ -7,24 +7,21 @@ import { directionColor, sectorColor } from '../lib/brand';
 import { headlineText } from '../lib/format';
 
 /** Left-hand dashboard navigation. One item per dashboard (labelled by its source
- *  repo for now), plus an Overview item. On phones it collapses to a sticky,
- *  horizontally-scrolling strip under the header. */
+ *  repo for now). On phones it collapses to a sticky, horizontally-scrolling strip
+ *  under the header. */
 export function Sidebar({
   systems,
   activeId,
-  onOverview,
   onSelect,
 }: {
   systems: ChangeBlock[];
   activeId: string | null;
-  onOverview: () => void;
   onSelect: (id: string) => void;
 }) {
   return (
     <nav className="no-print md:w-60 md:shrink-0">
       <div className="scroll-thin sticky top-[52px] z-30 flex gap-1 overflow-x-auto border-b border-slate-200/80 bg-white/80 p-2 backdrop-blur-md md:top-[53px] md:max-h-[calc(100vh-53px)] md:flex-col md:overflow-x-visible md:overflow-y-auto md:border-b-0 md:border-r">
-        <SidebarItem icon={LayoutGrid} iconColor="#6366F1" label="Overview" active={activeId === null} onClick={onOverview} />
-        <div className="hidden px-2 pb-1 pt-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 md:block">
+        <div className="hidden px-2 pb-1 pt-1 text-[10px] font-bold uppercase tracking-wider text-slate-400 md:block">
           Dashboards
         </div>
         {systems.map((b) => (

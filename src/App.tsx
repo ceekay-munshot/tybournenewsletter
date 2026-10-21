@@ -4,7 +4,6 @@ import { useConsolidated, systemById } from './lib/data';
 import { useNewsletter } from './lib/newsletter';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-import { Overview } from './tabs/Overview';
 import { NewsletterModal } from './tabs/Newsletter';
 import { SystemView } from './tabs/SystemView';
 import { MultiPeriodView } from './components/MultiPeriodView';
@@ -28,14 +27,14 @@ export default function App() {
   if (state.status === 'error') return <ErrorScreen message={state.error} />;
 
   const data = state.data;
-  const selected = systemId ? systemById(data, systemId) : undefined;
+  // No overview landing — the dashboard opens on the first system and the left
+  // sidebar is the only navigation. `systemId` falls back to the first system
+  // until the viewer picks one.
+  const activeId = systemId ?? data.systems[0]?.systemId ?? null;
+  const selected = activeId ? systemById(data, activeId) : undefined;
 
   const openSystem = (id: string) => {
     setSystemId(id);
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-  const showOverview = () => {
-    setSystemId(null);
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -51,18 +50,16 @@ export default function App() {
       <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col md:flex-row">
-        <Sidebar systems={data.systems} activeId={systemId} onOverview={showOverview} onSelect={openSystem} />
+        <Sidebar systems={data.systems} activeId={activeId} onSelect={openSystem} />
 
         <main className="min-w-0 flex-1 px-4 py-5 sm:px-6">
           {selected ? (
             selected.views && selected.views.length ? (
-              <MultiPeriodView block={selected} onBack={showOverview} backLabel="Overview" />
+              <MultiPeriodView block={selected} />
             ) : (
-              <SystemView block={selected} onBack={showOverview} backLabel="Overview" />
+              <SystemView block={selected} />
             )
-          ) : (
-            <Overview data={data} onSelect={openSystem} />
-          )}
+          ) : null}
         </main>
       </div>
 

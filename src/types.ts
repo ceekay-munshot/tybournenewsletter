@@ -122,6 +122,13 @@ export interface ChangeBlock {
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;
+  /** Podcast narrative quarter-over-quarter: the PRIOR quarter's recurring themes +
+   *  tone, this quarter's bare tone, and the themes that are NEW this quarter — so the
+   *  card can show last-quarter-vs-this-quarter side by side. */
+  prevHighlights?: string[];
+  newHighlights?: string[];
+  thisTone?: string;
+  prevTone?: string;
   /** A consolidated written note (e.g. the podcast quarter-over-quarter read). */
   summary?: string;
   /** Other things that moved in this system (same shape, rendered smaller). */
