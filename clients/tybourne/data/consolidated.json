@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T17:55:50.698Z",
+  "generatedAt": "2026-10-21T18:04:28.037Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1611,7 +1611,37 @@
       "prevValue": null,
       "prevChangePct": -0.0010974381615590268,
       "prevChangeAbs": null,
-      "prevDirection": "down"
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "Jul-26",
+          "value": null,
+          "changePct": -0.0013996124139935204,
+          "changeAbs": null,
+          "direction": "down"
+        },
+        {
+          "label": "Aug-26",
+          "value": null,
+          "changePct": -0.0014368980766959246,
+          "changeAbs": null,
+          "direction": "down"
+        },
+        {
+          "label": "Sep-26",
+          "value": null,
+          "changePct": -0.0010974381615590268,
+          "changeAbs": null,
+          "direction": "down"
+        },
+        {
+          "label": "Oct-26",
+          "value": null,
+          "changePct": -0.005718159398634198,
+          "changeAbs": null,
+          "direction": "down"
+        }
+      ]
     },
     {
       "systemId": "taiwan-semi-revenue",
@@ -3055,7 +3085,37 @@
       "prevLabel": "Jul '26",
       "prevValue": null,
       "prevChangePct": null,
-      "prevChangeAbs": null
+      "prevChangeAbs": null,
+      "series": [
+        {
+          "label": "Jun '26",
+          "value": null,
+          "changePct": 0.05978812883437852,
+          "changeAbs": 138.60510314856003,
+          "direction": "up"
+        },
+        {
+          "label": "Jul '26",
+          "value": null,
+          "changePct": 0.0532226764573791,
+          "changeAbs": 130.75986934345198,
+          "direction": "up"
+        },
+        {
+          "label": "Aug '26",
+          "value": null,
+          "changePct": 0.09375511864194207,
+          "changeAbs": 242.6063314483533,
+          "direction": "up"
+        },
+        {
+          "label": "Sep '26",
+          "value": 2768.942852,
+          "changePct": 0.03489393862764299,
+          "changeAbs": 93.3615690794983,
+          "direction": "up"
+        }
+      ]
     },
     {
       "systemId": "ai-compute-pricing",
@@ -3376,7 +3436,23 @@
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
       "prevChangeAbs": 0.06000000000000005,
-      "prevDirection": "up"
+      "prevDirection": "up",
+      "series": [
+        {
+          "label": "Q3 '26",
+          "value": 2.45,
+          "changePct": 0.02510460251046027,
+          "changeAbs": 0.06000000000000005,
+          "direction": "up"
+        },
+        {
+          "label": "Q4 '26 (QTD)",
+          "value": 2.39,
+          "changePct": -0.024489795918367366,
+          "changeAbs": -0.06000000000000005,
+          "direction": "down"
+        }
+      ]
     },
     {
       "systemId": "schneider-electric",
@@ -6295,7 +6371,37 @@
       "prevValue": null,
       "prevChangePct": -0.007848172454220181,
       "prevChangeAbs": null,
-      "prevDirection": "down"
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "27 Jul",
+          "value": null,
+          "changePct": -0.0013034955050554066,
+          "changeAbs": -5.248102766799548,
+          "direction": "down"
+        },
+        {
+          "label": "24 Aug",
+          "value": null,
+          "changePct": 0.0061777590984694545,
+          "changeAbs": 24.15707843137352,
+          "direction": "up"
+        },
+        {
+          "label": "14 Sep",
+          "value": null,
+          "changePct": -0.020839508937939275,
+          "changeAbs": -82.95336673346765,
+          "direction": "down"
+        },
+        {
+          "label": "19 Oct",
+          "value": 2988.884944785279,
+          "changePct": 0.01661100679120747,
+          "changeAbs": 63.59472392638054,
+          "direction": "up"
+        }
+      ]
     },
     {
       "systemId": "thirteen-f",
@@ -11801,7 +11907,30 @@
       "prevValue": null,
       "prevChangePct": null,
       "prevChangeAbs": -0.11768630136986295,
-      "prevDirection": "down"
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "Q4 '25",
+          "value": null,
+          "changePct": null,
+          "changeAbs": -0.23829213483146067,
+          "direction": "down"
+        },
+        {
+          "label": "Q1 '26",
+          "value": null,
+          "changePct": null,
+          "changeAbs": -0.02003076923076919,
+          "direction": "down"
+        },
+        {
+          "label": "Q2 '26",
+          "value": null,
+          "changePct": null,
+          "changeAbs": -0.37976206896551723,
+          "direction": "down"
+        }
+      ]
     },
     {
       "systemId": "nubank",
@@ -12458,7 +12587,30 @@
       "prevValue": 14.94,
       "prevChangePct": null,
       "prevChangeAbs": 0.74,
-      "prevDirection": "up"
+      "prevDirection": "up",
+      "series": [
+        {
+          "label": "4Q '25",
+          "value": 14.94,
+          "changePct": null,
+          "changeAbs": 0.15,
+          "direction": "up"
+        },
+        {
+          "label": "1Q '26",
+          "value": 15.68,
+          "changePct": null,
+          "changeAbs": 0.74,
+          "direction": "up"
+        },
+        {
+          "label": "2Q '26",
+          "value": 15.49,
+          "changePct": null,
+          "changeAbs": -0.19,
+          "direction": "down"
+        }
+      ]
     },
     {
       "systemId": "sap-ai",
@@ -14119,7 +14271,37 @@
       "prevValue": 3.08,
       "prevChangePct": null,
       "prevChangeAbs": -0.41,
-      "prevDirection": "down"
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "Jul '26",
+          "value": 3.34,
+          "changePct": null,
+          "changeAbs": 0.06,
+          "direction": "up"
+        },
+        {
+          "label": "Aug '26",
+          "value": 3.08,
+          "changePct": null,
+          "changeAbs": -0.26,
+          "direction": "down"
+        },
+        {
+          "label": "Sep '26",
+          "value": 2.67,
+          "changePct": null,
+          "changeAbs": -0.41,
+          "direction": "down"
+        },
+        {
+          "label": "Oct '26",
+          "value": 2.6,
+          "changePct": null,
+          "changeAbs": -0.07,
+          "direction": "down"
+        }
+      ]
     },
     {
       "systemId": "airlines",
@@ -14135,7 +14317,7 @@
       "changePct": -0.009730154106102921,
       "changeAbs": -23129,
       "direction": "down",
-      "asOf": "2026-10-19",
+      "asOf": "2026-10-20",
       "isStale": false,
       "breakdown": [
         {
@@ -14222,16 +14404,16 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk to 19 Oct",
+          "thisPeriodLabel": "wk to 20 Oct",
           "lastPeriodLabel": "yr earlier",
-          "thisValue": 2615893,
-          "lastValue": 2668993,
-          "changePct": -0.0198953013533085,
+          "thisValue": 2587437,
+          "lastValue": 2630289,
+          "changePct": -0.016291907940159132,
           "direction": "down",
           "bigMove": false,
-          "prevLabel": "wk to 12 Oct",
+          "prevLabel": "wk to 13 Oct",
           "prevValue": null,
-          "prevChangePct": -0.023401978299960314,
+          "prevChangePct": -0.025369327441674958,
           "prevDirection": "down",
           "breakdown": [
             {
@@ -14307,7 +14489,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput down 2.0% year-on-year (wk to 19 Oct vs yr earlier), running at 2.62M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput down 1.6% year-on-year (wk to 20 Oct vs yr earlier), running at 2.59M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -14498,7 +14680,7 @@
       "insights": [
         {
           "title": "US demand: current and roughly flat",
-          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 19. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
+          "body": "TSA checkpoint throughput is tracked daily and is current to Oct '26 20. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
         },
         {
           "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
@@ -14513,7 +14695,7 @@
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to Oct '26 19. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to Oct '26 20. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Aug '26",
@@ -14807,7 +14989,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T17:55:38.477Z",
+      "asOf": "2026-10-21T18:04:16.251Z",
       "isStale": false,
       "breakdown": [
         {
@@ -16521,14 +16703,44 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T17:55:38.634Z"
+          "asOf": "2026-10-21T18:04:16.346Z"
         }
       ],
       "prevLabel": "Jul '26",
       "prevValue": 230223699366827,
       "prevChangePct": 1.0250948328236726,
       "prevChangeAbs": null,
-      "prevDirection": "up"
+      "prevDirection": "up",
+      "series": [
+        {
+          "label": "Jun '26",
+          "value": 220819909308465,
+          "changePct": 0.9478594283688884,
+          "changeAbs": null,
+          "direction": "up"
+        },
+        {
+          "label": "Jul '26",
+          "value": 230223699366827,
+          "changePct": 0.042585788970802334,
+          "changeAbs": null,
+          "direction": "up"
+        },
+        {
+          "label": "Aug '26",
+          "value": 466224823981312,
+          "changePct": 1.0250948328236726,
+          "changeAbs": null,
+          "direction": "up"
+        },
+        {
+          "label": "Sep '26",
+          "value": 567359447215877,
+          "changePct": 0.21692243319634744,
+          "changeAbs": null,
+          "direction": "up"
+        }
+      ]
     },
     {
       "systemId": "ti-chip-prices",
@@ -20848,7 +21060,37 @@
       "prevValue": 3.3724,
       "prevChangePct": -0.006879373739769798,
       "prevChangeAbs": -0.023199999999999665,
-      "prevDirection": "down"
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "Jul-26",
+          "value": 3.2016,
+          "changePct": 0.0672,
+          "changeAbs": 0.2016,
+          "direction": "up"
+        },
+        {
+          "label": "Aug-26",
+          "value": 3.3724,
+          "changePct": 0.053348325837081406,
+          "changeAbs": 0.17079999999999984,
+          "direction": "up"
+        },
+        {
+          "label": "Sep-26",
+          "value": 3.3492,
+          "changePct": -0.006879373739769798,
+          "changeAbs": -0.023199999999999665,
+          "direction": "down"
+        },
+        {
+          "label": "Oct-26 (MTD)",
+          "value": 3.503,
+          "changePct": 0.04592141406903139,
+          "changeAbs": 0.15379999999999994,
+          "direction": "up"
+        }
+      ]
     },
     {
       "systemId": "podcast-themes",

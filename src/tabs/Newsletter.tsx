@@ -288,6 +288,11 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
     b.prevChangePct != null || b.prevChangeAbs != null || rows.some((r) => r.prevChangePct != null || r.prevChangeAbs != null);
   const prevArrow = b.prevLabel ? `${b.prevLabel} → ${b.lastPeriodLabel}` : 'Prior';
   const thisArrow = `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
+  // Multi-period series (last N periods) — mirrors the dashboard table when present.
+  const useSeries = Array.isArray(b.series) && b.series.length >= 2;
+  const sLabels = useSeries ? b.series!.map((p) => p.label) : [];
+  const seriesHasVals =
+    useSeries && (b.series!.some((p) => p.value != null) || rows.some((r) => (r.series ?? []).some((p) => p.value != null)));
 
   return (
     <div className="nl-avoid rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
@@ -342,46 +347,108 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
       ) : rows.length > 0 ? (
         <div className="mt-2.5 overflow-hidden rounded-lg ring-1 ring-slate-200/70">
           <table className="w-full border-collapse text-[11.5px]">
-            <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
-                <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
-                {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
-                {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
-                {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
-                {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
-                <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r, i) => {
-                const prevTracked = r.prevChangePct != null || r.prevChangeAbs != null;
-                return (
-                  <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                    <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
-                      {r.label}
-                      {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
-                    </td>
-                    {showPrevVal && (
-                      <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-400 last:border-r-0">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
-                    )}
-                    {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-500 last:border-r-0">{fmtValue(r.lastValue, b.unit)}</td>}
-                    {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-semibold text-slate-800 last:border-r-0">{fmtValue(r.thisValue, b.unit)}</td>}
-                    {showPrevChg && (
-                      <td
-                        className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0"
-                        style={{ color: prevTracked ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
+            {useSeries ? (
+              <>
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+                    <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
+                    {seriesHasVals &&
+                      sLabels.map((l, i) => (
+                        <th key={`v${i}`} className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">
+                          {l}
+                        </th>
+                      ))}
+                    {sLabels.slice(1).map((l, i) => (
+                      <th
+                        key={`c${i}`}
+                        className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0"
                       >
-                        {prevTracked ? prevChangeOf(r) : ''}
-                      </td>
-                    )}
-                    <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0" style={{ color: directionColor(r.direction) }}>
-                      {changeOf(r)}
-                      {r.bigMove && ' ⚡'}
-                    </td>
+                        {sLabels[i]} → {l}
+                      </th>
+                    ))}
                   </tr>
-                );
-              })}
-            </tbody>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => {
+                    const pts = Array.from({ length: sLabels.length }, (_, k) => r.series?.[k] ?? null);
+                    return (
+                      <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
+                        <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
+                          {r.label}
+                          {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
+                        </td>
+                        {seriesHasVals &&
+                          pts.map((p, k) => (
+                            <td
+                              key={`v${k}`}
+                              className={`tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0 ${
+                                k === sLabels.length - 1 ? 'font-semibold text-slate-800' : 'text-slate-500'
+                              }`}
+                            >
+                              {p && p.value != null ? fmtValue(p.value, b.unit) : ''}
+                            </td>
+                          ))}
+                        {pts.slice(1).map((p, k) => {
+                          const tracked = p != null && (p.changePct != null || p.changeAbs != null);
+                          return (
+                            <td
+                              key={`c${k}`}
+                              className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0"
+                              style={{ color: tracked ? directionColor(p!.direction) : '#CBD5E1' }}
+                            >
+                              {tracked ? headlineText(p!.changePct, p!.changeAbs, r.changeDisplay ?? b.changeDisplay) : ''}
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </>
+            ) : (
+              <>
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+                    <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
+                    {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
+                    {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
+                    {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
+                    {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
+                    <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => {
+                    const prevTracked = r.prevChangePct != null || r.prevChangeAbs != null;
+                    return (
+                      <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
+                        <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
+                          {r.label}
+                          {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
+                        </td>
+                        {showPrevVal && (
+                          <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-400 last:border-r-0">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
+                        )}
+                        {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-500 last:border-r-0">{fmtValue(r.lastValue, b.unit)}</td>}
+                        {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-semibold text-slate-800 last:border-r-0">{fmtValue(r.thisValue, b.unit)}</td>}
+                        {showPrevChg && (
+                          <td
+                            className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0"
+                            style={{ color: prevTracked ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
+                          >
+                            {prevTracked ? prevChangeOf(r) : ''}
+                          </td>
+                        )}
+                        <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0" style={{ color: directionColor(r.direction) }}>
+                          {changeOf(r)}
+                          {r.bigMove && ' ⚡'}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </>
+            )}
           </table>
         </div>
       ) : null}

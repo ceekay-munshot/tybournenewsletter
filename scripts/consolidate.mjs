@@ -65,6 +65,7 @@ async function run() {
           block.prevChangePct = dv.prevChangePct ?? null;
           block.prevChangeAbs = dv.prevChangeAbs ?? null;
           block.prevDirection = dv.prevDirection;
+          if (Array.isArray(dv.series) && dv.series.length) block.series = dv.series;
         }
       }
       blocks.push(block);

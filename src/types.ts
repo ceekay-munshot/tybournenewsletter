@@ -135,6 +135,9 @@ export interface ChangeBlock {
   prevChangePct?: number | null;
   prevChangeAbs?: number | null;
   prevDirection?: Direction;
+  /** The default view's last-N-periods series, mirrored onto the block so the newsletter
+   *  can render the same multi-period table as the dashboard. */
+  series?: SeriesPoint[];
   asOf: string;
   isStale?: boolean;
   breakdown: BreakdownRow[];
