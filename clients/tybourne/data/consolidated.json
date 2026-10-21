@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T19:27:29.086Z",
+  "generatedAt": "2026-10-21T19:47:38.209Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -14978,7 +14978,7 @@
       "sourceName": "Hugging Face Hub",
       "sourceUrl": "",
       "dashboardUrl": null,
-      "notes": "New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Breakdown is new Spaces by use-case; model-family shifts and the new-models total are in “Why it moved”. Quarter-on-quarter needs two full quarters — not available yet.",
+      "notes": "New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Headline breakdown is new Spaces by use-case over the last four weeks; the supporting tables add the SDK mix, technology & vertical penetration, new models by family, and Hub-wide engagement. Quarter-on-quarter needs two full quarters — not available yet.",
       "status": "ok",
       "views": [
         {
@@ -15385,6 +15385,426 @@
           "body": "August 2026 was Hugging Face’s first full tracked month, so the comparison base is young. The Weekly view — new Spaces running a steady ~6.4k/week — is the cleaner read on the current pace; treat the large MoM as base-sensitive."
         }
       ],
+      "auxTables": [
+        {
+          "title": "New Spaces by SDK",
+          "subtitle": "How this week’s 6,920 new Spaces were built.",
+          "headers": [
+            "SDK",
+            "New Spaces",
+            "WoW"
+          ],
+          "align": [
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Static"
+              },
+              {
+                "text": "3,937",
+                "bold": true
+              },
+              {
+                "text": "+5.9%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Gradio"
+              },
+              {
+                "text": "2,296",
+                "bold": true
+              },
+              {
+                "text": "+7.0%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Docker"
+              },
+              {
+                "text": "560",
+                "bold": true
+              },
+              {
+                "text": "+16.7%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Streamlit"
+              },
+              {
+                "text": "61",
+                "bold": true
+              },
+              {
+                "text": "-26.5%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Unresolved"
+              },
+              {
+                "text": "66",
+                "bold": true
+              },
+              {
+                "text": "+34.7%",
+                "tone": "up"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Technology penetration",
+          "subtitle": "Share of new Spaces using each technology, with the week-on-week point move.",
+          "headers": [
+            "Technology",
+            "Share of Spaces",
+            "WoW (pp)"
+          ],
+          "align": [
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Vision-language"
+              },
+              {
+                "text": "7.0%",
+                "bold": true
+              },
+              {
+                "text": "-0.50 pp",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Agentic"
+              },
+              {
+                "text": "6.6%",
+                "bold": true
+              },
+              {
+                "text": "+0.66 pp",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Multimodal"
+              },
+              {
+                "text": "5.2%",
+                "bold": true
+              },
+              {
+                "text": "-0.56 pp",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Diffusion"
+              },
+              {
+                "text": "4.8%",
+                "bold": true
+              },
+              {
+                "text": "-0.04 pp",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Tool use"
+              },
+              {
+                "text": "3.7%",
+                "bold": true
+              },
+              {
+                "text": "+0.02 pp",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Fine-tuned"
+              },
+              {
+                "text": "3.2%",
+                "bold": true
+              },
+              {
+                "text": "-0.04 pp",
+                "tone": "down"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Vertical penetration",
+          "subtitle": "Share of new Spaces serving each industry, with the week-on-week point move.",
+          "headers": [
+            "Vertical",
+            "Share of Spaces",
+            "WoW (pp)"
+          ],
+          "align": [
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Media & entertainment"
+              },
+              {
+                "text": "9.9%",
+                "bold": true
+              },
+              {
+                "text": "+1.11 pp",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Consumer"
+              },
+              {
+                "text": "8.9%",
+                "bold": true
+              },
+              {
+                "text": "-0.77 pp",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Education"
+              },
+              {
+                "text": "8.5%",
+                "bold": true
+              },
+              {
+                "text": "+0.42 pp",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Scientific research"
+              },
+              {
+                "text": "7.9%",
+                "bold": true
+              },
+              {
+                "text": "-0.53 pp",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Enterprise productivity"
+              },
+              {
+                "text": "7.1%",
+                "bold": true
+              },
+              {
+                "text": "+0.53 pp",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Healthcare"
+              },
+              {
+                "text": "4.0%",
+                "bold": true
+              },
+              {
+                "text": "-0.02 pp",
+                "tone": "down"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "New models by family",
+          "subtitle": "New models published on the Hub this week, by family (of 26,945).",
+          "headers": [
+            "Model family",
+            "New models",
+            "WoW"
+          ],
+          "align": [
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Other open models"
+              },
+              {
+                "text": "8,722",
+                "bold": true
+              },
+              {
+                "text": "-1.4%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Qwen"
+              },
+              {
+                "text": "5,467",
+                "bold": true
+              },
+              {
+                "text": "-9.1%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "Llama"
+              },
+              {
+                "text": "1,019",
+                "bold": true
+              },
+              {
+                "text": "+5.2%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Gemma"
+              },
+              {
+                "text": "838",
+                "bold": true
+              },
+              {
+                "text": "-16.9%",
+                "tone": "down"
+              }
+            ],
+            [
+              {
+                "text": "DeepSeek"
+              },
+              {
+                "text": "309",
+                "bold": true
+              },
+              {
+                "text": "+99.4%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Unresolved family"
+              },
+              {
+                "text": "10,123",
+                "bold": true
+              },
+              {
+                "text": "+20.0%",
+                "tone": "up"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "Engagement signals",
+          "subtitle": "Hub-wide demand this week — downloads and likes.",
+          "headers": [
+            "Signal",
+            "This week",
+            "WoW"
+          ],
+          "align": [
+            "left",
+            "right",
+            "right"
+          ],
+          "rows": [
+            [
+              {
+                "text": "Model downloads"
+              },
+              {
+                "text": "3.84M",
+                "bold": true
+              },
+              {
+                "text": "+45.4%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Model likes"
+              },
+              {
+                "text": "12,054",
+                "bold": true
+              },
+              {
+                "text": "+51.4%",
+                "tone": "up"
+              }
+            ],
+            [
+              {
+                "text": "Space likes"
+              },
+              {
+                "text": "1,207",
+                "bold": true
+              },
+              {
+                "text": "+34.9%",
+                "tone": "up"
+              }
+            ]
+          ]
+        }
+      ],
       "prevLabel": "wk 28 Sep",
       "prevValue": 6522,
       "prevChangePct": -0.007206378411530205,
@@ -15435,7 +15855,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T19:27:10.645Z",
+      "asOf": "2026-10-21T19:47:23.148Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17149,7 +17569,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T19:27:10.777Z"
+          "asOf": "2026-10-21T19:47:23.274Z"
         }
       ],
       "prevLabel": "Jul '26",

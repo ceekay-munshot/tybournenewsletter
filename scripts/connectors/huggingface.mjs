@@ -33,6 +33,35 @@ const FAMILY_LABEL = {
 };
 const famLabel = (d) => FAMILY_LABEL[d] || d.charAt(0).toUpperCase() + d.slice(1);
 
+// Display names for the deeper cuts the Hub ships alongside the use-case split. These power
+// the supporting tables (the founder asked for Hugging Face to be drilled down further).
+const FAM2_LABEL = {
+  qwen: 'Qwen',
+  llama: 'Llama',
+  gemma: 'Gemma',
+  deepseek: 'DeepSeek',
+  'other-open': 'Other open models',
+  unknown: 'Unresolved family',
+};
+const SDK_LABEL = { static: 'Static', gradio: 'Gradio', docker: 'Docker', streamlit: 'Streamlit', unknown: 'Unresolved' };
+const TECH_LABEL = {
+  'vision-language': 'Vision-language',
+  agentic: 'Agentic',
+  multimodal: 'Multimodal',
+  diffusion: 'Diffusion',
+  'tool-use': 'Tool use',
+  'fine-tuned': 'Fine-tuned',
+};
+const VERT_LABEL = {
+  'media-entertainment': 'Media & entertainment',
+  consumer: 'Consumer',
+  education: 'Education',
+  'scientific-research': 'Scientific research',
+  'enterprise-productivity': 'Enterprise productivity',
+  healthcare: 'Healthcare',
+};
+const ENG_LABEL = { model_downloads: 'Model downloads', model_likes: 'Model likes', space_likes: 'Space likes' };
+
 const frac = (changePct) => (changePct == null || !Number.isFinite(changePct) ? null : changePct / 100);
 
 // Robust-z over a set of fractional changes → flags the use-cases diverging from the pack.
@@ -183,6 +212,86 @@ function buildInsights(month) {
   return out;
 }
 
+// ── Deeper breakdowns ──────────────────────────────────────────────────────
+// The Hub ships five more cuts per period beyond the use-case split. Surface them as
+// supporting tables (counts or shares + the week-on-week move) so Hugging Face carries the
+// same depth the founder asked for — SDK mix, technology & vertical penetration, new models
+// by family, and Hub-wide engagement.
+const toneOf = (c) => (c == null || !Number.isFinite(c) ? undefined : c > 0 ? 'up' : c < 0 ? 'down' : 'flat');
+const pctCell = (c) => (c == null || !Number.isFinite(c) ? '—' : `${c >= 0 ? '+' : ''}${c.toFixed(1)}%`);
+const ptsCell = (c) => (c == null || !Number.isFinite(c) ? '—' : `${c >= 0 ? '+' : ''}${c.toFixed(2)} pp`);
+const compactInt = (n) =>
+  n == null || !Number.isFinite(n)
+    ? '—'
+    : Math.abs(n) >= 1e6
+      ? `${(n / 1e6).toFixed(2)}M`
+      : Math.round(n).toLocaleString('en-US');
+
+function buildAuxTables(entry) {
+  if (!entry) return [];
+  const facts = (cut) => (entry.facts || []).filter((f) => f.cut === cut && f.dimension != null && f.value != null);
+  const denomOf = (cut) => facts(cut)[0]?.denominator;
+  // Sort by size, but keep the catch-all "unresolved" bucket at the bottom so named
+  // families / SDKs lead the table.
+  const rank = (f) => (f.dimension === 'unknown' ? 1 : 0);
+  const byValue = (cut) => facts(cut).slice().sort((a, b) => rank(a) - rank(b) || (b.value ?? 0) - (a.value ?? 0));
+  const countRows = (cut, labels) =>
+    byValue(cut).map((f) => [
+      { text: labels[f.dimension] || f.dimension },
+      { text: compactInt(f.value), bold: true },
+      { text: pctCell(f.changePct), tone: toneOf(f.changePct) },
+    ]);
+  const shareRows = (cut, labels) =>
+    byValue(cut).map((f) => [
+      { text: labels[f.dimension] || f.dimension },
+      { text: `${Number(f.value).toFixed(1)}%`, bold: true },
+      { text: ptsCell(f.changePts), tone: toneOf(f.changePts) },
+    ]);
+
+  const out = [];
+  if (facts('sdk_distribution').length)
+    out.push({
+      title: 'New Spaces by SDK',
+      subtitle: `How this week’s ${fmtInt(denomOf('sdk_distribution'))} new Spaces were built.`,
+      headers: ['SDK', 'New Spaces', 'WoW'],
+      align: ['left', 'right', 'right'],
+      rows: countRows('sdk_distribution', SDK_LABEL),
+    });
+  if (facts('technology_penetration').length)
+    out.push({
+      title: 'Technology penetration',
+      subtitle: 'Share of new Spaces using each technology, with the week-on-week point move.',
+      headers: ['Technology', 'Share of Spaces', 'WoW (pp)'],
+      align: ['left', 'right', 'right'],
+      rows: shareRows('technology_penetration', TECH_LABEL),
+    });
+  if (facts('vertical_penetration').length)
+    out.push({
+      title: 'Vertical penetration',
+      subtitle: 'Share of new Spaces serving each industry, with the week-on-week point move.',
+      headers: ['Vertical', 'Share of Spaces', 'WoW (pp)'],
+      align: ['left', 'right', 'right'],
+      rows: shareRows('vertical_penetration', VERT_LABEL),
+    });
+  if (facts('models_by_family').length)
+    out.push({
+      title: 'New models by family',
+      subtitle: `New models published on the Hub this week, by family (of ${fmtInt(denomOf('models_by_family'))}).`,
+      headers: ['Model family', 'New models', 'WoW'],
+      align: ['left', 'right', 'right'],
+      rows: countRows('models_by_family', FAM2_LABEL),
+    });
+  if (facts('engagement').length)
+    out.push({
+      title: 'Engagement signals',
+      subtitle: 'Hub-wide demand this week — downloads and likes.',
+      headers: ['Signal', 'This week', 'WoW'],
+      align: ['left', 'right', 'right'],
+      rows: countRows('engagement', ENG_LABEL),
+    });
+  return out;
+}
+
 export async function connect(system) {
   const ins = await getJson(system.source.insights);
   const months = Array.isArray(ins?.month) ? ins.month : [];
@@ -251,11 +360,14 @@ export async function connect(system) {
     breakdown: def.breakdown,
     summary: def.summary,
     notes:
-      'New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Breakdown is new Spaces by use-case; model-family shifts and the new-models total are in “Why it moved”. Quarter-on-quarter needs two full quarters — not available yet.',
+      'New AI Spaces published on the Hugging Face Hub, from the Hub’s own insights feed (authoritative value/prev per period). Headline breakdown is new Spaces by use-case over the last four weeks; the supporting tables add the SDK mix, technology & vertical penetration, new models by family, and Hub-wide engagement. Quarter-on-quarter needs two full quarters — not available yet.',
   });
   block.views = views;
   block.breakdownNoun = 'use-case';
   block.changeNoun = 'New Spaces change';
   block.insights = buildInsights(month0);
+  // Deeper breakdowns (SDK, technology, vertical, model family, engagement) from the freshest
+  // weekly entry — surfaced as supporting tables on the dashboard and in the newsletter.
+  block.auxTables = buildAuxTables(week0 || month0);
   return block;
 }
