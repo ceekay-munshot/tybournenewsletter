@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import type { ConsolidatedData, Newsletter, ChangeBlock, BreakdownRow } from '../types';
+import type { ConsolidatedData, Newsletter, ChangeBlock, AuxTable } from '../types';
 import type { NewsletterState } from '../lib/newsletter';
 import { MoversChart } from '../components/MoversChart';
 import { MunshotMark } from '../components/MunshotMark';
+import { BreakdownRows, SeriesRows } from '../components/MultiPeriodView';
 import { iconFor } from '../lib/icons';
 import { sectorColor, directionColor, withAlpha } from '../lib/brand';
 import { headlineText, headlineMagnitude, fmtValue, dateLabel } from '../lib/format';
@@ -275,17 +276,28 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
   const accent = sectorColor(b.sector);
   const c = directionColor(b.direction);
   const narrative = !!b.highlights?.length;
-  const body = line || b.summary || factualLine(b);
+  // Narrative blocks (podcast) lead straight into the theme comparison — no consolidated-note
+  // paragraph, matching the dashboard (the founder flagged that note as a duplicate). Only an
+  // AI editor one-liner, if present, introduces them.
+  const body = narrative ? line ?? '' : line || b.summary || factualLine(b);
   const rows = b.breakdown || [];
-  const hasVals = rows.some((r) => r.lastValue != null || r.thisValue != null);
-  const changeOf = (r: BreakdownRow) => headlineText(r.changePct, r.changeAbs, r.changeDisplay ?? b.changeDisplay);
-  const prevChangeOf = (r: BreakdownRow) => headlineText(r.prevChangePct, r.prevChangeAbs, r.changeDisplay ?? b.changeDisplay);
+  const hasVals = rows.some(
+    (r) => r.lastValue != null || r.thisValue != null || (r.sub ?? []).some((s) => s.lastValue != null || s.thisValue != null)
+  );
   const insights = b.insights ?? [];
   const bNoun = b.breakdownNoun ?? 'breakdown';
   // two-period trend columns (prior value + prior change), adaptive like the dashboard table
-  const showPrevVal = hasVals && (b.prevValue != null || rows.some((r) => r.prevValue != null));
+  const showPrevVal =
+    hasVals && (b.prevValue != null || rows.some((r) => r.prevValue != null || (r.sub ?? []).some((s) => s.prevValue != null)));
   const showPrevChg =
-    b.prevChangePct != null || b.prevChangeAbs != null || rows.some((r) => r.prevChangePct != null || r.prevChangeAbs != null);
+    b.prevChangePct != null ||
+    b.prevChangeAbs != null ||
+    rows.some(
+      (r) =>
+        r.prevChangePct != null ||
+        r.prevChangeAbs != null ||
+        (r.sub ?? []).some((s) => s.prevChangePct != null || s.prevChangeAbs != null)
+    );
   const prevArrow = b.prevLabel ? `${b.prevLabel} → ${b.lastPeriodLabel}` : 'Prior';
   const thisArrow = `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
   // Multi-period series (last N periods) — mirrors the dashboard table when present.
@@ -295,7 +307,7 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
     useSeries && (b.series!.some((p) => p.value != null) || rows.some((r) => (r.series ?? []).some((p) => p.value != null)));
 
   return (
-    <div className="nl-avoid rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
+    <div className="nl-entry rounded-xl bg-white p-3.5 ring-1 ring-slate-200/70">
       <div className="flex items-start justify-between gap-3">
         <button onClick={() => onSelect(b.systemId)} className="flex min-w-0 items-center gap-2 text-left">
           <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg" style={{ background: `${accent}14`, color: accent }}>
@@ -333,128 +345,113 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
         )}
       </div>
 
-      <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">{body}</p>
+      {body && <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">{body}</p>}
 
       {narrative && b.highlights ? (
-        <ul className="mt-2 grid grid-cols-1 gap-1 sm:grid-cols-2">
-          {b.highlights.map((h, i) => (
-            <li key={i} className="flex gap-1.5 text-[12px] leading-snug text-slate-600">
-              <Quote size={11} className="mt-[3px] shrink-0" style={{ color: accent }} />
-              <span>{h}</span>
-            </li>
-          ))}
-        </ul>
-      ) : rows.length > 0 ? (
-        <div className="mt-2.5 overflow-hidden rounded-lg ring-1 ring-slate-200/70">
-          <table className="w-full border-collapse text-[11.5px]">
-            {useSeries ? (
-              <>
-                <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
-                    <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
-                    {seriesHasVals &&
-                      sLabels.map((l, i) => (
-                        <th key={`v${i}`} className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">
-                          {l}
-                        </th>
-                      ))}
-                    {sLabels.slice(1).map((l, i) => (
-                      <th
-                        key={`c${i}`}
-                        className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0"
-                      >
-                        {sLabels[i]} → {l}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((r, i) => {
-                    const pts = Array.from({ length: sLabels.length }, (_, k) => r.series?.[k] ?? null);
-                    return (
-                      <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                        <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
-                          {r.label}
-                          {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
-                        </td>
-                        {seriesHasVals &&
-                          pts.map((p, k) => (
-                            <td
-                              key={`v${k}`}
-                              className={`tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0 ${
-                                k === sLabels.length - 1 ? 'font-semibold text-slate-800' : 'text-slate-500'
-                              }`}
-                            >
-                              {p && p.value != null ? fmtValue(p.value, b.unit) : ''}
-                            </td>
-                          ))}
-                        {pts.slice(1).map((p, k) => {
-                          const tracked = p != null && (p.changePct != null || p.changeAbs != null);
-                          return (
-                            <td
-                              key={`c${k}`}
-                              className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0"
-                              style={{ color: tracked ? directionColor(p!.direction) : '#CBD5E1' }}
-                            >
-                              {tracked ? headlineText(p!.changePct, p!.changeAbs, r.changeDisplay ?? b.changeDisplay) : ''}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </>
-            ) : (
-              <>
-                <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
-                    <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
-                    {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
-                    {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
-                    {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
-                    {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
-                    <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rows.map((r, i) => {
-                    const prevTracked = r.prevChangePct != null || r.prevChangeAbs != null;
-                    return (
-                      <tr key={r.label} className={i % 2 ? 'bg-white' : 'bg-slate-50/40'}>
-                        <td className="border-r border-slate-100 px-2.5 py-1.5 font-medium text-slate-700 last:border-r-0">
-                          {r.label}
-                          {r.note && <span className="ml-1 text-[10px] font-normal italic text-slate-400">· {r.note}</span>}
-                        </td>
-                        {showPrevVal && (
-                          <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-400 last:border-r-0">{r.prevValue != null ? fmtValue(r.prevValue, b.unit) : ''}</td>
-                        )}
-                        {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right text-slate-500 last:border-r-0">{fmtValue(r.lastValue, b.unit)}</td>}
-                        {hasVals && <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-semibold text-slate-800 last:border-r-0">{fmtValue(r.thisValue, b.unit)}</td>}
-                        {showPrevChg && (
-                          <td
-                            className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right last:border-r-0"
-                            style={{ color: prevTracked ? directionColor(r.prevDirection ?? 'flat') : '#CBD5E1' }}
-                          >
-                            {prevTracked ? prevChangeOf(r) : ''}
-                          </td>
-                        )}
-                        <td className="tnum border-r border-slate-100 px-2.5 py-1.5 text-right font-bold last:border-r-0" style={{ color: directionColor(r.direction) }}>
-                          {changeOf(r)}
-                          {r.bigMove && ' ⚡'}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </>
+        <div className="nl-avoid mt-2.5">
+          {/* Recurring themes — last quarter vs this quarter, mirroring the dashboard. */}
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            {b.prevHighlights && b.prevHighlights.length > 0 && (
+              <NlThemeColumn label={b.lastPeriodLabel} count={b.lastValue} tone={b.prevTone} themes={b.prevHighlights} tint="#64748B" />
             )}
-          </table>
+            <NlThemeColumn
+              label={b.thisPeriodLabel}
+              count={b.thisValue}
+              tone={b.thisTone ?? b.tone}
+              themes={b.highlights}
+              newThemes={b.newHighlights}
+              tint={accent}
+              highlight
+            />
+          </div>
+          {b.prevHighlights && b.prevHighlights.length > 0 && (
+            <p className="mt-2 flex flex-wrap items-center gap-1.5 text-[10.5px] text-slate-400">
+              <span className="inline-block rounded bg-emerald-50 px-1 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-600 ring-1 ring-emerald-100">
+                new
+              </span>
+              = theme that appears this quarter but not last · {b.lastPeriodLabel} → {b.thisPeriodLabel}
+            </p>
+          )}
+        </div>
+      ) : rows.length > 0 || b.auxTables?.length || b.auxTableGroups?.length ? (
+        <div className="mt-2.5 flex flex-col gap-2.5">
+          {rows.length > 0 && (
+            <div className="overflow-x-auto rounded-lg ring-1 ring-slate-200/70">
+              <table className="w-full border-collapse text-[11.5px]">
+                {useSeries ? (
+                  <>
+                    <thead>
+                      <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+                        <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
+                        {seriesHasVals &&
+                          sLabels.map((l, i) => (
+                            <th key={`v${i}`} className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">
+                              {l}
+                            </th>
+                          ))}
+                        {sLabels.slice(1).map((l, i) => (
+                          <th
+                            key={`c${i}`}
+                            className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0"
+                          >
+                            {sLabels[i]} → {l}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {rows.map((r) => (
+                        <SeriesRows key={r.label} row={r} unit={b.unit} disp={b.changeDisplay} hasVals={seriesHasVals} nPeriods={sLabels.length} />
+                      ))}
+                    </tbody>
+                  </>
+                ) : (
+                  <>
+                    <thead>
+                      <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+                        <th className="border-r border-slate-200 px-2.5 py-1.5 font-semibold capitalize last:border-r-0">{bNoun}</th>
+                        {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
+                        {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
+                        {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
+                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
+                        <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {rows.map((r) => (
+                        <BreakdownRows
+                          key={r.label}
+                          row={r}
+                          unit={b.unit}
+                          disp={b.changeDisplay}
+                          hasVals={hasVals}
+                          showPrevVal={showPrevVal}
+                          showPrevChg={showPrevChg}
+                        />
+                      ))}
+                    </tbody>
+                  </>
+                )}
+              </table>
+            </div>
+          )}
+          {b.auxTables?.map((t, i) => (
+            <NlAuxTable key={`t${i}`} table={t} />
+          ))}
+          {b.auxTableGroups?.map((g, gi) => (
+            <div key={`g${gi}`} className="flex flex-col gap-2.5">
+              <div className="text-[10px] font-bold uppercase tracking-[0.08em] text-slate-400">{g.label}</div>
+              {g.tables.map((t, i) => (
+                <NlAuxTable key={i} table={t} />
+              ))}
+            </div>
+          ))}
         </div>
       ) : null}
 
-      {/* Lifted "why it moved" — the research/explanation behind the move */}
-      {insights.length > 0 && (
+      {/* Lifted "why it moved" — kept to SAP only, matching the dashboard (the founder
+          asked for the narrative to come off everywhere else; tables carry the rest). */}
+      {b.systemId === 'sap-ai' && insights.length > 0 && (
         <div className="mt-2.5 border-t border-dashed border-slate-200 pt-2.5">
           <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-slate-400">
             <Quote size={11} style={{ color: accent }} /> Why it moved
@@ -481,6 +478,120 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
       )}
 
       {b.notes && <p className="mt-2 text-[11px] italic leading-snug text-slate-400">{b.notes}</p>}
+    </div>
+  );
+}
+
+/** One quarter's column in the newsletter's podcast last-vs-this theme comparison —
+ *  a compact mirror of the dashboard's ThemeColumn, with "new" tags for fresh themes. */
+function NlThemeColumn({
+  label,
+  count,
+  tone,
+  themes,
+  newThemes,
+  tint,
+  highlight = false,
+}: {
+  label: string;
+  count: number | null;
+  tone?: string;
+  themes: string[];
+  newThemes?: string[];
+  tint: string;
+  highlight?: boolean;
+}) {
+  const newSet = new Set((newThemes ?? []).map((t) => t.toLowerCase()));
+  return (
+    <div
+      className="rounded-lg border p-2.5"
+      style={{ borderColor: highlight ? `${tint}40` : '#E2E8F0', background: highlight ? `${tint}0A` : 'rgba(248,250,252,0.5)' }}
+    >
+      <div
+        className="mb-1.5 flex items-baseline justify-between gap-2 border-b pb-1"
+        style={{ borderColor: highlight ? `${tint}30` : '#E2E8F0' }}
+      >
+        <span className="font-display text-[12px] font-bold text-slate-900">{label}</span>
+        <span className="tnum text-[10.5px] text-slate-500">
+          {count != null ? `${count} episode${count === 1 ? '' : 's'}` : '—'}
+          {tone ? ` · ${tone}` : ''}
+        </span>
+      </div>
+      {themes.length ? (
+        <ul className="flex flex-col gap-1">
+          {themes.map((h, i) => {
+            const isNew = newSet.has(h.toLowerCase());
+            return (
+              <li key={i} className="flex gap-1.5 text-[11.5px] leading-snug text-slate-700">
+                <span className="mt-[5px] h-1 w-1 shrink-0 rounded-full" style={{ background: tint }} />
+                <span>
+                  {h}
+                  {isNew && (
+                    <span className="ml-1.5 rounded bg-emerald-50 px-1 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-600 ring-1 ring-emerald-100">
+                      new
+                    </span>
+                  )}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p className="text-[11px] italic text-slate-400">No themes captured this quarter.</p>
+      )}
+    </div>
+  );
+}
+
+/** A connector-supplied supporting table (sector flows, entries/exits, accel vs decel,
+ *  TI's UBS-compare / price matrices) rendered in the newsletter's tight bordered style —
+ *  so the newsletter carries every table the dashboard shows behind its toggles. */
+function NlAuxTable({ table }: { table: AuxTable }) {
+  const alignOf = (i: number) => table.align?.[i] ?? (i === 0 ? 'left' : 'right');
+  return (
+    <div>
+      <div className="text-[11px] font-bold text-slate-700">{table.title}</div>
+      {table.subtitle && <div className="text-[10.5px] leading-snug text-slate-400">{table.subtitle}</div>}
+      <div className="mt-1 overflow-x-auto rounded-lg ring-1 ring-slate-200/70">
+        <table className="w-full border-collapse text-[11.5px]">
+          <thead>
+            <tr className="border-b border-slate-200 bg-slate-50 text-left text-slate-500">
+              {table.headers.map((h, i) => (
+                <th
+                  key={i}
+                  className={`whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 font-semibold last:border-r-0 ${alignOf(i) === 'right' ? 'text-right' : ''}`}
+                >
+                  {h}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row, ri) => (
+              <tr key={ri} className={ri % 2 ? 'bg-white' : 'bg-slate-50/40'}>
+                {row.map((cell, ci) => (
+                  <td
+                    key={ci}
+                    className={`border-r border-slate-100 px-2.5 py-1.5 align-top last:border-r-0 ${
+                      alignOf(ci) === 'right' ? 'tnum whitespace-nowrap text-right' : ''
+                    } ${cell.bold ? 'font-semibold text-slate-800' : 'text-slate-600'}`}
+                    style={cell.tone ? { color: directionColor(cell.tone) } : undefined}
+                  >
+                    {cell.text}
+                  </td>
+                ))}
+              </tr>
+            ))}
+            {table.rows.length === 0 && (
+              <tr>
+                <td colSpan={table.headers.length} className="px-2.5 py-4 text-center text-[11px] text-slate-400">
+                  Nothing to show this period.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

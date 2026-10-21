@@ -303,7 +303,7 @@ export function MultiPeriodView({
 
 /** One breakdown item as a table row, with any sub-dimension items as indented sub-rows.
  *  Columns: name · [prior value · last value · this value] · [prior change · this change]. */
-function BreakdownRows({
+export function BreakdownRows({
   row,
   unit,
   disp,
@@ -378,7 +378,7 @@ function BreakdownRows({
 
 /** A breakdown row rendered as a multi-period series: one value column per period plus a
  *  change column per step. Pads to nPeriods so every row's columns line up. */
-function SeriesRows({
+export function SeriesRows({
   row,
   unit,
   disp,

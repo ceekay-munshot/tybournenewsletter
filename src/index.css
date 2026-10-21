@@ -225,4 +225,33 @@ body::before {
   .print-only-newsletter > footer {
     display: none !important;
   }
+
+  /* Newsletter tables carry the full dashboard detail (4-period trends, TI matrices), which
+     run wider than A4. On screen they scroll; on paper there is no scroll, so shrink the text
+     and padding enough that every column fits the page instead of clipping on the right. */
+  .nl-root table,
+  .nl-root table th,
+  .nl-root table td,
+  .nl-root table th span,
+  .nl-root table td span {
+    font-size: 9.5px !important;
+    line-height: 1.25 !important;
+  }
+  .nl-root table th,
+  .nl-root table td {
+    padding: 3px 5px !important;
+  }
+  .nl-root .overflow-x-auto,
+  .nl-root .overflow-hidden {
+    overflow: visible !important;
+  }
+
+  /* A single per-dashboard entry (e.g. 13F with 70+ rows) can run longer than one page.
+     Let those flow across page boundaries so pages fill up, but never split a table row. */
+  .nl-entry {
+    break-inside: auto;
+  }
+  .nl-root tr {
+    break-inside: avoid;
+  }
 }

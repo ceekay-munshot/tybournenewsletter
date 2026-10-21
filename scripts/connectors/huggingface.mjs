@@ -6,7 +6,7 @@
 // two full quarters we don't have yet — shown honestly as unavailable.
 import { getJson } from '../lib/http.mjs';
 import { monthLabel } from '../lib/quarters.mjs';
-import { makeBlock, directionOf, attachPrev } from '../lib/changeBlock.mjs';
+import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
 
 const UC_LABEL = {
   '3d-gaming': '3D / gaming',
@@ -219,15 +219,25 @@ export async function connect(system) {
       wowView.prevDirection = wowPrior.direction;
     }
   }
+  // Weekly trend: the Hub ships 9+ weeks, so the Weekly view carries a real last-4-weeks
+  // series (headline + every use-case), through the most recent week. This is the current
+  // pace read and runs well past the monthly base, so it is the default headline below.
+  if (wowView.available && weeks.length >= 2) {
+    const weekly = weeks.slice(0, 4).map((w) => viewFrom(w, 'WoW', 'Week', weekLabel, prevWeekLabel));
+    attachSeries(wowView, weekly);
+  }
   const qoqView = unavailable(
     'QoQ',
     'Quarter',
     'Hugging Face tracking started in late July 2026 — a quarter-on-quarter needs two full quarters, so it is not available yet.'
   );
   const views = [wowView, momView, qoqView];
-  const def = momView.available ? momView : wowView.available ? wowView : views[0];
+  // Weekly is the default: it is the freshest window (runs through the latest week, well past
+  // the month) and the cleaner current-pace read — the monthly base is still young. MoM stays
+  // one toggle away for the headline monthly figure.
+  const def = wowView.available ? wowView : momView.available ? momView : views[0];
 
-  const asOf = month0.generatedAt || `${month0.periodKey}-28`;
+  const asOf = week0?.generatedAt || month0.generatedAt || `${month0.periodKey}-28`;
   const block = makeBlock(system, {
     unit: 'new Spaces',
     comparison: def.comparison,

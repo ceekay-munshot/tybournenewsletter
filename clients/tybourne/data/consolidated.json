@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T18:04:28.037Z",
+  "generatedAt": "2026-10-21T19:27:29.086Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3126,10 +3126,10 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.39,
+      "thisValue": 2.41,
       "lastValue": 2.45,
-      "changePct": -0.024489795918367366,
-      "changeAbs": -0.06000000000000005,
+      "changePct": -0.01632653061224491,
+      "changeAbs": -0.040000000000000036,
       "direction": "down",
       "asOf": "2026-10-19T00:00:00.000Z",
       "isStale": false,
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 1.6% (output -0.8%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3284,10 +3284,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.39,
+          "thisValue": 2.41,
           "lastValue": 2.45,
-          "changePct": -0.024489795918367366,
-          "changeAbs": -0.06000000000000005,
+          "changePct": -0.01632653061224491,
+          "changeAbs": -0.040000000000000036,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 1.6% (output -0.8%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3416,9 +3416,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.39,
-              "changePct": -0.024489795918367366,
-              "changeAbs": -0.06000000000000005,
+              "value": 2.41,
+              "changePct": -0.01632653061224491,
+              "changeAbs": -0.040000000000000036,
               "direction": "down"
             }
           ]
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-21.8% input · share +8.55pp"
+          "body": "-21.8% input · share +8.60pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -3447,9 +3447,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.39,
-          "changePct": -0.024489795918367366,
-          "changeAbs": -0.06000000000000005,
+          "value": 2.41,
+          "changePct": -0.01632653061224491,
+          "changeAbs": -0.040000000000000036,
           "direction": "down"
         }
       ]
@@ -14710,67 +14710,271 @@
       "sector": "technology",
       "metricLabel": "New AI Spaces",
       "unit": "new Spaces",
-      "comparison": "MoM",
-      "thisPeriodLabel": "Sep '26",
-      "lastPeriodLabel": "Aug '26",
-      "thisValue": 25225,
-      "lastValue": 17828,
-      "changePct": 0.4149091317029392,
-      "changeAbs": 7397,
+      "comparison": "WoW",
+      "thisPeriodLabel": "wk 12 Oct",
+      "lastPeriodLabel": "wk 5 Oct",
+      "thisValue": 6920,
+      "lastValue": 6475,
+      "changePct": 0.06872586872586872,
+      "changeAbs": 445,
       "direction": "up",
-      "asOf": "2026-10-05T07:15:20.473Z",
+      "asOf": "2026-10-19T06:19:50.934Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Other / mixed",
-          "thisValue": 7484,
-          "lastValue": 5721,
-          "changePct": 0.3081629085824157,
+          "thisValue": 1979,
+          "lastValue": 1855,
+          "changePct": 0.06684636118598383,
           "direction": "up",
-          "bigMove": true
+          "bigMove": false,
+          "prevValue": 1903,
+          "prevChangePct": -0.025223331581713086,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 1868,
+              "changePct": -0.0069112174375332265,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 1903,
+              "changePct": 0.01873661670235546,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 1855,
+              "changePct": -0.025223331581713086,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 1979,
+              "changePct": 0.06684636118598383,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
           "label": "Chat & assistants",
-          "thisValue": 3924,
-          "lastValue": 2712,
-          "changePct": 0.44690265486725667,
+          "thisValue": 1075,
+          "lastValue": 955,
+          "changePct": 0.1256544502617801,
           "direction": "up",
-          "bigMove": false
+          "bigMove": false,
+          "prevValue": 999,
+          "prevChangePct": -0.044044044044044044,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 1047,
+              "changePct": 0.07494866529774127,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 999,
+              "changePct": -0.045845272206303724,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 955,
+              "changePct": -0.044044044044044044,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 1075,
+              "changePct": 0.1256544502617801,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
           "label": "Image generation",
-          "thisValue": 2448,
-          "lastValue": 1742,
-          "changePct": 0.4052812858783008,
-          "direction": "up",
-          "bigMove": false
+          "thisValue": 693,
+          "lastValue": 734,
+          "changePct": -0.055858310626702996,
+          "direction": "down",
+          "bigMove": true,
+          "prevValue": 669,
+          "prevChangePct": 0.09715994020926756,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 622,
+              "changePct": 0.06143344709897611,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 669,
+              "changePct": 0.07556270096463022,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 734,
+              "changePct": 0.09715994020926756,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 693,
+              "changePct": -0.055858310626702996,
+              "changeAbs": null,
+              "direction": "down"
+            }
+          ]
         },
         {
           "label": "Data analysis",
-          "thisValue": 1945,
-          "lastValue": 1387,
-          "changePct": 0.4023071377072819,
+          "thisValue": 548,
+          "lastValue": 473,
+          "changePct": 0.15856236786469344,
           "direction": "up",
-          "bigMove": false
+          "bigMove": false,
+          "prevValue": 496,
+          "prevChangePct": -0.04637096774193548,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 460,
+              "changePct": -0.029535864978902954,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 496,
+              "changePct": 0.0782608695652174,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 473,
+              "changePct": -0.04637096774193548,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 548,
+              "changePct": 0.15856236786469344,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
           "label": "Document AI",
-          "thisValue": 1670,
-          "lastValue": 1122,
-          "changePct": 0.4884135472370767,
+          "thisValue": 463,
+          "lastValue": 432,
+          "changePct": 0.07175925925925926,
           "direction": "up",
-          "bigMove": true
+          "bigMove": false,
+          "prevValue": 463,
+          "prevChangePct": -0.06695464362850972,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 431,
+              "changePct": 0.10796915167095116,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 463,
+              "changePct": 0.07424593967517401,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 432,
+              "changePct": -0.06695464362850972,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 463,
+              "changePct": 0.07175925925925926,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
-          "label": "Voice & audio",
-          "thisValue": 1398,
-          "lastValue": 993,
-          "changePct": 0.4078549848942598,
+          "label": "Search & research",
+          "thisValue": 423,
+          "lastValue": 372,
+          "changePct": 0.13709677419354838,
           "direction": "up",
-          "bigMove": false
+          "bigMove": false,
+          "prevValue": 378,
+          "prevChangePct": -0.015873015873015872,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": null,
+              "changePct": null,
+              "changeAbs": null,
+              "direction": "flat"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 378,
+              "changePct": 0.13513513513513514,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 372,
+              "changePct": -0.015873015873015872,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 423,
+              "changePct": 0.13709677419354838,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         }
       ],
-      "summary": "Month-on-month new Spaces up 41.5% to 25,225; chat & assistants leads the build mix at 3,924 new Spaces.",
+      "summary": "Week-on-week new Spaces up 6.9% to 6,920; chat & assistants leads the build mix at 1,075 new Spaces.",
       "sourceName": "Hugging Face Hub",
       "sourceUrl": "",
       "dashboardUrl": null,
@@ -14799,7 +15003,37 @@
               "prevValue": 1903,
               "prevChangePct": -0.025223331581713086,
               "prevChangeAbs": null,
-              "prevDirection": "down"
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": 1868,
+                  "changePct": -0.0069112174375332265,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 1903,
+                  "changePct": 0.01873661670235546,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 1855,
+                  "changePct": -0.025223331581713086,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 1979,
+                  "changePct": 0.06684636118598383,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
             },
             {
               "label": "Chat & assistants",
@@ -14811,7 +15045,37 @@
               "prevValue": 999,
               "prevChangePct": -0.044044044044044044,
               "prevChangeAbs": null,
-              "prevDirection": "down"
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": 1047,
+                  "changePct": 0.07494866529774127,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 999,
+                  "changePct": -0.045845272206303724,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 955,
+                  "changePct": -0.044044044044044044,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 1075,
+                  "changePct": 0.1256544502617801,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
             },
             {
               "label": "Image generation",
@@ -14823,7 +15087,37 @@
               "prevValue": 669,
               "prevChangePct": 0.09715994020926756,
               "prevChangeAbs": null,
-              "prevDirection": "up"
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": 622,
+                  "changePct": 0.06143344709897611,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 669,
+                  "changePct": 0.07556270096463022,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 734,
+                  "changePct": 0.09715994020926756,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 693,
+                  "changePct": -0.055858310626702996,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
             },
             {
               "label": "Data analysis",
@@ -14835,7 +15129,37 @@
               "prevValue": 496,
               "prevChangePct": -0.04637096774193548,
               "prevChangeAbs": null,
-              "prevDirection": "down"
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": 460,
+                  "changePct": -0.029535864978902954,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 496,
+                  "changePct": 0.0782608695652174,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 473,
+                  "changePct": -0.04637096774193548,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 548,
+                  "changePct": 0.15856236786469344,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
             },
             {
               "label": "Document AI",
@@ -14847,7 +15171,37 @@
               "prevValue": 463,
               "prevChangePct": -0.06695464362850972,
               "prevChangeAbs": null,
-              "prevDirection": "down"
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": 431,
+                  "changePct": 0.10796915167095116,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 463,
+                  "changePct": 0.07424593967517401,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 432,
+                  "changePct": -0.06695464362850972,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 463,
+                  "changePct": 0.07175925925925926,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
             },
             {
               "label": "Search & research",
@@ -14859,14 +15213,74 @@
               "prevValue": 378,
               "prevChangePct": -0.015873015873015872,
               "prevChangeAbs": null,
-              "prevDirection": "down"
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "wk 21 Sep",
+                  "value": null,
+                  "changePct": null,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "wk 28 Sep",
+                  "value": 378,
+                  "changePct": 0.13513513513513514,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 5 Oct",
+                  "value": 372,
+                  "changePct": -0.015873015873015872,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 423,
+                  "changePct": 0.13709677419354838,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
             }
           ],
           "summary": "Week-on-week new Spaces up 6.9% to 6,920; chat & assistants leads the build mix at 1,075 new Spaces.",
           "prevLabel": "wk 28 Sep",
           "prevValue": 6522,
           "prevChangePct": -0.007206378411530205,
-          "prevDirection": "down"
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "wk 21 Sep",
+              "value": 6400,
+              "changePct": 0.028608164577306333,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 28 Sep",
+              "value": 6522,
+              "changePct": 0.0190625,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "wk 5 Oct",
+              "value": 6475,
+              "changePct": -0.007206378411530205,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "wk 12 Oct",
+              "value": 6920,
+              "changePct": 0.06872586872586872,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
           "comparison": "MoM",
@@ -14971,9 +15385,41 @@
           "body": "August 2026 was Hugging Face’s first full tracked month, so the comparison base is young. The Weekly view — new Spaces running a steady ~6.4k/week — is the cleaner read on the current pace; treat the large MoM as base-sensitive."
         }
       ],
-      "prevValue": null,
-      "prevChangePct": null,
-      "prevChangeAbs": null
+      "prevLabel": "wk 28 Sep",
+      "prevValue": 6522,
+      "prevChangePct": -0.007206378411530205,
+      "prevChangeAbs": null,
+      "prevDirection": "down",
+      "series": [
+        {
+          "label": "wk 21 Sep",
+          "value": 6400,
+          "changePct": 0.028608164577306333,
+          "changeAbs": null,
+          "direction": "up"
+        },
+        {
+          "label": "wk 28 Sep",
+          "value": 6522,
+          "changePct": 0.0190625,
+          "changeAbs": null,
+          "direction": "up"
+        },
+        {
+          "label": "wk 5 Oct",
+          "value": 6475,
+          "changePct": -0.007206378411530205,
+          "changeAbs": null,
+          "direction": "down"
+        },
+        {
+          "label": "wk 12 Oct",
+          "value": 6920,
+          "changePct": 0.06872586872586872,
+          "changeAbs": null,
+          "direction": "up"
+        }
+      ]
     },
     {
       "systemId": "ai-model-intel",
@@ -14989,7 +15435,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T18:04:16.251Z",
+      "asOf": "2026-10-21T19:27:10.645Z",
       "isStale": false,
       "breakdown": [
         {
@@ -16703,7 +17149,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T18:04:16.346Z"
+          "asOf": "2026-10-21T19:27:10.777Z"
         }
       ],
       "prevLabel": "Jul '26",
