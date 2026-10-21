@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import { ChevronLeft, ExternalLink, Clock, Zap, Quote } from 'lucide-react';
+import { ChevronLeft, Clock, Zap, Quote } from 'lucide-react';
 import type { ChangeBlock, BreakdownRow, Comparison } from '../types';
 import { Card, CardHeader, Badge } from './ui/Card';
 import { Segmented } from './ui/Controls';
-import { Legend } from './charts/ChartBase';
-import { DivergingBars, type DivergingDatum } from './charts/DivergingBars';
 import { iconFor } from '../lib/icons';
-import { sectorColor, directionColor, DIRECTION_COLOR } from '../lib/brand';
-import { fmtValue, dateLabel, axisPct, headlineText } from '../lib/format';
+import { sectorColor, directionColor } from '../lib/brand';
+import { fmtValue, dateLabel, headlineText } from '../lib/format';
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -41,9 +39,6 @@ export function MultiPeriodView({
   const bNoun = block.breakdownNoun ?? 'segment';
   const sNoun = block.subNoun ?? 'group';
   const changeNoun = block.changeNoun ?? 'Change';
-  const isPts = view.changeDisplay === 'pts' || view.changeDisplay === 'pp';
-  const dispFor = (r: BreakdownRow) => r.changeDisplay ?? view.changeDisplay;
-  const magOf = (r: BreakdownRow) => (isPts ? (r.changeAbs ?? null) : (r.changePct ?? null));
   const hasSub = view.breakdown.some((r) => r.sub && r.sub.length);
   // Show the value columns only when some row (or its sub-rows) carries comparable
   // values — a pp-only breakdown (e.g. 13F) then renders a clean two-column table.
@@ -68,22 +63,6 @@ export function MultiPeriodView({
     );
   const prevArrow = view.prevLabel ? `${view.prevLabel} → ${view.lastPeriodLabel}` : 'Prior';
   const thisArrow = `${view.lastPeriodLabel} → ${view.thisPeriodLabel}`;
-
-  const priced = view.breakdown.filter((r) => magOf(r) != null);
-  const chartData: DivergingDatum[] = priced.map((r) => ({
-    key: r.label,
-    label: r.label,
-    value: magOf(r) as number,
-    color: directionColor(r.direction),
-    valueLabel: headlineText(r.changePct, r.changeAbs, dispFor(r)),
-    tipTitle: r.label,
-    tipColor: directionColor(r.direction),
-    tipRows: [
-      { label: 'Value', value: `${fmtValue(r.lastValue, block.unit)} → ${fmtValue(r.thisValue, block.unit)}` },
-      { label: 'Change', value: headlineText(r.changePct, r.changeAbs, dispFor(r)) },
-    ],
-  }));
-  const axisFmt = isPts ? (n: number) => `${n > 0 ? '+' : ''}${n.toFixed(1)}` : axisPct;
 
   return (
     <div className="animate-fade-in">
@@ -163,29 +142,6 @@ export function MultiPeriodView({
 
       {view.available && (
         <>
-          <Card className="mb-4">
-            <CardHeader
-              icon={Icon}
-              accent={accent}
-              title={`${changeNoun} by ${bNoun}`}
-              subtitle={block.breakdownSubtitle ?? `${cap(view.label)}-over-${view.label.toLowerCase()}`}
-              right={
-                <Legend
-                  items={[
-                    { label: 'Up', color: DIRECTION_COLOR.up },
-                    { label: 'Down', color: DIRECTION_COLOR.down },
-                    { label: 'Flat', color: DIRECTION_COLOR.flat },
-                  ]}
-                />
-              }
-            />
-            {chartData.length ? (
-              <DivergingBars data={chartData} axisFormat={axisFmt} labelWidth={190} />
-            ) : (
-              <div className="py-8 text-center text-[13px] text-slate-400">Nothing comparable in this window.</div>
-            )}
-          </Card>
-
           <Card pad={false} className="mb-4">
             <div className="p-4 pb-2">
               <h3 className="font-display text-[15px] font-bold text-slate-900">
@@ -229,7 +185,7 @@ export function MultiPeriodView({
         </>
       )}
 
-      {block.insights && block.insights.length > 0 && (
+      {block.systemId === 'sap-ai' && block.insights && block.insights.length > 0 && (
         <Card className="mb-4" accent={accent}>
           <CardHeader icon={Quote} accent={accent} title="Why it moved" subtitle="Lifted from the source research — latest available" />
           <div className="flex flex-col gap-3">
@@ -270,16 +226,6 @@ export function MultiPeriodView({
             <span className="tnum">{dateLabel(block.asOf)}</span>
           </p>
         </div>
-        {block.dashboardUrl && (
-          <a
-            href={block.dashboardUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-slate-900 px-3 py-1.5 text-[12px] font-semibold text-white transition hover:bg-slate-700"
-          >
-            Open full dashboard <ExternalLink size={13} />
-          </a>
-        )}
       </div>
     </div>
   );

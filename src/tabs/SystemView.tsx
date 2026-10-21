@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, ExternalLink, AlertTriangle, Clock } from 'lucide-react';
+import { ChevronLeft, AlertTriangle, Clock } from 'lucide-react';
 import type { ChangeBlock } from '../types';
 import { Card, CardHeader, Badge } from '../components/ui/Card';
 import { Segmented } from '../components/ui/Controls';
@@ -102,6 +102,9 @@ export function SystemView({
   const absVals = pctData.map((d) => Math.abs(d.value)).sort((a, b) => b - a);
   const pctDomain = absVals.length > 2 && absVals[0] > absVals[1] * 2 ? Math.max(absVals[1] * 1.25, 0.05) : undefined;
   const hasTrend = !!(block.trend && block.trend.length > 1);
+  // Podcast (and any narrative block) renders ONLY the quarter-vs-quarter theme
+  // comparison — no chart, no episodes-per-show table, no duplicate consolidated note.
+  const isNarrative = !!(block.highlights && block.highlights.length);
 
   // ---- breakdown table ----
   const cols: Column<BreakdownRow>[] = [
@@ -187,8 +190,8 @@ export function SystemView({
         </div>
       </Card>
 
-      {/* consolidated note (e.g. podcast quarter-over-quarter read) */}
-      {block.summary && (
+      {/* consolidated note — hidden for narrative blocks (duplicates the theme comparison) */}
+      {!isNarrative && block.summary && (
         <Card className="mb-4" accent={accent}>
           <CardHeader
             icon={Quote}
@@ -244,6 +247,7 @@ export function SystemView({
         </Card>
       )}
 
+      {!isNarrative && (
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
         {/* breakdown chart */}
         <Card className={hasTrend ? 'lg:col-span-3' : 'lg:col-span-5'}>
@@ -306,9 +310,10 @@ export function SystemView({
           </div>
         )}
       </div>
+      )}
 
       {/* full breakdown table */}
-      {block.breakdown.length > 0 && (
+      {!isNarrative && block.breakdown.length > 0 && (
         <Card className="mt-4" pad={false}>
           <div className="p-4 pb-2">
             <h3 className="font-display text-[15px] font-bold text-slate-900">Period-over-period detail</h3>
@@ -465,16 +470,6 @@ function SourceLine({ block }: { block: ChangeBlock }) {
           <span className="tnum">{dateLabel(block.asOf)}</span>
         </p>
       </div>
-      {block.dashboardUrl && (
-        <a
-          href={block.dashboardUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex shrink-0 items-center gap-1 rounded-lg bg-slate-900 px-3 py-1.5 text-[12px] font-semibold text-white transition hover:bg-slate-700"
-        >
-          Open full dashboard <ExternalLink size={13} />
-        </a>
-      )}
     </div>
   );
 }
