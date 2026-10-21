@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T03:32:38.607Z",
+  "generatedAt": "2026-10-21T11:16:49.911Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1022,36 +1022,36 @@
       "breakdown": [
         {
           "label": "DeepSeek",
-          "thisValue": 0.246,
-          "lastValue": 0.3157894736842105,
-          "changePct": -0.221,
+          "thisValue": 0.245,
+          "lastValue": 0.3132992327365729,
+          "changePct": -0.218,
           "direction": "down",
           "bigMove": true,
           "prevChangePct": 0.052,
           "prevDirection": "up",
-          "prevValue": 0.30018010806483886
+          "prevValue": 0.29781295887506926
         },
         {
           "label": "Google",
-          "thisValue": 0.521,
-          "lastValue": 0.5246727089627392,
+          "thisValue": 0.522,
+          "lastValue": 0.5256797583081572,
           "changePct": -0.007,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": -0.002,
           "prevDirection": "down",
-          "prevValue": 0.5257241572772938
+          "prevValue": 0.5267332247576725
         },
         {
           "label": "OpenAI",
-          "thisValue": 5.868,
-          "lastValue": 5.8797595190380765,
+          "thisValue": 5.869,
+          "lastValue": 5.880761523046092,
           "changePct": -0.002,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.8797595190380765
+          "prevValue": 5.880761523046092
         },
         {
           "label": "Anthropic",
@@ -1065,7 +1065,7 @@
           "prevValue": 5.02
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -1115,36 +1115,36 @@
           "breakdown": [
             {
               "label": "DeepSeek",
-              "thisValue": 0.246,
-              "lastValue": 0.3157894736842105,
-              "changePct": -0.221,
+              "thisValue": 0.245,
+              "lastValue": 0.3132992327365729,
+              "changePct": -0.218,
               "direction": "down",
               "bigMove": true,
               "prevChangePct": 0.052,
               "prevDirection": "up",
-              "prevValue": 0.30018010806483886
+              "prevValue": 0.29781295887506926
             },
             {
               "label": "Google",
-              "thisValue": 0.521,
-              "lastValue": 0.5246727089627392,
+              "thisValue": 0.522,
+              "lastValue": 0.5256797583081572,
               "changePct": -0.007,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": -0.002,
               "prevDirection": "down",
-              "prevValue": 0.5257241572772938
+              "prevValue": 0.5267332247576725
             },
             {
               "label": "OpenAI",
-              "thisValue": 5.868,
-              "lastValue": 5.8797595190380765,
+              "thisValue": 5.869,
+              "lastValue": 5.880761523046092,
               "changePct": -0.002,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.8797595190380765
+              "prevValue": 5.880761523046092
             },
             {
               "label": "Anthropic",
@@ -1158,7 +1158,7 @@
               "prevValue": 5.02
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -22.1%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.4% (output -1.5%); biggest move: DeepSeek -21.8%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -1171,7 +1171,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-22.1% input · share +8.64pp"
+          "body": "-21.8% input · share +8.53pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -4361,29 +4361,15 @@
       "changeAbs": -0.07,
       "direction": "down",
       "changeDisplay": "pts",
-      "asOf": "2026-10-20T10:58:31.389Z",
+      "asOf": "2026-10-21T11:10:36.378Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "vs. Competitors",
-          "thisValue": 2.66,
-          "lastValue": 2.29,
-          "changePct": null,
-          "changeAbs": 0.37,
-          "changeDisplay": "pts",
-          "direction": "up",
-          "bigMove": true,
-          "prevValue": 2.28,
-          "prevChangePct": null,
-          "prevChangeAbs": 0.01,
-          "prevDirection": "up"
-        },
-        {
           "label": "SAP RPT1",
-          "thisValue": 2.88,
+          "thisValue": 2.92,
           "lastValue": 2.54,
           "changePct": null,
-          "changeAbs": 0.34,
+          "changeAbs": 0.38,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
@@ -4393,45 +4379,59 @@
           "prevDirection": "down"
         },
         {
-          "label": "Customer Satisfaction",
-          "thisValue": 2.94,
-          "lastValue": 2.71,
+          "label": "vs. Competitors",
+          "thisValue": 2.66,
+          "lastValue": 2.29,
           "changePct": null,
-          "changeAbs": 0.23,
+          "changeAbs": 0.37,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
-          "prevValue": 3.75,
+          "prevValue": 2.2,
           "prevChangePct": null,
-          "prevChangeAbs": -1.04,
+          "prevChangeAbs": 0.09,
+          "prevDirection": "up"
+        },
+        {
+          "label": "Customer Satisfaction",
+          "thisValue": 2.95,
+          "lastValue": 2.71,
+          "changePct": null,
+          "changeAbs": 0.24,
+          "changeDisplay": "pts",
+          "direction": "up",
+          "bigMove": true,
+          "prevValue": 3.7,
+          "prevChangePct": null,
+          "prevChangeAbs": -0.99,
           "prevDirection": "down"
         },
         {
           "label": "Business Data Cloud",
-          "thisValue": 2.75,
-          "lastValue": 2.55,
+          "thisValue": 2.74,
+          "lastValue": 2.54,
           "changePct": null,
           "changeAbs": 0.2,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
-          "prevValue": 3.08,
+          "prevValue": 3.05,
           "prevChangePct": null,
-          "prevChangeAbs": -0.53,
+          "prevChangeAbs": -0.51,
           "prevDirection": "down"
         },
         {
           "label": "Risks & Gaps",
-          "thisValue": 2.17,
+          "thisValue": 2.16,
           "lastValue": 2.06,
           "changePct": null,
-          "changeAbs": 0.11,
+          "changeAbs": 0.1,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": false,
-          "prevValue": 1.88,
+          "prevValue": 1.82,
           "prevChangePct": null,
-          "prevChangeAbs": 0.18,
+          "prevChangeAbs": 0.24,
           "prevDirection": "up"
         },
         {
@@ -4443,9 +4443,9 @@
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": false,
-          "prevValue": 2.68,
+          "prevValue": 2.6,
           "prevChangePct": null,
-          "prevChangeAbs": -0.22,
+          "prevChangeAbs": -0.14,
           "prevDirection": "down"
         },
         {
@@ -4457,23 +4457,23 @@
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": false,
-          "prevValue": 3.22,
+          "prevValue": 3.23,
           "prevChangePct": null,
-          "prevChangeAbs": -0.33,
+          "prevChangeAbs": -0.34,
           "prevDirection": "down"
         },
         {
           "label": "Joule AI Assistant",
           "thisValue": 2.9,
-          "lastValue": 2.9,
+          "lastValue": 2.89,
           "changePct": null,
-          "changeAbs": 0,
+          "changeAbs": 0.01,
           "changeDisplay": "pts",
-          "direction": "flat",
+          "direction": "up",
           "bigMove": false,
-          "prevValue": 2.7,
+          "prevValue": 2.58,
           "prevChangePct": null,
-          "prevChangeAbs": 0.2,
+          "prevChangeAbs": 0.31,
           "prevDirection": "up"
         },
         {
@@ -4491,7 +4491,7 @@
           "prevDirection": "down"
         }
       ],
-      "summary": "Month-on-month overall SAP-AI sentiment down 0.07 pts to 2.60/5 — 2 topics softer, 5 firmer.",
+      "summary": "Month-on-month overall SAP-AI sentiment down 0.07 pts to 2.60/5 — 2 topics softer, 6 firmer.",
       "sourceName": "HN/Reddit/StackExchange + SAP docs",
       "sourceUrl": "",
       "dashboardUrl": null,
@@ -4517,20 +4517,6 @@
           "prevDirection": "up",
           "breakdown": [
             {
-              "label": "SAP RPT1",
-              "thisValue": 3.35,
-              "lastValue": 3.19,
-              "changePct": null,
-              "changeAbs": 0.16,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 2.7,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.49,
-              "prevDirection": "up"
-            },
-            {
               "label": "Customer Satisfaction",
               "thisValue": 3.2,
               "lastValue": 3.06,
@@ -4545,11 +4531,25 @@
               "prevDirection": "up"
             },
             {
+              "label": "SAP RPT1",
+              "thisValue": 3.37,
+              "lastValue": 3.24,
+              "changePct": null,
+              "changeAbs": 0.13,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 2.7,
+              "prevChangePct": null,
+              "prevChangeAbs": 0.54,
+              "prevDirection": "up"
+            },
+            {
               "label": "vs. Competitors",
-              "thisValue": 2.8,
+              "thisValue": 2.77,
               "lastValue": 2.7,
               "changePct": null,
-              "changeAbs": 0.1,
+              "changeAbs": 0.07,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
@@ -4573,11 +4573,25 @@
               "prevDirection": "up"
             },
             {
+              "label": "Joule AI Assistant",
+              "thisValue": 3,
+              "lastValue": 3.04,
+              "changePct": null,
+              "changeAbs": -0.04,
+              "changeDisplay": "pts",
+              "direction": "down",
+              "bigMove": false,
+              "prevValue": 2.74,
+              "prevChangePct": null,
+              "prevChangeAbs": 0.3,
+              "prevDirection": "up"
+            },
+            {
               "label": "S/4HANA AI Features",
-              "thisValue": 2.85,
+              "thisValue": 2.83,
               "lastValue": 2.8,
               "changePct": null,
-              "changeAbs": 0.05,
+              "changeAbs": 0.03,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
@@ -4601,27 +4615,13 @@
               "prevDirection": "down"
             },
             {
-              "label": "Joule AI Assistant",
-              "thisValue": 3.05,
-              "lastValue": 3.04,
-              "changePct": null,
-              "changeAbs": 0.01,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 2.74,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.3,
-              "prevDirection": "up"
-            },
-            {
               "label": "BTP & AI Agents",
-              "thisValue": 2.4,
+              "thisValue": 2.37,
               "lastValue": 2.39,
               "changePct": null,
-              "changeAbs": 0.01,
+              "changeAbs": -0.02,
               "changeDisplay": "pts",
-              "direction": "up",
+              "direction": "down",
               "bigMove": false,
               "prevValue": 2.36,
               "prevChangePct": null,
@@ -4643,7 +4643,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "Week-on-week overall SAP-AI sentiment up 0.00 pts to 2.60/5 — 2 topics softer, 7 firmer."
+          "summary": "Week-on-week overall SAP-AI sentiment up 0.00 pts to 2.60/5 — 4 topics softer, 5 firmer."
         },
         {
           "comparison": "MoM",
@@ -4664,25 +4664,11 @@
           "prevDirection": "down",
           "breakdown": [
             {
-              "label": "vs. Competitors",
-              "thisValue": 2.66,
-              "lastValue": 2.29,
-              "changePct": null,
-              "changeAbs": 0.37,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 2.28,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.01,
-              "prevDirection": "up"
-            },
-            {
               "label": "SAP RPT1",
-              "thisValue": 2.88,
+              "thisValue": 2.92,
               "lastValue": 2.54,
               "changePct": null,
-              "changeAbs": 0.34,
+              "changeAbs": 0.38,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
@@ -4692,45 +4678,59 @@
               "prevDirection": "down"
             },
             {
-              "label": "Customer Satisfaction",
-              "thisValue": 2.94,
-              "lastValue": 2.71,
+              "label": "vs. Competitors",
+              "thisValue": 2.66,
+              "lastValue": 2.29,
               "changePct": null,
-              "changeAbs": 0.23,
+              "changeAbs": 0.37,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
-              "prevValue": 3.75,
+              "prevValue": 2.2,
               "prevChangePct": null,
-              "prevChangeAbs": -1.04,
+              "prevChangeAbs": 0.09,
+              "prevDirection": "up"
+            },
+            {
+              "label": "Customer Satisfaction",
+              "thisValue": 2.95,
+              "lastValue": 2.71,
+              "changePct": null,
+              "changeAbs": 0.24,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": true,
+              "prevValue": 3.7,
+              "prevChangePct": null,
+              "prevChangeAbs": -0.99,
               "prevDirection": "down"
             },
             {
               "label": "Business Data Cloud",
-              "thisValue": 2.75,
-              "lastValue": 2.55,
+              "thisValue": 2.74,
+              "lastValue": 2.54,
               "changePct": null,
               "changeAbs": 0.2,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
-              "prevValue": 3.08,
+              "prevValue": 3.05,
               "prevChangePct": null,
-              "prevChangeAbs": -0.53,
+              "prevChangeAbs": -0.51,
               "prevDirection": "down"
             },
             {
               "label": "Risks & Gaps",
-              "thisValue": 2.17,
+              "thisValue": 2.16,
               "lastValue": 2.06,
               "changePct": null,
-              "changeAbs": 0.11,
+              "changeAbs": 0.1,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 1.88,
+              "prevValue": 1.82,
               "prevChangePct": null,
-              "prevChangeAbs": 0.18,
+              "prevChangeAbs": 0.24,
               "prevDirection": "up"
             },
             {
@@ -4742,9 +4742,9 @@
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 2.68,
+              "prevValue": 2.6,
               "prevChangePct": null,
-              "prevChangeAbs": -0.22,
+              "prevChangeAbs": -0.14,
               "prevDirection": "down"
             },
             {
@@ -4756,23 +4756,23 @@
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 3.22,
+              "prevValue": 3.23,
               "prevChangePct": null,
-              "prevChangeAbs": -0.33,
+              "prevChangeAbs": -0.34,
               "prevDirection": "down"
             },
             {
               "label": "Joule AI Assistant",
               "thisValue": 2.9,
-              "lastValue": 2.9,
+              "lastValue": 2.89,
               "changePct": null,
-              "changeAbs": 0,
+              "changeAbs": 0.01,
               "changeDisplay": "pts",
-              "direction": "flat",
+              "direction": "up",
               "bigMove": false,
-              "prevValue": 2.7,
+              "prevValue": 2.58,
               "prevChangePct": null,
-              "prevChangeAbs": 0.2,
+              "prevChangeAbs": 0.31,
               "prevDirection": "up"
             },
             {
@@ -4790,7 +4790,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "Month-on-month overall SAP-AI sentiment down 0.07 pts to 2.60/5 — 2 topics softer, 5 firmer."
+          "summary": "Month-on-month overall SAP-AI sentiment down 0.07 pts to 2.60/5 — 2 topics softer, 6 firmer."
         },
         {
           "comparison": "QoQ",
@@ -4799,150 +4799,159 @@
           "thisPeriodLabel": "Q4 '26",
           "lastPeriodLabel": "Q3 '26",
           "thisValue": 2.6,
-          "lastValue": 2.87,
+          "lastValue": 2.89,
           "changePct": null,
-          "changeAbs": -0.27,
+          "changeAbs": -0.29,
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": true,
           "prevLabel": "Q2 '26",
-          "prevValue": 3.3,
-          "prevChangeAbs": -0.43,
+          "prevValue": 3.24,
+          "prevChangeAbs": -0.35,
           "prevDirection": "down",
           "breakdown": [
             {
               "label": "Customer Satisfaction",
-              "thisValue": 2.94,
-              "lastValue": 3.29,
+              "thisValue": 2.95,
+              "lastValue": 3.35,
               "changePct": null,
-              "changeAbs": -0.35,
+              "changeAbs": -0.4,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 3.52,
+              "prevValue": 3,
               "prevChangePct": null,
-              "prevChangeAbs": -0.23,
-              "prevDirection": "down"
+              "prevChangeAbs": 0.35,
+              "prevDirection": "up"
             },
             {
               "label": "BTP & AI Agents",
               "thisValue": 2.38,
-              "lastValue": 2.65,
+              "lastValue": 2.67,
               "changePct": null,
-              "changeAbs": -0.27,
+              "changeAbs": -0.29,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 3.62,
+              "prevValue": 3.6,
               "prevChangePct": null,
-              "prevChangeAbs": -0.97,
+              "prevChangeAbs": -0.93,
               "prevDirection": "down"
             },
             {
               "label": "Partner Opinions",
               "thisValue": 3.32,
-              "lastValue": 3.54,
+              "lastValue": 3.57,
               "changePct": null,
-              "changeAbs": -0.22,
+              "changeAbs": -0.25,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 4.1,
+              "prevValue": 4.14,
               "prevChangePct": null,
-              "prevChangeAbs": -0.56,
+              "prevChangeAbs": -0.57,
               "prevDirection": "down"
             },
             {
               "label": "S/4HANA AI Features",
               "thisValue": 2.83,
-              "lastValue": 3.05,
+              "lastValue": 3.07,
               "changePct": null,
-              "changeAbs": -0.22,
+              "changeAbs": -0.24,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 3.73,
+              "prevValue": 3.76,
               "prevChangePct": null,
-              "prevChangeAbs": -0.68,
-              "prevDirection": "down"
-            },
-            {
-              "label": "vs. Competitors",
-              "thisValue": 2.66,
-              "lastValue": 2.49,
-              "changePct": null,
-              "changeAbs": 0.17,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 3.58,
-              "prevChangePct": null,
-              "prevChangeAbs": -1.09,
+              "prevChangeAbs": -0.69,
               "prevDirection": "down"
             },
             {
               "label": "Business Data Cloud",
-              "thisValue": 2.75,
-              "lastValue": 2.89,
+              "thisValue": 2.74,
+              "lastValue": 2.91,
               "changePct": null,
-              "changeAbs": -0.14,
+              "changeAbs": -0.17,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 3.65,
-              "prevChangePct": null,
-              "prevChangeAbs": -0.76,
-              "prevDirection": "down"
-            },
-            {
-              "label": "Joule AI Assistant",
-              "thisValue": 2.9,
-              "lastValue": 2.81,
-              "changePct": null,
-              "changeAbs": 0.09,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 3.52,
+              "prevValue": 3.62,
               "prevChangePct": null,
               "prevChangeAbs": -0.71,
               "prevDirection": "down"
             },
             {
-              "label": "SAP RPT1",
-              "thisValue": 2.88,
-              "lastValue": 2.8,
+              "label": "vs. Competitors",
+              "thisValue": 2.66,
+              "lastValue": 2.5,
               "changePct": null,
-              "changeAbs": 0.08,
+              "changeAbs": 0.16,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 3.66,
+              "prevChangePct": null,
+              "prevChangeAbs": -1.16,
+              "prevDirection": "down"
+            },
+            {
+              "label": "SAP RPT1",
+              "thisValue": 2.92,
+              "lastValue": 2.76,
+              "changePct": null,
+              "changeAbs": 0.16,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
               "prevValue": 1.7,
               "prevChangePct": null,
-              "prevChangeAbs": 1.1,
+              "prevChangeAbs": 1.06,
               "prevDirection": "up"
             },
             {
-              "label": "Risks & Gaps",
-              "thisValue": 2.17,
-              "lastValue": 2.16,
+              "label": "Joule AI Assistant",
+              "thisValue": 2.9,
+              "lastValue": 2.78,
               "changePct": null,
-              "changeAbs": 0.01,
+              "changeAbs": 0.12,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 2.5,
+              "prevValue": 3.54,
               "prevChangePct": null,
-              "prevChangeAbs": -0.34,
+              "prevChangeAbs": -0.76,
+              "prevDirection": "down"
+            },
+            {
+              "label": "Risks & Gaps",
+              "thisValue": 2.16,
+              "lastValue": 2.18,
+              "changePct": null,
+              "changeAbs": -0.02,
+              "changeDisplay": "pts",
+              "direction": "down",
+              "bigMove": false,
+              "prevValue": 2.4,
+              "prevChangePct": null,
+              "prevChangeAbs": -0.22,
               "prevDirection": "down"
             }
           ],
-          "summary": "Quarter-on-quarter overall SAP-AI sentiment down 0.27 pts to 2.60/5 — 5 topics softer, 4 firmer."
+          "summary": "Quarter-on-quarter overall SAP-AI sentiment down 0.29 pts to 2.60/5 — 6 topics softer, 3 firmer."
         }
       ],
       "breakdownNoun": "topic",
       "changeNoun": "Sentiment change",
       "insights": [
+        {
+          "title": "SAP RPT1 — +0.38 pts MoM",
+          "body": "The pages show that RPT-1 is not a prompt-template or assistant framework at all: it is SAP-RPT, a \"relational pretrained transformer\" that predicts values in business tables, launched at TechEd Berlin in November 2025 and now shipping as versions 1.5 and 1.6 through SAP AI Core. Vendor and community material is enthusiastic about removing the need to train a separate model per forecasting task, and the only independent benchmark found, by a Microsoft practitioner in February 2026, says the open variant matches tuned XGBoost on small classification problems with zero training time but loses on regression and larger datasets. Genuine customer deployment stories are absent from these pages, so adoption reads as playground-and-pilot rather than production, and confidence in any satisfaction score is low.",
+          "bullets": [
+            "SAP-RPT-1.6 reached general availability through the AI Core model library, with tabular orchestration and a playground API, indicating the product has moved past announcement stage (2026).",
+            "The first independent practitioner benchmark, published February 2026 by a Microsoft author, found RPT-1-OSS within 2 to 4 percent AUC-ROC of tuned XGBoost on small classification tasks."
+          ],
+          "asOf": "2026-09-19T15:25:25.712Z"
+        },
         {
           "title": "vs. Competitors — +0.37 pts MoM",
           "body": "Head-to-head coverage in 2026 puts SAP roughly level with Salesforce, Oracle and Microsoft in enterprise AI, but on different ground: SAP leads on transactional data depth and governance, and trails on speed, cost and openness. Its decision to force external AI agents through its own Joule assistant is the single most debated move of the year, read as either a smart grab for the data layer or a closed bet against interoperability. The evidence base is thin on named customer testimonials and hard adoption numbers, so this read leans on analyst and partner commentary rather than verified deployment metrics.",
@@ -4953,16 +4962,7 @@
           "asOf": "2026-09-19T07:50:38.482Z"
         },
         {
-          "title": "SAP RPT1 — +0.34 pts MoM",
-          "body": "The pages show that RPT-1 is not a prompt-template or assistant framework at all: it is SAP-RPT, a \"relational pretrained transformer\" that predicts values in business tables, launched at TechEd Berlin in November 2025 and now shipping as versions 1.5 and 1.6 through SAP AI Core. Vendor and community material is enthusiastic about removing the need to train a separate model per forecasting task, and the only independent benchmark found, by a Microsoft practitioner in February 2026, says the open variant matches tuned XGBoost on small classification problems with zero training time but loses on regression and larger datasets. Genuine customer deployment stories are absent from these pages, so adoption reads as playground-and-pilot rather than production, and confidence in any satisfaction score is low.",
-          "bullets": [
-            "SAP-RPT-1.6 reached general availability through the AI Core model library, with tabular orchestration and a playground API, indicating the product has moved past announcement stage (2026).",
-            "The first independent practitioner benchmark, published February 2026 by a Microsoft author, found RPT-1-OSS within 2 to 4 percent AUC-ROC of tuned XGBoost on small classification tasks."
-          ],
-          "asOf": "2026-09-19T15:25:25.712Z"
-        },
-        {
-          "title": "Customer Satisfaction — +0.23 pts MoM",
+          "title": "Customer Satisfaction — +0.24 pts MoM",
           "body": "Public review data rates SAP's core products solidly but says almost nothing specific about its AI features: TrustRadius shows 8.6 out of 10 across 2,168 SAP Cloud ERP reviews, 8.7 across 321 Sales Cloud reviews and 8.4 across 106 Business Network reviews, while Gartner Peer Insights gives SAP's data integration tools 4.5 out of 5 from 121 ratings. Where AI does surface, the tone is anticipatory rather than proven, with TrustRadius summarising that reviewers are still in early stages of exploring Joule and listing AI implementation as a con. The recurring complaints are consistent and pre-date AI: integration effort outside the SAP estate, dated user interfaces, steep learning curves and high cost, so satisfaction with SAP AI specifically cannot be scored confidently from these pages.",
           "bullets": [
             "TrustRadius scores SAP Cloud ERP 8.6 out of 10 across 2,168 reviews, but its 2026 synthesis says reviewers are only beginning to explore the Joule AI assistant.",
@@ -5663,7 +5663,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T03:32:16.345Z",
+      "asOf": "2026-10-21T11:16:26.675Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6210,7 +6210,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T03:32:16.457Z"
+          "asOf": "2026-10-21T11:16:26.724Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -7633,19 +7633,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Oct-26 (MTD)",
       "lastPeriodLabel": "Sep-26",
-      "thisValue": 3.4879,
+      "thisValue": 3.503,
       "lastValue": 3.3492,
-      "changePct": 0.04141287471635005,
-      "changeAbs": 0.1386999999999996,
+      "changePct": 0.04592141406903139,
+      "changeAbs": 0.15379999999999994,
       "direction": "up",
-      "asOf": "2026-10-20",
+      "asOf": "2026-10-21",
       "isStale": false,
       "breakdown": [
         {
           "label": "H100",
-          "thisValue": 3.4879,
+          "thisValue": 3.503,
           "lastValue": 3.3492,
-          "changePct": 0.04141287471635005,
+          "changePct": 0.04592141406903139,
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.3724,
@@ -7655,9 +7655,9 @@
         },
         {
           "label": "H200",
-          "thisValue": 4.7336,
+          "thisValue": 4.7394,
           "lastValue": 4.4299,
-          "changePct": 0.06855685229914898,
+          "changePct": 0.0698661369331136,
           "direction": "up",
           "bigMove": true,
           "prevValue": 4.3974,
@@ -7667,9 +7667,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 7.299,
+          "thisValue": 7.3614,
           "lastValue": 6.3742,
-          "changePct": 0.14508487339587717,
+          "changePct": 0.15487433717172344,
           "direction": "up",
           "bigMove": true,
           "prevValue": 6.5025,
@@ -7691,9 +7691,9 @@
         },
         {
           "label": "A100",
-          "thisValue": 1.813,
+          "thisValue": 1.8132,
           "lastValue": 1.7444,
-          "changePct": 0.03932584269662921,
+          "changePct": 0.039440495299243275,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.8105,
@@ -7703,9 +7703,9 @@
         },
         {
           "label": "L40S",
-          "thisValue": 1.5643,
+          "thisValue": 1.5674,
           "lastValue": 1.5035,
-          "changePct": 0.040438975723312245,
+          "changePct": 0.04250083139341526,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.5052,
@@ -7714,7 +7714,7 @@
           "prevDirection": "down"
         }
       ],
-      "summary": "Month-on-month H100 rental up 4.1% to $3.49/hr; B200 the standout at +14.5%.",
+      "summary": "Month-on-month H100 rental up 4.6% to $3.50/hr; B200 the standout at +15.5%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -7741,18 +7741,18 @@
           "available": true,
           "thisPeriodLabel": "Oct-26 (MTD)",
           "lastPeriodLabel": "Sep-26",
-          "thisValue": 3.4879,
+          "thisValue": 3.503,
           "lastValue": 3.3492,
-          "changePct": 0.04141287471635005,
-          "changeAbs": 0.1386999999999996,
+          "changePct": 0.04592141406903139,
+          "changeAbs": 0.15379999999999994,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.4879,
+              "thisValue": 3.503,
               "lastValue": 3.3492,
-              "changePct": 0.04141287471635005,
+              "changePct": 0.04592141406903139,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.3724,
@@ -7762,9 +7762,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.7336,
+              "thisValue": 4.7394,
               "lastValue": 4.4299,
-              "changePct": 0.06855685229914898,
+              "changePct": 0.0698661369331136,
               "direction": "up",
               "bigMove": true,
               "prevValue": 4.3974,
@@ -7774,9 +7774,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.299,
+              "thisValue": 7.3614,
               "lastValue": 6.3742,
-              "changePct": 0.14508487339587717,
+              "changePct": 0.15487433717172344,
               "direction": "up",
               "bigMove": true,
               "prevValue": 6.5025,
@@ -7798,9 +7798,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.813,
+              "thisValue": 1.8132,
               "lastValue": 1.7444,
-              "changePct": 0.03932584269662921,
+              "changePct": 0.039440495299243275,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.8105,
@@ -7810,9 +7810,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5643,
+              "thisValue": 1.5674,
               "lastValue": 1.5035,
-              "changePct": 0.040438975723312245,
+              "changePct": 0.04250083139341526,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5052,
@@ -7821,7 +7821,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "Month-on-month H100 rental up 4.1% to $3.49/hr; B200 the standout at +14.5%.",
+          "summary": "Month-on-month H100 rental up 4.6% to $3.50/hr; B200 the standout at +15.5%.",
           "prevLabel": "Aug-26",
           "prevValue": 3.3724,
           "prevChangePct": -0.006879373739769798,
@@ -7834,18 +7834,18 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 3.4879,
+          "thisValue": 3.503,
           "lastValue": 3.3073,
-          "changePct": 0.05460647658210614,
-          "changeAbs": 0.18059999999999965,
+          "changePct": 0.05917213436942521,
+          "changeAbs": 0.19569999999999999,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.4879,
+              "thisValue": 3.503,
               "lastValue": 3.3073,
-              "changePct": 0.05460647658210614,
+              "changePct": 0.05917213436942521,
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.9802,
@@ -7855,9 +7855,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.7336,
+              "thisValue": 4.7394,
               "lastValue": 4.3361,
-              "changePct": 0.09167224003136458,
+              "changePct": 0.09300984755886621,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.7738,
@@ -7867,9 +7867,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.299,
+              "thisValue": 7.3614,
               "lastValue": 6.3989,
-              "changePct": 0.140664801762803,
+              "changePct": 0.1504164778321273,
               "direction": "up",
               "bigMove": true,
               "prevValue": 5.7373,
@@ -7891,9 +7891,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.813,
+              "thisValue": 1.8132,
               "lastValue": 1.7896,
-              "changePct": 0.013075547608404037,
+              "changePct": 0.013187304425569871,
               "direction": "up",
               "bigMove": false,
               "prevValue": 1.7997,
@@ -7903,9 +7903,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5643,
+              "thisValue": 1.5674,
               "lastValue": 1.5182,
-              "changePct": 0.030364905809511282,
+              "changePct": 0.032406797523382894,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5627,
@@ -7914,7 +7914,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "Quarter-on-quarter H100 rental up 5.5% to $3.49/hr; B200 the standout at +14.1%.",
+          "summary": "Quarter-on-quarter H100 rental up 5.9% to $3.50/hr; B200 the standout at +15.0%.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.9802,
           "prevChangePct": 0.109757734380243,
@@ -7944,12 +7944,19 @@
       "changePct": null,
       "changeAbs": 35,
       "direction": "flat",
-      "asOf": "2026-10-20T20:16:23.000Z",
+      "asOf": "2026-10-21T03:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 10,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "In Good Company",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -7970,13 +7977,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "In Good Company",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -8026,8 +8026,8 @@
         "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
         "Skepticism about HomeView's AI capabilities"
       ],
-      "tone": "Tone across 38 episodes — 12 positive, 5 mixed, 4 neutral, 1 cautious",
-      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 12 positive, 5 mixed, 4 neutral, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
+      "tone": "Tone across 38 episodes — 11 positive, 5 mixed, 4 neutral, 1 cautious",
+      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 11 positive, 5 mixed, 4 neutral, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
