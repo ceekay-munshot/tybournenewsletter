@@ -141,6 +141,10 @@ export interface ChangeBlock {
   /** Supporting tables rendered under the main breakdown (sector flows, entries/exits,
    *  accelerating vs decelerating, etc.). */
   auxTables?: AuxTable[];
+  /** Metric-toggle groups of supporting tables (e.g. TI "UBS Compare" vs "Price").
+   *  When present the view renders a toggle over the group labels and shows the
+   *  selected group's tables. */
+  auxTableGroups?: { label: string; tables: AuxTable[] }[];
   /** For narrative cards (e.g. podcast themes): recurring themes + an optional tone read. */
   highlights?: string[];
   tone?: string;

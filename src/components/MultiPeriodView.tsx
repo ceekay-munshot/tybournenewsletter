@@ -33,6 +33,7 @@ export function MultiPeriodView({
     availViews[0]?.comparison ??
     'MoM') as Comparison;
   const [sel, setSel] = useState<Comparison>(initial);
+  const [grp, setGrp] = useState(0);
   const view = availViews.find((v) => v.comparison === sel) ?? availViews[0] ?? views[0];
   if (!view) return null;
 
@@ -141,7 +142,7 @@ export function MultiPeriodView({
         )}
       </Card>
 
-      {view.available && (
+      {view.available && view.breakdown.length > 0 && (
         <>
           <Card pad={false} className="mb-4">
             <div className="p-4 pb-2">
@@ -189,6 +190,26 @@ export function MultiPeriodView({
       {block.auxTables?.map((t, i) => (
         <AuxTableCard key={i} table={t} />
       ))}
+
+      {block.auxTableGroups && block.auxTableGroups.length > 0 && (
+        <>
+          {block.auxTableGroups.length > 1 && (
+            <div className="mb-3 flex flex-wrap items-center gap-2.5">
+              <Segmented
+                value={String(grp)}
+                onChange={(v) => setGrp(Number(v))}
+                options={block.auxTableGroups.map((g, i) => ({ value: String(i), label: g.label }))}
+              />
+              <span className="text-[11.5px] text-slate-400">
+                {block.auxTableGroups.map((g) => g.label.toLowerCase()).join(' / ')}
+              </span>
+            </div>
+          )}
+          {(block.auxTableGroups[grp] ?? block.auxTableGroups[0]).tables.map((t, i) => (
+            <AuxTableCard key={i} table={t} />
+          ))}
+        </>
+      )}
 
       {block.systemId === 'sap-ai' && block.insights && block.insights.length > 0 && (
         <Card className="mb-4" accent={accent}>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:54:22.235Z",
+  "generatedAt": "2026-10-21T17:03:47.725Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -6293,7 +6293,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-21T16:54:10.207Z",
+      "asOf": "2026-10-21T17:03:30.678Z",
       "isStale": false,
       "breakdown": [
         {
@@ -6840,7 +6840,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-21T16:54:10.317Z"
+          "asOf": "2026-10-21T17:03:30.797Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -6853,974 +6853,26 @@
       "systemId": "ti-chip-prices",
       "name": "Texas Instruments Prices",
       "sector": "technology",
-      "metricLabel": "Chip price index",
+      "metricLabel": "TI catalog pricing",
       "unit": "price index",
-      "comparison": "MoM",
-      "thisPeriodLabel": "Sep-26",
-      "lastPeriodLabel": "Aug-26",
+      "comparison": "QoQ",
+      "thisPeriodLabel": "Q3-26",
+      "lastPeriodLabel": "Q2-26",
       "thisValue": null,
       "lastValue": null,
-      "changePct": 0.0015060072917388947,
+      "changePct": 0.013236503512133483,
       "changeAbs": null,
       "direction": "up",
       "asOf": "2026-10-21T00:00:00Z",
       "isStale": false,
-      "breakdown": [
-        {
-          "label": "Interface ICs",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.011385567384142314,
-          "direction": "up",
-          "bigMove": true,
-          "note": "3 categories",
-          "sub": [
-            {
-              "label": "CAN Transceivers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.03415670215242694,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": null,
-              "prevChangePct": -0.007648955417234982,
-              "prevChangeAbs": null,
-              "prevDirection": "down"
-            },
-            {
-              "label": "LIN Transceivers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.0018741239305248847,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Ethernet PHYs",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00198860045045679,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": -0.0012620770120844356,
-          "prevChangeAbs": null,
-          "prevDirection": "down"
-        },
-        {
-          "label": "Amplifiers",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.0030108645799092337,
-          "direction": "up",
-          "bigMove": true,
-          "note": "4 categories",
-          "sub": [
-            {
-              "label": "Audio Amps",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00936350759187099,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00016031551181150405,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Op-Amps",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0027246255543065256,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.005562064085689267,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Comparators",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.000044674826540580526,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Instrumentation",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.0005309696685416032,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.0015633373165105935,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
-        },
-        {
-          "label": "Power Management",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.000799437816329851,
-          "direction": "up",
-          "bigMove": false,
-          "note": "5 categories",
-          "sub": [
-            {
-              "label": "DC/DC Switching",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0012849568299355685,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00008599788946628273,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "AC/DC Switching",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0009925162915145336,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.014638130320137499,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Battery Mgmt",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0007512389514212625,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "LDO Regulators",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0006742945605353601,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.002510142129876991,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Supervisor & Reset",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00029418244824253037,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.0034468540678961545,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
-        },
-        {
-          "label": "Data Converters",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.00018865187296224217,
-          "direction": "flat",
-          "bigMove": false,
-          "note": "2 categories",
-          "sub": [
-            {
-              "label": "ADC",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00027938678282879437,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.005201820904841448,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "DAC",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00009791696309568998,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.002600910452420724,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
-        },
-        {
-          "label": "Microcontrollers",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.00006884032329212975,
-          "direction": "flat",
-          "bigMove": false,
-          "note": "5 categories",
-          "sub": [
-            {
-              "label": "MSP430",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00035442103415417314,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00021858947597963585,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "C2000 Real-Time",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.000009605464910245054,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Sitara MPU",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -6.13952783279359e-7,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.0026619891804806617,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "MSPM0",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.003662197662422484,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "SimpleLink",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.0013085552637765562,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
-        },
-        {
-          "label": "GaN Power",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0,
-          "direction": "flat",
-          "bigMove": false,
-          "note": "2 categories",
-          "sub": [
-            {
-              "label": "LMG342x (600V)",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "LMG3650 (TOLL)",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0,
-          "prevChangeAbs": null,
-          "prevDirection": "flat"
-        },
-        {
-          "label": "Data Center Power",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": -0.00009455115313410367,
-          "direction": "flat",
-          "bigMove": false,
-          "note": "5 categories",
-          "sub": [
-            {
-              "label": "eFuses",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.00047275576567051836,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00025251653951730013,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "48V Bus Converters",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Smart Power Stages",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Hot-Swap Controllers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "TPS536xx (AI Power)",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.000050503307903460026,
-          "prevChangeAbs": null,
-          "prevDirection": "flat"
-        },
-        {
-          "label": "Isolation",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": -0.004138947490869349,
-          "direction": "down",
-          "bigMove": true,
-          "note": "2 categories",
-          "sub": [
-            {
-              "label": "Digital Isolators",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.007069540269883268,
-              "direction": "down",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Reinforced Isolators",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.0012083547118554305,
-              "direction": "down",
-              "bigMove": false,
-              "prevValue": null,
-              "prevChangePct": 0.00044519199440218316,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "prevValue": null,
-          "prevChangePct": 0.00022259599720109158,
-          "prevChangeAbs": null,
-          "prevDirection": "flat"
-        }
-      ],
-      "summary": "Month-on-month the TI catalog rose 0.15% on average (Aug-26 → Sep-26), equal-weighted across 28 categories — 3 product groups firmer, 1 softer.",
+      "breakdown": [],
+      "summary": "TI catalog pricing was up 1.32% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels.",
       "sourceName": "TI catalog via Mouser (like-for-like, stock-weighted)",
       "sourceUrl": "https://texas-instruments-dashboard-final.pages.dev/",
       "dashboardUrl": "https://texas-instruments-dashboard-final.pages.dev/",
-      "notes": "TI catalog price index by product group, from the source dashboard’s corrected trend engine (stock-weighted ASP + constant-basket like-for-like). Headline = latest CLOSED period, equal-weighted across tracked categories. Live (refreshed daily via the TI catalog / Mouser) — no longer frozen at the old April snapshot.",
+      "notes": "TI catalog pricing from the source dashboard’s live like-for-like engine (stock-weighted ASP, constant-basket). \"UBS Compare\" shows each category / subcategory’s % move per period; \"Price\" shows the underlying index level (base 100). Last 4 periods shown; refreshed daily via the TI catalog / Mouser.",
       "status": "ok",
       "views": [
-        {
-          "comparison": "WoW",
-          "label": "Week",
-          "available": false,
-          "unavailableReason": "TI sells at list — catalog prices change infrequently, so the weekly signal is capture noise, not real moves. Monthly and quarterly are the honest windows here.",
-          "thisPeriodLabel": "—",
-          "lastPeriodLabel": "—",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": null,
-          "changeAbs": null,
-          "direction": "flat",
-          "breakdown": []
-        },
-        {
-          "comparison": "MoM",
-          "label": "Month",
-          "available": true,
-          "thisPeriodLabel": "Sep-26",
-          "lastPeriodLabel": "Aug-26",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.0015060072917388947,
-          "changeAbs": null,
-          "direction": "up",
-          "bigMove": false,
-          "breakdown": [
-            {
-              "label": "Interface ICs",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.011385567384142314,
-              "direction": "up",
-              "bigMove": true,
-              "note": "3 categories",
-              "sub": [
-                {
-                  "label": "CAN Transceivers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.03415670215242694,
-                  "direction": "up",
-                  "bigMove": true,
-                  "prevValue": null,
-                  "prevChangePct": -0.007648955417234982,
-                  "prevChangeAbs": null,
-                  "prevDirection": "down"
-                },
-                {
-                  "label": "LIN Transceivers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.0018741239305248847,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Ethernet PHYs",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00198860045045679,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": -0.0012620770120844356,
-              "prevChangeAbs": null,
-              "prevDirection": "down"
-            },
-            {
-              "label": "Amplifiers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.0030108645799092337,
-              "direction": "up",
-              "bigMove": true,
-              "note": "4 categories",
-              "sub": [
-                {
-                  "label": "Audio Amps",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00936350759187099,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00016031551181150405,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Op-Amps",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0027246255543065256,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.005562064085689267,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Comparators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -0.000044674826540580526,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Instrumentation",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.0005309696685416032,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.0015633373165105935,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Power Management",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.000799437816329851,
-              "direction": "up",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "DC/DC Switching",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0012849568299355685,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00008599788946628273,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "AC/DC Switching",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0009925162915145336,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.014638130320137499,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Battery Mgmt",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0007512389514212625,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "LDO Regulators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0006742945605353601,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.002510142129876991,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Supervisor & Reset",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00029418244824253037,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.0034468540678961545,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Data Converters",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00018865187296224217,
-              "direction": "flat",
-              "bigMove": false,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "ADC",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00027938678282879437,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.005201820904841448,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "DAC",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00009791696309568998,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.002600910452420724,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Microcontrollers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.00006884032329212975,
-              "direction": "flat",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "MSP430",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00035442103415417314,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00021858947597963585,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "C2000 Real-Time",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -0.000009605464910245054,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Sitara MPU",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -6.13952783279359e-7,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.0026619891804806617,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "MSPM0",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.003662197662422484,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "SimpleLink",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.0013085552637765562,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "GaN Power",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "LMG342x (600V)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "LMG3650 (TOLL)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Data Center Power",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.00009455115313410367,
-              "direction": "flat",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "eFuses",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -0.00047275576567051836,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00025251653951730013,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "48V Bus Converters",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Smart Power Stages",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Hot-Swap Controllers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "TPS536xx (AI Power)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.000050503307903460026,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            },
-            {
-              "label": "Isolation",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": -0.004138947490869349,
-              "direction": "down",
-              "bigMove": true,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "Digital Isolators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -0.007069540269883268,
-                  "direction": "down",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                },
-                {
-                  "label": "Reinforced Isolators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": -0.0012083547118554305,
-                  "direction": "down",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.00044519199440218316,
-                  "prevChangeAbs": null,
-                  "prevDirection": "flat"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.00022259599720109158,
-              "prevChangeAbs": null,
-              "prevDirection": "flat"
-            }
-          ],
-          "summary": "Month-on-month the TI catalog rose 0.15% on average (Aug-26 → Sep-26), equal-weighted across 28 categories — 3 product groups firmer, 1 softer.",
-          "prevLabel": "Jul-26",
-          "prevValue": null,
-          "prevChangePct": 0.0011084032526521915,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
-        },
         {
           "comparison": "QoQ",
           "label": "Quarter",
@@ -7829,430 +6881,3436 @@
           "lastPeriodLabel": "Q2-26",
           "thisValue": null,
           "lastValue": null,
-          "changePct": 0.013236503512133482,
+          "changePct": 0.013236503512133483,
           "changeAbs": null,
           "direction": "up",
-          "bigMove": false,
-          "breakdown": [
-            {
-              "label": "Interface ICs",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.027080513708709564,
-              "direction": "up",
-              "bigMove": true,
-              "note": "3 categories",
-              "sub": [
-                {
-                  "label": "CAN Transceivers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.06792654113708463,
-                  "direction": "up",
-                  "bigMove": true
-                },
-                {
-                  "label": "LIN Transceivers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00962952823779939,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "Ethernet PHYs",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0036854717512446733,
-                  "direction": "up",
-                  "bigMove": false
-                }
-              ]
-            },
-            {
-              "label": "Isolation",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.01884281620588013,
-              "direction": "up",
-              "bigMove": false,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "Reinforced Isolators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.029534782701671425,
-                  "direction": "up",
-                  "bigMove": true
-                },
-                {
-                  "label": "Digital Isolators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.008150849710088837,
-                  "direction": "up",
-                  "bigMove": false
-                }
-              ]
-            },
-            {
-              "label": "Amplifiers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.018209278803920426,
-              "direction": "up",
-              "bigMove": false,
-              "note": "4 categories",
-              "sub": [
-                {
-                  "label": "Comparators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.02598749239675735,
-                  "direction": "up",
-                  "bigMove": true
-                },
-                {
-                  "label": "Op-Amps",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.021816330218886737,
-                  "direction": "up",
-                  "bigMove": true,
-                  "prevValue": null,
-                  "prevChangePct": 0.0034965034965035446,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Instrumentation",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.014692830351221486,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "Audio Amps",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.010340462248816129,
-                  "direction": "up",
-                  "bigMove": false
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.0034965034965035446,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Microcontrollers",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.01615543869330476,
-              "direction": "up",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "MSPM0",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.03868328712391822,
-                  "direction": "up",
-                  "bigMove": true
-                },
-                {
-                  "label": "Sitara MPU",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.024984712920046004,
-                  "direction": "up",
-                  "bigMove": true,
-                  "prevValue": null,
-                  "prevChangePct": 0.102878666654028,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "SimpleLink",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.007233555314545059,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.06836207527446336,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "C2000 Real-Time",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.005625078749719847,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.09351537406325751,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "MSP430",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.004250559358294659,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.05136894209783294,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.07903126452239545,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Power Management",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.010462537061882316,
-              "direction": "up",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "AC/DC Switching",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.024826763118450668,
-                  "direction": "up",
-                  "bigMove": true,
-                  "prevValue": null,
-                  "prevChangePct": 0.05167510645047213,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "LDO Regulators",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.01125602117923119,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.09243965542058818,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Supervisor & Reset",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00896607710741204,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.05093067527967965,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "DC/DC Switching",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0055864497003823566,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.07764534978767479,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "Battery Mgmt",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0016773742039353223,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.10289440353023904,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.07511703809373076,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Data Center Power",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.007452170650762158,
-              "direction": "up",
-              "bigMove": false,
-              "note": "5 categories",
-              "sub": [
-                {
-                  "label": "48V Bus Converters",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.01817607764844742,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "eFuses",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.00853350822857335,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "Hot-Swap Controllers",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0065675517733425615,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "Smart Power Stages",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0030609852107832403,
-                  "direction": "up",
-                  "bigMove": false
-                },
-                {
-                  "label": "TPS536xx (AI Power)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0009227303926642172,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.10280992542934818,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.10280992542934818,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "Data Converters",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.004253538778210331,
-              "direction": "up",
-              "bigMove": false,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "ADC",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.006574693334187698,
-                  "direction": "up",
-                  "bigMove": false,
-                  "prevValue": null,
-                  "prevChangePct": 0.019563156130732784,
-                  "prevChangeAbs": null,
-                  "prevDirection": "up"
-                },
-                {
-                  "label": "DAC",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0.0019323842222329635,
-                  "direction": "up",
-                  "bigMove": false
-                }
-              ],
-              "prevValue": null,
-              "prevChangePct": 0.019563156130732784,
-              "prevChangeAbs": null,
-              "prevDirection": "up"
-            },
-            {
-              "label": "GaN Power",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0,
-              "direction": "flat",
-              "bigMove": false,
-              "note": "2 categories",
-              "sub": [
-                {
-                  "label": "LMG342x (600V)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false
-                },
-                {
-                  "label": "LMG3650 (TOLL)",
-                  "thisValue": null,
-                  "lastValue": null,
-                  "changePct": 0,
-                  "direction": "flat",
-                  "bigMove": false
-                }
-              ]
-            }
-          ],
-          "summary": "Quarter-on-quarter the TI catalog rose 1.32% on average (Q2-26 → Q3-26), equal-weighted across 28 categories — 7 product groups firmer, 0 softer.",
-          "prevLabel": "Q1-26",
-          "prevValue": null,
-          "prevChangePct": 0.06813165280123501,
-          "prevChangeAbs": null,
-          "prevDirection": "up"
+          "breakdown": [],
+          "summary": "TI catalog pricing was up 1.32% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels."
         }
       ],
-      "breakdownNoun": "product group",
-      "subNoun": "category",
       "changeNoun": "Price change",
-      "insights": [
+      "auxTableGroups": [
         {
-          "title": "TI catalog prices have largely stabilised",
-          "body": "Average monthly moves have been small and steady: Jun-26 -0.05%, Jul-26 +1.04%, Aug-26 +0.11%, Sep-26 +0.15%. After the 2025 list-price increases, the catalog is now drifting roughly sideways rather than stepping up."
-        },
-        {
-          "title": "What moved in Sep-26",
-          "body": "The categories that actually changed price this month (most are flat month to month).",
-          "bullets": [
-            "CAN Transceivers (Interface ICs) +3.42%",
-            "Audio Amps (Amplifiers) +0.94%",
-            "Digital Isolators (Isolation) -0.71%",
-            "Op-Amps (Amplifiers) +0.27%",
-            "DC/DC Switching (Power Management) +0.13%",
-            "Reinforced Isolators (Isolation) -0.12%"
+          "label": "UBS Compare",
+          "tables": [
+            {
+              "headers": [
+                "Category / subcategory",
+                "Q1-26",
+                "Q2-26",
+                "Q3-26",
+                "Q4-26 QTD"
+              ],
+              "align": [
+                "left",
+                "right",
+                "right",
+                "right",
+                "right"
+              ],
+              "rows": [
+                [
+                  {
+                    "text": "Power Management",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.26%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+7.51%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.05%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LDO Regulators"
+                  },
+                  {
+                    "text": "+0.34%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+9.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.13%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  AC/DC Switching"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+5.17%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+2.48%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DC/DC Switching"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+7.76%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.56%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Supervisor & Reset"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+5.09%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.90%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Battery Mgmt"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+10.29%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.17%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Amplifiers",
+                    "bold": true
+                  },
+                  {
+                    "text": "-3.33%",
+                    "tone": "down",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.35%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.82%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Op-Amps"
+                  },
+                  {
+                    "text": "-6.55%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.35%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+2.18%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Instrumentation"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.47%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Audio Amps"
+                  },
+                  {
+                    "text": "-0.11%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.03%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Comparators"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+2.60%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Converters",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.35%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.96%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.43%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  ADC"
+                  },
+                  {
+                    "text": "+0.48%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.96%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.66%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DAC"
+                  },
+                  {
+                    "text": "+0.21%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.19%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Interface ICs",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "+2.71%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  CAN Transceivers"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+6.79%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LIN Transceivers"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.96%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Ethernet PHYs"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.37%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Isolation",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.88%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Digital Isolators"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.82%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Reinforced Isolators"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+2.95%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Microcontrollers",
+                    "bold": true
+                  },
+                  {
+                    "text": "+3.85%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+7.90%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.62%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSP430"
+                  },
+                  {
+                    "text": "+0.53%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+5.14%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.43%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  C2000 Real-Time"
+                  },
+                  {
+                    "text": "+4.68%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+9.35%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.56%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSPM0"
+                  },
+                  {
+                    "text": "+4.68%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+3.87%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  SimpleLink"
+                  },
+                  {
+                    "text": "+4.68%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+6.84%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.72%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Sitara MPU"
+                  },
+                  {
+                    "text": "+4.68%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+10.29%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+2.50%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "GaN Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG342x (600V)"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG3650 (TOLL)"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG5200 (80V)"
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Center Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+10.28%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.75%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  48V Bus Converters"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.82%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Smart Power Stages"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.31%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  eFuses"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.85%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Hot-Swap Controllers"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.66%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  TPS536xx (AI Power)"
+                  },
+                  {
+                    "text": "+0.24%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+10.28%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.09%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ]
+              ],
+              "title": "UBS Compare — quarter-on-quarter price move",
+              "subtitle": "Each cell is that quarter’s % price move, by category and subcategory."
+            },
+            {
+              "headers": [
+                "Category / subcategory",
+                "Jul-26",
+                "Aug-26",
+                "Sep-26",
+                "Oct-26 QTD"
+              ],
+              "align": [
+                "left",
+                "right",
+                "right",
+                "right",
+                "right"
+              ],
+              "rows": [
+                [
+                  {
+                    "text": "Power Management",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.62%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.34%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.08%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LDO Regulators"
+                  },
+                  {
+                    "text": "+0.80%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.25%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.07%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  AC/DC Switching"
+                  },
+                  {
+                    "text": "+0.92%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+1.46%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.10%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DC/DC Switching"
+                  },
+                  {
+                    "text": "+0.42%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.01%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.13%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Supervisor & Reset"
+                  },
+                  {
+                    "text": "+0.89%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.03%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Battery Mgmt"
+                  },
+                  {
+                    "text": "+0.09%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.08%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Amplifiers",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.36%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.16%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.30%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Op-Amps"
+                  },
+                  {
+                    "text": "+1.34%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.56%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.27%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Instrumentation"
+                  },
+                  {
+                    "text": "+1.41%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.05%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Audio Amps"
+                  },
+                  {
+                    "text": "+0.07%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.02%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.94%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Comparators"
+                  },
+                  {
+                    "text": "+2.62%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.00%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Converters",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.15%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.26%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.02%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  ADC"
+                  },
+                  {
+                    "text": "+0.11%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.52%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.03%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DAC"
+                  },
+                  {
+                    "text": "+0.18%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.01%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Interface ICs",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.63%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "-0.13%",
+                    "tone": "down",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.14%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  CAN Transceivers"
+                  },
+                  {
+                    "text": "+3.94%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.76%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "+3.42%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LIN Transceivers"
+                  },
+                  {
+                    "text": "+0.77%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.19%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Ethernet PHYs"
+                  },
+                  {
+                    "text": "+0.17%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.20%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Isolation",
+                    "bold": true
+                  },
+                  {
+                    "text": "+2.63%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.02%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "-0.41%",
+                    "tone": "down",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Digital Isolators"
+                  },
+                  {
+                    "text": "+1.47%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.71%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Reinforced Isolators"
+                  },
+                  {
+                    "text": "+3.80%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.04%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.12%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Microcontrollers",
+                    "bold": true
+                  },
+                  {
+                    "text": "+1.47%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.13%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.01%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSP430"
+                  },
+                  {
+                    "text": "+0.37%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.02%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.04%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  C2000 Real-Time"
+                  },
+                  {
+                    "text": "+0.56%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.00%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSPM0"
+                  },
+                  {
+                    "text": "+3.45%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.37%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  SimpleLink"
+                  },
+                  {
+                    "text": "+0.72%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Sitara MPU"
+                  },
+                  {
+                    "text": "+2.23%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.27%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "GaN Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG342x (600V)"
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG3650 (TOLL)"
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG5200 (80V)"
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Center Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.75%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "+0.01%",
+                    "tone": "up",
+                    "bold": true
+                  },
+                  {
+                    "text": "-0.01%",
+                    "tone": "down",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  48V Bus Converters"
+                  },
+                  {
+                    "text": "+1.82%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Smart Power Stages"
+                  },
+                  {
+                    "text": "+0.31%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  eFuses"
+                  },
+                  {
+                    "text": "+0.88%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.03%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "-0.05%",
+                    "tone": "down",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Hot-Swap Controllers"
+                  },
+                  {
+                    "text": "+0.66%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  TPS536xx (AI Power)"
+                  },
+                  {
+                    "text": "+0.09%",
+                    "tone": "up",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "+0.00%",
+                    "tone": "flat",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ]
+              ],
+              "title": "UBS Compare — month-on-month price move",
+              "subtitle": "Each cell is that month’s % price move, by category and subcategory."
+            }
           ]
         },
         {
-          "title": "Now live — but read the broad average, not single cells",
-          "body": "This replaces the old series frozen at ~April 2026: it now reads the source dashboard’s live like-for-like engine (TI catalog via Mouser, refreshed daily). That engine is still being rebuilt, and its weighted-index and like-for-like-% layers don’t yet fully agree at the single-category level, so treat individual category moves as directional. The robust read is the broad average across all tracked categories — which says TI pricing is essentially flat, drifting only slightly."
+          "label": "Price",
+          "tables": [
+            {
+              "headers": [
+                "Category / subcategory",
+                "Q1-26",
+                "Q2-26",
+                "Q3-26",
+                "Q4-26 QTD"
+              ],
+              "align": [
+                "left",
+                "right",
+                "right",
+                "right",
+                "right"
+              ],
+              "rows": [
+                [
+                  {
+                    "text": "Power Management",
+                    "bold": true
+                  },
+                  {
+                    "text": "103.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "34.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "34.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LDO Regulators"
+                  },
+                  {
+                    "text": "106.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "5.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "5.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  AC/DC Switching"
+                  },
+                  {
+                    "text": "102.9",
+                    "bold": false
+                  },
+                  {
+                    "text": "38.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "38.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DC/DC Switching"
+                  },
+                  {
+                    "text": "102.9",
+                    "bold": false
+                  },
+                  {
+                    "text": "13.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "13.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Supervisor & Reset"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "81.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "81.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Battery Mgmt"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "30.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "30.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Amplifiers",
+                    "bold": true
+                  },
+                  {
+                    "text": "99.2",
+                    "bold": true
+                  },
+                  {
+                    "text": "77.6",
+                    "bold": true
+                  },
+                  {
+                    "text": "77.6",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Op-Amps"
+                  },
+                  {
+                    "text": "103.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "71.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "71.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Instrumentation"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "58.7",
+                    "bold": false
+                  },
+                  {
+                    "text": "58.7",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Audio Amps"
+                  },
+                  {
+                    "text": "93.9",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Comparators"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "98.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "98.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Converters",
+                    "bold": true
+                  },
+                  {
+                    "text": "112.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "246.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "246.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  ADC"
+                  },
+                  {
+                    "text": "114.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "423.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "423.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DAC"
+                  },
+                  {
+                    "text": "110.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "70.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "70.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Interface ICs",
+                    "bold": true
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "49.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "49.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  CAN Transceivers"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "46.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "46.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LIN Transceivers"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "57.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "57.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Ethernet PHYs"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "44.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "44.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Isolation",
+                    "bold": true
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "125.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "125.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Digital Isolators"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "211.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "211.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Reinforced Isolators"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "40.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "40.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Microcontrollers",
+                    "bold": true
+                  },
+                  {
+                    "text": "111.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "57.1",
+                    "bold": true
+                  },
+                  {
+                    "text": "57.1",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSP430"
+                  },
+                  {
+                    "text": "119.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  C2000 Real-Time"
+                  },
+                  {
+                    "text": "110.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "50.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "50.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSPM0"
+                  },
+                  {
+                    "text": "110.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "29.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "29.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  SimpleLink"
+                  },
+                  {
+                    "text": "110.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Sitara MPU"
+                  },
+                  {
+                    "text": "110.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "80.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "80.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "GaN Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "46.5",
+                    "bold": true
+                  },
+                  {
+                    "text": "46.5",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG342x (600V)"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "23.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "23.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG3650 (TOLL)"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "73.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "73.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG5200 (80V)"
+                  },
+                  {
+                    "text": "100.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Center Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": true
+                  },
+                  {
+                    "text": "33.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "33.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  48V Bus Converters"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Smart Power Stages"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "27.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "27.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  eFuses"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "33.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "33.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Hot-Swap Controllers"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  TPS536xx (AI Power)"
+                  },
+                  {
+                    "text": "101.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "19.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "19.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ]
+              ],
+              "title": "Price — quarterly index level (base 100)",
+              "subtitle": "Stock-weighted catalog price index at each quarter-end."
+            },
+            {
+              "headers": [
+                "Category / subcategory",
+                "Jul-26",
+                "Aug-26",
+                "Sep-26",
+                "Oct-26 QTD"
+              ],
+              "align": [
+                "left",
+                "right",
+                "right",
+                "right",
+                "right"
+              ],
+              "rows": [
+                [
+                  {
+                    "text": "Power Management",
+                    "bold": true
+                  },
+                  {
+                    "text": "34.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "34.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "34.0",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LDO Regulators"
+                  },
+                  {
+                    "text": "5.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "5.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "5.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  AC/DC Switching"
+                  },
+                  {
+                    "text": "38.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "38.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "38.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DC/DC Switching"
+                  },
+                  {
+                    "text": "13.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "13.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "13.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Supervisor & Reset"
+                  },
+                  {
+                    "text": "81.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "81.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "81.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Battery Mgmt"
+                  },
+                  {
+                    "text": "30.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "30.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "30.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Amplifiers",
+                    "bold": true
+                  },
+                  {
+                    "text": "77.6",
+                    "bold": true
+                  },
+                  {
+                    "text": "77.6",
+                    "bold": true
+                  },
+                  {
+                    "text": "77.6",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Op-Amps"
+                  },
+                  {
+                    "text": "71.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "71.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "71.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Instrumentation"
+                  },
+                  {
+                    "text": "58.7",
+                    "bold": false
+                  },
+                  {
+                    "text": "58.7",
+                    "bold": false
+                  },
+                  {
+                    "text": "58.7",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Audio Amps"
+                  },
+                  {
+                    "text": "82.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Comparators"
+                  },
+                  {
+                    "text": "98.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "98.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "98.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Converters",
+                    "bold": true
+                  },
+                  {
+                    "text": "246.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "246.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "246.9",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  ADC"
+                  },
+                  {
+                    "text": "423.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "423.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "423.5",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  DAC"
+                  },
+                  {
+                    "text": "70.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "70.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "70.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Interface ICs",
+                    "bold": true
+                  },
+                  {
+                    "text": "49.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "49.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "49.3",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  CAN Transceivers"
+                  },
+                  {
+                    "text": "46.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "46.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "46.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LIN Transceivers"
+                  },
+                  {
+                    "text": "57.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "57.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "57.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Ethernet PHYs"
+                  },
+                  {
+                    "text": "44.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "44.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "44.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Isolation",
+                    "bold": true
+                  },
+                  {
+                    "text": "125.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "125.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "125.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  Digital Isolators"
+                  },
+                  {
+                    "text": "211.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "211.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "211.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Reinforced Isolators"
+                  },
+                  {
+                    "text": "40.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "40.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "40.1",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Microcontrollers",
+                    "bold": true
+                  },
+                  {
+                    "text": "57.1",
+                    "bold": true
+                  },
+                  {
+                    "text": "57.1",
+                    "bold": true
+                  },
+                  {
+                    "text": "57.1",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSP430"
+                  },
+                  {
+                    "text": "82.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "82.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  C2000 Real-Time"
+                  },
+                  {
+                    "text": "50.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "50.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "50.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  MSPM0"
+                  },
+                  {
+                    "text": "29.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "29.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "29.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  SimpleLink"
+                  },
+                  {
+                    "text": "43.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.3",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Sitara MPU"
+                  },
+                  {
+                    "text": "80.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "80.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "80.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "GaN Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "46.5",
+                    "bold": true
+                  },
+                  {
+                    "text": "46.5",
+                    "bold": true
+                  },
+                  {
+                    "text": "46.5",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG342x (600V)"
+                  },
+                  {
+                    "text": "23.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "23.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "23.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG3650 (TOLL)"
+                  },
+                  {
+                    "text": "73.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "73.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "73.0",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  LMG5200 (80V)"
+                  },
+                  {
+                    "text": "43.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.2",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "Data Center Power",
+                    "bold": true
+                  },
+                  {
+                    "text": "33.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "33.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "33.7",
+                    "bold": true
+                  },
+                  {
+                    "text": "",
+                    "bold": true
+                  }
+                ],
+                [
+                  {
+                    "text": "  48V Bus Converters"
+                  },
+                  {
+                    "text": "43.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.6",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Smart Power Stages"
+                  },
+                  {
+                    "text": "27.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "27.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "27.4",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  eFuses"
+                  },
+                  {
+                    "text": "33.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "33.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "33.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  Hot-Swap Controllers"
+                  },
+                  {
+                    "text": "43.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "43.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ],
+                [
+                  {
+                    "text": "  TPS536xx (AI Power)"
+                  },
+                  {
+                    "text": "19.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "19.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "19.8",
+                    "bold": false
+                  },
+                  {
+                    "text": "",
+                    "bold": false
+                  }
+                ]
+              ],
+              "title": "Price — monthly index level (base 100)",
+              "subtitle": "Stock-weighted catalog price index at each month-end."
+            }
+          ]
         }
       ],
-      "prevLabel": "Jul-26",
       "prevValue": null,
-      "prevChangePct": 0.0011084032526521915,
-      "prevChangeAbs": null,
-      "prevDirection": "up"
+      "prevChangePct": null,
+      "prevChangeAbs": null
     },
     {
       "systemId": "gpu-cloud-pricing",
