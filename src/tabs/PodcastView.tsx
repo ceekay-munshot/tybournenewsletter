@@ -583,7 +583,7 @@ function MonthSummaryModal({
             <BookOpenText size={12} className="mt-px shrink-0" />
             <span>
               {month.ai
-                ? `Consolidated by Claude on Amazon Bedrock${month.model ? ` (${month.model})` : ''} from ${month.summarised} episode ${month.summarised === 1 ? 'analysis' : 'analyses'}${
+                ? `Consolidated by Claude on Amazon Bedrock${month.model ? ` (${month.model})` : ''}${month.aiAt ? ` on ${dateLabel(month.aiAt)}` : ''} from ${month.summarised} episode ${month.summarised === 1 ? 'analysis' : 'analyses'}${
                     month.episodes > month.summarised ? ` and the show notes of ${month.episodes - month.summarised} more` : ''
                   } — the same per-episode inputs as the podcast dashboard's weekly summaries. Nothing outside the episodes is used.`
                 : `Built from the podcast tool's per-episode analyses, as published. ${monthly.note ?? ''}`}

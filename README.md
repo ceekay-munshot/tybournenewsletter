@@ -107,19 +107,28 @@ variables → Actions**.
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |
 | `BEDROCK_API_KEY` | **secret** | to enable AI | Bedrock API key (console-minted), sent as `Authorization: Bearer …`. No AWS SDK / SigV4. |
-| `AWS_REGION` | variable | to enable AI | Region for the Converse endpoint, e.g. `us-east-1`. Defaults to `us-east-1` if unset. |
-| `BEDROCK_MODEL_IDS` | variable | to enable AI | Comma-separated model/inference-profile IDs, tried **in order** (first that works wins). |
+| `AWS_REGION` | variable | optional | Region for the Converse endpoint. Defaults to `us-east-1`. |
+| `BEDROCK_MODEL_IDS` | variable | optional | Comma-separated model/inference-profile IDs, tried **in order** (first that works wins). |
 
-Put a **current Claude Sonnet inference profile first**, then older fallbacks, e.g.:
+**The key alone is enough.** With `BEDROCK_MODEL_IDS` unset the writers use Claude Sonnet 4.6 on
+Bedrock's global cross-region profile (no regional price premium), then Claude Haiku 4.5 as a
+cheaper fallback:
 
 ```
-us.anthropic.claude-sonnet-4-5-20250929-v1:0,us.anthropic.claude-3-7-sonnet-20250219-v1:0,us.anthropic.claude-3-5-sonnet-20241022-v2:0
+global.anthropic.claude-sonnet-4-6,global.anthropic.claude-haiku-4-5-20251001-v1:0
 ```
 
-Use the exact IDs enabled in **your** account/region (Bedrock → Model access). The writer falls
-through `400/403/404` to the next ID and retries `429/5xx`; the model that answered is stamped
-into `newsletter.json`. If the key or model list is missing, `newsletter.json` is written with
-`status: "no-key"` — never fabricated.
+Set the variable only to override that list with IDs enabled in **your** account (Bedrock → Model
+access); the client calls the Converse API, so use ARN-versioned models / inference profiles. The
+writer falls through `400/403/404` to the next ID and retries `429/5xx`; the model that answered is
+stamped into the output. If the key is missing, the files are written with `status: "no-key"` —
+never fabricated.
+
+**Usage is capped.** Each output is rewritten only when its inputs change, and at most **once a
+day** even though the data refreshes every 6h (`AI_REFRESH_HOURS`, default 24; the monthly email
+run sets it to 0 so the emailed edition is always fresh). Unchanged inputs never call the model, and
+every call logs its input/output tokens in the Actions log. In practice that is about one
+newsletter call plus one or two podcast calls a day.
 
 ### Monthly email (optional) — used by `newsletter-email.yml`
 

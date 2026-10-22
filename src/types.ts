@@ -283,6 +283,8 @@ export interface PodcastMonth {
   weeks: PodcastWeek[];
   ai: boolean;
   model?: string;
+  /** When the AI summary was written (it is rewritten at most once a day). */
+  aiAt?: string;
   headline: string | null;
   overview: string[];
   themes: PodcastTheme[];

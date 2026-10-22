@@ -8,7 +8,16 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { converse, bedrockConfigured, bedrockStatus, bedrockRegion, parseJson } from './lib/bedrock.mjs';
+import {
+  converse,
+  bedrockConfigured,
+  bedrockStatus,
+  bedrockRegion,
+  parseJson,
+  AI_REFRESH_HOURS,
+  hoursSince,
+  usageLine,
+} from './lib/bedrock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -128,6 +137,13 @@ async function run() {
     console.log('Newsletter: data unchanged (hash match) — keeping existing AI edition, skipping Bedrock.');
     return;
   }
+  // The figures move every 6h; rewriting the edition about once a day is enough.
+  if (existing?.status === 'ok' && hoursSince(existing.generatedAt) < AI_REFRESH_HOURS) {
+    console.log(
+      `Newsletter: AI edition is ${hoursSince(existing.generatedAt).toFixed(1)}h old (< ${AI_REFRESH_HOURS}h) — keeping it, skipping Bedrock.`
+    );
+    return;
+  }
 
   if (!bedrockConfigured()) {
     const s = bedrockStatus();
@@ -188,7 +204,7 @@ async function run() {
       watchList: parsed.watchList,
       methodNote: parsed.methodNote,
     });
-    console.log(`Newsletter: generated via ${result.modelId} (${bedrockRegion}).`);
+    console.log(`Newsletter: generated via ${result.modelId} (${bedrockRegion}) — ${usageLine(result.usage)}.`);
   } catch (e) {
     await write({
       generatedAt: new Date().toISOString(),

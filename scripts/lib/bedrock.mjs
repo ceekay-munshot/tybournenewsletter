@@ -14,6 +14,8 @@
  * model with exponential backoff. The model that actually answered is returned so
  * the newsletter can be stamped with it. Shells out to curl (one code path works
  * through the agent proxy locally and direct on CI runners).
+ *
+ * With BEDROCK_MODEL_IDS unset it uses DEFAULT_MODELS, so the key alone is enough.
  */
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -23,7 +25,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const REGION = process.env.AWS_REGION || 'us-east-1';
 const KEY = process.env.BEDROCK_API_KEY || '';
-const MODELS = (process.env.BEDROCK_MODEL_IDS || '')
+// Claude Sonnet 4.6 on the global cross-region profile (no regional price premium), then
+// Claude Haiku 4.5 as a cheaper fallback — both served by the Converse API used here.
+const DEFAULT_MODELS = 'global.anthropic.claude-sonnet-4-6,global.anthropic.claude-haiku-4-5-20251001-v1:0';
+const MODELS = (process.env.BEDROCK_MODEL_IDS || DEFAULT_MODELS)
   .split(',')
   .map((s) => s.trim())
   .filter(Boolean);
@@ -128,6 +133,15 @@ export function parseJson(text) {
     return null;
   }
 }
+
+/** Least hours between AI rewrites of one output (the newsletter, a podcast month). The
+ *  data refreshes every 6h; the prose only needs to follow about once a day. Set
+ *  AI_REFRESH_HOURS=0 to force a fresh write (the monthly email run does). */
+export const AI_REFRESH_HOURS = process.env.AI_REFRESH_HOURS ? Number(process.env.AI_REFRESH_HOURS) : 24;
+export const hoursSince = (iso) => (Date.now() - Date.parse(iso)) / 3_600_000;
+
+/** One log line per model call, so token use is visible in the Actions log. */
+export const usageLine = (u) => (u ? `${u.inputTokens ?? '?'} in / ${u.outputTokens ?? '?'} out tokens` : 'usage n/a');
 
 export const bedrockRegion = REGION;
 export const bedrockModels = MODELS;

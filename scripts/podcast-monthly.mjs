@@ -9,7 +9,8 @@
 // Honest fallback with no key or a model error: months are built from the episode analyses
 // as published and topics are matched by exact name — nothing is invented. Each month and
 // the comparison are cached on a hash of their inputs, so an unchanged month never
-// re-calls the model.
+// re-calls the model, and a month's AI summary is rewritten at most once a day
+// (AI_REFRESH_HOURS) even while new episodes keep arriving.
 //
 // Usage: CLIENT=tybourne node scripts/podcast-monthly.mjs
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -17,7 +18,16 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getJson } from './lib/http.mjs';
 import { monthOf } from './lib/quarters.mjs';
-import { converse, bedrockConfigured, bedrockStatus, bedrockRegion, parseJson } from './lib/bedrock.mjs';
+import {
+  converse,
+  bedrockConfigured,
+  bedrockStatus,
+  bedrockRegion,
+  parseJson,
+  AI_REFRESH_HOURS,
+  hoursSince,
+  usageLine,
+} from './lib/bedrock.mjs';
 import {
   hashOf,
   addMonths,
@@ -84,10 +94,12 @@ function ask(DATA, schema, strict = false) {
 /** One model call, validated by `apply`; re-asks once on malformed/invalid JSON. */
 async function aiJson({ system, data, schema, maxTokens, label, apply }) {
   let res = await converse({ system, user: ask(data, schema), maxTokens, timeout: 180, label });
+  console.log(`  ${label}: ${res.modelId} — ${usageLine(res.usage)}`);
   let out = apply(parseJson(res.text));
   if (!out) {
     console.log(`  ${label}: first reply unusable — re-asking once.`);
     res = await converse({ system, user: ask(data, schema, true), maxTokens, timeout: 180, label: `${label}-retry` });
+    console.log(`  ${label}-retry: ${res.modelId} — ${usageLine(res.usage)}`);
     out = apply(parseJson(res.text));
   }
   if (!out) throw new Error(`${label}: the model returned unusable JSON twice`);
@@ -145,10 +157,13 @@ async function run() {
     if (!recs.length) return { ...fallbackMonth(meta, recs), inputHash: null };
     const pack = monthPack(meta, recs);
     const inputHash = hashOf(pack);
-    const cached = [prev?.thisMonth, prev?.lastMonth].find((m) => m?.id === ym && m.ai && m.inputHash === inputHash);
-    if (cached) {
-      console.log(`  ${meta.label}: inputs unchanged — keeping the AI summary (${cached.model}).`);
-      return cached;
+    // Keep the AI summary when its inputs are unchanged, or when it was written less than
+    // AI_REFRESH_HOURS ago (new episodes then wait for the next daily rewrite).
+    const cached = [prev?.thisMonth, prev?.lastMonth].find((m) => m?.id === ym && m.ai);
+    if (cached && (cached.inputHash === inputHash || hoursSince(cached.aiAt) < AI_REFRESH_HOURS)) {
+      const why = cached.inputHash === inputHash ? 'inputs unchanged' : `written ${hoursSince(cached.aiAt).toFixed(1)}h ago`;
+      console.log(`  ${meta.label}: ${why} — keeping the AI summary (${cached.model}).`);
+      return { ...cached, mtd: meta.mtd };
     }
     if (!useAI) return { ...fallbackMonth(meta, recs), inputHash };
     try {
@@ -161,7 +176,7 @@ async function run() {
         apply: (o) => applyMonthAI(meta, pack, o),
       });
       console.log(`  ${meta.label}: AI summary written via ${model} (${out.themes.length} themes).`);
-      return { ...out, model, inputHash };
+      return { ...out, model, aiAt: new Date().toISOString(), inputHash };
     } catch (e) {
       errors.push(e instanceof Error ? e.message : String(e));
       return { ...fallbackMonth(meta, recs), inputHash };
