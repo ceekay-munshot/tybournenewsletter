@@ -1,27 +1,20 @@
-// Left-nav labels. These are PLACEHOLDERS: each dashboard is labelled by its
-// SOURCE REPO name for now, so every tab is easy to trace back to the dashboard
-// it came from. The client will hand over final display names later — when they
-// do, only this one map changes (the rest of the app reads it through repoLabel).
+// Left-nav labels. Each dashboard is listed by its own display name — the same
+// name its page heading uses, taken from what the source dashboard calls itself
+// (e.g. "Taiwan Semiconductor Revenue Tracker", "AI Model Intelligence Dashboard").
 //
-// Two systems (model pricing + GPU) share one repo (AI-Compute-Pricing), so they
-// carry a short qualifier to stay distinct in the menu.
-export const REPO_LABEL: Record<string, string> = {
-  'cpu-prices': 'cpuprices',
-  'taiwan-semi-revenue': 'taiwan-semicon-revenue-tracker',
-  'ai-compute-pricing': 'Model Pricing · AI-Compute-Pricing',
-  'gpu-cloud-pricing': 'GPU Pricing · AI-Compute-Pricing',
-  'schneider-electric': 'schneider-electric',
-  'thirteen-f': '13F',
-  nubank: 'nubankdash',
-  'sap-ai': 'sap',
-  airlines: 'Airlines',
-  huggingface: 'huggingface',
-  'ai-model-intel': 'google-dash',
-  'ti-chip-prices': 'texas-instruments-dashboard',
-  'podcast-themes': 'podcast',
+// Only names that would truncate in the nav, or that are ambiguous next to a
+// sibling, get a shorter override here. Everything else falls back to the
+// system's `name` from client.config.json.
+export const NAV_LABEL: Record<string, string> = {
+  // "Taiwan Semiconductor Revenue" is too long for the nav column.
+  'taiwan-semi-revenue': 'Taiwan Semi Revenue',
+  // Model $/1M-token pricing; "AI Compute Pricing" reads too close to GPU Cloud Pricing.
+  'ai-compute-pricing': 'AI Model Pricing',
+  // "Texas Instruments Prices" is too long for the nav column.
+  'ti-chip-prices': 'TI Chip Prices',
 };
 
-/** The placeholder repo label for a system, falling back to its human name. */
-export function repoLabel(systemId: string, fallback: string): string {
-  return REPO_LABEL[systemId] ?? fallback;
+/** The nav label for a system: a short override if one exists, else its display name. */
+export function navLabel(systemId: string, name: string): string {
+  return NAV_LABEL[systemId] ?? name;
 }

@@ -53,7 +53,7 @@ export default function App() {
       <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col md:flex-row">
-        <Sidebar systems={data.systems} activeId={activeId} onSelect={openSystem} />
+        <Sidebar sectors={data.sectors} systems={data.systems} activeId={activeId} onSelect={openSystem} />
 
         <main className="min-w-0 flex-1 px-4 py-5 sm:px-6">
           {selected ? (
