@@ -64,6 +64,8 @@ jobs:
       - name: Generate AI newsletter
         continue-on-error: true
         env:
+          # The emailed edition is always freshly written (skips the once-a-day reuse).
+          AI_REFRESH_HOURS: '0'
           BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
           AWS_REGION: ${{ vars.AWS_REGION }}
           BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
