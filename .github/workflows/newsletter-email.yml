@@ -1,7 +1,8 @@
 name: Email monthly newsletter
 
-# OPTIONAL. Every month (and on demand) regenerate the data + AI newsletter,
-# render the in-app edition to a PDF, and email it to the recipient list.
+# OPTIONAL. Every month (and on demand) regenerate the data, render the in-app
+# edition to a PDF, and email it to the recipient list. The AI prose is the monthly
+# edition the "Refresh consolidated data" workflow wrote that morning — no AI call here.
 #
 # Fully gated: if EMAIL_TOKEN (secret) or NEWSLETTER_RECIPIENTS (var) is not set,
 # the `send` job is skipped cleanly with a log line — the workflow never fails just
@@ -61,15 +62,8 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
-      - name: Generate AI newsletter
-        continue-on-error: true
-        env:
-          # The emailed edition is always freshly written (skips the once-a-day reuse).
-          AI_REFRESH_HOURS: '0'
-          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
-          AWS_REGION: ${{ vars.AWS_REGION }}
-          BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
-        run: node scripts/newsletter.mjs
+      # No AI call here: the AI edition was written and committed by the "Refresh
+      # consolidated data" run at 06:41 UTC on the 2nd, so the email carries that edition.
 
       - name: Build site
         run: npm run build

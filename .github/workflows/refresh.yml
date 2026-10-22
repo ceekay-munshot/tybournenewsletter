@@ -1,16 +1,24 @@
 name: Refresh consolidated data
 
-# Re-run the connectors every 6 hours (and on demand), regenerate the AI newsletter,
-# and commit the regenerated data files if anything changed.
+# Re-run the connectors every 6 hours (and on demand) and commit the regenerated data
+# files if anything changed. These runs are DATA-ONLY: no AI call is made, and the last
+# AI edition (newsletter prose + podcast month summaries) is kept as it is.
 #
-# The connectors need no secrets (all sources are keyless public GETs). The AI
-# newsletter writer is OPTIONAL: with the Bedrock key set it writes the editorial
-# edition, and WITHOUT it the pipeline still succeeds and writes the honest
-# "no-key" state — nothing is fabricated. See README "Secrets & variables".
+# The AI edition is written ONCE A MONTH: the 2nd-of-month run below (ahead of the
+# newsletter email) is the only scheduled run given the Bedrock key. To write one by
+# hand, run this workflow with "ai_edition" ticked. With no key at all the pipeline
+# still succeeds with honest no-key states — nothing is fabricated.
 on:
   schedule:
     - cron: '0 */6 * * *'
+    # Monthly AI edition — keep in sync with AI_EDITION below.
+    - cron: '41 6 2 * *'
   workflow_dispatch:
+    inputs:
+      ai_edition:
+        description: 'Also write the monthly AI edition now (calls Bedrock)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,6 +30,9 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    env:
+      # 'true' only on the monthly edition run or a manual run with ai_edition ticked.
+      AI_EDITION: ${{ github.event.schedule == '41 6 2 * *' || inputs.ai_edition == true }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,25 +50,23 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
-      # Podcast monthly summaries: one AI summary per month (this + last) from every
-      # episode's analysis, plus which themes continued / dropped off / are new. Same
-      # Bedrock key as the newsletter; with no key it writes the honest fallback (the
-      # episode analyses as published). Cached per month, so unchanged months skip Bedrock.
+      # Podcast monthly summaries. Every run grows the episode archive; only the edition
+      # run gets the key and writes the AI month summaries + theme comparison.
       - name: Podcast monthly summaries
         continue-on-error: true
         env:
-          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          BEDROCK_API_KEY: ${{ env.AI_EDITION == 'true' && secrets.BEDROCK_API_KEY || '' }}
           AWS_REGION: ${{ vars.AWS_REGION }}
           BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
         run: node scripts/podcast-monthly.mjs
 
-      # Regenerate the AI newsletter from the fresh data. Never blocks the data
-      # commit: no key -> honest no-key state (exit 0); a model error -> honest
-      # error state, still committed. continue-on-error keeps the job green.
+      # AI newsletter: written on the edition run only; other runs keep the edition.
+      # Never blocks the data commit: a model error -> honest error state, still
+      # committed. continue-on-error keeps the job green.
       - name: Generate AI newsletter
         continue-on-error: true
         env:
-          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          BEDROCK_API_KEY: ${{ env.AI_EDITION == 'true' && secrets.BEDROCK_API_KEY || '' }}
           AWS_REGION: ${{ vars.AWS_REGION }}
           BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
         run: node scripts/newsletter.mjs

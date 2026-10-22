@@ -283,7 +283,7 @@ export interface PodcastMonth {
   weeks: PodcastWeek[];
   ai: boolean;
   model?: string;
-  /** When the AI summary was written (it is rewritten at most once a day). */
+  /** When the AI summary was written (once a month, with the newsletter edition). */
   aiAt?: string;
   headline: string | null;
   overview: string[];
@@ -315,6 +315,8 @@ export interface PodcastMonthly {
   note?: string;
   sourceName?: string;
   sourceUrl?: string;
+  /** The edition's two months: thisMonth is the latest one covered (the last complete
+   *  month once the monthly edition has run), lastMonth the month before it. */
   lastMonth: PodcastMonth;
   thisMonth: PodcastMonth;
   /** null when last month has no episodes to compare against. */

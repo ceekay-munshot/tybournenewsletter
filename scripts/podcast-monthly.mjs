@@ -1,16 +1,16 @@
 // Podcast monthly summaries (Bedrock). The podcast dashboard writes one master summary per
 // week from that week's episode analyses; this rolls a whole calendar month of those same
-// inputs (grouped by week) into ONE consolidated summary per month — this month and last —
-// then asks which themes continued, dropped off, or are new.
+// inputs (grouped by week) into ONE consolidated summary per month, then asks which themes
+// continued, dropped off, or are new.
 //
-// Writes clients/<client>/data/podcast-monthly.json (what the dashboard reads) and
-// clients/<client>/data/podcast-archive.json (every episode seen in the last 3 months, so a
-// month stays whole after the feed's "latest few episodes per show" window moves on).
-// Honest fallback with no key or a model error: months are built from the episode analyses
-// as published and topics are matched by exact name — nothing is invented. Each month and
-// the comparison are cached on a hash of their inputs, so an unchanged month never
-// re-calls the model, and a month's AI summary is rewritten at most once a day
-// (AI_REFRESH_HOURS) even while new episodes keep arriving.
+// The AI runs ONCE A MONTH, in the newsletter-edition run (the only run given the key): it
+// covers the last two complete months (on 2 Nov: October vs September) and reuses any month
+// already summarised after it ended, so a normal edition costs one month + one comparison.
+// Every other run is data-only: it grows clients/<client>/data/podcast-archive.json (every
+// episode seen in the last 3 months, so a month stays whole after the feed's "latest few
+// episodes per show" window moves on) and leaves the AI edition untouched.
+// Honest fallback before any edition exists or on a model error: months are built from the
+// episode analyses as published and topics are matched by exact name — nothing is invented.
 //
 // Usage: CLIENT=tybourne node scripts/podcast-monthly.mjs
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
@@ -21,11 +21,8 @@ import { monthOf } from './lib/quarters.mjs';
 import {
   converse,
   bedrockConfigured,
-  bedrockStatus,
   bedrockRegion,
   parseJson,
-  AI_REFRESH_HOURS,
-  hoursSince,
   usageLine,
 } from './lib/bedrock.mjs';
 import {
@@ -144,11 +141,20 @@ async function run() {
     console.log('Podcast monthly: no episodes in the feed or the archive — nothing written.');
     return;
   }
-  const thisId = archive.map((r) => monthOf(r.date)).sort().slice(-1)[0];
+  const useAI = bedrockConfigured();
+  // No key = a plain data refresh: keep the last AI edition exactly as it is.
+  if (!useAI && (prev?.thisMonth?.ai || prev?.lastMonth?.ai)) {
+    await writeJson(archivePath, { source: system.source.episodes, keepMonths: KEEP_MONTHS, episodes: archive });
+    console.log(
+      `Podcast monthly: data-only run — keeping the ${prev.lastMonth.label} / ${prev.thisMonth.label} AI edition; archive now ${archive.length} episodes.`
+    );
+    return;
+  }
+
+  // The edition covers the last two complete months.
+  const thisId = addMonths(monthOf(new Date().toISOString()), -1);
   const lastId = addMonths(thisId, -1);
   const recsOf = (ym) => archive.filter((r) => monthOf(r.date) === ym);
-
-  const useAI = bedrockConfigured();
   const errors = [];
 
   async function buildMonth(ym) {
@@ -157,12 +163,11 @@ async function run() {
     if (!recs.length) return { ...fallbackMonth(meta, recs), inputHash: null };
     const pack = monthPack(meta, recs);
     const inputHash = hashOf(pack);
-    // Keep the AI summary when its inputs are unchanged, or when it was written less than
-    // AI_REFRESH_HOURS ago (new episodes then wait for the next daily rewrite).
+    // Reuse an AI summary when its inputs are unchanged, or when it was written after the
+    // month ended (it already covers the whole month — no need to pay for it twice).
     const cached = [prev?.thisMonth, prev?.lastMonth].find((m) => m?.id === ym && m.ai);
-    if (cached && (cached.inputHash === inputHash || hoursSince(cached.aiAt) < AI_REFRESH_HOURS)) {
-      const why = cached.inputHash === inputHash ? 'inputs unchanged' : `written ${hoursSince(cached.aiAt).toFixed(1)}h ago`;
-      console.log(`  ${meta.label}: ${why} — keeping the AI summary (${cached.model}).`);
+    if (cached && (cached.inputHash === inputHash || String(cached.aiAt) >= `${addMonths(ym, 1)}-01`)) {
+      console.log(`  ${meta.label}: keeping the AI summary written ${String(cached.aiAt).slice(0, 10)} (${cached.model}).`);
       return { ...cached, mtd: meta.mtd };
     }
     if (!useAI) return { ...fallbackMonth(meta, recs), inputHash };
@@ -212,11 +217,10 @@ async function run() {
     if (!compare) compare = topicCompare(recsOf(lastId), recsOf(thisId));
   }
 
-  const s = bedrockStatus();
   const status = !useAI ? 'no-key' : errors.length ? 'error' : 'ok';
   const note =
     status === 'no-key'
-      ? `AI monthly summary not generated: ${s.reason}. Showing the episode analyses as published; set a Bedrock key to enable it.`
+      ? 'No AI edition yet — month summaries are written once a month with the newsletter edition (needs the Bedrock key). Showing the episode analyses as published.'
       : status === 'error'
         ? `Some AI steps failed — those parts show the episode analyses as published. ${errors.join(' | ')}`
         : undefined;

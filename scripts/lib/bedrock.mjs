@@ -134,12 +134,6 @@ export function parseJson(text) {
   }
 }
 
-/** Least hours between AI rewrites of one output (the newsletter, a podcast month). The
- *  data refreshes every 6h; the prose only needs to follow about once a day. Set
- *  AI_REFRESH_HOURS=0 to force a fresh write (the monthly email run does). */
-export const AI_REFRESH_HOURS = process.env.AI_REFRESH_HOURS ? Number(process.env.AI_REFRESH_HOURS) : 24;
-export const hoursSince = (iso) => (Date.now() - Date.parse(iso)) / 3_600_000;
-
 /** One log line per model call, so token use is visible in the Actions log. */
 export const usageLine = (u) => (u ? `${u.inputTokens ?? '?'} in / ${u.outputTokens ?? '?'} out tokens` : 'usage n/a');
 

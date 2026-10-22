@@ -14,8 +14,6 @@ import {
   bedrockStatus,
   bedrockRegion,
   parseJson,
-  AI_REFRESH_HOURS,
-  hoursSince,
   usageLine,
 } from './lib/bedrock.mjs';
 
@@ -137,11 +135,10 @@ async function run() {
     console.log('Newsletter: data unchanged (hash match) — keeping existing AI edition, skipping Bedrock.');
     return;
   }
-  // The figures move every 6h; rewriting the edition about once a day is enough.
-  if (existing?.status === 'ok' && hoursSince(existing.generatedAt) < AI_REFRESH_HOURS) {
-    console.log(
-      `Newsletter: AI edition is ${hoursSince(existing.generatedAt).toFixed(1)}h old (< ${AI_REFRESH_HOURS}h) — keeping it, skipping Bedrock.`
-    );
+  // The AI edition is written once a month (the only run given the key); every other run
+  // keeps it as it is rather than replacing it with the no-key state.
+  if (!bedrockConfigured() && existing?.status === 'ok') {
+    console.log(`Newsletter: data-only run — keeping the ${existing.editionLabel ?? 'current'} AI edition.`);
     return;
   }
 
