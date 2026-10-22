@@ -97,8 +97,8 @@ export function PodcastView({ block, monthly }: { block: ChangeBlock; monthly: P
             `${plural(T.episodes, 'investor-podcast episode')} ${T.mtd ? 'so far in' : 'in'} ${T.longLabel} across ` +
             `${plural(T.shows.length, 'show')} (${T.summarised} fully analysed). ` +
             (T.ai || L?.ai
-              ? "Month summaries are written by Claude on Amazon Bedrock from the episode analyses — the same inputs as the podcast dashboard's weekly summaries."
-              : m.note ?? 'The AI month summary is off — showing the episode analyses as published.'),
+              ? "Month summaries are written once a month, with the newsletter edition, by Claude on Amazon Bedrock from the episode analyses — the same inputs as the podcast dashboard's weekly summaries."
+              : m.note ?? 'No AI edition yet — showing the episode analyses as published.'),
         }
       : block;
 
@@ -180,8 +180,8 @@ function MonthCompare({ monthly, accent, onOpen }: { monthly: PodcastMonthly; ac
   return (
     <>
       <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <MonthBox month={L} role="Last month" tint={LAST_TINT} statuses={links.last} onOpen={() => onOpen('last')} />
-        <MonthBox month={T} role="This month" tint={accent} statuses={links.cur} onOpen={() => onOpen('this')} highlight />
+        <MonthBox month={L} role="Earlier month" tint={LAST_TINT} statuses={links.last} onOpen={() => onOpen('last')} />
+        <MonthBox month={T} role="Latest month" tint={accent} statuses={links.cur} onOpen={() => onOpen('this')} highlight />
       </div>
       {compare ? (
         <ContinuityCard compare={compare} last={L} cur={T} accent={accent} />
@@ -316,13 +316,13 @@ function ContinuityCard({ compare, last, cur, accent }: { compare: PodcastCompar
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         <Bucket kind="continued" title="Continued" hint="talked about in both months" items={continued} />
         <Bucket kind="dropped" title="Dropped off" hint={`in ${last.label}, gone in ${cur.label}`} items={dropped} />
-        <Bucket kind="new" title="New this month" hint={`not in ${last.label}`} items={fresh} />
+        <Bucket kind="new" title={`New in ${cur.label}`} hint={`not in ${last.label}`} items={fresh} />
       </div>
       {topics && (
         <p className="mt-3 flex items-start gap-1.5 text-[11px] leading-snug text-slate-400">
           <Info size={12} className="mt-px shrink-0" />
-          Matched on the companies and subjects each episode's analysis names (exact names, no AI). With the Bedrock key
-          on, the AI matches whole themes instead.
+          Matched on the companies and subjects each episode's analysis names (exact names, no AI). The monthly AI
+          edition matches whole themes instead.
         </p>
       )}
     </Card>
@@ -499,10 +499,10 @@ function MonthSummaryModal({
                 <div className="flex items-start gap-2.5 rounded-xl bg-amber-50/70 px-3.5 py-3 text-[12.5px] leading-snug text-amber-800 ring-1 ring-amber-100">
                   <Info size={16} className="mt-0.5 shrink-0" />
                   <div>
-                    <p className="font-semibold">The AI-written month summary isn't switched on yet.</p>
+                    <p className="font-semibold">This month has no AI summary yet.</p>
                     <p className="mt-0.5 text-amber-700">
                       Below is each episode's own lead point and analysis, as published by the podcast tool. The consolidated
-                      summary appears here once the Bedrock key is set.
+                      summary is written once a month, with the newsletter edition.
                     </p>
                   </div>
                 </div>

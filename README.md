@@ -29,7 +29,8 @@ First client: **Tybourne Global Holdings** (published by Munshot).
 - **Podcast monthly summaries** (`scripts/podcast-monthly.mjs` → `data/podcast-monthly.json`): every
   investor-podcast episode in a calendar month (grouped by week — the same per-episode analyses the
   podcast dashboard's weekly summaries are written from) is rolled into **one AI summary per month**
-  (this month + last), then a second call marks which themes **continued, dropped off, or are new**.
+  (the last two complete months, written once a month with the newsletter edition), then a second
+  call marks which themes **continued, dropped off, or are new**.
   The Podcast Themes view gets a **Month / Quarter** toggle: two month boxes side by side, each
   clickable for the full month summary (overview, themes, notable numbers, week by week, threads to
   watch). Same Bedrock key as the newsletter; with no key it shows the episode analyses as published
@@ -69,7 +70,7 @@ src/
   components/             # Header, Footer, MunshotMark, MoversChart, ChangeCard, SectorSection
   tabs/                   # Overview, Newsletter, SectorTab, SystemView
 .github/workflows/
-  refresh.yml             # every 6h: consolidate + newsletter, commit fresh data
+  refresh.yml             # every 6h: consolidate (data only); 2nd of month: + AI edition
   newsletter-email.yml    # monthly (optional): render PDF + email it; skips if unconfigured
 ```
 
@@ -102,7 +103,7 @@ install step (handy for CI). `CLIENT=<id> npm run consolidate` targets another c
 AI writer and the optional monthly email. Set these in **GitHub → Settings → Secrets and
 variables → Actions**.
 
-### AI newsletter + podcast monthly summaries (Amazon Bedrock) — used by `refresh.yml` and `newsletter-email.yml`
+### AI newsletter + podcast monthly summaries (Amazon Bedrock) — used by `refresh.yml` (monthly edition run)
 
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |
@@ -124,11 +125,14 @@ writer falls through `400/403/404` to the next ID and retries `429/5xx`; the mod
 stamped into the output. If the key is missing, the files are written with `status: "no-key"` —
 never fabricated.
 
-**Usage is capped.** Each output is rewritten only when its inputs change, and at most **once a
-day** even though the data refreshes every 6h (`AI_REFRESH_HOURS`, default 24; the monthly email
-run sets it to 0 so the emailed edition is always fresh). Unchanged inputs never call the model, and
-every call logs its input/output tokens in the Actions log. In practice that is about one
-newsletter call plus one or two podcast calls a day.
+**AI runs once a month, not on every refresh.** The 6-hourly refresh is data-only: no model
+call, and the last AI edition (newsletter prose + podcast month summaries) stays as it is while
+the podcast episode archive keeps growing. The AI edition is written by one scheduled run on the
+**2nd of each month at 06:41 UTC** (ahead of the 13:17 newsletter email, which reuses it), or by
+running *Refresh consolidated data* by hand with **ai_edition** ticked. An edition covers the last
+two complete months and reuses any month already summarised after it ended, so a normal edition is
+about three calls: one new month, the theme comparison, and the newsletter. Every call logs its
+input/output tokens in the Actions log.
 
 ### Monthly email (optional) — used by `newsletter-email.yml`
 
