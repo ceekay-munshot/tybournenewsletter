@@ -102,9 +102,6 @@ export function SystemView({
   const absVals = pctData.map((d) => Math.abs(d.value)).sort((a, b) => b - a);
   const pctDomain = absVals.length > 2 && absVals[0] > absVals[1] * 2 ? Math.max(absVals[1] * 1.25, 0.05) : undefined;
   const hasTrend = !!(block.trend && block.trend.length > 1);
-  // Podcast (and any narrative block) renders ONLY the quarter-vs-quarter theme
-  // comparison — no chart, no episodes-per-show table, no duplicate consolidated note.
-  const isNarrative = !!(block.highlights && block.highlights.length);
 
   // ---- breakdown table ----
   const cols: Column<BreakdownRow>[] = [
@@ -190,8 +187,8 @@ export function SystemView({
         </div>
       </Card>
 
-      {/* consolidated note — hidden for narrative blocks (duplicates the theme comparison) */}
-      {!isNarrative && block.summary && (
+      {/* consolidated note */}
+      {block.summary && (
         <Card className="mb-4" accent={accent}>
           <CardHeader
             icon={Quote}
@@ -203,51 +200,6 @@ export function SystemView({
         </Card>
       )}
 
-      {/* narrative themes — quarter-over-quarter comparison (e.g. podcast) */}
-      {block.highlights && block.highlights.length > 0 && (
-        <Card className="mb-4" accent={accent}>
-          <CardHeader
-            icon={Quote}
-            accent={accent}
-            title="Recurring themes — last quarter vs this quarter"
-            subtitle={
-              block.prevHighlights && block.prevHighlights.length
-                ? `What the investor podcasts covered: ${block.lastPeriodLabel} → ${block.thisPeriodLabel}`
-                : block.tone
-            }
-          />
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-            {block.prevHighlights && block.prevHighlights.length > 0 && (
-              <ThemeColumn
-                label={block.lastPeriodLabel}
-                count={block.lastValue}
-                tone={block.prevTone}
-                themes={block.prevHighlights}
-                tint="#64748B"
-              />
-            )}
-            <ThemeColumn
-              label={block.thisPeriodLabel}
-              count={block.thisValue}
-              tone={block.thisTone ?? block.tone}
-              themes={block.highlights}
-              newThemes={block.newHighlights}
-              tint={accent}
-              highlight
-            />
-          </div>
-          {block.prevHighlights && block.prevHighlights.length > 0 && (
-            <p className="mt-3 flex items-center gap-1.5 text-[11px] text-slate-400">
-              <span className="inline-block rounded bg-emerald-50 px-1 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-600 ring-1 ring-emerald-100">
-                new
-              </span>
-              = theme that appears this quarter but not last quarter · top recurring threads shown per quarter
-            </p>
-          )}
-        </Card>
-      )}
-
-      {!isNarrative && (
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
         {/* breakdown chart */}
         <Card className={hasTrend ? 'lg:col-span-3' : 'lg:col-span-5'}>
@@ -310,10 +262,9 @@ export function SystemView({
           </div>
         )}
       </div>
-      )}
 
       {/* full breakdown table */}
-      {!isNarrative && block.breakdown.length > 0 && (
+      {block.breakdown.length > 0 && (
         <Card className="mt-4" pad={false}>
           <div className="p-4 pb-2">
             <h3 className="font-display text-[15px] font-bold text-slate-900">Period-over-period detail</h3>
@@ -347,66 +298,6 @@ export function SystemView({
       )}
 
       <SourceLine block={block} />
-    </div>
-  );
-}
-
-/** One quarter's column in the podcast last-vs-this theme comparison. */
-function ThemeColumn({
-  label,
-  count,
-  tone,
-  themes,
-  newThemes,
-  tint,
-  highlight = false,
-}: {
-  label: string;
-  count: number | null;
-  tone?: string;
-  themes: string[];
-  newThemes?: string[];
-  tint: string;
-  highlight?: boolean;
-}) {
-  const newSet = new Set((newThemes ?? []).map((t) => t.toLowerCase()));
-  return (
-    <div
-      className="rounded-xl border p-3"
-      style={{ borderColor: highlight ? `${tint}40` : '#E2E8F0', background: highlight ? `${tint}0A` : 'rgba(248,250,252,0.5)' }}
-    >
-      <div
-        className="mb-2 flex items-baseline justify-between gap-2 border-b pb-1.5"
-        style={{ borderColor: highlight ? `${tint}30` : '#E2E8F0' }}
-      >
-        <span className="font-display text-[13px] font-bold text-slate-900">{label}</span>
-        <span className="tnum text-[11px] text-slate-500">
-          {count != null ? `${count} episode${count === 1 ? '' : 's'}` : '—'}
-          {tone ? ` · ${tone}` : ''}
-        </span>
-      </div>
-      {themes.length ? (
-        <ul className="flex flex-col gap-1.5">
-          {themes.map((h, i) => {
-            const isNew = newSet.has(h.toLowerCase());
-            return (
-              <li key={i} className="flex gap-1.5 text-[12.5px] leading-snug text-slate-700">
-                <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: tint }} />
-                <span>
-                  {h}
-                  {isNew && (
-                    <span className="ml-1.5 rounded bg-emerald-50 px-1 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-600 ring-1 ring-emerald-100">
-                      new
-                    </span>
-                  )}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <p className="text-[12px] italic text-slate-400">No themes captured this quarter.</p>
-      )}
     </div>
   );
 }
@@ -460,7 +351,7 @@ function SecondaryCard({ metric, accent }: { metric: ChangeBlock; accent: string
   );
 }
 
-function SourceLine({ block }: { block: ChangeBlock }) {
+export function SourceLine({ block }: { block: ChangeBlock }) {
   return (
     <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3 text-[12px] text-slate-500">
       <div className="min-w-0">

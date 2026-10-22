@@ -234,3 +234,87 @@ export interface Newsletter {
   watchList: string[];
   methodNote: string | null;
 }
+
+// ---- Podcast monthly summaries (scripts/podcast-monthly.mjs -> clients/<client>/data/podcast-monthly.json) ----
+
+/** One episode in a month's week-by-week list. */
+export interface PodcastEpisodeRef {
+  id: string;
+  show: string;
+  title: string;
+  date: string;
+  url?: string;
+  /** false => only the title + show notes exist (the podcast tool hasn't analysed it yet). */
+  summarised: boolean;
+  tone?: string;
+  /** One-line read: what changed, else the lead point, else the show notes. */
+  line?: string;
+}
+
+export interface PodcastWeek {
+  id: string;
+  /** e.g. "5–11 Oct" (Monday-start weeks, clipped to the month). */
+  label: string;
+  /** AI one-liner for the week — null without AI. */
+  line: string | null;
+  episodes: PodcastEpisodeRef[];
+}
+
+export interface PodcastTheme {
+  title: string;
+  summary?: string;
+  shows: string[];
+  episodeIds: string[];
+  strength?: 'major' | 'minor';
+}
+
+/** One calendar month of investor podcasts. With `ai` the headline/overview/themes were
+ *  written by the model from every episode's analysis; without it the themes are each
+ *  episode's own lead point and the prose fields are empty. Never fabricated. */
+export interface PodcastMonth {
+  id: string;
+  label: string;
+  longLabel: string;
+  mtd: boolean;
+  episodes: number;
+  summarised: number;
+  shows: string[];
+  toneCounts: Record<string, number>;
+  weeks: PodcastWeek[];
+  ai: boolean;
+  model?: string;
+  headline: string | null;
+  overview: string[];
+  themes: PodcastTheme[];
+  numbers: { value: string; metric: string; context?: string }[];
+  tone: string | null;
+  watch: string[];
+}
+
+/** Which of last month's themes continued, dropped off, or are new this month.
+ *  'themes' = the model matched the two months' themes; 'topics' = exact match on the
+ *  companies/subjects the episode analyses name (no AI). */
+export interface PodcastCompare {
+  basis: 'themes' | 'topics';
+  ai: boolean;
+  model?: string;
+  read: string | null;
+  continued: { last: string; this: string; note?: string }[];
+  dropped: { theme: string; note?: string }[];
+  new: { theme: string; note?: string }[];
+}
+
+export interface PodcastMonthly {
+  generatedAt: string;
+  systemId: string;
+  status: 'ok' | 'no-key' | 'error';
+  provider?: string;
+  region?: string;
+  note?: string;
+  sourceName?: string;
+  sourceUrl?: string;
+  lastMonth: PodcastMonth;
+  thisMonth: PodcastMonth;
+  /** null when last month has no episodes to compare against. */
+  compare: PodcastCompare | null;
+}

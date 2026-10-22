@@ -39,6 +39,18 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
+      # Podcast monthly summaries: one AI summary per month (this + last) from every
+      # episode's analysis, plus which themes continued / dropped off / are new. Same
+      # Bedrock key as the newsletter; with no key it writes the honest fallback (the
+      # episode analyses as published). Cached per month, so unchanged months skip Bedrock.
+      - name: Podcast monthly summaries
+        continue-on-error: true
+        env:
+          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
+        run: node scripts/podcast-monthly.mjs
+
       # Regenerate the AI newsletter from the fresh data. Never blocks the data
       # commit: no key -> honest no-key state (exit 0); a model error -> honest
       # error state, still committed. continue-on-error keeps the job green.

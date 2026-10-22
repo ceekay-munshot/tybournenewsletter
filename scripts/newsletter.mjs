@@ -8,7 +8,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
-import { converse, bedrockConfigured, bedrockStatus, bedrockRegion } from './lib/bedrock.mjs';
+import { converse, bedrockConfigured, bedrockStatus, bedrockRegion, parseJson } from './lib/bedrock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -98,25 +98,6 @@ function userMessage(DATA, strict = false) {
     `DATA:\n\`\`\`json\n${JSON.stringify(DATA, null, 2)}\n\`\`\`\n\n` +
     `Return ONLY this JSON shape (no markdown, no prose):\n${SCHEMA}`
   );
-}
-
-function parseJson(text) {
-  if (!text) return null;
-  let t = text.trim();
-  // strip ```json ... ``` fences if present
-  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fence) t = fence[1].trim();
-  // else try to isolate the outermost object
-  if (!t.startsWith('{')) {
-    const i = t.indexOf('{');
-    const j = t.lastIndexOf('}');
-    if (i >= 0 && j > i) t = t.slice(i, j + 1);
-  }
-  try {
-    return JSON.parse(t);
-  } catch {
-    return null;
-  }
 }
 
 const valid = (o) =>
