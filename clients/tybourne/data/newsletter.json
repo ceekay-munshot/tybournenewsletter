@@ -1,13 +1,72 @@
 {
-  "generatedAt": "2026-10-22T03:32:04.262Z",
-  "status": "no-key",
+  "generatedAt": "2026-10-22T04:40:24.998Z",
+  "status": "ok",
   "provider": "bedrock",
+  "model": "global.anthropic.claude-sonnet-4-6",
   "region": "us-east-1",
-  "dataHash": "2010b47ecaa01583",
-  "note": "AI newsletter not generated: BEDROCK_API_KEY is not set. Set a Bedrock key to enable the AI writer.",
-  "editionLabel": null,
-  "executiveSummary": null,
-  "lines": [],
-  "watchList": [],
-  "methodNote": null
+  "dataHash": "e65889342d918034",
+  "editionLabel": "October 2026 — monthly intelligence",
+  "executiveSummary": "GPU cloud rental rates surged +4.6% MoM (Sep-26 → Oct-26 MTD) with the B200 the standout at +15.5%, while AI model token demand on OpenRouter jumped +21.7% MoM to 567.4T tokens (Aug '26 → Sep '26), with Z.ai gaining +3.7pp share and Google (Gemini) surrendering -2.7pp to lower-cost open-weight routing. On the supply side, Taiwan semiconductor revenue rose +3.5% MoM (Aug '26 → Sep '26) led by Semi Equip/Consumables at +9.4%, though Power/DC Electrical moved against the chain at -3.6%. In AI pricing, DeepSeek cut input prices -21.8% QoQ (Q3 '26 → Q4 '26 QTD), holding the overall basket to just -1.2% despite flat moves from OpenAI and Anthropic. Fund positioning data (Q1 '26 → Q2 '26) shows concentrated managers rotating $21.2B into Software & IT Services and pulling $3.1B out of Semiconductors, with TSM seeing five of five watchlist funds trimming at an average -0.89pp.",
+  "lines": [
+    {
+      "systemId": "cpu-prices",
+      "line": "CPU average street price fell -0.6% MoM (Sep-26 → Oct-26) across the like-for-like Intel & AMD basket. Desktop was the main drag at -0.9%, Server eased -0.2%, and Laptop was flat at 0.0%. No specific causal insight is logged in this dashboard beyond the observed price moves across the three segments."
+    },
+    {
+      "systemId": "taiwan-semi-revenue",
+      "line": "Taiwan supply-chain revenue rose +3.5% MoM like-for-like (Aug '26 → Sep '26), with 6 of 10 stages firmer. Semi Equip/Consumables led at +9.4%, followed by Legacy/Mature Node +4.8% and Analog Cycle +4.7%; the notable outlier was Power/DC Electrical at -3.6%, moving against peers running around +4.3% — the dashboard flags this as a potential one-month timing effect or a genuine turn worth monitoring. At the company level, Alchip accelerated +222ppt in AI Silicon (YoY 496%) while Quanta decelerated -101ppt in Rack/ODM (YoY 77%)."
+    },
+    {
+      "systemId": "ai-compute-pricing",
+      "line": "AI model input prices fell -1.2% QoQ (Q3 '26 → Q4 '26 QTD), with output prices down -0.6%; the overall basket is near-flat because list prices reset quarterly and are otherwise month-to-month flat. DeepSeek drove virtually all the movement with a -21.8% input price cut and a +8.71pp share gain, while Google moved -0.7%, OpenAI -0.2%, and Anthropic held at 0.0%. The dashboard notes that DeepSeek's aggressive pricing is the single biggest mover in the basket this quarter."
+    },
+    {
+      "systemId": "schneider-electric",
+      "line": "Schneider Electric data-centre equipment prices rose +1.7% MoM like-for-like (14 Sep → 19 Oct) across 2 solidly-priced categories, with 1 category moving more than 2%. UPS was the standout mover at +2.6%, while Rack PDUs edged up +0.3%, Rack Systems +0.1%, and Busway/Power Distribution dipped -0.3% (priced to 5 Oct); Pod & Modular and DCIM Software were each flat at 0.0% with only one priced item each. No additional causal insight is recorded in this dashboard beyond the observed Graybar distributor list-price moves."
+    },
+    {
+      "systemId": "thirteen-f",
+      "line": "Across 44 names held by 3+ of 14 watchlist funds, the median consensus position was trimmed by -0.38pp QoQ (Q1 '26 → Q2 '26), with TSM the hardest-hit at -0.89pp as all 5 holding funds trimmed, and CPNG down -1.2pp with 3 of 6 funds trimming. V was the standout buy at +0.42pp with 6 of 8 funds adding. Sector rotation data (ex-Nuveen) shows $21.2B net into Software & IT Services and $8.3B into Banks & Lending, offset by $7.8B out of Energy and $3.1B out of Semiconductors."
+    },
+    {
+      "systemId": "nubank",
+      "line": "Nu's Brazilian credit-card market share edged down -0.19pp QoQ to 15.49% (1Q '26 → 2Q '26), even as its card TPV share held at 23.6% — roughly 8.1pp above its balance share, reflecting heavy card spend on lighter revolving balances. The largest mover in the issuer table was Banco do Brasil at -0.52pp, while Santander gained +0.15pp. The macro backdrop is deteriorating: Brazil system-wide credit-card 90-day NPL rose to 9.96% (+0.45pp MoM, Aug 2026), and Nu's own 90+ NPL widened +0.40pp QoQ to 6.9% in 2Q '26 — the dashboard flags this as worth watching as system NPL rises."
+    },
+    {
+      "systemId": "sap-ai",
+      "line": "Overall SAP AI practitioner sentiment (1–5 scale) slipped -0.07pts MoM (Sep '26 → Oct '26) to 2.60/5, with 2 topics softer and 6 firmer. The two biggest gainers were SAP RPT1 (+0.38pts), driven by RPT-1.6 reaching general availability through AI Core with early benchmarks showing it matches tuned XGBoost on small classification tasks, and vs. Competitors (+0.37pts), where the debate over SAP blocking third-party agents in favour of routing through Joule is the most-discussed competitive move of the year. BTP & AI Agents slipped -0.08pts and S/4HANA AI Features fell -0.06pts, with TrustRadius data showing reviewers are still in early stages of exploring Joule and flagging AI implementation as adding friction."
+    },
+    {
+      "systemId": "airlines",
+      "line": "US passenger throughput ran -1.0% year-on-year in Sep '26 vs Sep '25, averaging 2.35M passengers/day, with TSA checkpoint data current to 20 Oct '26. Globally, IATA RPK (latest available Aug '26) was down -0.8% YoY, dragged by the Middle East at -14.6% YoY (-4.6pp vs the prior month), while Latin America led growth at +5.3% YoY; North America also contracted at -2.2% YoY (-1.0pp vs prior month). The dashboard attributes the Middle East decline and North America softness to the regional RPK data, while noting the month-to-month swings in US raw counts are seasonal, which is why demand is read year-on-year."
+    },
+    {
+      "systemId": "huggingface",
+      "line": "New Hugging Face AI Spaces rose +6.9% WoW (wk 5 Oct → wk 12 Oct) to 6,920 new Spaces, with chat & assistants the leading category at +12.6% (1,075 new Spaces) and data analysis up +15.9%; image generation was the only named category to contract at -5.6%. On a monthly basis, new Spaces totalled 25,225 (+41.5% MoM from 17,828), though the dashboard cautions this MoM figure is base-sensitive as August 2026 was the first full tracked month. Model-family activity shows Mistral +102% and Llama +80% in new models published, while Qwen contracted -4%."
+    },
+    {
+      "systemId": "ai-model-intel",
+      "line": "OpenRouter routed tokens rose +21.7% MoM to 567.4T (Aug '26 → Sep '26), with share shifting toward lower-cost and open-weight providers: Z.ai surged +72.0% (share +3.7pp to 12.5%), Stealth/cloaked jumped +92.7% (share +3.4pp to 9.3%), and OpenAI grew +30.9% (share +1.0pp to 13.8%). Google (Gemini) was the standout loser on this channel, falling -21.6% with share dropping -2.7pp to 4.9%, though the dashboard contextualises this as a developer API routing story rather than a collapse — consumer app downloads show Gemini at 16.9% share (#2 behind ChatGPT at 42.3%), and Alphabet Q2 2026 search revenue grew +17% YoY. DeepSeek also expanded +27.0% (share +0.9pp to 22.5%), consistent with its aggressive -21.8% price cut noted in the AI Compute Pricing dashboard."
+    },
+    {
+      "systemId": "ti-chip-prices",
+      "line": "Texas Instruments catalog pricing rose +1.3% (reported as +1.32%) on the stock-weighted like-for-like index QoQ (Q2-26 → Q3-26). No category-level breakdown is available in this dashboard's current data. No additional causal insight is recorded; the move reflects the stock-weighted average selling price across TI's constant catalog basket as observed via Mouser."
+    },
+    {
+      "systemId": "gpu-cloud-pricing",
+      "line": "GPU cloud rental rates rose +4.6% MoM (Sep-26 → Oct-26 MTD) on the headline H100 benchmark, now at $3.50/hr; B200 was the standout at +15.5% and H200 rose +7.0%, while GB200 was the only tracked GPU to fall at -3.3%. A100 gained +3.9% and L40S +4.3%, indicating broad upward pressure across the Nvidia stack. No specific causal insight is logged in this dashboard beyond the observed provider-median street rental moves across clouds."
+    },
+    {
+      "systemId": "podcast-themes",
+      "line": "Q4 '26 QTD investor-podcast monitoring covered 40 episodes across 10 shows, with tone running 9 positive, 5 neutral, 3 mixed, and 1 cautious. Recurring threads this quarter include the comparison of dating algorithms to a deck of cards, seagrass restoration as an early ecological focus, Emanuel's call routine, and the safety-vs-speed AI development debate framed around an airbags analogy; all four are new to the conversation relative to Q3 '26, which ran only 3 episodes centred on Instinct, Home Depot, and Disney. This is a qualitative narrative read across 40 episodes, not a quantitative mover."
+    }
+  ],
+  "watchList": [
+    "GPU cloud rental rates are rising across the full Nvidia stack (H100 +4.6%, B200 +15.5%, H200 +7.0% MoM Sep-26 → Oct-26 MTD) while routed token volume simultaneously surges +21.7% MoM to 567.4T — monitor whether compute supply tightens further into Q4 '26.",
+    "Brazil system-wide credit-card NPL reached 9.96% (+0.45pp MoM, Aug 2026) and Nu's own 90+ NPL widened to 6.9% (+0.40pp QoQ, 2Q '26) — watch Nu's next quarterly filing for evidence of loss-rate acceleration as the macro backdrop deteriorates.",
+    "TSM was trimmed by all 5 holding watchlist funds at an average -0.89pp (Q1 '26 → Q2 '26), and Taiwan supply-chain Power/DC Electrical revenue fell -3.6% MoM against a +4.3% peer average — track whether the Power/DC move in Aug '26 → Sep '26 data proves a timing effect or a genuine stage-level slowdown.",
+    "DeepSeek cut input prices -21.8% QoQ and grew token share to 22.5% (+0.9pp) while Z.ai jumped +3.7pp to 12.5% — the accelerating shift toward lower-cost open-weight routing on OpenRouter warrants monitoring for pricing pressure on OpenAI and Anthropic in Q4 '26.",
+    "Middle East IATA RPK contracted -14.6% YoY in Aug '26 (-4.6pp vs the prior month), the largest regional drag on global air demand — watch whether this steepens in the September IATA release given North America is also running at -2.2% YoY."
+  ],
+  "methodNote": "All figures sourced verbatim from the DATA object supplied: PassMark/cpubenchmark.net, Taiwan MOPS/TWSE filings, pricepertoken.com/getdeploying.com, Graybar distributor pricing, SEC EDGAR 13F filings, BCB/IF.data/issuer filings, HN/Reddit/StackExchange + SAP docs, TSA.gov + IATA, Hugging Face Hub, OpenRouter/UBS/SEC, TI catalog via Mouser, getdeploying.com, and investor podcasts; nothing has been fabricated or re-rounded."
 }

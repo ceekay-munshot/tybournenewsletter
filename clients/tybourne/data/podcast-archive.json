@@ -677,6 +677,16 @@
       ]
     },
     {
+      "id": "live-stratechery-wfsls4",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Apple and a Hacker’s Future",
+      "date": "2026-10-12T21:00:19.000Z",
+      "url": "https://www.youtube.com/watch?v=_8O_R_GPSnQ",
+      "summarised": false,
+      "notes": "Read the Article: Links: Stratechery: Sign up for Stratechery Plus: Sharp Tech website:"
+    },
+    {
       "id": "live-cheekypint-1je8ozu",
       "podcastId": "cheekypint",
       "show": "Cheeky Pint",
@@ -921,6 +931,46 @@
         "Facebook",
         "Katie Harbath",
         "Social Media Politics"
+      ]
+    },
+    {
+      "id": "live-stratechery-q3vz2o",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Apps, Agents, and Aggregation",
+      "date": "2026-10-06T20:00:26.000Z",
+      "url": "https://www.youtube.com/watch?v=mkxrTaNtXmM",
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "Apps transitioned from standalone functions to core components of ecosystems",
+          "detail": "Apps started as reactive tools focused on specific user tasks but evolved into essential building blocks within broader software ecosystems."
+        },
+        {
+          "title": "Intelligent agents enable proactive and personalized user experiences",
+          "detail": "Agents automate decision-making and anticipate user needs, shifting software from reactive to proactive engagement, which can change user expectations and platform dynamics."
+        },
+        {
+          "title": "Aggregation consolidates apps and agents to drive network effects",
+          "detail": "Platforms that successfully aggregate these elements create powerful ecosystems that capture user attention, increasing engagement and competitive moats."
+        },
+        {
+          "title": "Tension between platform aggregation and user desire for seamless experience",
+          "detail": "Users prefer agent-driven, seamless interactions, but traditional aggregation treats functionalities as discrete apps, creating pressure for platforms to integrate agents more deeply."
+        }
+      ],
+      "synthesis": "The central argument of the episode is that the evolution of software ecosystems hinges on the emergence of apps, intelligent agents, and aggregation models, which together redefine user interaction and platform dynamics. The episode explains how apps initially transformed user experiences by providing dedicated functions, but the rise of intelligent agents introduces a layer of proactive and personalized services that shift the role of software from reactive tools to proactive assistants. Aggregation comes into play as platforms that harness these agents and apps to consolidate user attention and engagement, creating powerful network effects and new competitive moats.",
+      "whatChanged": "The key development is the recognition that integrating intelligent agents within aggregated ecosystems is the new frontier for software platform competition and user engagement.",
+      "whyItMatters": "This shift means platforms must move beyond merely offering apps towards orchestrating agents that proactively serve users, creating stronger network effects and competitive moats based on personalized, anticipatory experiences.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "apps",
+        "intelligent agents",
+        "aggregation",
+        "platform competition"
       ]
     },
     {
