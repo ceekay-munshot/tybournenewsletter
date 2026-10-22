@@ -1,14 +1,12 @@
 import { type LucideIcon } from 'lucide-react';
-import type { ReactNode } from 'react';
 import type { ChangeBlock } from '../types';
 import { iconFor } from '../lib/icons';
-import { repoLabel } from '../lib/labels';
-import { directionColor, sectorColor } from '../lib/brand';
-import { headlineText } from '../lib/format';
+import { navLabel } from '../lib/labels';
+import { sectorColor } from '../lib/brand';
 
-/** Left-hand dashboard navigation. One item per dashboard (labelled by its source
- *  repo for now). On phones it collapses to a sticky, horizontally-scrolling strip
- *  under the header. */
+/** Left-hand dashboard navigation. One item per dashboard, labelled by its display
+ *  name only — no figures, so the list reads as a plain menu. On phones it collapses
+ *  to a sticky, horizontally-scrolling strip under the header. */
 export function Sidebar({
   systems,
   activeId,
@@ -29,8 +27,7 @@ export function Sidebar({
             key={b.systemId}
             icon={iconFor(b.systemId, b.sector)}
             iconColor={sectorColor(b.sector)}
-            label={repoLabel(b.systemId, b.name)}
-            right={<ChangeChip block={b} />}
+            label={navLabel(b.systemId, b.name)}
             active={activeId === b.systemId}
             onClick={() => onSelect(b.systemId)}
           />
@@ -44,14 +41,12 @@ function SidebarItem({
   icon: Icon,
   iconColor,
   label,
-  right,
   active,
   onClick,
 }: {
   icon: LucideIcon;
   iconColor: string;
   label: string;
-  right?: ReactNode;
   active: boolean;
   onClick: () => void;
 }) {
@@ -73,20 +68,6 @@ function SidebarItem({
         <Icon size={14} strokeWidth={2.3} />
       </span>
       <span className="truncate">{label}</span>
-      {right && <span className="ml-auto hidden shrink-0 pl-1 md:inline">{right}</span>}
     </button>
-  );
-}
-
-/** A compact, direction-coloured headline change for the nav. Narrative cards
- *  (no plottable headline) and error states fall back gracefully. */
-function ChangeChip({ block }: { block: ChangeBlock }) {
-  if (block.status === 'error') return <span className="tnum text-[11px] text-slate-300">—</span>;
-  const hasHeadline = block.changePct != null || (block.changeDisplay && block.changeAbs != null);
-  if (!hasHeadline) return null;
-  return (
-    <span className="tnum text-[11px] font-bold" style={{ color: directionColor(block.direction) }}>
-      {headlineText(block.changePct, block.changeAbs, block.changeDisplay)}
-    </span>
   );
 }
