@@ -1,0 +1,924 @@
+{
+  "generatedAt": "2026-10-22T04:17:08.527Z",
+  "systemId": "podcast-themes",
+  "status": "no-key",
+  "provider": "bedrock",
+  "region": "us-east-1",
+  "note": "AI monthly summary not generated: BEDROCK_API_KEY is not set. Showing the episode analyses as published; set a Bedrock key to enable it.",
+  "sourceName": "Investor podcasts",
+  "sourceUrl": "https://podcast-afg.pages.dev/",
+  "lastMonth": {
+    "id": "2026-09",
+    "label": "Sep '26",
+    "longLabel": "September 2026",
+    "mtd": false,
+    "episodes": 2,
+    "summarised": 2,
+    "shows": [
+      "Acquired",
+      "Invest Like the Best"
+    ],
+    "toneCounts": {
+      "positive": 1,
+      "mixed": 1
+    },
+    "weeks": [
+      {
+        "id": "2026-09-14",
+        "label": "14–20 Sep",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-acquired-1dlb9w0",
+            "show": "Acquired",
+            "title": "The Home Depot",
+            "date": "2026-09-14T03:35:03.000Z",
+            "url": "https://www.acquired.fm/episodes/home-depot",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Ken Langone’s strategic investment in Handy Dan led to the firing of founders Bernie Marcus and Arthur Blank, who then founded Home Depot with a revolutionary warehouse retail model, launching a new era in home improvement retail."
+          }
+        ]
+      },
+      {
+        "id": "2026-09-28",
+        "label": "28–30 Sep",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-iltb-1l0rkdn",
+            "show": "Invest Like the Best",
+            "title": "Noah Shinn - Building Instinct: The Personal Agent - [Invest Like the Best, EP.493]",
+            "date": "2026-09-28T12:05:00.000Z",
+            "url": "https://colossus.com/episode/instinct-the-personal-agent/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Instinct growing approximately 10% daily organically with a trusted personal assistant capable of performing nearly any online task, handling over $1 billion annually via a take rate business model."
+          }
+        ]
+      }
+    ],
+    "ai": false,
+    "headline": null,
+    "overview": [],
+    "themes": [
+      {
+        "title": "Instinct personal assistant platform",
+        "summary": "Instinct acts as a personal assistant with its own phone and computer, able to perform almost any online task via text, call, or email on behalf of users. Its ability to interact like a human agent is key to its rapid organic adoption.",
+        "shows": [
+          "Invest Like the Best"
+        ],
+        "episodeIds": [
+          "live-iltb-1l0rkdn"
+        ]
+      },
+      {
+        "title": "Home Depot outperforms Apple since IPO with 25% compounding returns",
+        "summary": "A $1,000 investment at Home Depot's 1981 IPO would be worth about $17 million today, beating Apple and making it the top S&P 500 performer over 45 years, highlighting the company's extraordinary long-term growth.",
+        "shows": [
+          "Acquired"
+        ],
+        "episodeIds": [
+          "live-acquired-1dlb9w0"
+        ]
+      }
+    ],
+    "numbers": [
+      {
+        "value": "10% day over day",
+        "metric": "Instinct daily growth rate",
+        "context": "Organic growth without marketing, about one year after launch · Invest Like the Best"
+      },
+      {
+        "value": "more than $1 billion a year",
+        "metric": "Annual platform transaction volume",
+        "context": "Dollar volume flowing through Instinct's platform subject to take rate model · Invest Like the Best"
+      },
+      {
+        "value": "40% of time",
+        "metric": "Founder time allocation",
+        "context": "Noah Shinn spends on compute infrastructure and scaling challenges · Invest Like the Best"
+      },
+      {
+        "value": "$350 billion",
+        "metric": "Home Depot market cap",
+        "context": "as of Fall 2026, largest specialty retailer globally · Acquired"
+      },
+      {
+        "value": "45 years",
+        "metric": "Years Home Depot compounded 25% annually",
+        "context": "from IPO in 1981 to 2026 · Acquired"
+      },
+      {
+        "value": "470,000",
+        "metric": "Employees",
+        "context": "larger than any US tech company except Amazon · Acquired"
+      }
+    ],
+    "tone": "1 positive, 1 mixed",
+    "watch": [],
+    "inputHash": "83048b590c25c407"
+  },
+  "thisMonth": {
+    "id": "2026-10",
+    "label": "Oct '26",
+    "longLabel": "October 2026",
+    "mtd": true,
+    "episodes": 38,
+    "summarised": 17,
+    "shows": [
+      "Stratechery",
+      "AI Daily",
+      "All-In",
+      "In Good Company",
+      "Odd Lots",
+      "Sources",
+      "Cheeky Pint",
+      "Invest Like the Best",
+      "Acquired",
+      "BG2"
+    ],
+    "toneCounts": {
+      "neutral": 4,
+      "positive": 9,
+      "mixed": 3,
+      "cautious": 1
+    },
+    "weeks": [
+      {
+        "id": "2026-10-05",
+        "label": "5–11 Oct",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-stratechery-1xz32fb",
+            "show": "Stratechery",
+            "title": "2026.41: It’s Not You, It’s Me",
+            "date": "2026-10-09T17:00:00.000Z",
+            "url": "https://stratechery.com/2026/its-not-you-its-me/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Apple's strategic shift towards integrated home technology through partnership with LG, diverging from its traditional role as the preferred platform for technologists and hackers."
+          },
+          {
+            "id": "live-ingoodcompany-1j90u0m",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: Lessons from a Former Boss and the Decline of Shareholder Rights",
+            "date": "2026-10-09T03:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-lessons-from-a-former-boss-and-the-decline-of",
+            "summarised": true,
+            "tone": "positive",
+            "line": "John Armitage’s perspective that permanent capital is a trap and NBIM’s warning about declining shareholder rights."
+          },
+          {
+            "id": "live-sources-qm9c26",
+            "show": "Sources",
+            "title": "Qualcomm’s CEO on the coming AI phone supercycle",
+            "date": "2026-10-08T18:57:57.000Z",
+            "url": "https://sources.news/p/qualcomm-ceo-ai-phone",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Qualcomm is preparing to support continuous on-device AI models with at least 100 billion parameters on smartphones by 2028, signaling a shift to always-on AI assistants integrated into personal devices."
+          },
+          {
+            "id": "live-stratechery-1xz32ee",
+            "show": "Stratechery",
+            "title": "An Interview with Katie Harbath About Disrupting Politics at Facebook",
+            "date": "2026-10-08T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/an-interview-with-katie-harbath-about-disrupting-politics-at-facebook/",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Katie Harbath's account and book reveal how Facebook transitioned into a major political actor during the 2010s, developing new governance mechanisms to manage election interference and misinformation."
+          },
+          {
+            "id": "live-iltb-1piynas",
+            "show": "Invest Like the Best",
+            "title": "Andrew Huberman - The Frontier of Neurotechnology - [Invest Like the Best, EP.494]",
+            "date": "2026-10-06T08:00:00.000Z",
+            "url": "http://colossus.com/episode/reading-and-writing-the-brain/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Andrew Huberman positions the future of neuroscience as precisely writing to and controlling waking brain states, moving beyond just reading brain activity."
+          },
+          {
+            "id": "live-sources-3oxuun",
+            "show": "Sources",
+            "title": "Reflection’s founders on building a DeepSeek of the West",
+            "date": "2026-10-05T19:01:48.000Z",
+            "url": "https://sources.news/p/reflection-founders-open-weight-beam-release",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Beam's parameter size and training approach"
+          }
+        ]
+      },
+      {
+        "id": "2026-10-12",
+        "label": "12–18 Oct",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-aidaily-1pjixu7",
+            "show": "AI Daily",
+            "title": "A Potentially Historic AI Breakthrough",
+            "date": "2026-10-18T12:03:35.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/A-Potentially-Historic-AI-Breakthrough-e3qmclm",
+            "summarised": false,
+            "line": "A new essay from former OpenAI researcher Nick Cammarata is being hailed as a potentially historic AI breakthrough. His argument: neural networks may already be far more understandable than…"
+          },
+          {
+            "id": "live-oddlots-1u4m3bm",
+            "show": "Odd Lots",
+            "title": "David Byrne Explains How Forgotten Ideas Come Back to Life",
+            "date": "2026-10-17T08:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/odd-lots-david-byrne-v1",
+            "summarised": false,
+            "line": "History is littered with ideas that have been tossed aside, only for them to gain relevance at some later date. Think of Moby-Dick: forgotten in Melville's time, but now regarded as the great American…"
+          },
+          {
+            "id": "live-allin-lgtg64",
+            "show": "All-In",
+            "title": "CoreWeave Crash, AI Trade Cracks, Anthropic IPO Red Flags, Bill Gates Doomer",
+            "date": "2026-10-17T01:51:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/coreweave-crash-ai-trade-cracks-anthropic-ipo-red-flags-bill-gates-doomer",
+            "summarised": false,
+            "line": "(0:00) Ben Horowitz fills in for Friedberg! (2:18) CoreWeave's debt selloff: did the AI bubble just pop? (31:14) AI's deflationary impact: decompiled software (45:44) Anthropic's investor day gets…"
+          },
+          {
+            "id": "live-stratechery-1xz334x",
+            "show": "Stratechery",
+            "title": "2026.42: Home At Last",
+            "date": "2026-10-16T17:42:42.000Z",
+            "url": "https://stratechery.com/2026/home-at-last/",
+            "summarised": false,
+            "line": "( X: @twostraws ) Welcome back to This Week in Stratechery! As a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; highlighted links are free for…"
+          },
+          {
+            "id": "live-ingoodcompany-oknfzc",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: Online Dating and the Portfolio Manager Debrief",
+            "date": "2026-10-16T03:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-online-dating-and-the-portfolio-manager-debri",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "The episode reveals Spencer Rascoff’s analogy of the Match Group dating algorithm as a deck of cards shuffling personalized preferences."
+          },
+          {
+            "id": "live-cheekypint-1dvtb9o",
+            "show": "Cheeky Pint",
+            "title": "The company building underwater drones for $50,000",
+            "date": "2026-10-15T11:50:00.000Z",
+            "url": "https://share.transistor.fm/s/92078ce3",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Ulysses is delivering modular, autonomous underwater drones at $50,000 each, 100x cheaper than existing military-grade options, and scaling manufacturing to supply a market transitioning from episodic to persistent ocean operations."
+          },
+          {
+            "id": "live-stratechery-1xz3351",
+            "show": "Stratechery",
+            "title": "A Conversation With Ari Emanuel About Entertainment and AI",
+            "date": "2026-10-15T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/a-conversation-with-ari-emanuel-about-entertainment-and-ai/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Emanuel's relentless call routine"
+          },
+          {
+            "id": "live-bg2-4q9jb3",
+            "show": "BG2",
+            "title": "Jensen Huang | Does AI Revenue Justify Capex, '27 AI Bottlenecks, Singularity, Open vs Closed & more",
+            "date": "2026-10-15T10:00:00.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/bg2pod/episodes/Jensen-Huang--Does-AI-Revenue-Justify-Capex--27-AI-Bottlenecks--Singularity--Open-vs-Closed--more-e3qhfl4",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Jensen Huang identifies a 2027 AI bottleneck requiring 50 GW of chips and 35 GW of power, highlighting physical and supply constraints in AI infrastructure scaling."
+          },
+          {
+            "id": "live-allin-15zba4z",
+            "show": "All-In",
+            "title": "Elizabeth Holmes' Husband Billy Evans: The Trial, Prison & Nathan Fielder's Documentary",
+            "date": "2026-10-15T01:54:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/elizabeth-holmes-husband-billy-evans-the-trial-prison-nathan-fielders-documentary",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Billy Evans' public account offers unprecedented personal insights into Elizabeth Holmes' trial and prison experience, supplementing public knowledge with novel narrative depth."
+          },
+          {
+            "id": "live-stratechery-1xz3341",
+            "show": "Stratechery",
+            "title": "Apple HomeView, The New Apple TV, The App Story",
+            "date": "2026-10-14T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/apple-homeview-the-new-apple-tv-the-app-story/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Apple officially announced the HomeView device with relatively weak AI capabilities compared to what users expect for its price."
+          },
+          {
+            "id": "live-ingoodcompany-r1fclu",
+            "show": "In Good Company",
+            "title": "Match Group CEO: Digital Dating, What Makes a Good Profile and the Loneliness Epidemic",
+            "date": "2026-10-14T03:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/match-group-ceo-digital-dating-what-makes-a-good-profile-and",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Digital dating algorithms now play a critical role in matchmaking effectiveness by focusing intensely on profile quality and user engagement signals."
+          },
+          {
+            "id": "live-sources-1lh5tnm",
+            "show": "Sources",
+            "title": "Robinhood’s CEO on letting AI trade your money",
+            "date": "2026-10-13T20:40:34.000Z",
+            "url": "https://sources.news/p/robinhood-ceo-ai-trading",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Robinhood plans to integrate AI trading agents that manage user trades in separate accounts with tailored strategies, aiming to become a dominant part of retail trading activity."
+          },
+          {
+            "id": "live-stratechery-1xz32i2",
+            "show": "Stratechery",
+            "title": "SpaceX Buys More Spectrum, Musk and Market Structure, Distributed Cellular",
+            "date": "2026-10-13T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/spacex-buys-more-spectrum-musk-and-market-structure-distributed-cellular/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "SpaceX's latest spectrum purchase indicating a commitment to integrating satellite and terrestrial wireless networks for distributed cellular services."
+          },
+          {
+            "id": "live-iltb-1ytc6kr",
+            "show": "Invest Like the Best",
+            "title": "David Vélez - Building Nubank and the Future of Global Banking - [Invest Like the Best, EP.495]",
+            "date": "2026-10-13T08:00:00.000Z",
+            "url": "https://colossus.com/episode/david-v-goliath/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Nubank’s comprehensive organizational pivot to AI after initially missing the technology's moment, combined with its expansion to serve 140 million customers and entry into the U.S. market dominated by incumbents."
+          },
+          {
+            "id": "live-cheekypint-1je8ozu",
+            "show": "Cheeky Pint",
+            "title": "Muse Wonder: Zuckerberg and Wang's $100B AI",
+            "date": "2026-10-12T19:16:55.000Z",
+            "url": "https://share.transistor.fm/s/bb7b9a51",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Meta announced the Muse Wonder model, a significantly larger multimodal AI agent designed to serve as a personal and professional AI assistant with improved active memory, focus, and domain expertise, available both in the Muse app and via API."
+          }
+        ]
+      },
+      {
+        "id": "2026-10-19",
+        "label": "19–25 Oct",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-allin-1gsqusn",
+            "show": "All-In",
+            "title": "Arvind Krishna & Nikesh Arora: Quantum Threat, Open vs Frontier AI, AI Cyber Warfare & SaaS Collapse",
+            "date": "2026-10-21T23:42:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/arvind-krishna-nikesh-arora-quantum-threat-open-vs-frontier-ai-ai-cyber-warfare-saas-collapse",
+            "summarised": false,
+            "line": "(0:00) Arvind Krishna & Nikesh Arora talk about Quantum Computing's Threat to Encryption (9:07) Open Weight vs. Frontier AI Models (18:07) AI and Cyber Warfare (21:14) AI Regulation and the Global AI…"
+          },
+          {
+            "id": "live-aidaily-6y9wt4",
+            "show": "AI Daily",
+            "title": "How AI Is Changing What Work Means",
+            "date": "2026-10-21T20:03:52.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-AI-Is-Changing-What-Work-Means-e3qsa48",
+            "summarised": false,
+            "line": "Why is a financial research firm using AI to design proteins that target scorpion venom? Because AI is changing what work means—and what businesses are capable of doing. Citrini Research’s unexpected…"
+          },
+          {
+            "id": "live-stratechery-1xz3400",
+            "show": "Stratechery",
+            "title": "Presented by Stripe",
+            "date": "2026-10-21T17:35:31.000Z",
+            "url": "https://stratechery.com/2026/presented-by-stripe/",
+            "summarised": false,
+            "line": "Listen to this post : Log in to listen Stratechery is, starting from today, presented by Stripe. The Unified Content Business Model Readers have, over the years, pointed out the paradox of my belief…"
+          },
+          {
+            "id": "live-sources-1lg0q5s",
+            "show": "Sources",
+            "title": "Sundar Pichai on Gemini 4 and the AI compute crunch",
+            "date": "2026-10-21T15:13:50.000Z",
+            "url": "https://sources.news/p/sundar-pichai-gemini-4-google-other-bets",
+            "summarised": false,
+            "line": "Even Google can’t get enough compute. I sit down with Google and Alphabet CEO Sundar Pichai shortly after the wider release of Gemini 4 Argon to discuss its early reception, where he still wants the…"
+          },
+          {
+            "id": "live-stratechery-1xz33y9",
+            "show": "Stratechery",
+            "title": "Netflix Earnings, Business or Franchise, Disney’s Deal",
+            "date": "2026-10-21T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/netflix-earnings-business-or-franchise-disneys-deal/",
+            "summarised": false,
+            "line": "Netflix has a solid business, which is exactly the problem: the company increasingly seems like a business and not a franchise, at least in terms of growth."
+          },
+          {
+            "id": "live-oddlots-16o53z0",
+            "show": "Odd Lots",
+            "title": "James Robinson on What It Looks Like When a State is Failing",
+            "date": "2026-10-21T08:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/james-robinson-on-what-it-looks-like-when-a-state-is-failing",
+            "summarised": false,
+            "line": "The third and last episode from our Chicago live show is with James Robinson, a professor at the University of Chicago and a recipient of the 2024 Nobel Prize in economics (which he shared with Daron…"
+          },
+          {
+            "id": "live-ingoodcompany-ds37lt",
+            "show": "In Good Company",
+            "title": "Eric Schmidt: The Age of Agents, Superintelligence, and Why Europe Is Falling Behind",
+            "date": "2026-10-21T01:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/eric-schmidt-the-age-of-agents-superintelligence-and-why-eur",
+            "summarised": false,
+            "line": "Eric Schmidt has watched the technology industry reinvent itself again and again, and he is convinced this wave is the biggest yet. The former CEO of Google, today one of the leading voices on AI,…"
+          },
+          {
+            "id": "live-aidaily-1cxfj31",
+            "show": "AI Daily",
+            "title": "Why AI Companies Are Betting Personality Beats Intelligence",
+            "date": "2026-10-20T20:16:23.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-AI-Companies-Are-Betting-Personality-Beats-Intelligence-e3qqj9k",
+            "summarised": false,
+            "line": "As AI models become more capable, personality is becoming a competitive battleground. From the GPT-4o backlash to Meta’s Muse and ChatGPT’s Dots, NLW explores why how an AI feels to use could…"
+          },
+          {
+            "id": "live-cheekypint-1ix1qlo",
+            "show": "Cheeky Pint",
+            "title": "How Toto Wolff built the most valuable team in F1",
+            "date": "2026-10-20T13:05:00.000Z",
+            "url": "https://share.transistor.fm/s/62d31fa0",
+            "summarised": false,
+            "line": "Toto Wolff, Team Principal and Co-Owner of the Mercedes-AMG PETRONAS F1 Team, joins John Collison for a pint to discuss the engineering, management, and economics behind modern Formula 1. Toto breaks…"
+          },
+          {
+            "id": "live-stratechery-1xz33ca",
+            "show": "Stratechery",
+            "title": "Muse Spark Open, Meta + Apple, Thin and Thick",
+            "date": "2026-10-20T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/muse-spark-open-meta-apple-thin-and-thick/",
+            "summarised": false,
+            "line": "Meta has a new open source model, and to everyone's surprise, they are are partnering with Apple to make sure you can run it locally."
+          },
+          {
+            "id": "live-iltb-1srropv",
+            "show": "Invest Like the Best",
+            "title": "Christina Cacioppo - Building an Enduring Software Company in the Age of AI - [Invest Like the Best, EP.496]",
+            "date": "2026-10-20T08:00:00.000Z",
+            "url": "https://colossus.com/episode/becoming-a-category-winner/",
+            "summarised": false,
+            "line": "My guest today is Christina Cacioppo, founder and CEO of Vanta, which helps more than 16,000 companies manage security and compliance.&nbsp; Five years after our first conversation, we discuss how…"
+          },
+          {
+            "id": "live-oddlots-1rb7hl7",
+            "show": "Odd Lots",
+            "title": "CME's Terry Duffy on the Disconcerting State of Finance Regulation",
+            "date": "2026-10-20T08:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/cmes-terry-duffy-on-the-disconcerting-state-of-finance-regulation",
+            "summarised": false,
+            "line": "The Commodity Futures Trading Commission was practically brand new when Terry Duffy started working at CME Gropu almost five decades ago, and over the course of his career at the exchange, this legend…"
+          },
+          {
+            "id": "live-allin-190uyot",
+            "show": "All-In",
+            "title": "Dylan Field: Is AI Replacing Designers?, Design is the New Code & Democratizing Creativity",
+            "date": "2026-10-19T20:43:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/dylan-field-is-ai-replacing-designers-design-is-the-new-code-democratizing-creativity",
+            "summarised": false,
+            "line": "(0:00) Dylan Field joins the show: Figma's origin story and mission (3:16) Adobe's $20B deal blocked: inside the antitrust fight (12:29) Is AI killing SaaS? Frontier Companies vs. Figma, the \"SaaS…"
+          },
+          {
+            "id": "live-aidaily-mgnm3k",
+            "show": "AI Daily",
+            "title": "The AI Wealth Problem",
+            "date": "2026-10-19T20:02:07.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/The-AI-Wealth-Problem-e3qoorn",
+            "summarised": false,
+            "line": "Anthropic’s plan to devote billions to public benefit raises a bigger question: who gets to decide how AI wealth is shared? NLW explores the collision between philanthropy, concentrated power, and…"
+          },
+          {
+            "id": "live-stratechery-1xz339h",
+            "show": "Stratechery",
+            "title": "Do You Trust Apple?",
+            "date": "2026-10-19T10:00:00.000Z",
+            "url": "https://stratechery.com/2026/do-you-trust-apple/",
+            "summarised": false,
+            "line": "Listen to this post : Log in to listen On July 21, 1999, Steve Jobs did something remarkable at Macworld New York: first he went to Apple.com, then to “CNN Interactive”, then to Disney.com. That…"
+          },
+          {
+            "id": "live-oddlots-kbiusi",
+            "show": "Odd Lots",
+            "title": "Don Wilson on the GPU Market's Trillion Dollar Question",
+            "date": "2026-10-19T08:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/don-wilson-on-the-gpu-markets-trillion-dollar-question",
+            "summarised": false,
+            "line": "When we spoke to Don Wilson, founder and CEO of DRW, in Chicago last year, he told us he wanted to build a market for GPUs that would eventually be bigger than oil. A year's time in the age of AI is…"
+          },
+          {
+            "id": "live-acquired-cupq8f",
+            "show": "Acquired",
+            "title": "Seinfeld",
+            "date": "2026-10-19T04:00:46.000Z",
+            "url": "https://www.acquired.fm/episodes/seinfeld",
+            "summarised": false,
+            "line": "Seinfeld, which ended three decades ago, has been watched by 72 million Americans so far THIS YEAR. Behind that incredible stat is an equally incredible business story: obsessive creators, perfect…"
+          }
+        ]
+      }
+    ],
+    "ai": false,
+    "headline": null,
+    "overview": [],
+    "themes": [
+      {
+        "title": "Comparison of dating algorithm to deck of cards",
+        "summary": "Spencer Rascoff likens the Match Group’s algorithm to a deck of cards that shuffles different preferences and options to personalize matches uniquely for each user, illustrating the complexity and dynamic nature of online dating technology.",
+        "shows": [
+          "In Good Company"
+        ],
+        "episodeIds": [
+          "live-ingoodcompany-oknfzc"
+        ]
+      },
+      {
+        "title": "Seagrass restoration is a major early focus with broad ecological impact",
+        "summary": "Seagrass restoration addresses critical habitat loss impacting fish stocks and carbon sequestration, with Ulysses automating seed collection and planting as an initial use case.",
+        "shows": [
+          "Cheeky Pint"
+        ],
+        "episodeIds": [
+          "live-cheekypint-1dvtb9o"
+        ]
+      },
+      {
+        "title": "Emanuel's relentless call routine",
+        "summary": "Emanuel's memoir Roll the Calls details his daily phone calls that embody his aggressive, persistent business style and help him get what he wants.",
+        "shows": [
+          "Stratechery"
+        ],
+        "episodeIds": [
+          "live-stratechery-1xz3351"
+        ]
+      },
+      {
+        "title": "Safety vs Speed in AI Development: Airbags Analogy",
+        "summary": "Huang uses the airbags analogy to emphasize that AI safety measures should protect without slowing down progress, highlighting the delicate balance of rapid innovation and responsible governance.",
+        "shows": [
+          "BG2"
+        ],
+        "episodeIds": [
+          "live-bg2-4q9jb3"
+        ]
+      },
+      {
+        "title": "Billy Evans offers a personal view contrasting media headlines about Elizabeth Holmes",
+        "summary": "Evans shared how he met Holmes and described her as a more complex individual than the media portrayal, adding nuance to public perception during the indictment phase.",
+        "shows": [
+          "All-In"
+        ],
+        "episodeIds": [
+          "live-allin-15zba4z"
+        ]
+      },
+      {
+        "title": "Skepticism about HomeView's AI capabilities",
+        "summary": "The episode highlights significant doubts about the intelligence of the AI powering Apple's HomeView, questioning whether it is sufficient to justify the device's high price point.",
+        "shows": [
+          "Stratechery"
+        ],
+        "episodeIds": [
+          "live-stratechery-1xz3341"
+        ]
+      },
+      {
+        "title": "Match Group CEO on matchmaking algorithms",
+        "summary": "Spencer Rascoff explains how the algorithm behind apps like Tinder and Hinge determines matches based on specific profile qualities that engage users effectively.",
+        "shows": [
+          "In Good Company"
+        ],
+        "episodeIds": [
+          "live-ingoodcompany-r1fclu"
+        ]
+      },
+      {
+        "title": "AI agents to grow in retail trading",
+        "summary": "Robinhood expects AI trading agents to take on a growing share of individual investors’ trades, handling complexity that typical traders find overwhelming, signaling a shift toward AI-augmented retail investing.",
+        "shows": [
+          "Sources"
+        ],
+        "episodeIds": [
+          "live-sources-1lh5tnm"
+        ]
+      }
+    ],
+    "numbers": [
+      {
+        "value": "$50,000",
+        "metric": "Ulysses underwater vehicle price",
+        "context": "compared to $5 million for most existing US Navy autonomous underwater vehicles · Cheeky Pint"
+      },
+      {
+        "value": "2,000 nautical miles",
+        "metric": "Autonomous surface vehicle range",
+        "context": "Leviathan's operational range · Cheeky Pint"
+      },
+      {
+        "value": "up to 1,500 meters",
+        "metric": "Operating depth",
+        "context": "typical operational depth range for Ulysses' underwater vehicles · Cheeky Pint"
+      },
+      {
+        "value": "10 kilobytes per second",
+        "metric": "Acoustic communication bandwidth",
+        "context": "approximate underwater communication bandwidth over 5 kilometers · Cheeky Pint"
+      },
+      {
+        "value": "about 200",
+        "metric": "Number of undersea cables",
+        "context": "currently in operation worldwide · Cheeky Pint"
+      },
+      {
+        "value": "50 GW",
+        "metric": "Chips needed for AI build-out in 2027",
+        "context": "projected by Jensen Huang · BG2"
+      }
+    ],
+    "tone": "9 positive, 4 neutral, 3 mixed, 1 cautious",
+    "watch": [],
+    "inputHash": "b9d07cd762152c11"
+  },
+  "compare": {
+    "basis": "topics",
+    "ai": false,
+    "read": null,
+    "continued": [],
+    "dropped": [
+      {
+        "theme": "Bob Nardelli"
+      },
+      {
+        "theme": "Business model"
+      },
+      {
+        "theme": "Competitor hardware stores"
+      },
+      {
+        "theme": "Founders"
+      },
+      {
+        "theme": "Handy Dan / Daylin Corp"
+      },
+      {
+        "theme": "Home Depot"
+      },
+      {
+        "theme": "Instinct"
+      },
+      {
+        "theme": "Retail Industry"
+      },
+      {
+        "theme": "Software future"
+      },
+      {
+        "theme": "Travel and food delivery"
+      },
+      {
+        "theme": "User trust"
+      }
+    ],
+    "new": [
+      {
+        "theme": "AI Safety"
+      },
+      {
+        "theme": "Match Group"
+      },
+      {
+        "theme": "SpaceX"
+      },
+      {
+        "theme": "6G technology"
+      },
+      {
+        "theme": "AI adoption in China vs US"
+      },
+      {
+        "theme": "AI alignment"
+      },
+      {
+        "theme": "AI companies"
+      },
+      {
+        "theme": "AI competition ecosystem"
+      },
+      {
+        "theme": "AI in banking"
+      },
+      {
+        "theme": "AI Infrastructure"
+      },
+      {
+        "theme": "AI labs"
+      },
+      {
+        "theme": "AI ownership"
+      },
+      {
+        "theme": "America's AI Strategy"
+      },
+      {
+        "theme": "Andrew Huberman"
+      },
+      {
+        "theme": "Apple"
+      },
+      {
+        "theme": "Apple app ecosystem"
+      },
+      {
+        "theme": "Apple HomeView"
+      },
+      {
+        "theme": "Apple TV"
+      },
+      {
+        "theme": "Ari Emanuel"
+      },
+      {
+        "theme": "Billy Evans"
+      },
+      {
+        "theme": "Businesses resistant to agent integration"
+      },
+      {
+        "theme": "Chinese AI labs"
+      },
+      {
+        "theme": "Distributed cellular networks"
+      },
+      {
+        "theme": "Elizabeth Holmes"
+      },
+      {
+        "theme": "Environmental regulation"
+      },
+      {
+        "theme": "Exchange co-location"
+      },
+      {
+        "theme": "Facebook"
+      },
+      {
+        "theme": "Facebook's political role"
+      },
+      {
+        "theme": "Founders' background"
+      },
+      {
+        "theme": "Gen Z"
+      },
+      {
+        "theme": "Hollywood industry"
+      },
+      {
+        "theme": "Incumbent banks"
+      },
+      {
+        "theme": "Incumbent mobile operators"
+      },
+      {
+        "theme": "John Armitage"
+      },
+      {
+        "theme": "Katie Harbath"
+      },
+      {
+        "theme": "Live events"
+      },
+      {
+        "theme": "Loneliness epidemic"
+      },
+      {
+        "theme": "Manufacturing verticalization"
+      },
+      {
+        "theme": "Match Group and online dating"
+      },
+      {
+        "theme": "Meta"
+      },
+      {
+        "theme": "Meta Superintelligence Labs"
+      },
+      {
+        "theme": "Modular acquisition"
+      },
+      {
+        "theme": "Monetization strategy"
+      },
+      {
+        "theme": "Muse Wonder model"
+      },
+      {
+        "theme": "Nathan Fielder's documentary"
+      },
+      {
+        "theme": "NBIM"
+      },
+      {
+        "theme": "Neurotechnology"
+      },
+      {
+        "theme": "Nicolai Tangen"
+      },
+      {
+        "theme": "Nicolai Tangen’s weekend plans"
+      },
+      {
+        "theme": "Norges Bank Investment Management portfolio reviews"
+      },
+      {
+        "theme": "Norway digital culture"
+      },
+      {
+        "theme": "Nubank"
+      },
+      {
+        "theme": "NVIDIA"
+      },
+      {
+        "theme": "Offshore wind developers"
+      },
+      {
+        "theme": "OpenRouter"
+      },
+      {
+        "theme": "permanent capital"
+      },
+      {
+        "theme": "Private market investing"
+      },
+      {
+        "theme": "Qualcomm"
+      },
+      {
+        "theme": "Reflection Beam"
+      },
+      {
+        "theme": "Retail investors"
+      },
+      {
+        "theme": "Robinhood"
+      },
+      {
+        "theme": "Robinhood AI agents"
+      },
+      {
+        "theme": "Seagrass restoration"
+      },
+      {
+        "theme": "Smart glasses"
+      },
+      {
+        "theme": "Smartphones"
+      },
+      {
+        "theme": "Social Media Politics"
+      },
+      {
+        "theme": "SpaceX spectrum strategy"
+      },
+      {
+        "theme": "Technologist user base"
+      },
+      {
+        "theme": "Traditional banks"
+      },
+      {
+        "theme": "Traditional retail brokers"
+      },
+      {
+        "theme": "U.S. banking market"
+      },
+      {
+        "theme": "Ulysses"
+      },
+      {
+        "theme": "Underwater communications"
+      },
+      {
+        "theme": "US-China relations"
+      },
+      {
+        "theme": "US Navy"
+      },
+      {
+        "theme": "US Navy and offshore wind clients"
+      },
+      {
+        "theme": "Western AI models"
+      }
+    ]
+  }
+}

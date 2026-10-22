@@ -26,6 +26,15 @@ First client: **Tybourne Global Holdings** (published by Munshot).
   going-into-earnings briefing written by Claude on **Amazon Bedrock**, strictly from the real
   figures. Optional — with no key it writes an **honest `no-key` state** and the pipeline still
   succeeds; nothing is fabricated.
+- **Podcast monthly summaries** (`scripts/podcast-monthly.mjs` → `data/podcast-monthly.json`): every
+  investor-podcast episode in a calendar month (grouped by week — the same per-episode analyses the
+  podcast dashboard's weekly summaries are written from) is rolled into **one AI summary per month**
+  (this month + last), then a second call marks which themes **continued, dropped off, or are new**.
+  The Podcast Themes view gets a **Month / Quarter** toggle: two month boxes side by side, each
+  clickable for the full month summary (overview, themes, notable numbers, week by week, threads to
+  watch). Same Bedrock key as the newsletter; with no key it shows the episode analyses as published
+  and matches named topics exactly — nothing fabricated. `data/podcast-archive.json` keeps every
+  episode seen in the last 3 months, because the feed only holds each show's latest few episodes.
 - In-app **Newsletter tab**: an editorial "intelligence edition" built from the real data
   (masthead, by-the-numbers, movers, per-sector lines, watch list, sources) with the AI prose
   layered on when available. A prominent **Download PDF** button (header + masthead) prints it
@@ -43,9 +52,12 @@ clients/<client>/
   client.config.json      # the ONLY client-specific file (sectors + systems + sources)
   data/consolidated.json  # GENERATED + committed (what the UI reads)
   data/newsletter.json    # GENERATED + committed (AI edition, or honest no-key state)
+  data/podcast-monthly.json  # GENERATED + committed (monthly podcast summaries + theme comparison)
+  data/podcast-archive.json  # GENERATED + committed (rolling 3-month episode archive)
 scripts/
   consolidate.mjs         # reads config -> runs each connector -> writes consolidated.json
   newsletter.mjs          # consolidated.json -> Bedrock -> newsletter.json (honest no-key state)
+  podcast-monthly.mjs     # podcast episodes -> Bedrock -> podcast-monthly.json (+ podcast-archive.json)
   render-newsletter-pdf.mjs  # render the Newsletter edition to an A4 PDF (Playwright)
   send-newsletter-email.mjs  # email the PDF to recipients (skips cleanly if unconfigured)
   connectors/             # one file per connector TYPE
@@ -73,6 +85,7 @@ Every connector returns the same shape (see `src/types.ts`). Key rule: `changePc
 npm install
 npm run consolidate   # run all connectors -> clients/tybourne/data/consolidated.json
 node scripts/newsletter.mjs   # consolidated.json -> AI edition (or honest no-key state)
+node scripts/podcast-monthly.mjs   # podcast months -> AI summaries (or honest no-key state)
 npm run dev           # local dev server
 npm run build         # typecheck + production build -> dist/
 npm run preview       # preview the production build
@@ -89,7 +102,7 @@ install step (handy for CI). `CLIENT=<id> npm run consolidate` targets another c
 AI writer and the optional monthly email. Set these in **GitHub → Settings → Secrets and
 variables → Actions**.
 
-### AI newsletter (Amazon Bedrock) — used by `refresh.yml` and `newsletter-email.yml`
+### AI newsletter + podcast monthly summaries (Amazon Bedrock) — used by `refresh.yml` and `newsletter-email.yml`
 
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |

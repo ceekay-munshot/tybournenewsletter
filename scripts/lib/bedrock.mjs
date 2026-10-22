@@ -109,5 +109,25 @@ export async function converse({ system, user, maxTokens = 4096, retries = 4, ti
   throw new Error(`All Bedrock models failed (${MODELS.length} tried). Last: ${lastErr?.message || 'unknown'}`);
 }
 
+/** Pull the JSON object out of a model reply (tolerates ```json fences or stray prose). */
+export function parseJson(text) {
+  if (!text) return null;
+  let t = text.trim();
+  // strip ```json ... ``` fences if present
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) t = fence[1].trim();
+  // else try to isolate the outermost object
+  if (!t.startsWith('{')) {
+    const i = t.indexOf('{');
+    const j = t.lastIndexOf('}');
+    if (i >= 0 && j > i) t = t.slice(i, j + 1);
+  }
+  try {
+    return JSON.parse(t);
+  } catch {
+    return null;
+  }
+}
+
 export const bedrockRegion = REGION;
 export const bedrockModels = MODELS;

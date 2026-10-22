@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { AlertTriangle } from 'lucide-react';
 import { useConsolidated, systemById } from './lib/data';
 import { useNewsletter } from './lib/newsletter';
+import { usePodcastMonthly } from './lib/podcastMonthly';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { NewsletterModal } from './tabs/Newsletter';
 import { SystemView } from './tabs/SystemView';
+import { PodcastView } from './tabs/PodcastView';
 import { MultiPeriodView } from './components/MultiPeriodView';
 
 /** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
@@ -20,6 +22,7 @@ function wantsNewsletter(): boolean {
 export default function App() {
   const state = useConsolidated();
   const newsletter = useNewsletter();
+  const podcastMonthly = usePodcastMonthly();
   const [systemId, setSystemId] = useState<string | null>(null);
   const [nlOpen, setNlOpen] = useState<boolean>(wantsNewsletter);
 
@@ -59,6 +62,19 @@ export default function App() {
               // default when you switch dashboards (otherwise the selection sticks across
               // systems — e.g. a MoM system would force HF off its Weekly default).
               <MultiPeriodView key={selected.systemId} block={selected} />
+            ) : selected.highlights && selected.highlights.length ? (
+              // Narrative (podcast themes): Month view from podcast-monthly.json when it's
+              // there, else the quarter comparison. Re-keyed once the file loads so the
+              // view opens on Month.
+              <PodcastView
+                key={`${selected.systemId}:${podcastMonthly.status}`}
+                block={selected}
+                monthly={
+                  podcastMonthly.status === 'ready' && podcastMonthly.data.systemId === selected.systemId
+                    ? podcastMonthly.data
+                    : null
+                }
+              />
             ) : (
               <SystemView key={selected.systemId} block={selected} />
             )

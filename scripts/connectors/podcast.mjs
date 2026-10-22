@@ -8,7 +8,7 @@ import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, currentQuarterId } from '../lib/quarters.mjs';
 import { makeBlock } from '../lib/changeBlock.mjs';
 
-const SHOW_LABEL = {
+export const SHOW_LABEL = {
   stratechery: 'Stratechery',
   ingoodcompany: 'In Good Company',
   sources: 'Sources',
