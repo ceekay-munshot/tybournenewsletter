@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T21:17:08.275Z",
+  "generatedAt": "2026-10-23T03:37:30.085Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3126,12 +3126,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.42,
+      "thisValue": 2.43,
       "lastValue": 2.45,
-      "changePct": -0.012244897959183773,
-      "changeAbs": -0.03000000000000025,
+      "changePct": -0.008163265306122455,
+      "changeAbs": -0.020000000000000018,
       "direction": "down",
-      "asOf": "2026-10-20T00:00:00.000Z",
+      "asOf": "2026-10-21T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 1.2% (output -0.6%); biggest move: DeepSeek -21.5%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 0.8% (output -0.4%); biggest move: DeepSeek -21.5%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3284,10 +3284,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.42,
+          "thisValue": 2.43,
           "lastValue": 2.45,
-          "changePct": -0.012244897959183773,
-          "changeAbs": -0.03000000000000025,
+          "changePct": -0.008163265306122455,
+          "changeAbs": -0.020000000000000018,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 1.2% (output -0.6%); biggest move: DeepSeek -21.5%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 0.8% (output -0.4%); biggest move: DeepSeek -21.5%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3416,9 +3416,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.42,
-              "changePct": -0.012244897959183773,
-              "changeAbs": -0.03000000000000025,
+              "value": 2.43,
+              "changePct": -0.008163265306122455,
+              "changeAbs": -0.020000000000000018,
               "direction": "down"
             }
           ]
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-21.5% input · share +8.73pp"
+          "body": "-21.5% input · share +8.74pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -3447,9 +3447,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.42,
-          "changePct": -0.012244897959183773,
-          "changeAbs": -0.03000000000000025,
+          "value": 2.43,
+          "changePct": -0.008163265306122455,
+          "changeAbs": -0.020000000000000018,
           "direction": "down"
         }
       ]
@@ -15855,7 +15855,7 @@
       "changePct": 0.21692243319634744,
       "changeAbs": 101134623234565,
       "direction": "up",
-      "asOf": "2026-10-22T21:16:50.248Z",
+      "asOf": "2026-10-23T03:37:07.220Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17569,7 +17569,7 @@
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-22T21:16:50.346Z"
+          "asOf": "2026-10-23T03:37:07.358Z"
         }
       ],
       "prevLabel": "Jul '26",
@@ -21967,17 +21967,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 40,
+      "thisValue": 38,
       "lastValue": 3,
       "changePct": null,
-      "changeAbs": 37,
+      "changeAbs": 35,
       "direction": "flat",
-      "asOf": "2026-10-22T10:00:00.000Z",
+      "asOf": "2026-10-22T20:15:15.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "AI Daily",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21991,13 +21998,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "AI Daily",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -22058,8 +22058,8 @@
         "SpaceX's spectrum move clarifies mobile ambitions",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "tone": "Tone across 40 episodes — 9 positive, 4 neutral, 3 mixed, 1 cautious",
-      "thisTone": "9 positive, 4 neutral, 3 mixed, 1 cautious",
+      "tone": "Tone across 38 episodes — 9 positive, 3 neutral, 3 mixed, 1 cautious",
+      "thisTone": "9 positive, 3 neutral, 3 mixed, 1 cautious",
       "prevHighlights": [
         "Instinct personal assistant platform",
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
@@ -22078,11 +22078,11 @@
         "SpaceX's spectrum move clarifies mobile ambitions",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 9 positive, 4 neutral, 3 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
+      "summary": "Q4 '26 (QTD): 38 investor-podcast episodes across 10 shows. The recurring threads — Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine; Safety vs Speed in AI Development: Airbags Analogy. Sentiment ran 9 positive, 3 neutral, 3 mixed, 1 cautious. Last quarter (Q3 '26) ran 3 episodes (2 positive, 1 mixed), centred on Instinct personal assistant platform; Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Comparison of dating algorithm to deck of cards; Seagrass restoration is a major early focus with broad ecological impact; Emanuel's relentless call routine.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "38 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
