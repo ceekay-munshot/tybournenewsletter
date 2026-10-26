@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T03:30:02.505Z",
+  "generatedAt": "2026-10-26T12:22:07.303Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2716,13 +2716,13 @@
         {
           "label": "DeepSeek",
           "thisValue": 0.241,
-          "lastValue": 0.30506329113924047,
-          "changePct": -0.21,
+          "lastValue": 0.30276381909547734,
+          "changePct": -0.204,
           "direction": "down",
           "bigMove": true,
           "prevChangePct": 0.052,
           "prevDirection": "up",
-          "prevValue": 0.2899841170525099,
+          "prevValue": 0.28779830712497845,
           "series": [
             {
               "label": "Q3 '26",
@@ -2734,7 +2734,7 @@
             {
               "label": "Q4 '26 (QTD)",
               "value": 0.241,
-              "changePct": -0.21,
+              "changePct": -0.204,
               "changeAbs": null,
               "direction": "down"
             }
@@ -2742,14 +2742,14 @@
         },
         {
           "label": "Google",
-          "thisValue": 0.526,
-          "lastValue": 0.5297079556898289,
+          "thisValue": 0.527,
+          "lastValue": 0.5307150050352467,
           "changePct": -0.007,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": -0.002,
           "prevDirection": "down",
-          "prevValue": 0.5307694946791872,
+          "prevValue": 0.5317785621595659,
           "series": [
             {
               "label": "Q3 '26",
@@ -2760,7 +2760,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 0.526,
+              "value": 0.527,
               "changePct": -0.007,
               "changeAbs": null,
               "direction": "down"
@@ -2769,14 +2769,14 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 5.879,
-          "lastValue": 5.890781563126252,
-          "changePct": -0.002,
+          "thisValue": 5.885,
+          "lastValue": 5.890890890890891,
+          "changePct": -0.001,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.890781563126252,
+          "prevValue": 5.890890890890891,
           "series": [
             {
               "label": "Q3 '26",
@@ -2787,8 +2787,8 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.879,
-              "changePct": -0.002,
+              "value": 5.885,
+              "changePct": -0.001,
               "changeAbs": null,
               "direction": "down"
             }
@@ -2796,14 +2796,14 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.018,
-          "lastValue": 5.018,
+          "thisValue": 5.017,
+          "lastValue": 5.017,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.018,
+          "prevValue": 5.017,
           "series": [
             {
               "label": "Q3 '26",
@@ -2814,7 +2814,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.018,
+              "value": 5.017,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -2822,7 +2822,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.4% (output -1.3%); biggest move: DeepSeek -21.0%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.4% (output -1.3%); biggest move: DeepSeek -20.4%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -2873,13 +2873,13 @@
             {
               "label": "DeepSeek",
               "thisValue": 0.241,
-              "lastValue": 0.30506329113924047,
-              "changePct": -0.21,
+              "lastValue": 0.30276381909547734,
+              "changePct": -0.204,
               "direction": "down",
               "bigMove": true,
               "prevChangePct": 0.052,
               "prevDirection": "up",
-              "prevValue": 0.2899841170525099,
+              "prevValue": 0.28779830712497845,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -2891,7 +2891,7 @@
                 {
                   "label": "Q4 '26 (QTD)",
                   "value": 0.241,
-                  "changePct": -0.21,
+                  "changePct": -0.204,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -2899,14 +2899,14 @@
             },
             {
               "label": "Google",
-              "thisValue": 0.526,
-              "lastValue": 0.5297079556898289,
+              "thisValue": 0.527,
+              "lastValue": 0.5307150050352467,
               "changePct": -0.007,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": -0.002,
               "prevDirection": "down",
-              "prevValue": 0.5307694946791872,
+              "prevValue": 0.5317785621595659,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -2917,7 +2917,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 0.526,
+                  "value": 0.527,
                   "changePct": -0.007,
                   "changeAbs": null,
                   "direction": "down"
@@ -2926,14 +2926,14 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 5.879,
-              "lastValue": 5.890781563126252,
-              "changePct": -0.002,
+              "thisValue": 5.885,
+              "lastValue": 5.890890890890891,
+              "changePct": -0.001,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.890781563126252,
+              "prevValue": 5.890890890890891,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -2944,8 +2944,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.879,
-                  "changePct": -0.002,
+                  "value": 5.885,
+                  "changePct": -0.001,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -2953,14 +2953,14 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 5.018,
-              "lastValue": 5.018,
+              "thisValue": 5.017,
+              "lastValue": 5.017,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.018,
+              "prevValue": 5.017,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -2971,7 +2971,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.018,
+                  "value": 5.017,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -2979,7 +2979,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.4% (output -1.3%); biggest move: DeepSeek -21.0%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.4% (output -1.3%); biggest move: DeepSeek -20.4%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3008,7 +3008,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-21.0% input · share +11.95pp"
+          "body": "-20.4% input · share +9.89pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -12201,26 +12201,26 @@
       "thisPeriodLabel": "Oct '26",
       "lastPeriodLabel": "Sep '26",
       "thisValue": 2.6,
-      "lastValue": 2.66,
+      "lastValue": 2.68,
       "changePct": null,
-      "changeAbs": -0.06,
+      "changeAbs": -0.08,
       "direction": "down",
       "changeDisplay": "pts",
-      "asOf": "2026-10-25T10:42:55.172Z",
+      "asOf": "2026-10-26T12:17:42.695Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "SAP RPT1",
-          "thisValue": 3.02,
-          "lastValue": 2.54,
+          "thisValue": 3.04,
+          "lastValue": 2.44,
           "changePct": null,
-          "changeAbs": 0.48,
+          "changeAbs": 0.6,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.74,
           "prevChangePct": null,
-          "prevChangeAbs": -1.2,
+          "prevChangeAbs": -1.3,
           "prevDirection": "down",
           "series": [
             {
@@ -12239,16 +12239,16 @@
             },
             {
               "label": "Sep '26",
-              "value": 2.54,
+              "value": 2.44,
               "changePct": null,
-              "changeAbs": -1.2,
+              "changeAbs": -1.3,
               "direction": "down"
             },
             {
               "label": "Oct '26",
-              "value": 3.02,
+              "value": 3.04,
               "changePct": null,
-              "changeAbs": 0.48,
+              "changeAbs": 0.6,
               "direction": "up"
             }
           ]
@@ -12256,87 +12256,87 @@
         {
           "label": "vs. Competitors",
           "thisValue": 2.68,
-          "lastValue": 2.34,
+          "lastValue": 2.36,
           "changePct": null,
-          "changeAbs": 0.34,
+          "changeAbs": 0.32,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
           "prevValue": 2.1,
           "prevChangePct": null,
-          "prevChangeAbs": 0.24,
+          "prevChangeAbs": 0.26,
           "prevDirection": "up",
           "series": [
             {
               "label": "Jul '26",
-              "value": 3.53,
+              "value": 3.43,
               "changePct": null,
-              "changeAbs": -0.02,
+              "changeAbs": -0.19,
               "direction": "down"
             },
             {
               "label": "Aug '26",
               "value": 2.1,
               "changePct": null,
-              "changeAbs": -1.43,
+              "changeAbs": -1.33,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.34,
+              "value": 2.36,
               "changePct": null,
-              "changeAbs": 0.24,
+              "changeAbs": 0.26,
               "direction": "up"
             },
             {
               "label": "Oct '26",
               "value": 2.68,
               "changePct": null,
-              "changeAbs": 0.34,
+              "changeAbs": 0.32,
               "direction": "up"
             }
           ]
         },
         {
           "label": "Customer Satisfaction",
-          "thisValue": 3.01,
-          "lastValue": 2.76,
+          "thisValue": 3.03,
+          "lastValue": 2.75,
           "changePct": null,
-          "changeAbs": 0.25,
+          "changeAbs": 0.28,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.54,
           "prevChangePct": null,
-          "prevChangeAbs": -0.78,
+          "prevChangeAbs": -0.79,
           "prevDirection": "down",
           "series": [
             {
               "label": "Jul '26",
-              "value": 5,
+              "value": 4.85,
               "changePct": null,
-              "changeAbs": 0,
-              "direction": "flat"
+              "changeAbs": 1.18,
+              "direction": "up"
             },
             {
               "label": "Aug '26",
               "value": 3.54,
               "changePct": null,
-              "changeAbs": -1.46,
+              "changeAbs": -1.31,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.76,
+              "value": 2.75,
               "changePct": null,
-              "changeAbs": -0.78,
+              "changeAbs": -0.79,
               "direction": "down"
             },
             {
               "label": "Oct '26",
-              "value": 3.01,
+              "value": 3.03,
               "changePct": null,
-              "changeAbs": 0.25,
+              "changeAbs": 0.28,
               "direction": "up"
             }
           ]
@@ -12344,43 +12344,43 @@
         {
           "label": "Business Data Cloud",
           "thisValue": 2.74,
-          "lastValue": 2.54,
+          "lastValue": 2.55,
           "changePct": null,
-          "changeAbs": 0.2,
+          "changeAbs": 0.19,
           "changeDisplay": "pts",
           "direction": "up",
-          "bigMove": true,
+          "bigMove": false,
           "prevValue": 2.98,
           "prevChangePct": null,
-          "prevChangeAbs": -0.44,
+          "prevChangeAbs": -0.43,
           "prevDirection": "down",
           "series": [
             {
               "label": "Jul '26",
-              "value": 3.9,
+              "value": 3.88,
               "changePct": null,
-              "changeAbs": 0.25,
+              "changeAbs": 0.22,
               "direction": "up"
             },
             {
               "label": "Aug '26",
               "value": 2.98,
               "changePct": null,
-              "changeAbs": -0.92,
+              "changeAbs": -0.9,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.54,
+              "value": 2.55,
               "changePct": null,
-              "changeAbs": -0.44,
+              "changeAbs": -0.43,
               "direction": "down"
             },
             {
               "label": "Oct '26",
               "value": 2.74,
               "changePct": null,
-              "changeAbs": 0.2,
+              "changeAbs": 0.19,
               "direction": "up"
             }
           ]
@@ -12388,87 +12388,87 @@
         {
           "label": "BTP & AI Agents",
           "thisValue": 2.38,
-          "lastValue": 2.51,
+          "lastValue": 2.52,
           "changePct": null,
-          "changeAbs": -0.13,
+          "changeAbs": -0.14,
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": false,
-          "prevValue": 2.82,
+          "prevValue": 2.74,
           "prevChangePct": null,
-          "prevChangeAbs": -0.31,
+          "prevChangeAbs": -0.22,
           "prevDirection": "down",
           "series": [
             {
               "label": "Jul '26",
-              "value": 3.23,
+              "value": 3.22,
               "changePct": null,
-              "changeAbs": -0.47,
+              "changeAbs": -0.48,
               "direction": "down"
             },
             {
               "label": "Aug '26",
-              "value": 2.82,
+              "value": 2.74,
               "changePct": null,
-              "changeAbs": -0.41,
+              "changeAbs": -0.48,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.51,
+              "value": 2.52,
               "changePct": null,
-              "changeAbs": -0.31,
+              "changeAbs": -0.22,
               "direction": "down"
             },
             {
               "label": "Oct '26",
               "value": 2.38,
               "changePct": null,
-              "changeAbs": -0.13,
+              "changeAbs": -0.14,
               "direction": "down"
             }
           ]
         },
         {
           "label": "S/4HANA AI Features",
-          "thisValue": 2.84,
-          "lastValue": 2.88,
+          "thisValue": 2.83,
+          "lastValue": 2.89,
           "changePct": null,
-          "changeAbs": -0.04,
+          "changeAbs": -0.06,
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": false,
           "prevValue": 3.22,
           "prevChangePct": null,
-          "prevChangeAbs": -0.34,
+          "prevChangeAbs": -0.33,
           "prevDirection": "down",
           "series": [
             {
               "label": "Jul '26",
-              "value": 3.38,
+              "value": 3.45,
               "changePct": null,
-              "changeAbs": -0.32,
+              "changeAbs": -0.27,
               "direction": "down"
             },
             {
               "label": "Aug '26",
               "value": 3.22,
               "changePct": null,
-              "changeAbs": -0.16,
+              "changeAbs": -0.23,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.88,
+              "value": 2.89,
               "changePct": null,
-              "changeAbs": -0.34,
+              "changeAbs": -0.33,
               "direction": "down"
             },
             {
               "label": "Oct '26",
-              "value": 2.84,
+              "value": 2.83,
               "changePct": null,
-              "changeAbs": -0.04,
+              "changeAbs": -0.06,
               "direction": "down"
             }
           ]
@@ -12476,43 +12476,43 @@
         {
           "label": "Risks & Gaps",
           "thisValue": 2.15,
-          "lastValue": 2.11,
+          "lastValue": 2.12,
           "changePct": null,
-          "changeAbs": 0.04,
+          "changeAbs": 0.03,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": false,
           "prevValue": 1.82,
           "prevChangePct": null,
-          "prevChangeAbs": 0.29,
+          "prevChangeAbs": 0.3,
           "prevDirection": "up",
           "series": [
             {
               "label": "Jul '26",
-              "value": 2.8,
+              "value": 2.77,
               "changePct": null,
-              "changeAbs": 0.17,
+              "changeAbs": 0.27,
               "direction": "up"
             },
             {
               "label": "Aug '26",
               "value": 1.82,
               "changePct": null,
-              "changeAbs": -0.98,
+              "changeAbs": -0.95,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.11,
+              "value": 2.12,
               "changePct": null,
-              "changeAbs": 0.29,
+              "changeAbs": 0.3,
               "direction": "up"
             },
             {
               "label": "Oct '26",
               "value": 2.15,
               "changePct": null,
-              "changeAbs": 0.04,
+              "changeAbs": 0.03,
               "direction": "up"
             }
           ]
@@ -12520,22 +12520,22 @@
         {
           "label": "Partner Opinions",
           "thisValue": 3.32,
-          "lastValue": 3.29,
+          "lastValue": 3.3,
           "changePct": null,
-          "changeAbs": 0.03,
+          "changeAbs": 0.02,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": false,
           "prevValue": 3.86,
           "prevChangePct": null,
-          "prevChangeAbs": -0.57,
+          "prevChangeAbs": -0.56,
           "prevDirection": "down",
           "series": [
             {
               "label": "Jul '26",
               "value": 3.95,
               "changePct": null,
-              "changeAbs": -0.15,
+              "changeAbs": -0.17,
               "direction": "down"
             },
             {
@@ -12547,16 +12547,16 @@
             },
             {
               "label": "Sep '26",
-              "value": 3.29,
+              "value": 3.3,
               "changePct": null,
-              "changeAbs": -0.57,
+              "changeAbs": -0.56,
               "direction": "down"
             },
             {
               "label": "Oct '26",
               "value": 3.32,
               "changePct": null,
-              "changeAbs": 0.03,
+              "changeAbs": 0.02,
               "direction": "up"
             }
           ]
@@ -12564,49 +12564,49 @@
         {
           "label": "Joule AI Assistant",
           "thisValue": 2.9,
-          "lastValue": 2.88,
+          "lastValue": 2.89,
           "changePct": null,
-          "changeAbs": 0.02,
+          "changeAbs": 0.01,
           "changeDisplay": "pts",
           "direction": "up",
           "bigMove": false,
-          "prevValue": 2.78,
+          "prevValue": 2.8,
           "prevChangePct": null,
-          "prevChangeAbs": 0.1,
+          "prevChangeAbs": 0.09,
           "prevDirection": "up",
           "series": [
             {
               "label": "Jul '26",
-              "value": 2.63,
+              "value": 2.6,
               "changePct": null,
               "changeAbs": -0.9,
               "direction": "down"
             },
             {
               "label": "Aug '26",
-              "value": 2.78,
+              "value": 2.8,
               "changePct": null,
-              "changeAbs": 0.15,
+              "changeAbs": 0.2,
               "direction": "up"
             },
             {
               "label": "Sep '26",
-              "value": 2.88,
+              "value": 2.89,
               "changePct": null,
-              "changeAbs": 0.1,
+              "changeAbs": 0.09,
               "direction": "up"
             },
             {
               "label": "Oct '26",
               "value": 2.9,
               "changePct": null,
-              "changeAbs": 0.02,
+              "changeAbs": 0.01,
               "direction": "up"
             }
           ]
         }
       ],
-      "summary": "Month-on-month overall SAP-AI sentiment down 0.06 pts to 2.60/5 — 2 topics softer, 7 firmer.",
+      "summary": "Month-on-month overall SAP-AI sentiment down 0.08 pts to 2.60/5 — 2 topics softer, 7 firmer.",
       "sourceName": "HN/Reddit/StackExchange + SAP docs",
       "sourceUrl": "",
       "dashboardUrl": null,
@@ -12617,8 +12617,8 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk 19 Oct",
-          "lastPeriodLabel": "wk 12 Oct",
+          "thisPeriodLabel": "wk 26 Oct",
+          "lastPeriodLabel": "wk 19 Oct",
           "thisValue": 2.6,
           "lastValue": 2.6,
           "changePct": null,
@@ -12626,120 +12626,25 @@
           "changeDisplay": "pts",
           "direction": "flat",
           "bigMove": false,
-          "prevLabel": "wk 5 Oct",
-          "prevValue": 2.59,
-          "prevChangeAbs": 0.01,
-          "prevDirection": "up",
+          "prevLabel": "wk 12 Oct",
+          "prevValue": 2.6,
+          "prevChangeAbs": 0,
+          "prevDirection": "flat",
           "breakdown": [
             {
-              "label": "Customer Satisfaction",
-              "thisValue": 3.29,
-              "lastValue": 3.06,
-              "changePct": null,
-              "changeAbs": 0.23,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 2.83,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.23,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.81,
-                  "changePct": null,
-                  "changeAbs": -0.03,
-                  "direction": "down"
-                },
-                {
-                  "label": "wk 5 Oct",
-                  "value": 2.83,
-                  "changePct": null,
-                  "changeAbs": 0.02,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 12 Oct",
-                  "value": 3.06,
-                  "changePct": null,
-                  "changeAbs": 0.23,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 19 Oct",
-                  "value": 3.29,
-                  "changePct": null,
-                  "changeAbs": 0.23,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "SAP RPT1",
-              "thisValue": 3.44,
-              "lastValue": 3.27,
-              "changePct": null,
-              "changeAbs": 0.17,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 2.7,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.57,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.21,
-                  "changePct": null,
-                  "changeAbs": 0.2,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 5 Oct",
-                  "value": 2.7,
-                  "changePct": null,
-                  "changeAbs": 0.49,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 12 Oct",
-                  "value": 3.27,
-                  "changePct": null,
-                  "changeAbs": 0.57,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 19 Oct",
-                  "value": 3.44,
-                  "changePct": null,
-                  "changeAbs": 0.17,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
               "label": "Joule AI Assistant",
-              "thisValue": 2.94,
-              "lastValue": 3.04,
+              "thisValue": 2.8,
+              "lastValue": 2.94,
               "changePct": null,
-              "changeAbs": -0.1,
+              "changeAbs": -0.14,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 2.74,
+              "prevValue": 3.04,
               "prevChangePct": null,
-              "prevChangeAbs": 0.3,
-              "prevDirection": "up",
+              "prevChangeAbs": -0.1,
+              "prevDirection": "down",
               "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.84,
-                  "changePct": null,
-                  "changeAbs": -0.05,
-                  "direction": "down"
-                },
                 {
                   "label": "wk 5 Oct",
                   "value": 2.74,
@@ -12760,74 +12665,74 @@
                   "changePct": null,
                   "changeAbs": -0.1,
                   "direction": "down"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 2.8,
+                  "changePct": null,
+                  "changeAbs": -0.14,
+                  "direction": "down"
                 }
               ]
             },
             {
-              "label": "vs. Competitors",
-              "thisValue": 2.77,
-              "lastValue": 2.7,
+              "label": "Customer Satisfaction",
+              "thisValue": 3.4,
+              "lastValue": 3.29,
               "changePct": null,
-              "changeAbs": 0.07,
+              "changeAbs": 0.11,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 2.63,
+              "prevValue": 3.07,
               "prevChangePct": null,
-              "prevChangeAbs": 0.07,
+              "prevChangeAbs": 0.22,
               "prevDirection": "up",
               "series": [
                 {
-                  "label": "wk 28 Sep",
-                  "value": 2.54,
-                  "changePct": null,
-                  "changeAbs": 0.07,
-                  "direction": "up"
-                },
-                {
                   "label": "wk 5 Oct",
-                  "value": 2.63,
+                  "value": 2.83,
                   "changePct": null,
-                  "changeAbs": 0.09,
+                  "changeAbs": 0.02,
                   "direction": "up"
                 },
                 {
                   "label": "wk 12 Oct",
-                  "value": 2.7,
+                  "value": 3.07,
                   "changePct": null,
-                  "changeAbs": 0.07,
+                  "changeAbs": 0.24,
                   "direction": "up"
                 },
                 {
                   "label": "wk 19 Oct",
-                  "value": 2.77,
+                  "value": 3.29,
                   "changePct": null,
-                  "changeAbs": 0.07,
+                  "changeAbs": 0.22,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 3.4,
+                  "changePct": null,
+                  "changeAbs": 0.11,
                   "direction": "up"
                 }
               ]
             },
             {
               "label": "Business Data Cloud",
-              "thisValue": 2.71,
-              "lastValue": 2.77,
+              "thisValue": 2.8,
+              "lastValue": 2.71,
               "changePct": null,
-              "changeAbs": -0.06,
+              "changeAbs": 0.09,
               "changeDisplay": "pts",
-              "direction": "down",
+              "direction": "up",
               "bigMove": false,
-              "prevValue": 2.74,
+              "prevValue": 2.77,
               "prevChangePct": null,
-              "prevChangeAbs": 0.03,
-              "prevDirection": "up",
+              "prevChangeAbs": -0.06,
+              "prevDirection": "down",
               "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.71,
-                  "changePct": null,
-                  "changeAbs": 0.2,
-                  "direction": "up"
-                },
                 {
                   "label": "wk 5 Oct",
                   "value": 2.74,
@@ -12848,30 +12753,74 @@
                   "changePct": null,
                   "changeAbs": -0.06,
                   "direction": "down"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 2.8,
+                  "changePct": null,
+                  "changeAbs": 0.09,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "SAP RPT1",
+              "thisValue": 3.5,
+              "lastValue": 3.44,
+              "changePct": null,
+              "changeAbs": 0.06,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 3.27,
+              "prevChangePct": null,
+              "prevChangeAbs": 0.17,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "wk 5 Oct",
+                  "value": 2.7,
+                  "changePct": null,
+                  "changeAbs": 0.49,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 3.27,
+                  "changePct": null,
+                  "changeAbs": 0.57,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 19 Oct",
+                  "value": 3.44,
+                  "changePct": null,
+                  "changeAbs": 0.17,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 3.5,
+                  "changePct": null,
+                  "changeAbs": 0.06,
+                  "direction": "up"
                 }
               ]
             },
             {
               "label": "Partner Opinions",
-              "thisValue": 3.33,
-              "lastValue": 3.29,
+              "thisValue": 3.3,
+              "lastValue": 3.33,
               "changePct": null,
-              "changeAbs": 0.04,
+              "changeAbs": -0.03,
               "changeDisplay": "pts",
-              "direction": "up",
+              "direction": "down",
               "bigMove": false,
-              "prevValue": 3.31,
+              "prevValue": 3.29,
               "prevChangePct": null,
-              "prevChangeAbs": -0.02,
-              "prevDirection": "down",
+              "prevChangeAbs": 0.04,
+              "prevDirection": "up",
               "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 3.39,
-                  "changePct": null,
-                  "changeAbs": 0.28,
-                  "direction": "up"
-                },
                 {
                   "label": "wk 5 Oct",
                   "value": 3.31,
@@ -12892,30 +12841,74 @@
                   "changePct": null,
                   "changeAbs": 0.04,
                   "direction": "up"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 3.3,
+                  "changePct": null,
+                  "changeAbs": -0.03,
+                  "direction": "down"
                 }
               ]
             },
             {
-              "label": "S/4HANA AI Features",
-              "thisValue": 2.83,
-              "lastValue": 2.8,
+              "label": "vs. Competitors",
+              "thisValue": 2.8,
+              "lastValue": 2.77,
               "changePct": null,
               "changeAbs": 0.03,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 2.83,
+              "prevValue": 2.7,
               "prevChangePct": null,
-              "prevChangeAbs": -0.03,
-              "prevDirection": "down",
+              "prevChangeAbs": 0.07,
+              "prevDirection": "up",
               "series": [
                 {
-                  "label": "wk 28 Sep",
-                  "value": 2.94,
+                  "label": "wk 5 Oct",
+                  "value": 2.63,
+                  "changePct": null,
+                  "changeAbs": 0.09,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 2.7,
                   "changePct": null,
                   "changeAbs": 0.07,
                   "direction": "up"
                 },
+                {
+                  "label": "wk 19 Oct",
+                  "value": 2.77,
+                  "changePct": null,
+                  "changeAbs": 0.07,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 2.8,
+                  "changePct": null,
+                  "changeAbs": 0.03,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "S/4HANA AI Features",
+              "thisValue": 2.8,
+              "lastValue": 2.83,
+              "changePct": null,
+              "changeAbs": -0.03,
+              "changeDisplay": "pts",
+              "direction": "down",
+              "bigMove": false,
+              "prevValue": 2.8,
+              "prevChangePct": null,
+              "prevChangeAbs": 0.03,
+              "prevDirection": "up",
+              "series": [
                 {
                   "label": "wk 5 Oct",
                   "value": 2.83,
@@ -12936,30 +12929,74 @@
                   "changePct": null,
                   "changeAbs": 0.03,
                   "direction": "up"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 2.8,
+                  "changePct": null,
+                  "changeAbs": -0.03,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "BTP & AI Agents",
+              "thisValue": 2.4,
+              "lastValue": 2.39,
+              "changePct": null,
+              "changeAbs": 0.01,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 2.39,
+              "prevChangePct": null,
+              "prevChangeAbs": 0,
+              "prevDirection": "flat",
+              "series": [
+                {
+                  "label": "wk 5 Oct",
+                  "value": 2.36,
+                  "changePct": null,
+                  "changeAbs": -0.07,
+                  "direction": "down"
+                },
+                {
+                  "label": "wk 12 Oct",
+                  "value": 2.39,
+                  "changePct": null,
+                  "changeAbs": 0.03,
+                  "direction": "up"
+                },
+                {
+                  "label": "wk 19 Oct",
+                  "value": 2.39,
+                  "changePct": null,
+                  "changeAbs": 0,
+                  "direction": "flat"
+                },
+                {
+                  "label": "wk 26 Oct",
+                  "value": 2.4,
+                  "changePct": null,
+                  "changeAbs": 0.01,
+                  "direction": "up"
                 }
               ]
             },
             {
               "label": "Risks & Gaps",
               "thisValue": 2.1,
-              "lastValue": 2.13,
+              "lastValue": 2.1,
               "changePct": null,
-              "changeAbs": -0.03,
+              "changeAbs": 0,
               "changeDisplay": "pts",
-              "direction": "down",
+              "direction": "flat",
               "bigMove": false,
-              "prevValue": 2.2,
+              "prevValue": 2.13,
               "prevChangePct": null,
-              "prevChangeAbs": -0.07,
+              "prevChangeAbs": -0.03,
               "prevDirection": "down",
               "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.21,
-                  "changePct": null,
-                  "changeAbs": 0,
-                  "direction": "flat"
-                },
                 {
                   "label": "wk 5 Oct",
                   "value": 2.2,
@@ -12980,47 +13017,10 @@
                   "changePct": null,
                   "changeAbs": -0.03,
                   "direction": "down"
-                }
-              ]
-            },
-            {
-              "label": "BTP & AI Agents",
-              "thisValue": 2.39,
-              "lastValue": 2.39,
-              "changePct": null,
-              "changeAbs": 0,
-              "changeDisplay": "pts",
-              "direction": "flat",
-              "bigMove": false,
-              "prevValue": 2.36,
-              "prevChangePct": null,
-              "prevChangeAbs": 0.03,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "wk 28 Sep",
-                  "value": 2.41,
-                  "changePct": null,
-                  "changeAbs": -0.05,
-                  "direction": "down"
                 },
                 {
-                  "label": "wk 5 Oct",
-                  "value": 2.36,
-                  "changePct": null,
-                  "changeAbs": -0.05,
-                  "direction": "down"
-                },
-                {
-                  "label": "wk 12 Oct",
-                  "value": 2.39,
-                  "changePct": null,
-                  "changeAbs": 0.03,
-                  "direction": "up"
-                },
-                {
-                  "label": "wk 19 Oct",
-                  "value": 2.39,
+                  "label": "wk 26 Oct",
+                  "value": 2.1,
                   "changePct": null,
                   "changeAbs": 0,
                   "direction": "flat"
@@ -13030,13 +13030,6 @@
           ],
           "summary": "Week-on-week overall SAP-AI sentiment up 0.00 pts to 2.60/5 — 3 topics softer, 5 firmer.",
           "series": [
-            {
-              "label": "wk 28 Sep",
-              "value": 2.61,
-              "changePct": null,
-              "changeAbs": -0.03,
-              "direction": "down"
-            },
             {
               "label": "wk 5 Oct",
               "value": 2.59,
@@ -13057,6 +13050,13 @@
               "changePct": null,
               "changeAbs": 0,
               "direction": "flat"
+            },
+            {
+              "label": "wk 26 Oct",
+              "value": 2.6,
+              "changePct": null,
+              "changeAbs": 0,
+              "direction": "flat"
             }
           ]
         },
@@ -13067,29 +13067,29 @@
           "thisPeriodLabel": "Oct '26",
           "lastPeriodLabel": "Sep '26",
           "thisValue": 2.6,
-          "lastValue": 2.66,
+          "lastValue": 2.68,
           "changePct": null,
-          "changeAbs": -0.06,
+          "changeAbs": -0.08,
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": false,
           "prevLabel": "Aug '26",
           "prevValue": 3.1,
-          "prevChangeAbs": -0.44,
+          "prevChangeAbs": -0.42,
           "prevDirection": "down",
           "breakdown": [
             {
               "label": "SAP RPT1",
-              "thisValue": 3.02,
-              "lastValue": 2.54,
+              "thisValue": 3.04,
+              "lastValue": 2.44,
               "changePct": null,
-              "changeAbs": 0.48,
+              "changeAbs": 0.6,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.74,
               "prevChangePct": null,
-              "prevChangeAbs": -1.2,
+              "prevChangeAbs": -1.3,
               "prevDirection": "down",
               "series": [
                 {
@@ -13108,16 +13108,16 @@
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.54,
+                  "value": 2.44,
                   "changePct": null,
-                  "changeAbs": -1.2,
+                  "changeAbs": -1.3,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
-                  "value": 3.02,
+                  "value": 3.04,
                   "changePct": null,
-                  "changeAbs": 0.48,
+                  "changeAbs": 0.6,
                   "direction": "up"
                 }
               ]
@@ -13125,87 +13125,87 @@
             {
               "label": "vs. Competitors",
               "thisValue": 2.68,
-              "lastValue": 2.34,
+              "lastValue": 2.36,
               "changePct": null,
-              "changeAbs": 0.34,
+              "changeAbs": 0.32,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.1,
               "prevChangePct": null,
-              "prevChangeAbs": 0.24,
+              "prevChangeAbs": 0.26,
               "prevDirection": "up",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 3.53,
+                  "value": 3.43,
                   "changePct": null,
-                  "changeAbs": -0.02,
+                  "changeAbs": -0.19,
                   "direction": "down"
                 },
                 {
                   "label": "Aug '26",
                   "value": 2.1,
                   "changePct": null,
-                  "changeAbs": -1.43,
+                  "changeAbs": -1.33,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.34,
+                  "value": 2.36,
                   "changePct": null,
-                  "changeAbs": 0.24,
+                  "changeAbs": 0.26,
                   "direction": "up"
                 },
                 {
                   "label": "Oct '26",
                   "value": 2.68,
                   "changePct": null,
-                  "changeAbs": 0.34,
+                  "changeAbs": 0.32,
                   "direction": "up"
                 }
               ]
             },
             {
               "label": "Customer Satisfaction",
-              "thisValue": 3.01,
-              "lastValue": 2.76,
+              "thisValue": 3.03,
+              "lastValue": 2.75,
               "changePct": null,
-              "changeAbs": 0.25,
+              "changeAbs": 0.28,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.54,
               "prevChangePct": null,
-              "prevChangeAbs": -0.78,
+              "prevChangeAbs": -0.79,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 5,
+                  "value": 4.85,
                   "changePct": null,
-                  "changeAbs": 0,
-                  "direction": "flat"
+                  "changeAbs": 1.18,
+                  "direction": "up"
                 },
                 {
                   "label": "Aug '26",
                   "value": 3.54,
                   "changePct": null,
-                  "changeAbs": -1.46,
+                  "changeAbs": -1.31,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.76,
+                  "value": 2.75,
                   "changePct": null,
-                  "changeAbs": -0.78,
+                  "changeAbs": -0.79,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
-                  "value": 3.01,
+                  "value": 3.03,
                   "changePct": null,
-                  "changeAbs": 0.25,
+                  "changeAbs": 0.28,
                   "direction": "up"
                 }
               ]
@@ -13213,43 +13213,43 @@
             {
               "label": "Business Data Cloud",
               "thisValue": 2.74,
-              "lastValue": 2.54,
+              "lastValue": 2.55,
               "changePct": null,
-              "changeAbs": 0.2,
+              "changeAbs": 0.19,
               "changeDisplay": "pts",
               "direction": "up",
-              "bigMove": true,
+              "bigMove": false,
               "prevValue": 2.98,
               "prevChangePct": null,
-              "prevChangeAbs": -0.44,
+              "prevChangeAbs": -0.43,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 3.9,
+                  "value": 3.88,
                   "changePct": null,
-                  "changeAbs": 0.25,
+                  "changeAbs": 0.22,
                   "direction": "up"
                 },
                 {
                   "label": "Aug '26",
                   "value": 2.98,
                   "changePct": null,
-                  "changeAbs": -0.92,
+                  "changeAbs": -0.9,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.54,
+                  "value": 2.55,
                   "changePct": null,
-                  "changeAbs": -0.44,
+                  "changeAbs": -0.43,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
                   "value": 2.74,
                   "changePct": null,
-                  "changeAbs": 0.2,
+                  "changeAbs": 0.19,
                   "direction": "up"
                 }
               ]
@@ -13257,87 +13257,87 @@
             {
               "label": "BTP & AI Agents",
               "thisValue": 2.38,
-              "lastValue": 2.51,
+              "lastValue": 2.52,
               "changePct": null,
-              "changeAbs": -0.13,
+              "changeAbs": -0.14,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 2.82,
+              "prevValue": 2.74,
               "prevChangePct": null,
-              "prevChangeAbs": -0.31,
+              "prevChangeAbs": -0.22,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 3.23,
+                  "value": 3.22,
                   "changePct": null,
-                  "changeAbs": -0.47,
+                  "changeAbs": -0.48,
                   "direction": "down"
                 },
                 {
                   "label": "Aug '26",
-                  "value": 2.82,
+                  "value": 2.74,
                   "changePct": null,
-                  "changeAbs": -0.41,
+                  "changeAbs": -0.48,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.51,
+                  "value": 2.52,
                   "changePct": null,
-                  "changeAbs": -0.31,
+                  "changeAbs": -0.22,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
                   "value": 2.38,
                   "changePct": null,
-                  "changeAbs": -0.13,
+                  "changeAbs": -0.14,
                   "direction": "down"
                 }
               ]
             },
             {
               "label": "S/4HANA AI Features",
-              "thisValue": 2.84,
-              "lastValue": 2.88,
+              "thisValue": 2.83,
+              "lastValue": 2.89,
               "changePct": null,
-              "changeAbs": -0.04,
+              "changeAbs": -0.06,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
               "prevValue": 3.22,
               "prevChangePct": null,
-              "prevChangeAbs": -0.34,
+              "prevChangeAbs": -0.33,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 3.38,
+                  "value": 3.45,
                   "changePct": null,
-                  "changeAbs": -0.32,
+                  "changeAbs": -0.27,
                   "direction": "down"
                 },
                 {
                   "label": "Aug '26",
                   "value": 3.22,
                   "changePct": null,
-                  "changeAbs": -0.16,
+                  "changeAbs": -0.23,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.88,
+                  "value": 2.89,
                   "changePct": null,
-                  "changeAbs": -0.34,
+                  "changeAbs": -0.33,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
-                  "value": 2.84,
+                  "value": 2.83,
                   "changePct": null,
-                  "changeAbs": -0.04,
+                  "changeAbs": -0.06,
                   "direction": "down"
                 }
               ]
@@ -13345,43 +13345,43 @@
             {
               "label": "Risks & Gaps",
               "thisValue": 2.15,
-              "lastValue": 2.11,
+              "lastValue": 2.12,
               "changePct": null,
-              "changeAbs": 0.04,
+              "changeAbs": 0.03,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
               "prevValue": 1.82,
               "prevChangePct": null,
-              "prevChangeAbs": 0.29,
+              "prevChangeAbs": 0.3,
               "prevDirection": "up",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 2.8,
+                  "value": 2.77,
                   "changePct": null,
-                  "changeAbs": 0.17,
+                  "changeAbs": 0.27,
                   "direction": "up"
                 },
                 {
                   "label": "Aug '26",
                   "value": 1.82,
                   "changePct": null,
-                  "changeAbs": -0.98,
+                  "changeAbs": -0.95,
                   "direction": "down"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.11,
+                  "value": 2.12,
                   "changePct": null,
-                  "changeAbs": 0.29,
+                  "changeAbs": 0.3,
                   "direction": "up"
                 },
                 {
                   "label": "Oct '26",
                   "value": 2.15,
                   "changePct": null,
-                  "changeAbs": 0.04,
+                  "changeAbs": 0.03,
                   "direction": "up"
                 }
               ]
@@ -13389,22 +13389,22 @@
             {
               "label": "Partner Opinions",
               "thisValue": 3.32,
-              "lastValue": 3.29,
+              "lastValue": 3.3,
               "changePct": null,
-              "changeAbs": 0.03,
+              "changeAbs": 0.02,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
               "prevValue": 3.86,
               "prevChangePct": null,
-              "prevChangeAbs": -0.57,
+              "prevChangeAbs": -0.56,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Jul '26",
                   "value": 3.95,
                   "changePct": null,
-                  "changeAbs": -0.15,
+                  "changeAbs": -0.17,
                   "direction": "down"
                 },
                 {
@@ -13416,16 +13416,16 @@
                 },
                 {
                   "label": "Sep '26",
-                  "value": 3.29,
+                  "value": 3.3,
                   "changePct": null,
-                  "changeAbs": -0.57,
+                  "changeAbs": -0.56,
                   "direction": "down"
                 },
                 {
                   "label": "Oct '26",
                   "value": 3.32,
                   "changePct": null,
-                  "changeAbs": 0.03,
+                  "changeAbs": 0.02,
                   "direction": "up"
                 }
               ]
@@ -13433,76 +13433,76 @@
             {
               "label": "Joule AI Assistant",
               "thisValue": 2.9,
-              "lastValue": 2.88,
+              "lastValue": 2.89,
               "changePct": null,
-              "changeAbs": 0.02,
+              "changeAbs": 0.01,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 2.78,
+              "prevValue": 2.8,
               "prevChangePct": null,
-              "prevChangeAbs": 0.1,
+              "prevChangeAbs": 0.09,
               "prevDirection": "up",
               "series": [
                 {
                   "label": "Jul '26",
-                  "value": 2.63,
+                  "value": 2.6,
                   "changePct": null,
                   "changeAbs": -0.9,
                   "direction": "down"
                 },
                 {
                   "label": "Aug '26",
-                  "value": 2.78,
+                  "value": 2.8,
                   "changePct": null,
-                  "changeAbs": 0.15,
+                  "changeAbs": 0.2,
                   "direction": "up"
                 },
                 {
                   "label": "Sep '26",
-                  "value": 2.88,
+                  "value": 2.89,
                   "changePct": null,
-                  "changeAbs": 0.1,
+                  "changeAbs": 0.09,
                   "direction": "up"
                 },
                 {
                   "label": "Oct '26",
                   "value": 2.9,
                   "changePct": null,
-                  "changeAbs": 0.02,
+                  "changeAbs": 0.01,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month overall SAP-AI sentiment down 0.06 pts to 2.60/5 — 2 topics softer, 7 firmer.",
+          "summary": "Month-on-month overall SAP-AI sentiment down 0.08 pts to 2.60/5 — 2 topics softer, 7 firmer.",
           "series": [
             {
               "label": "Jul '26",
-              "value": 3.4,
+              "value": 3.38,
               "changePct": null,
-              "changeAbs": 0.1,
+              "changeAbs": 0.06,
               "direction": "up"
             },
             {
               "label": "Aug '26",
               "value": 3.1,
               "changePct": null,
-              "changeAbs": -0.3,
+              "changeAbs": -0.28,
               "direction": "down"
             },
             {
               "label": "Sep '26",
-              "value": 2.66,
+              "value": 2.68,
               "changePct": null,
-              "changeAbs": -0.44,
+              "changeAbs": -0.42,
               "direction": "down"
             },
             {
               "label": "Oct '26",
               "value": 2.6,
               "changePct": null,
-              "changeAbs": -0.06,
+              "changeAbs": -0.08,
               "direction": "down"
             }
           ]
@@ -13514,15 +13514,15 @@
           "thisPeriodLabel": "Q4 '26",
           "lastPeriodLabel": "Q3 '26",
           "thisValue": 2.6,
-          "lastValue": 2.89,
+          "lastValue": 2.9,
           "changePct": null,
-          "changeAbs": -0.29,
+          "changeAbs": -0.3,
           "changeDisplay": "pts",
           "direction": "down",
           "bigMove": true,
           "prevLabel": "Q2 '26",
-          "prevValue": 3.3,
-          "prevChangeAbs": -0.41,
+          "prevValue": 3.32,
+          "prevChangeAbs": -0.42,
           "prevDirection": "down",
           "breakdown": [
             {
@@ -13534,16 +13534,16 @@
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 3.68,
+              "prevValue": 3.7,
               "prevChangePct": null,
-              "prevChangeAbs": -0.98,
+              "prevChangeAbs": -1,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
                   "value": 2.7,
                   "changePct": null,
-                  "changeAbs": -0.98,
+                  "changeAbs": -1,
                   "direction": "down"
                 },
                 {
@@ -13557,30 +13557,90 @@
             },
             {
               "label": "Customer Satisfaction",
-              "thisValue": 3.01,
-              "lastValue": 3.32,
+              "thisValue": 3.03,
+              "lastValue": 3.31,
               "changePct": null,
-              "changeAbs": -0.31,
+              "changeAbs": -0.28,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
               "prevValue": 3.67,
               "prevChangePct": null,
-              "prevChangeAbs": -0.35,
+              "prevChangeAbs": -0.36,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
-                  "value": 3.32,
+                  "value": 3.31,
                   "changePct": null,
-                  "changeAbs": -0.35,
+                  "changeAbs": -0.36,
                   "direction": "down"
                 },
                 {
                   "label": "Q4 '26",
-                  "value": 3.01,
+                  "value": 3.03,
                   "changePct": null,
-                  "changeAbs": -0.31,
+                  "changeAbs": -0.28,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "SAP RPT1",
+              "thisValue": 3.04,
+              "lastValue": 2.78,
+              "changePct": null,
+              "changeAbs": 0.26,
+              "changeDisplay": "pts",
+              "direction": "up",
+              "bigMove": true,
+              "prevValue": 1.7,
+              "prevChangePct": null,
+              "prevChangeAbs": 1.08,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": 2.78,
+                  "changePct": null,
+                  "changeAbs": 1.08,
+                  "direction": "up"
+                },
+                {
+                  "label": "Q4 '26",
+                  "value": 3.04,
+                  "changePct": null,
+                  "changeAbs": 0.26,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "S/4HANA AI Features",
+              "thisValue": 2.83,
+              "lastValue": 3.07,
+              "changePct": null,
+              "changeAbs": -0.24,
+              "changeDisplay": "pts",
+              "direction": "down",
+              "bigMove": true,
+              "prevValue": 3.72,
+              "prevChangePct": null,
+              "prevChangeAbs": -0.65,
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": 3.07,
+                  "changePct": null,
+                  "changeAbs": -0.65,
+                  "direction": "down"
+                },
+                {
+                  "label": "Q4 '26",
+                  "value": 2.83,
+                  "changePct": null,
+                  "changeAbs": -0.24,
                   "direction": "down"
                 }
               ]
@@ -13588,90 +13648,30 @@
             {
               "label": "Partner Opinions",
               "thisValue": 3.32,
-              "lastValue": 3.53,
+              "lastValue": 3.55,
               "changePct": null,
-              "changeAbs": -0.21,
+              "changeAbs": -0.23,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": true,
-              "prevValue": 4.14,
+              "prevValue": 4.12,
               "prevChangePct": null,
-              "prevChangeAbs": -0.61,
+              "prevChangeAbs": -0.57,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
-                  "value": 3.53,
+                  "value": 3.55,
                   "changePct": null,
-                  "changeAbs": -0.61,
+                  "changeAbs": -0.57,
                   "direction": "down"
                 },
                 {
                   "label": "Q4 '26",
                   "value": 3.32,
                   "changePct": null,
-                  "changeAbs": -0.21,
+                  "changeAbs": -0.23,
                   "direction": "down"
-                }
-              ]
-            },
-            {
-              "label": "S/4HANA AI Features",
-              "thisValue": 2.84,
-              "lastValue": 3.04,
-              "changePct": null,
-              "changeAbs": -0.2,
-              "changeDisplay": "pts",
-              "direction": "down",
-              "bigMove": true,
-              "prevValue": 3.72,
-              "prevChangePct": null,
-              "prevChangeAbs": -0.68,
-              "prevDirection": "down",
-              "series": [
-                {
-                  "label": "Q3 '26",
-                  "value": 3.04,
-                  "changePct": null,
-                  "changeAbs": -0.68,
-                  "direction": "down"
-                },
-                {
-                  "label": "Q4 '26",
-                  "value": 2.84,
-                  "changePct": null,
-                  "changeAbs": -0.2,
-                  "direction": "down"
-                }
-              ]
-            },
-            {
-              "label": "SAP RPT1",
-              "thisValue": 3.02,
-              "lastValue": 2.83,
-              "changePct": null,
-              "changeAbs": 0.19,
-              "changeDisplay": "pts",
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 1.7,
-              "prevChangePct": null,
-              "prevChangeAbs": 1.13,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q3 '26",
-                  "value": 2.83,
-                  "changePct": null,
-                  "changeAbs": 1.13,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q4 '26",
-                  "value": 3.02,
-                  "changePct": null,
-                  "changeAbs": 0.19,
-                  "direction": "up"
                 }
               ]
             },
@@ -13684,16 +13684,16 @@
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 3.6,
+              "prevValue": 3.62,
               "prevChangePct": null,
-              "prevChangeAbs": -1.1,
+              "prevChangeAbs": -1.12,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
                   "value": 2.5,
                   "changePct": null,
-                  "changeAbs": -1.1,
+                  "changeAbs": -1.12,
                   "direction": "down"
                 },
                 {
@@ -13708,20 +13708,20 @@
             {
               "label": "Business Data Cloud",
               "thisValue": 2.74,
-              "lastValue": 2.87,
+              "lastValue": 2.89,
               "changePct": null,
-              "changeAbs": -0.13,
+              "changeAbs": -0.15,
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 3.64,
+              "prevValue": 3.66,
               "prevChangePct": null,
               "prevChangeAbs": -0.77,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
-                  "value": 2.87,
+                  "value": 2.89,
                   "changePct": null,
                   "changeAbs": -0.77,
                   "direction": "down"
@@ -13730,7 +13730,7 @@
                   "label": "Q4 '26",
                   "value": 2.74,
                   "changePct": null,
-                  "changeAbs": -0.13,
+                  "changeAbs": -0.15,
                   "direction": "down"
                 }
               ]
@@ -13738,29 +13738,29 @@
             {
               "label": "Joule AI Assistant",
               "thisValue": 2.9,
-              "lastValue": 2.81,
+              "lastValue": 2.82,
               "changePct": null,
-              "changeAbs": 0.09,
+              "changeAbs": 0.08,
               "changeDisplay": "pts",
               "direction": "up",
               "bigMove": false,
-              "prevValue": 3.56,
+              "prevValue": 3.5,
               "prevChangePct": null,
-              "prevChangeAbs": -0.75,
+              "prevChangeAbs": -0.68,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
-                  "value": 2.81,
+                  "value": 2.82,
                   "changePct": null,
-                  "changeAbs": -0.75,
+                  "changeAbs": -0.68,
                   "direction": "down"
                 },
                 {
                   "label": "Q4 '26",
                   "value": 2.9,
                   "changePct": null,
-                  "changeAbs": 0.09,
+                  "changeAbs": 0.08,
                   "direction": "up"
                 }
               ]
@@ -13774,16 +13774,16 @@
               "changeDisplay": "pts",
               "direction": "down",
               "bigMove": false,
-              "prevValue": 2.48,
+              "prevValue": 2.5,
               "prevChangePct": null,
-              "prevChangeAbs": -0.31,
+              "prevChangeAbs": -0.33,
               "prevDirection": "down",
               "series": [
                 {
                   "label": "Q3 '26",
                   "value": 2.17,
                   "changePct": null,
-                  "changeAbs": -0.31,
+                  "changeAbs": -0.33,
                   "direction": "down"
                 },
                 {
@@ -13796,20 +13796,20 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter overall SAP-AI sentiment down 0.29 pts to 2.60/5 — 6 topics softer, 3 firmer.",
+          "summary": "Quarter-on-quarter overall SAP-AI sentiment down 0.30 pts to 2.60/5 — 6 topics softer, 3 firmer.",
           "series": [
             {
               "label": "Q3 '26",
-              "value": 2.89,
+              "value": 2.9,
               "changePct": null,
-              "changeAbs": -0.41,
+              "changeAbs": -0.42,
               "direction": "down"
             },
             {
               "label": "Q4 '26",
               "value": 2.6,
               "changePct": null,
-              "changeAbs": -0.29,
+              "changeAbs": -0.3,
               "direction": "down"
             }
           ]
@@ -13819,7 +13819,7 @@
       "changeNoun": "Sentiment change",
       "insights": [
         {
-          "title": "SAP RPT1 — +0.48 pts MoM",
+          "title": "SAP RPT1 — +0.60 pts MoM",
           "body": "The pages show that RPT-1 is not a prompt-template or assistant framework at all: it is SAP-RPT, a \"relational pretrained transformer\" that predicts values in business tables, launched at TechEd Berlin in November 2025 and now shipping as versions 1.5 and 1.6 through SAP AI Core. Vendor and community material is enthusiastic about removing the need to train a separate model per forecasting task, and the only independent benchmark found, by a Microsoft practitioner in February 2026, says the open variant matches tuned XGBoost on small classification problems with zero training time but loses on regression and larger datasets. Genuine customer deployment stories are absent from these pages, so adoption reads as playground-and-pilot rather than production, and confidence in any satisfaction score is low.",
           "bullets": [
             "SAP-RPT-1.6 reached general availability through the AI Core model library, with tabular orchestration and a playground API, indicating the product has moved past announcement stage (2026).",
@@ -13828,7 +13828,7 @@
           "asOf": "2026-09-19T15:25:25.712Z"
         },
         {
-          "title": "vs. Competitors — +0.34 pts MoM",
+          "title": "vs. Competitors — +0.32 pts MoM",
           "body": "Head-to-head coverage in 2026 puts SAP roughly level with Salesforce, Oracle and Microsoft in enterprise AI, but on different ground: SAP leads on transactional data depth and governance, and trails on speed, cost and openness. Its decision to force external AI agents through its own Joule assistant is the single most debated move of the year, read as either a smart grab for the data layer or a closed bet against interoperability. The evidence base is thin on named customer testimonials and hard adoption numbers, so this read leans on analyst and partner commentary rather than verified deployment metrics.",
           "bullets": [
             "SAP now blocks third-party AI agents from its systems and routes them through Joule, while Salesforce embraces open Model Context Protocol interoperability (February 2026).",
@@ -13837,7 +13837,7 @@
           "asOf": "2026-09-19T07:50:38.482Z"
         },
         {
-          "title": "Customer Satisfaction — +0.25 pts MoM",
+          "title": "Customer Satisfaction — +0.28 pts MoM",
           "body": "Public review data rates SAP's core products solidly but says almost nothing specific about its AI features: TrustRadius shows 8.6 out of 10 across 2,168 SAP Cloud ERP reviews, 8.7 across 321 Sales Cloud reviews and 8.4 across 106 Business Network reviews, while Gartner Peer Insights gives SAP's data integration tools 4.5 out of 5 from 121 ratings. Where AI does surface, the tone is anticipatory rather than proven, with TrustRadius summarising that reviewers are still in early stages of exploring Joule and listing AI implementation as a con. The recurring complaints are consistent and pre-date AI: integration effort outside the SAP estate, dated user interfaces, steep learning curves and high cost, so satisfaction with SAP AI specifically cannot be scored confidently from these pages.",
           "bullets": [
             "TrustRadius scores SAP Cloud ERP 8.6 out of 10 across 2,168 reviews, but its 2026 synthesis says reviewers are only beginning to explore the Joule AI assistant.",
@@ -13849,35 +13849,35 @@
       "prevLabel": "Aug '26",
       "prevValue": 3.1,
       "prevChangePct": null,
-      "prevChangeAbs": -0.44,
+      "prevChangeAbs": -0.42,
       "prevDirection": "down",
       "series": [
         {
           "label": "Jul '26",
-          "value": 3.4,
+          "value": 3.38,
           "changePct": null,
-          "changeAbs": 0.1,
+          "changeAbs": 0.06,
           "direction": "up"
         },
         {
           "label": "Aug '26",
           "value": 3.1,
           "changePct": null,
-          "changeAbs": -0.3,
+          "changeAbs": -0.28,
           "direction": "down"
         },
         {
           "label": "Sep '26",
-          "value": 2.66,
+          "value": 2.68,
           "changePct": null,
-          "changeAbs": -0.44,
+          "changeAbs": -0.42,
           "direction": "down"
         },
         {
           "label": "Oct '26",
           "value": 2.6,
           "changePct": null,
-          "changeAbs": -0.06,
+          "changeAbs": -0.08,
           "direction": "down"
         }
       ]
@@ -15429,19 +15429,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Oct '26",
       "lastPeriodLabel": "Sep '26",
-      "thisValue": 527567685433320,
+      "thisValue": 537147309815539,
       "lastValue": 567359447215877,
-      "changePct": -0.070135012253381,
-      "changeAbs": -39791761782557,
+      "changePct": -0.0532504350612187,
+      "changeAbs": -30212137400338,
       "direction": "down",
-      "asOf": "2026-10-26T03:29:41.868Z",
+      "asOf": "2026-10-26T12:21:44.469Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "DeepSeek",
-          "thisValue": 159802899375223,
+          "thisValue": 162601060854580,
           "lastValue": 127448773263517,
-          "changePct": 0.2538598472408174,
+          "changePct": 0.27581503290252196,
           "direction": "up",
           "bigMove": true,
           "note": "share 22.5% → 30.3% (+7.8pp)",
@@ -15473,8 +15473,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 159802899375223,
-              "changePct": 0.2538598472408174,
+              "value": 162601060854580,
+              "changePct": 0.27581503290252196,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15482,12 +15482,12 @@
         },
         {
           "label": "Others",
-          "thisValue": 107394359050431,
+          "thisValue": 109787682201793,
           "lastValue": 122077779368766,
-          "changePct": -0.12027922193751668,
+          "changePct": -0.10067431788587614,
           "direction": "down",
           "bigMove": false,
-          "note": "share 21.5% → 20.4% (-1.2pp)",
+          "note": "share 21.5% → 20.4% (-1.1pp)",
           "series": [
             {
               "label": "Jul '26",
@@ -15512,8 +15512,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 107394359050431,
-              "changePct": -0.12027922193751668,
+              "value": 109787682201793,
+              "changePct": -0.10067431788587614,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15521,9 +15521,9 @@
         },
         {
           "label": "Z.ai",
-          "thisValue": 56919743072396,
+          "thisValue": 57999202252524,
           "lastValue": 70878297767449,
-          "changePct": -0.19693693464325118,
+          "changePct": -0.18170717865123096,
           "direction": "down",
           "bigMove": true,
           "note": "share 12.5% → 10.8% (-1.7pp)",
@@ -15555,8 +15555,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 56919743072396,
-              "changePct": -0.19693693464325118,
+              "value": 57999202252524,
+              "changePct": -0.18170717865123096,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15564,9 +15564,9 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 48927087876943,
+          "thisValue": 49977771257370,
           "lastValue": 78143909427722,
-          "changePct": -0.37388482051570054,
+          "changePct": -0.36043932760241326,
           "direction": "down",
           "bigMove": true,
           "note": "share 13.8% → 9.3% (-4.5pp)",
@@ -15598,8 +15598,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 48927087876943,
-              "changePct": -0.37388482051570054,
+              "value": 49977771257370,
+              "changePct": -0.36043932760241326,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15607,9 +15607,9 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 41378886129385,
+          "thisValue": 42056792093961,
           "lastValue": 21184120349374,
-          "changePct": 0.9532973494746864,
+          "changePct": 0.9852980156999437,
           "direction": "up",
           "bigMove": true,
           "note": "share 3.7% → 7.8% (+4.1pp)",
@@ -15641,10 +15641,53 @@
             },
             {
               "label": "Oct '26",
-              "value": 41378886129385,
-              "changePct": 0.9532973494746864,
+              "value": 42056792093961,
+              "changePct": 0.9852980156999437,
               "changeAbs": null,
               "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "Tencent",
+          "thisValue": 34791742668007,
+          "lastValue": 58737559244240,
+          "changePct": -0.4076746954476357,
+          "direction": "down",
+          "bigMove": true,
+          "note": "share 10.4% → 6.5% (-3.9pp)",
+          "prevValue": 54690796177433,
+          "prevChangePct": 0.07399349341483552,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 28748727761725,
+              "changePct": 0.6719536980192845,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": 54690796177433,
+              "changePct": 0.9023727460470901,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Sep '26",
+              "value": 58737559244240,
+              "changePct": 0.07399349341483552,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 34791742668007,
+              "changePct": -0.4076746954476357,
+              "changeAbs": null,
+              "direction": "down"
             }
           ]
         },
@@ -15655,7 +15698,7 @@
           "changePct": -0.07991897960305032,
           "direction": "down",
           "bigMove": false,
-          "note": "share 6.5% → 6.5% (-0.1pp)",
+          "note": "share 6.5% → 6.3% (-0.2pp)",
           "prevValue": 32829548989946,
           "prevChangePct": 0.12913876548682898,
           "prevChangeAbs": null,
@@ -15692,53 +15735,10 @@
           ]
         },
         {
-          "label": "Tencent",
-          "thisValue": 33857972033934,
-          "lastValue": 58737559244240,
-          "changePct": -0.4235720300677249,
-          "direction": "down",
-          "bigMove": true,
-          "note": "share 10.4% → 6.4% (-3.9pp)",
-          "prevValue": 54690796177433,
-          "prevChangePct": 0.07399349341483552,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jul '26",
-              "value": 28748727761725,
-              "changePct": 0.6719536980192845,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": 54690796177433,
-              "changePct": 0.9023727460470901,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Sep '26",
-              "value": 58737559244240,
-              "changePct": 0.07399349341483552,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Oct '26",
-              "value": 33857972033934,
-              "changePct": -0.4235720300677249,
-              "changeAbs": null,
-              "direction": "down"
-            }
-          ]
-        },
-        {
           "label": "Nvidia",
-          "thisValue": 24960762346393,
+          "thisValue": 25283446351840,
           "lastValue": 23747738791318,
-          "changePct": 0.051079539224108045,
+          "changePct": 0.06466752788621051,
           "direction": "up",
           "bigMove": false,
           "note": "share 4.2% → 4.7% (+0.5pp)",
@@ -15770,8 +15770,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 24960762346393,
-              "changePct": 0.051079539224108045,
+              "value": 25283446351840,
+              "changePct": 0.06466752788621051,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15779,9 +15779,9 @@
         },
         {
           "label": "Google (Gemini)",
-          "thisValue": 20219385089531,
+          "thisValue": 20543021676380,
           "lastValue": 28072152585494,
-          "changePct": -0.2797351386591151,
+          "changePct": -0.2682063972894121,
           "direction": "down",
           "bigMove": true,
           "note": "share 4.9% → 3.8% (-1.1pp)",
@@ -15813,15 +15813,15 @@
             },
             {
               "label": "Oct '26",
-              "value": 20219385089531,
-              "changePct": -0.2797351386591151,
+              "value": 20543021676380,
+              "changePct": -0.2682063972894121,
               "changeAbs": null,
               "direction": "down"
             }
           ]
         }
       ],
-      "summary": "Month-on-month routed tokens down 7.0% to 527.6T (Sep '26 → Oct '26) — 3 providers grew volume, 5 shrank, and share shifted toward lower-cost open-weight models.",
+      "summary": "Month-on-month routed tokens down 5.3% to 537.1T (Sep '26 → Oct '26) — 3 providers grew volume, 5 shrank, and share shifted toward lower-cost open-weight models.",
       "sourceName": "OpenRouter / UBS / SEC",
       "sourceUrl": "https://google-dash-git.pages.dev/",
       "dashboardUrl": "https://google-dash-git.pages.dev/",
@@ -15834,9 +15834,9 @@
           "available": true,
           "thisPeriodLabel": "wk 19 Oct",
           "lastPeriodLabel": "wk 12 Oct",
-          "thisValue": 188039258074257,
+          "thisValue": 188039304051712,
           "lastValue": 164043985914931,
-          "changePct": 0.14627340359657764,
+          "changePct": 0.1462736838717413,
           "direction": "up",
           "bigMove": false,
           "breakdown": [
@@ -15967,9 +15967,9 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 17057687110711,
+              "thisValue": 17057733088166,
               "lastValue": 14366689413888,
-              "changePct": 0.18730812780163986,
+              "changePct": 0.1873113280834637,
               "direction": "up",
               "bigMove": false,
               "note": "share 8.8% → 9.1% (+0.3pp)",
@@ -16001,8 +16001,8 @@
                 },
                 {
                   "label": "wk 19 Oct",
-                  "value": 17057687110711,
-                  "changePct": 0.18730812780163986,
+                  "value": 17057733088166,
+                  "changePct": 0.1873113280834637,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16253,8 +16253,8 @@
             },
             {
               "label": "wk 19 Oct",
-              "value": 188039258074257,
-              "changePct": 0.14627340359657764,
+              "value": 188039304051712,
+              "changePct": 0.1462736838717413,
               "changeAbs": null,
               "direction": "up"
             }
@@ -16266,17 +16266,17 @@
           "available": true,
           "thisPeriodLabel": "Oct '26",
           "lastPeriodLabel": "Sep '26",
-          "thisValue": 527567685433320,
+          "thisValue": 537147309815539,
           "lastValue": 567359447215877,
-          "changePct": -0.070135012253381,
+          "changePct": -0.0532504350612187,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
             {
               "label": "DeepSeek",
-              "thisValue": 159802899375223,
+              "thisValue": 162601060854580,
               "lastValue": 127448773263517,
-              "changePct": 0.2538598472408174,
+              "changePct": 0.27581503290252196,
               "direction": "up",
               "bigMove": true,
               "note": "share 22.5% → 30.3% (+7.8pp)",
@@ -16308,8 +16308,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 159802899375223,
-                  "changePct": 0.2538598472408174,
+                  "value": 162601060854580,
+                  "changePct": 0.27581503290252196,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16317,12 +16317,12 @@
             },
             {
               "label": "Others",
-              "thisValue": 107394359050431,
+              "thisValue": 109787682201793,
               "lastValue": 122077779368766,
-              "changePct": -0.12027922193751668,
+              "changePct": -0.10067431788587614,
               "direction": "down",
               "bigMove": false,
-              "note": "share 21.5% → 20.4% (-1.2pp)",
+              "note": "share 21.5% → 20.4% (-1.1pp)",
               "series": [
                 {
                   "label": "Jul '26",
@@ -16347,8 +16347,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 107394359050431,
-                  "changePct": -0.12027922193751668,
+                  "value": 109787682201793,
+                  "changePct": -0.10067431788587614,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -16356,9 +16356,9 @@
             },
             {
               "label": "Z.ai",
-              "thisValue": 56919743072396,
+              "thisValue": 57999202252524,
               "lastValue": 70878297767449,
-              "changePct": -0.19693693464325118,
+              "changePct": -0.18170717865123096,
               "direction": "down",
               "bigMove": true,
               "note": "share 12.5% → 10.8% (-1.7pp)",
@@ -16390,8 +16390,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 56919743072396,
-                  "changePct": -0.19693693464325118,
+                  "value": 57999202252524,
+                  "changePct": -0.18170717865123096,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -16399,9 +16399,9 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 48927087876943,
+              "thisValue": 49977771257370,
               "lastValue": 78143909427722,
-              "changePct": -0.37388482051570054,
+              "changePct": -0.36043932760241326,
               "direction": "down",
               "bigMove": true,
               "note": "share 13.8% → 9.3% (-4.5pp)",
@@ -16433,8 +16433,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 48927087876943,
-                  "changePct": -0.37388482051570054,
+                  "value": 49977771257370,
+                  "changePct": -0.36043932760241326,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -16442,9 +16442,9 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 41378886129385,
+              "thisValue": 42056792093961,
               "lastValue": 21184120349374,
-              "changePct": 0.9532973494746864,
+              "changePct": 0.9852980156999437,
               "direction": "up",
               "bigMove": true,
               "note": "share 3.7% → 7.8% (+4.1pp)",
@@ -16476,10 +16476,53 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 41378886129385,
-                  "changePct": 0.9532973494746864,
+                  "value": 42056792093961,
+                  "changePct": 0.9852980156999437,
                   "changeAbs": null,
                   "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "Tencent",
+              "thisValue": 34791742668007,
+              "lastValue": 58737559244240,
+              "changePct": -0.4076746954476357,
+              "direction": "down",
+              "bigMove": true,
+              "note": "share 10.4% → 6.5% (-3.9pp)",
+              "prevValue": 54690796177433,
+              "prevChangePct": 0.07399349341483552,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 28748727761725,
+                  "changePct": 0.6719536980192845,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 54690796177433,
+                  "changePct": 0.9023727460470901,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 58737559244240,
+                  "changePct": 0.07399349341483552,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 34791742668007,
+                  "changePct": -0.4076746954476357,
+                  "changeAbs": null,
+                  "direction": "down"
                 }
               ]
             },
@@ -16490,7 +16533,7 @@
               "changePct": -0.07991897960305032,
               "direction": "down",
               "bigMove": false,
-              "note": "share 6.5% → 6.5% (-0.1pp)",
+              "note": "share 6.5% → 6.3% (-0.2pp)",
               "prevValue": 32829548989946,
               "prevChangePct": 0.12913876548682898,
               "prevChangeAbs": null,
@@ -16527,53 +16570,10 @@
               ]
             },
             {
-              "label": "Tencent",
-              "thisValue": 33857972033934,
-              "lastValue": 58737559244240,
-              "changePct": -0.4235720300677249,
-              "direction": "down",
-              "bigMove": true,
-              "note": "share 10.4% → 6.4% (-3.9pp)",
-              "prevValue": 54690796177433,
-              "prevChangePct": 0.07399349341483552,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jul '26",
-                  "value": 28748727761725,
-                  "changePct": 0.6719536980192845,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 54690796177433,
-                  "changePct": 0.9023727460470901,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 58737559244240,
-                  "changePct": 0.07399349341483552,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Oct '26",
-                  "value": 33857972033934,
-                  "changePct": -0.4235720300677249,
-                  "changeAbs": null,
-                  "direction": "down"
-                }
-              ]
-            },
-            {
               "label": "Nvidia",
-              "thisValue": 24960762346393,
+              "thisValue": 25283446351840,
               "lastValue": 23747738791318,
-              "changePct": 0.051079539224108045,
+              "changePct": 0.06466752788621051,
               "direction": "up",
               "bigMove": false,
               "note": "share 4.2% → 4.7% (+0.5pp)",
@@ -16605,8 +16605,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 24960762346393,
-                  "changePct": 0.051079539224108045,
+                  "value": 25283446351840,
+                  "changePct": 0.06466752788621051,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16614,9 +16614,9 @@
             },
             {
               "label": "Google (Gemini)",
-              "thisValue": 20219385089531,
+              "thisValue": 20543021676380,
               "lastValue": 28072152585494,
-              "changePct": -0.2797351386591151,
+              "changePct": -0.2682063972894121,
               "direction": "down",
               "bigMove": true,
               "note": "share 4.9% → 3.8% (-1.1pp)",
@@ -16648,15 +16648,15 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 20219385089531,
-                  "changePct": -0.2797351386591151,
+                  "value": 20543021676380,
+                  "changePct": -0.2682063972894121,
                   "changeAbs": null,
                   "direction": "down"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month routed tokens down 7.0% to 527.6T (Sep '26 → Oct '26) — 3 providers grew volume, 5 shrank, and share shifted toward lower-cost open-weight models.",
+          "summary": "Month-on-month routed tokens down 5.3% to 537.1T (Sep '26 → Oct '26) — 3 providers grew volume, 5 shrank, and share shifted toward lower-cost open-weight models.",
           "prevLabel": "Aug '26",
           "prevValue": 466224823981312,
           "prevChangePct": 0.21692243319634744,
@@ -16685,8 +16685,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 527567685433320,
-              "changePct": -0.070135012253381,
+              "value": 537147309815539,
+              "changePct": -0.0532504350612187,
               "changeAbs": null,
               "direction": "down"
             }
@@ -17020,18 +17020,18 @@
       "insights": [
         {
           "title": "The market is the story, not any one model",
-          "body": "Total routed tokens reached 527.6T (-7% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — DeepSeek (+7.8pp), Anthropic (+4.1pp), Nvidia (+0.5pp) gained, while OpenAI (-4.5pp), Tencent (-3.9pp), Z.ai (-1.7pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
+          "body": "Total routed tokens reached 537.1T (-5% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — DeepSeek (+7.8pp), Anthropic (+4.1pp), Nvidia (+0.5pp) gained, while OpenAI (-4.5pp), Tencent (-3.9pp), Z.ai (-1.7pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
         },
         {
           "title": "Gemini in context — it didn’t go to zero",
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
-            "OpenRouter developer tokens: Google share 4.9% → 3.8% (-1.1pp), 20.2T routed — down, but far from gone.",
+            "OpenRouter developer tokens: Google share 4.9% → 3.8% (-1.1pp), 20.5T routed — down, but far from gone.",
             "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #21 by tokens.",
             "Consumer app downloads (UBS): Gemini 16.9% — #2 behind ChatGPT 42.3% and ahead of Claude 12.0%.",
             "Alphabet Q2 2026: search revenue +17% YoY, total revenue $119.8B (+24% YoY)."
           ],
-          "asOf": "2026-10-26T03:29:41.970Z"
+          "asOf": "2026-10-26T12:21:44.576Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -17063,8 +17063,8 @@
         },
         {
           "label": "Oct '26",
-          "value": 527567685433320,
-          "changePct": -0.070135012253381,
+          "value": 537147309815539,
+          "changePct": -0.0532504350612187,
           "changeAbs": null,
           "direction": "down"
         }
@@ -20542,19 +20542,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Oct-26 (MTD)",
       "lastPeriodLabel": "Sep-26",
-      "thisValue": 3.5385,
+      "thisValue": 3.5387,
       "lastValue": 3.3492,
-      "changePct": 0.05652096022930843,
-      "changeAbs": 0.1892999999999998,
+      "changePct": 0.056580675982324066,
+      "changeAbs": 0.18949999999999978,
       "direction": "up",
-      "asOf": "2026-10-25",
+      "asOf": "2026-10-26",
       "isStale": false,
       "breakdown": [
         {
           "label": "H100",
-          "thisValue": 3.5385,
+          "thisValue": 3.5387,
           "lastValue": 3.3492,
-          "changePct": 0.05652096022930843,
+          "changePct": 0.056580675982324066,
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.3724,
@@ -20585,8 +20585,8 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 3.5385,
-              "changePct": 0.05652096022930843,
+              "value": 3.5387,
+              "changePct": 0.056580675982324066,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20594,9 +20594,9 @@
         },
         {
           "label": "H200",
-          "thisValue": 4.7811,
+          "thisValue": 4.7847,
           "lastValue": 4.4299,
-          "changePct": 0.07927944197385954,
+          "changePct": 0.08009210140183752,
           "direction": "up",
           "bigMove": true,
           "prevValue": 4.3974,
@@ -20627,8 +20627,8 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 4.7811,
-              "changePct": 0.07927944197385954,
+              "value": 4.7847,
+              "changePct": 0.08009210140183752,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20636,9 +20636,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 7.462,
+          "thisValue": 7.4823,
           "lastValue": 6.3742,
-          "changePct": 0.17065670986162965,
+          "changePct": 0.1738414232374259,
           "direction": "up",
           "bigMove": true,
           "prevValue": 6.5025,
@@ -20669,8 +20669,8 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 7.462,
-              "changePct": 0.17065670986162965,
+              "value": 7.4823,
+              "changePct": 0.1738414232374259,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20720,9 +20720,9 @@
         },
         {
           "label": "A100",
-          "thisValue": 1.8124,
+          "thisValue": 1.8131,
           "lastValue": 1.7444,
-          "changePct": 0.03898188488878701,
+          "changePct": 0.039383168997936244,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.8105,
@@ -20753,8 +20753,8 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 1.8124,
-              "changePct": 0.03898188488878701,
+              "value": 1.8131,
+              "changePct": 0.039383168997936244,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20762,9 +20762,9 @@
         },
         {
           "label": "L40S",
-          "thisValue": 1.5843,
+          "thisValue": 1.585,
           "lastValue": 1.5035,
-          "changePct": 0.053741270369138665,
+          "changePct": 0.05420685068174254,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.5052,
@@ -20795,15 +20795,15 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 1.5843,
-              "changePct": 0.053741270369138665,
+              "value": 1.585,
+              "changePct": 0.05420685068174254,
               "changeAbs": null,
               "direction": "up"
             }
           ]
         }
       ],
-      "summary": "Month-on-month H100 rental up 5.7% to $3.54/hr; B200 the standout at +17.1%.",
+      "summary": "Month-on-month H100 rental up 5.7% to $3.54/hr; B200 the standout at +17.4%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -20830,18 +20830,18 @@
           "available": true,
           "thisPeriodLabel": "Oct-26 (MTD)",
           "lastPeriodLabel": "Sep-26",
-          "thisValue": 3.5385,
+          "thisValue": 3.5387,
           "lastValue": 3.3492,
-          "changePct": 0.05652096022930843,
-          "changeAbs": 0.1892999999999998,
+          "changePct": 0.056580675982324066,
+          "changeAbs": 0.18949999999999978,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.5385,
+              "thisValue": 3.5387,
               "lastValue": 3.3492,
-              "changePct": 0.05652096022930843,
+              "changePct": 0.056580675982324066,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.3724,
@@ -20872,8 +20872,8 @@
                 },
                 {
                   "label": "Oct-26 (MTD)",
-                  "value": 3.5385,
-                  "changePct": 0.05652096022930843,
+                  "value": 3.5387,
+                  "changePct": 0.056580675982324066,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20881,9 +20881,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.7811,
+              "thisValue": 4.7847,
               "lastValue": 4.4299,
-              "changePct": 0.07927944197385954,
+              "changePct": 0.08009210140183752,
               "direction": "up",
               "bigMove": true,
               "prevValue": 4.3974,
@@ -20914,8 +20914,8 @@
                 },
                 {
                   "label": "Oct-26 (MTD)",
-                  "value": 4.7811,
-                  "changePct": 0.07927944197385954,
+                  "value": 4.7847,
+                  "changePct": 0.08009210140183752,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20923,9 +20923,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.462,
+              "thisValue": 7.4823,
               "lastValue": 6.3742,
-              "changePct": 0.17065670986162965,
+              "changePct": 0.1738414232374259,
               "direction": "up",
               "bigMove": true,
               "prevValue": 6.5025,
@@ -20956,8 +20956,8 @@
                 },
                 {
                   "label": "Oct-26 (MTD)",
-                  "value": 7.462,
-                  "changePct": 0.17065670986162965,
+                  "value": 7.4823,
+                  "changePct": 0.1738414232374259,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21007,9 +21007,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8124,
+              "thisValue": 1.8131,
               "lastValue": 1.7444,
-              "changePct": 0.03898188488878701,
+              "changePct": 0.039383168997936244,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.8105,
@@ -21040,8 +21040,8 @@
                 },
                 {
                   "label": "Oct-26 (MTD)",
-                  "value": 1.8124,
-                  "changePct": 0.03898188488878701,
+                  "value": 1.8131,
+                  "changePct": 0.039383168997936244,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21049,9 +21049,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5843,
+              "thisValue": 1.585,
               "lastValue": 1.5035,
-              "changePct": 0.053741270369138665,
+              "changePct": 0.05420685068174254,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5052,
@@ -21082,15 +21082,15 @@
                 },
                 {
                   "label": "Oct-26 (MTD)",
-                  "value": 1.5843,
-                  "changePct": 0.053741270369138665,
+                  "value": 1.585,
+                  "changePct": 0.05420685068174254,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month H100 rental up 5.7% to $3.54/hr; B200 the standout at +17.1%.",
+          "summary": "Month-on-month H100 rental up 5.7% to $3.54/hr; B200 the standout at +17.4%.",
           "prevLabel": "Aug-26",
           "prevValue": 3.3724,
           "prevChangePct": -0.006879373739769798,
@@ -21120,9 +21120,9 @@
             },
             {
               "label": "Oct-26 (MTD)",
-              "value": 3.5385,
-              "changePct": 0.05652096022930843,
-              "changeAbs": 0.1892999999999998,
+              "value": 3.5387,
+              "changePct": 0.056580675982324066,
+              "changeAbs": 0.18949999999999978,
               "direction": "up"
             }
           ]
@@ -21133,18 +21133,18 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 3.5385,
+          "thisValue": 3.5387,
           "lastValue": 3.3073,
-          "changePct": 0.06990596559126776,
-          "changeAbs": 0.23119999999999985,
+          "changePct": 0.06996643787984151,
+          "changeAbs": 0.23139999999999983,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.5385,
+              "thisValue": 3.5387,
               "lastValue": 3.3073,
-              "changePct": 0.06990596559126776,
+              "changePct": 0.06996643787984151,
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.9802,
@@ -21168,8 +21168,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 3.5385,
-                  "changePct": 0.06990596559126776,
+                  "value": 3.5387,
+                  "changePct": 0.06996643787984151,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21177,9 +21177,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.7811,
+              "thisValue": 4.7847,
               "lastValue": 4.3361,
-              "changePct": 0.10262678443762835,
+              "changePct": 0.10345702359262929,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.7738,
@@ -21203,8 +21203,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 4.7811,
-                  "changePct": 0.10262678443762835,
+                  "value": 4.7847,
+                  "changePct": 0.10345702359262929,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21212,9 +21212,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.462,
+              "thisValue": 7.4823,
               "lastValue": 6.3989,
-              "changePct": 0.16613792995671123,
+              "changePct": 0.16931035021644347,
               "direction": "up",
               "bigMove": true,
               "prevValue": 5.7373,
@@ -21238,8 +21238,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 7.462,
-                  "changePct": 0.16613792995671123,
+                  "value": 7.4823,
+                  "changePct": 0.16931035021644347,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21282,9 +21282,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8124,
+              "thisValue": 1.8131,
               "lastValue": 1.7896,
-              "changePct": 0.012740277156906532,
+              "changePct": 0.013131426016986953,
               "direction": "up",
               "bigMove": false,
               "prevValue": 1.7997,
@@ -21308,8 +21308,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.8124,
-                  "changePct": 0.012740277156906532,
+                  "value": 1.8131,
+                  "changePct": 0.013131426016986953,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21317,9 +21317,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5843,
+              "thisValue": 1.585,
               "lastValue": 1.5182,
-              "changePct": 0.04353840073771575,
+              "changePct": 0.043999473060202854,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5627,
@@ -21343,15 +21343,15 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.5843,
-                  "changePct": 0.04353840073771575,
+                  "value": 1.585,
+                  "changePct": 0.043999473060202854,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Quarter-on-quarter H100 rental up 7.0% to $3.54/hr; B200 the standout at +16.6%.",
+          "summary": "Quarter-on-quarter H100 rental up 7.0% to $3.54/hr; B200 the standout at +16.9%.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.9802,
           "prevChangePct": 0.109757734380243,
@@ -21374,9 +21374,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 3.5385,
-              "changePct": 0.06990596559126776,
-              "changeAbs": 0.23119999999999985,
+              "value": 3.5387,
+              "changePct": 0.06996643787984151,
+              "changeAbs": 0.23139999999999983,
               "direction": "up"
             }
           ]
@@ -21413,9 +21413,9 @@
         },
         {
           "label": "Oct-26 (MTD)",
-          "value": 3.5385,
-          "changePct": 0.05652096022930843,
-          "changeAbs": 0.1892999999999998,
+          "value": 3.5387,
+          "changePct": 0.056580675982324066,
+          "changeAbs": 0.18949999999999978,
           "direction": "up"
         }
       ]
