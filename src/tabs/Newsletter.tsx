@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp, X } from 'lucide-react';
+import { Download, ShieldCheck, Quote, Eye, KeyRound, TrendingUp, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { ConsolidatedData, Newsletter, ChangeBlock, AuxTable } from '../types';
 import type { NewsletterState } from '../lib/newsletter';
@@ -113,7 +113,6 @@ function NewsletterArticle({
       <Masthead client={data.client} editionLabel={editionLabel} generatedAt={data.generatedAt} onDownloadPdf={onDownloadPdf} />
 
       {!aiOk && <EditorNote state={newsletter} />}
-      {aiOk && nl && <AiStamp nl={nl} />}
 
       <ByTheNumbers movers={topMovers} />
 
@@ -207,15 +206,6 @@ function Masthead({
         </span>
       </div>
     </header>
-  );
-}
-
-function AiStamp({ nl }: { nl: Newsletter }) {
-  return (
-    <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-semibold text-indigo-600 ring-1 ring-indigo-100">
-      <Sparkles size={12} strokeWidth={2.4} />
-      AI edition · written by {nl.model?.split('.').pop()?.replace(/[:-]v?\d.*$/, '') || nl.provider || 'Bedrock'} from the real figures
-    </div>
   );
 }
 

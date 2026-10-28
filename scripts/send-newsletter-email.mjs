@@ -66,7 +66,7 @@ async function run() {
   const subject = `${clientName} — Intelligence edition (${editionLabel})`;
   const editionNote =
     status === 'ok'
-      ? 'The AI editorial edition is attached.'
+      ? 'The latest edition is attached.'
       : 'The data edition is attached (AI prose off — figures are live and source-stamped, nothing fabricated).';
   const html =
     `<div style="font-family:Inter,system-ui,sans-serif;color:#334155;line-height:1.6">` +
