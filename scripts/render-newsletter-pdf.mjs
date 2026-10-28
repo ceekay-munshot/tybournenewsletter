@@ -85,16 +85,26 @@ async function run() {
   const chromium = await loadChromium();
   const browser = await chromium.launch({ args: ['--no-sandbox', '--disable-dev-shm-usage'] });
   try {
-    const page = await browser.newPage({ viewport: { width: 1200, height: 1600 }, deviceScaleFactor: 2 });
+    const page = await browser.newPage({ viewport: { width: 1200, height: 1600 }, deviceScaleFactor: 2, acceptDownloads: true });
     await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
     await page.waitForSelector('.nl-root', { timeout: 30000 });
     await page.waitForTimeout(1200); // let charts finish their entrance animation
-    await page.pdf({
-      path: OUT,
-      format: 'A4',
-      printBackground: true,
-      margin: { top: '13mm', bottom: '13mm', left: '12mm', right: '12mm' },
-    });
+    try {
+      // Same file a reader gets from the in-app "Download PDF" button (src/lib/pdf.ts).
+      const [download] = await Promise.all([
+        page.waitForEvent('download', { timeout: 60000 }),
+        page.getByRole('button', { name: /Download PDF/ }).click(),
+      ]);
+      await download.saveAs(OUT);
+    } catch (e) {
+      console.warn('In-app PDF export unavailable, using the print stylesheet instead:', e instanceof Error ? e.message : e);
+      await page.pdf({
+        path: OUT,
+        format: 'A4',
+        printBackground: true,
+        margin: { top: '13mm', bottom: '13mm', left: '12mm', right: '12mm' },
+      });
+    }
     console.log(`Newsletter PDF written: ${OUT}`);
   } finally {
     await browser.close();

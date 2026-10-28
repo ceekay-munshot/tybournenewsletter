@@ -1,14 +1,18 @@
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
-import { Download, ShieldCheck, Quote, Eye, Sparkles, KeyRound, TrendingUp, X } from 'lucide-react';
+import { Download, Loader2, ShieldCheck, Quote, Eye, KeyRound, TrendingUp, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { ConsolidatedData, Newsletter, ChangeBlock, AuxTable } from '../types';
 import type { NewsletterState } from '../lib/newsletter';
 import { MoversChart } from '../components/MoversChart';
 import { MunshotMark } from '../components/MunshotMark';
+import { Emphasized } from '../components/Emphasized';
 import { BreakdownRows, SeriesRows } from '../components/MultiPeriodView';
 import { iconFor } from '../lib/icons';
 import { sectorColor, directionColor, withAlpha } from '../lib/brand';
 import { headlineText, headlineMagnitude, fmtValue, dateLabel } from '../lib/format';
+import { buildLexicon } from '../lib/emphasis';
+import type { Lexicon } from '../lib/emphasis';
 
 const periodArrow = (b: ChangeBlock) => `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
 
@@ -43,7 +47,6 @@ export function NewsletterModal(props: {
   open: boolean;
   onClose: () => void;
   onSelect: (id: string) => void;
-  onDownloadPdf: () => void;
 }) {
   if (!props.open) return null;
   return (
@@ -62,12 +65,7 @@ export function NewsletterModal(props: {
         >
           <X size={16} strokeWidth={2.4} />
         </button>
-        <NewsletterArticle
-          data={props.data}
-          newsletter={props.newsletter}
-          onSelect={props.onSelect}
-          onDownloadPdf={props.onDownloadPdf}
-        />
+        <NewsletterArticle data={props.data} newsletter={props.newsletter} onSelect={props.onSelect} />
       </div>
     </div>
   );
@@ -77,17 +75,17 @@ function NewsletterArticle({
   data,
   newsletter,
   onSelect,
-  onDownloadPdf,
 }: {
   data: ConsolidatedData;
   newsletter: NewsletterState;
   onSelect: (id: string) => void;
-  onDownloadPdf: () => void;
 }) {
   const nl: Newsletter | null = newsletter.status === 'ready' ? newsletter.data : null;
   const aiOk = nl?.status === 'ok';
 
   const editionLabel = (aiOk && nl?.editionLabel) || deriveEditionLabel(data);
+  const lexicon = useMemo(() => buildLexicon(data.systems), [data.systems]);
+  const { articleRef, pdfBusy, downloadPdf } = usePdfDownload(data, editionLabel);
 
   // AI per-dashboard line lookup (empty unless status 'ok')
   const aiLine = new Map<string, string>();
@@ -109,11 +107,16 @@ function NewsletterArticle({
   const sources = [...new Set(data.systems.map((s) => s.sourceName).filter(Boolean))];
 
   return (
-    <article className="nl-root animate-fade-in">
-      <Masthead client={data.client} editionLabel={editionLabel} generatedAt={data.generatedAt} onDownloadPdf={onDownloadPdf} />
+    <article ref={articleRef} className="nl-root animate-fade-in">
+      <Masthead
+        client={data.client}
+        editionLabel={editionLabel}
+        generatedAt={data.generatedAt}
+        pdfBusy={pdfBusy}
+        onDownloadPdf={downloadPdf}
+      />
 
       {!aiOk && <EditorNote state={newsletter} />}
-      {aiOk && nl && <AiStamp nl={nl} />}
 
       <ByTheNumbers movers={topMovers} />
 
@@ -121,7 +124,9 @@ function NewsletterArticle({
       <section className="nl-section nl-avoid mt-7">
         <SectionLabel>Executive summary</SectionLabel>
         {aiOk && nl?.executiveSummary ? (
-          <p className="nl-lede mt-2 text-[15px] leading-relaxed text-slate-700">{nl.executiveSummary}</p>
+          <p className="nl-lede mt-2 text-[15px] leading-relaxed text-slate-700">
+            <Emphasized text={nl.executiveSummary} lexicon={lexicon} />
+          </p>
         ) : (
           <p className="mt-2 text-[14px] leading-relaxed text-slate-600">
             The AI editor writes the prose summary here. It is off in this build, so this edition shows the live,
@@ -150,16 +155,50 @@ function NewsletterArticle({
         </p>
         <div className="mt-3 flex flex-col gap-2.5">
           {ranked.map((b) => (
-            <SystemDetail key={b.systemId} b={b} line={aiLine.get(b.systemId)} onSelect={onSelect} />
+            <SystemDetail key={b.systemId} b={b} line={aiLine.get(b.systemId)} lexicon={lexicon} onSelect={onSelect} />
           ))}
         </div>
       </section>
 
-      <WatchList items={aiOk ? nl?.watchList ?? [] : []} enabled={aiOk} />
+      <WatchList items={aiOk ? nl?.watchList ?? [] : []} enabled={aiOk} lexicon={lexicon} />
 
       <SourcesBox sources={sources} methodNote={aiOk ? nl?.methodNote : null} publishedBy={data.client.publishedBy} />
     </article>
   );
+}
+
+/** "Download PDF": snapshot this article as it looks on screen and save it as an A4 file
+ *  (lib/pdf.ts, loaded on demand). Fonts are fetched as the newsletter opens so the click
+ *  goes straight to work. Falls back to the browser's print dialog if anything fails. */
+function usePdfDownload(data: ConsolidatedData, editionLabel: string) {
+  const articleRef = useRef<HTMLElement>(null);
+  const [pdfBusy, setPdfBusy] = useState(false);
+
+  useEffect(() => {
+    import('../lib/pdf').then((m) => m.prewarmPdf()).catch(() => {});
+  }, []);
+
+  const downloadPdf = async () => {
+    const root = articleRef.current;
+    if (!root || pdfBusy) return;
+    setPdfBusy(true);
+    try {
+      const { downloadNewsletterPdf } = await import('../lib/pdf');
+      const name = `${data.client.shortName} Intelligence`;
+      await downloadNewsletterPdf(
+        root,
+        { title: `${name} — ${editionLabel}`, footer: `${name} · ${dateLabel(data.generatedAt)} · Published by ${data.client.publishedBy}` },
+        `${name.replace(/\s+/g, '-')}-${data.generatedAt.slice(0, 7)}.pdf`
+      );
+    } catch (e) {
+      console.error('PDF export failed, falling back to print', e);
+      window.print();
+    } finally {
+      setPdfBusy(false);
+    }
+  };
+
+  return { articleRef, pdfBusy, downloadPdf };
 }
 
 // ---------------------------------------------------------------------------
@@ -168,11 +207,13 @@ function Masthead({
   client,
   editionLabel,
   generatedAt,
+  pdfBusy,
   onDownloadPdf,
 }: {
   client: ConsolidatedData['client'];
   editionLabel: string;
   generatedAt: string;
+  pdfBusy: boolean;
   onDownloadPdf: () => void;
 }) {
   return (
@@ -184,9 +225,19 @@ function Masthead({
         </span>
         <button
           onClick={onDownloadPdf}
-          className="no-print inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3 py-1.5 text-[12px] font-semibold text-white shadow-sm transition hover:bg-slate-700"
+          disabled={pdfBusy}
+          aria-busy={pdfBusy}
+          className="no-print inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3 py-1.5 text-[12px] font-semibold text-white shadow-sm transition hover:bg-slate-700 disabled:cursor-wait disabled:bg-slate-700"
         >
-          <Download size={14} strokeWidth={2.4} /> Download PDF
+          {pdfBusy ? (
+            <>
+              <Loader2 size={14} strokeWidth={2.4} className="animate-spin" /> Preparing…
+            </>
+          ) : (
+            <>
+              <Download size={14} strokeWidth={2.4} /> Download PDF
+            </>
+          )}
         </button>
       </div>
 
@@ -207,15 +258,6 @@ function Masthead({
         </span>
       </div>
     </header>
-  );
-}
-
-function AiStamp({ nl }: { nl: Newsletter }) {
-  return (
-    <div className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-[11px] font-semibold text-indigo-600 ring-1 ring-indigo-100">
-      <Sparkles size={12} strokeWidth={2.4} />
-      AI edition · written by {nl.model?.split('.').pop()?.replace(/[:-]v?\d.*$/, '') || nl.provider || 'Bedrock'} from the real figures
-    </div>
   );
 }
 
@@ -271,7 +313,17 @@ function ByTheNumbers({ movers }: { movers: ChangeBlock[] }) {
 /** A full, document-style entry per dashboard: headline, the narrative line, the COMPLETE
  *  breakdown table, the lifted "why it moved" insights, and the honest caveat. The
  *  newsletter is the detailed record — the dashboard is the glance. */
-function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; onSelect: (id: string) => void }) {
+function SystemDetail({
+  b,
+  line,
+  lexicon,
+  onSelect,
+}: {
+  b: ChangeBlock;
+  line?: string;
+  lexicon: Lexicon;
+  onSelect: (id: string) => void;
+}) {
   const Icon = iconFor(b.systemId, b.sector);
   const accent = sectorColor(b.sector);
   const c = directionColor(b.direction);
@@ -345,7 +397,11 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
         )}
       </div>
 
-      {body && <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">{body}</p>}
+      {body && (
+        <p className="mt-1.5 text-[12.5px] leading-snug text-slate-600">
+          <Emphasized text={body} lexicon={lexicon} />
+        </p>
+      )}
 
       {narrative && b.highlights ? (
         <div className="nl-avoid mt-2.5">
@@ -460,13 +516,19 @@ function SystemDetail({ b, line, onSelect }: { b: ChangeBlock; line?: string; on
             {insights.map((ins, i) => (
               <div key={i}>
                 <div className="text-[12px] font-bold text-slate-800">{ins.title}</div>
-                {ins.body && <p className="text-[11.5px] leading-snug text-slate-600">{ins.body}</p>}
+                {ins.body && (
+                  <p className="text-[11.5px] leading-snug text-slate-600">
+                    <Emphasized text={ins.body} lexicon={lexicon} />
+                  </p>
+                )}
                 {ins.bullets && ins.bullets.length > 0 && (
                   <ul className="mt-0.5 flex flex-col gap-0.5">
                     {ins.bullets.map((bl, j) => (
                       <li key={j} className="flex gap-1.5 text-[11.5px] leading-snug text-slate-600">
                         <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full" style={{ background: accent }} />
-                        <span>{bl}</span>
+                        <span>
+                          <Emphasized text={bl} lexicon={lexicon} />
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -549,7 +611,7 @@ function NlThemeColumn({
 function NlAuxTable({ table }: { table: AuxTable }) {
   const alignOf = (i: number) => table.align?.[i] ?? (i === 0 ? 'left' : 'right');
   return (
-    <div>
+    <div className="nl-table">
       <div className="text-[11px] font-bold text-slate-700">{table.title}</div>
       {table.subtitle && <div className="text-[10.5px] leading-snug text-slate-400">{table.subtitle}</div>}
       <div className="mt-1 overflow-x-auto rounded-lg ring-1 ring-slate-200/70">
@@ -596,7 +658,7 @@ function NlAuxTable({ table }: { table: AuxTable }) {
   );
 }
 
-function WatchList({ items, enabled }: { items: string[]; enabled: boolean }) {
+function WatchList({ items, enabled, lexicon }: { items: string[]; enabled: boolean; lexicon: Lexicon }) {
   return (
     <section className="nl-section nl-avoid mt-7">
       <SectionLabel icon={Eye}>Watch list</SectionLabel>
@@ -605,7 +667,9 @@ function WatchList({ items, enabled }: { items: string[]; enabled: boolean }) {
           {items.map((w, i) => (
             <li key={i} className="flex gap-2 rounded-xl bg-white p-3 text-[13px] leading-snug text-slate-700 ring-1 ring-slate-200/70">
               <span className="tnum mt-0.5 shrink-0 font-display text-[12px] font-bold text-indigo-500">{String(i + 1).padStart(2, '0')}</span>
-              <span>{w}</span>
+              <span>
+                <Emphasized text={w} lexicon={lexicon} />
+              </span>
             </li>
           ))}
         </ul>
