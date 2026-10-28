@@ -38,8 +38,13 @@ First client: **Tybourne Global Holdings** (published by Munshot).
   episode seen in the last 3 months, because the feed only holds each show's latest few episodes.
 - In-app **Newsletter tab**: an editorial "intelligence edition" built from the real data
   (masthead, by-the-numbers, movers, per-sector lines, watch list, sources) with the AI prose
-  layered on when available. A prominent **Download PDF** button (header + masthead) prints it
-  via a dedicated `@media print` stylesheet that keeps colour and charts.
+  layered on when available. The prose is set in research-note style by a rule-based
+  **emphasis engine** (`src/lib/emphasis.ts`): signed moves bold green/red, levels bold, tracked
+  names (the dashboards' own rows) in dark ink, period stamps muted, the passage's biggest % move
+  and risk words ("worth watching", "outlier") marked — the text itself is never changed.
+  **Download PDF** (masthead) saves an A4 file in one click (`src/lib/pdf.ts`): it snapshots the
+  edition exactly as it looks on screen and breaks pages cleanly (never through a row, card or
+  heading). No print dialog; `Ctrl+P` still uses the `@media print` stylesheet.
 
 Each new system still plugs in with **one config entry + one connector file**; no architectural
 changes.
@@ -59,7 +64,7 @@ scripts/
   consolidate.mjs         # reads config -> runs each connector -> writes consolidated.json
   newsletter.mjs          # consolidated.json -> Bedrock -> newsletter.json (honest no-key state)
   podcast-monthly.mjs     # podcast episodes -> Bedrock -> podcast-monthly.json (+ podcast-archive.json)
-  render-newsletter-pdf.mjs  # render the Newsletter edition to an A4 PDF (Playwright)
+  render-newsletter-pdf.mjs  # save the in-app Download PDF file for the email (Playwright)
   send-newsletter-email.mjs  # email the PDF to recipients (skips cleanly if unconfigured)
   connectors/             # one file per connector TYPE
   lib/                    # http, quarters, changeBlock, bedrock helpers

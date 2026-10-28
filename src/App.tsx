@@ -41,13 +41,6 @@ export default function App() {
     if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Download PDF: open the newsletter modal, then the browser's print dialog.
-  // The print stylesheet flattens the modal into a full-flow A4 document.
-  const downloadPdf = () => {
-    setNlOpen(true);
-    if (typeof window !== 'undefined') window.setTimeout(() => window.print(), 300);
-  };
-
   return (
     <div className={`flex min-h-screen flex-col${nlOpen ? ' print-only-newsletter' : ''}`}>
       <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
@@ -91,7 +84,6 @@ export default function App() {
           setNlOpen(false);
           openSystem(id);
         }}
-        onDownloadPdf={downloadPdf}
       />
     </div>
   );
