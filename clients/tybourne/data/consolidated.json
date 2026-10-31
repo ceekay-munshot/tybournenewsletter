@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T11:46:47.288Z",
+  "generatedAt": "2026-10-31T16:54:20.670Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3131,7 +3131,7 @@
       "changePct": -0.02040816326530623,
       "changeAbs": -0.050000000000000266,
       "direction": "down",
-      "asOf": "2026-10-29T00:00:00.000Z",
+      "asOf": "2026-10-28T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.0% (output -1.1%); biggest move: DeepSeek -18.6%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.0% (output -1.2%); biggest move: DeepSeek -18.6%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.0% (output -1.1%); biggest move: DeepSeek -18.6%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.0% (output -1.2%); biggest move: DeepSeek -18.6%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-18.6% input · share +10.82pp"
+          "body": "-18.6% input · share +10.86pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -15850,22 +15850,22 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Oct '26",
       "lastPeriodLabel": "Sep '26",
-      "thisValue": 681289919594189,
+      "thisValue": 687610713854697,
       "lastValue": 567359447215877,
-      "changePct": 0.20080827584239047,
-      "changeAbs": 113930472378312,
+      "changePct": 0.21194899852097657,
+      "changeAbs": 120251266638820,
       "direction": "up",
-      "asOf": "2026-10-31T11:46:26.675Z",
+      "asOf": "2026-10-31T16:54:01.079Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "DeepSeek",
-          "thisValue": 215033659699091,
+          "thisValue": 217580003129003,
           "lastValue": 127448773263517,
-          "changePct": 0.6872163944213162,
+          "changePct": 0.7071957427093307,
           "direction": "up",
           "bigMove": true,
-          "note": "share 22.5% → 31.6% (+9.1pp)",
+          "note": "share 22.5% → 31.6% (+9.2pp)",
           "prevValue": 100336709294663,
           "prevChangePct": 0.27021081476005826,
           "prevChangeAbs": null,
@@ -15894,8 +15894,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 215033659699091,
-              "changePct": 0.6872163944213162,
+              "value": 217580003129003,
+              "changePct": 0.7071957427093307,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15903,9 +15903,9 @@
         },
         {
           "label": "Others",
-          "thisValue": 138670463551120,
+          "thisValue": 139958155287794,
           "lastValue": 122077779368766,
-          "changePct": 0.13591895485116673,
+          "changePct": 0.14646708034404787,
           "direction": "up",
           "bigMove": false,
           "note": "share 21.5% → 20.4% (-1.2pp)",
@@ -15933,8 +15933,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 138670463551120,
-              "changePct": 0.13591895485116673,
+              "value": 139958155287794,
+              "changePct": 0.14646708034404787,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15942,9 +15942,9 @@
         },
         {
           "label": "Z.ai",
-          "thisValue": 73796186450237,
+          "thisValue": 74368923829626,
           "lastValue": 70878297767449,
-          "changePct": 0.04116758972346605,
+          "changePct": 0.0492481644188142,
           "direction": "up",
           "bigMove": true,
           "note": "share 12.5% → 10.8% (-1.7pp)",
@@ -15976,8 +15976,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 73796186450237,
-              "changePct": 0.04116758972346605,
+              "value": 74368923829626,
+              "changePct": 0.0492481644188142,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15985,12 +15985,12 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 67010108836904,
+          "thisValue": 67737277769794,
           "lastValue": 78143909427722,
-          "changePct": -0.14247816205197714,
+          "changePct": -0.13317265202291234,
           "direction": "down",
           "bigMove": true,
-          "note": "share 13.8% → 9.8% (-3.9pp)",
+          "note": "share 13.8% → 9.9% (-3.9pp)",
           "prevValue": 59713148035446,
           "prevChangePct": 0.3086549947314018,
           "prevChangeAbs": null,
@@ -16019,8 +16019,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 67010108836904,
-              "changePct": -0.14247816205197714,
+              "value": 67737277769794,
+              "changePct": -0.13317265202291234,
               "changeAbs": null,
               "direction": "down"
             }
@@ -16028,9 +16028,9 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 53230215160815,
+          "thisValue": 53574047434351,
           "lastValue": 21184120349374,
-          "changePct": 1.512741349790716,
+          "changePct": 1.528972010675635,
           "direction": "up",
           "bigMove": true,
           "note": "share 3.7% → 7.8% (+4.1pp)",
@@ -16062,8 +16062,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 53230215160815,
-              "changePct": 1.512741349790716,
+              "value": 53574047434351,
+              "changePct": 1.528972010675635,
               "changeAbs": null,
               "direction": "up"
             }
@@ -16071,9 +16071,9 @@
         },
         {
           "label": "Tencent",
-          "thisValue": 43956768994931,
+          "thisValue": 44351284175845,
           "lastValue": 58737559244240,
-          "changePct": -0.25164120606115337,
+          "changePct": -0.24492463176031212,
           "direction": "down",
           "bigMove": true,
           "note": "share 10.4% → 6.5% (-3.9pp)",
@@ -16105,8 +16105,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 43956768994931,
-              "changePct": -0.25164120606115337,
+              "value": 44351284175845,
+              "changePct": -0.24492463176031212,
               "changeAbs": null,
               "direction": "down"
             }
@@ -16119,7 +16119,7 @@
           "changePct": -0.07991897960305032,
           "direction": "down",
           "bigMove": true,
-          "note": "share 6.5% → 5.0% (-1.5pp)",
+          "note": "share 6.5% → 5.0% (-1.6pp)",
           "prevValue": 32829548989946,
           "prevChangePct": 0.12913876548682898,
           "prevChangeAbs": null,
@@ -16157,9 +16157,9 @@
         },
         {
           "label": "Nvidia",
-          "thisValue": 30058835155434,
+          "thisValue": 30314821427152,
           "lastValue": 23747738791318,
-          "changePct": 0.26575567550133616,
+          "changePct": 0.27653507113000914,
           "direction": "up",
           "bigMove": true,
           "note": "share 4.2% → 4.4% (+0.2pp)",
@@ -16191,8 +16191,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 30058835155434,
-              "changePct": 0.26575567550133616,
+              "value": 30314821427152,
+              "changePct": 0.27653507113000914,
               "changeAbs": null,
               "direction": "up"
             }
@@ -16200,9 +16200,9 @@
         },
         {
           "label": "Google (Gemini)",
-          "thisValue": 25427091286573,
+          "thisValue": 25619610342048,
           "lastValue": 28072152585494,
-          "changePct": -0.09422367204885487,
+          "changePct": -0.08736566374725842,
           "direction": "down",
           "bigMove": false,
           "note": "share 4.9% → 3.7% (-1.2pp)",
@@ -16234,15 +16234,15 @@
             },
             {
               "label": "Oct '26",
-              "value": 25427091286573,
-              "changePct": -0.09422367204885487,
+              "value": 25619610342048,
+              "changePct": -0.08736566374725842,
               "changeAbs": null,
               "direction": "down"
             }
           ]
         }
       ],
-      "summary": "Month-on-month routed tokens up 20.1% to 681.3T (Sep '26 → Oct '26) — 4 providers grew volume, 4 shrank, and share shifted toward lower-cost open-weight models.",
+      "summary": "Month-on-month routed tokens up 21.2% to 687.6T (Sep '26 → Oct '26) — 4 providers grew volume, 4 shrank, and share shifted toward lower-cost open-weight models.",
       "sourceName": "OpenRouter / UBS / SEC",
       "sourceUrl": "https://google-dash-git.pages.dev/",
       "dashboardUrl": "https://google-dash-git.pages.dev/",
@@ -16687,20 +16687,20 @@
           "available": true,
           "thisPeriodLabel": "Oct '26",
           "lastPeriodLabel": "Sep '26",
-          "thisValue": 681289919594189,
+          "thisValue": 687610713854697,
           "lastValue": 567359447215877,
-          "changePct": 0.20080827584239047,
+          "changePct": 0.21194899852097657,
           "direction": "up",
           "bigMove": false,
           "breakdown": [
             {
               "label": "DeepSeek",
-              "thisValue": 215033659699091,
+              "thisValue": 217580003129003,
               "lastValue": 127448773263517,
-              "changePct": 0.6872163944213162,
+              "changePct": 0.7071957427093307,
               "direction": "up",
               "bigMove": true,
-              "note": "share 22.5% → 31.6% (+9.1pp)",
+              "note": "share 22.5% → 31.6% (+9.2pp)",
               "prevValue": 100336709294663,
               "prevChangePct": 0.27021081476005826,
               "prevChangeAbs": null,
@@ -16729,8 +16729,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 215033659699091,
-                  "changePct": 0.6872163944213162,
+                  "value": 217580003129003,
+                  "changePct": 0.7071957427093307,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16738,9 +16738,9 @@
             },
             {
               "label": "Others",
-              "thisValue": 138670463551120,
+              "thisValue": 139958155287794,
               "lastValue": 122077779368766,
-              "changePct": 0.13591895485116673,
+              "changePct": 0.14646708034404787,
               "direction": "up",
               "bigMove": false,
               "note": "share 21.5% → 20.4% (-1.2pp)",
@@ -16768,8 +16768,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 138670463551120,
-                  "changePct": 0.13591895485116673,
+                  "value": 139958155287794,
+                  "changePct": 0.14646708034404787,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16777,9 +16777,9 @@
             },
             {
               "label": "Z.ai",
-              "thisValue": 73796186450237,
+              "thisValue": 74368923829626,
               "lastValue": 70878297767449,
-              "changePct": 0.04116758972346605,
+              "changePct": 0.0492481644188142,
               "direction": "up",
               "bigMove": true,
               "note": "share 12.5% → 10.8% (-1.7pp)",
@@ -16811,8 +16811,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 73796186450237,
-                  "changePct": 0.04116758972346605,
+                  "value": 74368923829626,
+                  "changePct": 0.0492481644188142,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16820,12 +16820,12 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 67010108836904,
+              "thisValue": 67737277769794,
               "lastValue": 78143909427722,
-              "changePct": -0.14247816205197714,
+              "changePct": -0.13317265202291234,
               "direction": "down",
               "bigMove": true,
-              "note": "share 13.8% → 9.8% (-3.9pp)",
+              "note": "share 13.8% → 9.9% (-3.9pp)",
               "prevValue": 59713148035446,
               "prevChangePct": 0.3086549947314018,
               "prevChangeAbs": null,
@@ -16854,8 +16854,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 67010108836904,
-                  "changePct": -0.14247816205197714,
+                  "value": 67737277769794,
+                  "changePct": -0.13317265202291234,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -16863,9 +16863,9 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 53230215160815,
+              "thisValue": 53574047434351,
               "lastValue": 21184120349374,
-              "changePct": 1.512741349790716,
+              "changePct": 1.528972010675635,
               "direction": "up",
               "bigMove": true,
               "note": "share 3.7% → 7.8% (+4.1pp)",
@@ -16897,8 +16897,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 53230215160815,
-                  "changePct": 1.512741349790716,
+                  "value": 53574047434351,
+                  "changePct": 1.528972010675635,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -16906,9 +16906,9 @@
             },
             {
               "label": "Tencent",
-              "thisValue": 43956768994931,
+              "thisValue": 44351284175845,
               "lastValue": 58737559244240,
-              "changePct": -0.25164120606115337,
+              "changePct": -0.24492463176031212,
               "direction": "down",
               "bigMove": true,
               "note": "share 10.4% → 6.5% (-3.9pp)",
@@ -16940,8 +16940,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 43956768994931,
-                  "changePct": -0.25164120606115337,
+                  "value": 44351284175845,
+                  "changePct": -0.24492463176031212,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -16954,7 +16954,7 @@
               "changePct": -0.07991897960305032,
               "direction": "down",
               "bigMove": true,
-              "note": "share 6.5% → 5.0% (-1.5pp)",
+              "note": "share 6.5% → 5.0% (-1.6pp)",
               "prevValue": 32829548989946,
               "prevChangePct": 0.12913876548682898,
               "prevChangeAbs": null,
@@ -16992,9 +16992,9 @@
             },
             {
               "label": "Nvidia",
-              "thisValue": 30058835155434,
+              "thisValue": 30314821427152,
               "lastValue": 23747738791318,
-              "changePct": 0.26575567550133616,
+              "changePct": 0.27653507113000914,
               "direction": "up",
               "bigMove": true,
               "note": "share 4.2% → 4.4% (+0.2pp)",
@@ -17026,8 +17026,8 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 30058835155434,
-                  "changePct": 0.26575567550133616,
+                  "value": 30314821427152,
+                  "changePct": 0.27653507113000914,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -17035,9 +17035,9 @@
             },
             {
               "label": "Google (Gemini)",
-              "thisValue": 25427091286573,
+              "thisValue": 25619610342048,
               "lastValue": 28072152585494,
-              "changePct": -0.09422367204885487,
+              "changePct": -0.08736566374725842,
               "direction": "down",
               "bigMove": false,
               "note": "share 4.9% → 3.7% (-1.2pp)",
@@ -17069,15 +17069,15 @@
                 },
                 {
                   "label": "Oct '26",
-                  "value": 25427091286573,
-                  "changePct": -0.09422367204885487,
+                  "value": 25619610342048,
+                  "changePct": -0.08736566374725842,
                   "changeAbs": null,
                   "direction": "down"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month routed tokens up 20.1% to 681.3T (Sep '26 → Oct '26) — 4 providers grew volume, 4 shrank, and share shifted toward lower-cost open-weight models.",
+          "summary": "Month-on-month routed tokens up 21.2% to 687.6T (Sep '26 → Oct '26) — 4 providers grew volume, 4 shrank, and share shifted toward lower-cost open-weight models.",
           "prevLabel": "Aug '26",
           "prevValue": 466224823981312,
           "prevChangePct": 0.21692243319634744,
@@ -17106,8 +17106,8 @@
             },
             {
               "label": "Oct '26",
-              "value": 681289919594189,
-              "changePct": 0.20080827584239047,
+              "value": 687610713854697,
+              "changePct": 0.21194899852097657,
               "changeAbs": null,
               "direction": "up"
             }
@@ -17441,18 +17441,18 @@
       "insights": [
         {
           "title": "The market is the story, not any one model",
-          "body": "Total routed tokens reached 681.3T (+20% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — DeepSeek (+9.1pp), Anthropic (+4.1pp), Nvidia (+0.2pp) gained, while OpenAI (-3.9pp), Tencent (-3.9pp), Z.ai (-1.7pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
+          "body": "Total routed tokens reached 687.6T (+21% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — DeepSeek (+9.2pp), Anthropic (+4.1pp), Nvidia (+0.2pp) gained, while OpenAI (-3.9pp), Tencent (-3.9pp), Z.ai (-1.7pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
         },
         {
           "title": "Gemini in context — it didn’t go to zero",
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
-            "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 25.4T routed — down, but far from gone.",
+            "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 25.6T routed — down, but far from gone.",
             "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #23 by tokens.",
             "Consumer app downloads (UBS): Gemini 14.4% — #2 behind ChatGPT 47.1% and ahead of Claude 11.6%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-10-31T11:46:26.737Z"
+          "asOf": "2026-10-31T16:54:01.398Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -17484,8 +17484,8 @@
         },
         {
           "label": "Oct '26",
-          "value": 681289919594189,
-          "changePct": 0.20080827584239047,
+          "value": 687610713854697,
+          "changePct": 0.21194899852097657,
           "changeAbs": null,
           "direction": "up"
         }
