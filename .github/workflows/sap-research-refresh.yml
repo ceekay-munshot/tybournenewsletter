@@ -10,18 +10,23 @@ name: Refresh SAP research (monthly)
 # that button on a schedule. The refreshed findings land in the sap repo's
 # dashboard.json, and our next 6-hourly "Refresh consolidated data" run lifts them.
 #
-# OPTIONAL + gated, like the email workflow: if SAP_RESEARCH_DISPATCH_TOKEN isn't
-# set, this logs a notice and exits 0 — it never fails just because it isn't wired.
-# The token is a fine-grained PAT (or classic token) with permission to trigger
-# Actions / write contents on ceekay-munshot/sap. See README "Secrets & variables".
+# Not silent: if SAP_RESEARCH_DISPATCH_TOKEN isn't set, the run FAILS (it used to skip
+# with a green tick, so nobody noticed the findings weren't being refreshed). The token
+# is a fine-grained PAT (or classic token) that can read Actions and send a dispatch on
+# ceekay-munshot/sap (Contents + Actions read/write). See README "Secrets & variables".
 #
-# Simpler alternative (no cross-repo token): add this same monthly `schedule` block
-# directly to ceekay-munshot/sap's .github/workflows/research.yml, which already has
-# the Firecrawl + model secrets it needs.
+# Several chances on the 1st (GitHub delays scheduled runs by hours and sometimes drops
+# them). Before dispatching, a scheduled run checks whether research was already
+# dispatched to the sap repo this month and does nothing if so — the deep pass is
+# expensive, so it runs at most once a month. A manual run always dispatches.
+#
+# Simpler alternative (no cross-repo token): add a monthly `schedule` block directly to
+# ceekay-munshot/sap's .github/workflows/research.yml, which already has the Firecrawl +
+# model secrets it needs — then delete this workflow.
 on:
   schedule:
-    # 1st of every month, 06:00 UTC — ahead of the newsletter so findings are fresh.
-    - cron: '0 6 1 * *'
+    # 1st of every month — ahead of the edition on the 2nd so findings are fresh.
+    - cron: '7 6,12,18 1 * *'
   workflow_dispatch:
     inputs:
       only:
@@ -45,20 +50,33 @@ jobs:
         env:
           TOKEN: ${{ secrets.SAP_RESEARCH_DISPATCH_TOKEN }}
           ONLY: ${{ inputs.only }}
+          EVENT: ${{ github.event_name }}
         run: |
           if [ -z "$TOKEN" ]; then
-            echo "::notice::SAP_RESEARCH_DISPATCH_TOKEN not set — skipping the monthly SAP research trigger (expected until configured)."
-            exit 0
+            echo "::error::SAP_RESEARCH_DISPATCH_TOKEN is not set, so this month's SAP research was NOT refreshed (the newsletter's SAP findings will be stale). Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          api() { curl -sS -o /tmp/resp.txt -w '%{http_code}' -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" "$@"; }
+          if [ "$EVENT" = "schedule" ]; then
+            since="$(date -u +%Y-%m)-01"
+            code=$(api -G https://api.github.com/repos/ceekay-munshot/sap/actions/runs \
+              --data-urlencode "event=repository_dispatch" --data-urlencode "created=>=${since}" -d per_page=1)
+            if [ "$code" != "200" ]; then
+              echo "::error::Couldn't check ceekay-munshot/sap for this month's research run (HTTP $code) — the token needs Actions: read on that repo."
+              cat /tmp/resp.txt
+              exit 1
+            fi
+            done_runs=$(jq -r '.total_count' /tmp/resp.txt)
+            if [ "${done_runs:-0}" -gt 0 ]; then
+              echo "::notice::SAP research was already dispatched this month (since ${since}) — nothing to do."
+              exit 0
+            fi
           fi
           # ONLY comes from workflow inputs (trusted), but pass it via jq so the JSON
           # is always well-formed rather than string-interpolated.
           payload=$(jq -nc --arg only "$ONLY" '{event_type:"research", client_payload:{only:$only}}')
-          code=$(curl -sS -o /tmp/resp.txt -w '%{http_code}' -X POST \
-            -H "Authorization: Bearer $TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/ceekay-munshot/sap/dispatches \
-            -d "$payload")
+          code=$(api -X POST https://api.github.com/repos/ceekay-munshot/sap/dispatches -d "$payload")
           if [ "$code" = "204" ]; then
             echo "Dispatched SAP research run (repository_dispatch type=research)."
           else

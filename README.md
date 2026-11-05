@@ -60,12 +60,14 @@ clients/<client>/
   data/newsletter.json    # GENERATED + committed (AI edition, or honest no-key state)
   data/podcast-monthly.json  # GENERATED + committed (monthly podcast summaries + theme comparison)
   data/podcast-archive.json  # GENERATED + committed (rolling 3-month episode archive)
+  data/email-log.json     # GENERATED + committed (one entry per month the newsletter was emailed)
 scripts/
   consolidate.mjs         # reads config -> runs each connector -> writes consolidated.json
   newsletter.mjs          # consolidated.json -> Bedrock -> newsletter.json (honest no-key state)
   podcast-monthly.mjs     # podcast episodes -> Bedrock -> podcast-monthly.json (+ podcast-archive.json)
   render-newsletter-pdf.mjs  # save the in-app Download PDF file for the email (Playwright)
-  send-newsletter-email.mjs  # email the PDF to recipients (skips cleanly if unconfigured)
+  send-newsletter-email.mjs  # email the PDF to recipients (retries; records the send)
+  edition-check.mjs       # gates for the workflows: is the edition due? should the email send?
   connectors/             # one file per connector TYPE
   lib/                    # http, quarters, changeBlock, bedrock helpers
 src/
@@ -75,8 +77,9 @@ src/
   components/             # Header, Footer, MunshotMark, MoversChart, ChangeCard, SectorSection
   tabs/                   # Overview, Newsletter, SectorTab, SystemView
 .github/workflows/
-  refresh.yml             # every 6h: consolidate (data only); 2nd of month: + AI edition
-  newsletter-email.yml    # monthly (optional): render PDF + email it; skips if unconfigured
+  refresh.yml             # every 6h: consolidate (data only); from the 2nd: + AI edition until written
+  newsletter-email.yml    # monthly: render PDF + email it once; fails loudly if it can't
+  sap-research-refresh.yml  # 1st of month: trigger the SAP deep-research pass once
 ```
 
 ## The data contract — `ChangeBlock`
@@ -104,8 +107,9 @@ install step (handy for CI). `CLIENT=<id> npm run consolidate` targets another c
 ## Secrets & variables
 
 **Everything builds and renders with no secrets at all.** Without them the connectors still run
-(they're keyless) and the newsletter shows the honest `no-key` state. Secrets only *enable* the
-AI writer and the optional monthly email. Set these in **GitHub → Settings → Secrets and
+(they're keyless) and the newsletter shows the honest `no-key` state. Secrets *enable* the
+AI writer, the monthly email and the SAP research refresh — and the monthly workflows **fail
+(red, with an email to the repo owner) when theirs are missing**, rather than skipping quietly. Set these in **GitHub → Settings → Secrets and
 variables → Actions**.
 
 ### AI newsletter + podcast monthly summaries (Amazon Bedrock) — used by `refresh.yml` (monthly edition run)
@@ -132,16 +136,26 @@ never fabricated.
 
 **AI runs once a month, not on every refresh.** The 6-hourly refresh is data-only: no model
 call, and the last AI edition (newsletter prose + podcast month summaries) stays as it is while
-the podcast episode archive keeps growing. The AI edition is written by one scheduled run on the
-**2nd of each month at 06:41 UTC** (ahead of the 13:17 newsletter email, which reuses it), or by
-running *Refresh consolidated data* by hand with **ai_edition** ticked. An edition covers the last
+the podcast episode archive keeps growing. The AI edition is **due from the 2nd of each month at
+06:00 UTC**: every refresh run from then on writes it until an OK edition for this month is on
+file, so a scheduled run GitHub drops or delays, or a failed model call, is simply retried on the
+next run (a failed attempt keeps the previous edition rather than blanking it). Once the edition
+is pushed, the refresh starts the newsletter email. You can also write one by hand by running
+*Refresh consolidated data* with **ai_edition** ticked. An edition covers the last
 two complete months and reuses any month already summarised after it ended, so a normal edition is
 about three calls: one new month, the theme comparison, and the newsletter. Every call logs its
 input/output tokens in the Actions log.
 
-### Monthly email (optional) — used by `newsletter-email.yml`
+### Monthly email — used by `newsletter-email.yml`
 
-The whole `send` job is **skipped cleanly** (a log line, not a failure) unless both of these are set:
+The email goes out **once a month, as soon as that month's AI edition exists**: the refresh run
+that writes the edition starts it, and its own schedule retries twice a day from the 2nd to the
+9th as a backup. Each successful send is recorded in `clients/tybourne/data/email-log.json`, so
+every later run that month is a no-op, and the API call carries a per-month idempotency key so a
+retry can't send twice. The run **fails** (and GitHub emails the repo owner) if either of the two
+required settings below is missing, or if the month's AI edition still isn't written 48 hours
+after it was due. To resend, or to send without a fresh AI edition, run *Email monthly newsletter*
+by hand with **force** ticked.
 
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |
@@ -151,12 +165,13 @@ The whole `send` job is **skipped cleanly** (a log line, not a failure) unless b
 | `EMAIL_API_URL` | variable | optional | Override the email endpoint if not using Resend. |
 | `SITE_URL` | variable | optional | Render the **deployed** route (e.g. `https://tybournenewsletter.pages.dev`) instead of the freshly-built `./dist`. |
 
-### Monthly SAP research refresh (optional) — used by `sap-research-refresh.yml`
+### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
 The SAP dashboard scores sentiment daily, but its lifted "Key Findings" come from an expensive
 deep-research pass in the source repo (`ceekay-munshot/sap`) that only runs on demand — so those
 findings go stale unless something re-triggers them. This workflow presses that button on the 1st
-of each month (ahead of the newsletter). It's **gated**: with no token it logs a notice and exits 0.
+of each month (ahead of the newsletter), with three chances that day; it first checks the sap repo
+and does nothing if research was already dispatched this month. With no token the run **fails**.
 
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |
@@ -164,8 +179,8 @@ of each month (ahead of the newsletter). It's **gated**: with no token it logs a
 
 The refreshed findings are committed to the sap repo's `dashboard.json`; the next 6-hourly
 `refresh.yml` run lifts them automatically. **Simpler alternative (no token):** add the same
-`schedule: - cron: '0 6 1 * *'` block directly to `ceekay-munshot/sap`'s `research.yml`, which
-already holds the Firecrawl + model secrets it needs.
+`schedule: - cron: '7 6 1 * *'` block directly to `ceekay-munshot/sap`'s `research.yml`, which
+already holds the Firecrawl + model secrets it needs, and delete `sap-research-refresh.yml`.
 
 ## Deploy (Cloudflare Pages)
 

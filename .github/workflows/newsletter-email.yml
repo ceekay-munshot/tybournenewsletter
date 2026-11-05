@@ -1,50 +1,62 @@
 name: Email monthly newsletter
 
-# OPTIONAL. Every month (and on demand) regenerate the data, render the in-app
-# edition to a PDF, and email it to the recipient list. The AI prose is the monthly
-# edition the "Refresh consolidated data" workflow wrote that morning — no AI call here.
+# Every month, render the in-app edition to a PDF and email it to the recipient list —
+# exactly once. The AI prose is this month's edition, written by "Refresh consolidated
+# data" (no AI call here).
 #
-# Fully gated: if EMAIL_TOKEN (secret) or NEWSLETTER_RECIPIENTS (var) is not set,
-# the `send` job is skipped cleanly with a log line — the workflow never fails just
-# because email isn't configured. See README "Secrets & variables".
+# Built so a month can't be missed silently:
+#   - Many chances: "Refresh consolidated data" starts this workflow the moment this
+#     month's edition is pushed, and the schedule below retries twice a day from the 2nd
+#     to the 9th (GitHub delays scheduled runs by hours and sometimes drops them).
+#   - Exactly once: a successful send is recorded in clients/tybourne/data/email-log.json
+#     (committed here); every later run that month is a quick no-op. The email API call
+#     carries a per-month idempotency key, so a retry can't double-send either.
+#   - Never silent: missing EMAIL_TOKEN / NEWSLETTER_RECIPIENTS FAILS the run (it used to
+#     skip with a green tick), and so does an edition still missing 48h after it was due.
+#     A failed scheduled run emails the repo owner.
+#   - Never stale: it only sends once this month's AI edition is on file, so it can't race
+#     ahead of a late edition run and send last month's.
+# To resend, or to send without a fresh AI edition, run it by hand with "force" ticked.
 on:
   schedule:
-    # 2nd of each month, 13:17 UTC (jittered off the hour). The SAP deep-research
-    # refresh runs on the 1st, so its fresh findings are already in by now.
-    - cron: '17 13 2 * *'
+    - cron: '17 7,19 2-9 * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Send now even if this month was already sent or this month's AI edition isn't ready"
+        type: boolean
+        default: false
 
 permissions:
-  contents: read
+  contents: write # commit the send log
 
 concurrency:
   group: newsletter-email
   cancel-in-progress: false
 
 jobs:
-  # Can't reference `secrets` in a job-level `if:`, so decide readiness here and
-  # expose it as an output the `send` job gates on.
+  # Decides whether to send. Fails loudly if email isn't configured or the edition is
+  # overdue; succeeds quietly if this month already went out or the edition is on its way.
   gate:
     runs-on: ubuntu-latest
     outputs:
-      ready: ${{ steps.check.outputs.ready }}
+      send: ${{ steps.check.outputs.send }}
+      month: ${{ steps.check.outputs.month }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - id: check
+        name: Should this month's newsletter go out now?
         env:
           EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
-          RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
-        run: |
-          if [ -n "$EMAIL_TOKEN" ] && [ -n "$RECIPIENTS" ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-            echo "Email is configured — will render and send."
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::EMAIL_TOKEN or NEWSLETTER_RECIPIENTS not set — skipping quarterly newsletter email (this is expected until configured)."
-          fi
+          NEWSLETTER_RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
+          FORCE: ${{ inputs.force == true }}
+        run: node scripts/edition-check.mjs email
 
   send:
     needs: gate
-    if: needs.gate.outputs.ready == 'true'
+    if: needs.gate.outputs.send == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -62,16 +74,18 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
-      # No AI call here: the AI edition was written and committed by the "Refresh
-      # consolidated data" run at 06:41 UTC on the 2nd, so the email carries that edition.
-
       - name: Build site
         run: npm run build
 
       - name: Install Chromium for Playwright
         run: |
           npm i playwright@1.48.0 --no-save
-          npx --yes playwright@1.48.0 install --with-deps chromium
+          for i in 1 2 3; do
+            npx --yes playwright@1.48.0 install --with-deps chromium && exit 0
+            echo "Chromium install attempt $i failed; retrying in $((15 * i))s..."
+            sleep $((15 * i))
+          done
+          exit 1
 
       - name: Render newsletter PDF
         env:
@@ -87,7 +101,31 @@ jobs:
           EMAIL_API_URL: ${{ vars.EMAIL_API_URL }}
           NEWSLETTER_RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
           NEWSLETTER_PDF: ${{ github.workspace }}/tybourne-intelligence.pdf
+          # Normal sends share one key per month (no duplicates); a forced resend gets its own.
+          EMAIL_IDEMPOTENCY_KEY: ${{ inputs.force == true && format('tybourne-newsletter-{0}-resend-{1}-{2}', needs.gate.outputs.month, github.run_id, github.run_attempt) || '' }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/send-newsletter-email.mjs
+
+      # Record the send so the rest of this month's runs are no-ops. Only the log is
+      # committed (the consolidate above also touched data files; those are left alone).
+      - name: Record the send
+        run: |
+          git config user.name "munshot-bot"
+          git config user.email "actions@users.noreply.github.com"
+          LOG=clients/tybourne/data/email-log.json
+          git add "$LOG"
+          git commit -m "chore(email): record ${{ needs.gate.outputs.month }} newsletter send [skip ci]" -- "$LOG"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
+               git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "Recorded the send."
+              exit 0
+            fi
+            echo "Push attempt $i failed; retrying in $((2 ** i))s..."
+            sleep $((2 ** i))
+          done
+          echo "::error::The newsletter WAS sent, but recording it failed. A re-run is protected by the email idempotency key for 24h; commit $LOG by hand if this persists."
+          exit 1
 
       - name: Upload PDF artifact
         if: always()
