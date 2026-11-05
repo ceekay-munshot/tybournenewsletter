@@ -47,6 +47,8 @@ const RECIPIENTS = (process.env.NEWSLETTER_RECIPIENTS || '')
 const API_URL = process.env.EMAIL_API_URL || 'https://devde.muns.io/email/send/raw';
 const PDF = process.env.NEWSLETTER_PDF || resolve(ROOT, 'tybourne-intelligence.pdf');
 const SITE_URL = (process.env.SITE_URL || '').trim();
+// The email CTA points recipients to Munshot, not the raw deploy URL.
+const MUNSHOT_URL = (process.env.MUNSHOT_URL || 'https://www.muns.io').trim();
 const MONTH = monthKey(nowUtc());
 const LOG_PATH = resolve(ROOT, emailLogFile(CLIENT));
 const DRY_RUN = /^(1|true|yes)$/i.test(process.env.NEWSLETTER_DRY_RUN || '');
@@ -184,14 +186,14 @@ async function run() {
   let html;
   try {
     if (!consolidatedData) throw new Error('consolidated data unavailable');
-    html = renderNewsletterEmailHtml(consolidatedData, newsletterData, { siteUrl: SITE_URL, pdfAttached: !!attachments });
+    html = renderNewsletterEmailHtml(consolidatedData, newsletterData, { munshotUrl: MUNSHOT_URL, pdfAttached: !!attachments });
   } catch (e) {
     console.log(`::warning::Using the minimal email body (${e instanceof Error ? e.message : e}).`);
     const note = attachments
-      ? 'The latest edition is attached.'
-      : "This month's edition is on the live dashboard (the PDF was too large to attach).";
-    const linkBtn = SITE_URL
-      ? `<p style="margin:0 0 16px"><a href="${SITE_URL}" style="display:inline-block;background:#0f172a;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600">Open the live dashboard</a></p>`
+      ? 'The latest edition is attached as a PDF.'
+      : "The PDF was too large to attach this month — reply and we'll send it across.";
+    const linkBtn = MUNSHOT_URL
+      ? `<p style="margin:0 0 16px"><a href="${MUNSHOT_URL}" style="display:inline-block;background:#0f172a;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600">Visit Munshot</a></p>`
       : '';
     html =
       `<div style="font-family:Arial,Helvetica,sans-serif;color:#334155;line-height:1.6">` +

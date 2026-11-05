@@ -61,7 +61,8 @@ const sectionLabel = (text) =>
  * @returns {string} HTML email body
  */
 export function renderNewsletterEmailHtml(consolidated, newsletter, opts = {}) {
-  const siteUrl = (opts.siteUrl || '').trim();
+  // The email CTA points to Munshot (not the raw deploy URL). Override with MUNSHOT_URL.
+  const munshotUrl = (opts.munshotUrl || 'https://www.muns.io').trim();
   const client = consolidated.client || { shortName: 'Tybourne', name: 'Tybourne Global Holdings', publishedBy: 'Munshot' };
   const sectors = new Map((consolidated.sectors || []).map((s) => [s.id, s]));
   const aiOk = newsletter && newsletter.status === 'ok';
@@ -164,10 +165,10 @@ export function renderNewsletterEmailHtml(consolidated, newsletter, opts = {}) {
   // ── Footer (dashboard link + PDF note) ──────────────────────────────────────
   const footer =
     `<tr><td style="padding:22px 28px 28px;text-align:center">` +
-    (siteUrl
-      ? `<a href="${esc(siteUrl)}" style="display:inline-block;background:${C.ink};color:#ffffff;text-decoration:none;font:700 13px Arial,Helvetica,sans-serif;padding:11px 20px;border-radius:8px">Open the live dashboard</a>`
+    (munshotUrl
+      ? `<a href="${esc(munshotUrl)}" style="display:inline-block;background:${C.ink};color:#ffffff;text-decoration:none;font:700 13px Arial,Helvetica,sans-serif;padding:11px 22px;border-radius:8px">Visit Munshot</a>`
       : '') +
-    `<p style="margin:14px 0 0;font:400 12px Arial,Helvetica,sans-serif;color:${C.faint}">${opts.pdfAttached ? 'The full edition is also attached as a PDF.' : 'The full edition is also on the live dashboard.'} &nbsp;·&nbsp; Published by ${esc(client.publishedBy)}.</p>` +
+    `<p style="margin:14px 0 0;font:400 12px Arial,Helvetica,sans-serif;color:${C.faint}">${opts.pdfAttached ? 'The full edition is also attached as a PDF. &nbsp;·&nbsp; ' : ''}Published by <a href="${esc(munshotUrl)}" style="color:${C.muted};text-decoration:none;font-weight:700">${esc(client.publishedBy)}</a>.</p>` +
     `</td></tr>`;
 
   return (
