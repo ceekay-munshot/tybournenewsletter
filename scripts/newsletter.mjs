@@ -16,6 +16,7 @@ import {
   parseJson,
   usageLine,
 } from './lib/bedrock.mjs';
+import { isCurrentEdition } from './lib/edition.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -120,6 +121,19 @@ async function write(obj) {
   await writeFile(outPath, `${JSON.stringify(obj, null, 2)}\n`, 'utf8');
 }
 
+/**
+ * A failed edition attempt must not destroy the last good edition: keep it on screen
+ * and exit 1 so the step shows the failure. This month's edition is still missing, so
+ * the next refresh run retries it (scripts/edition-check.mjs edition).
+ */
+async function writeFailure(existing, obj) {
+  if (existing?.status === 'ok') {
+    console.log(`Newsletter: ${obj.note} — keeping the previous ${existing.editionLabel ?? ''} edition; the next run retries.`);
+    return;
+  }
+  await write(obj);
+}
+
 async function run() {
   const data = JSON.parse(await readFile(dataPath, 'utf8'));
   const DATA = buildData(data);
@@ -131,7 +145,9 @@ async function run() {
   } catch {
     /* none yet */
   }
-  if (existing?.status === 'ok' && existing?.dataHash === dataHash) {
+  // Only reuse an edition already written THIS month: a new month always gets its own
+  // edition, so the email never goes out with last month's prose (scripts/lib/edition.mjs).
+  if (existing?.status === 'ok' && existing?.dataHash === dataHash && isCurrentEdition(existing)) {
     console.log('Newsletter: data unchanged (hash match) — keeping existing AI edition, skipping Bedrock.');
     return;
   }
@@ -170,7 +186,7 @@ async function run() {
       parsed = parseJson(result.text);
     }
     if (!valid(parsed)) {
-      await write({
+      await writeFailure(existing, {
         generatedAt: new Date().toISOString(),
         status: 'error',
         provider: 'bedrock',
@@ -203,7 +219,7 @@ async function run() {
     });
     console.log(`Newsletter: generated via ${result.modelId} (${bedrockRegion}) — ${usageLine(result.usage)}.`);
   } catch (e) {
-    await write({
+    await writeFailure(existing, {
       generatedAt: new Date().toISOString(),
       status: 'error',
       provider: 'bedrock',

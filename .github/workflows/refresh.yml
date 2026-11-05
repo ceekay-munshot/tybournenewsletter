@@ -1,17 +1,21 @@
 name: Refresh consolidated data
 
 # Re-run the connectors every 6 hours (and on demand) and commit the regenerated data
-# files if anything changed. These runs are DATA-ONLY: no AI call is made, and the last
+# files if anything changed. Most runs are DATA-ONLY: no AI call is made, and the last
 # AI edition (newsletter prose + podcast month summaries) is kept as it is.
 #
-# The AI edition is written ONCE A MONTH: the 2nd-of-month run below (ahead of the
-# newsletter email) is the only scheduled run given the Bedrock key. To write one by
-# hand, run this workflow with "ai_edition" ticked. With no key at all the pipeline
-# still succeeds with honest no-key states — nothing is fabricated.
+# The AI edition is written ONCE A MONTH. It is due from the 2nd at 06:00 UTC, and
+# EVERY run from then on gives the Bedrock key to the writers until an OK edition for
+# this month is on file (scripts/edition-check.mjs edition). So a scheduled run that
+# GitHub drops or delays, or a model call that fails, is retried on the next run
+# instead of the month being lost. Once the edition is pushed, this workflow starts the
+# newsletter email straight away (it also has its own backup schedule).
+# To write an edition by hand, run this workflow with "ai_edition" ticked.
 on:
   schedule:
     - cron: '0 */6 * * *'
-    # Monthly AI edition — keep in sync with AI_EDITION below.
+    # Extra run on the 2nd so the edition is written promptly (the 6-hourly runs would
+    # pick it up too — this is just one more chance, since GitHub drops some schedules).
     - cron: '41 6 2 * *'
   workflow_dispatch:
     inputs:
@@ -22,6 +26,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # start the newsletter email once the edition is pushed
 
 concurrency:
   group: refresh-consolidated-data
@@ -30,9 +35,6 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    env:
-      # 'true' only on the monthly edition run or a manual run with ai_edition ticked.
-      AI_EDITION: ${{ github.event.schedule == '41 6 2 * *' || inputs.ai_edition == true }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -50,23 +52,41 @@ jobs:
       - name: Consolidate (all clients)
         run: node scripts/consolidate.mjs
 
-      # Podcast monthly summaries. Every run grows the episode archive; only the edition
-      # run gets the key and writes the AI month summaries + theme comparison.
+      # 'due' = this month's AI edition isn't on file yet (or ai_edition was ticked).
+      - name: Is the monthly AI edition due?
+        id: edition
+        continue-on-error: true # never let the check block the data refresh
+        env:
+          FORCE_EDITION: ${{ inputs.ai_edition == true }}
+        run: node scripts/edition-check.mjs edition
+
+      - name: Check the Bedrock key is set
+        if: steps.edition.outputs.due == 'true'
+        env:
+          BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
+        run: |
+          if [ -z "$BEDROCK_API_KEY" ]; then
+            echo "::error::This month's AI edition is due but the BEDROCK_API_KEY secret is not set — the newsletter can't be written or sent. Add it under Settings → Secrets and variables → Actions."
+          fi
+
+      # Podcast monthly summaries. Every run grows the episode archive; only a run with
+      # the edition due gets the key and writes the AI month summaries + theme comparison.
       - name: Podcast monthly summaries
         continue-on-error: true
         env:
-          BEDROCK_API_KEY: ${{ env.AI_EDITION == 'true' && secrets.BEDROCK_API_KEY || '' }}
+          BEDROCK_API_KEY: ${{ steps.edition.outputs.due == 'true' && secrets.BEDROCK_API_KEY || '' }}
           AWS_REGION: ${{ vars.AWS_REGION }}
           BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
         run: node scripts/podcast-monthly.mjs
 
-      # AI newsletter: written on the edition run only; other runs keep the edition.
-      # Never blocks the data commit: a model error -> honest error state, still
-      # committed. continue-on-error keeps the job green.
+      # AI newsletter: written only while the edition is due; other runs keep the edition.
+      # Never blocks the data commit: on a model error the previous edition is kept, the
+      # step shows the failure (continue-on-error keeps the job going), and the next run
+      # retries because the edition is still due.
       - name: Generate AI newsletter
         continue-on-error: true
         env:
-          BEDROCK_API_KEY: ${{ env.AI_EDITION == 'true' && secrets.BEDROCK_API_KEY || '' }}
+          BEDROCK_API_KEY: ${{ steps.edition.outputs.due == 'true' && secrets.BEDROCK_API_KEY || '' }}
           AWS_REGION: ${{ vars.AWS_REGION }}
           BEDROCK_MODEL_IDS: ${{ vars.BEDROCK_MODEL_IDS }}
         run: node scripts/newsletter.mjs
@@ -92,3 +112,25 @@ jobs:
           done
           echo "Could not push after retries." >&2
           exit 1
+
+      # Hand straight over to the email once this month's edition is pushed. Only from the
+      # default branch, so a test run on a feature branch can never email the client. The
+      # email workflow re-checks everything itself and sends at most once a month.
+      - name: Was this month's edition written?
+        id: written
+        if: steps.edition.outputs.due == 'true'
+        run: node scripts/edition-check.mjs current
+
+      - name: Start the newsletter email
+        if: >-
+          steps.written.outputs.current == 'true' &&
+          github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run newsletter-email.yml --ref "${GITHUB_REF_NAME}" --repo "${GITHUB_REPOSITORY}"
+          echo "Started the newsletter email workflow."
+
+      - name: Edition still missing
+        if: steps.edition.outputs.due == 'true' && steps.written.outputs.current != 'true'
+        run: echo "::warning::This month's AI edition was due but wasn't written this run (see the Generate AI newsletter step). The next refresh run retries it automatically."
