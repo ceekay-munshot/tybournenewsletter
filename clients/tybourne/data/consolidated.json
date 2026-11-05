@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T14:05:40.610Z",
+  "generatedAt": "2026-11-05T23:19:45.847Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -43,7 +43,7 @@
       "changePct": -0.000653362944167696,
       "changeAbs": null,
       "direction": "down",
-      "asOf": "2026-11-05T09:25:03.425Z",
+      "asOf": "2026-11-05T17:27:19.882Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-17.8% input · share +12.72pp"
+          "body": "-17.8% input · share +12.66pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -15879,7 +15879,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-05T14:05:19.898Z",
+      "asOf": "2026-11-05T23:19:26.377Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17472,7 +17472,7 @@
             "Consumer app downloads (UBS): Gemini 14.4% — #2 behind ChatGPT 47.1% and ahead of Claude 11.6%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-05T14:05:19.955Z"
+          "asOf": "2026-11-05T23:19:26.503Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -17522,13 +17522,13 @@
       "lastPeriodLabel": "Q2-26",
       "thisValue": null,
       "lastValue": null,
-      "changePct": 0.016881267684823023,
+      "changePct": 0.013236503512133483,
       "changeAbs": null,
       "direction": "up",
       "asOf": "2026-11-02T00:00:00Z",
       "isStale": false,
       "breakdown": [],
-      "summary": "TI catalog pricing was up 1.69% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels.",
+      "summary": "TI catalog pricing was up 1.32% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels.",
       "sourceName": "TI catalog via Mouser (like-for-like, stock-weighted)",
       "sourceUrl": "https://texas-instruments-dashboard-final.pages.dev/",
       "dashboardUrl": "https://texas-instruments-dashboard-final.pages.dev/",
@@ -17543,11 +17543,11 @@
           "lastPeriodLabel": "Q2-26",
           "thisValue": null,
           "lastValue": null,
-          "changePct": 0.016881267684823023,
+          "changePct": 0.013236503512133483,
           "changeAbs": null,
           "direction": "up",
           "breakdown": [],
-          "summary": "TI catalog pricing was up 1.69% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels."
+          "summary": "TI catalog pricing was up 1.32% quarter-on-quarter on the stock-weighted index (Q2-26 → Q3-26). UBS Compare shows each category’s move per period; switch to Price for the index levels."
         }
       ],
       "changeNoun": "Price change",
@@ -17587,8 +17587,8 @@
                     "bold": true
                   },
                   {
-                    "text": "-1.29%",
-                    "tone": "down",
+                    "text": "+1.05%",
+                    "tone": "up",
                     "bold": true
                   },
                   {
@@ -17611,8 +17611,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-4.85%",
-                    "tone": "down",
+                    "text": "+1.13%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -17635,7 +17635,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+4.51%",
+                    "text": "+2.48%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17659,8 +17659,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-7.64%",
-                    "tone": "down",
+                    "text": "+0.56%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -17683,7 +17683,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+0.30%",
+                    "text": "+0.90%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17707,7 +17707,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+1.22%",
+                    "text": "+0.17%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17732,7 +17732,7 @@
                     "bold": true
                   },
                   {
-                    "text": "+9.13%",
+                    "text": "+1.82%",
                     "tone": "up",
                     "bold": true
                   },
@@ -17756,8 +17756,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-1.61%",
-                    "tone": "down",
+                    "text": "+2.18%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -17778,7 +17778,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+26.17%",
+                    "text": "+1.47%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17801,7 +17801,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+3.52%",
+                    "text": "+1.03%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17823,7 +17823,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+8.43%",
+                    "text": "+2.60%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17848,7 +17848,7 @@
                     "bold": true
                   },
                   {
-                    "text": "+9.34%",
+                    "text": "+0.43%",
                     "tone": "up",
                     "bold": true
                   },
@@ -17872,7 +17872,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+6.91%",
+                    "text": "+0.66%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17895,7 +17895,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+11.76%",
+                    "text": "+0.19%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17918,8 +17918,8 @@
                     "bold": true
                   },
                   {
-                    "text": "-1.12%",
-                    "tone": "down",
+                    "text": "+2.71%",
+                    "tone": "up",
                     "bold": true
                   },
                   {
@@ -17940,7 +17940,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+1.46%",
+                    "text": "+6.79%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17962,7 +17962,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+5.19%",
+                    "text": "+0.96%",
                     "tone": "up",
                     "bold": false
                   },
@@ -17984,8 +17984,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-10.01%",
-                    "tone": "down",
+                    "text": "+0.37%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18007,7 +18007,7 @@
                     "bold": true
                   },
                   {
-                    "text": "+3.27%",
+                    "text": "+1.88%",
                     "tone": "up",
                     "bold": true
                   },
@@ -18029,7 +18029,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+6.84%",
+                    "text": "+0.82%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18051,8 +18051,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-0.30%",
-                    "tone": "down",
+                    "text": "+2.95%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18076,8 +18076,8 @@
                     "bold": true
                   },
                   {
-                    "text": "-1.48%",
-                    "tone": "down",
+                    "text": "+1.62%",
+                    "tone": "up",
                     "bold": true
                   },
                   {
@@ -18100,7 +18100,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+0.58%",
+                    "text": "+0.43%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18124,8 +18124,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-2.74%",
-                    "tone": "down",
+                    "text": "+0.56%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18147,8 +18147,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-0.13%",
-                    "tone": "down",
+                    "text": "+3.87%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18171,8 +18171,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-10.37%",
-                    "tone": "down",
+                    "text": "+0.72%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18195,7 +18195,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+5.25%",
+                    "text": "+2.50%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18218,8 +18218,8 @@
                     "bold": true
                   },
                   {
-                    "text": "-0.09%",
-                    "tone": "down",
+                    "text": "+0.00%",
+                    "tone": "flat",
                     "bold": true
                   },
                   {
@@ -18240,8 +18240,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-0.18%",
-                    "tone": "down",
+                    "text": "+0.00%",
+                    "tone": "flat",
                     "bold": false
                   },
                   {
@@ -18308,7 +18308,7 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.59%",
+                    "text": "+0.75%",
                     "tone": "up",
                     "bold": true
                   },
@@ -18331,8 +18331,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-3.50%",
-                    "tone": "down",
+                    "text": "+1.82%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18354,7 +18354,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+4.16%",
+                    "text": "+0.31%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18377,7 +18377,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+3.34%",
+                    "text": "+0.85%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18400,8 +18400,8 @@
                     "bold": false
                   },
                   {
-                    "text": "-3.49%",
-                    "tone": "down",
+                    "text": "+0.66%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18424,7 +18424,7 @@
                     "bold": false
                   },
                   {
-                    "text": "+2.46%",
+                    "text": "+0.09%",
                     "tone": "up",
                     "bold": false
                   },
@@ -21924,8 +21924,8 @@
         "Davis's substantial investment strategy",
         "Urgent need for domestic uranium supply"
       ],
-      "tone": "Tone across 42 episodes — 6 mixed, 6 positive, 2 cautious",
-      "thisTone": "6 mixed, 6 positive, 2 cautious",
+      "tone": "Tone across 42 episodes — 8 positive, 7 mixed, 2 cautious, 1 neutral",
+      "thisTone": "8 positive, 7 mixed, 2 cautious, 1 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
         "Disney was worth more dead than alive in 1984"
@@ -21943,7 +21943,7 @@
         "Davis's substantial investment strategy",
         "Urgent need for domestic uranium supply"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny; Democratic Midterm Victory and Data Centers. Sentiment ran 6 mixed, 6 positive, 2 cautious. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny; Democratic Midterm Victory and Data Centers. Sentiment ran 8 positive, 7 mixed, 2 cautious, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",

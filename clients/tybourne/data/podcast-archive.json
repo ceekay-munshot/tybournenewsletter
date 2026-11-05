@@ -595,8 +595,43 @@
       "title": "Google Earnings, Facebook Déjà Vu, The Agent Play",
       "date": "2026-11-02T11:00:00.000Z",
       "url": "https://stratechery.com/2026/google-earnings-facebook-deja-vu-the-agent-play/",
-      "summarised": false,
-      "notes": "Google's earnings miss looks a lot like Facebook's, and that's a credit to Google. The company is being more aggressive than they get credit for."
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Google earnings miss reframed as strategic aggression",
+          "detail": "The episode's central claim is that Google's earnings miss should not be read as weakness but as evidence the company is investing more aggressively in AI and agents than analysts credit — a deliberate sacrifice of near-term margins for long-cycle positioning."
+        },
+        {
+          "title": "Facebook 2022 déjà vu as a compliment",
+          "detail": "The host explicitly frames the Google-Facebook parallel as flattering: Facebook was punished by the market for heavy infrastructure spending in 2022, but that spending was vindicated, and Google is now making the same type of bold capital allocation call."
+        },
+        {
+          "title": "The agent platform as the core investment thesis",
+          "detail": "The 'agent play' — AI software that autonomously completes multi-step tasks — is positioned as the next major computing platform shift, and Google's existing search and assistant infrastructure is argued to give it a credible on-ramp that the market is not yet pricing."
+        },
+        {
+          "title": "Market mispricing implied by the parallel",
+          "detail": "By analogy with Facebook's 2022 trough, the episode implies that investors selling Google on the earnings miss are making the same mistake as those who sold Facebook — anchoring to legacy metrics and missing the platform transition story."
+        }
+      ],
+      "synthesis": "Google's earnings miss is framed not as a stumbling block but as a deliberate strategic bet — the central argument being that Google is investing aggressively enough in AI infrastructure and agent capabilities that near-term margins are being sacrificed, much as Facebook did in 2022 when it doubled down on infrastructure spending amid a revenue slowdown and was subsequently vindicated. The parallel is explicit: what looked like mismanagement at Facebook turned out to be disciplined long-cycle capital allocation, and the same lens is being applied to Google's current results.",
+      "whatChanged": "Google reported an earnings miss that the episode reframes as a consequence of deliberately aggressive AI and agent infrastructure spending, drawing an explicit parallel to Facebook's 2022 investment cycle that the market initially punished but which was ultimately vindicated.",
+      "whyItMatters": "If the Facebook parallel holds, the market's negative reaction to Google's miss represents a mispricing: investors anchored to legacy search metrics are under-pricing Google's positioning in the agentic AI layer, suggesting the sell-off could be a buying opportunity — but the thesis is only confirmed if agents become a…",
+      "beneficiaries": [
+        "Google (Alphabet)"
+      ],
+      "atRisk": [
+        "Investors anchored to legacy search metrics"
+      ],
+      "numbers": [],
+      "topics": [
+        "Google (Alphabet)",
+        "Facebook 2022 playbook",
+        "AI agent opportunity",
+        "Market consensus on Google",
+        "Competitive field (OpenAI, Microsoft, Anthropic)"
+      ]
     },
     {
       "id": "live-oddlots-1iv58v2",
@@ -605,8 +640,70 @@
       "title": "The $300 Billion Structured Notes Market Is Booming",
       "date": "2026-11-02T09:00:00.000Z",
       "url": "https://omny.fm/shows/odd-lots/the-300-billion-structured-notes-market-is-booming",
-      "summarised": false,
-      "notes": "The structured products business in the US has gotten very large recently &mdash; on track to hit $300 billion in sales this year. That they are all the rage means a once opaque financial product is getting a lot more attention. So what are structured products, exactly, and how are they influencing the economy? In short, structured products are basically a fusion of a bank IOU with a derivative product, but that…"
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "$300 billion U.S. structured notes run rate — up 50% year-over-year",
+          "detail": "Alex Michelizzi states that U.S. SEC-registered structured notes are on track to hit approximately $300 billion in 2026, versus roughly $200 billion the prior year — a ~50% jump driven overwhelmingly by worst-of auto-callables on S&P, NASDAQ, and Russell."
+        },
+        {
+          "title": "Daily-observation worst-of notes create binary 'on/off vega' in single stocks",
+          "detail": "Single-stock structures with daily knock-out observations (common on semis and hyperscalers) mean dealers either have zero vega or a large one-year put position, changing overnight depending on whether a stock ticks up or down — creating sharp, technically-driven single-stock moves."
+        },
+        {
+          "title": "CoreWeave structured note offering 40% annualised yield in Asia",
+          "detail": "Tracy Allaway cites a Bloomberg column by colleague Shuli Ren reporting a CoreWeave-linked structured note in Asia with a 40% annualised yield, illustrating how speculative single-stock demand is being channelled through these products."
+        },
+        {
+          "title": "Slow grind down is more dangerous than a crash for dealers",
+          "detail": "Michelizzi explains that a slow drift lower is worse than a sharp fall because it simultaneously extends note maturities from two to five years (mismatching the dealer's proxy hedges), flattens skew (reducing put-spread hedge value), suppresses new issuance, and leaves dealers short the wrong tenor — a compound loss…"
+        }
+      ],
+      "synthesis": "The central argument of this episode is that the structured notes market — now on track for $300 billion in U.S. SEC-registered issuance in 2025/2026, up from roughly $200 billion the prior year — has grown large enough to create measurable, self-reinforcing technical flows in equity options markets. Alex Michelizzi (Nomura's international head of equity structured notes) explains that the dominant driver of this growth is worst-of auto-callable notes tied to the S&P 500, NASDAQ, and Russell 2000, whose knock-out mechanics create concentrated, path-dependent vega and gamma that dealers must continuously offload into listed markets.",
+      "whatChanged": "U.S. SEC-registered structured notes are on track to hit ~$300 billion in 2026, up from ~$200 billion the prior year, driven by worst-of auto-callables on S&P/NASDAQ/Russell that now carry expected maturities of two years against stated five-year terms — creating a large, undisclosed long-vega overhang in the 2-5 year…",
+      "whyItMatters": "When markets sell off, the expected maturity of these notes extends toward the full five-year term simultaneously, forcing dealers to sell large amounts of longer-dated vega into listed markets at exactly the moment liquidity providers are pulling back — mechanically amplifying volatility and creating 'spot up, vol up'…",
+      "beneficiaries": [
+        "High-net-worth investors (structured note buyers)"
+      ],
+      "atRisk": [
+        "Listed equity options market makers (vega sellers)",
+        "Structured note dealers (Nomura and peers)",
+        "AI/semiconductor single-stock holders (NVIDIA, semis ETF)"
+      ],
+      "numbers": [
+        {
+          "metric": "U.S. SEC-registered structured notes — 2026 run rate",
+          "value": "~$300 billion",
+          "context": "On track for 2026, up from approximately $200 billion the prior year"
+        },
+        {
+          "metric": "U.S. SEC-registered structured notes — prior year baseline",
+          "value": "~$200 billion",
+          "context": "Approximate 2025 issuance, cited as comparison for current year growth"
+        },
+        {
+          "metric": "Typical knock-in put barrier level (illustrative example)",
+          "value": "60% (i.e. 40% drawdown protection)",
+          "context": "Example structure: investor is protected until index falls 40%; below 60 of initial level, full equity downside applies"
+        },
+        {
+          "metric": "Worst-of auto-callable — typical stated maturity",
+          "value": "3 to 5 years",
+          "context": "U.S. registered worst-of S&P/NASDAQ/Russell notes; expected life (knock-out) modelled at approximately 2 years"
+        },
+        {
+          "metric": "Single-stock daily-observation auto-callable — typical maturity range",
+          "value": "6 months to 18 months, possibly 2 years",
+          "context": "Structures observed daily after one-month lock-out; shorter tenor than index products"
+        }
+      ],
+      "topics": [
+        "Structured notes market growth",
+        "Worst-of auto-callables",
+        "High-net-worth structured note buyers",
+        "Slow-grind-down market regime"
+      ]
     },
     {
       "id": "live-aidaily-1wtjwwc",
@@ -615,8 +712,39 @@
       "title": "AI Won’t Make Our Minds Useless According to 400 Years of History",
       "date": "2026-11-01T11:52:15.000Z",
       "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-Wont-Make-Our-Minds-Useless-According-to-400-Years-of-History-e3rhmc6",
-      "summarised": false,
-      "notes": "What if abundant intelligence makes human ambition expand rather than human relevance disappear? NLW explores Venkatesh Rao’s “Cognitive Mercantilism,” which uses the history of capitalism to challenge assumptions about AI and our intellectual future. From the agricultural revolution to today’s AI agents, the episode examines how cheaper intelligence could unlock new desires, new work, and possibilities we haven’t…"
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "The 'Cognitive Mercantilism' thesis reframes the AI obsolescence debate",
+          "detail": "Venkatesh Rao's framework directly challenges the assumption that cheap AI intelligence makes humans less relevant, arguing instead — by analogy to capitalism's history — that abundant intelligence expands human ambition and creates new work rather than eliminating it."
+        },
+        {
+          "title": "400 years of history as the counter-argument to AI displacement",
+          "detail": "NLW uses the full arc from the agricultural revolution through modern capitalism to argue that resource abundance has never historically produced human irrelevance — it has always generated new desires and new categories of work. This is the empirical spine of the episode's bullish-on-humans case."
+        },
+        {
+          "title": "AI agents framed as the latest stage in a centuries-long pattern",
+          "detail": "The episode situates the rise of AI agents not as a rupture but as the most recent expression of a recurring historical dynamic where each leap in productive capacity expands rather than forecloses human roles."
+        },
+        {
+          "title": "The mechanism: collapsing cognitive costs unlock new appetites",
+          "detail": "The causal chain offered is that when the cost of a cognitive resource drops dramatically, human ambition scales up to consume the surplus and then generate demand for still more — mirroring how cheap material goods fueled rather than satiated consumer desire under capitalism."
+        }
+      ],
+      "synthesis": "The central argument of this episode, drawn from Venkatesh Rao's 'Cognitive Mercantilism' framework, is that cheaper intelligence expands demand rather than eliminating human relevance — a direct counter to the dominant AI displacement narrative. The historical analogy is deliberate: just as the agricultural revolution freed labor for new forms of work that prior generations couldn't have imagined, and just as capitalism's material abundance created entirely new desires and industries rather than making human effort obsolete, Rao argues AI-abundant intelligence will follow the same pattern. The mechanism is not substitution but liberation — when the cost of a cognitive resource collapses, human ambition scales up to consume the surplus and then some.",
+      "whatChanged": "Venkatesh Rao's 'Cognitive Mercantilism' framework reframes the AI labor-displacement debate by arguing — via 400 years of economic history — that abundant intelligence will expand human cognitive ambition rather than replace it, challenging the dominant obsolescence narrative.",
+      "whyItMatters": "If the historical analogy holds, the investable implication is that AI creates net-new demand for human cognitive labor and entirely new industry categories, meaning the market is underpricing human-AI collaborative workflows and overweighting pure-substitution risk in its AI impact models.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "AI and human relevance",
+        "Cognitive Mercantilism framework",
+        "AI agents",
+        "AI displacement narrative",
+        "Historical economic transitions"
+      ]
     },
     {
       "id": "live-allin-hlm5x",
@@ -625,8 +753,57 @@
       "title": "Anthropic S-1 Shocker, Greatest Business Ever? Google's $500B Wipeout, Midterm Predictions",
       "date": "2026-10-30T21:44:00.000Z",
       "url": "https://allinchamathjason.libsyn.com/anthropic-s-1-shocker-greatest-business-ever-googles-500b-wipeout-midterm-predictions",
-      "summarised": false,
-      "notes": "(0:00) Bestie Intros (3:22) Anthropic S-1 Breakdown: Greatest Business Ever? (32:47) AI's Biggest Problem and Anthropic's Doomer Showdown (1:01:57) Google Sheds $500B Market Cap in Worst Day Ever: What Went Wrong? (1:14:17) Final Midterms Predictions and Scenarios Follow the besties: Follow on X: Follow on Instagram: Follow on TikTok: Follow on LinkedIn: Intro Music Credit: Intro Video Credit: Referenced in the show:"
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Anthropic's $80B+ net loss in six months",
+          "detail": "Reuters/WSJ reported Anthropic recorded a net loss of over $80 billion in just the first half of 2026 — an almost incomprehensible loss figure that reframes every debate about whether frontier AI economics can ever converge to profitability."
+        },
+        {
+          "title": "'Greatest Business Ever' claim for Anthropic",
+          "detail": "Despite the losses, one or more of the besties floats the thesis that Anthropic could be the 'greatest business ever built' based on the revenue quality and gross margin potential of frontier model inference — setting up the episode's central bull-vs-bear tension."
+        },
+        {
+          "title": "Anthropic's 'doomer' paradox and the IPO tension",
+          "detail": "The hosts engage with the philosophical contradiction that Anthropic believes it may be building one of the most dangerous technologies ever, yet is proceeding with a commercial IPO. A Vox piece argues the IPO undermines the safety mission by tying the company to shareholder return obligations."
+        },
+        {
+          "title": "Google's $500B single-day market cap wipeout",
+          "detail": "Alphabet shed approximately $500B in market cap in a single session — described as its worst day ever — after earnings showed cloud revenue doubling but free cash flow turning negative, confirming the AI capex overhang is now hitting reported financials."
+        }
+      ],
+      "synthesis": "The episode's central argument is that Anthropic's S-1 reveals a business of extraordinary revenue quality — but one whose losses dwarf its gains in a way that makes the standard VC/growth framework almost inapplicable. The besties walk through the filing's headline numbers: over $80B net loss in just the first half of 2026, set against what appears to be very rapid top-line growth. The debate is whether this is the 'greatest business ever built' at the model level (high gross margins on inference, sticky enterprise contracts, compounding model capability) or a capital black hole that may never converge to profitability given the relentless compute arms race. The bulls argue the revenue trajectory and customer retention signal a durable moat; the bears note that every dollar of revenue requires several dollars of training and inference capex with no obvious ceiling.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Anthropic net loss",
+          "value": "over $80 billion",
+          "context": "First half of 2026, per Reuters/WSJ report referenced in the episode"
+        },
+        {
+          "metric": "Alphabet/Google market cap wipeout",
+          "value": "$500B",
+          "context": "Single-day loss, described as Alphabet's worst day ever, following Q3 2026 earnings"
+        },
+        {
+          "metric": "Alphabet cloud revenue growth",
+          "value": "doubled",
+          "context": "Reported in the same earnings that sent the stock down; occurred alongside negative free cash flow"
+        },
+        {
+          "metric": "Alphabet free cash flow",
+          "value": "negative",
+          "context": "Reported in Q3 2026 earnings despite doubled cloud revenue, reflecting AI infrastructure capex"
+        }
+      ],
+      "topics": [
+        "Alphabet / Google",
+        "AI safety / doomer framing",
+        "frontier AI economics",
+        "2026 midterms"
+      ]
     },
     {
       "id": "live-aidaily-1hr99mb",
