@@ -32,6 +32,7 @@ import { promisify } from 'node:util';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { nowUtc, monthKey, emailLogFile } from './lib/edition.mjs';
+import { renderNewsletterEmailHtml } from './lib/newsletter-email-html.mjs';
 
 const pExecFile = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -145,22 +146,25 @@ async function run() {
     throw new Error(`PDF not found at ${PDF} — run scripts/render-newsletter-pdf.mjs first.`);
   }
 
-  // Edition label + client name for the subject/body (real data only).
+  // Edition label + client name for the subject/body, and the full data for the
+  // in-email report (real figures only).
   let editionLabel = 'monthly edition';
   let editionGeneratedAt = null;
   let clientName = 'Tybourne Global Holdings';
   let status = 'unknown';
+  let newsletterData = null;
+  let consolidatedData = null;
   try {
-    const nl = JSON.parse(await readFile(resolve(ROOT, `clients/${CLIENT}/data/newsletter.json`), 'utf8'));
-    if (nl.editionLabel) editionLabel = nl.editionLabel;
-    if (nl.status) status = nl.status;
-    editionGeneratedAt = nl.generatedAt ?? null;
+    newsletterData = JSON.parse(await readFile(resolve(ROOT, `clients/${CLIENT}/data/newsletter.json`), 'utf8'));
+    if (newsletterData.editionLabel) editionLabel = newsletterData.editionLabel;
+    if (newsletterData.status) status = newsletterData.status;
+    editionGeneratedAt = newsletterData.generatedAt ?? null;
   } catch {
     /* newsletter.json optional for the email */
   }
   try {
-    const cd = JSON.parse(await readFile(resolve(ROOT, `clients/${CLIENT}/data/consolidated.json`), 'utf8'));
-    if (cd.client?.name) clientName = cd.client.name;
+    consolidatedData = JSON.parse(await readFile(resolve(ROOT, `clients/${CLIENT}/data/consolidated.json`), 'utf8'));
+    if (consolidatedData.client?.name) clientName = consolidatedData.client.name;
   } catch {
     /* optional */
   }
@@ -174,24 +178,30 @@ async function run() {
   }
 
   const subject = `${clientName} — Intelligence edition (${editionLabel})`;
-  const editionNote =
-    status === 'ok'
+  // The full report goes in the email body (same content as the dashboard/PDF): masthead,
+  // executive summary, the "everything that moved" table, per-dashboard commentary, watch
+  // list and sources. A minimal body is the fallback if the data can't be read.
+  let html;
+  try {
+    if (!consolidatedData) throw new Error('consolidated data unavailable');
+    html = renderNewsletterEmailHtml(consolidatedData, newsletterData, { siteUrl: SITE_URL, pdfAttached: !!attachments });
+  } catch (e) {
+    console.log(`::warning::Using the minimal email body (${e instanceof Error ? e.message : e}).`);
+    const note = attachments
       ? 'The latest edition is attached.'
-      : 'The data edition is attached (AI prose off — figures are live and source-stamped, nothing fabricated).';
-  const linkBtn = SITE_URL
-    ? `<p style="margin:0 0 16px"><a href="${SITE_URL}" style="display:inline-block;background:#0f172a;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600">Open the live dashboard</a></p>`
-    : '';
-  const attachLine = attachments
-    ? `<p style="margin:0 0 12px">${editionNote}</p>`
-    : `<p style="margin:0 0 12px">This month's edition is on the live dashboard (the PDF was too large to attach).</p>`;
-  const html =
-    `<div style="font-family:Inter,system-ui,sans-serif;color:#334155;line-height:1.6">` +
-    `<h2 style="font-family:'Space Grotesk',Inter,sans-serif;color:#0f172a;margin:0 0 6px">${clientName} Intelligence</h2>` +
-    `<p style="margin:0 0 12px;color:#64748b">${editionLabel}</p>` +
-    attachLine +
-    linkBtn +
-    `<p style="margin:0;color:#94a3b8;font-size:13px">Published by Munshot · 100% real data, every figure source-stamped.</p>` +
-    `</div>`;
+      : "This month's edition is on the live dashboard (the PDF was too large to attach).";
+    const linkBtn = SITE_URL
+      ? `<p style="margin:0 0 16px"><a href="${SITE_URL}" style="display:inline-block;background:#0f172a;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600">Open the live dashboard</a></p>`
+      : '';
+    html =
+      `<div style="font-family:Arial,Helvetica,sans-serif;color:#334155;line-height:1.6">` +
+      `<h2 style="color:#0f172a;margin:0 0 6px">${clientName} Intelligence</h2>` +
+      `<p style="margin:0 0 12px;color:#64748b">${editionLabel}</p>` +
+      `<p style="margin:0 0 12px">${note}</p>` +
+      linkBtn +
+      `<p style="margin:0;color:#94a3b8;font-size:13px">Published by Munshot · 100% real data, every figure source-stamped.</p>` +
+      `</div>`;
+  }
 
   console.log(`Email: sending "${subject}" to ${RECIPIENTS.length} recipient(s) via Munshot mail${attachments ? ' with the PDF attached' : ''}.`);
 
