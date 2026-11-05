@@ -52,7 +52,7 @@ function formatRow(r, b) {
 
 function buildData(data) {
   const systems = (data.systems || [])
-    .filter((b) => b.status !== 'error')
+    .filter((b) => b.status !== 'error' && !b.isStale)
     .map((b) => {
       const availableViews = (b.views || []).filter((v) => v.available).map((v) => v.label);
       const row = {
