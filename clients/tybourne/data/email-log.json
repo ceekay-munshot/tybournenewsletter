@@ -1,0 +1,14 @@
+{
+  "sends": [
+    {
+      "month": "2026-11",
+      "sentAt": "2026-11-05T15:32:01.063Z",
+      "editionLabel": "October 2026 — monthly intelligence",
+      "editionGeneratedAt": "2026-11-02T16:36:33.898Z",
+      "recipients": 1,
+      "transport": "munshot",
+      "runUrl": "https://github.com/ceekay-munshot/tybournenewsletter/actions/runs/42055492073"
+    }
+  ],
+  "note": "Written by scripts/send-newsletter-email.mjs — one entry per month sent. Counts only, no addresses."
+}
