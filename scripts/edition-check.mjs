@@ -17,7 +17,7 @@
 //     FORCE=true sends even if already sent / edition not ready (manual resend).
 //
 // Env: CLIENT (default tybourne), EDITION_NOW (fake "now", for dry runs),
-//      EMAIL_TOKEN + NEWSLETTER_RECIPIENTS (email mode: presence is checked, never printed).
+//      MUNSHOT_EMAIL_TOKEN + NEWSLETTER_RECIPIENTS (email mode: presence is checked, never printed).
 import { readFile, appendFile } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -96,10 +96,10 @@ async function emailMode() {
   await output('month', month);
   const force = truthy(process.env.FORCE);
 
-  const hasToken = Boolean(process.env.EMAIL_TOKEN);
+  const hasToken = Boolean(process.env.MUNSHOT_EMAIL_TOKEN || process.env.EMAIL_TOKEN);
   const recipients = (process.env.NEWSLETTER_RECIPIENTS || '').split(',').map((s) => s.trim()).filter(Boolean);
   if (!hasToken || !recipients.length) {
-    const missing = [!hasToken && 'EMAIL_TOKEN (secret)', !recipients.length && 'NEWSLETTER_RECIPIENTS (variable)']
+    const missing = [!hasToken && 'MUNSHOT_EMAIL_TOKEN (secret)', !recipients.length && 'NEWSLETTER_RECIPIENTS (variable)']
       .filter(Boolean)
       .join(' and ');
     await output('send', 'false');

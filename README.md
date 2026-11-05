@@ -151,19 +151,21 @@ input/output tokens in the Actions log.
 The email goes out **once a month, as soon as that month's AI edition exists**: the refresh run
 that writes the edition starts it, and its own schedule retries twice a day from the 2nd to the
 9th as a backup. Each successful send is recorded in `clients/tybourne/data/email-log.json`, so
-every later run that month is a no-op, and the API call carries a per-month idempotency key so a
-retry can't send twice. The run **fails** (and GitHub emails the repo owner) if either of the two
-required settings below is missing, or if the month's AI edition still isn't written 48 hours
-after it was due. To resend, or to send without a fresh AI edition, run *Email monthly newsletter*
-by hand with **force** ticked.
+every later run that month is a no-op. Delivery is through the **Munshot mail service** (the same
+one the podcast dashboard uses) — a single bearer-token endpoint, so there's no third-party
+account and no sender-domain verification to set up. The run **fails** (and GitHub emails the repo
+owner) if either of the two required settings below is missing, or if the month's AI edition still
+isn't written 48 hours after it was due. To send a **test** of the current edition to yourself
+first, run *Email monthly newsletter* by hand with **recipient_override** set to your address
+(e.g. `ceekay@muns.io`) — it sends only there and does not record the monthly send. To resend, use
+**force**.
 
 | Name | Kind | Required? | What it is |
 | --- | --- | --- | --- |
-| `EMAIL_TOKEN` | **secret** | to send | Bearer key for the email API (default provider **Resend**, `api.resend.com`). |
+| `MUNSHOT_EMAIL_TOKEN` | **secret** | to send | Bearer key for the Munshot mail service (the same token the podcast repo uses). |
 | `NEWSLETTER_RECIPIENTS` | variable | to send | Comma-separated recipient addresses. |
-| `EMAIL_FROM` | variable | optional | `Name <from@domain>` (verified sender). Defaults to a Munshot address. |
-| `EMAIL_API_URL` | variable | optional | Override the email endpoint if not using Resend. |
-| `SITE_URL` | variable | optional | Render the **deployed** route (e.g. `https://tybournenewsletter.pages.dev`) instead of the freshly-built `./dist`. |
+| `SITE_URL` | variable | optional | Live dashboard URL, linked in the email body (and used to render the **deployed** route for the PDF). |
+| `EMAIL_API_URL` | variable | optional | Override the mail endpoint (defaults to the Munshot raw-email endpoint). |
 
 ### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
