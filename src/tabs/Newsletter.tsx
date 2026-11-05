@@ -91,10 +91,13 @@ function NewsletterArticle({
   const aiLine = new Map<string, string>();
   if (aiOk && nl) for (const s of nl.lines || []) if (s.line) aiLine.set(s.systemId, s.line);
 
+  // Fresh dashboards only: drop errored blocks AND ones whose data has gone stale,
+  // so the newsletter never lists a stale dashboard among the current "movers".
+  const fresh = data.systems.filter((b) => b.status !== 'error' && !b.isStale);
+
   // All dashboards, ranked by headline magnitude (largest move first). Narrative
   // dashboards with no plottable headline (e.g. podcast themes) fall to the end.
-  const ranked = data.systems
-    .filter((b) => b.status !== 'error')
+  const ranked = fresh
     .map((b) => ({ b, mag: Math.abs(headlineMagnitude(b.changePct, b.changeAbs, b.changeDisplay) ?? -1) }))
     .sort((a, b) => b.mag - a.mag)
     .map((x) => x.b);
@@ -143,7 +146,7 @@ function NewsletterArticle({
           Headline change per dashboard, largest first. Green = up, red = down. Mixed units and windows — each bar is labelled.
         </p>
         <div className="mt-3">
-          <MoversChart systems={data.systems} onSelect={onSelect} />
+          <MoversChart systems={fresh} onSelect={onSelect} />
         </div>
       </section>
 
