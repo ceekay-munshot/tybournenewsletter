@@ -59,6 +59,8 @@ jobs:
           MUNSHOT_EMAIL_TOKEN: ${{ secrets.MUNSHOT_EMAIL_TOKEN }}
           # A recipient_override makes this a test to that address only; otherwise the real list.
           NEWSLETTER_RECIPIENTS: ${{ (inputs.recipient_override != '' && inputs.recipient_override != null) && inputs.recipient_override || vars.NEWSLETTER_RECIPIENTS }}
+          # On a test override, use EXACTLY that address — never merge the dashboard-managed list.
+          NEWSLETTER_RECIPIENTS_ONLY: ${{ inputs.recipient_override != '' && inputs.recipient_override != null }}
           # An override run is a manual test, so it forces past the "already sent / not current" gates.
           FORCE: ${{ inputs.force == true || (inputs.recipient_override != '' && inputs.recipient_override != null) }}
         run: node scripts/edition-check.mjs email
@@ -111,6 +113,8 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           # Test override → that address only; otherwise the real recipient list.
           NEWSLETTER_RECIPIENTS: ${{ (inputs.recipient_override != '' && inputs.recipient_override != null) && inputs.recipient_override || vars.NEWSLETTER_RECIPIENTS }}
+          # On a test override, send to EXACTLY that address — never merge the dashboard-managed list.
+          NEWSLETTER_RECIPIENTS_ONLY: ${{ inputs.recipient_override != '' && inputs.recipient_override != null }}
           NEWSLETTER_PDF: ${{ github.workspace }}/tybourne-intelligence.pdf
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/send-newsletter-email.mjs

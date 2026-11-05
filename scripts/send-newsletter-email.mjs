@@ -33,6 +33,7 @@ import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { nowUtc, monthKey, emailLogFile } from './lib/edition.mjs';
 import { renderNewsletterEmailHtml } from './lib/newsletter-email-html.mjs';
+import { resolveRecipients } from './lib/recipients.mjs';
 
 const pExecFile = promisify(execFile);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -40,10 +41,9 @@ const ROOT = resolve(__dirname, '..');
 const CLIENT = process.env.CLIENT || 'tybourne';
 
 const TOKEN = process.env.MUNSHOT_EMAIL_TOKEN || process.env.EMAIL_TOKEN || '';
-const RECIPIENTS = (process.env.NEWSLETTER_RECIPIENTS || '')
-  .split(',')
-  .map((s) => s.trim())
-  .filter(Boolean);
+// A test-to-self run (recipient_override) sets NEWSLETTER_RECIPIENTS_ONLY so the send
+// goes to exactly that address, never fanning out to the dashboard-managed list.
+const EXACT = /^(1|true|yes)$/i.test(process.env.NEWSLETTER_RECIPIENTS_ONLY || '');
 const API_URL = process.env.EMAIL_API_URL || 'https://devde.muns.io/email/send/raw';
 const PDF = process.env.NEWSLETTER_PDF || resolve(ROOT, 'tybourne-intelligence.pdf');
 const SITE_URL = (process.env.SITE_URL || '').trim();
@@ -113,7 +113,7 @@ async function sendTo(email, { subject, html, attachments }) {
   return { ok: false, detail: last.code ? `HTTP ${last.code}: ${String(last.body).slice(0, 200)}` : `network error: ${String(last.body).slice(0, 200)}` };
 }
 
-async function recordSend({ editionLabel, editionGeneratedAt, note }) {
+async function recordSend({ editionLabel, editionGeneratedAt, recipientCount, note }) {
   let log = { sends: [] };
   try {
     log = JSON.parse(await readFile(LOG_PATH, 'utf8'));
@@ -127,7 +127,7 @@ async function recordSend({ editionLabel, editionGeneratedAt, note }) {
     sentAt: new Date().toISOString(),
     editionLabel,
     editionGeneratedAt,
-    recipients: RECIPIENTS.length,
+    recipients: recipientCount,
     transport: 'munshot',
     ...(note ? { note } : {}),
     ...(process.env.RUN_URL ? { runUrl: process.env.RUN_URL } : {}),
@@ -138,10 +138,12 @@ async function recordSend({ editionLabel, editionGeneratedAt, note }) {
 }
 
 async function run() {
+  const RECIPIENTS = await resolveRecipients(ROOT, CLIENT, process.env.NEWSLETTER_RECIPIENTS, { exact: EXACT });
   if (!TOKEN || !RECIPIENTS.length) {
     throw new Error(
-      'MUNSHOT_EMAIL_TOKEN or NEWSLETTER_RECIPIENTS is not set — the newsletter cannot be sent. ' +
-        'Add them under GitHub → Settings → Secrets and variables → Actions.',
+      'MUNSHOT_EMAIL_TOKEN or a recipient (NEWSLETTER_RECIPIENTS variable or the dashboard recipients list) ' +
+        'is not set — the newsletter cannot be sent. Add them under Settings → Secrets and variables → Actions, ' +
+        'or add a recipient in the dashboard admin panel.',
     );
   }
   if (!existsSync(PDF)) {
@@ -222,7 +224,7 @@ async function run() {
     console.log('DRY_RUN: all recipients OK (nothing sent, nothing recorded).');
     return;
   }
-  await recordSend({ editionLabel, editionGeneratedAt });
+  await recordSend({ editionLabel, editionGeneratedAt, recipientCount: RECIPIENTS.length });
 }
 
 run().catch((e) => {
