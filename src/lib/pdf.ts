@@ -7,8 +7,10 @@
 // clean break points (never through a table row, card, paragraph or heading), raster each
 // page at 2x, and write a small PDF by hand. Loaded on demand; no dependencies.
 
-/** CSS px -> device px. 2x keeps text crisp on paper and on a retina zoom. */
-const SCALE = 2;
+/** CSS px -> device px. 1.5x stays crisp on paper and on a retina zoom while keeping the
+ *  file small enough to attach to the monthly email (2x pushed a full edition to ~8MB,
+ *  over the mail service's attachment budget, so it went out as a link only). */
+const SCALE = 1.5;
 const JPEG_QUALITY = 0.85;
 /** The article's width on a desktop screen. Narrower screens (phone, split window) are laid
  *  out at this width for the PDF, so the page never comes out as a stretched phone column. */
