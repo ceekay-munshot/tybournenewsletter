@@ -167,6 +167,27 @@ first, run *Email monthly newsletter* by hand with **recipient_override** set to
 | `SITE_URL` | variable | optional | Live dashboard URL, linked in the email body (and used to render the **deployed** route for the PDF). |
 | `EMAIL_API_URL` | variable | optional | Override the mail endpoint (defaults to the Munshot raw-email endpoint). |
 
+### Managing recipients from the dashboard
+
+Recipients can also be managed **in the dashboard** — no GitHub edits needed. Open
+`/?admin=recipients` (an admin-only panel, not linked from the nav), unlock with the admin
+password, and add/remove addresses; the list saves itself. These are **merged** with
+`NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
+
+It's served by a small Cloudflare Worker (`worker/`): the site is a Workers static-assets app
+(see `wrangler.jsonc`), and `/api/recipients` is the only route it adds. The handler is
+admin-gated and commits **only** `clients/tybourne/data/recipients.json` via the GitHub
+Contents API, so it can't touch anything else in the repo. Set two variables on the Worker
+(Cloudflare dashboard → the `tybournenewsletter` Worker → **Settings → Variables and Secrets**):
+
+| Name | Kind | What it is |
+| --- | --- | --- |
+| `ADMIN_TOKEN` | **secret** | A password you choose; the dashboard panel asks for it to unlock. |
+| `GITHUB_TOKEN` | **secret** | A fine-grained GitHub token with **Contents: read/write** on **this repo only**. |
+
+Until those are set, the panel shows a "not configured" message and the monthly send simply
+uses `NEWSLETTER_RECIPIENTS` as before.
+
 ### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
 The SAP dashboard scores sentiment daily, but its lifted "Key Findings" come from an expensive

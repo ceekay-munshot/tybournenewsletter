@@ -32,6 +32,7 @@ import {
   emailLogFile,
   sentEntry,
 } from './lib/edition.mjs';
+import { resolveRecipients } from './lib/recipients.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CLIENT = process.env.CLIENT || 'tybourne';
@@ -97,9 +98,10 @@ async function emailMode() {
   const force = truthy(process.env.FORCE);
 
   const hasToken = Boolean(process.env.MUNSHOT_EMAIL_TOKEN || process.env.EMAIL_TOKEN);
-  const recipients = (process.env.NEWSLETTER_RECIPIENTS || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const exact = /^(1|true|yes)$/i.test(process.env.NEWSLETTER_RECIPIENTS_ONLY || '');
+  const recipients = await resolveRecipients(ROOT, CLIENT, process.env.NEWSLETTER_RECIPIENTS, { exact });
   if (!hasToken || !recipients.length) {
-    const missing = [!hasToken && 'MUNSHOT_EMAIL_TOKEN (secret)', !recipients.length && 'NEWSLETTER_RECIPIENTS (variable)']
+    const missing = [!hasToken && 'MUNSHOT_EMAIL_TOKEN (secret)', !recipients.length && 'a recipient (NEWSLETTER_RECIPIENTS or the dashboard list)']
       .filter(Boolean)
       .join(' and ');
     await output('send', 'false');

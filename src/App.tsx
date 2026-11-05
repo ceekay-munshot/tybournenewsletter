@@ -9,6 +9,7 @@ import { NewsletterModal } from './tabs/Newsletter';
 import { SystemView } from './tabs/SystemView';
 import { PodcastView } from './tabs/PodcastView';
 import { MultiPeriodView } from './components/MultiPeriodView';
+import { RecipientsAdmin, wantsRecipientsAdmin } from './components/RecipientsAdmin';
 
 /** Deep-link: /?edition=newsletter (or #newsletter) opens the newsletter straight away.
  *  Used by the monthly email render and shareable links. */
@@ -25,6 +26,20 @@ export default function App() {
   const podcastMonthly = usePodcastMonthly();
   const [systemId, setSystemId] = useState<string | null>(null);
   const [nlOpen, setNlOpen] = useState<boolean>(wantsNewsletter);
+  const [adminOpen, setAdminOpen] = useState<boolean>(wantsRecipientsAdmin);
+
+  // Admin-only recipient manager (/?admin=recipients) — a private surface that needs
+  // no dashboard data, so it renders before the load/error gates.
+  if (adminOpen) {
+    return (
+      <RecipientsAdmin
+        onClose={() => {
+          if (typeof window !== 'undefined') window.history.replaceState({}, '', window.location.pathname);
+          setAdminOpen(false);
+        }}
+      />
+    );
+  }
 
   if (state.status === 'loading') return <LoadingScreen />;
   if (state.status === 'error') return <ErrorScreen message={state.error} />;
