@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T23:17:16.102Z",
+  "generatedAt": "2026-11-05T05:25:15.342Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2149,7 +2149,7 @@
       "changePct": -0.028571428571428685,
       "changeAbs": -0.07000000000000028,
       "direction": "down",
-      "asOf": "2026-11-02T00:00:00.000Z",
+      "asOf": "2026-11-03T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2261,7 +2261,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.9% (output -1.7%); biggest move: DeepSeek -18.0%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 2.9% (output -1.8%); biggest move: DeepSeek -18.0%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -2418,7 +2418,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.9% (output -1.7%); biggest move: DeepSeek -18.0%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 2.9% (output -1.8%); biggest move: DeepSeek -18.0%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -2447,7 +2447,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-18.0% input · share +12.96pp"
+          "body": "-18.0% input · share +12.88pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -14873,7 +14873,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-04T23:16:57.276Z",
+      "asOf": "2026-11-05T05:24:55.481Z",
       "isStale": false,
       "breakdown": [
         {
@@ -16466,7 +16466,7 @@
             "Consumer app downloads (UBS): Gemini 14.4% — #2 behind ChatGPT 47.1% and ahead of Claude 11.6%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-04T23:16:57.366Z"
+          "asOf": "2026-11-05T05:24:55.538Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -20827,17 +20827,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
-      "asOf": "2026-11-04T11:00:00.000Z",
+      "asOf": "2026-11-04T19:57:20.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "AI Daily",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -20851,13 +20858,6 @@
         },
         {
           "label": "In Good Company",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "AI Daily",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -20911,7 +20911,7 @@
         "AI agents to grow in retail trading",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "tone": "Tone across 42 episodes — 3 positive",
+      "tone": "Tone across 40 episodes — 3 positive",
       "thisTone": "3 positive",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
@@ -20923,11 +20923,11 @@
         "AI agents to grow in retail trading",
         "Nubank serves 140 million customers in Latin America"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Safety vs Speed in AI Development: Airbags Analogy; AI agents to grow in retail trading; Nubank serves 140 million customers in Latin America. Sentiment ran 3 positive. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Safety vs Speed in AI Development: Airbags Analogy; AI agents to grow in retail trading; Nubank serves 140 million customers in Latin America.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Safety vs Speed in AI Development: Airbags Analogy; AI agents to grow in retail trading; Nubank serves 140 million customers in Latin America. Sentiment ran 3 positive. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Safety vs Speed in AI Development: Airbags Analogy; AI agents to grow in retail trading; Nubank serves 140 million customers in Latin America.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
