@@ -167,7 +167,8 @@ async function run() {
 
   const pdfB64 = (await readFile(PDF)).toString('base64');
   const attachTooBig = pdfB64.length > MAX_ATTACH_B64;
-  const attachments = attachTooBig ? undefined : [{ filename: basename(PDF), content: pdfB64, contentType: 'application/pdf' }];
+  // The Munshot mail endpoint expects `contentBase64` (not `content`) for attachment bytes.
+  const attachments = attachTooBig ? undefined : [{ filename: basename(PDF), contentBase64: pdfB64, contentType: 'application/pdf' }];
   if (attachTooBig) {
     console.log(`::warning::The rendered PDF is ${(pdfB64.length / 1e6).toFixed(1)}MB (base64), over the mail attachment budget — sending with the dashboard link only.`);
   }
