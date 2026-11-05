@@ -1,13 +1,14 @@
-// Newsletter recipient manager — the API behind the dashboard admin panel.
+// Newsletter recipient manager — the API behind the dashboard subscribe box.
 //
-// Admin-gated read/write of clients/<client>/data/recipients.json, committed via the
-// GitHub Contents API. This is the ONLY file it ever touches, so even a bug cannot
-// write anywhere else in the repo. Every method requires the admin token, so the
-// recipient list is never publicly readable.
+// Anyone can SUBSCRIBE (POST their email) — no password, like any newsletter form.
+// Viewing the full list and removing someone are admin-only (ADMIN_TOKEN), so the
+// list stays private and only an admin can remove. It only ever reads/writes
+// clients/<client>/data/recipients.json via the GitHub Contents API, so even a bug
+// cannot write anywhere else in the repo. Emails are validated and the list is capped.
 //
 // Vars/secrets (set on the Worker, NOT in the repo):
-//   ADMIN_TOKEN    a password you choose; the dashboard sends it as `Authorization: Bearer <token>`
-//   GITHUB_TOKEN   a fine-grained GitHub token with Contents read/write on THIS repo only
+//   GITHUB_TOKEN   REQUIRED — a fine-grained GitHub token with Contents read/write on THIS repo only
+//   ADMIN_TOKEN    optional — a password for the admin view/remove (subscribing never needs it)
 //   GITHUB_REPO    optional, default "ceekay-munshot/tybournenewsletter"
 //   CLIENT         optional, default "tybourne"
 
@@ -97,37 +98,44 @@ async function writeStore(env: Env, recipients: string[], sha: string | undefine
   return { recipients, updatedAt };
 }
 
-/** Handle /api/recipients (GET list, POST add, DELETE remove). */
+/** Handle /api/recipients:
+ *   - POST   (public)      subscribe one email — no password, just a valid address
+ *   - GET    (admin-only)  the full list
+ *   - DELETE (admin-only)  remove one email
+ *  Subscribing needs only GITHUB_TOKEN (to save the list); viewing/removing needs
+ *  ADMIN_TOKEN, so the list stays private and nobody but an admin can remove. */
 export async function handleRecipients(request: Request, env: Env): Promise<Response> {
   if (request.method === 'OPTIONS') return new Response(null, { status: 204 });
-  if (!env.ADMIN_TOKEN || !env.GITHUB_TOKEN) {
-    return json({ error: 'not_configured', message: 'Set ADMIN_TOKEN and GITHUB_TOKEN on the Worker.' }, 503);
-  }
-  if (!tokenOk(bearer(request), env.ADMIN_TOKEN)) return json({ error: 'unauthorized' }, 401);
+  if (!env.GITHUB_TOKEN) return json({ error: 'not_configured', message: 'Set GITHUB_TOKEN on the Worker.' }, 503);
 
   try {
+    // ── Public subscribe — no auth, just an email. Never returns the list. ──
+    if (request.method === 'POST') {
+      const payload = (await request.json().catch(() => null)) as { email?: unknown } | null;
+      const email = cleanEmail(payload?.email);
+      if (!email) return json({ error: 'invalid_email', message: 'Enter a valid email address.' }, 400);
+      const store = await readStore(env);
+      if (store.recipients.some((e) => e.toLowerCase() === email.toLowerCase())) return json({ ok: true, subscribed: true, already: true });
+      if (store.recipients.length >= MAX_RECIPIENTS) return json({ error: 'list_full', message: 'The subscriber list is full.' }, 400);
+      await writeStore(env, [...store.recipients, email], store.sha, `subscribe (${store.recipients.length + 1})`);
+      return json({ ok: true, subscribed: true });
+    }
+
+    // ── Admin only: view / remove. Requires ADMIN_TOKEN. ──
+    if (!env.ADMIN_TOKEN) return json({ error: 'not_configured', message: 'Set ADMIN_TOKEN on the Worker to view or remove.' }, 503);
+    if (!tokenOk(bearer(request), env.ADMIN_TOKEN)) return json({ error: 'unauthorized' }, 401);
+
     if (request.method === 'GET') {
       const store = await readStore(env);
       return json({ recipients: store.recipients, updatedAt: store.updatedAt });
     }
 
-    if (request.method === 'POST' || request.method === 'DELETE') {
+    if (request.method === 'DELETE') {
       const payload = (await request.json().catch(() => null)) as { email?: unknown } | null;
       const email = cleanEmail(payload?.email);
       if (!email) return json({ error: 'invalid_email' }, 400);
-
       const store = await readStore(env);
-      const lower = email.toLowerCase();
-      const without = store.recipients.filter((e) => e.toLowerCase() !== lower);
-
-      if (request.method === 'POST') {
-        if (without.length >= MAX_RECIPIENTS) return json({ error: 'list_full', message: `At most ${MAX_RECIPIENTS} recipients.` }, 400);
-        if (without.length !== store.recipients.length) return json({ recipients: store.recipients, updatedAt: store.updatedAt }); // already present → no-op
-        const next = [...store.recipients, email];
-        return json(await writeStore(env, next, store.sha, `add a recipient (${next.length})`));
-      }
-
-      // DELETE
+      const without = store.recipients.filter((e) => e.toLowerCase() !== email.toLowerCase());
       if (without.length === store.recipients.length) return json({ recipients: store.recipients, updatedAt: store.updatedAt }); // not present → no-op
       return json(await writeStore(env, without, store.sha, `remove a recipient (${without.length})`));
     }
