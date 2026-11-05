@@ -167,26 +167,28 @@ first, run *Email monthly newsletter* by hand with **recipient_override** set to
 | `SITE_URL` | variable | optional | Live dashboard URL, linked in the email body (and used to render the **deployed** route for the PDF). |
 | `EMAIL_API_URL` | variable | optional | Override the mail endpoint (defaults to the Munshot raw-email endpoint). |
 
-### Managing recipients from the dashboard
+### Subscribing from the dashboard
 
-Recipients can also be managed **in the dashboard** — no GitHub edits needed. Open
-`/?admin=recipients` (an admin-only panel, not linked from the nav), unlock with the admin
-password, and add/remove addresses; the list saves itself. These are **merged** with
-`NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
+Anyone can subscribe **in the dashboard** — no GitHub edits, no password. Open `/?subscribe`
+(or `/?admin=recipients`), type an email, hit **Add**, and they're on the list. Subscribers are
+**merged** with `NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
+Viewing the full list and removing someone are tucked behind a small admin unlock, so the list
+stays private and only an admin can remove.
 
 It's served by a small Cloudflare Worker (`worker/`): the site is a Workers static-assets app
-(see `wrangler.jsonc`), and `/api/recipients` is the only route it adds. The handler is
-admin-gated and commits **only** `clients/tybourne/data/recipients.json` via the GitHub
-Contents API, so it can't touch anything else in the repo. Set two variables on the Worker
-(Cloudflare dashboard → the `tybournenewsletter` Worker → **Settings → Variables and Secrets**):
+(see `wrangler.jsonc`), and `/api/recipients` is the only route it adds. It commits **only**
+`clients/tybourne/data/recipients.json` via the GitHub Contents API (emails validated, list
+capped), so it can't touch anything else in the repo. Set these on the Worker (Cloudflare
+dashboard → the `tybournenewsletter` Worker → **Settings → Variables and Secrets**):
 
 | Name | Kind | What it is |
 | --- | --- | --- |
-| `ADMIN_TOKEN` | **secret** | A password you choose; the dashboard panel asks for it to unlock. |
-| `GITHUB_TOKEN` | **secret** | A fine-grained GitHub token with **Contents: read/write** on **this repo only**. |
+| `GITHUB_TOKEN` | **secret** · required | A fine-grained GitHub token with **Contents: read/write** on **this repo only** — lets a subscribe save the list. |
+| `ADMIN_TOKEN` | **secret** · optional | A password for the admin **view/remove** only. Subscribing never needs it. |
 
-Until those are set, the panel shows a "not configured" message and the monthly send simply
-uses `NEWSLETTER_RECIPIENTS` as before.
+Until `GITHUB_TOKEN` is set, the panel shows a "not configured" message and the monthly send
+simply uses `NEWSLETTER_RECIPIENTS` as before. (Public subscribe has basic abuse protection —
+email validation, dedupe and a list cap; add a Cloudflare Turnstile later if spam appears.)
 
 ### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
