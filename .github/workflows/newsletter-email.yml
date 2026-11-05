@@ -17,6 +17,10 @@ name: Email monthly newsletter
 #   - Never stale: it only sends once this month's AI edition is on file, so it can't race
 #     ahead of a late edition run and send last month's.
 # To resend, or to send without a fresh AI edition, run it by hand with "force" ticked.
+# To send a TEST of the current edition to yourself first, run it by hand with
+# "recipient_override" set to your address (e.g. ceekay@muns.io): it sends ONLY there,
+# does not record the monthly send, and uses a one-off idempotency key — so the real
+# monthly send to the client still goes out normally afterwards.
 on:
   schedule:
     - cron: '17 7,19 2-9 * *'
@@ -26,6 +30,10 @@ on:
         description: "Send now even if this month was already sent or this month's AI edition isn't ready"
         type: boolean
         default: false
+      recipient_override:
+        description: "TEST: send this run to ONLY these comma-separated address(es) (e.g. ceekay@muns.io) instead of the real list. Implies force, is not recorded as the monthly send, and uses a one-off idempotency key — the real send still goes out."
+        type: string
+        required: false
 
 permissions:
   contents: write # commit the send log
@@ -50,8 +58,10 @@ jobs:
         name: Should this month's newsletter go out now?
         env:
           EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
-          NEWSLETTER_RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
-          FORCE: ${{ inputs.force == true }}
+          # A recipient_override makes this a test to that address only; otherwise the real list.
+          NEWSLETTER_RECIPIENTS: ${{ (inputs.recipient_override != '' && inputs.recipient_override != null) && inputs.recipient_override || vars.NEWSLETTER_RECIPIENTS }}
+          # An override run is a manual test, so it forces past the "already sent / not current" gates.
+          FORCE: ${{ inputs.force == true || (inputs.recipient_override != '' && inputs.recipient_override != null) }}
         run: node scripts/edition-check.mjs email
 
   send:
@@ -99,16 +109,21 @@ jobs:
           EMAIL_TOKEN: ${{ secrets.EMAIL_TOKEN }}
           EMAIL_FROM: ${{ vars.EMAIL_FROM }}
           EMAIL_API_URL: ${{ vars.EMAIL_API_URL }}
-          NEWSLETTER_RECIPIENTS: ${{ vars.NEWSLETTER_RECIPIENTS }}
+          # Test override → that address only; otherwise the real recipient list.
+          NEWSLETTER_RECIPIENTS: ${{ (inputs.recipient_override != '' && inputs.recipient_override != null) && inputs.recipient_override || vars.NEWSLETTER_RECIPIENTS }}
           NEWSLETTER_PDF: ${{ github.workspace }}/tybourne-intelligence.pdf
-          # Normal sends share one key per month (no duplicates); a forced resend gets its own.
-          EMAIL_IDEMPOTENCY_KEY: ${{ inputs.force == true && format('tybourne-newsletter-{0}-resend-{1}-{2}', needs.gate.outputs.month, github.run_id, github.run_attempt) || '' }}
+          # A test override gets a one-off key so it never dedupes the real monthly send; a
+          # forced resend gets its own; a normal send shares the per-month key (no duplicates).
+          EMAIL_IDEMPOTENCY_KEY: ${{ (inputs.recipient_override != '' && inputs.recipient_override != null) && format('tybourne-newsletter-test-{0}-{1}', github.run_id, github.run_attempt) || (inputs.force == true && format('tybourne-newsletter-{0}-resend-{1}-{2}', needs.gate.outputs.month, github.run_id, github.run_attempt) || '') }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: node scripts/send-newsletter-email.mjs
 
       # Record the send so the rest of this month's runs are no-ops. Only the log is
       # committed (the consolidate above also touched data files; those are left alone).
+      # Skipped for a test override: a test must NOT mark the month sent, or the real
+      # client send would be skipped afterwards.
       - name: Record the send
+        if: ${{ inputs.recipient_override == '' || inputs.recipient_override == null }}
         run: |
           git config user.name "munshot-bot"
           git config user.email "actions@users.noreply.github.com"
