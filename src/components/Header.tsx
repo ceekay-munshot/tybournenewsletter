@@ -1,4 +1,4 @@
-import { ShieldCheck, Newspaper } from 'lucide-react';
+import { ShieldCheck, Newspaper, Mail } from 'lucide-react';
 import type { ClientInfo } from '../types';
 import { whenLabel } from '../lib/format';
 import { MunshotMark } from './MunshotMark';
@@ -7,10 +7,12 @@ export function Header({
   client,
   generatedAt,
   onOpenNewsletter,
+  onSubscribe,
 }: {
   client: ClientInfo;
   generatedAt: string;
   onOpenNewsletter: () => void;
+  onSubscribe: () => void;
 }) {
   return (
     <header className="no-print sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
@@ -32,6 +34,14 @@ export function Header({
             <ShieldCheck size={13} strokeWidth={2.4} />
             100% real data
           </span>
+          <button
+            onClick={onSubscribe}
+            title="Subscribe to the monthly edition by email"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-white px-2.5 py-1.5 text-[12px] font-semibold text-slate-700 shadow-sm ring-1 ring-slate-200 transition hover:bg-slate-50 sm:px-3"
+          >
+            <Mail size={14} strokeWidth={2.4} />
+            <span className="hidden sm:inline">Subscribe</span>
+          </button>
           <button
             onClick={onOpenNewsletter}
             title="Open the monthly newsletter"

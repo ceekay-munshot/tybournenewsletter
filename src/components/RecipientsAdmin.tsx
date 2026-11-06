@@ -2,7 +2,7 @@
 // Anyone can subscribe — just an email and "Add", no password. Managing the list
 // (view / remove) is tucked behind a small admin unlock so randoms can't delete it.
 import { useCallback, useState } from 'react';
-import { Mail, Plus, Trash2, Loader2, ArrowLeft, Check, AlertTriangle, Lock } from 'lucide-react';
+import { Mail, Plus, Trash2, Loader2, X, Check, AlertTriangle, Lock } from 'lucide-react';
 
 const TOKEN_KEY = 'tybourne:admin-token';
 const EMAIL_RE = /^[^\s@,]+@[^\s@,]+\.[^\s@,]+$/;
@@ -97,13 +97,20 @@ export function RecipientsAdmin({ onClose }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-10">
-      <div className="mx-auto w-full max-w-md">
-        <button onClick={onClose} className="mb-4 inline-flex items-center gap-1.5 text-[13px] font-medium text-slate-500 hover:text-slate-800">
-          <ArrowLeft size={15} /> Back to dashboard
+    <div
+      className="no-print fixed inset-0 z-[60] overflow-y-auto bg-slate-900/55 p-3 backdrop-blur-sm sm:p-6"
+      onClick={onClose}
+    >
+      <div className="relative mx-auto my-6 w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-1 top-1 z-10 grid h-8 w-8 place-items-center rounded-full bg-slate-100 text-slate-500 transition hover:bg-slate-200 hover:text-slate-800"
+        >
+          <X size={16} strokeWidth={2.4} />
         </button>
 
-        <div className="rounded-2xl bg-white p-6 shadow-card ring-1 ring-slate-200/70">
+        <div className="rounded-2xl bg-white p-6 shadow-pop ring-1 ring-slate-200">
           <div className="flex items-center gap-2">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-900 text-white">
               <Mail size={17} />

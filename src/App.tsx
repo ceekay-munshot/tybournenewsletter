@@ -26,20 +26,8 @@ export default function App() {
   const podcastMonthly = usePodcastMonthly();
   const [systemId, setSystemId] = useState<string | null>(null);
   const [nlOpen, setNlOpen] = useState<boolean>(wantsNewsletter);
-  const [adminOpen, setAdminOpen] = useState<boolean>(wantsRecipientsAdmin);
-
-  // Admin-only recipient manager (/?admin=recipients) — a private surface that needs
-  // no dashboard data, so it renders before the load/error gates.
-  if (adminOpen) {
-    return (
-      <RecipientsAdmin
-        onClose={() => {
-          if (typeof window !== 'undefined') window.history.replaceState({}, '', window.location.pathname);
-          setAdminOpen(false);
-        }}
-      />
-    );
-  }
+  // Subscribe modal — opened by the header button (or the /?subscribe deep link).
+  const [subscribeOpen, setSubscribeOpen] = useState<boolean>(wantsRecipientsAdmin);
 
   if (state.status === 'loading') return <LoadingScreen />;
   if (state.status === 'error') return <ErrorScreen message={state.error} />;
@@ -58,7 +46,12 @@ export default function App() {
 
   return (
     <div className={`flex min-h-screen flex-col${nlOpen ? ' print-only-newsletter' : ''}`}>
-      <Header client={data.client} generatedAt={data.generatedAt} onOpenNewsletter={() => setNlOpen(true)} />
+      <Header
+        client={data.client}
+        generatedAt={data.generatedAt}
+        onOpenNewsletter={() => setNlOpen(true)}
+        onSubscribe={() => setSubscribeOpen(true)}
+      />
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col md:flex-row">
         <Sidebar sectors={data.sectors} systems={data.systems} activeId={activeId} onSelect={openSystem} />
@@ -100,6 +93,15 @@ export default function App() {
           openSystem(id);
         }}
       />
+
+      {subscribeOpen && (
+        <RecipientsAdmin
+          onClose={() => {
+            if (typeof window !== 'undefined') window.history.replaceState({}, '', window.location.pathname);
+            setSubscribeOpen(false);
+          }}
+        />
+      )}
     </div>
   );
 }
