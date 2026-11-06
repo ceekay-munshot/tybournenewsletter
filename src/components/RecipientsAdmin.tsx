@@ -61,7 +61,7 @@ export function RecipientsAdmin({ onClose }: Props) {
         return;
       }
       if (r.status === 503) {
-        setAdminError('Admin view isn’t configured — set ADMIN_TOKEN on the Worker.');
+        setAdminError('Admin view isn’t configured — set ADMIN_TOKEN on the Pages project.');
         setUnlocked(true);
         return;
       }
