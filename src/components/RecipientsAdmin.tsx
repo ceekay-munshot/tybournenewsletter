@@ -2,7 +2,7 @@
 // Anyone can subscribe — just an email and "Add", no password. Managing the list
 // (view / remove) is tucked behind a small admin unlock so randoms can't delete it.
 import { useCallback, useState } from 'react';
-import { Mail, Plus, Trash2, Loader2, X, Check, AlertTriangle, Lock } from 'lucide-react';
+import { Mail, Plus, Trash2, Loader2, X, Check, AlertTriangle, Lock, Send } from 'lucide-react';
 
 const TOKEN_KEY = 'tybourne:admin-token';
 const EMAIL_RE = /^[^\s@,]+@[^\s@,]+\.[^\s@,]+$/;
@@ -17,6 +17,10 @@ export function RecipientsAdmin({ onClose }: Props) {
   const [subscribing, setSubscribing] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
   const [subError, setSubError] = useState<string | null>(null);
+  // "Email me the latest edition now" — on the subscribed-success screen.
+  const [lastEmail, setLastEmail] = useState('');
+  const [sendNow, setSendNow] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [sendNowError, setSendNowError] = useState<string | null>(null);
 
   // Admin manage (optional)
   const [manage, setManage] = useState(false);
@@ -42,12 +46,34 @@ export function RecipientsAdmin({ onClose }: Props) {
         body: JSON.stringify({ email: e }),
       });
       if (!r.ok) throw new Error((await r.json().catch(() => null))?.message || `Couldn't subscribe (HTTP ${r.status}).`);
+      setLastEmail(e); // remember it so "email me the latest now" can target it
       setSubscribed(true);
       setEmail('');
     } catch (err) {
       setSubError(err instanceof Error ? err.message : 'Could not subscribe.');
     } finally {
       setSubscribing(false);
+    }
+  };
+
+  // Queue an immediate send of the current edition to the address that just subscribed.
+  // The backend starts the real monthly sender for that one address (PDF included), so
+  // it lands in a minute or two — hence the "on its way" copy rather than "sent".
+  const emailMeNow = async () => {
+    if (!lastEmail) return;
+    setSendNow('sending');
+    setSendNowError(null);
+    try {
+      const r = await fetch('/api/send-now', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: lastEmail }),
+      });
+      if (!r.ok) throw new Error((await r.json().catch(() => null))?.message || `Couldn't send (HTTP ${r.status}).`);
+      setSendNow('sent');
+    } catch (err) {
+      setSendNow('error');
+      setSendNowError(err instanceof Error ? err.message : 'Could not send.');
     }
   };
 
@@ -122,11 +148,43 @@ export function RecipientsAdmin({ onClose }: Props) {
           </div>
 
           {subscribed ? (
-            <div className="mt-5 flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-[13.5px] font-medium text-emerald-700 ring-1 ring-emerald-100">
-              <Check size={16} /> You&rsquo;re on the list — the next edition will land in your inbox.
-              <button onClick={() => setSubscribed(false)} className="ml-auto text-[12px] font-semibold text-emerald-600 hover:underline">
-                Add another
-              </button>
+            <div className="mt-5 space-y-2.5">
+              <div className="flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-[13.5px] font-medium text-emerald-700 ring-1 ring-emerald-100">
+                <Check size={16} /> You&rsquo;re on the list — the next edition will land in your inbox.
+                <button
+                  onClick={() => {
+                    setSubscribed(false);
+                    setSendNow('idle');
+                    setSendNowError(null);
+                  }}
+                  className="ml-auto shrink-0 text-[12px] font-semibold text-emerald-600 hover:underline"
+                >
+                  Add another
+                </button>
+              </div>
+
+              {/* Optional: get this month's edition emailed right now (PDF included), not just next month. */}
+              {sendNow === 'sent' ? (
+                <p className="flex items-center gap-1.5 px-1 text-[12.5px] text-slate-500">
+                  <Check size={14} className="shrink-0 text-emerald-600" /> On its way to {lastEmail} — it&rsquo;ll arrive in a minute or two.
+                </p>
+              ) : (
+                <>
+                  <button
+                    onClick={() => void emailMeNow()}
+                    disabled={sendNow === 'sending'}
+                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-[13px] font-semibold text-slate-700 shadow-sm ring-1 ring-slate-200 transition hover:bg-slate-50 disabled:opacity-50"
+                  >
+                    {sendNow === 'sending' ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} strokeWidth={2.4} />}
+                    {sendNow === 'sending' ? 'Sending…' : 'Email me the latest edition now'}
+                  </button>
+                  {sendNowError && (
+                    <p className="flex items-center gap-1.5 px-1 text-[12px] text-rose-600">
+                      <AlertTriangle size={13} className="shrink-0" /> {sendNowError}
+                    </p>
+                  )}
+                </>
+              )}
             </div>
           ) : (
             <form

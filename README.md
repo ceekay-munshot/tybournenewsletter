@@ -184,12 +184,28 @@ repo. Set these on the Pages project (Cloudflare dashboard → **Workers &amp; P
 
 | Name | Kind | What it is |
 | --- | --- | --- |
-| `GITHUB_TOKEN` | **secret** · required | A fine-grained GitHub token with **Contents: read/write** on **this repo only** — lets a subscribe save the list. |
+| `GITHUB_TOKEN` | **secret** · required | A fine-grained GitHub token on **this repo only**. Needs **Contents: read/write** (to save the subscriber list) and, for the "email me now" button below, **Actions: read/write** (to start the sender). |
 | `ADMIN_TOKEN` | **secret** · optional | A password for the admin **view/remove** only. Subscribing never needs it. |
 
 Until `GITHUB_TOKEN` is set, the panel shows a "not configured" message and the monthly send
 simply uses `NEWSLETTER_RECIPIENTS` as before. (Public subscribe has basic abuse protection —
 email validation, dedupe and a list cap; add a Cloudflare Turnstile later if spam appears.)
+
+#### "Email me the latest edition now"
+
+After subscribing, the panel offers a one-click **Email me the latest edition now** button, for
+when someone wants the current edition in their inbox instead of waiting for the monthly send.
+It's served by a second Pages Function (`functions/api/send-now.ts`) at `/api/send-now`. Rather
+than render the email itself, it **starts the real monthly sender** (the `newsletter-email.yml`
+workflow) aimed at that one address via the workflow's `recipient_override` input — so the person
+gets the **exact same edition, PDF attached**, arriving in a minute or two. It forces past the
+"already sent this month" gate and is **not** recorded as the monthly send, so the real monthly
+blast to everyone still goes out as normal.
+
+It only sends to an address **already on the subscriber list**, so it can't be used to mail the
+edition to arbitrary people — it only re-sends the current edition to someone who opted in. This
+button is what needs the token's **Actions: read/write** scope; without it the button returns a
+clear "token needs Actions permission" error and subscribing still works fine.
 
 ### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
