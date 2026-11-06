@@ -3,6 +3,213 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3sgy",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Sharp Tech on Video: The U.S. Votes on Data Centers, Implications for Big Tech, Google’s Response to AI",
+      "date": "2026-11-06T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/sharp-tech-on-video-the-u-s-votes-on-data-centers-implications-for-big-tech-googles-response-to-ai/",
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "Sharp Tech debuts on video for the first time",
+          "detail": "The episode marks Sharp Tech's inaugural video release, available both on YouTube and embedded on Stratechery — a meaningful format expansion for a show built around audio conversation."
+        },
+        {
+          "title": "U.S. votes on data centers as a policy flashpoint",
+          "detail": "The episode addresses a U.S. vote related to data centers, signaling that infrastructure policy for AI and cloud computing has reached a legislative inflection point with direct Big Tech consequences."
+        },
+        {
+          "title": "Google's AI response examined",
+          "detail": "Google's strategic posture in reply to the broader AI competitive wave is a named topic, suggesting the hosts analyze whether and how Google is effectively countering rivals like OpenAI."
+        }
+      ],
+      "synthesis": "Sharp Tech's debut on video is the central event of this episode, with the format shift — from audio-only to YouTube and embedded Stratechery video — serving as both the topic and the medium. The hosts discuss the implications of presenting a conversation-based show visually, including production choices like camera setup, lighting, and whether the visual layer adds or detracts from a show built around verbal analysis.",
+      "whatChanged": "Sharp Tech launched its first-ever video format, now available on YouTube and Stratechery — a distribution expansion for a show previously audio-only.",
+      "whyItMatters": "Video distribution via YouTube opens Stratechery's Sharp Tech to a broader, algorithmically-driven audience, potentially accelerating subscriber conversion and brand reach beyond the existing paid readership.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Sharp Tech video launch",
+        "U.S. data center policy",
+        "Google AI response"
+      ]
+    },
+    {
+      "id": "live-iltb-107fmnm",
+      "podcastId": "iltb",
+      "show": "Invest Like the Best",
+      "title": "Ramtin Naimi on the State of Venture Investing - [Invest Like the Best, EP.499]",
+      "date": "2026-11-06T09:00:00.000Z",
+      "url": "https://colossus.com/episode/trillion-dollar-goalposts/",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "2019 or 2021: The Question Framing the Whole Episode",
+          "detail": "Naimi's organizing question is whether the current venture market is 2019 — early in a durable run — or 2021, at the top of a frothy cycle. This frame drives every market observation he makes and is the lens through which he interprets conflicting signals."
+        },
+        {
+          "title": "Second, Pricier Tranches as a FOMO Signal",
+          "detail": "Hot rounds now come with a reserved second tranche at a higher price specifically for firms that lost the initial deal. Naimi cites this as a concrete sign that fear of missing out is overriding price discipline among venture investors."
+        },
+        {
+          "title": "More Pulled Term Sheets Than Any Time Since 2021",
+          "detail": "Naimi reports seeing more term sheets pulled or renegotiated in recent weeks than at any point since 2021. In the prior cycle, this dynamic preceded a sharp market correction, making it a meaningful leading indicator to watch."
+        },
+        {
+          "title": "One Neolab Planning $1 Billion on a Single Training Run",
+          "detail": "Among the new generation of frontier AI labs ('neolabs'), at least one is planning to spend $1 billion on a single model training run. This figure concretizes the extreme capital intensity now required to compete at the AI frontier."
+        }
+      ],
+      "synthesis": "The central argument of the episode is a question Ramtin Naimi keeps returning to: is this 2019 or 2021? That is, are we early in a venture cycle with real runway ahead, or are we at the frothy peak where deployment discipline breaks down? The evidence he marshals cuts both ways — genuine technical progress in AI is driving real company formation, but the deal mechanics he's observing (second, pricier tranches reserved for firms that lost the initial round; term sheets pulled or renegotiated at a frequency not seen since 2021) look more like late-cycle euphoria than disciplined early-stage investing.",
+      "whatChanged": "Deal mechanics in venture have shifted to include second, pricier tranches for firms that missed the initial round, and Naimi reports more term sheets pulled or renegotiated than at any point since 2021 — a concrete, real-time signal of late-cycle stress in early-stage AI investing.",
+      "whyItMatters": "If the 2021 analogy holds, pulled term sheets and FOMO-driven over-pricing precede a sharp valuation correction; companies that raised at inflated second-tranche prices will face down-rounds or flat marks, pressuring LP returns and tightening future fundraising windows for AI startups.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Single AI training run spend (neolab)",
+          "value": "$1 billion",
+          "context": "One neolab plans to spend this on a single training run, illustrating frontier capital intensity"
+        },
+        {
+          "metric": "Prior best-case venture outcome ceiling (AI)",
+          "value": "$10 billion",
+          "context": "Previous assumed ceiling for a category-defining AI company exit"
+        },
+        {
+          "metric": "New best-case venture outcome ceiling (AI)",
+          "value": "$1 trillion",
+          "context": "Goalposts have moved from $10 billion to $1 trillion for a top AI winner"
+        },
+        {
+          "metric": "Episode number",
+          "value": "EP.499",
+          "context": "Invest Like the Best podcast, second conversation with Ramtin Naimi"
+        },
+        {
+          "metric": "Vanta listener discount",
+          "value": "$1,000 off",
+          "context": "Special offer for Invest Like the Best listeners at vanta.com/invest"
+        }
+      ],
+      "topics": [
+        "AI frontier labs (neolabs)",
+        "Abstract Ventures"
+      ]
+    },
+    {
+      "id": "live-oddlots-1ia7cz1",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "The Macro Implications of the Blue Tsunami",
+      "date": "2026-11-06T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/the-macro-implications-of-the-blue-tsunami",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Texas flips to 'hardcore blue' in a single night",
+          "detail": "Every statewide Texas race — comptroller, lieutenant governor, education board, the new business court seats — went Democratic, with apparent margins close to double digits; Joe Weisenthal called it surreal, saying Texas went from 'purple dream' to 'hard party rule' overnight."
+        },
+        {
+          "title": "Democratic governors now control all major data center states",
+          "detail": "Amarnath listed Texas, Georgia, Pennsylvania, Ohio, Virginia, and Wisconsin as the leading states for AI/data center construction — all now under Democratic governors — a shift he called a potential 'sea change' for how easy it is to do business for hyperscalers."
+        },
+        {
+          "title": "Fed independence structurally protected by Democratic Senate",
+          "detail": "With Powell's term ending in early 2028 and Democrats controlling the Senate, Amarnath thinks it will be 'very hard' to confirm a Trump-chosen replacement — historically even a Republican Senate rejected Judy Shelton, Steve Moore, and Marvin Goodfriend — effectively insulating Fed policy through the end of the…"
+        },
+        {
+          "title": "AI-sensitive spending now close to 8% of US GDP",
+          "detail": "Amarnath estimated that tech hardware, tech software, and industrial equipment combined account for close to 8% of GDP, making the AI CapEx cycle the dominant driver of the macroeconomic cycle — a figure he said was 'not very original to say at this point' but whose magnitude is easy to underestimate."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that the Democrats' unexpected sweep — taking both the House and Senate — represents a structural realignment, not merely a cyclical correction, with real and immediate consequences for monetary policy, AI infrastructure, and corporate strategy. Guest Skanda Amarnath anchors the analysis: the Senate's historical GOP structural advantage (rooted in the over-representation of low-population ag states) may be durably weakening, and because Senate seats carry six-year terms, even a one-off Democratic win in South Carolina or Mississippi locks in influence over Fed appointments and Supreme Court confirmations for the medium term.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "S&P 500 move on Democratic victory night",
+          "value": "up ~1.5%",
+          "context": "Day after the 2026 midterm Democratic sweep, contrary to pre-election forecasts of a selloff"
+        },
+        {
+          "metric": "Michael Hartnett (BofA) S&P 500 downside forecast on Democratic win",
+          "value": "down 10%",
+          "context": "Pre-election prediction that proved wrong; S&P actually rose"
+        },
+        {
+          "metric": "Tesla share decline post-election",
+          "value": "~10%",
+          "context": "Morning of November 5th (recording date), unwinding 2024 Trump-trade premium"
+        },
+        {
+          "metric": "SpaceX share decline post-election",
+          "value": "~7–7.5%",
+          "context": "Morning of November 5th alongside Tesla selloff"
+        },
+        {
+          "metric": "County-level vote swing (outlier counties)",
+          "value": "~20 points",
+          "context": "Swing from 2024 to 2026 in the same House races; Florida/Kentucky/Indiana early returns"
+        }
+      ],
+      "topics": [
+        "Democratic Senate sweep",
+        "Federal Reserve independence",
+        "Elon Musk / Tesla / SpaceX",
+        "Tech billionaire political effectiveness"
+      ]
+    },
+    {
+      "id": "live-ingoodcompany-z6213t",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Friday Wrap-Up: Nuclear, Batteries and Reflections from New York",
+      "date": "2026-11-06T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-nuclear-batteries-and-reflections-from-new-yo",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "NBIM's First Direct Battery Storage Investment",
+          "detail": "Norges Bank Investment Management made its first-ever direct investment in battery storage, a concrete milestone for one of the world's largest sovereign wealth funds entering the infrastructure layer of the energy transition."
+        },
+        {
+          "title": "AI as the Structural Driver of Power Demand Surge",
+          "detail": "John Ketchum, CEO of NextEra Energy, frames AI as the primary force behind a surge in electricity demand — a structural, long-duration shift rather than a cyclical uptick, with direct implications for grid investment priorities."
+        },
+        {
+          "title": "Nuclear's Comeback as a Grid Necessity",
+          "detail": "The episode highlights nuclear energy's resurgence as a serious solution to AI-era power needs, with NextEra's Ketchum and Tangen discussing it not as a fringe option but as an increasingly mainstream infrastructure imperative."
+        },
+        {
+          "title": "Batteries and Nuclear as Complementary, Not Competing",
+          "detail": "A key framing from the Ketchum conversation is that nuclear (baseload) and batteries (flexible storage) are complementary pillars of a future grid — both are needed simultaneously, which broadens the investable universe."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that AI is fundamentally reshaping global power demand, and that nuclear energy and battery storage are emerging as the two critical infrastructure responses. Nicolai Tangen, CEO of Norges Bank Investment Management (NBIM — the Norwegian sovereign wealth fund), recaps his conversation with John Ketchum, CEO of NextEra Energy, one of the world's largest clean energy companies, using it as a lens to explore where long-term capital should be positioned in the energy transition.",
+      "whatChanged": "NBIM (the Norwegian sovereign wealth fund) made its first-ever direct investment in battery storage, moving beyond listed equity exposure into direct infrastructure ownership in the energy storage sector.",
+      "whyItMatters": "When a sovereign wealth fund of NBIM's scale enters direct battery storage investment for the first time, it validates the asset class as institutionally investable and signals likely follow-on capital from other large long-term owners, potentially compressing risk premiums and accelerating project financing for…",
+      "beneficiaries": [
+        "NextEra Energy",
+        "Battery storage sector"
+      ],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Nuclear energy",
+        "Battery storage",
+        "NextEra Energy",
+        "AI power demand",
+        "NBIM long-term discipline"
+      ]
+    },
+    {
       "id": "live-aidaily-ppzqtf",
       "podcastId": "aidaily",
       "show": "AI Daily",
