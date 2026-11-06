@@ -1,4 +1,7 @@
-// Newsletter recipient manager — the API behind the dashboard subscribe box.
+// Newsletter recipient manager — the Cloudflare Pages Function behind the
+// dashboard subscribe box. It lives at /api/recipients: Cloudflare Pages maps the
+// file functions/api/recipients.ts to that route automatically, so no router or
+// Worker entry is needed (the rest of the site is the static SPA in dist/).
 //
 // Anyone can SUBSCRIBE (POST their email) — no password, like any newsletter form.
 // Viewing the full list and removing someone are admin-only (ADMIN_TOKEN), so the
@@ -6,13 +9,13 @@
 // clients/<client>/data/recipients.json via the GitHub Contents API, so even a bug
 // cannot write anywhere else in the repo. Emails are validated and the list is capped.
 //
-// Vars/secrets (set on the Worker, NOT in the repo):
+// Vars/secrets (set on the Pages project → Settings → Variables and secrets, NOT in the repo):
 //   GITHUB_TOKEN   REQUIRED — a fine-grained GitHub token with Contents read/write on THIS repo only
 //   ADMIN_TOKEN    optional — a password for the admin view/remove (subscribing never needs it)
 //   GITHUB_REPO    optional, default "ceekay-munshot/tybournenewsletter"
 //   CLIENT         optional, default "tybourne"
 
-export interface Env {
+interface Env {
   ADMIN_TOKEN?: string;
   GITHUB_TOKEN?: string;
   GITHUB_REPO?: string;
@@ -84,7 +87,7 @@ async function writeStore(env: Env, recipients: string[], sha: string | undefine
   const { base, headers } = gh(env);
   const updatedAt = new Date().toISOString();
   const body = {
-    note: 'Newsletter recipients managed from the dashboard admin panel (/?admin=recipients). Merged with NEWSLETTER_RECIPIENTS at send time.',
+    note: 'Newsletter recipients managed from the dashboard subscribe box (/api/recipients). Merged with NEWSLETTER_RECIPIENTS at send time.',
     recipients,
     updatedAt,
   };
@@ -104,9 +107,9 @@ async function writeStore(env: Env, recipients: string[], sha: string | undefine
  *   - DELETE (admin-only)  remove one email
  *  Subscribing needs only GITHUB_TOKEN (to save the list); viewing/removing needs
  *  ADMIN_TOKEN, so the list stays private and nobody but an admin can remove. */
-export async function handleRecipients(request: Request, env: Env): Promise<Response> {
+async function handleRecipients(request: Request, env: Env): Promise<Response> {
   if (request.method === 'OPTIONS') return new Response(null, { status: 204 });
-  if (!env.GITHUB_TOKEN) return json({ error: 'not_configured', message: 'Set GITHUB_TOKEN on the Worker.' }, 503);
+  if (!env.GITHUB_TOKEN) return json({ error: 'not_configured', message: 'Set GITHUB_TOKEN on the Pages project.' }, 503);
 
   try {
     // ── Public subscribe — no auth, just an email. Never returns the list. ──
@@ -122,7 +125,7 @@ export async function handleRecipients(request: Request, env: Env): Promise<Resp
     }
 
     // ── Admin only: view / remove. Requires ADMIN_TOKEN. ──
-    if (!env.ADMIN_TOKEN) return json({ error: 'not_configured', message: 'Set ADMIN_TOKEN on the Worker to view or remove.' }, 503);
+    if (!env.ADMIN_TOKEN) return json({ error: 'not_configured', message: 'Set ADMIN_TOKEN on the Pages project to view or remove.' }, 503);
     if (!tokenOk(bearer(request), env.ADMIN_TOKEN)) return json({ error: 'unauthorized' }, 401);
 
     if (request.method === 'GET') {
@@ -145,3 +148,8 @@ export async function handleRecipients(request: Request, env: Env): Promise<Resp
     return json({ error: 'server_error', message: e instanceof Error ? e.message : String(e) }, 500);
   }
 }
+
+// Pages Function entry — Cloudflare routes every HTTP method for /api/recipients
+// here, so the one handler dispatches on request.method (POST public; GET/DELETE admin).
+export const onRequest = (context: { request: Request; env: Env }): Promise<Response> =>
+  handleRecipients(context.request, context.env);

@@ -1,20 +1,20 @@
 {
-  // Cloudflare Workers Builds config: deploy the built static SPA (dist/) as a
-  // Workers static-assets site. The Worker (worker/index.ts) routes /api/recipients
-  // (the newsletter recipient manager) and serves everything else from dist/ via the
-  // ASSETS binding, with an index.html fallback for client routes.
+  // Cloudflare Pages config. The site is the static SPA in dist/ (built by
+  // `npm run build`); `single-page-application` routing serves index.html for
+  // client routes. The one API route, /api/recipients (the newsletter recipient
+  // manager), is a Pages Function — see functions/api/recipients.ts, which Pages
+  // auto-detects and bundles. No Worker entry (`main`) is used: Pages ignores it,
+  // which is why the API must live in functions/, not in a Worker script.
   //
-  // `build.command` runs during `wrangler deploy`, so the deploy builds dist/
-  // itself (install + build). That makes it self-contained even if the
-  // Cloudflare project has no separate build command configured.
+  // `build.command` builds dist/ (install + build) so the deploy is self-contained
+  // even if the Cloudflare project has no separate build command configured.
   "name": "tybournenewsletter",
   "compatibility_date": "2026-09-30",
-  "main": "worker/index.ts",
   "build": {
     "command": "npm install && npm run build"
   },
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
+    "not_found_handling": "single-page-application"
   }
 }

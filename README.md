@@ -169,17 +169,18 @@ first, run *Email monthly newsletter* by hand with **recipient_override** set to
 
 ### Subscribing from the dashboard
 
-Anyone can subscribe **in the dashboard** — no GitHub edits, no password. Open `/?subscribe`
-(or `/?admin=recipients`), type an email, hit **Add**, and they're on the list. Subscribers are
-**merged** with `NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
+Anyone can subscribe **in the dashboard** — no GitHub edits, no password. Click the **Subscribe**
+button in the header (or open `/?subscribe`), type an email, hit **Add**, and they're on the list.
+Subscribers are **merged** with `NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
 Viewing the full list and removing someone are tucked behind a small admin unlock, so the list
 stays private and only an admin can remove.
 
-It's served by a small Cloudflare Worker (`worker/`): the site is a Workers static-assets app
-(see `wrangler.jsonc`), and `/api/recipients` is the only route it adds. It commits **only**
-`clients/tybourne/data/recipients.json` via the GitHub Contents API (emails validated, list
-capped), so it can't touch anything else in the repo. Set these on the Worker (Cloudflare
-dashboard → the `tybournenewsletter` Worker → **Settings → Variables and Secrets**):
+It's served by a Cloudflare **Pages Function** (`functions/api/recipients.ts`): the site is a Pages
+static SPA (see `wrangler.jsonc`), and Pages maps that one file to the `/api/recipients` route
+automatically — no Worker script. It commits **only** `clients/tybourne/data/recipients.json` via
+the GitHub Contents API (emails validated, list capped), so it can't touch anything else in the
+repo. Set these on the Pages project (Cloudflare dashboard → **Workers &amp; Pages** → the
+`tybournenewsletter` Pages project → **Settings → Variables and secrets**):
 
 | Name | Kind | What it is |
 | --- | --- | --- |
