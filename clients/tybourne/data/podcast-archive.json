@@ -3,6 +3,59 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3sg1",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "2026.45: Falling Leaves (and Stocks)",
+      "date": "2026-11-06T18:14:42.000Z",
+      "url": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Democrats Win Largest Congressional Majority in 36 Years",
+          "detail": "The 2026 midterms delivered Democrats their biggest Congressional majority either party has held in 36 years, compounded by state-level wins in Texas and bipartisan data center opposition, making the AI buildout's regulatory future 'fraught with more uncertainty than ever.'"
+        },
+        {
+          "title": "Google Search Revenue Growth Slows for First Time in Five Quarters",
+          "detail": "Google's latest earnings showed search revenue growth decelerating for the first time in five quarters, which Ben Thompson describes as giving the 'appearance of mortality' to what may be the greatest business in digital commerce history."
+        },
+        {
+          "title": "Thompson's Facebook Reels Analog for Google AI Mode",
+          "detail": "Thompson argues that Google AI Mode could follow the arc of Facebook's Stories and Reels — initially disruptive to core monetization, but ultimately absorbed and monetized successfully — and says if anyone can monetize AI with ads, it's Google."
+        },
+        {
+          "title": "Jensen Huang Named as Concrete Post-Midterm Loser",
+          "detail": "Sharp China explicitly names Jensen Huang as someone whose life in Washington is 'about to get a lot more complicated,' as competing Democratic factions jostle over AI chip export policy and U.S.-China tech relations."
+        }
+      ],
+      "synthesis": "The central argument across this week's Stratechery bundle is that the 2026 midterm elections—delivering Democrats their largest Congressional majority in 36 years—have materially raised regulatory risk for the AI infrastructure buildout, shifting what was primarily a capital and technology execution story into an explicitly political one. The combination of Democratic gains, state-level results (especially in Texas), and documented data center opposition even among Republicans creates a multi-front headwind for the hyperscale capex cycle that has underpinned AI optimism.",
+      "whatChanged": "Democrats won their largest Congressional majority in 36 years in the 2026 midterms, combined with data center opposition from both parties and Texas state-level results, materially elevating regulatory risk for the AI infrastructure buildout.",
+      "whyItMatters": "The shift transforms the AI capex cycle from a purely execution/capital risk story into a legislative and regulatory risk story, threatening the permitting, siting, and policy environment that hyperscale data center expansion depends on — and directly complicating Nvidia's Washington relationships around export…",
+      "beneficiaries": [],
+      "atRisk": [
+        "Nvidia / Jensen Huang",
+        "AI data center buildout (hyperscalers broadly)"
+      ],
+      "numbers": [
+        {
+          "metric": "Democratic Congressional majority size",
+          "value": "largest either party has enjoyed in 36 years",
+          "context": "Result of the 2026 midterm elections, framing the scale of the Democratic win"
+        },
+        {
+          "metric": "Google search revenue growth slowdown",
+          "value": "first time in five quarters",
+          "context": "Reported in Google's most recent earnings, triggering investor concern about AI-driven erosion of search"
+        }
+      ],
+      "topics": [
+        "AI buildout regulation",
+        "Jensen Huang / Nvidia",
+        "Google's AI strategy"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3sgy",
       "podcastId": "stratechery",
       "show": "Stratechery",
@@ -41,7 +94,7 @@
       "id": "live-iltb-107fmnm",
       "podcastId": "iltb",
       "show": "Invest Like the Best",
-      "title": "Ramtin Naimi on the State of Venture Investing - [Invest Like the Best, EP.499]",
+      "title": "Ramtin Naimi - The State of Venture - [Invest Like the Best, EP.499]",
       "date": "2026-11-06T09:00:00.000Z",
       "url": "https://colossus.com/episode/trillion-dollar-goalposts/",
       "summarised": true,
