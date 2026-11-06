@@ -1,5 +1,7 @@
 {
-  "note": "Newsletter recipients managed from the dashboard admin panel (/?admin=recipients) via the /api/recipients function. These are MERGED with the NEWSLETTER_RECIPIENTS repo variable at send time (deduped), so either source works. No addresses are exposed publicly — the panel and the function are admin-gated.",
-  "recipients": [],
-  "updatedAt": null
+  "note": "Newsletter recipients managed from the dashboard subscribe box (/api/recipients). Merged with NEWSLETTER_RECIPIENTS at send time.",
+  "recipients": [
+    "vipulagrawal2502@gmail.com"
+  ],
+  "updatedAt": "2026-11-06T07:39:55.965Z"
 }
