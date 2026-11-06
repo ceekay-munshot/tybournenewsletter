@@ -1,6 +1,7 @@
-// Newsletter subscribe panel, opened via /?subscribe (or /?admin=recipients).
-// Anyone can subscribe — just an email and "Add", no password. Managing the list
-// (view / remove) is tucked behind a small admin unlock so randoms can't delete it.
+// Newsletter panel, opened from the header Subscribe button (or /?subscribe).
+// Two no-password actions from one email box: "Email it to me now" sends the current
+// edition straight away, and "Subscribe monthly" adds the address to the monthly send.
+// Managing the list (view / remove) is tucked behind a small admin unlock.
 import { useCallback, useState } from 'react';
 import { Mail, Plus, Trash2, Loader2, X, Check, AlertTriangle, Lock, Send } from 'lucide-react';
 
@@ -39,6 +40,7 @@ export function RecipientsAdmin({ onClose }: Props) {
     }
     setSubscribing(true);
     setSubError(null);
+    setSendNowError(null);
     try {
       const r = await fetch('/api/recipients', {
         method: 'POST',
@@ -46,9 +48,7 @@ export function RecipientsAdmin({ onClose }: Props) {
         body: JSON.stringify({ email: e }),
       });
       if (!r.ok) throw new Error((await r.json().catch(() => null))?.message || `Couldn't subscribe (HTTP ${r.status}).`);
-      setLastEmail(e); // remember it so "email me the latest now" can target it
       setSubscribed(true);
-      setEmail('');
     } catch (err) {
       setSubError(err instanceof Error ? err.message : 'Could not subscribe.');
     } finally {
@@ -56,18 +56,25 @@ export function RecipientsAdmin({ onClose }: Props) {
     }
   };
 
-  // Queue an immediate send of the current edition to the address that just subscribed.
+  // Send the current edition to the typed address right now — no subscription needed.
   // The backend starts the real monthly sender for that one address (PDF included), so
   // it lands in a minute or two — hence the "on its way" copy rather than "sent".
   const emailMeNow = async () => {
-    if (!lastEmail) return;
+    const e = email.trim();
+    if (!EMAIL_RE.test(e)) {
+      setSendNowError('Enter a valid email address.');
+      setSendNow('error');
+      return;
+    }
+    setLastEmail(e);
     setSendNow('sending');
     setSendNowError(null);
+    setSubError(null);
     try {
       const r = await fetch('/api/send-now', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: lastEmail }),
+        body: JSON.stringify({ email: e }),
       });
       if (!r.ok) throw new Error((await r.json().catch(() => null))?.message || `Couldn't send (HTTP ${r.status}).`);
       setSendNow('sent');
@@ -142,82 +149,76 @@ export function RecipientsAdmin({ onClose }: Props) {
               <Mail size={17} />
             </span>
             <div>
-              <h1 className="font-display text-lg font-bold text-slate-900">Get the monthly edition</h1>
-              <p className="text-[12px] text-slate-500">The Tybourne intelligence edition, delivered by email each month.</p>
+              <h1 className="font-display text-lg font-bold text-slate-900">Get the edition by email</h1>
+              <p className="text-[12px] text-slate-500">Have the current Tybourne intelligence edition sent to you now, or subscribe to get it every month.</p>
             </div>
           </div>
 
-          {subscribed ? (
-            <div className="mt-5 space-y-2.5">
-              <div className="flex items-center gap-2 rounded-xl bg-emerald-50 px-4 py-3 text-[13.5px] font-medium text-emerald-700 ring-1 ring-emerald-100">
-                <Check size={16} /> You&rsquo;re on the list — the next edition will land in your inbox.
-                <button
-                  onClick={() => {
-                    setSubscribed(false);
-                    setSendNow('idle');
-                    setSendNowError(null);
-                  }}
-                  className="ml-auto shrink-0 text-[12px] font-semibold text-emerald-600 hover:underline"
-                >
-                  Add another
-                </button>
-              </div>
-
-              {/* Optional: get this month's edition emailed right now (PDF included), not just next month. */}
-              {sendNow === 'sent' ? (
-                <p className="flex items-center gap-1.5 px-1 text-[12.5px] text-slate-500">
-                  <Check size={14} className="shrink-0 text-emerald-600" /> On its way to {lastEmail} — it&rsquo;ll arrive in a minute or two.
-                </p>
-              ) : (
-                <>
-                  <button
-                    onClick={() => void emailMeNow()}
-                    disabled={sendNow === 'sending'}
-                    className="inline-flex w-full items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2 text-[13px] font-semibold text-slate-700 shadow-sm ring-1 ring-slate-200 transition hover:bg-slate-50 disabled:opacity-50"
-                  >
-                    {sendNow === 'sending' ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} strokeWidth={2.4} />}
-                    {sendNow === 'sending' ? 'Sending…' : 'Email me the latest edition now'}
-                  </button>
-                  {sendNowError && (
-                    <p className="flex items-center gap-1.5 px-1 text-[12px] text-rose-600">
-                      <AlertTriangle size={13} className="shrink-0" /> {sendNowError}
-                    </p>
-                  )}
-                </>
-              )}
-            </div>
-          ) : (
-            <form
-              className="mt-5"
-              onSubmit={(e) => {
-                e.preventDefault();
-                void subscribe();
+          <form
+            className="mt-5"
+            onSubmit={(e) => {
+              e.preventDefault();
+              void emailMeNow();
+            }}
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                // editing the address clears any stale confirmations for a previous one
+                setSubError(null);
+                setSendNowError(null);
+                setSubscribed(false);
+                if (sendNow !== 'sending') setSendNow('idle');
               }}
-            >
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-slate-900"
-                  autoFocus
-                />
-                <button
-                  type="submit"
-                  disabled={subscribing}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
-                >
-                  {subscribing ? <Loader2 size={15} className="animate-spin" /> : <Plus size={15} />} Add
-                </button>
-              </div>
-              {subError && (
-                <p className="mt-2 flex items-center gap-1.5 text-[12px] text-rose-600">
-                  <AlertTriangle size={13} /> {subError}
-                </p>
-              )}
-            </form>
-          )}
+              placeholder="you@company.com"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-slate-900"
+              autoFocus
+            />
+
+            <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+              <button
+                type="submit"
+                disabled={sendNow === 'sending'}
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:opacity-50"
+              >
+                {sendNow === 'sending' ? <Loader2 size={15} className="animate-spin" /> : <Send size={15} strokeWidth={2.2} />}
+                {sendNow === 'sending' ? 'Sending…' : 'Email it to me now'}
+              </button>
+              <button
+                type="button"
+                onClick={() => void subscribe()}
+                disabled={subscribing}
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-white px-3 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-slate-50 disabled:opacity-50"
+              >
+                {subscribing ? <Loader2 size={15} className="animate-spin" /> : <Plus size={15} strokeWidth={2.2} />}
+                {subscribing ? 'Adding…' : 'Subscribe monthly'}
+              </button>
+            </div>
+
+            {sendNow === 'sent' && (
+              <p className="mt-2.5 flex items-center gap-1.5 rounded-lg bg-emerald-50 px-3 py-2 text-[12.5px] font-medium text-emerald-700 ring-1 ring-emerald-100">
+                <Send size={13} className="shrink-0" /> On its way to {lastEmail} — it&rsquo;ll arrive in a minute or two.
+              </p>
+            )}
+            {subscribed && (
+              <p className="mt-2 flex items-center gap-1.5 rounded-lg bg-emerald-50 px-3 py-2 text-[12.5px] font-medium text-emerald-700 ring-1 ring-emerald-100">
+                <Check size={13} className="shrink-0" /> You&rsquo;re on the monthly list.
+              </p>
+            )}
+            {(sendNowError || subError) && (
+              <p className="mt-2 flex items-center gap-1.5 text-[12px] text-rose-600">
+                <AlertTriangle size={13} className="shrink-0" /> {sendNowError || subError}
+              </p>
+            )}
+
+            <p className="mt-3 text-[11.5px] leading-relaxed text-slate-400">
+              <span className="font-semibold text-slate-500">Email it to me now</span> sends you the current
+              edition (PDF included) in a minute or two. <span className="font-semibold text-slate-500">Subscribe
+              monthly</span> adds you to the automatic monthly send.
+            </p>
+          </form>
         </div>
 
         {/* Admin: manage the list (view / remove). Tucked away — subscribing never needs it. */}

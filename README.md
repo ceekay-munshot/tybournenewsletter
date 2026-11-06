@@ -167,13 +167,18 @@ first, run *Email monthly newsletter* by hand with **recipient_override** set to
 | `SITE_URL` | variable | optional | Live dashboard URL, linked in the email body (and used to render the **deployed** route for the PDF). |
 | `EMAIL_API_URL` | variable | optional | Override the mail endpoint (defaults to the Munshot raw-email endpoint). |
 
-### Subscribing from the dashboard
+### Subscribing / getting the edition from the dashboard
 
-Anyone can subscribe **in the dashboard** — no GitHub edits, no password. Click the **Subscribe**
-button in the header (or open `/?subscribe`), type an email, hit **Add**, and they're on the list.
-Subscribers are **merged** with `NEWSLETTER_RECIPIENTS` at send time (deduped), so either source works.
-Viewing the full list and removing someone are tucked behind a small admin unlock, so the list
-stays private and only an admin can remove.
+Click the **Subscribe** button in the header (or open `/?subscribe`) to open the panel. From one
+email box, no password, there are two actions:
+
+- **Email it to me now** — sends the current edition to that address straight away (see the next
+  section). No subscription needed.
+- **Subscribe monthly** — adds the address to the automatic monthly send.
+
+Subscribers are **merged** with `NEWSLETTER_RECIPIENTS` at send time (deduped), so either source
+works. Viewing the full list and removing someone are tucked behind a small admin unlock, so the
+list stays private and only an admin can remove.
 
 It's served by a Cloudflare **Pages Function** (`functions/api/recipients.ts`): the site is a Pages
 static SPA (see `wrangler.jsonc`), and Pages maps that one file to the `/api/recipients` route
@@ -191,21 +196,25 @@ Until `GITHUB_TOKEN` is set, the panel shows a "not configured" message and the 
 simply uses `NEWSLETTER_RECIPIENTS` as before. (Public subscribe has basic abuse protection —
 email validation, dedupe and a list cap; add a Cloudflare Turnstile later if spam appears.)
 
-#### "Email me the latest edition now"
+#### "Email it to me now"
 
-After subscribing, the panel offers a one-click **Email me the latest edition now** button, for
-when someone wants the current edition in their inbox instead of waiting for the monthly send.
-It's served by a second Pages Function (`functions/api/send-now.ts`) at `/api/send-now`. Rather
-than render the email itself, it **starts the real monthly sender** (the `newsletter-email.yml`
-workflow) aimed at that one address via the workflow's `recipient_override` input — so the person
-gets the **exact same edition, PDF attached**, arriving in a minute or two. It forces past the
-"already sent this month" gate and is **not** recorded as the monthly send, so the real monthly
-blast to everyone still goes out as normal.
+The **Email it to me now** button sends the current edition to the typed address straight away —
+for when someone wants it in their inbox instead of waiting for the monthly send. No subscription
+is required. It's served by a second Pages Function (`functions/api/send-now.ts`) at
+`/api/send-now`. Rather than render the email itself, it **starts the real monthly sender** (the
+`newsletter-email.yml` workflow) aimed at that one address via the workflow's `recipient_override`
+input — so the person gets the **exact same edition, PDF attached**, arriving in a minute or two.
+It forces past the "already sent this month" gate and is **not** recorded as the monthly send, so
+the real monthly blast to everyone still goes out as normal.
 
-It only sends to an address **already on the subscriber list**, so it can't be used to mail the
-edition to arbitrary people — it only re-sends the current edition to someone who opted in. This
-button is what needs the token's **Actions: read/write** scope; without it the button returns a
-clear "token needs Actions permission" error and subscribing still works fine.
+This button is what needs the token's **Actions: read/write** scope; without it the button returns
+a clear "token needs Actions permission" error and the rest of the panel still works fine.
+
+**Abuse note:** `/api/send-now` is a public endpoint and each call starts a CI run and sends one
+email (the address is validated and must be a single mailbox, and every recipient is recorded in
+the workflow run history). The sender's `concurrency` group serialises runs, but before heavy
+public exposure put bot protection in front of it — a **Cloudflare Turnstile** check is the
+intended next step (see the Turnstile note above).
 
 ### Monthly SAP research refresh — used by `sap-research-refresh.yml`
 
