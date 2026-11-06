@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:19:45.847Z",
+  "generatedAt": "2026-11-06T05:24:38.853Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3126,12 +3126,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.38,
+      "thisValue": 2.37,
       "lastValue": 2.45,
-      "changePct": -0.028571428571428685,
-      "changeAbs": -0.07000000000000028,
+      "changePct": -0.03265306122448982,
+      "changeAbs": -0.08000000000000007,
       "direction": "down",
-      "asOf": "2026-11-03T00:00:00.000Z",
+      "asOf": "2026-11-04T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.9% (output -1.8%); biggest move: DeepSeek -17.8%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 3.3% (output -2.0%); biggest move: DeepSeek -17.8%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3284,10 +3284,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.38,
+          "thisValue": 2.37,
           "lastValue": 2.45,
-          "changePct": -0.028571428571428685,
-          "changeAbs": -0.07000000000000028,
+          "changePct": -0.03265306122448982,
+          "changeAbs": -0.08000000000000007,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.9% (output -1.8%); biggest move: DeepSeek -17.8%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 3.3% (output -2.0%); biggest move: DeepSeek -17.8%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3416,9 +3416,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.38,
-              "changePct": -0.028571428571428685,
-              "changeAbs": -0.07000000000000028,
+              "value": 2.37,
+              "changePct": -0.03265306122448982,
+              "changeAbs": -0.08000000000000007,
               "direction": "down"
             }
           ]
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-17.8% input · share +12.66pp"
+          "body": "-17.8% input · share +12.59pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -3447,9 +3447,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.38,
-          "changePct": -0.028571428571428685,
-          "changeAbs": -0.07000000000000028,
+          "value": 2.37,
+          "changePct": -0.03265306122448982,
+          "changeAbs": -0.08000000000000007,
           "direction": "down"
         }
       ]
@@ -15879,7 +15879,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-05T23:19:26.377Z",
+      "asOf": "2026-11-06T05:24:15.921Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17468,11 +17468,11 @@
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
             "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 26.6T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #23 by tokens.",
+            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #25 by tokens.",
             "Consumer app downloads (UBS): Gemini 14.4% — #2 behind ChatGPT 47.1% and ahead of Claude 11.6%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-05T23:19:26.503Z"
+          "asOf": "2026-11-06T05:24:16.018Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21833,30 +21833,30 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
-      "asOf": "2026-11-05T11:00:00.000Z",
+      "asOf": "2026-11-05T22:32:18.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Odd Lots",
-          "thisValue": 4,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
         },
         {
           "label": "AI Daily",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "Odd Lots",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21913,6 +21913,7 @@
         }
       ],
       "highlights": [
+        "Data center slowdown as a hyperscaler tailwind",
         "Goodarzi rejects the disruption narrative head-on",
         "Lula's Unexpected Victory",
         "Democratic Wave and AI Scrutiny",
@@ -21920,18 +21921,18 @@
         "Investing Insights from Martin Casado",
         "Record Merger Announcement",
         "MIT's Frontier Model Breakthrough",
-        "Regulatory Pressures",
         "Davis's substantial investment strategy",
         "Urgent need for domestic uranium supply"
       ],
-      "tone": "Tone across 42 episodes — 8 positive, 7 mixed, 2 cautious, 1 neutral",
-      "thisTone": "8 positive, 7 mixed, 2 cautious, 1 neutral",
+      "tone": "Tone across 40 episodes — 10 mixed, 7 positive, 2 cautious, 2 neutral",
+      "thisTone": "10 mixed, 7 positive, 2 cautious, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
         "Disney was worth more dead than alive in 1984"
       ],
       "prevTone": "1 mixed, 1 positive",
       "newHighlights": [
+        "Data center slowdown as a hyperscaler tailwind",
         "Goodarzi rejects the disruption narrative head-on",
         "Lula's Unexpected Victory",
         "Democratic Wave and AI Scrutiny",
@@ -21939,15 +21940,14 @@
         "Investing Insights from Martin Casado",
         "Record Merger Announcement",
         "MIT's Frontier Model Breakthrough",
-        "Regulatory Pressures",
         "Davis's substantial investment strategy",
         "Urgent need for domestic uranium supply"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny; Democratic Midterm Victory and Data Centers. Sentiment ran 8 positive, 7 mixed, 2 cautious, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Data center slowdown as a hyperscaler tailwind; Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory; Democratic Wave and AI Scrutiny. Sentiment ran 10 mixed, 7 positive, 2 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Data center slowdown as a hyperscaler tailwind; Goodarzi rejects the disruption narrative head-on; Lula's Unexpected Victory.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]

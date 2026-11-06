@@ -3,6 +3,45 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-ppzqtf",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Why a Data Center Slowdown Benefits Big Tech",
+      "date": "2026-11-05T22:32:18.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-a-Data-Center-Slowdown-Benefits-Big-Tech-e3rreid",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Data center slowdown as a hyperscaler tailwind",
+          "detail": "NLW argues that post-election political backlash against data center construction could give hyperscalers cover to cut capex, improve free cash flow, and strengthen competitive position — framing a supply constraint as a financial benefit rather than a setback."
+        },
+        {
+          "title": "AI investment boom 'cooling without crashing'",
+          "detail": "The episode poses the pivotal question of whether the AI capex cycle can moderate without triggering a demand-signal panic — the answer determines whether a slowdown is a normalization or the beginning of a broader AI investment reversal."
+        },
+        {
+          "title": "OpenAI claims ChatGPT search is gaining on Google",
+          "detail": "OpenAI publicly stated that ChatGPT search is closing in on Google, a direct shot at Alphabet's core business and the most consequential competitive claim in the search market in years."
+        },
+        {
+          "title": "Political backlash as exogenous capex cover",
+          "detail": "The episode highlights that the political environment — not demand weakness — is the driver of potential data center slowdowns, which is a crucial distinction: it lets CFOs cut spending without admitting demand-side doubt."
+        }
+      ],
+      "synthesis": "The central argument of this episode is counterintuitive but investable: a slowdown in data center construction, prompted by post-election political backlash, could paradoxically *benefit* the hyperscalers — Microsoft, Google, Amazon, and Meta — rather than harm them. The logic is that the AI infrastructure spending boom has been burning cash at a rate that strains free cash flow, and any external cover to dial back capex without appearing to blink on AI ambition gives Big Tech an opportunity to improve margins and strengthen their balance sheets without a competitive penalty.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Hyperscaler capex strategy",
+        "OpenAI / ChatGPT search",
+        "Google / Alphabet search",
+        "Meta AI acquisitions",
+        "Apple AI spending"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3sdg",
       "podcastId": "stratechery",
       "show": "Stratechery",
@@ -822,8 +861,45 @@
       "title": "2026.44: At Long Last…",
       "date": "2026-10-30T17:00:00.000Z",
       "url": "https://stratechery.com/2026/at-long-last/",
-      "summarised": false,
-      "notes": "(Photo by Carmen Mandato/Getty Images) Welcome back to This Week in Stratechery! As a reminder, each week, every Friday, we’re sending out this overview of content in the Stratechery bundle; highlighted links are free for everyone . Additionally, you have complete control over what we send to you. If you don’t want to receive This Week in Stratechery emails (there is no podcast), please uncheck the box in your…"
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Anthropic S-1 delivers first real frontier-lab economics data",
+          "detail": "After four years of debate about whether frontier AI labs can be economically viable, Anthropic's S-1 filing provided the first hard public numbers. Ben Thompson's Tuesday Update was framed as a landmark moment for the entire AI industry."
+        },
+        {
+          "title": "SEC rules force Anthropic to reveal Meta's Muse bet",
+          "detail": "A notable side-effect of the S-1 filing: SEC disclosure requirements compelled Anthropic to include information that inadvertently illuminated Meta's otherwise private 'Muse bet' — turning a competitor's IPO into a source of competitive intelligence."
+        },
+        {
+          "title": "Prediction: AI will rupture the 25-year-old global internet",
+          "detail": "Monday's Article makes a stark structural call — that AI-driven pressure will eventually (or imminently) fragment the unified global internet into localised architectures, ending a ~25-year era of a single open web."
+        },
+        {
+          "title": "Fragmented internet framed as a welcome outcome",
+          "detail": "Counterintuitively, the same article argues localisation would be a positive development, contrasting the degraded experiences of mass public platforms with the richer interactions of private group chats. Andrew explicitly endorses this view from personal experience."
+        }
+      ],
+      "synthesis": "This week's Stratechery bundle centres on a long-awaited data event: Anthropic's S-1 filing, which finally gives analysts hard numbers on the economics of a frontier AI lab after four years of speculation. Ben Thompson's Tuesday Update digs into the figures, while Sharp Tech extends the analysis to what Anthropic is communicating to prospective investors, what remains unanswered, and — notably — how SEC disclosure requirements forced Anthropic to shed light on Meta's Muse bet, a detail that would otherwise have stayed opaque.",
+      "whatChanged": "Anthropic filed its S-1, providing the first hard public numbers on the economics of a frontier AI lab after four years of speculation — and in doing so inadvertently disclosed details about Meta's strategic 'Muse bet' via SEC requirements.",
+      "whyItMatters": "Real financial data on frontier lab unit economics allows investors to stress-test whether the AI infrastructure buildout is commercially viable; the forced Meta disclosure also signals that upcoming AI-company IPO filings will be a new vector for competitive intelligence across the entire sector.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Duration of the global unified internet",
+          "value": "approximately 25 years",
+          "context": "referenced as the period that the current global internet architecture has existed, which the article predicts AI pressure will eventually rupture"
+        }
+      ],
+      "topics": [
+        "Anthropic S-1",
+        "Meta's Muse bet",
+        "Internet fragmentation",
+        "Xi Jinping's crackdown",
+        "China's global ambitions"
+      ]
     },
     {
       "id": "live-stratechery-1xz35tz",
@@ -832,8 +908,29 @@
       "title": "Sharp Tech on Video: Anthropic’s S-1 and What It Means for Meta and Muse, You Can See Everything, and Brewers!",
       "date": "2026-10-30T10:00:00.000Z",
       "url": "https://stratechery.com/2026/sharp-tech-on-video-anthropics-s-1-and-what-it-means-for-meta-and-muse-you-can-see-everything-and-brewers/",
-      "summarised": false,
-      "notes": "Sharp Tech is, for the first time, available on video. You have three ways to consume it: YouTube, Spotify, and here on Stratechery."
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "Sharp Tech debuts on video",
+          "detail": "For the first time, Sharp Tech is available in video format across YouTube, Spotify, and Stratechery simultaneously — a notable format expansion for the show."
+        },
+        {
+          "title": "Anthropic S-1 analysis teased",
+          "detail": "The episode promises an analysis of Anthropic's S-1 and what it means for Meta and Muse, suggesting a substantive discussion of AI competitive dynamics, though no details are available in the show notes."
+        }
+      ],
+      "synthesis": "The show notes for this episode are essentially promotional, announcing that Sharp Tech is now available in video format for the first time, across YouTube, Spotify, and Stratechery. The substantive topics — Anthropic's S-1 and its implications for Meta and Muse, a segment titled 'You Can See Everything,' and a 'Brewers!' segment — are named but not elaborated upon in the available material.",
+      "whatChanged": "Sharp Tech launched video distribution for the first time, simultaneously on YouTube, Spotify, and Stratechery — a format expansion for a previously audio-only show.",
+      "whyItMatters": "The episode's headline analytical topic — Anthropic's S-1 and its implications for Meta and Muse — would carry direct investable significance, but the show notes contain no detail on the arguments made, so no transmission mechanism to prices or decisions can be responsibly stated.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Sharp Tech video launch",
+        "Anthropic S-1",
+        "Episode format/distribution"
+      ]
     },
     {
       "id": "live-oddlots-1avd1ae",
@@ -842,8 +939,63 @@
       "title": "PHP2Shell Won't Be the Last Big AI Cybersecurity Risk",
       "date": "2026-10-30T08:00:00.000Z",
       "url": "https://omny.fm/shows/odd-lots/php2shell-wont-be-the-last-big-ai-cybersecurity-risk",
-      "summarised": false,
-      "notes": "Earlier this year, cybersecurity researchers discovered a vulnerability in PHP, an open-source coding language used in roughly 70% of the world's websites, that had been lying dormant for a long time, and if exploited, could have led to disaster. And the researchers only understood the extent of this bug through the use of frontier AI models. Today, we talk to two staffers at Calif (CEO Thai Duong and engineer Bruce…"
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "PHP Foundation knew about the vulnerability in 2024 but didn't fix it",
+          "detail": "The PHP Foundation internally filed the same bug in 2024 but chose not to patch it because the fix required expensive core changes that risked introducing new bugs or breaking existing sites — and no one had produced a working exploit. When Calif delivered a working exploit within a day of being asked, the calculus…"
+        },
+        {
+          "title": "Chrome had roughly 1,000 vulnerabilities found by AI, shocking the industry",
+          "detail": "Ty said AI analysis of Chrome — long considered a hardened target with heavy Google investment and strong mitigations — turned up approximately a thousand vulnerabilities, far exceeding expectations. He said this forced a reckoning: either security engineers had been poor at their jobs, or the codebase was simply too…"
+        },
+        {
+          "title": "Any AI good at coding is inherently a hacker — the inescapable trade-off",
+          "detail": "Ty argued that a coding agent capable of debugging, controlling computers, and understanding technical systems is definitionally a hacker — you cannot separate the two capabilities. As long as AI companies are selling coding tokens, they are building hacking capability; Jensen Huang's suggestion to 'just fix the model'…"
+        },
+        {
+          "title": "AI-assisted attackers spread across two banks in 24 hours",
+          "detail": "Ty described two banking-sector clients hit in the past weeks where AI-assisted attackers entered a network on Monday and had compromised every node by Tuesday — a task that Calif's own skilled human team takes about a month to accomplish. This machine-speed lateral movement was described as 'like cancer spreading at…"
+        }
+      ],
+      "synthesis": "The central argument of this episode is that AI has fundamentally shifted the offensive-defensive balance in cybersecurity — and right now, attackers are winning. Calif's Ty Yun and Bruce Dang illustrate this through the PHP2Shell vulnerability, where an exploit for a bug the PHP Foundation had already internally documented in 2024 was developed within a day using AI, something that previously might have taken months. More alarmingly, they describe two banking clients hit in just the past weeks where AI-assisted attackers entered a network on Monday and had spread to every node by Tuesday — a lateral movement speed that historically took Calif itself a month to replicate manually.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "PHP language market share among websites",
+          "value": "70%",
+          "context": "Share of all websites in existence using PHP, cited as the reason the vulnerability had wide impact"
+        },
+        {
+          "metric": "Microsoft monthly security updates — historical",
+          "value": "maybe 20 updates every month",
+          "context": "Approximate number of updates Microsoft released per month roughly 20 years ago"
+        },
+        {
+          "metric": "Microsoft monthly security updates — current",
+          "value": "1,400 updates per month",
+          "context": "Approximate number of updates Microsoft releases per month today, illustrating scale increase"
+        },
+        {
+          "metric": "Time to hack a system — human (historical)",
+          "value": "three months with lots of people",
+          "context": "Time required to compromise certain systems before AI assistance"
+        },
+        {
+          "metric": "Time to hack a system — AI-assisted (current)",
+          "value": "a few days with just one person",
+          "context": "Time required for the same task with one person and a capable AI model"
+        }
+      ],
+      "topics": [
+        "AI + offensive hacking",
+        "PHP security",
+        "Chrome / browser security",
+        "Calif's research methodology",
+        "Formal software verification"
+      ]
     },
     {
       "id": "live-ingoodcompany-bmct3a",
@@ -852,8 +1004,37 @@
       "title": "Friday Wrap-Up: Inside Active Strategies and Learning from Bill Ackman",
       "date": "2026-10-30T04:00:00.000Z",
       "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-inside-active-strategies-and-learning-from-bi",
-      "summarised": false,
-      "notes": "On this week’s Friday Wrap-Up, Nicolai Tangen is joined by Daniel Balthasar, Co-Chief Investment Officer of Active Strategies at NBIM, for a closer look at the fund’s active side. Following this week’s podcast episode with Bill Ackman, they discuss the investment that made Daniel admire Ackman, whether NBIM is an index fund, and what the fund can learn from the best investors. Daniel also explains why challenging…"
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Is NBIM really an index fund?",
+          "detail": "Tangen and Balthasar directly confront whether NBIM — one of the world's largest equity holders — is effectively just a passive index fund with a thin active veneer, a question Balthasar pushes back on while acknowledging structural constraints."
+        },
+        {
+          "title": "The Ackman investment that won Balthasar's admiration",
+          "detail": "Balthasar singles out a specific Bill Ackman investment as the one that made him genuinely admire Ackman's process or conviction; the episode uses this as a concrete anchor for the broader discussion on high-conviction investing."
+        },
+        {
+          "title": "Why challenging your own thesis is institutionally hard",
+          "detail": "Balthasar explains that committee structures and career-risk dynamics create systematic bias toward defending a thesis rather than stress-testing it — framing this as one of the central unsolved problems in institutional active management."
+        },
+        {
+          "title": "2025 described as a tougher year for active management",
+          "detail": "Balthasar openly acknowledges that the current year has been harder for NBIM's active strategies, requiring conscious effort to stay focused and avoid process drift — a candid admission from a senior sovereign wealth fund executive."
+        }
+      ],
+      "synthesis": "The episode centres on what a large, quasi-index sovereign wealth fund like NBIM can practically learn from a highly concentrated, conviction-driven investor like Bill Ackman. Nicolai Tangen and Daniel Balthasar use the Ackman interview as a springboard to interrogate NBIM's own active strategy — its identity, its edge, and its current headwinds — rather than just recapping the guest conversation.",
+      "whatChanged": "NBIM's Co-CIO of Active Strategies publicly engages with the question of whether the fund is genuinely active or effectively an index fund — a rare instance of internal strategic identity being examined through the lens of an outside investor (Ackman).",
+      "whyItMatters": "If NBIM — one of the world's largest equity holders — is reassessing how it institutionalises conviction and thesis-challenging, any shift toward more concentrated active tilts would move markets in the stocks it targets, given the fund's scale.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Bill Ackman",
+        "concentrated investing",
+        "index fund label (for NBIM)"
+      ]
     },
     {
       "id": "live-allin-tygqw3",
