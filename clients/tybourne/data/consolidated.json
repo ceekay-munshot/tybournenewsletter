@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T22:46:35.441Z",
+  "generatedAt": "2026-11-07T04:52:47.253Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3126,12 +3126,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.38,
+      "thisValue": 2.37,
       "lastValue": 2.45,
-      "changePct": -0.028571428571428685,
-      "changeAbs": -0.07000000000000028,
+      "changePct": -0.03265306122448982,
+      "changeAbs": -0.08000000000000007,
       "direction": "down",
-      "asOf": "2026-11-04T00:00:00.000Z",
+      "asOf": "2026-11-05T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 2.9% (output -1.9%); biggest move: DeepSeek -17.5%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 3.3% (output -2.0%); biggest move: DeepSeek -17.5%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3284,10 +3284,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.38,
+          "thisValue": 2.37,
           "lastValue": 2.45,
-          "changePct": -0.028571428571428685,
-          "changeAbs": -0.07000000000000028,
+          "changePct": -0.03265306122448982,
+          "changeAbs": -0.08000000000000007,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 2.9% (output -1.9%); biggest move: DeepSeek -17.5%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 3.3% (output -2.0%); biggest move: DeepSeek -17.5%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3416,9 +3416,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.38,
-              "changePct": -0.028571428571428685,
-              "changeAbs": -0.07000000000000028,
+              "value": 2.37,
+              "changePct": -0.03265306122448982,
+              "changeAbs": -0.08000000000000007,
               "direction": "down"
             }
           ]
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-17.5% input · share +12.52pp"
+          "body": "-17.5% input · share +12.51pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -3447,9 +3447,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.38,
-          "changePct": -0.028571428571428685,
-          "changeAbs": -0.07000000000000028,
+          "value": 2.37,
+          "changePct": -0.03265306122448982,
+          "changeAbs": -0.08000000000000007,
           "direction": "down"
         }
       ]
@@ -15879,7 +15879,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-06T22:46:15.746Z",
+      "asOf": "2026-11-07T04:52:29.267Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17472,7 +17472,7 @@
             "Consumer app downloads (UBS): Gemini 14.4% — #2 behind ChatGPT 47.1% and ahead of Claude 11.6%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-06T22:46:15.834Z"
+          "asOf": "2026-11-07T04:52:29.350Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21833,17 +21833,17 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
       "asOf": "2026-11-06T18:14:42.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21924,8 +21924,8 @@
         "Democratic Wave and AI Scrutiny",
         "Democratic Midterm Victory and Data Centers"
       ],
-      "tone": "Tone across 42 episodes — 11 mixed, 7 positive, 4 cautious, 3 neutral",
-      "thisTone": "11 mixed, 7 positive, 4 cautious, 3 neutral",
+      "tone": "Tone across 40 episodes — 11 mixed, 7 positive, 3 cautious, 3 neutral",
+      "thisTone": "11 mixed, 7 positive, 3 cautious, 3 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns",
         "Disney was worth more dead than alive in 1984"
@@ -21943,11 +21943,11 @@
         "Democratic Wave and AI Scrutiny",
         "Democratic Midterm Victory and Data Centers"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Democrats Win Largest Congressional Majority in 36 Years; Sharp Tech debuts on video for the first time; 2019 or 2021: The Question Framing the Whole Episode; Texas flips to 'hardcore blue' in a single night. Sentiment ran 11 mixed, 7 positive, 4 cautious, 3 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Democrats Win Largest Congressional Majority in 36 Years; Sharp Tech debuts on video for the first time; 2019 or 2021: The Question Framing the Whole Episode.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Democrats Win Largest Congressional Majority in 36 Years; Sharp Tech debuts on video for the first time; 2019 or 2021: The Question Framing the Whole Episode; Texas flips to 'hardcore blue' in a single night. Sentiment ran 11 mixed, 7 positive, 3 cautious, 3 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed, 1 positive), centred on Home Depot outperforms Apple since IPO with 25% compounding returns; Disney was worth more dead than alive in 1984. New to the conversation this quarter: Democrats Win Largest Congressional Majority in 36 Years; Sharp Tech debuts on video for the first time; 2019 or 2021: The Question Framing the Whole Episode.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
