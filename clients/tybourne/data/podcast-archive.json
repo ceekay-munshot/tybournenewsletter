@@ -3,6 +3,58 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-1vkry7r",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Companies Are Spending 5x More on AI Now",
+      "date": "2026-11-07T00:24:27.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Companies-Are-Spending-5x-More-on-AI-Now-e3rteiq",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "5x enterprise AI spending surge",
+          "detail": "Menlo Ventures' report finds companies are spending nearly five times more on AI than a year ago — a figure that is blowing past internal budgets rather than being planned for."
+        },
+        {
+          "title": "AI agents as the primary spending driver",
+          "detail": "The episode identifies AI agents — not baseline AI tools or copilots — as the specific catalyst behind the spending surge, implying a qualitative shift in how enterprises are deploying AI."
+        },
+        {
+          "title": "Anthropic and OpenAI dominating enterprise market share",
+          "detail": "The Menlo Ventures report shows Anthropic and OpenAI capturing the dominant share of enterprise AI spending, cementing a two-player dynamic at the model layer."
+        },
+        {
+          "title": "Seats-to-tokens pricing shift",
+          "detail": "Enterprises are moving from predictable per-seat SaaS pricing to variable token-based consumption models, fundamentally changing how AI costs are budgeted and controlled — and explaining why budgets are being exceeded."
+        }
+      ],
+      "synthesis": "The central finding from Menlo Ventures' enterprise AI report is stark: companies are spending nearly five times more on AI than they were a year ago, and the surge is being driven not by incremental tool adoption but by a structural shift toward AI agents. The episode argues that this spending is not only large but is actively blowing past internal budgets — a signal that demand is outpacing even the most aggressive enterprise planning cycles, and that the transition from AI as a productivity add-on to AI as a core operational layer is already underway.",
+      "whatChanged": "Menlo Ventures' enterprise AI report documents that companies are spending nearly 5x more on AI year-over-year, driven by agent deployment, with spending actively exceeding internal budgets — signalling a structural, not incremental, acceleration.",
+      "whyItMatters": "The seats-to-tokens pricing transition means enterprise software cost structures are becoming variable and consumption-driven; this compresses margins for buyers, benefits token-infrastructure providers (Anthropic, OpenAI), and pressures legacy per-seat SaaS vendors whose value propositions are being displaced.",
+      "beneficiaries": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "atRisk": [
+        "Legacy per-seat SaaS vendors"
+      ],
+      "numbers": [
+        {
+          "metric": "Year-over-year change in enterprise AI spending",
+          "value": "nearly five times more",
+          "context": "Per Menlo Ventures' enterprise AI report, companies spending on AI vs. the prior year"
+        }
+      ],
+      "topics": [
+        "Enterprise AI spending",
+        "Anthropic & OpenAI",
+        "AI agents",
+        "Broader markets",
+        "AI accelerating AI research"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3sg1",
       "podcastId": "stratechery",
       "show": "Stratechery",
