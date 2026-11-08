@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-allin-ji1ba3",
+      "podcastId": "allin",
+      "show": "All-In",
+      "title": "Midterm Blood Bath, $4T AI Sell Off, Data Center Freeze, What's Next for Trump",
+      "date": "2026-11-07T18:27:00.000Z",
+      "url": "https://allinchamathjason.libsyn.com/midterm-blood-bath-4t-ai-sell-off-data-center-freeze-whats-next-for-trump",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "GOP suffers 'generational collapse' in 2026 midterms",
+          "detail": "The besties characterize the 2026 midterm results as a generational collapse for the Republican Party, pointing to Democratic competitiveness even in Texas and broad suburban/independent voter flight. They argue this is a structural realignment, not a one-cycle correction."
+        },
+        {
+          "title": "$4 trillion in AI/data center market cap wiped in single session",
+          "detail": "On the day the episode was recorded (Friday morning), approximately $4 trillion in market cap was erased, with AI infrastructure and data center stocks leading the selloff, driven by a reported potential AI ban and data center freeze news."
+        },
+        {
+          "title": "Major investors skeptical Anthropic can hit $1.5T IPO valuation",
+          "detail": "The WSJ reported that major investors doubt Anthropic can achieve its $1.5 trillion valuation target in a near-term IPO; Polymarket simultaneously showed low odds of significant IPOs before 2027, suggesting the high-valuation AI IPO window is effectively closed."
+        },
+        {
+          "title": "Potential AI ban emerges as new post-midterm policy risk",
+          "detail": "The besties discuss a potential ban — likely on AI exports, chips, or data center investment — that surfaced as a policy risk following the shift in congressional power, treating it as a primary driver of the $4 trillion market selloff."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that the 2026 midterms delivered a generational GOP collapse — a sweeping repudiation of the Trump-era Republican Party that the besties dissect from multiple angles: electoral mechanics, policy overreach, and the demographic realignment that made Texas competitive for Democrats. The conversation frames the result not as a one-cycle blip but as a structural crisis for the GOP, driven by suburban flight, independent voter backlash, and what the hosts characterize as a failure to deliver on kitchen-table economic promises after two years of unified control.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Market cap erased in AI/data center selloff",
+          "value": "$4 trillion",
+          "context": "Single session following 2026 midterm election results and AI ban fears"
+        },
+        {
+          "metric": "Anthropic IPO valuation target",
+          "value": "$1.5 trillion",
+          "context": "Target cited by WSJ; major investors reported to be skeptical it can be achieved"
+        },
+        {
+          "metric": "Midterm election results coverage start",
+          "value": "3:37",
+          "context": "Timestamp in episode where midterms postmortem begins"
+        },
+        {
+          "metric": "Market reaction segment start",
+          "value": "53:13",
+          "context": "Timestamp where data center fears, $4T selloff, and AI ban discussion begins"
+        },
+        {
+          "metric": "Science Corner segment start",
+          "value": "1:24:21",
+          "context": "Timestamp for OpenAI Exponential Time Hypothesis discussion"
+        }
+      ],
+      "topics": [
+        "2026 midterm results",
+        "AI/data center stocks",
+        "Anthropic IPO prospects",
+        "OpenAI ETH breakthrough",
+        "AI regulatory risk"
+      ]
+    },
+    {
       "id": "live-aidaily-1vkry7r",
       "podcastId": "aidaily",
       "show": "AI Daily",
