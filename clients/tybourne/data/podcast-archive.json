@@ -3,6 +3,51 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-13r2qpu",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Agentic Video Is Real and Here’s What You Should Try",
+      "date": "2026-11-08T12:05:09.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Agentic-Video-Is-Real-and-Heres-What-You-Should-Try-e3s0li5",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Agentic video declared practically usable today",
+          "detail": "NLW opens by asserting that AI agents editing, animating, and producing video from plain-language descriptions is not a future promise but a current capability operators should be testing now. This frames the entire episode as actionable rather than speculative."
+        },
+        {
+          "title": "Self-updating customer education videos",
+          "detail": "The most novel use case cited is customer education videos that automatically regenerate when the underlying product or policy information changes — turning a one-time asset into a living, low-maintenance communication layer. This is the sharpest break from traditional video economics discussed."
+        },
+        {
+          "title": "Three-level adoption ladder for getting started",
+          "detail": "NLW structures the on-ramp as: Level 1 (editing existing recordings), Level 2 (concept demos and animated business updates), Level 3 (recurring automated video workflows). The tiering is designed to give skeptical operators a low-risk entry point."
+        },
+        {
+          "title": "Workflow automation as the real leverage, not one-off speed",
+          "detail": "The episode's implicit thesis is that the compounding value comes from removing humans from the loop on routine, recurring video tasks entirely — not from producing any single video faster. This positions agentic video as an infrastructure investment, not a creative shortcut."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that agentic video production has crossed a practical threshold: AI agents can now edit, animate, and produce video content from plain-language descriptions, making the skill of video creation accessible to operators who have never touched editing software. NLW frames this not as a future capability but as something deployable today, grounding the claim in specific use cases — meeting highlight reels, concept demos, animated business updates, and customer education videos that auto-refresh when underlying information changes.",
+      "whatChanged": "AI agents have reached the point where they can autonomously edit, animate, and produce videos from plain-language prompts — including self-updating customer education videos that regenerate when source material changes — making video a recurring automated workflow rather than a discrete creative project.",
+      "whyItMatters": "This shifts the economics of business video: recurring production labor costs collapse when agents handle routine video updates automatically, which raises the competitive bar for any operator still running manual video workflows and creates demand for agentic video platform tooling.",
+      "beneficiaries": [
+        "Business operators adopting agentic video workflows",
+        "AI Champions Program / besuper.ai"
+      ],
+      "atRisk": [
+        "Traditional video production agencies and freelance editors"
+      ],
+      "numbers": [],
+      "topics": [
+        "Agentic video production",
+        "Self-updating video workflows",
+        "Traditional video production",
+        "AI adoption curve for operators"
+      ]
+    },
+    {
       "id": "live-allin-ji1ba3",
       "podcastId": "allin",
       "show": "All-In",
