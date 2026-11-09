@@ -3,6 +3,91 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3t5q",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
+      "date": "2026-11-09T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/",
+      "summarised": false,
+      "notes": "Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy, and that might not be the end of his troubles. I hope he survives, but his influence will never be the same."
+    },
+    {
+      "id": "live-oddlots-q9o6m3",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "This Is How New York City Takes Out Its Trash",
+      "date": "2026-11-09T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/this-is-how-new-york-city-takes-out-its-trash",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "24 million pounds of trash — every single day, forever",
+          "detail": "Goodman describes DSNY's daily collection of 24 million pounds as the 'definitional Sisyphean task' — unlike most hard jobs, it never ends: the same 24 million pounds must be collected tomorrow and every day after, with no finish line."
+        },
+        {
+          "title": "Black bags traced to a plastics-industry lobby after the 1968 sanitation strike",
+          "detail": "Mayor Lindsay's post-strike 'Committee on the Black Bag' accepted the plastics industry's claim that plastic bags were rodent-resistant and space-saving. It was clear almost immediately that neither claim was true, but the system persisted for five more decades."
+        },
+        {
+          "title": "No North American city has on-street containerization — New York will be first",
+          "detail": "Goodman states flatly that on-street containerization is a purely European, South American, and Asian practice; no city in North America has implemented it. When complete, New York will go from 'back of the pack to first.'"
+        },
+        {
+          "title": "ASL truck designed in 10 months after industry said five years",
+          "detail": "No suitable automated side-loader truck existed for residential NYC use. Rather than wait the five years industry experts projected for a from-scratch design, DSNY got into the truck-design business itself, produced a working prototype in about 10 months by pairing a European side-loading body with a Mack chassis."
+        }
+      ],
+      "synthesis": "New York City's Department of Sanitation is mid-way through what it calls the trash revolution — a systematic, data-driven containerization overhaul that moves the city from black plastic bags piled on sidewalks to building-assigned and on-street containers. The catalyst was a 70,000-block volumetric analysis (converting a century of weight data into the volume figures containerization planning actually requires), which revealed that neither the 'just copy Barcelona' urbanists nor the 'New York is unique, it can't work here' skeptics were right. The city is the first in North America to attempt on-street containerization at scale, and when complete it will have leapfrogged every other North American city.",
+      "whatChanged": "New York City's Department of Sanitation launched the first on-street containerization program in North American history in June 2025 (West Harlem), backed by a mayoral commitment to full citywide rollout by end of 2031 — shifting from black bags on sidewalks to building-assigned and automated-side-loader-serviced bins…",
+      "whyItMatters": "Full containerization restructures the streetscape of the densest city in North America, freeing sidewalk space, reducing sanitation-worker injury rates (50% of line-of-duty injuries come from bag-throwing), creating ~30,000 parking-space conversions, and potentially reducing rat habitat — with downstream effects on…",
+      "beneficiaries": [
+        "NYC sanitation workers (DSNY, ~6,500 workers)",
+        "Building owners and supers in containerized districts",
+        "Pedestrians and street-level businesses in containerized districts",
+        "Mack Trucks / truck chassis vendors"
+      ],
+      "atRisk": [
+        "NYC private carters (commercial waste haulers)",
+        "Street parking users in containerized districts"
+      ],
+      "numbers": [
+        {
+          "metric": "Daily trash, recycling, and compost collected by DSNY",
+          "value": "24 million pounds",
+          "context": "Collected every single day across New York City; described as a definitional Sisyphean task with no endpoint"
+        },
+        {
+          "metric": "Transfer station infrastructure project cost and duration",
+          "value": "multi-billion dollar, 15-year",
+          "context": "Built five transfer stations after Staten Island landfill closed around 2000, replacing in-city landfill with waste export model"
+        },
+        {
+          "metric": "Shipping containers per barge",
+          "value": "50 or 75",
+          "context": "Packed storage containers on a single barge, each replacing a truck that would have driven to a landfill"
+        },
+        {
+          "metric": "Collection truck capacity",
+          "value": "12 to 13 tons",
+          "context": "Per truck per route; routes optimized to fill the truck and complete in a single shift"
+        },
+        {
+          "metric": "Blocks covered in volumetric analysis",
+          "value": "70,000 blocks",
+          "context": "Block-by-block conversion of weight data to volume data to design right-sized containerization program"
+        }
+      ],
+      "topics": [
+        "NYC trash revolution",
+        "NYC recycling system",
+        "New York exceptionalism argument",
+        "LaGuardia 'apolitical trash' quote",
+        "Barcelona as gold standard"
+      ]
+    },
+    {
       "id": "live-aidaily-13r2qpu",
       "podcastId": "aidaily",
       "show": "AI Daily",
@@ -635,6 +720,66 @@
       "atRisk": [],
       "numbers": [],
       "topics": []
+    },
+    {
+      "id": "live-stratechery-p5quqq",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "AI on the Ballot",
+      "date": "2026-11-04T11:00:00.000Z",
+      "url": "https://www.youtube.com/watch?v=F4vInlTqRdo",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Wisconsin campaign ads dominated by data centers — from both sides",
+          "detail": "Thompson observed that the single most common topic in Wisconsin campaign ads during baseball season was data centers, and both parties ran anti-data-center messaging, each accusing the other of being pro-data center. The bipartisan hostility is the tell."
+        },
+        {
+          "title": "Texas flips Democratic on a data center moratorium pledge",
+          "detail": "Gina Hinojosa became Texas's first Democratic governor since 1990, running on a pledge to impose a moratorium on data center construction in a state that holds 25%+ of planned US capacity by 2030."
+        },
+        {
+          "title": "Republican Greg Abbott had already imposed a permit moratorium",
+          "detail": "Before losing, incumbent Abbott had declared a moratorium on new data-center permits in September — illustrating that even the pro-business Republican felt forced to restrict the industry, yet it still wasn't enough to save his seat."
+        },
+        {
+          "title": "AI data center opposition differs structurally from internet-era reception",
+          "detail": "Thompson notes that internet-era data centers were welcomed by local governments competing for tax and economic benefits; the current backlash is specific to AI-scale facilities, suggesting their power and community footprint have changed the political calculus fundamentally."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that AI data center opposition has become a genuine electoral force — not just a local nuisance — capable of reshaping the policy environment for the entire AI buildout. Ben Thompson's key observation is drawn from watching Wisconsin campaign ads during the MLB playoffs: data centers were the single most common campaign topic, and both parties ran against them, each accusing the other of being pro-data center. That bipartisan antipathy signals the issue has moved from fringe concern to mainstream political liability.",
+      "whatChanged": "Data center opposition became a decisive electoral issue in the 2026 midterms: both parties ran anti-data-center ads in Wisconsin, Texas flipped Democratic on a moratorium pledge, and even incumbent Republican Greg Abbott had already imposed a permit moratorium — signaling that AI infrastructure faces a new, durable…",
+      "whyItMatters": "Texas holds more than 25% of planned US data center capacity by 2030; a moratorium there directly constricts the physical buildout pipeline for AI, raising construction costs and timelines for hyperscalers and potentially shifting capacity investment to jurisdictions with more permissive regimes.",
+      "beneficiaries": [],
+      "atRisk": [
+        "Texas data center pipeline",
+        "AI hyperscalers (unnamed)"
+      ],
+      "numbers": [
+        {
+          "metric": "Senate seats flipped to Democrats",
+          "value": "at least 7",
+          "context": "2026 midterm elections, previously held by Republicans"
+        },
+        {
+          "metric": "Texas share of planned US data center capacity",
+          "value": "more than 25%",
+          "context": "as a share of total planned US capacity by 2030"
+        },
+        {
+          "metric": "Years since Texas last had a Democratic governor",
+          "value": "since 1990",
+          "context": "Gina Hinojosa's win ends a 35+ year Republican hold on the Texas governorship"
+        }
+      ],
+      "topics": [
+        "AI data center buildout",
+        "Gina Hinojosa / Texas result",
+        "Greg Abbott",
+        "Milwaukee Brewers",
+        "Data center opposition (prior internet era vs. now)"
+      ]
     },
     {
       "id": "live-iltb-2crwmu",
