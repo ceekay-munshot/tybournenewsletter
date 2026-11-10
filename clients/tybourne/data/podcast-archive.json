@@ -3,6 +3,130 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-sources-l6dfmi",
+      "podcastId": "sources",
+      "show": "Sources",
+      "title": "AWS CEO Matt Garman on building a $1 trillion business",
+      "date": "2026-11-10T16:03:25.000Z",
+      "url": "https://sources.news/p/aws-ceo-matt-garman-1-trillion",
+      "summarised": true,
+      "keyPoints": [
+        {
+          "title": "Garman blames rogue operators for industry's political backlash",
+          "detail": "Garman explicitly says operators who brag about ignoring regulations have 'given the industry a bad name,' and states that 'all data center producers are not created equal.' This is a rare instance of a hyperscaler CEO publicly calling out peer bad actors."
+        },
+        {
+          "title": "AWS working with governors to mandate responsible data center practices",
+          "detail": "Beyond voluntary best practices, Garman says AWS is working with governors to turn its community and environmental standards into 'more structured programs' that all operators must follow — a push toward binding industry-wide rules."
+        },
+        {
+          "title": "Amazon believes AWS can become a $1 trillion revenue business in 5–10 years",
+          "detail": "Garman lays out the case that AI-driven cloud migration — companies now forced to centralize data for AI agents — is the primary engine that could take AWS to $1 trillion in revenue within five to ten years."
+        },
+        {
+          "title": "Inference is currently less than 1% of its eventual scale",
+          "detail": "Garman claims AI inference workloads today represent less than 1% of what they will ultimately become, implying an orders-of-magnitude expansion in GPU demand still ahead — the core justification for AWS's aggressive build-out."
+        }
+      ],
+      "synthesis": "AWS CEO Matt Garman's central argument is that the AI compute buildout is both a historic business opportunity and a mounting political liability — and that the industry itself is to blame for much of the backlash. Garman explicitly criticizes data center operators who brag about ignoring regulations, saying 'all data center producers are not created equal,' and positions Amazon's engagement with governors on power, water, and community practices as a differentiator. He is working to turn AWS's internal standards into structured industry-wide programs that all operators must follow — a notable shift from voluntary best practices toward what could become mandated compliance.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "AWS revenue target",
+          "value": "$1 trillion",
+          "context": "Amazon's ambition for AWS revenue within the next five to ten years"
+        },
+        {
+          "metric": "Timeframe for AWS $1T target",
+          "value": "five to ten years",
+          "context": "Projected timeline for AWS to reach $1 trillion in revenue"
+        },
+        {
+          "metric": "GPU addition rate at AWS",
+          "value": "one GPU every 14 seconds",
+          "context": "Current pace of GPU capacity expansion at AWS"
+        },
+        {
+          "metric": "Inference as share of eventual compute",
+          "value": "less than 1 percent",
+          "context": "Current inference workload as a fraction of what Garman expects it will ultimately become"
+        },
+        {
+          "metric": "Expected duration of capacity shortages",
+          "value": "another couple of years",
+          "context": "How long Garman expects GPU supply to remain constrained despite current build rate"
+        }
+      ],
+      "topics": []
+    },
+    {
+      "id": "live-cheekypint-3oets7",
+      "podcastId": "cheekypint",
+      "show": "Cheeky Pint",
+      "title": "Nik Storonsky: The most uncompromising banking CEO",
+      "date": "2026-11-10T12:45:00.000Z",
+      "url": "https://share.transistor.fm/s/dd3ec675",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "100,000 customers per day, zero paid marketing for 7 years",
+          "detail": "Storonsky states Revolut now onboards roughly 100,000 customers daily, up from 1–10 at launch, and that the first seven years were entirely organic — no paid marketing budget at all. Paid growth only began in 2022, meaning the entire foundational scale was built on word of mouth and PR alone."
+        },
+        {
+          "title": "Lending capped at under 10% of balance sheet — deliberately",
+          "detail": "Even now that Revolut has deposits and banking licenses, Storonsky targets keeping lending below 10% of the balance sheet and securitizing the rest. He compares running a large credit book to 'selling options' — collecting premium for 10 years and losing it all in year 11 — and says this is why banking multiples sit at…"
+        },
+        {
+          "title": "50%+ of under-35s in Europe already on Revolut",
+          "detail": "Storonsky claims Revolut has captured more than 50% of people aged 18–35 across most European countries where it operates. He frames the difficulty as the 50, 60, and 70+ cohorts who hold the majority of liquid assets and are very hard to migrate from legacy banks."
+        },
+        {
+          "title": "Conditional OCC approval received; US launch ~2027",
+          "detail": "Revolut has received conditional approval from the OCC and needs two more approvals before it can fully launch in the US. Storonsky expects the US launch around next year (from the time of recording, implying ~2027) and says the current administration has compressed licensing timelines from 4–5 years to roughly one…"
+        }
+      ],
+      "synthesis": "Nik Storonsky's central thesis is that Revolut's durability rests on a subscription-over-credit business model deliberately chosen to avoid the cyclicality of lending — a constraint born from European regulation that he now views as a competitive advantage. Because interchange and lending rates are tightly capped in the UK and Europe, Revolut was forced to make its transactional and subscription businesses profitable on their own merits, producing a P&L profile he compares to a tech company (40–50x PE) rather than a bank (10x PE). He argues that credit portfolios are structurally like 'selling options' — collecting premium for 10 years and losing it all in year 11 when unemployment spikes — and that even now, with a full banking license and deposit base, Revolut targets keeping lending below 10% of the balance sheet and securitizing the rest.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Daily new customer sign-ups (current)",
+          "value": "about 100,000 customers joining every day",
+          "context": "Up from 1–10/day at launch, then 100, 500, 1,000 — reflects full organic + paid growth era"
+        },
+        {
+          "metric": "Year paid growth marketing started",
+          "value": "2022",
+          "context": "First 7 years of Revolut's existence were purely organic growth with no serious marketing budget"
+        },
+        {
+          "metric": "Daily new business customer onboarding (current)",
+          "value": "maybe 1,500 business customers a day",
+          "context": "Up from ~10 business customers/day at the start of that product; ~30% paid, ~70% organic"
+        },
+        {
+          "metric": "New product development timeline",
+          "value": "12–18 months",
+          "context": "From decision to fund a new bet to product launch, including team build and internal governance"
+        },
+        {
+          "metric": "Ultra subscription monthly price",
+          "value": "about €50 per month",
+          "context": "Revolut's premium tier, described as the equivalent of an Amex Premium card"
+        }
+      ],
+      "topics": [
+        "Revolut's product model",
+        "US expansion prospects",
+        "Credit-heavy banking business",
+        "Legacy US neobanks (e.g. Simple)",
+        "AI impact on team structure",
+        "Revolut's European market position"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3t8f",
       "podcastId": "stratechery",
       "show": "Stratechery",
