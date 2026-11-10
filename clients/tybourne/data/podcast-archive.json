@@ -3,14 +3,94 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-1ma56bn",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Nvidia CEO Admits Affair With Suspected Chinese Spy",
+      "date": "2026-11-09T19:34:01.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Nvidia-CEO-Admits-Affair-With-Suspected-Chinese-Spy-e3s3kk2",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang admits affair with suspected Chinese intelligence asset",
+          "detail": "Huang publicly confirmed an extramarital affair with a woman described by intelligence sources as a suspected Chinese spy — a remarkable admission by the CEO of the world's most strategically important chip company. The combination of personal and national-security dimensions makes this among the most consequential…"
+        },
+        {
+          "title": "Nvidia launches internal investigation",
+          "detail": "Following the revelations, Nvidia's board reportedly initiated an internal investigation. The existence of a formal probe signals the board is treating this as a material governance event, not merely a personal matter — with potential consequences for Huang's tenure and Nvidia's regulatory relationships."
+        },
+        {
+          "title": "Potential impact on AI chip export controls to China",
+          "detail": "NLW frames the affair as a direct threat to Nvidia's ability to maintain export licenses for China-facing GPUs like the H20. Congressional and intelligence-community pressure to tighten controls — already elevated — now has a vivid human-intelligence narrative to attach to, making policy loosening politically toxic."
+        },
+        {
+          "title": "Anthropic reportedly planning an IPO",
+          "detail": "Among the episode's headlines, Anthropic is said to be planning a public offering. This would be a landmark event for the frontier AI lab space and would create the first publicly traded pure-play AI safety company, providing a market-based valuation anchor for the sector."
+        }
+      ],
+      "synthesis": "The episode's central concern is whether Jensen Huang's admitted affair with a woman described as a suspected Chinese intelligence asset creates a national-security liability at the company that sits at the chokepoint of the entire global AI supply chain. NLW frames this not merely as a corporate-governance or personal scandal but as a potential vector for adversarial influence over Nvidia's export decisions, chip architecture roadmaps, and its posture toward US-China trade restrictions — the very policies that determine whether China's AI build-out can close the gap with the US.",
+      "whatChanged": "Jensen Huang publicly admitted an affair with a woman reported by intelligence sources as a suspected Chinese spy, triggering an Nvidia board investigation and injecting a human-intelligence risk vector directly into the world's most consequential AI chip company.",
+      "whyItMatters": "Because Huang has been Nvidia's primary advocate for maintaining China chip-export access, any forced sidelining or tightened regulatory response removes that lobbying asset and likely accelerates US export-control restrictions — directly threatening Nvidia's China-facing GPU revenue and potentially reshaping the…",
+      "beneficiaries": [
+        "AMD",
+        "Huawei (Ascend chips)",
+        "Anthropic"
+      ],
+      "atRisk": [
+        "Nvidia (NVDA)",
+        "Jensen Huang",
+        "OpenAI"
+      ],
+      "numbers": [],
+      "topics": [
+        "Jensen Huang / Nvidia",
+        "Nvidia chip exports",
+        "OpenAI fundraising",
+        "Anthropic IPO",
+        "Microsoft-Oracle data-center deal"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3t5q",
       "podcastId": "stratechery",
       "show": "Stratechery",
       "title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
       "date": "2026-11-09T11:00:00.000Z",
       "url": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/",
-      "summarised": false,
-      "notes": "Nvidia CEO Jensen Huang admitted to an affair with a Chinese spy, and that might not be the end of his troubles. I hope he survives, but his influence will never be the same."
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Huang admits affair with alleged Chinese spy",
+          "detail": "Jensen Huang, CEO of Nvidia, admitted to a personal affair with a woman described as a Chinese spy — a disclosure that immediately raises national security questions given Nvidia's role as the dominant supplier of AI chips caught in the US-China technology conflict."
+        },
+        {
+          "title": "Host says Huang's influence will 'never be the same'",
+          "detail": "Ben Thompson explicitly states that even if Huang retains the CEO role, his influence is permanently diminished — not a temporary PR setback but a structural loss of the credibility that made him uniquely effective as a policy advocate."
+        },
+        {
+          "title": "Culper Research report surfaces or amplifies the scandal",
+          "detail": "The episode references a Culper Report in connection with the affair allegations; Culper Research is known for adversarial short-selling research, suggesting a financial-market angle to the story and implying a possible short position in Nvidia."
+        },
+        {
+          "title": "National security dimension elevates story beyond personal misconduct",
+          "detail": "Because the affair involved someone with alleged Chinese intelligence ties, the episode frames the scandal as potentially subject to regulatory or law-enforcement scrutiny, not just corporate governance review — a distinction that meaningfully raises the stakes for Nvidia as an institution."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that Jensen Huang's admission of an affair with a Chinese spy is not merely a personal scandal but a potentially existential blow to his authority and credibility as the leader of Nvidia — a company whose strategic decisions sit at the absolute center of the global AI and semiconductor supply chain. The host (Ben Thompson) expresses a genuine hope that Huang survives professionally, but argues his influence, particularly on matters of geopolitics, national security, and US-China chip policy, will be permanently diminished.",
+      "whatChanged": "Nvidia CEO Jensen Huang publicly admitted to an affair with a person alleged to be a Chinese intelligence operative, transforming what might have been a private matter into a national-security-tinged corporate governance crisis at the most strategically important semiconductor company in the world.",
+      "whyItMatters": "Huang's personal credibility has been Nvidia's primary lever for moderating US export control policy on AI chips; with that credibility now structurally compromised, Nvidia faces a materially weaker advocacy position precisely as the US-China chip war intensifies — potentially accelerating restrictions the company had…",
+      "beneficiaries": [],
+      "atRisk": [
+        "Jensen Huang (Nvidia CEO)",
+        "Nvidia (NVDA)"
+      ],
+      "numbers": [],
+      "topics": [
+        "Nvidia (NVDA)",
+        "Culper Research report"
+      ]
     },
     {
       "id": "live-oddlots-q9o6m3",
