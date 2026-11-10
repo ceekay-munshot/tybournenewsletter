@@ -3,6 +3,43 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3t8f",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "The Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley",
+      "date": "2026-11-10T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/the-jensen-huang-story-gets-worse-washington-vs-new-york-silicon-valley/",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Story escalates Monday with new damaging development",
+          "detail": "The episode opens by stating the Jensen Huang story 'got worse for him on Monday,' signaling a material new disclosure beyond what had been previously reported. This framing sets an urgency that the situation is fast-moving and not yet resolved."
+        },
+        {
+          "title": "Governance is the real risk, not national security",
+          "detail": "The episode explicitly argues that the greater threat to Huang is a governance failure rather than the national-security dimension of NVIDIA's export situation. This is a non-obvious reframe: most prior coverage centered on geopolitical risk, but the episode argues the personal and board-level accountability angle is…"
+        },
+        {
+          "title": "'Who benefits?' framed as the key open question",
+          "detail": "The show-notes pose 'who benefits?' as a central, unresolved question — suggesting the episode devotes significant attention to mapping out NVIDIA's competitive landscape and which players gain if Huang or the company is weakened. This makes the episode directly actionable for investors in AI infrastructure."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that Jensen Huang's mounting controversy is worse than initially reported, and the more serious threat to him is not national security exposure but governance failure. The show-notes suggest a new development broke on Monday that escalated the story, shifting the frame from a geopolitical risk (Huang's ties to China/NVIDIA's export situation) to a corporate-governance problem — the kind that moves boards, institutional shareholders, and proxy advisors rather than regulators alone.",
+      "whatChanged": "The Jensen Huang controversy escalated on Monday with a new development that shifted the primary risk framing from national security to corporate governance, making Huang's personal position as CEO the central concern.",
+      "whyItMatters": "A governance-framed risk is harder to manage through compliance or legal structures and directly threatens Huang's tenure; if institutional shareholders and proxy advisors act on governance concerns, it creates CEO-succession risk at NVIDIA at a critical moment for AI infrastructure spending — a scenario with direct…",
+      "beneficiaries": [],
+      "atRisk": [
+        "Jensen Huang / NVIDIA (NVDA)"
+      ],
+      "numbers": [],
+      "topics": [
+        "Jensen Huang",
+        "NVIDIA governance",
+        "NVIDIA competitors / beneficiaries"
+      ]
+    },
+    {
       "id": "live-aidaily-1ma56bn",
       "podcastId": "aidaily",
       "show": "AI Daily",
