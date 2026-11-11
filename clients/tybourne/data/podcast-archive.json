@@ -3,6 +3,254 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3t9g",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Intel Earnings, AMD Earnings, Intel and AMD’s Divergence",
+      "date": "2026-11-11T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/intel-earnings-amd-earnings-intel-and-amds-divergence/",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Earnings divergence as a structural signal",
+          "detail": "The host frames Intel and AMD's diverging earnings not as a cyclical blip but as the quarterly-updated, quantified cost of Intel's IDM model versus AMD's fabless approach — each earnings cycle widens the visible gap."
+        },
+        {
+          "title": "Intel's IDM model: from asset to liability",
+          "detail": "The episode argues that Intel's integrated manufacturing model, once a decisive competitive advantage, has inverted into a structural drag now that TSMC leads on process nodes — Intel pays both a product penalty and a capital cost penalty that AMD avoids entirely."
+        },
+        {
+          "title": "AMD as the counterfactual benchmark",
+          "detail": "The host uses AMD's results as a live benchmark for what Intel's design business could achieve if freed from manufacturing drag, implying the gap between the two companies directly measures the cost Intel pays for vertical integration."
+        },
+        {
+          "title": "The 'new (old) path' framing",
+          "detail": "The host raises the provocative question of whether Intel should effectively go fabless — a path he describes as 'new' for Intel but 'old' as a model, referencing AMD's own history of separating design from manufacturing."
+        }
+      ],
+      "synthesis": "Intel and AMD reported earnings that reveal not just a gap in quarterly performance, but a fundamental strategic divergence rooted in decisions made decades ago. AMD, as a fabless company, has long offloaded manufacturing risk to TSMC, allowing it to focus entirely on chip design — a model that is now paying dividends as its data-center GPU and CPU businesses gain share against Intel. Intel, by contrast, is burdened by its integrated device manufacturer (IDM) legacy: it both designs and fabricates chips, meaning product competitiveness and manufacturing execution must both succeed simultaneously. When either falters, the entire business suffers.",
+      "whatChanged": "Intel and AMD's diverging earnings cycles have made the structural cost of Intel's IDM model quantitatively visible on a quarterly basis, with AMD's fabless model on TSMC now serving as a live benchmark that Intel's integrated business cannot match.",
+      "whyItMatters": "If Intel cannot close the manufacturing gap with TSMC, its design business will keep losing share to AMD (and Nvidia in AI), shrinking the revenue base needed to fund fab capex — a doom loop that may force a binary strategic choice between spinning off the foundry or accepting secular decline.",
+      "beneficiaries": [
+        "AMD",
+        "TSMC"
+      ],
+      "atRisk": [
+        "Intel"
+      ],
+      "numbers": [],
+      "topics": [
+        "Intel",
+        "AMD",
+        "TSMC",
+        "Intel spinoff / fabless path"
+      ]
+    },
+    {
+      "id": "live-iltb-vvzfhl",
+      "podcastId": "iltb",
+      "show": "Invest Like the Best",
+      "title": "Zach Reitano - Building Ro and Why Healthcare Should Be 50% of GDP - [Invest Like the Best, EP.500]",
+      "date": "2026-11-11T09:00:00.000Z",
+      "url": "https://colossus.com/episode/the-patient-revolution/",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Patient Is Not the Customer — Reitano's Core Diagnosis",
+          "detail": "Reitano identifies the central flaw in American healthcare as the fact that the patient is not the customer — insurers and employers are — which breaks the market feedback loop that would otherwise force quality up and prices down."
+        },
+        {
+          "title": "Ro Grows 12x in Four Years With Fewer Employees",
+          "detail": "Ro went from a $250M annual run rate to over $3B in four years while employing fewer people than it did in 2021 — a staggering improvement in revenue per employee driven by software and AI."
+        },
+        {
+          "title": "AI Could Price Healthcare Like Netflix",
+          "detail": "Reitano claims AI could compress the cost of a physician-quality consultation to the price of a Netflix subscription, making high-quality primary care accessible at consumer-internet scale."
+        },
+        {
+          "title": "Healthcare Should Be 50% of GDP — Aspirational, Not Alarmist",
+          "detail": "Reitano argues that if healthcare actually delivered measurable value, people would rationally spend 50% of GDP on it — his point is that current low relative spend reflects how broken and low-value the system is, not that health doesn't matter."
+        }
+      ],
+      "synthesis": "Zach Reitano's central argument is that the patient is not the customer in American healthcare — insurers and employers are — and this misalignment systematically produces bad outcomes, high costs, and perverse incentives. Because providers are paid by third parties, they optimize for reimbursement codes rather than patient health, and no competitive pressure forces prices down or quality up. Reitano's solution is direct-to-patient, vertically integrated care that eliminates the intermediary entirely, using GLP-1s and LASIK as proof-of-concept: when patients pay out-of-pocket, prices fall dramatically and innovation accelerates.",
+      "whatChanged": "Ro has scaled from a $250M run rate to over $3B in four years while cutting headcount below 2021 levels, establishing itself as the country's leading direct-to-patient GLP-1 provider — demonstrating that vertically integrated, cash-pay digital health can reach significant scale.",
+      "whyItMatters": "If the direct-pay, AI-driven model Ro is proving out generalizes, it structurally threatens incumbent insurers and pharmacy benefit managers whose value proposition depends on the patient NOT being the customer — and creates a replicable template for other cash-pay verticals where the insurer intermediary can be…",
+      "beneficiaries": [
+        "Ro",
+        "Patients paying directly for GLP-1s"
+      ],
+      "atRisk": [
+        "Traditional insurers and PBMs",
+        "Legacy healthcare providers"
+      ],
+      "numbers": [
+        {
+          "metric": "Ro annual run rate (prior)",
+          "value": "$250 million",
+          "context": "Starting point approximately four years before the episode's recording"
+        },
+        {
+          "metric": "Ro annual run rate (current)",
+          "value": "over $3 billion",
+          "context": "As of the episode, four years after the $250M starting point"
+        },
+        {
+          "metric": "Revenue growth period",
+          "value": "four years",
+          "context": "Time taken to grow from $250M to $3B+ run rate"
+        },
+        {
+          "metric": "Headcount vs. 2021",
+          "value": "fewer people than it had in 2021",
+          "context": "Despite 12x+ revenue growth, Ro operates with a smaller team than at its 2021 peak"
+        },
+        {
+          "metric": "Target healthcare cost with AI",
+          "value": "price of a Netflix subscription",
+          "context": "Reitano's vision for what AI could compress physician consultation costs to"
+        }
+      ],
+      "topics": [
+        "Ro's business model",
+        "GLP-1 market",
+        "US healthcare system",
+        "AI in healthcare",
+        "High-performance culture"
+      ]
+    },
+    {
+      "id": "live-oddlots-13q1nwj",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "The Perfect Storm That Clobbered Hedge Funds",
+      "date": "2026-11-11T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/the-perfect-storm-that-clobbered-hedge-funds",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Nishant Kumar: 'I never saw a day like last week' in 16 years covering hedge funds",
+          "detail": "Kumar described the week of early November 2024 as unprecedented in his entire career, with a Twitter screenshot of his hedge fund stories getting 750,000 views. The key was not just losses, but all strategies losing simultaneously."
+        },
+        {
+          "title": "VARA loses 33% in October but is still up for the year",
+          "detail": "VARA, an AI-concentrated fund with heavy portfolio overlap with Situational Awareness, lost one-third of its value in a single month. The fact it was still positive for the year underscored how violent the AI crowding had become."
+        },
+        {
+          "title": "Pivotal Path: 10 largest firms control $2.2 trillion, backed by only $300–$350 billion in capital",
+          "detail": "The report quantified the leverage embedded in multi-strat crowding: $2.2 trillion in controlled assets resting on $300–$350 billion of underlying capital — a ratio that makes simultaneous unwinds catastrophic."
+        },
+        {
+          "title": "Multi-strat stop-loss mechanics: lose 5%, capital halved; lose 7.5%, get fired",
+          "detail": "Kumar laid out the ruthless PM risk rules at multi-strats: a 5% loss on allocated capital cuts that allocation in half; a 7.5% cumulative loss results in immediate liquidation and termination. This architecture, while protective in theory, creates synchronized forced selling when many PMs hit limits simultaneously."
+        }
+      ],
+      "synthesis": "The episode's central argument is that October 2024 was a perfect storm for hedge funds because nearly every major strategy — multi-strats, macro, long/short equity, quant — lost money simultaneously, exposing a structural flaw: despite elaborate pod architectures designed to generate uncorrelated returns, virtually every fund had implicitly accumulated the same leveraged-long-AI exposure, just dressed in different instruments (chips, credit, rates, single stocks).",
+      "whatChanged": "In October 2024, nearly every major hedge fund strategy (multi-strat, macro, long/short equity) lost money simultaneously — an event Bloomberg's 16-year hedge fund correspondent called unprecedented in a single week — driven by a simultaneous unwind of implicitly correlated, leveraged-long-AI positions across pods that…",
+      "whyItMatters": "The mass drawdown triggered automated stop-loss cascades across multi-strat platforms (PM capital halved at -5%, liquidated at -7.5%), mechanically amplifying selling pressure across AI-adjacent equities, Treasuries, and credit simultaneously; with dozens of senior PMs fired or on non-competes entering November's final…",
+      "beneficiaries": [
+        "Citadel",
+        "D.E. Shaw",
+        "IRIN (neo-cloud)"
+      ],
+      "atRisk": [
+        "Millennium Management",
+        "VARA fund",
+        "Whale Rock Capital",
+        "Kirkus World",
+        "CoreWeave"
+      ],
+      "numbers": [
+        {
+          "metric": "Millennium Management October return",
+          "value": "-2.3%",
+          "context": "Against an annualized return target of ~14%; described as a very large loss in context"
+        },
+        {
+          "metric": "Millennium Management annualized return target",
+          "value": "~14%",
+          "context": "Used to contextualize why a -2.3% monthly loss is significant"
+        },
+        {
+          "metric": "VARA fund October loss",
+          "value": "-33%",
+          "context": "AI-concentrated fund with heavy portfolio overlap with Situational Awareness; still up for the year before October"
+        },
+        {
+          "metric": "Whale Rock Capital October loss",
+          "value": "-12%",
+          "context": "Highly concentrated equity fund with AI stock exposure"
+        },
+        {
+          "metric": "Kirkus World October loss",
+          "value": "-6.4%",
+          "context": "Macro hedge fund; described as their biggest down month since inception"
+        }
+      ],
+      "topics": [
+        "multi-strat hedge funds",
+        "AI equity crowding",
+        "Citadel & D.E. Shaw",
+        "oil / energy macro backdrop",
+        "multi-strat industry capacity & new launches"
+      ]
+    },
+    {
+      "id": "live-ingoodcompany-e67c1b",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Mike Milken: Access to Capital, the American Dream, and Why Risk Is Misunderstood",
+      "date": "2026-11-11T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/mike-milken-access-to-capital-the-american-dream-and-why-ris",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "A chance encounter at 19 sets a lifelong mission",
+          "detail": "Milken credits a single encounter at age 19 as the pivotal moment that shaped his conviction about capital access as an equalising force. It reframes his entire career in high-yield bonds as mission-driven rather than purely profit-driven."
+        },
+        {
+          "title": "The 'safest' credit is a dangerous illusion",
+          "detail": "Milken argues directly that investment-grade labelling is a flawed and misleading proxy for safety, and that high-yield bonds are routinely mispriced by institutional allocators who conflate rating-agency categories with real credit quality. This is a direct challenge to the foundational risk framework of most large…"
+        },
+        {
+          "title": "Private credit is history rhyming, not a new phenomenon",
+          "detail": "Milken frames the current private credit boom as structurally identical to the conditions that created the high-yield bond market: capital migrating to underserved borrowers when public markets fail them. He implies the expansion has durable, structural roots rather than being a cyclical anomaly."
+        },
+        {
+          "title": "Medical research as the highest-return public investment",
+          "detail": "Milken presents biomedical R&D not as charity but as the best-returning expenditure available to governments — compounding GDP growth, reducing entitlement costs, and expanding the workforce. This is the intellectual backbone of his post-finance philanthropic agenda."
+        }
+      ],
+      "synthesis": "Mike Milken's central argument — developed across the conversation with Norges Bank CEO Nicolai Tangen — is that access to capital is the decisive lever of economic mobility, and that the high-yield bond market he pioneered was fundamentally a civil-rights project as much as a financial one: it routed funding to companies and communities historically shut out by the investment-grade gatekeeping of large banks and institutional lenders. The episode traces this conviction to a formative encounter Milken had at age 19, which set the intellectual and moral frame for his entire career.",
+      "whatChanged": "The episode is a career-retrospective conversation with no breaking news; its central claim is that the high-yield bond market Milken pioneered was a capital-access equaliser, and that the same logic now underlies the private credit boom — a structural recurrence, not a new phenomenon.",
+      "whyItMatters": "If Milken's framing is correct — that private credit is filling the same gap high-yield bonds once did — then today's private credit expansion has more structural staying power than cycle-driven narratives suggest, with implications for how institutional allocators (like Norges Bank itself) should weight the asset…",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Milken's age at time of recording",
+          "value": "80",
+          "context": "Referenced as what still motivates him at this stage of life"
+        },
+        {
+          "metric": "Milken's age at formative capital-access encounter",
+          "value": "19",
+          "context": "The chance encounter credited as the origin of his lifelong mission to widen access to capital"
+        }
+      ],
+      "topics": [
+        "High-yield bond market",
+        "Private credit",
+        "Medical research investment",
+        "Conventional risk labelling",
+        "Milken Center / American Dream",
+        "Curiosity as a trait"
+      ]
+    },
+    {
       "id": "live-allin-60zilp",
       "podcastId": "allin",
       "show": "All-In",
@@ -107,7 +355,7 @@
       "id": "live-sources-l6dfmi",
       "podcastId": "sources",
       "show": "Sources",
-      "title": "AWS CEO Matt Garman on building a $1 trillion business",
+      "title": "Amazon AWS CEO: AI boom is just getting started",
       "date": "2026-11-10T16:03:25.000Z",
       "url": "https://sources.news/p/aws-ceo-matt-garman-1-trillion",
       "summarised": true,
