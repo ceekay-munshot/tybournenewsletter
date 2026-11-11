@@ -3,6 +3,107 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-allin-60zilp",
+      "podcastId": "allin",
+      "show": "All-In",
+      "title": "Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing",
+      "date": "2026-11-10T23:03:00.000Z",
+      "url": "https://allinchamathjason.libsyn.com/freedom-vs-safety-axon-ceo-rick-smith-on-the-future-of-policing",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Pivot from hardware to software via body cameras and Evidence.com",
+          "detail": "After establishing the TASER, Axon built the police body camera market and then launched Evidence.com, a cloud platform for managing digital evidence. This SaaS layer is the core of Axon's current valuation and creates high switching costs with law enforcement customers."
+        },
+        {
+          "title": "Flock Safety's license-plate network enables retroactive vehicle tracking at national scale",
+          "detail": "Smith discussed Flock Safety's camera network, which is now pervasive enough that police can reconstruct a vehicle's historical movements without ever planting a tracker. The Fourth Amendment implications are unresolved, representing a live legal and regulatory overhang."
+        },
+        {
+          "title": "Axon ethics board members resigned over the taser-drone project",
+          "detail": "When Axon proposed mounting a taser on a drone for remote less-lethal deployment, multiple members of its own ethics board resigned in protest. The incident illustrates the internal and reputational limits of the \"less-lethal is always better\" logic Smith uses to justify new products."
+        },
+        {
+          "title": "Skydio partnership positions Axon as the platform layer for aerial policing",
+          "detail": "Axon struck a deal with Skydio, the leading U.S. commercial drone maker, to integrate aerial capabilities into its public-safety stack. This extends Axon's sensor network into the air and adds another Evidence.com ingestion point."
+        }
+      ],
+      "synthesis": "Rick Smith founded TASER International (now Axon) after two of his friends were killed in a shooting, turning a personal trauma into a public-safety technology company that survived near-bankruptcy, an IPO during the dot-com crash, sustained short-seller attacks, and an SEC investigation before pivoting from hardware to a full software platform. The conversation traces that arc from crisis to dominance: Axon today sells not just TASERs but body cameras, digital evidence management (Evidence.com), and AI-powered tools to law enforcement — a vertical stack that makes switching costs extremely high and creates a durable software moat on top of a hardware installed base.",
+      "whatChanged": "Axon has moved well beyond TASER hardware into a full public-safety platform — body cameras, cloud evidence management (Evidence.com), AI analytics, and now drone/robotics partnerships (Skydio) — creating a vertically integrated stack with high switching costs across U.S. law enforcement.",
+      "whyItMatters": "Each new sensor category (drones, license-plate readers via Flock, robot dogs) becomes an ingestion point for Evidence.com subscriptions, compounding Axon's recurring software revenue; simultaneously, the expansion into autonomous systems and mass-surveillance infrastructure creates material regulatory and legislative…",
+      "beneficiaries": [
+        "Axon (AXON)",
+        "Skydio"
+      ],
+      "atRisk": [
+        "Flock Safety",
+        "Axon (AXON)"
+      ],
+      "numbers": [
+        {
+          "metric": "AppLovin Ads median video watch time",
+          "value": "35-second median watch time",
+          "context": "Cited as a platform metric for AppLovin Ads, the episode sponsor"
+        },
+        {
+          "metric": "AppLovin Ads daily active users reached",
+          "value": "over a billion daily active users",
+          "context": "Across mobile games on the AppLovin Ads platform"
+        },
+        {
+          "metric": "AppLovin advertiser daily spend",
+          "value": "hundreds of thousands of dollars a day",
+          "context": "Per-advertiser scale cited to illustrate profitable spend on AppLovin Ads"
+        }
+      ],
+      "topics": [
+        "Axon / TASER origin",
+        "Flock Safety surveillance",
+        "taser drone project",
+        "Skydio / drone policing"
+      ]
+    },
+    {
+      "id": "live-aidaily-1kzdjo2",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Fable 5.2 Is the Best AI Ever. So Why Am I Not Switching Yet?",
+      "date": "2026-11-10T21:38:24.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Fable-5-2-Is-the-Best-AI-Ever--So-Why-Am-I-Not-Switching-Yet-e3s60fp",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Best benchmark AI that doesn't compel a switch",
+          "detail": "NLW opens with the central tension: Fable 5.2 is described as the best AI ever on benchmarks and powers impressive demos, yet his own experiments and early reviews do not produce an obvious case for switching away from his current Opus 3.5 workflow."
+        },
+        {
+          "title": "Outperformance concentrated in complex, long-horizon tasks",
+          "detail": "Early reviews and NLW's experiments identify that the new model's genuine gains are in complex reasoning and ambitious, sustained multi-step tasks — the areas where raw capability differences are large enough to show up in practice rather than only on leaderboards."
+        },
+        {
+          "title": "Everyday transactional work shows insufficient improvement",
+          "detail": "For routine daily tasks — drafts, summaries, standard Q&A — Fable 5.2 does not deliver improvements large enough to justify abandoning a familiar, well-calibrated workflow, illustrating that incremental gains at the top of the capability curve have diminishing switching-value."
+        },
+        {
+          "title": "Biggest opportunity requires rethinking the task, not just the model",
+          "detail": "NLW's most non-obvious conclusion is that Fable 5.2's real unlock comes from enabling new categories of work (agentic pipelines, long-horizon automation) that were previously impractical — not from doing old prompts marginally better. This reframes the upgrade calculus entirely."
+        }
+      ],
+      "synthesis": "The episode wrestles with a tension that will be familiar to any serious AI practitioner: benchmark-breaking vs. workflow-fitting. Anthropic's Claude 3.5 — referred to here as 'Fable 5.2' — is described as the best-performing model on standard evaluations and capable of powering genuinely ambitious demos, yet NLW finds himself not making the switch from Opus 3.5 for everyday work. The core argument is that raw model capability and practical daily utility are increasingly diverging metrics, and that headline benchmark scores are becoming a poor proxy for what matters to working users.",
+      "whatChanged": "Anthropic released 'Fable 5.2,' a new frontier model that breaks standard benchmarks and enables ambitious long-horizon demos, yet early hands-on evaluations (including NLW's own) find it does not compel a switch for everyday work tasks over Opus 3.5.",
+      "whyItMatters": "If benchmark-leading models no longer automatically displace incumbents in practitioner workflows, the competitive moat for AI labs increasingly depends on task-redesign and agentic use-case development rather than raw capability scores — shifting where differentiation and monetisation occur.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Fable 5.2 benchmarks",
+        "AI benchmark relevance",
+        "agentic / long-horizon AI tasks"
+      ]
+    },
+    {
       "id": "live-sources-l6dfmi",
       "podcastId": "sources",
       "show": "Sources",
