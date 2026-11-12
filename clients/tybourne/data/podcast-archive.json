@@ -3,6 +3,51 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-eansrf",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Wall Street Has No Idea What Anthropic Is Worth",
+      "date": "2026-11-11T21:16:03.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Wall-Street-Has-No-Idea-What-Anthropic-Is-Worth-e3s7t73",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Valuation Headlines Are Actively Misleading",
+          "detail": "NLW argues that the valuation numbers appearing in press coverage of Anthropic's IPO are misleading because they ignore the company's complex capital structure and massive compute commitments, making apples-to-apples comparisons with conventional SaaS companies invalid."
+        },
+        {
+          "title": "Anthropic Launches Productivity Suite to Challenge Microsoft",
+          "detail": "Anthropic has launched a new productivity suite aimed directly at Microsoft's enterprise business, marking a strategic pivot from pure model/API provider to application-layer competitor — a move that puts Anthropic in simultaneous competition with both Microsoft and Google."
+        },
+        {
+          "title": "Anthropic IPO as a Pricing Benchmark for All Frontier AI",
+          "detail": "The episode frames Anthropic's IPO as a valuation event for the entire AI trade: how public markets price the company will set a reference point for OpenAI's eventual IPO and for every major private AI lab's current markups."
+        },
+        {
+          "title": "OpenAI Revenue Continues to Surge",
+          "detail": "OpenAI's revenue is reported as continuing to surge, cited as a headline item that corroborates strong enterprise and consumer demand for frontier AI products and reinforces the bull case for Anthropic's own revenue trajectory."
+        }
+      ],
+      "synthesis": "Anthropic's IPO trajectory is the episode's central subject, and the core argument is that headline valuations mislead: the numbers circulating in the press don't capture the complexity of Anthropic's capital structure, its massive compute commitments, or its still-uncertain path to profitability. The bull case rests on surging revenue, a new productivity suite that directly challenges Microsoft's enterprise dominance, and the company's positioning as one of only two or three credible frontier-model builders. The bear case centers on the enormous ongoing compute spend required to stay competitive — commitments that dwarf current revenue — and the fundamental question of whether a model provider can build durable margin before commoditization sets in.",
+      "whatChanged": "Anthropic is moving toward an IPO with surging revenue and a new enterprise productivity suite targeting Microsoft, forcing public markets to price a frontier AI lab for the first time and establish a valuation reference point for the entire sector.",
+      "whyItMatters": "The public-market pricing of Anthropic will anchor valuations for OpenAI and other private frontier labs; a high multiple validates existing private markups and draws more capital into AI, while a disappointing reception would pressure markdowns across the sector and tighten private funding conditions.",
+      "beneficiaries": [
+        "Anthropic"
+      ],
+      "atRisk": [
+        "Microsoft",
+        "Nvidia"
+      ],
+      "numbers": [],
+      "topics": [
+        "Anthropic productivity suite",
+        "OpenAI revenue",
+        "Nvidia (China)",
+        "Google Gemini 4 Carbon"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3t9g",
       "podcastId": "stratechery",
       "show": "Stratechery",
