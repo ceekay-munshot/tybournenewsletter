@@ -3,6 +3,141 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3tb6",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "An Interview With Roblox CEO David Baszucki About Aggregating Play",
+      "date": "2026-11-12T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/an-interview-with-roblox-ceo-david-baszucki-about-aggregating-play/",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Three years of AI change outpaces two decades of Roblox history",
+          "detail": "Baszucki explicitly says the changes since 2023 feel more rapid and significant than anything in the company's prior 20 years — from floppy disk distribution to the AI era — framing AI as a genuine discontinuity, not an incremental shift."
+        },
+        {
+          "title": "The Aggregator thesis applied to gaming",
+          "detail": "Ben Thompson frames Roblox's strategic opportunity as becoming an Aggregator in the classic sense: AI creates content abundance (infinite games), making discovery the scarce resource, which Roblox can own — mirroring Google's position over websites. This is the central analytical frame of the interview."
+        },
+        {
+          "title": "Literally anyone can now make a game",
+          "detail": "Baszucki argues the shift is qualitative: Roblox was always about enabling creators, but AI moves the bar from 'skilled amateurs can build' to 'literally anyone can build,' which fundamentally changes the supply-side economics of the platform."
+        },
+        {
+          "title": "Universal Player and Roblox Everywhere as platform expansion",
+          "detail": "Two distinct initiatives extend Roblox beyond its own app: Universal Player makes Roblox games run in any environment; Roblox Everywhere lets developers distribute their games outside the Roblox app — a classic platform-extension move."
+        }
+      ],
+      "synthesis": "Roblox CEO David Baszucki's core argument is that AI has fundamentally collapsed the barrier to game creation — moving Roblox from a platform where \"anyone *could* make a game\" (with effort) to one where literally anyone *can* make a game, with minimal friction. This shift creates a world of abundance in content, which in turn enables Roblox to pursue an Aggregator strategy: owning discovery and recommendation atop a vast supply of games, much as Google aggregated websites or Netflix aggregated video. Baszucki views this as the most significant change in the company's 20-year history, more transformative than any single development in the prior two decades combined.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Year Roblox was founded",
+          "value": "2004",
+          "context": "Referenced as the starting point of Baszucki's nearly 20-year journey to the company's 2021 IPO"
+        },
+        {
+          "metric": "Year Roblox went public",
+          "value": "2021",
+          "context": "IPO year cited in the context of the company's long history"
+        },
+        {
+          "metric": "Prior Stratechery interviews with Baszucki",
+          "value": "2 prior interviews",
+          "context": "February 2022 and November 2023, making this the third interview"
+        },
+        {
+          "metric": "Current interview year",
+          "value": "2026",
+          "context": "Third interview, used to frame how much has changed in three years vs. the prior two decades"
+        }
+      ],
+      "topics": [
+        "AI impact on Roblox",
+        "Roblox Aggregator strategy",
+        "Mobile game creation",
+        "Advertising revenue model",
+        "Metaverse framing"
+      ]
+    },
+    {
+      "id": "live-oddlots-6i333n",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "What Nvidia's Megaspeed Scandal Is Really All About",
+      "date": "2026-11-12T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/what-nvidias-megaspeed-scandal-is-really-all-about",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Megaspeed: $4.6B buyer with a 4-day partner approval",
+          "detail": "Megaspeed spent $4.6 billion on NVIDIA hardware after spinning off from a Chinese gaming company via a BVI shell, incorporating in Singapore, and receiving official NVIDIA Cloud Partner status just four days later — a timeline Hawkins describes as extraordinary."
+        },
+        {
+          "title": "50,000 Blackwell chips unaccounted for in Bloomberg's analysis",
+          "detail": "Comparing NVIDIA's chip count reported to the U.S. government against Malaysian and Indonesian trade records, Bloomberg found approximately 50,000 chips — mostly Blackwell, then NVIDIA's best hardware — unaccounted for. After Bloomberg raised this, NVIDIA claimed to have found previously undisclosed Malaysian…"
+        },
+        {
+          "title": "Remote access to restricted chips is currently legal",
+          "detail": "It is legal in the vast majority of cases to sell NVIDIA chips to Southeast Asian data centers that then rent compute to Chinese AI companies via the cloud. The Biden AI Diffusion Rule would have changed this in May 2025, but the Trump administration chose not to enforce it; subsequent draft regulations targeting…"
+        },
+        {
+          "title": "NVIDIA general counsel called BIS chief about affair partner's detention",
+          "detail": "NVIDIA's general counsel Tim Teeter called the head of the Bureau of Industry and Security — the agency investigating Megaspeed — to ask if BIS was involved in the detention of Alice (Jensen's affair partner) in Singapore. After this, BIS enforcement agents were required to route all NVIDIA-related requests through…"
+        }
+      ],
+      "synthesis": "The central argument of this episode is that the Megaspeed scandal is not simply a salacious personal story about Jensen Huang — it is a stress test of whether U.S. chip export controls are coherent, enforceable, or even seriously intended. Bloomberg reporter Mackenzie Hawkins lays out a detailed evidentiary record: Megaspeed spent $4.6 billion on NVIDIA hardware after spinning off from a Chinese gaming company, passing through a BVI shell, incorporating in Singapore, and becoming an official NVIDIA Cloud Partner just four days later. Bloomberg's own investigation found roughly 50,000 chips — mostly Blackwell, NVIDIA's best hardware at the time — unaccounted for across Megaspeed's declared data center footprint, with two of eight data center operators directly contradicting NVIDIA's account of where the chips were. NVIDIA eventually claimed to have found 'substantially all' the missing…",
+      "whatChanged": "Jensen Huang publicly admitted to NVIDIA's board that he had an extramarital affair with Alice, an executive associated with Megaspeed — the company at the center of an ongoing DOJ chip-smuggling investigation — giving new political life to a story that reporters had been covering for over a year.",
+      "whyItMatters": "The admission transforms a niche export-control compliance story into a high-profile governance scandal, amplifying congressional and regulatory attention on the specific 'remote access loophole' that allows Chinese AI firms to legally use NVIDIA chips via Southeast Asian data centers — a mechanism that underpins a…",
+      "beneficiaries": [
+        "Huawei",
+        "DOJ / Capitol Hill China hawks"
+      ],
+      "atRisk": [
+        "NVIDIA (NVDA)",
+        "Oracle",
+        "Southeast Asian AI infrastructure investors",
+        "Megaspeed"
+      ],
+      "numbers": [
+        {
+          "metric": "Megaspeed NVIDIA hardware purchases",
+          "value": "$4.6 billion",
+          "context": "Total value of NVIDIA hardware purchased by Megaspeed after spinning off from a Chinese gaming company and incorporating in Singapore"
+        },
+        {
+          "metric": "Days between Singapore incorporation and NVIDIA Cloud Partner status",
+          "value": "four days",
+          "context": "Megaspeed became an official NVIDIA Cloud Partner four days after incorporating in Singapore"
+        },
+        {
+          "metric": "Chips unaccounted for in Bloomberg's investigation",
+          "value": "about 50,000 chips",
+          "context": "Discrepancy between NVIDIA's reported chip count to the U.S. government and Malaysian/Indonesian trade records; mostly Blackwell chips"
+        },
+        {
+          "metric": "Data centers audited by NVIDIA for U.S. government",
+          "value": "over 12 data centers",
+          "context": "Owned by eight companies in three countries as part of NVIDIA's check on Megaspeed's hardware"
+        },
+        {
+          "metric": "U.S. export control officers overseas",
+          "value": "a dozen (roughly)",
+          "context": "Number stationed overseas including in Southeast Asia before planned expansion"
+        }
+      ],
+      "topics": [
+        "NVIDIA compliance",
+        "U.S. export control policy",
+        "Megaspeed",
+        "Huawei AI chips",
+        "Remote-access cloud loophole"
+      ]
+    },
+    {
       "id": "live-aidaily-eansrf",
       "podcastId": "aidaily",
       "show": "AI Daily",
