@@ -3,6 +3,44 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-e7b9m4",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Jensen Huang Is Out. Everything in AI Is Now Up for Grabs.",
+      "date": "2026-11-12T18:44:45.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Jensen-Huang-Is-Out--Everything-in-AI-Is-Now-Up-for-Grabs-e3s9ioh",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang Departs Nvidia",
+          "detail": "The episode's central fact: Jensen Huang is out at Nvidia following personal allegations. NLW frames this as one of the most consequential leadership exits in the AI industry's history."
+        },
+        {
+          "title": "Power Vacuum Across the Entire AI Industry",
+          "detail": "NLW argues the vacuum created is not confined to Nvidia's C-suite but 'stretches across the AI industry,' affecting relationships with governments, hyperscalers, and the open-source community simultaneously."
+        },
+        {
+          "title": "China Policy Now Contested",
+          "detail": "Huang was Nvidia's most vocal advocate for maintaining China market access; his departure makes the company's China policy an open question at a moment when export controls are already in flux."
+        },
+        {
+          "title": "AI Buildout Financing at Risk",
+          "detail": "The episode flags that the financial commitments supporting the AI infrastructure buildout were partly anchored in confidence in Huang's leadership and roadmap credibility, introducing new uncertainty into the capex cycle."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that Jensen Huang's departure from Nvidia is not merely a corporate governance story — it is a seismic event for the entire AI industry, because Huang was not just a CEO but the chief architect of Nvidia's relationships with governments, hyperscalers, and the open-source and China policy ecosystems. The show notes frame his exit as creating a 'power vacuum that stretches across the AI industry,' implying that the alliances, deals, and strategic bets he personally championed are now in question.",
+      "whatChanged": "Jensen Huang has departed Nvidia following personal allegations, removing the single most influential figure in AI infrastructure from the company that supplies the dominant GPU hardware underpinning the entire AI buildout.",
+      "whyItMatters": "Huang personally anchored Nvidia's China market access advocacy, open-source ecosystem strategy, and the credibility narrative that sustained hyperscaler and sovereign capex commitments; his absence makes all three contestable, potentially slowing GPU order momentum and opening market share to AMD, Broadcom, and custom…",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Jensen Huang's departure",
+        "AI industry competition"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3tb6",
       "podcastId": "stratechery",
       "show": "Stratechery",
