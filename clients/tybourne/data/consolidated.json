@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T23:16:17.533Z",
+  "generatedAt": "2026-11-13T05:21:40.335Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3131,7 +3131,7 @@
       "changePct": -0.03673469387755114,
       "changeAbs": -0.0900000000000003,
       "direction": "down",
-      "asOf": "2026-11-10T00:00:00.000Z",
+      "asOf": "2026-11-11T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 3.7% (output -2.3%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 3.7% (output -2.3%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-16.9% input · share +13.26pp"
+          "body": "-16.9% input · share +13.24pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -15871,7 +15871,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-12T23:15:57.569Z",
+      "asOf": "2026-11-13T05:21:21.229Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17460,11 +17460,11 @@
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
             "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 26.6T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #22 by tokens.",
+            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #23 by tokens.",
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-12T23:15:57.640Z"
+          "asOf": "2026-11-13T05:21:21.360Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21825,17 +21825,17 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
       "asOf": "2026-11-12T18:44:45.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21916,8 +21916,8 @@
         "Pivot from hardware to software via body cameras and Evidence.com",
         "Best benchmark AI that doesn't compel a switch"
       ],
-      "tone": "Tone across 42 episodes — 12 cautious, 11 positive, 8 mixed, 1 neutral",
-      "thisTone": "12 cautious, 11 positive, 8 mixed, 1 neutral",
+      "tone": "Tone across 40 episodes — 11 positive, 10 cautious, 8 mixed, 1 neutral",
+      "thisTone": "11 positive, 10 cautious, 8 mixed, 1 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
@@ -21934,11 +21934,11 @@
         "Pivot from hardware to software via body cameras and Evidence.com",
         "Best benchmark AI that doesn't compel a switch"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval; Valuation Headlines Are Actively Misleading. Sentiment ran 12 cautious, 11 positive, 8 mixed, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval; Valuation Headlines Are Actively Misleading. Sentiment ran 11 positive, 10 cautious, 8 mixed, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
