@@ -3,6 +3,138 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-11s6quv",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Washington Is Taking Control of AI",
+      "date": "2026-11-13T19:59:53.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Washington-Is-Taking-Control-of-AI-e3sbe6r",
+      "summarised": false,
+      "notes": "Jensen Huang’s departure from Nvidia is becoming a turning point in Washington’s battle over AI and China. NLW examines how the fallout is empowering China hawks, accelerating chip export restrictions, and raising questions that go well beyond the disputed spy allegations. Plus, the competing arguments over selling chips to China—and what new leadership at Nvidia could mean for the financing that keeps the AI boom…"
+    },
+    {
+      "id": "live-stratechery-1xz3tc5",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "2026.46: The End of Jensen",
+      "date": "2026-11-13T18:00:00.000Z",
+      "url": "https://stratechery.com/2026/the-end-of-jensen/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly",
+          "detail": "Ben Thompson describes the end of Huang's tenure as 'shocking and sudden,' occurring on a Thursday morning — implying this was not a planned transition. At the apex of Nvidia's AI-era dominance, losing the founder-CEO is a historic and destabilizing event."
+        },
+        {
+          "title": "Andrew Sharp Argues Huang 'Was Always Going to Lose'",
+          "detail": "In a DC-perspective essay, Andrew Sharp frames Huang's departure as structurally inevitable, suggesting geopolitical and regulatory forces — not just internal company dynamics — made his position untenable. This is a bold, non-consensus framing at a moment when most observers credit Huang as one of tech's greatest…"
+        },
+        {
+          "title": "Dithering Draws Huang–Steve Jobs Parallel",
+          "detail": "The Dithering episode examined both parallels and differences between Huang's exit and Steve Jobs's removal from Apple, leaving open whether Nvidia faces a prolonged post-Jobs drift or an eventual renaissance. The explicit acknowledgment of differences signals the analogy is contested."
+        },
+        {
+          "title": "Intel's 2027 Guidance 'Promises Yet More Letdowns'",
+          "detail": "Intel's latest earnings and forward guidance were described as disappointing, with 2027 projections offering no near-term recovery signal. This extends Intel's multi-year run of underperformance relative to its foundry and AI ambitions."
+        }
+      ],
+      "synthesis": "The central event of this Stratechery bundle week is Jensen Huang's abrupt exit after 32 years as Nvidia CEO — described as 'shocking and sudden,' implying this was not a planned succession. Ben Thompson and Andrew Sharp covered the story across multiple formats: a same-day Sharp Tech episode reconstructing Huang's history and what happened, a DC-perspective essay by Andrew arguing Huang 'was always going to lose,' and a Dithering episode drawing parallels between Huang's departure and Steve Jobs's ouster from Apple. A Sharp China episode addressed the geopolitical dimensions, suggesting the circumstances have international ramifications for AI chip supply chains and US-China tech competition.",
+      "whatChanged": "Jensen Huang abruptly ended his 32-year tenure as Nvidia CEO, described as 'shocking and sudden,' coinciding with Intel reporting disappointing earnings and 2027 guidance signaling continued underperformance.",
+      "whyItMatters": "Leadership discontinuity at Nvidia — the dominant AI chip company — creates uncertainty over product roadmap and strategic direction at the precise moment enterprise AI capex is peaking, while Intel's parallel failure to execute on its foundry and AI ambitions leaves AMD as the clearest near-term beneficiary of…",
+      "beneficiaries": [
+        "AMD"
+      ],
+      "atRisk": [
+        "Nvidia",
+        "Intel"
+      ],
+      "numbers": [
+        {
+          "metric": "Jensen Huang's tenure as Nvidia CEO",
+          "value": "32 years",
+          "context": "Tenure ended abruptly on a Thursday morning, described as shocking and sudden"
+        },
+        {
+          "metric": "NBA season review timeframe",
+          "value": "first three weeks",
+          "context": "Greatest of All Talk episode reviewing top and bottom of NBA standings"
+        }
+      ],
+      "topics": [
+        "Jensen Huang / Nvidia",
+        "Intel",
+        "AMD",
+        "Nvidia post-Huang trajectory",
+        "Stratechery's Huang coverage"
+      ]
+    },
+    {
+      "id": "live-oddlots-vd2ywd",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "Why a $2 Billion Law Firm Suddenly Collapsed",
+      "date": "2026-11-13T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/why-a-2-billion-law-firm-suddenly-collapsed",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating",
+          "detail": "Partner distributions, unlike employee wages, are discretionary profit shares that can be voided by creditors if paid during a period of insolvency. This means a partner at a distressed firm must discount expected compensation by the probability of collapse, making a nominally lower outside offer actually more valuable…"
+        },
+        {
+          "title": "Firm can collapse even with growing profits — Morley's core prediction",
+          "detail": "Morley states he specifically predicted a law firm could collapse with no meaningful debts and with profits that were still increasing year-over-year — the trigger is relative profitability declining versus peers, not absolute decline. Weil's profits-per-partner ranking fell from 9th in 2020 to roughly 20th in 2025…"
+        },
+        {
+          "title": "Rule 5.6 non-compete prohibition as the deeper barrier to PE investment",
+          "detail": "Morley argues that the prohibition on non-competes (Rule 5.6, Model Rules of Professional Conduct) is as important as ownership rules in blocking private equity from law firms: a PE buyer paying partners to acquire their equity cannot stop those partners from walking out the next day with their clients, making the…"
+        },
+        {
+          "title": "Slater & Gordon: investor-owned firm survives near-insolvency that would have killed a partnership",
+          "detail": "The Australian law firm went public, made a fraudulent acquisition (Quindel), and became insolvent — yet restructured successfully because its lawyers were employees with no ownership stake. They had no reason to run, the equity was wiped, debt converted, and the firm kept operating. The same situation would have been…"
+        }
+      ],
+      "synthesis": "Weil Gotshal's collapse is best understood not as a business failure in any conventional sense, but as a structural instability endemic to the partnership model itself. Professor John Morley's central point — which he had formally predicted in an academic paper before the collapse — is that a law firm can implode even while its profits are growing year-over-year, so long as its profit-per-partner ranking is falling relative to peers. Weil slipped from roughly 9th to 20th in profits-per-partner between 2020 and 2025, and that relative deterioration, not any absolute loss, was the kindling. The proximate trigger was the departure of rainmaker Mike Aiello in September, which set off the partner-run dynamic: remaining partners rationally recalculated expected compensation (discounted for claw-back risk) versus outside offers, concluded the firm was worth less than it appeared, and fled.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Weil Gotshal profits-per-partner ranking",
+          "value": "fell from 9th in 2020 to approximately 20th in 2025",
+          "context": "Measure of relative profitability decline despite absolute profit growth; cited as the core driver of the partner run"
+        },
+        {
+          "metric": "Typical law firm partner annual compensation paid in January",
+          "value": "50% or more of total annual compensation",
+          "context": "Paid after year-end books are settled; partners at Weil who worked 10 months will not receive this tranche"
+        },
+        {
+          "metric": "Hypothetical partner expected-value calculation at distressed firm",
+          "value": "$2 million nominal vs. $1 million expected value (50%…",
+          "context": "Morley's illustrative example: 50% probability of firm failing makes $2M offer worth only $1M in expected value"
+        },
+        {
+          "metric": "Competing firm offer in same example",
+          "value": "$1.5 million from Gibson Dunn",
+          "context": "Appears as a nominal pay cut vs. Weil's $2M but is actually a pay raise given the expected-value comparison"
+        },
+        {
+          "metric": "Fraudulent transfer liability window at Dewey & LaBoeuf",
+          "value": "eight or nine months",
+          "context": "Duration between insolvency and wind-up during which partner distributions were subject to claw-back; Weil wound down faster to shorten this window"
+        }
+      ],
+      "topics": [
+        "Weil Gotshal collapse",
+        "Partnership ownership model",
+        "Kirkland & Ellis",
+        "Big Law culture erosion",
+        "Morley's academic framework"
+      ]
+    },
+    {
       "id": "live-ingoodcompany-3z9icy",
       "podcastId": "ingoodcompany",
       "show": "In Good Company",
