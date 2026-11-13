@@ -3,6 +3,77 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-ingoodcompany-3z9icy",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Friday Wrap-Up: Milken’s Method and a Tech Day in New York",
+      "date": "2026-11-13T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-milkens-method-and-a-tech-day-in-new-york",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Milken's redefinition of 'safe' in credit markets",
+          "detail": "Milken challenged the market's conventional definition of safety in fixed income, arguing that what was labelled safe was often not, and what was labelled risky often was not — the intellectual foundation of the high-yield market he pioneered."
+        },
+        {
+          "title": "Changing minds with simple questions, not arguments",
+          "detail": "Tangen highlights Milken's specific technique of using simple, well-placed questions to shift people's views rather than presenting data or arguments — a method Tangen finds more effective and worth adopting for his own interviews."
+        },
+        {
+          "title": "Surprise at corporate AI approaches observed at NBIM tech day",
+          "detail": "Tangen says he is genuinely surprised by what he sees in how companies approach AI, based on direct observation at the fund's New York tech day — implying a gap between market narrative and actual corporate practice."
+        }
+      ],
+      "synthesis": "The episode centres on Nicolai Tangen's reflections after his podcast conversation with Mike Milken, using the interview as a lens to examine how contrarian thinking reshapes markets and how great communicators change minds. Milken's core insight — that the market's definition of 'safe' was fundamentally wrong, and that questioning received wisdom with simple, disarming questions was more persuasive than data dumps — is treated as the episode's intellectual anchor. Tangen draws a direct line from Milken's method to his own interview preparation discipline, noting that the regret of a missed question is a powerful motivator to prepare more thoroughly.",
+      "whatChanged": "NBIM held a tech day in New York where Nicolai Tangen observed firsthand how companies are actually approaching AI — and found the reality surprising relative to expectations, suggesting a disconnect between corporate AI narratives and on-the-ground implementation.",
+      "whyItMatters": "As CEO of one of the world's largest sovereign wealth funds, Tangen's on-the-ground surprise about corporate AI adoption could signal that NBIM's forward-looking assessments of AI-exposed holdings may be revised; investors tracking NBIM's public positions should watch for shifts in its technology allocation posture.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Mike Milken",
+        "Milken's questioning method",
+        "NBIM's interview prep discipline",
+        "Friday Wrap-Up format"
+      ]
+    },
+    {
+      "id": "live-stratechery-1xz3te1",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Sharp Tech on Video: Nvidia After Jensen Huang, Ominous News for American AI, D.C. Gets Its Revenge",
+      "date": "2026-11-13T03:47:52.000Z",
+      "url": "https://stratechery.com/2026/sharp-tech-on-video-nvidia-after-jensen-huang-ominous-news-for-american-ai-d-c-gets-its-revenge/",
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "Sharp Tech's First-Ever Video Release",
+          "detail": "This episode is explicitly noted as the first time Sharp Tech has been made available in video format, marking a meaningful format expansion for the show."
+        },
+        {
+          "title": "Nvidia Post-Jensen Angle Teased",
+          "detail": "The episode title flags a discussion of Nvidia 'after Jensen Huang,' suggesting a leadership, succession, or strategic-direction question at the company, though no detail is provided in the show notes."
+        },
+        {
+          "title": "'Ominous News for American AI' Flagged",
+          "detail": "The title includes a bearish framing for the U.S. AI competitive position, described as 'ominous,' though the specific development is not disclosed in the show notes."
+        }
+      ],
+      "synthesis": "The episode marks a format milestone for Sharp Tech — its first video release — available across YouTube, Spotify, and Stratechery's own platform. The show notes are largely promotional and logistical, offering no substantive content on the three named topics (Nvidia after Jensen Huang, ominous news for American AI, and D.C.'s revenge) beyond their titles.",
+      "whatChanged": "Sharp Tech launched its first-ever video format, distributing simultaneously on YouTube, Spotify, and Stratechery — a meaningful expansion of the show's surface area beyond audio-only.",
+      "whyItMatters": "Adding video distribution to YouTube and Spotify opens Sharp Tech to discovery by audiences who do not subscribe to Stratechery, potentially broadening the paid subscriber funnel for Ben Thompson's subscription business.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Sharp Tech video launch",
+        "American AI outlook",
+        "Nvidia leadership"
+      ]
+    },
+    {
       "id": "live-aidaily-e7b9m4",
       "podcastId": "aidaily",
       "show": "AI Daily",

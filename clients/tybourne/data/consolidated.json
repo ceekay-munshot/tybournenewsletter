@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T05:21:40.335Z",
+  "generatedAt": "2026-11-13T14:00:45.499Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3137,13 +3137,13 @@
         {
           "label": "DeepSeek",
           "thisValue": 0.239,
-          "lastValue": 0.28760529482551145,
-          "changePct": -0.169,
+          "lastValue": 0.28691476590636256,
+          "changePct": -0.167,
           "direction": "down",
           "bigMove": true,
           "prevChangePct": 0.052,
           "prevDirection": "up",
-          "prevValue": 0.27338906352234926,
+          "prevValue": 0.27273266721137124,
           "series": [
             {
               "label": "Q3 '26",
@@ -3155,7 +3155,7 @@
             {
               "label": "Q4 '26 (QTD)",
               "value": 0.239,
-              "changePct": -0.169,
+              "changePct": -0.167,
               "changeAbs": null,
               "direction": "down"
             }
@@ -3163,14 +3163,14 @@
         },
         {
           "label": "Google",
-          "thisValue": 0.547,
-          "lastValue": 0.5514112903225807,
+          "thisValue": 0.549,
+          "lastValue": 0.5534274193548387,
           "changePct": -0.008,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": -0.002,
           "prevDirection": "down",
-          "prevValue": 0.5525163229685178,
+          "prevValue": 0.5545364923395177,
           "series": [
             {
               "label": "Q3 '26",
@@ -3181,7 +3181,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 0.547,
+              "value": 0.549,
               "changePct": -0.008,
               "changeAbs": null,
               "direction": "down"
@@ -3190,14 +3190,14 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 5.109,
-          "lastValue": 5.109,
+          "thisValue": 5.075,
+          "lastValue": 5.075,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.109,
+          "prevValue": 5.075,
           "series": [
             {
               "label": "Q3 '26",
@@ -3208,7 +3208,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.109,
+              "value": 5.075,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -3217,14 +3217,14 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.027,
-          "lastValue": 5.027,
+          "thisValue": 5.031,
+          "lastValue": 5.031,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.027,
+          "prevValue": 5.031,
           "series": [
             {
               "label": "Q3 '26",
@@ -3235,7 +3235,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.027,
+              "value": 5.031,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -3243,7 +3243,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3294,13 +3294,13 @@
             {
               "label": "DeepSeek",
               "thisValue": 0.239,
-              "lastValue": 0.28760529482551145,
-              "changePct": -0.169,
+              "lastValue": 0.28691476590636256,
+              "changePct": -0.167,
               "direction": "down",
               "bigMove": true,
               "prevChangePct": 0.052,
               "prevDirection": "up",
-              "prevValue": 0.27338906352234926,
+              "prevValue": 0.27273266721137124,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3312,7 +3312,7 @@
                 {
                   "label": "Q4 '26 (QTD)",
                   "value": 0.239,
-                  "changePct": -0.169,
+                  "changePct": -0.167,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -3320,14 +3320,14 @@
             },
             {
               "label": "Google",
-              "thisValue": 0.547,
-              "lastValue": 0.5514112903225807,
+              "thisValue": 0.549,
+              "lastValue": 0.5534274193548387,
               "changePct": -0.008,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": -0.002,
               "prevDirection": "down",
-              "prevValue": 0.5525163229685178,
+              "prevValue": 0.5545364923395177,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3338,7 +3338,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 0.547,
+                  "value": 0.549,
                   "changePct": -0.008,
                   "changeAbs": null,
                   "direction": "down"
@@ -3347,14 +3347,14 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 5.109,
-              "lastValue": 5.109,
+              "thisValue": 5.075,
+              "lastValue": 5.075,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.109,
+              "prevValue": 5.075,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3365,7 +3365,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.109,
+                  "value": 5.075,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3374,14 +3374,14 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 5.027,
-              "lastValue": 5.027,
+              "thisValue": 5.031,
+              "lastValue": 5.031,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.027,
+              "prevValue": 5.031,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3392,7 +3392,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.027,
+                  "value": 5.031,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3400,7 +3400,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.9%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3429,7 +3429,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-16.9% input · share +13.24pp"
+          "body": "-16.7% input · share +13.21pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -6419,7 +6419,7 @@
       "direction": "down",
       "changeDisplay": "pp",
       "asOf": "2026-06-30",
-      "isStale": false,
+      "isStale": true,
       "breakdown": [
         {
           "label": "V",
@@ -15871,7 +15871,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-13T05:21:21.229Z",
+      "asOf": "2026-11-13T14:00:25.640Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17464,7 +17464,7 @@
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-13T05:21:21.360Z"
+          "asOf": "2026-11-13T14:00:25.731Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -18451,13 +18451,13 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.34%",
-                    "tone": "up",
+                    "text": "-1.42%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
-                    "text": "+0.08%",
-                    "tone": "up",
+                    "text": "-1.68%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
@@ -18474,13 +18474,13 @@
                     "text": "  LDO Regulators"
                   },
                   {
-                    "text": "+0.25%",
-                    "tone": "up",
+                    "text": "-2.16%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.07%",
-                    "tone": "up",
+                    "text": "-3.55%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18497,13 +18497,13 @@
                     "text": "  AC/DC Switching"
                   },
                   {
-                    "text": "+1.46%",
-                    "tone": "up",
+                    "text": "-1.03%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.10%",
-                    "tone": "up",
+                    "text": "-0.98%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18520,13 +18520,13 @@
                     "text": "  DC/DC Switching"
                   },
                   {
-                    "text": "+0.01%",
-                    "tone": "up",
+                    "text": "-4.08%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.13%",
-                    "tone": "up",
+                    "text": "-3.19%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18543,12 +18543,12 @@
                     "text": "  Supervisor & Reset"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+0.24%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.03%",
+                    "text": "+0.19%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18566,13 +18566,13 @@
                     "text": "  Battery Mgmt"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-0.06%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.08%",
-                    "tone": "up",
+                    "text": "-0.87%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18590,12 +18590,12 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.16%",
+                    "text": "+0.59%",
                     "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "+0.30%",
+                    "text": "+2.34%",
                     "tone": "up",
                     "bold": true
                   },
@@ -18613,13 +18613,13 @@
                     "text": "  Op-Amps"
                   },
                   {
-                    "text": "+0.56%",
+                    "text": "+0.01%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.27%",
-                    "tone": "up",
+                    "text": "-1.87%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18636,13 +18636,13 @@
                     "text": "  Instrumentation"
                   },
                   {
-                    "text": "+0.05%",
+                    "text": "+0.50%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+5.96%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18659,12 +18659,12 @@
                     "text": "  Audio Amps"
                   },
                   {
-                    "text": "+0.02%",
+                    "text": "+1.24%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.94%",
+                    "text": "+0.38%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18682,13 +18682,13 @@
                     "text": "  Comparators"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+0.62%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "-0.00%",
-                    "tone": "down",
+                    "text": "+4.89%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18706,13 +18706,13 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.26%",
+                    "text": "+6.95%",
                     "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "+0.02%",
-                    "tone": "up",
+                    "text": "-0.81%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
@@ -18729,12 +18729,12 @@
                     "text": "  ADC"
                   },
                   {
-                    "text": "+0.52%",
+                    "text": "+3.69%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.03%",
+                    "text": "+0.97%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18752,13 +18752,13 @@
                     "text": "  DAC"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+10.21%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.01%",
-                    "tone": "up",
+                    "text": "-2.58%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18776,12 +18776,12 @@
                     "bold": true
                   },
                   {
-                    "text": "-0.13%",
-                    "tone": "down",
+                    "text": "+0.54%",
+                    "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "+1.14%",
+                    "text": "+0.64%",
                     "tone": "up",
                     "bold": true
                   },
@@ -18799,12 +18799,12 @@
                     "text": "  CAN Transceivers"
                   },
                   {
-                    "text": "-0.76%",
+                    "text": "-0.33%",
                     "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+3.42%",
+                    "text": "+1.77%",
                     "tone": "up",
                     "bold": false
                   },
@@ -18822,13 +18822,13 @@
                     "text": "  LIN Transceivers"
                   },
                   {
-                    "text": "+0.19%",
+                    "text": "+1.19%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+1.76%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -18845,13 +18845,13 @@
                     "text": "  Ethernet PHYs"
                   },
                   {
-                    "text": "+0.20%",
+                    "text": "+0.76%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-1.61%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18869,12 +18869,12 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.02%",
+                    "text": "+1.08%",
                     "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "-0.41%",
+                    "text": "-0.37%",
                     "tone": "down",
                     "bold": true
                   },
@@ -18892,12 +18892,12 @@
                     "text": "  Digital Isolators"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+2.25%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "-0.71%",
+                    "text": "-0.66%",
                     "tone": "down",
                     "bold": false
                   },
@@ -18915,12 +18915,12 @@
                     "text": "  Reinforced Isolators"
                   },
                   {
-                    "text": "+0.04%",
-                    "tone": "up",
+                    "text": "-0.10%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "-0.12%",
+                    "text": "-0.08%",
                     "tone": "down",
                     "bold": false
                   },
@@ -18939,13 +18939,13 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.13%",
-                    "tone": "up",
+                    "text": "-0.16%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
-                    "text": "+0.01%",
-                    "tone": "up",
+                    "text": "-3.68%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
@@ -18962,13 +18962,13 @@
                     "text": "  MSP430"
                   },
                   {
-                    "text": "+0.02%",
+                    "text": "+1.09%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.04%",
-                    "tone": "up",
+                    "text": "-0.17%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -18985,12 +18985,12 @@
                     "text": "  C2000 Real-Time"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+0.01%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "-0.00%",
+                    "text": "-2.55%",
                     "tone": "down",
                     "bold": false
                   },
@@ -19008,13 +19008,13 @@
                     "text": "  MSPM0"
                   },
                   {
-                    "text": "+0.37%",
-                    "tone": "up",
+                    "text": "-4.99%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-1.64%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -19031,13 +19031,13 @@
                     "text": "  SimpleLink"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-0.48%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-11.49%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -19054,13 +19054,13 @@
                     "text": "  Sitara MPU"
                   },
                   {
-                    "text": "+0.27%",
+                    "text": "+3.56%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "-0.00%",
-                    "tone": "flat",
+                    "text": "-2.56%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -19079,12 +19079,12 @@
                   },
                   {
                     "text": "+0.00%",
-                    "tone": "flat",
+                    "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-0.02%",
+                    "tone": "down",
                     "bold": true
                   },
                   {
@@ -19101,13 +19101,13 @@
                     "text": "  LMG342x (600V)"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+0.01%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-0.04%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -19170,13 +19170,13 @@
                     "bold": true
                   },
                   {
-                    "text": "+0.01%",
+                    "text": "+0.39%",
                     "tone": "up",
                     "bold": true
                   },
                   {
-                    "text": "-0.01%",
-                    "tone": "down",
+                    "text": "+0.27%",
+                    "tone": "up",
                     "bold": true
                   },
                   {
@@ -19193,13 +19193,13 @@
                     "text": "  48V Bus Converters"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-5.81%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+2.08%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -19216,13 +19216,13 @@
                     "text": "  Smart Power Stages"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-1.25%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+3.14%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -19239,13 +19239,13 @@
                     "text": "  eFuses"
                   },
                   {
-                    "text": "+0.03%",
+                    "text": "+4.37%",
                     "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "-0.05%",
-                    "tone": "down",
+                    "text": "+0.68%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
@@ -19262,13 +19262,13 @@
                     "text": "  Hot-Swap Controllers"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+2.80%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-2.84%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -19285,13 +19285,13 @@
                     "text": "  TPS536xx (AI Power)"
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "+1.84%",
+                    "tone": "up",
                     "bold": false
                   },
                   {
-                    "text": "+0.00%",
-                    "tone": "flat",
+                    "text": "-1.74%",
+                    "tone": "down",
                     "bold": false
                   },
                   {
@@ -20938,19 +20938,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Nov-26 (MTD)",
       "lastPeriodLabel": "Oct-26",
-      "thisValue": 3.9346,
+      "thisValue": 3.925,
       "lastValue": 3.5949,
-      "changePct": 0.09449497899802502,
-      "changeAbs": 0.3397000000000001,
+      "changePct": 0.0918245291941361,
+      "changeAbs": 0.33009999999999984,
       "direction": "up",
-      "asOf": "2026-11-12",
+      "asOf": "2026-11-13",
       "isStale": false,
       "breakdown": [
         {
           "label": "H100",
-          "thisValue": 3.9346,
+          "thisValue": 3.925,
           "lastValue": 3.5949,
-          "changePct": 0.09449497899802502,
+          "changePct": 0.0918245291941361,
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.3492,
@@ -20981,8 +20981,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.9346,
-              "changePct": 0.09449497899802502,
+              "value": 3.925,
+              "changePct": 0.0918245291941361,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20990,9 +20990,9 @@
         },
         {
           "label": "H200",
-          "thisValue": 5.0292,
+          "thisValue": 5.0317,
           "lastValue": 4.7992,
-          "changePct": 0.04792465410901826,
+          "changePct": 0.04844557426237705,
           "direction": "up",
           "bigMove": true,
           "prevValue": 4.4299,
@@ -21023,8 +21023,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 5.0292,
-              "changePct": 0.04792465410901826,
+              "value": 5.0317,
+              "changePct": 0.04844557426237705,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21032,9 +21032,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 8.0443,
+          "thisValue": 8.0433,
           "lastValue": 7.5642,
-          "changePct": 0.06347002987758127,
+          "changePct": 0.06333782819068781,
           "direction": "up",
           "bigMove": true,
           "prevValue": 6.3742,
@@ -21065,8 +21065,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 8.0443,
-              "changePct": 0.06347002987758127,
+              "value": 8.0433,
+              "changePct": 0.06333782819068781,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21074,9 +21074,9 @@
         },
         {
           "label": "GB200",
-          "thisValue": 12.5625,
+          "thisValue": 12.4038,
           "lastValue": 16,
-          "changePct": -0.21484375,
+          "changePct": -0.22476249999999998,
           "direction": "down",
           "bigMove": true,
           "prevValue": 16.554,
@@ -21107,8 +21107,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 12.5625,
-              "changePct": -0.21484375,
+              "value": 12.4038,
+              "changePct": -0.22476249999999998,
               "changeAbs": null,
               "direction": "down"
             }
@@ -21116,9 +21116,9 @@
         },
         {
           "label": "A100",
-          "thisValue": 1.8752,
+          "thisValue": 1.8817,
           "lastValue": 1.8231,
-          "changePct": 0.028577697328725817,
+          "changePct": 0.03214305304152267,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.7444,
@@ -21149,8 +21149,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.8752,
-              "changePct": 0.028577697328725817,
+              "value": 1.8817,
+              "changePct": 0.03214305304152267,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21158,9 +21158,9 @@
         },
         {
           "label": "L40S",
-          "thisValue": 1.6147,
+          "thisValue": 1.6158,
           "lastValue": 1.5815,
-          "changePct": 0.02099272842238389,
+          "changePct": 0.02168827062914954,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.5035,
@@ -21191,15 +21191,15 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.6147,
-              "changePct": 0.02099272842238389,
+              "value": 1.6158,
+              "changePct": 0.02168827062914954,
               "changeAbs": null,
               "direction": "up"
             }
           ]
         }
       ],
-      "summary": "Month-on-month H100 rental up 9.4% to $3.93/hr; GB200 the standout at -21.5%.",
+      "summary": "Month-on-month H100 rental up 9.2% to $3.92/hr; GB200 the standout at -22.5%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -21226,18 +21226,18 @@
           "available": true,
           "thisPeriodLabel": "Nov-26 (MTD)",
           "lastPeriodLabel": "Oct-26",
-          "thisValue": 3.9346,
+          "thisValue": 3.925,
           "lastValue": 3.5949,
-          "changePct": 0.09449497899802502,
-          "changeAbs": 0.3397000000000001,
+          "changePct": 0.0918245291941361,
+          "changeAbs": 0.33009999999999984,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.9346,
+              "thisValue": 3.925,
               "lastValue": 3.5949,
-              "changePct": 0.09449497899802502,
+              "changePct": 0.0918245291941361,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.3492,
@@ -21268,8 +21268,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 3.9346,
-                  "changePct": 0.09449497899802502,
+                  "value": 3.925,
+                  "changePct": 0.0918245291941361,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21277,9 +21277,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 5.0292,
+              "thisValue": 5.0317,
               "lastValue": 4.7992,
-              "changePct": 0.04792465410901826,
+              "changePct": 0.04844557426237705,
               "direction": "up",
               "bigMove": true,
               "prevValue": 4.4299,
@@ -21310,8 +21310,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 5.0292,
-                  "changePct": 0.04792465410901826,
+                  "value": 5.0317,
+                  "changePct": 0.04844557426237705,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21319,9 +21319,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 8.0443,
+              "thisValue": 8.0433,
               "lastValue": 7.5642,
-              "changePct": 0.06347002987758127,
+              "changePct": 0.06333782819068781,
               "direction": "up",
               "bigMove": true,
               "prevValue": 6.3742,
@@ -21352,8 +21352,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 8.0443,
-                  "changePct": 0.06347002987758127,
+                  "value": 8.0433,
+                  "changePct": 0.06333782819068781,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21361,9 +21361,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 12.5625,
+              "thisValue": 12.4038,
               "lastValue": 16,
-              "changePct": -0.21484375,
+              "changePct": -0.22476249999999998,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.554,
@@ -21394,8 +21394,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 12.5625,
-                  "changePct": -0.21484375,
+                  "value": 12.4038,
+                  "changePct": -0.22476249999999998,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -21403,9 +21403,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8752,
+              "thisValue": 1.8817,
               "lastValue": 1.8231,
-              "changePct": 0.028577697328725817,
+              "changePct": 0.03214305304152267,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7444,
@@ -21436,8 +21436,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.8752,
-                  "changePct": 0.028577697328725817,
+                  "value": 1.8817,
+                  "changePct": 0.03214305304152267,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21445,9 +21445,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.6147,
+              "thisValue": 1.6158,
               "lastValue": 1.5815,
-              "changePct": 0.02099272842238389,
+              "changePct": 0.02168827062914954,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5035,
@@ -21478,15 +21478,15 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.6147,
-                  "changePct": 0.02099272842238389,
+                  "value": 1.6158,
+                  "changePct": 0.02168827062914954,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month H100 rental up 9.4% to $3.93/hr; GB200 the standout at -21.5%.",
+          "summary": "Month-on-month H100 rental up 9.2% to $3.92/hr; GB200 the standout at -22.5%.",
           "prevLabel": "Sep-26",
           "prevValue": 3.3492,
           "prevChangePct": 0.07336080257972047,
@@ -21516,9 +21516,9 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.9346,
-              "changePct": 0.09449497899802502,
-              "changeAbs": 0.3397000000000001,
+              "value": 3.925,
+              "changePct": 0.0918245291941361,
+              "changeAbs": 0.33009999999999984,
               "direction": "up"
             }
           ]
@@ -21529,18 +21529,18 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 3.6897,
+          "thisValue": 3.6924,
           "lastValue": 3.3073,
-          "changePct": 0.11562301575303119,
-          "changeAbs": 0.3824000000000001,
+          "changePct": 0.11643939164877694,
+          "changeAbs": 0.3851,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.6897,
+              "thisValue": 3.6924,
               "lastValue": 3.3073,
-              "changePct": 0.11562301575303119,
+              "changePct": 0.11643939164877694,
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.9802,
@@ -21564,8 +21564,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 3.6897,
-                  "changePct": 0.11562301575303119,
+                  "value": 3.6924,
+                  "changePct": 0.11643939164877694,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21573,9 +21573,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.8634,
+              "thisValue": 4.8679,
               "lastValue": 4.3361,
-              "changePct": 0.12160697400890208,
+              "changePct": 0.12264477295265322,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.7738,
@@ -21599,8 +21599,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 4.8634,
-                  "changePct": 0.12160697400890208,
+                  "value": 4.8679,
+                  "changePct": 0.12264477295265322,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21608,9 +21608,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.6982,
+              "thisValue": 7.7058,
               "lastValue": 6.3989,
-              "changePct": 0.20305052430886553,
+              "changePct": 0.204238228445514,
               "direction": "up",
               "bigMove": true,
               "prevValue": 5.7373,
@@ -21634,8 +21634,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 7.6982,
-                  "changePct": 0.20305052430886553,
+                  "value": 7.7058,
+                  "changePct": 0.204238228445514,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21643,9 +21643,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 15.0407,
+              "thisValue": 14.9375,
               "lastValue": 16.9936,
-              "changePct": -0.11491973448827802,
+              "changePct": -0.1209926089822051,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.6392,
@@ -21669,8 +21669,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 15.0407,
-                  "changePct": -0.11491973448827802,
+                  "value": 14.9375,
+                  "changePct": -0.1209926089822051,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -21678,9 +21678,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8376,
+              "thisValue": 1.8404,
               "lastValue": 1.7896,
-              "changePct": 0.026821636119803205,
+              "changePct": 0.028386231560125142,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7997,
@@ -21704,8 +21704,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.8376,
-                  "changePct": 0.026821636119803205,
+                  "value": 1.8404,
+                  "changePct": 0.028386231560125142,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21713,9 +21713,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5908,
+              "thisValue": 1.5917,
               "lastValue": 1.5182,
-              "changePct": 0.047819786589382164,
+              "changePct": 0.0484125938611513,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5627,
@@ -21739,15 +21739,15 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.5908,
-                  "changePct": 0.047819786589382164,
+                  "value": 1.5917,
+                  "changePct": 0.0484125938611513,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Quarter-on-quarter H100 rental up 11.6% to $3.69/hr; B200 the standout at +20.3%.",
+          "summary": "Quarter-on-quarter H100 rental up 11.6% to $3.69/hr; B200 the standout at +20.4%.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.9802,
           "prevChangePct": 0.109757734380243,
@@ -21770,9 +21770,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 3.6897,
-              "changePct": 0.11562301575303119,
-              "changeAbs": 0.3824000000000001,
+              "value": 3.6924,
+              "changePct": 0.11643939164877694,
+              "changeAbs": 0.3851,
               "direction": "up"
             }
           ]
@@ -21809,9 +21809,9 @@
         },
         {
           "label": "Nov-26 (MTD)",
-          "value": 3.9346,
-          "changePct": 0.09449497899802502,
-          "changeAbs": 0.3397000000000001,
+          "value": 3.925,
+          "changePct": 0.0918245291941361,
+          "changeAbs": 0.33009999999999984,
           "direction": "up"
         }
       ]
@@ -21830,12 +21830,19 @@
       "changePct": null,
       "changeAbs": 38,
       "direction": "flat",
-      "asOf": "2026-11-12T18:44:45.000Z",
+      "asOf": "2026-11-13T04:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 10,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "In Good Company",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21856,13 +21863,6 @@
         },
         {
           "label": "Invest Like the Best",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "In Good Company",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21905,6 +21905,8 @@
         }
       ],
       "highlights": [
+        "Milken's redefinition of 'safe' in credit markets",
+        "Sharp Tech's First-Ever Video Release",
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
@@ -21912,17 +21914,17 @@
         "Earnings divergence as a structural signal",
         "Patient Is Not the Customer — Reitano's Core Diagnosis",
         "Nishant Kumar: 'I never saw a day like last week' in 16 years covering hedge funds",
-        "A chance encounter at 19 sets a lifelong mission",
-        "Pivot from hardware to software via body cameras and Evidence.com",
-        "Best benchmark AI that doesn't compel a switch"
+        "A chance encounter at 19 sets a lifelong mission"
       ],
-      "tone": "Tone across 40 episodes — 11 positive, 10 cautious, 8 mixed, 1 neutral",
-      "thisTone": "11 positive, 10 cautious, 8 mixed, 1 neutral",
+      "tone": "Tone across 40 episodes — 11 positive, 10 cautious, 7 mixed, 2 neutral",
+      "thisTone": "11 positive, 10 cautious, 7 mixed, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "Milken's redefinition of 'safe' in credit markets",
+        "Sharp Tech's First-Ever Video Release",
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
@@ -21930,11 +21932,9 @@
         "Earnings divergence as a structural signal",
         "Patient Is Not the Customer — Reitano's Core Diagnosis",
         "Nishant Kumar: 'I never saw a day like last week' in 16 years covering hedge funds",
-        "A chance encounter at 19 sets a lifelong mission",
-        "Pivot from hardware to software via body cameras and Evidence.com",
-        "Best benchmark AI that doesn't compel a switch"
+        "A chance encounter at 19 sets a lifelong mission"
       ],
-      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval; Valuation Headlines Are Actively Misleading. Sentiment ran 11 positive, 10 cautious, 8 mixed, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history; Megaspeed: $4.6B buyer with a 4-day partner approval.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Milken's redefinition of 'safe' in credit markets; Sharp Tech's First-Ever Video Release; Jensen Huang Departs Nvidia; Three years of AI change outpaces two decades of Roblox history. Sentiment ran 11 positive, 10 cautious, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Milken's redefinition of 'safe' in credit markets; Sharp Tech's First-Ever Video Release; Jensen Huang Departs Nvidia.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
