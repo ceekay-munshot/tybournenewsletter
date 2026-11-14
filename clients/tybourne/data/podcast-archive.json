@@ -9,8 +9,43 @@
       "title": "Washington Is Taking Control of AI",
       "date": "2026-11-13T19:59:53.000Z",
       "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Washington-Is-Taking-Control-of-AI-e3sbe6r",
-      "summarised": false,
-      "notes": "Jensen Huang’s departure from Nvidia is becoming a turning point in Washington’s battle over AI and China. NLW examines how the fallout is empowering China hawks, accelerating chip export restrictions, and raising questions that go well beyond the disputed spy allegations. Plus, the competing arguments over selling chips to China—and what new leadership at Nvidia could mean for the financing that keeps the AI boom…"
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang departure framed as Washington's AI turning point",
+          "detail": "NLW opens by positioning Huang's departure not as a personnel story but as the moment Washington's China hawks gain decisive political momentum to accelerate chip export restrictions and assert control over AI's strategic direction."
+        },
+        {
+          "title": "Disputed spy allegations matter less than the political fallout",
+          "detail": "The episode explicitly argues that whether the espionage allegations against Huang are true is secondary — the political consequences are real regardless, empowering a faction that has long sought to curb Nvidia's China business."
+        },
+        {
+          "title": "The 'compete vs. restrict' debate over China chip sales",
+          "detail": "NLW lays out both sides: the pro-sales camp argues restrictions hurt U.S. firms while China self-sufficiencies anyway; the hawk camp argues every chip sold compresses the U.S. lead and accelerates Chinese military AI."
+        },
+        {
+          "title": "Nvidia as a financing node in the AI boom",
+          "detail": "The episode highlights that Nvidia's role extends beyond chip sales — its hardware underpins the data center lending and equity valuation architecture of the entire AI investment cycle, making leadership continuity a financial stability question."
+        }
+      ],
+      "synthesis": "The episode's central argument is that Jensen Huang's departure from Nvidia — framed around disputed spy allegations — is less important as an individual event than as a political inflection point: it has handed China hawks in Washington the momentum they needed to accelerate chip export restrictions and assert far greater government control over AI's strategic direction. NLW frames this as a turning point where the debate shifts from 'should we restrict AI chip exports to China?' to 'how fast and how broadly do we restrict them?' The fallout from the situation is empowering a faction that has long argued Nvidia's commercial relationship with China is a national security liability, regardless of whether the specific espionage allegations hold up.",
+      "whatChanged": "Jensen Huang's departure from Nvidia has acted as a political catalyst, shifting Washington's AI-China chip debate from 'whether' to restrict toward 'how fast and how broadly' — empowering China hawks and accelerating export restriction policy in ways that go beyond any individual espionage allegation.",
+      "whyItMatters": "If Nvidia faces tightened chip export rules or installs a more compliance-oriented CEO, the company's China revenue contracts sharply, the hardware collateral underpinning AI data center lending weakens, and the capital flows sustaining the broader AI investment boom come under pressure — transmitting a policy shift…",
+      "beneficiaries": [
+        "China hawks / export-restriction advocates in Washington"
+      ],
+      "atRisk": [
+        "Nvidia (NVDA)",
+        "AI data center lenders and AI-stack investors"
+      ],
+      "numbers": [],
+      "topics": [
+        "Washington China hawks",
+        "Chip export restrictions",
+        "Jensen Huang / Nvidia leadership",
+        "Nvidia (NVDA)"
+      ]
     },
     {
       "id": "live-stratechery-1xz3tc5",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T23:18:49.481Z",
+  "generatedAt": "2026-11-14T05:11:03.915Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3126,15 +3126,124 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.36,
+      "thisValue": 2.35,
       "lastValue": 2.45,
-      "changePct": -0.03673469387755114,
-      "changeAbs": -0.0900000000000003,
+      "changePct": -0.040816326530612276,
+      "changeAbs": -0.10000000000000009,
       "direction": "down",
-      "asOf": "2026-11-11T00:00:00.000Z",
+      "asOf": "2026-11-12T00:00:00.000Z",
       "isStale": false,
-      "breakdown": [],
-      "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%). List prices are otherwise flat month-to-month.",
+      "breakdown": [
+        {
+          "label": "DeepSeek",
+          "thisValue": 0.239,
+          "lastValue": 0.28691476590636256,
+          "changePct": -0.167,
+          "direction": "down",
+          "bigMove": true,
+          "prevChangePct": 0.052,
+          "prevDirection": "up",
+          "prevValue": 0.27273266721137124,
+          "series": [
+            {
+              "label": "Q3 '26",
+              "value": null,
+              "changePct": 0.052,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Q4 '26 (QTD)",
+              "value": 0.239,
+              "changePct": -0.167,
+              "changeAbs": null,
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "Google",
+          "thisValue": 0.549,
+          "lastValue": 0.5534274193548387,
+          "changePct": -0.008,
+          "direction": "down",
+          "bigMove": false,
+          "prevChangePct": -0.002,
+          "prevDirection": "down",
+          "prevValue": 0.5545364923395177,
+          "series": [
+            {
+              "label": "Q3 '26",
+              "value": null,
+              "changePct": -0.002,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Q4 '26 (QTD)",
+              "value": 0.549,
+              "changePct": -0.008,
+              "changeAbs": null,
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "OpenAI",
+          "thisValue": 5.075,
+          "lastValue": 5.075,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false,
+          "prevChangePct": 0,
+          "prevDirection": "flat",
+          "prevValue": 5.075,
+          "series": [
+            {
+              "label": "Q3 '26",
+              "value": null,
+              "changePct": 0,
+              "changeAbs": null,
+              "direction": "flat"
+            },
+            {
+              "label": "Q4 '26 (QTD)",
+              "value": 5.075,
+              "changePct": 0,
+              "changeAbs": null,
+              "direction": "flat"
+            }
+          ]
+        },
+        {
+          "label": "Anthropic",
+          "thisValue": 5.031,
+          "lastValue": 5.031,
+          "changePct": 0,
+          "direction": "flat",
+          "bigMove": false,
+          "prevChangePct": 0,
+          "prevDirection": "flat",
+          "prevValue": 5.031,
+          "series": [
+            {
+              "label": "Q3 '26",
+              "value": null,
+              "changePct": 0,
+              "changeAbs": null,
+              "direction": "flat"
+            },
+            {
+              "label": "Q4 '26 (QTD)",
+              "value": 5.031,
+              "changePct": 0,
+              "changeAbs": null,
+              "direction": "flat"
+            }
+          ]
+        }
+      ],
+      "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3175,14 +3284,123 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.36,
+          "thisValue": 2.35,
           "lastValue": 2.45,
-          "changePct": -0.03673469387755114,
-          "changeAbs": -0.0900000000000003,
+          "changePct": -0.040816326530612276,
+          "changeAbs": -0.10000000000000009,
           "direction": "down",
           "bigMove": false,
-          "breakdown": [],
-          "summary": "Quarter-on-quarter input price down 3.7% (output -2.5%). List prices are otherwise flat month-to-month.",
+          "breakdown": [
+            {
+              "label": "DeepSeek",
+              "thisValue": 0.239,
+              "lastValue": 0.28691476590636256,
+              "changePct": -0.167,
+              "direction": "down",
+              "bigMove": true,
+              "prevChangePct": 0.052,
+              "prevDirection": "up",
+              "prevValue": 0.27273266721137124,
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": null,
+                  "changePct": 0.052,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Q4 '26 (QTD)",
+                  "value": 0.239,
+                  "changePct": -0.167,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "Google",
+              "thisValue": 0.549,
+              "lastValue": 0.5534274193548387,
+              "changePct": -0.008,
+              "direction": "down",
+              "bigMove": false,
+              "prevChangePct": -0.002,
+              "prevDirection": "down",
+              "prevValue": 0.5545364923395177,
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": null,
+                  "changePct": -0.002,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Q4 '26 (QTD)",
+                  "value": 0.549,
+                  "changePct": -0.008,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "OpenAI",
+              "thisValue": 5.075,
+              "lastValue": 5.075,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "prevChangePct": 0,
+              "prevDirection": "flat",
+              "prevValue": 5.075,
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": null,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Q4 '26 (QTD)",
+                  "value": 5.075,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                }
+              ]
+            },
+            {
+              "label": "Anthropic",
+              "thisValue": 5.031,
+              "lastValue": 5.031,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "prevChangePct": 0,
+              "prevDirection": "flat",
+              "prevValue": 5.031,
+              "series": [
+                {
+                  "label": "Q3 '26",
+                  "value": null,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Q4 '26 (QTD)",
+                  "value": 5.031,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                }
+              ]
+            }
+          ],
+          "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3198,9 +3416,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.36,
-              "changePct": -0.03673469387755114,
-              "changeAbs": -0.0900000000000003,
+              "value": 2.35,
+              "changePct": -0.040816326530612276,
+              "changeAbs": -0.10000000000000009,
               "direction": "down"
             }
           ]
@@ -3208,7 +3426,12 @@
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [],
+      "insights": [
+        {
+          "title": "Biggest price cut — DeepSeek",
+          "body": "-16.7% input · share +13.28pp"
+        }
+      ],
       "prevLabel": "Q2 '26",
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
@@ -3224,9 +3447,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.36,
-          "changePct": -0.03673469387755114,
-          "changeAbs": -0.0900000000000003,
+          "value": 2.35,
+          "changePct": -0.040816326530612276,
+          "changeAbs": -0.10000000000000009,
           "direction": "down"
         }
       ]
@@ -15648,7 +15871,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-13T23:18:28.654Z",
+      "asOf": "2026-11-14T05:10:48.494Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17241,7 +17464,7 @@
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-13T23:18:28.740Z"
+          "asOf": "2026-11-14T05:10:48.570Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21602,17 +21825,17 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
       "asOf": "2026-11-13T19:59:53.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21682,6 +21905,7 @@
         }
       ],
       "highlights": [
+        "Jensen Huang departure framed as Washington's AI turning point",
         "Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly",
         "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating",
         "Milken's redefinition of 'safe' in credit markets",
@@ -21690,16 +21914,16 @@
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
         "Valuation Headlines Are Actively Misleading",
-        "Earnings divergence as a structural signal",
-        "Patient Is Not the Customer — Reitano's Core Diagnosis"
+        "Earnings divergence as a structural signal"
       ],
-      "tone": "Tone across 42 episodes — 11 positive, 11 cautious, 7 mixed, 2 neutral",
-      "thisTone": "11 positive, 11 cautious, 7 mixed, 2 neutral",
+      "tone": "Tone across 40 episodes — 11 positive, 10 cautious, 7 mixed, 2 neutral",
+      "thisTone": "11 positive, 10 cautious, 7 mixed, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "Jensen Huang departure framed as Washington's AI turning point",
         "Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly",
         "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating",
         "Milken's redefinition of 'safe' in credit markets",
@@ -21708,14 +21932,13 @@
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
         "Valuation Headlines Are Actively Misleading",
-        "Earnings divergence as a structural signal",
-        "Patient Is Not the Customer — Reitano's Core Diagnosis"
+        "Earnings divergence as a structural signal"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating; Milken's redefinition of 'safe' in credit markets; Sharp Tech's First-Ever Video Release. Sentiment ran 11 positive, 11 cautious, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating; Milken's redefinition of 'safe' in credit markets.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating; Milken's redefinition of 'safe' in credit markets. Sentiment ran 11 positive, 10 cautious, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
