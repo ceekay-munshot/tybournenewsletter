@@ -3,6 +3,106 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-sources-3rcyfb",
+      "podcastId": "sources",
+      "show": "Sources",
+      "title": "We are so early",
+      "date": "2026-11-14T19:42:00.000Z",
+      "url": "https://sources.news/p/we-are-so-early",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Host joins Sound Ventures as investor",
+          "detail": "The host announces they have joined Sound Ventures and have been actively starting to make investments, marking a significant personal and professional shift from media to capital deployment."
+        },
+        {
+          "title": "'We are so early' — bullish tech conviction",
+          "detail": "The episode title is an explicit statement of conviction that the current technology moment is still in its earliest stages, implying substantial upside remains. No specific sector or data point is cited in the show notes to support this."
+        },
+        {
+          "title": "Investment disclosures promised",
+          "detail": "The host explicitly says they will share details of the investments being made through Sound Ventures, making this episode a potential precursor to more specific, actionable deal disclosures."
+        }
+      ],
+      "synthesis": "The episode's show notes are brief and promotional in nature, offering little substantive content beyond a personal update from the host. The central message is that the host has been active across two fronts: producing high-profile podcast interviews with major tech figures, and recently joining Sound Ventures to begin deploying capital into investments.",
+      "whatChanged": "The host joined Sound Ventures and has begun making investments, marking a shift from purely media/commentary work to active venture capital deployment.",
+      "whyItMatters": "The host's dual role as a prominent tech podcast interviewer and now a Sound Ventures investor creates potential deal-flow and signalling dynamics — companies or sectors the host covers positively may also become investment targets, worth tracking for undisclosed conflicts or conviction signals.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Tech landscape",
+        "Sound Ventures",
+        "Podcast cadence"
+      ]
+    },
+    {
+      "id": "live-oddlots-15mxz6a",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "How Wall Street Is Bracing For the Post-Jensen Huang Nvidia Era",
+      "date": "2026-11-14T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/how-wall-street-is-bracing-for-the-post-jensen-huang-nvidia-era",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Jensen's 60 direct reports and zero succession plan are the structural vulnerability",
+          "detail": "Raskin notes Jensen had roughly 60 direct reports, no succession plan, and was personally involved in individual financing deals and supply-chain commitments. Many vendor capacity additions were based on 'Jensen's handshake,' making the relationships extremely difficult for any successor to inherit."
+        },
+        {
+          "title": "Raskin cuts NVIDIA price target in half — calls it hardest downgrade of his career",
+          "detail": "Raskin downgraded NVIDIA from outperform and halved his price target, saying the team spent more time debating the decision than writing it (20 minutes to write, hours to decide). He called it 'probably the most difficult downgrade I've ever had to write' — not because the numbers changed but because he could no longer…"
+        },
+        {
+          "title": "Near-term revenue estimates unchanged — the downgrade is purely a risk-premium call",
+          "detail": "Raskin explicitly did not cut his financial forecasts and does not expect customers to reduce data-center spending in 2026-2027 because of the scandal. The stock was 'incredibly cheap' even before the news. The bearish call rests entirely on governance uncertainty and headline risk, not a demand-destruction thesis."
+        },
+        {
+          "title": "The real long-term risk: who makes the next 10-year architecture bets?",
+          "detail": "Raskin says Rubin is shipping, Rubin Ultra is baked, and Feynman is next — but he is worried about what comes after Feynman: memory architecture choices, platform direction, the next major inflection. Jensen's investment in CUDA 15+ years ago (when the stock was effectively $0.25–$0.50 on a split-adjusted basis) is why…"
+        }
+      ],
+      "synthesis": "Stacey Raskin of Bernstein Research, one of Wall Street's most closely followed NVIDIA analysts, downgraded the stock from outperform and cut his price target in half — not because the near-term business trajectory changed, but because the cascade of disclosures (Jensen Huang's relationships with subordinates, his subsequent dismissal, and the espionage framing around Alice Wang) made it impossible to advocate buying the dip in front of incoming 'tape bombs,' congressional investigations, and subpoenaed communications. Raskin is explicit that he did not change his revenue estimates and does not expect customers to cancel data-center orders for 2026-2027; the downgrade is purely a risk-premium call on headline volatility and governance uncertainty.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "NVIDIA stock decline on recording day",
+          "value": "down ~4%",
+          "context": "Friday, November 13th, approximately 12:10 PM New York time, day of recording"
+        },
+        {
+          "metric": "Jensen Huang's direct reports",
+          "value": "~60",
+          "context": "Cited as evidence of extreme key-man concentration and flat organizational structure"
+        },
+        {
+          "metric": "Bernstein price target cut",
+          "value": "cut in half",
+          "context": "Accompanying the downgrade from outperform; exact dollar figures not stated"
+        },
+        {
+          "metric": "NVIDIA China/Hong Kong revenue share",
+          "value": "roughly 8%",
+          "context": "Last reported quarter; includes gaming and auto, not just data center"
+        },
+        {
+          "metric": "NVIDIA 'other' geography revenue (Singapore, Malaysia, etc.)",
+          "value": "~1%",
+          "context": "Under the customer-headquarters reporting methodology"
+        }
+      ],
+      "topics": [
+        "NVIDIA post-Jensen",
+        "Jensen Huang's legacy",
+        "China export policy hawks",
+        "NVIDIA competitors (AMD, Broadcom)",
+        "NVIDIA near-term fundamentals"
+      ]
+    },
+    {
       "id": "live-allin-1yk111r",
       "podcastId": "allin",
       "show": "All-In",
