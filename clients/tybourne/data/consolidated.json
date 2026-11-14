@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T05:11:03.915Z",
+  "generatedAt": "2026-11-14T13:02:49.382Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -1650,283 +1650,28 @@
       "metricLabel": "Supply-chain revenue",
       "unit": "TWD bn",
       "comparison": "MoM",
-      "thisPeriodLabel": "Sep '26",
-      "lastPeriodLabel": "Aug '26",
-      "thisValue": 2768.942852,
-      "lastValue": 2675.5812829205015,
-      "changePct": 0.03489393862764299,
-      "changeAbs": 93.36156907949862,
+      "thisPeriodLabel": "Oct '26",
+      "lastPeriodLabel": "Sep '26",
+      "thisValue": 3209.078029,
+      "lastValue": 2935.350918052458,
+      "changePct": 0.09325192066955805,
+      "changeAbs": 273.72711094754186,
       "direction": "up",
-      "asOf": "2026-10-18T05:13:42Z",
+      "asOf": "2026-11-14T07:07:24Z",
       "isStale": false,
       "breakdown": [
         {
-          "label": "Semi Equip / Consumables",
-          "thisValue": 1.902928,
-          "lastValue": 1.7389454445764416,
-          "changePct": 0.0943,
+          "label": "AI Silicon",
+          "thisValue": 605.583739,
+          "lastValue": 528.9864945842069,
+          "changePct": 0.1448,
           "direction": "up",
           "bigMove": true,
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": null,
-              "changePct": 0.12960000000000002,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": null,
-              "changePct": 0.0922,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": null,
-              "changePct": -0.0403,
-              "changeAbs": null,
-              "direction": "down"
-            },
-            {
-              "label": "Sep '26",
-              "value": 1.902928,
-              "changePct": 0.0943,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "Legacy / Mature Node",
-          "thisValue": 38.9192,
-          "lastValue": 37.14727498329675,
-          "changePct": 0.04769999999999999,
-          "direction": "up",
-          "bigMove": false,
-          "prevValue": 35.21957428652698,
-          "prevChangePct": 0.0547,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": 35.575398,
-              "changePct": 0.0795,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": 35.21865,
-              "changePct": -0.01,
-              "changeAbs": null,
-              "direction": "down"
-            },
-            {
-              "label": "Aug '26",
-              "value": 37.146085,
-              "changePct": 0.0547,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Sep '26",
-              "value": 38.9192,
-              "changePct": 0.04769999999999999,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "Analog Cycle",
-          "thisValue": 6.712614,
-          "lastValue": 6.412508597630875,
-          "changePct": 0.046799999999999994,
-          "direction": "up",
-          "bigMove": false,
-          "prevValue": 6.461545747682386,
-          "prevChangePct": -0.0076,
+          "prevValue": 529.4048598879103,
+          "prevChangePct": -0.0008,
           "prevChangeAbs": null,
           "prevDirection": "down",
           "series": [
-            {
-              "label": "Jun '26",
-              "value": 6.233727,
-              "changePct": 0.028900000000000002,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": 6.461672,
-              "changePct": 0.0366,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": 6.412438,
-              "changePct": -0.0076,
-              "changeAbs": null,
-              "direction": "down"
-            },
-            {
-              "label": "Sep '26",
-              "value": 6.712614,
-              "changePct": 0.046799999999999994,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "Rack / ODM",
-          "thisValue": 2026.47403,
-          "lastValue": 1936.4300334448162,
-          "changePct": 0.04650000000000001,
-          "direction": "up",
-          "bigMove": false,
-          "prevValue": 1755.4805067536943,
-          "prevChangePct": 0.10310000000000001,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": 1673.930576,
-              "changePct": 0.0508,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": 1755.409185,
-              "changePct": 0.0487,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": 1936.470547,
-              "changePct": 0.10310000000000001,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Sep '26",
-              "value": 2026.47403,
-              "changePct": 0.04650000000000001,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "Thermal",
-          "thisValue": 29.00528,
-          "lastValue": 27.822810551558753,
-          "changePct": 0.0425,
-          "direction": "up",
-          "bigMove": false,
-          "prevValue": 27.68944367038217,
-          "prevChangePct": 0.0048,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": 24.841168,
-              "changePct": 0.0793,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": 27.688227,
-              "changePct": 0.11460000000000001,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": 27.822353,
-              "changePct": 0.0048,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Sep '26",
-              "value": 29.00528,
-              "changePct": 0.0425,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "Substrate / AI PCB",
-          "thisValue": 60.269806,
-          "lastValue": 58.43494861353499,
-          "changePct": 0.031400000000000004,
-          "direction": "up",
-          "bigMove": false,
-          "prevValue": 55.464512148823076,
-          "prevChangePct": 0.0536,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": 49.793574,
-              "changePct": 0.0574,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Jul '26",
-              "value": 55.463446,
-              "changePct": 0.1139,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Aug '26",
-              "value": 58.43741,
-              "changePct": 0.0536,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Sep '26",
-              "value": 60.269806,
-              "changePct": 0.031400000000000004,
-              "changeAbs": null,
-              "direction": "up"
-            }
-          ]
-        },
-        {
-          "label": "AI Silicon",
-          "thisValue": 528.981336,
-          "lastValue": 529.4048598879103,
-          "changePct": -0.0008,
-          "direction": "down",
-          "bigMove": false,
-          "prevValue": 480.76799582273884,
-          "prevChangePct": 0.1012,
-          "prevChangeAbs": null,
-          "prevDirection": "up",
-          "series": [
-            {
-              "label": "Jun '26",
-              "value": 451.180885,
-              "changePct": 0.0652,
-              "changeAbs": null,
-              "direction": "up"
-            },
             {
               "label": "Jul '26",
               "value": 480.78287,
@@ -1947,28 +1692,28 @@
               "changePct": -0.0008,
               "changeAbs": null,
               "direction": "down"
+            },
+            {
+              "label": "Oct '26",
+              "value": 605.583739,
+              "changePct": 0.1448,
+              "changeAbs": null,
+              "direction": "up"
             }
           ]
         },
         {
           "label": "Networking",
-          "thisValue": 40.398562,
-          "lastValue": 40.872685147713476,
-          "changePct": -0.0116,
-          "direction": "down",
-          "bigMove": false,
-          "prevValue": 39.47128054080154,
-          "prevChangePct": 0.0355,
+          "thisValue": 44.662669,
+          "lastValue": 40.39677007959479,
+          "changePct": 0.1056,
+          "direction": "up",
+          "bigMove": true,
+          "prevValue": 40.872685147713476,
+          "prevChangePct": -0.0116,
           "prevChangeAbs": null,
-          "prevDirection": "up",
+          "prevDirection": "down",
           "series": [
-            {
-              "label": "Jun '26",
-              "value": 39.554529,
-              "changePct": 0.38189999999999996,
-              "changeAbs": null,
-              "direction": "up"
-            },
             {
               "label": "Jul '26",
               "value": 39.472637,
@@ -1989,24 +1734,150 @@
               "changePct": -0.0116,
               "changeAbs": null,
               "direction": "down"
+            },
+            {
+              "label": "Oct '26",
+              "value": 44.662669,
+              "changePct": 0.1056,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "Rack / ODM",
+          "thisValue": 2208.18713,
+          "lastValue": 2026.4174818757454,
+          "changePct": 0.0897,
+          "direction": "up",
+          "bigMove": true,
+          "prevValue": 1936.4300334448162,
+          "prevChangePct": 0.04650000000000001,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 1755.409185,
+              "changePct": 0.0487,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": 1936.470547,
+              "changePct": 0.10310000000000001,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Sep '26",
+              "value": 2026.47403,
+              "changePct": 0.04650000000000001,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 2208.18713,
+              "changePct": 0.0897,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "Substrate / AI PCB",
+          "thisValue": 65.028239,
+          "lastValue": 60.26713531047266,
+          "changePct": 0.079,
+          "direction": "up",
+          "bigMove": false,
+          "prevValue": 58.43494861353499,
+          "prevChangePct": 0.031400000000000004,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 55.463446,
+              "changePct": 0.1139,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": 58.43741,
+              "changePct": 0.0536,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Sep '26",
+              "value": 60.269806,
+              "changePct": 0.031400000000000004,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 65.028239,
+              "changePct": 0.079,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "Thermal",
+          "thisValue": 30.529758,
+          "lastValue": 29.004140224206726,
+          "changePct": 0.0526,
+          "direction": "up",
+          "bigMove": false,
+          "prevValue": 27.822810551558753,
+          "prevChangePct": 0.0425,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 27.688227,
+              "changePct": 0.11460000000000001,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": 27.822353,
+              "changePct": 0.0048,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Sep '26",
+              "value": 29.00528,
+              "changePct": 0.0425,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 30.529758,
+              "changePct": 0.0526,
+              "changeAbs": null,
+              "direction": "up"
             }
           ]
         },
         {
           "label": "Adv Packaging / Test",
-          "thisValue": 15.0172,
-          "lastValue": 15.25673067154323,
-          "changePct": -0.015700000000000002,
-          "direction": "down",
+          "thisValue": 104.205262,
+          "lastValue": 100.37108649585822,
+          "changePct": 0.0382,
+          "direction": "up",
           "bigMove": false,
           "series": [
-            {
-              "label": "Jun '26",
-              "value": null,
-              "changePct": 0.0316,
-              "changeAbs": null,
-              "direction": "up"
-            },
             {
               "label": "Jul '26",
               "value": null,
@@ -2023,28 +1894,28 @@
             },
             {
               "label": "Sep '26",
-              "value": 15.0172,
+              "value": null,
               "changePct": -0.015700000000000002,
               "changeAbs": null,
               "direction": "down"
+            },
+            {
+              "label": "Oct '26",
+              "value": 104.205262,
+              "changePct": 0.0382,
+              "changeAbs": null,
+              "direction": "up"
             }
           ]
         },
         {
           "label": "Power / DC Electrical",
-          "thisValue": 21.261896,
-          "lastValue": 22.06048557792073,
-          "changePct": -0.0362,
-          "direction": "down",
-          "bigMove": true,
+          "thisValue": 96.659885,
+          "lastValue": 93.44536446249033,
+          "changePct": 0.0344,
+          "direction": "up",
+          "bigMove": false,
           "series": [
-            {
-              "label": "Jun '26",
-              "value": null,
-              "changePct": 0.10550000000000001,
-              "changeAbs": null,
-              "direction": "up"
-            },
             {
               "label": "Jul '26",
               "value": null,
@@ -2061,15 +1932,144 @@
             },
             {
               "label": "Sep '26",
-              "value": 21.261896,
+              "value": null,
               "changePct": -0.0362,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Oct '26",
+              "value": 96.659885,
+              "changePct": 0.0344,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
+        },
+        {
+          "label": "Legacy / Mature Node",
+          "thisValue": 37.936653,
+          "lastValue": 38.91737074271646,
+          "changePct": -0.0252,
+          "direction": "down",
+          "bigMove": false,
+          "prevValue": 37.14727498329675,
+          "prevChangePct": 0.04769999999999999,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 35.21865,
+              "changePct": -0.01,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Aug '26",
+              "value": 37.146085,
+              "changePct": 0.0547,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Sep '26",
+              "value": 38.9192,
+              "changePct": 0.04769999999999999,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 37.936653,
+              "changePct": -0.0252,
+              "changeAbs": null,
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "Analog Cycle",
+          "thisValue": 6.353657,
+          "lastValue": 6.712791336502905,
+          "changePct": -0.0535,
+          "direction": "down",
+          "bigMove": false,
+          "prevValue": 6.412508597630875,
+          "prevChangePct": 0.046799999999999994,
+          "prevChangeAbs": null,
+          "prevDirection": "up",
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": 6.461672,
+              "changePct": 0.0366,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": 6.412438,
+              "changePct": -0.0076,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Sep '26",
+              "value": 6.712614,
+              "changePct": 0.046799999999999994,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 6.353657,
+              "changePct": -0.0535,
+              "changeAbs": null,
+              "direction": "down"
+            }
+          ]
+        },
+        {
+          "label": "Semi Equip / Consumables",
+          "thisValue": 9.931037,
+          "lastValue": 10.832282940663175,
+          "changePct": -0.0832,
+          "direction": "down",
+          "bigMove": true,
+          "series": [
+            {
+              "label": "Jul '26",
+              "value": null,
+              "changePct": 0.0922,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Aug '26",
+              "value": null,
+              "changePct": -0.0403,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Sep '26",
+              "value": null,
+              "changePct": 0.0943,
+              "changeAbs": null,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 9.931037,
+              "changePct": -0.0832,
               "changeAbs": null,
               "direction": "down"
             }
           ]
         }
       ],
-      "summary": "Month-on-month revenue up 3.5% like-for-like (Aug '26 → Sep '26) — 6 of 10 supply-chain stages firmer, 4 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move.",
+      "summary": "Month-on-month revenue up 9.3% like-for-like (Sep '26 → Oct '26) — 7 of 10 supply-chain stages firmer, 3 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move.",
       "sourceName": "Taiwan MOPS / TWSE monthly filings",
       "sourceUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
       "dashboardUrl": "https://taiwan-semicon-revenue.tech-441.workers.dev/",
@@ -2094,282 +2094,27 @@
           "comparison": "MoM",
           "label": "Month",
           "available": true,
-          "thisPeriodLabel": "Sep '26",
-          "lastPeriodLabel": "Aug '26",
-          "thisValue": 2768.942852,
-          "lastValue": 2675.5812829205015,
-          "changePct": 0.03489393862764299,
-          "changeAbs": 93.3615690794983,
+          "thisPeriodLabel": "Oct '26",
+          "lastPeriodLabel": "Sep '26",
+          "thisValue": 3209.078029,
+          "lastValue": 2935.350918052458,
+          "changePct": 0.09325192066955805,
+          "changeAbs": 273.7271109475422,
           "direction": "up",
-          "bigMove": false,
+          "bigMove": true,
           "breakdown": [
             {
-              "label": "Semi Equip / Consumables",
-              "thisValue": 1.902928,
-              "lastValue": 1.7389454445764416,
-              "changePct": 0.0943,
+              "label": "AI Silicon",
+              "thisValue": 605.583739,
+              "lastValue": 528.9864945842069,
+              "changePct": 0.1448,
               "direction": "up",
               "bigMove": true,
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": null,
-                  "changePct": 0.12960000000000002,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": null,
-                  "changePct": 0.0922,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": null,
-                  "changePct": -0.0403,
-                  "changeAbs": null,
-                  "direction": "down"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 1.902928,
-                  "changePct": 0.0943,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Legacy / Mature Node",
-              "thisValue": 38.9192,
-              "lastValue": 37.14727498329675,
-              "changePct": 0.04769999999999999,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 35.21957428652698,
-              "prevChangePct": 0.0547,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 35.575398,
-                  "changePct": 0.0795,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": 35.21865,
-                  "changePct": -0.01,
-                  "changeAbs": null,
-                  "direction": "down"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 37.146085,
-                  "changePct": 0.0547,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 38.9192,
-                  "changePct": 0.04769999999999999,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Analog Cycle",
-              "thisValue": 6.712614,
-              "lastValue": 6.412508597630875,
-              "changePct": 0.046799999999999994,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 6.461545747682386,
-              "prevChangePct": -0.0076,
+              "prevValue": 529.4048598879103,
+              "prevChangePct": -0.0008,
               "prevChangeAbs": null,
               "prevDirection": "down",
               "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 6.233727,
-                  "changePct": 0.028900000000000002,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": 6.461672,
-                  "changePct": 0.0366,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 6.412438,
-                  "changePct": -0.0076,
-                  "changeAbs": null,
-                  "direction": "down"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 6.712614,
-                  "changePct": 0.046799999999999994,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Rack / ODM",
-              "thisValue": 2026.47403,
-              "lastValue": 1936.4300334448162,
-              "changePct": 0.04650000000000001,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 1755.4805067536943,
-              "prevChangePct": 0.10310000000000001,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 1673.930576,
-                  "changePct": 0.0508,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": 1755.409185,
-                  "changePct": 0.0487,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 1936.470547,
-                  "changePct": 0.10310000000000001,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 2026.47403,
-                  "changePct": 0.04650000000000001,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Thermal",
-              "thisValue": 29.00528,
-              "lastValue": 27.822810551558753,
-              "changePct": 0.0425,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 27.68944367038217,
-              "prevChangePct": 0.0048,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 24.841168,
-                  "changePct": 0.0793,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": 27.688227,
-                  "changePct": 0.11460000000000001,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 27.822353,
-                  "changePct": 0.0048,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 29.00528,
-                  "changePct": 0.0425,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Substrate / AI PCB",
-              "thisValue": 60.269806,
-              "lastValue": 58.43494861353499,
-              "changePct": 0.031400000000000004,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 55.464512148823076,
-              "prevChangePct": 0.0536,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 49.793574,
-                  "changePct": 0.0574,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Jul '26",
-                  "value": 55.463446,
-                  "changePct": 0.1139,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Aug '26",
-                  "value": 58.43741,
-                  "changePct": 0.0536,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Sep '26",
-                  "value": 60.269806,
-                  "changePct": 0.031400000000000004,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "AI Silicon",
-              "thisValue": 528.981336,
-              "lastValue": 529.4048598879103,
-              "changePct": -0.0008,
-              "direction": "down",
-              "bigMove": false,
-              "prevValue": 480.76799582273884,
-              "prevChangePct": 0.1012,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 451.180885,
-                  "changePct": 0.0652,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
                 {
                   "label": "Jul '26",
                   "value": 480.78287,
@@ -2390,28 +2135,28 @@
                   "changePct": -0.0008,
                   "changeAbs": null,
                   "direction": "down"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 605.583739,
+                  "changePct": 0.1448,
+                  "changeAbs": null,
+                  "direction": "up"
                 }
               ]
             },
             {
               "label": "Networking",
-              "thisValue": 40.398562,
-              "lastValue": 40.872685147713476,
-              "changePct": -0.0116,
-              "direction": "down",
-              "bigMove": false,
-              "prevValue": 39.47128054080154,
-              "prevChangePct": 0.0355,
+              "thisValue": 44.662669,
+              "lastValue": 40.39677007959479,
+              "changePct": 0.1056,
+              "direction": "up",
+              "bigMove": true,
+              "prevValue": 40.872685147713476,
+              "prevChangePct": -0.0116,
               "prevChangeAbs": null,
-              "prevDirection": "up",
+              "prevDirection": "down",
               "series": [
-                {
-                  "label": "Jun '26",
-                  "value": 39.554529,
-                  "changePct": 0.38189999999999996,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
                 {
                   "label": "Jul '26",
                   "value": 39.472637,
@@ -2432,24 +2177,150 @@
                   "changePct": -0.0116,
                   "changeAbs": null,
                   "direction": "down"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 44.662669,
+                  "changePct": 0.1056,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "Rack / ODM",
+              "thisValue": 2208.18713,
+              "lastValue": 2026.4174818757454,
+              "changePct": 0.0897,
+              "direction": "up",
+              "bigMove": true,
+              "prevValue": 1936.4300334448162,
+              "prevChangePct": 0.04650000000000001,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 1755.409185,
+                  "changePct": 0.0487,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 1936.470547,
+                  "changePct": 0.10310000000000001,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 2026.47403,
+                  "changePct": 0.04650000000000001,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 2208.18713,
+                  "changePct": 0.0897,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "Substrate / AI PCB",
+              "thisValue": 65.028239,
+              "lastValue": 60.26713531047266,
+              "changePct": 0.079,
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 58.43494861353499,
+              "prevChangePct": 0.031400000000000004,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 55.463446,
+                  "changePct": 0.1139,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 58.43741,
+                  "changePct": 0.0536,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 60.269806,
+                  "changePct": 0.031400000000000004,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 65.028239,
+                  "changePct": 0.079,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "Thermal",
+              "thisValue": 30.529758,
+              "lastValue": 29.004140224206726,
+              "changePct": 0.0526,
+              "direction": "up",
+              "bigMove": false,
+              "prevValue": 27.822810551558753,
+              "prevChangePct": 0.0425,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 27.688227,
+                  "changePct": 0.11460000000000001,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 27.822353,
+                  "changePct": 0.0048,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 29.00528,
+                  "changePct": 0.0425,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 30.529758,
+                  "changePct": 0.0526,
+                  "changeAbs": null,
+                  "direction": "up"
                 }
               ]
             },
             {
               "label": "Adv Packaging / Test",
-              "thisValue": 15.0172,
-              "lastValue": 15.25673067154323,
-              "changePct": -0.015700000000000002,
-              "direction": "down",
+              "thisValue": 104.205262,
+              "lastValue": 100.37108649585822,
+              "changePct": 0.0382,
+              "direction": "up",
               "bigMove": false,
               "series": [
-                {
-                  "label": "Jun '26",
-                  "value": null,
-                  "changePct": 0.0316,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
                 {
                   "label": "Jul '26",
                   "value": null,
@@ -2466,28 +2337,28 @@
                 },
                 {
                   "label": "Sep '26",
-                  "value": 15.0172,
+                  "value": null,
                   "changePct": -0.015700000000000002,
                   "changeAbs": null,
                   "direction": "down"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 104.205262,
+                  "changePct": 0.0382,
+                  "changeAbs": null,
+                  "direction": "up"
                 }
               ]
             },
             {
               "label": "Power / DC Electrical",
-              "thisValue": 21.261896,
-              "lastValue": 22.06048557792073,
-              "changePct": -0.0362,
-              "direction": "down",
-              "bigMove": true,
+              "thisValue": 96.659885,
+              "lastValue": 93.44536446249033,
+              "changePct": 0.0344,
+              "direction": "up",
+              "bigMove": false,
               "series": [
-                {
-                  "label": "Jun '26",
-                  "value": null,
-                  "changePct": 0.10550000000000001,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
                 {
                   "label": "Jul '26",
                   "value": null,
@@ -2504,24 +2375,146 @@
                 },
                 {
                   "label": "Sep '26",
-                  "value": 21.261896,
+                  "value": null,
                   "changePct": -0.0362,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 96.659885,
+                  "changePct": 0.0344,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
+            },
+            {
+              "label": "Legacy / Mature Node",
+              "thisValue": 37.936653,
+              "lastValue": 38.91737074271646,
+              "changePct": -0.0252,
+              "direction": "down",
+              "bigMove": false,
+              "prevValue": 37.14727498329675,
+              "prevChangePct": 0.04769999999999999,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 35.21865,
+                  "changePct": -0.01,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 37.146085,
+                  "changePct": 0.0547,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 38.9192,
+                  "changePct": 0.04769999999999999,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 37.936653,
+                  "changePct": -0.0252,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "Analog Cycle",
+              "thisValue": 6.353657,
+              "lastValue": 6.712791336502905,
+              "changePct": -0.0535,
+              "direction": "down",
+              "bigMove": false,
+              "prevValue": 6.412508597630875,
+              "prevChangePct": 0.046799999999999994,
+              "prevChangeAbs": null,
+              "prevDirection": "up",
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": 6.461672,
+                  "changePct": 0.0366,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": 6.412438,
+                  "changePct": -0.0076,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": 6.712614,
+                  "changePct": 0.046799999999999994,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 6.353657,
+                  "changePct": -0.0535,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "Semi Equip / Consumables",
+              "thisValue": 9.931037,
+              "lastValue": 10.832282940663175,
+              "changePct": -0.0832,
+              "direction": "down",
+              "bigMove": true,
+              "series": [
+                {
+                  "label": "Jul '26",
+                  "value": null,
+                  "changePct": 0.0922,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Aug '26",
+                  "value": null,
+                  "changePct": -0.0403,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Sep '26",
+                  "value": null,
+                  "changePct": 0.0943,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Oct '26",
+                  "value": 9.931037,
+                  "changePct": -0.0832,
                   "changeAbs": null,
                   "direction": "down"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month revenue up 3.5% like-for-like (Aug '26 → Sep '26) — 6 of 10 supply-chain stages firmer, 4 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move.",
-          "prevLabel": "Jul '26",
+          "summary": "Month-on-month revenue up 9.3% like-for-like (Sep '26 → Oct '26) — 7 of 10 supply-chain stages firmer, 3 softer. Like-for-like compares only companies that filed both months, so late September filers don't distort the move.",
+          "prevLabel": "Aug '26",
           "series": [
-            {
-              "label": "Jun '26",
-              "value": null,
-              "changePct": 0.05978812883437852,
-              "changeAbs": 138.60510314856003,
-              "direction": "up"
-            },
             {
               "label": "Jul '26",
               "value": null,
@@ -2538,9 +2531,16 @@
             },
             {
               "label": "Sep '26",
-              "value": 2768.942852,
+              "value": null,
               "changePct": 0.03489393862764299,
               "changeAbs": 93.3615690794983,
+              "direction": "up"
+            },
+            {
+              "label": "Oct '26",
+              "value": 3209.078029,
+              "changePct": 0.09325192066955805,
+              "changeAbs": 273.7271109475422,
               "direction": "up"
             }
           ]
@@ -2548,325 +2548,38 @@
         {
           "comparison": "QoQ",
           "label": "Quarter",
-          "available": true,
-          "thisPeriodLabel": "Q3 '26 (QTD)",
-          "lastPeriodLabel": "Q2 '26",
-          "thisValue": 7883.157841,
-          "lastValue": 6683.264798,
-          "changePct": 0.17953695974444614,
-          "changeAbs": 1199.893043,
-          "direction": "up",
-          "bigMove": true,
-          "breakdown": [
-            {
-              "label": "Networking",
-              "thisValue": 120.74371,
-              "lastValue": 95.537694,
-              "changePct": 0.26383320493375106,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 70.120741,
-              "prevChangePct": 0.36247410734008073,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 95.537694,
-                  "changePct": 0.36247410734008073,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 120.74371,
-                  "changePct": 0.26383320493375106,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Substrate / AI PCB",
-              "thisValue": 174.170662,
-              "lastValue": 140.554934,
-              "changePct": 0.23916433983029012,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 112.138145,
-              "prevChangePct": 0.25340876648173555,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 140.554934,
-                  "changePct": 0.25340876648173555,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 174.170662,
-                  "changePct": 0.23916433983029012,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Thermal",
-              "thisValue": 84.51586,
-              "lastValue": 70.513393,
-              "changePct": 0.1985788288474503,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 67.912169,
-              "prevChangePct": 0.03830276721098394,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 70.513393,
-                  "changePct": 0.03830276721098394,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 84.51586,
-                  "changePct": 0.1985788288474503,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "AI Silicon",
-              "thisValue": 1539.185923,
-              "lastValue": 1291.916962,
-              "changePct": 0.19139694599040336,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 1149.743447,
-              "prevChangePct": 0.12365673000439376,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 1291.916962,
-                  "changePct": 0.12365673000439376,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 1539.185923,
-                  "changePct": 0.19139694599040336,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Rack / ODM",
-              "thisValue": 5718.353762,
-              "lastValue": 4859.376748,
-              "changePct": 0.1767669103560521,
-              "direction": "up",
-              "bigMove": true,
-              "prevValue": 4090.480615,
-              "prevChangePct": 0.18797207599039067,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 4859.376748,
-                  "changePct": 0.18797207599039067,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 5718.353762,
-                  "changePct": 0.1767669103560521,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Semi Equip / Consumables",
-              "thisValue": 5.399133,
-              "lastValue": 4.808373,
-              "changePct": 0.12286068489279015,
-              "direction": "up",
-              "bigMove": false,
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": null,
-                  "changePct": 0.12952840225722523,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 5.399133,
-                  "changePct": 0.12286068489279015,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Legacy / Mature Node",
-              "thisValue": 111.283935,
-              "lastValue": 100.267691,
-              "changePct": 0.10986833236241572,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 87.141993,
-              "prevChangePct": 0.15062425758382644,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 100.267691,
-                  "changePct": 0.15062425758382644,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 111.283935,
-                  "changePct": 0.10986833236241572,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Adv Packaging / Test",
-              "thisValue": 45.058044,
-              "lastValue": 40.889177,
-              "changePct": 0.10195526801627726,
-              "direction": "up",
-              "bigMove": false,
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": null,
-                  "changePct": 0.09969825664510008,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 45.058044,
-                  "changePct": 0.10195526801627726,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Analog Cycle",
-              "thisValue": 19.586724,
-              "lastValue": 18.252358,
-              "changePct": 0.07310649944516757,
-              "direction": "up",
-              "bigMove": false,
-              "prevValue": 16.938737,
-              "prevChangePct": 0.07755129558951178,
-              "prevChangeAbs": null,
-              "prevDirection": "up",
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": 18.252358,
-                  "changePct": 0.07755129558951178,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 19.586724,
-                  "changePct": 0.07310649944516757,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            },
-            {
-              "label": "Power / DC Electrical",
-              "thisValue": 64.860088,
-              "lastValue": 61.147468,
-              "changePct": 0.06071584190534267,
-              "direction": "up",
-              "bigMove": false,
-              "series": [
-                {
-                  "label": "Q2 '26",
-                  "value": null,
-                  "changePct": 0.16081455302527461,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q3 '26 (QTD)",
-                  "value": 64.860088,
-                  "changePct": 0.06071584190534267,
-                  "changeAbs": null,
-                  "direction": "up"
-                }
-              ]
-            }
-          ],
-          "summary": "Quarter-on-quarter revenue up 18.0% (Q2 '26 → Q3 '26, quarter-to-date), like-for-like across 32 companies. The latest month is still filling in, so this quarter will firm up as remaining filings land.",
-          "prevLabel": "Q1 '26",
-          "series": [
-            {
-              "label": "Q2 '26",
-              "value": null,
-              "changePct": 0.17218630344000202,
-              "changeAbs": 1039.77091,
-              "direction": "up"
-            },
-            {
-              "label": "Q3 '26 (QTD)",
-              "value": 7883.157841,
-              "changePct": 0.17953695974444614,
-              "changeAbs": 1199.893043,
-              "direction": "up"
-            }
-          ]
+          "available": false,
+          "unavailableReason": "No like-for-like cohort across the last two quarters.",
+          "thisPeriodLabel": "—",
+          "lastPeriodLabel": "—",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": null,
+          "changeAbs": null,
+          "direction": "flat",
+          "breakdown": []
         }
       ],
       "breakdownNoun": "supply-chain stage",
       "changeNoun": "Revenue change",
       "insights": [
         {
-          "title": "Power / DC Electrical is the standout — -3.6% MoM",
-          "body": "It moved against the rest of the supply chain (peers around +4.3%). Worth a look at whether this is a one-month timing effect or a genuine turn."
+          "title": "Semi Equip / Consumables is the standout — -8.3% MoM",
+          "body": "It moved against the rest of the supply chain (peers around +5.3%). Worth a look at whether this is a one-month timing effect or a genuine turn."
         },
         {
           "title": "Who is accelerating vs fading",
           "body": "Year-on-year growth acceleration by company in the latest month — the names pulling each stage up or down.",
           "bullets": [
-            "Accelerating: Alchip +222ppt (AI Silicon, YoY 496%); Elite Material +39ppt (Substrate / AI PCB, YoY 169%); Inventec +27ppt (Rack / ODM, YoY 63%)",
-            "Decelerating: Quanta -101ppt (Rack / ODM, YoY 77%); Wistron -79ppt (Rack / ODM, YoY 87%); Auras -44ppt (Thermal, YoY 23%)"
+            "Accelerating: Elite Material +34ppt (Substrate / AI PCB, YoY 203%); Wistron +30ppt (Rack / ODM, YoY 118%); Global Unichip +29ppt (AI Silicon, YoY 127%)",
+            "Decelerating: Gudeng -44ppt (Semi Equip / Consumables, YoY 24%); Inventec -17ppt (Rack / ODM, YoY 46%); Global Mixed-Mode -17ppt (Analog Cycle, YoY -2%)"
           ],
-          "asOf": "2026-09-01"
+          "asOf": "2026-10-01"
         }
       ],
       "auxTables": [
         {
-          "title": "Accelerating — fastest YoY pickup (2026-09)",
+          "title": "Accelerating — fastest YoY pickup (2026-10)",
           "subtitle": "Companies whose year-on-year growth accelerated most this month, by stage.",
           "headers": [
             "Company",
@@ -2883,37 +2596,52 @@
           "rows": [
             [
               {
-                "text": "Alchip"
-              },
-              {
-                "text": "AI Silicon"
-              },
-              {
-                "text": "+222ppt",
-                "tone": "up"
-              },
-              {
-                "text": "+496%"
-              }
-            ],
-            [
-              {
                 "text": "Elite Material"
               },
               {
                 "text": "Substrate / AI PCB"
               },
               {
-                "text": "+39ppt",
+                "text": "+34ppt",
                 "tone": "up"
               },
               {
-                "text": "+169%"
+                "text": "+203%"
               }
             ],
             [
               {
-                "text": "Inventec"
+                "text": "Wistron"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "+30ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+118%"
+              }
+            ],
+            [
+              {
+                "text": "Global Unichip"
+              },
+              {
+                "text": "AI Silicon"
+              },
+              {
+                "text": "+29ppt",
+                "tone": "up"
+              },
+              {
+                "text": "+127%"
+              }
+            ],
+            [
+              {
+                "text": "Quanta"
               },
               {
                 "text": "Rack / ODM"
@@ -2923,58 +2651,43 @@
                 "tone": "up"
               },
               {
-                "text": "+63%"
+                "text": "+104%"
               }
             ],
             [
               {
-                "text": "Gigabyte"
+                "text": "Accton"
               },
               {
-                "text": "Rack / ODM"
+                "text": "Networking"
               },
               {
-                "text": "+27ppt",
+                "text": "+25ppt",
                 "tone": "up"
               },
               {
-                "text": "+125%"
+                "text": "+91%"
               }
             ],
             [
               {
-                "text": "Gudeng"
+                "text": "Auras"
               },
               {
-                "text": "Semi Equip / Consumables"
+                "text": "Thermal"
               },
               {
-                "text": "+18ppt",
+                "text": "+22ppt",
                 "tone": "up"
               },
               {
-                "text": "+68%"
-              }
-            ],
-            [
-              {
-                "text": "PSMC"
-              },
-              {
-                "text": "Legacy / Mature Node"
-              },
-              {
-                "text": "+18ppt",
-                "tone": "up"
-              },
-              {
-                "text": "+94%"
+                "text": "+45%"
               }
             ]
           ]
         },
         {
-          "title": "Decelerating — fastest YoY fade (2026-09)",
+          "title": "Decelerating — fastest YoY fade (2026-10)",
           "subtitle": "Companies whose year-on-year growth decelerated most this month, by stage.",
           "headers": [
             "Company",
@@ -2991,109 +2704,102 @@
           "rows": [
             [
               {
-                "text": "Quanta"
+                "text": "Gudeng"
               },
               {
-                "text": "Rack / ODM"
-              },
-              {
-                "text": "-101ppt",
-                "tone": "down"
-              },
-              {
-                "text": "+77%"
-              }
-            ],
-            [
-              {
-                "text": "Wistron"
-              },
-              {
-                "text": "Rack / ODM"
-              },
-              {
-                "text": "-79ppt",
-                "tone": "down"
-              },
-              {
-                "text": "+87%"
-              }
-            ],
-            [
-              {
-                "text": "Auras"
-              },
-              {
-                "text": "Thermal"
+                "text": "Semi Equip / Consumables"
               },
               {
                 "text": "-44ppt",
                 "tone": "down"
               },
               {
-                "text": "+23%"
+                "text": "+24%"
               }
             ],
             [
               {
-                "text": "VIS"
+                "text": "Inventec"
+              },
+              {
+                "text": "Rack / ODM"
+              },
+              {
+                "text": "-17ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+46%"
+              }
+            ],
+            [
+              {
+                "text": "Global Mixed-Mode"
+              },
+              {
+                "text": "Analog Cycle"
+              },
+              {
+                "text": "-17ppt",
+                "tone": "down"
+              },
+              {
+                "text": "-2%"
+              }
+            ],
+            [
+              {
+                "text": "Asia Vital Components"
+              },
+              {
+                "text": "Thermal"
+              },
+              {
+                "text": "-11ppt",
+                "tone": "down"
+              },
+              {
+                "text": "+34%"
+              }
+            ],
+            [
+              {
+                "text": "UMC"
               },
               {
                 "text": "Legacy / Mature Node"
               },
               {
-                "text": "-25ppt",
+                "text": "-9ppt",
                 "tone": "down"
               },
               {
-                "text": "+16%"
+                "text": "+18%"
               }
             ],
             [
               {
-                "text": "Gold Circuit Electronics"
+                "text": "Silergy"
               },
               {
-                "text": "Substrate / AI PCB"
+                "text": "Analog Cycle"
               },
               {
-                "text": "-21ppt",
+                "text": "-4ppt",
                 "tone": "down"
               },
               {
-                "text": "+55%"
-              }
-            ],
-            [
-              {
-                "text": "Chipbond"
-              },
-              {
-                "text": "Adv Packaging / Test"
-              },
-              {
-                "text": "-16ppt",
-                "tone": "down"
-              },
-              {
-                "text": "+28%"
+                "text": "+47%"
               }
             ]
           ]
         }
       ],
-      "prevLabel": "Jul '26",
+      "prevLabel": "Aug '26",
       "prevValue": null,
       "prevChangePct": null,
       "prevChangeAbs": null,
       "series": [
-        {
-          "label": "Jun '26",
-          "value": null,
-          "changePct": 0.05978812883437852,
-          "changeAbs": 138.60510314856003,
-          "direction": "up"
-        },
         {
           "label": "Jul '26",
           "value": null,
@@ -3110,9 +2816,16 @@
         },
         {
           "label": "Sep '26",
-          "value": 2768.942852,
+          "value": null,
           "changePct": 0.03489393862764299,
           "changeAbs": 93.3615690794983,
+          "direction": "up"
+        },
+        {
+          "label": "Oct '26",
+          "value": 3209.078029,
+          "changePct": 0.09325192066955805,
+          "changeAbs": 273.7271109475422,
           "direction": "up"
         }
       ]
@@ -3135,42 +2848,15 @@
       "isStale": false,
       "breakdown": [
         {
-          "label": "DeepSeek",
-          "thisValue": 0.239,
-          "lastValue": 0.28691476590636256,
-          "changePct": -0.167,
-          "direction": "down",
-          "bigMove": true,
-          "prevChangePct": 0.052,
-          "prevDirection": "up",
-          "prevValue": 0.27273266721137124,
-          "series": [
-            {
-              "label": "Q3 '26",
-              "value": null,
-              "changePct": 0.052,
-              "changeAbs": null,
-              "direction": "up"
-            },
-            {
-              "label": "Q4 '26 (QTD)",
-              "value": 0.239,
-              "changePct": -0.167,
-              "changeAbs": null,
-              "direction": "down"
-            }
-          ]
-        },
-        {
           "label": "Google",
-          "thisValue": 0.549,
-          "lastValue": 0.5534274193548387,
+          "thisValue": 0.551,
+          "lastValue": 0.5554435483870969,
           "changePct": -0.008,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": -0.002,
           "prevDirection": "down",
-          "prevValue": 0.5545364923395177,
+          "prevValue": 0.5565566617105179,
           "series": [
             {
               "label": "Q3 '26",
@@ -3181,7 +2867,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 0.549,
+              "value": 0.551,
               "changePct": -0.008,
               "changeAbs": null,
               "direction": "down"
@@ -3190,14 +2876,14 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 5.075,
-          "lastValue": 5.075,
+          "thisValue": 5.042,
+          "lastValue": 5.042,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.075,
+          "prevValue": 5.042,
           "series": [
             {
               "label": "Q3 '26",
@@ -3208,7 +2894,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.075,
+              "value": 5.042,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -3217,14 +2903,14 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.031,
-          "lastValue": 5.031,
+          "thisValue": 5.035,
+          "lastValue": 5.035,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.031,
+          "prevValue": 5.035,
           "series": [
             {
               "label": "Q3 '26",
@@ -3235,7 +2921,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.031,
+              "value": 5.035,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -3243,11 +2929,11 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: Google -0.8%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
-      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary.",
+      "notes": "Equal-weighted basket of comparable frontier models ($/1M tokens), input price. List prices reset quarterly — month-to-month they are flat. The per-provider breakdown shows the quarterly movers; output-price change is noted in the summary. NOTE: the pricing source reported a degraded fetch this run, so some providers may be missing from the breakdown — it refreshes automatically.",
       "status": "ok",
       "views": [
         {
@@ -3292,42 +2978,15 @@
           "bigMove": false,
           "breakdown": [
             {
-              "label": "DeepSeek",
-              "thisValue": 0.239,
-              "lastValue": 0.28691476590636256,
-              "changePct": -0.167,
-              "direction": "down",
-              "bigMove": true,
-              "prevChangePct": 0.052,
-              "prevDirection": "up",
-              "prevValue": 0.27273266721137124,
-              "series": [
-                {
-                  "label": "Q3 '26",
-                  "value": null,
-                  "changePct": 0.052,
-                  "changeAbs": null,
-                  "direction": "up"
-                },
-                {
-                  "label": "Q4 '26 (QTD)",
-                  "value": 0.239,
-                  "changePct": -0.167,
-                  "changeAbs": null,
-                  "direction": "down"
-                }
-              ]
-            },
-            {
               "label": "Google",
-              "thisValue": 0.549,
-              "lastValue": 0.5534274193548387,
+              "thisValue": 0.551,
+              "lastValue": 0.5554435483870969,
               "changePct": -0.008,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": -0.002,
               "prevDirection": "down",
-              "prevValue": 0.5545364923395177,
+              "prevValue": 0.5565566617105179,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3338,7 +2997,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 0.549,
+                  "value": 0.551,
                   "changePct": -0.008,
                   "changeAbs": null,
                   "direction": "down"
@@ -3347,14 +3006,14 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 5.075,
-              "lastValue": 5.075,
+              "thisValue": 5.042,
+              "lastValue": 5.042,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.075,
+              "prevValue": 5.042,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3365,7 +3024,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.075,
+                  "value": 5.042,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3374,14 +3033,14 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 5.031,
-              "lastValue": 5.031,
+              "thisValue": 5.035,
+              "lastValue": 5.035,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.031,
+              "prevValue": 5.035,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3392,7 +3051,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.031,
+                  "value": 5.035,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3400,7 +3059,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: DeepSeek -16.7%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%); biggest move: Google -0.8%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3426,12 +3085,7 @@
       ],
       "breakdownNoun": "provider",
       "changeNoun": "Price change",
-      "insights": [
-        {
-          "title": "Biggest price cut — DeepSeek",
-          "body": "-16.7% input · share +13.28pp"
-        }
-      ],
+      "insights": [],
       "prevLabel": "Q2 '26",
       "prevValue": 2.39,
       "prevChangePct": 0.02510460251046027,
@@ -15871,7 +15525,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-14T05:10:48.494Z",
+      "asOf": "2026-11-14T13:02:30.789Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17464,7 +17118,7 @@
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-14T05:10:48.570Z"
+          "asOf": "2026-11-14T13:02:30.873Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -20938,19 +20592,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Nov-26 (MTD)",
       "lastPeriodLabel": "Oct-26",
-      "thisValue": 3.925,
+      "thisValue": 3.9382,
       "lastValue": 3.5949,
-      "changePct": 0.0918245291941361,
-      "changeAbs": 0.33009999999999984,
+      "changePct": 0.09549639767448334,
+      "changeAbs": 0.34330000000000016,
       "direction": "up",
-      "asOf": "2026-11-13",
+      "asOf": "2026-11-14",
       "isStale": false,
       "breakdown": [
         {
           "label": "H100",
-          "thisValue": 3.925,
+          "thisValue": 3.9382,
           "lastValue": 3.5949,
-          "changePct": 0.0918245291941361,
+          "changePct": 0.09549639767448334,
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.3492,
@@ -20981,8 +20635,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.925,
-              "changePct": 0.0918245291941361,
+              "value": 3.9382,
+              "changePct": 0.09549639767448334,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20990,9 +20644,9 @@
         },
         {
           "label": "H200",
-          "thisValue": 5.0317,
+          "thisValue": 5.0141,
           "lastValue": 4.7992,
-          "changePct": 0.04844557426237705,
+          "changePct": 0.044778296382730474,
           "direction": "up",
           "bigMove": true,
           "prevValue": 4.4299,
@@ -21023,8 +20677,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 5.0317,
-              "changePct": 0.04844557426237705,
+              "value": 5.0141,
+              "changePct": 0.044778296382730474,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21032,9 +20686,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 8.0433,
+          "thisValue": 8.0548,
           "lastValue": 7.5642,
-          "changePct": 0.06333782819068781,
+          "changePct": 0.06485814758996333,
           "direction": "up",
           "bigMove": true,
           "prevValue": 6.3742,
@@ -21065,8 +20719,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 8.0433,
-              "changePct": 0.06333782819068781,
+              "value": 8.0548,
+              "changePct": 0.06485814758996333,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21074,9 +20728,9 @@
         },
         {
           "label": "GB200",
-          "thisValue": 12.4038,
+          "thisValue": 12.2679,
           "lastValue": 16,
-          "changePct": -0.22476249999999998,
+          "changePct": -0.23325625000000005,
           "direction": "down",
           "bigMove": true,
           "prevValue": 16.554,
@@ -21107,8 +20761,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 12.4038,
-              "changePct": -0.22476249999999998,
+              "value": 12.2679,
+              "changePct": -0.23325625000000005,
               "changeAbs": null,
               "direction": "down"
             }
@@ -21116,9 +20770,9 @@
         },
         {
           "label": "A100",
-          "thisValue": 1.8817,
+          "thisValue": 1.8916,
           "lastValue": 1.8231,
-          "changePct": 0.03214305304152267,
+          "changePct": 0.03757336405024409,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.7444,
@@ -21149,8 +20803,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.8817,
-              "changePct": 0.03214305304152267,
+              "value": 1.8916,
+              "changePct": 0.03757336405024409,
               "changeAbs": null,
               "direction": "up"
             }
@@ -21158,9 +20812,9 @@
         },
         {
           "label": "L40S",
-          "thisValue": 1.6158,
+          "thisValue": 1.6178,
           "lastValue": 1.5815,
-          "changePct": 0.02168827062914954,
+          "changePct": 0.02295289282326905,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.5035,
@@ -21191,15 +20845,15 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.6158,
-              "changePct": 0.02168827062914954,
+              "value": 1.6178,
+              "changePct": 0.02295289282326905,
               "changeAbs": null,
               "direction": "up"
             }
           ]
         }
       ],
-      "summary": "Month-on-month H100 rental up 9.2% to $3.92/hr; GB200 the standout at -22.5%.",
+      "summary": "Month-on-month H100 rental up 9.5% to $3.94/hr; GB200 the standout at -23.3%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -21226,18 +20880,18 @@
           "available": true,
           "thisPeriodLabel": "Nov-26 (MTD)",
           "lastPeriodLabel": "Oct-26",
-          "thisValue": 3.925,
+          "thisValue": 3.9382,
           "lastValue": 3.5949,
-          "changePct": 0.0918245291941361,
-          "changeAbs": 0.33009999999999984,
+          "changePct": 0.09549639767448334,
+          "changeAbs": 0.34330000000000016,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.925,
+              "thisValue": 3.9382,
               "lastValue": 3.5949,
-              "changePct": 0.0918245291941361,
+              "changePct": 0.09549639767448334,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.3492,
@@ -21268,8 +20922,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 3.925,
-                  "changePct": 0.0918245291941361,
+                  "value": 3.9382,
+                  "changePct": 0.09549639767448334,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21277,9 +20931,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 5.0317,
+              "thisValue": 5.0141,
               "lastValue": 4.7992,
-              "changePct": 0.04844557426237705,
+              "changePct": 0.044778296382730474,
               "direction": "up",
               "bigMove": true,
               "prevValue": 4.4299,
@@ -21310,8 +20964,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 5.0317,
-                  "changePct": 0.04844557426237705,
+                  "value": 5.0141,
+                  "changePct": 0.044778296382730474,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21319,9 +20973,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 8.0433,
+              "thisValue": 8.0548,
               "lastValue": 7.5642,
-              "changePct": 0.06333782819068781,
+              "changePct": 0.06485814758996333,
               "direction": "up",
               "bigMove": true,
               "prevValue": 6.3742,
@@ -21352,8 +21006,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 8.0433,
-                  "changePct": 0.06333782819068781,
+                  "value": 8.0548,
+                  "changePct": 0.06485814758996333,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21361,9 +21015,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 12.4038,
+              "thisValue": 12.2679,
               "lastValue": 16,
-              "changePct": -0.22476249999999998,
+              "changePct": -0.23325625000000005,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.554,
@@ -21394,8 +21048,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 12.4038,
-                  "changePct": -0.22476249999999998,
+                  "value": 12.2679,
+                  "changePct": -0.23325625000000005,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -21403,9 +21057,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8817,
+              "thisValue": 1.8916,
               "lastValue": 1.8231,
-              "changePct": 0.03214305304152267,
+              "changePct": 0.03757336405024409,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7444,
@@ -21436,8 +21090,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.8817,
-                  "changePct": 0.03214305304152267,
+                  "value": 1.8916,
+                  "changePct": 0.03757336405024409,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21445,9 +21099,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.6158,
+              "thisValue": 1.6178,
               "lastValue": 1.5815,
-              "changePct": 0.02168827062914954,
+              "changePct": 0.02295289282326905,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5035,
@@ -21478,15 +21132,15 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.6158,
-                  "changePct": 0.02168827062914954,
+                  "value": 1.6178,
+                  "changePct": 0.02295289282326905,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month H100 rental up 9.2% to $3.92/hr; GB200 the standout at -22.5%.",
+          "summary": "Month-on-month H100 rental up 9.5% to $3.94/hr; GB200 the standout at -23.3%.",
           "prevLabel": "Sep-26",
           "prevValue": 3.3492,
           "prevChangePct": 0.07336080257972047,
@@ -21516,9 +21170,9 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.925,
-              "changePct": 0.0918245291941361,
-              "changeAbs": 0.33009999999999984,
+              "value": 3.9382,
+              "changePct": 0.09549639767448334,
+              "changeAbs": 0.34330000000000016,
               "direction": "up"
             }
           ]
@@ -21529,18 +21183,18 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 3.6924,
+          "thisValue": 3.7017,
           "lastValue": 3.3073,
-          "changePct": 0.11643939164877694,
-          "changeAbs": 0.3851,
+          "changePct": 0.11925135306745686,
+          "changeAbs": 0.3944000000000001,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.6924,
+              "thisValue": 3.7017,
               "lastValue": 3.3073,
-              "changePct": 0.11643939164877694,
+              "changePct": 0.11925135306745686,
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.9802,
@@ -21564,8 +21218,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 3.6924,
-                  "changePct": 0.11643939164877694,
+                  "value": 3.7017,
+                  "changePct": 0.11925135306745686,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21573,9 +21227,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.8679,
+              "thisValue": 4.8661,
               "lastValue": 4.3361,
-              "changePct": 0.12264477295265322,
+              "changePct": 0.12222965337515285,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.7738,
@@ -21599,8 +21253,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 4.8679,
-                  "changePct": 0.12264477295265322,
+                  "value": 4.8661,
+                  "changePct": 0.12222965337515285,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21608,9 +21262,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.7058,
+              "thisValue": 7.7168,
               "lastValue": 6.3989,
-              "changePct": 0.204238228445514,
+              "changePct": 0.20595727390645263,
               "direction": "up",
               "bigMove": true,
               "prevValue": 5.7373,
@@ -21634,8 +21288,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 7.7058,
-                  "changePct": 0.204238228445514,
+                  "value": 7.7168,
+                  "changePct": 0.20595727390645263,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21643,9 +21297,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 14.9375,
+              "thisValue": 14.8389,
               "lastValue": 16.9936,
-              "changePct": -0.1209926089822051,
+              "changePct": -0.12679479333396101,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.6392,
@@ -21669,8 +21323,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 14.9375,
-                  "changePct": -0.1209926089822051,
+                  "value": 14.8389,
+                  "changePct": -0.12679479333396101,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -21678,9 +21332,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8404,
+              "thisValue": 1.8444,
               "lastValue": 1.7896,
-              "changePct": 0.028386231560125142,
+              "changePct": 0.030621367903442085,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7997,
@@ -21704,8 +21358,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.8404,
-                  "changePct": 0.028386231560125142,
+                  "value": 1.8444,
+                  "changePct": 0.030621367903442085,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -21713,9 +21367,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.5917,
+              "thisValue": 1.5928,
               "lastValue": 1.5182,
-              "changePct": 0.0484125938611513,
+              "changePct": 0.04913713608220261,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5627,
@@ -21739,15 +21393,15 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.5917,
-                  "changePct": 0.0484125938611513,
+                  "value": 1.5928,
+                  "changePct": 0.04913713608220261,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Quarter-on-quarter H100 rental up 11.6% to $3.69/hr; B200 the standout at +20.4%.",
+          "summary": "Quarter-on-quarter H100 rental up 11.9% to $3.70/hr; B200 the standout at +20.6%.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.9802,
           "prevChangePct": 0.109757734380243,
@@ -21770,9 +21424,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 3.6924,
-              "changePct": 0.11643939164877694,
-              "changeAbs": 0.3851,
+              "value": 3.7017,
+              "changePct": 0.11925135306745686,
+              "changeAbs": 0.3944000000000001,
               "direction": "up"
             }
           ]
@@ -21809,9 +21463,9 @@
         },
         {
           "label": "Nov-26 (MTD)",
-          "value": 3.925,
-          "changePct": 0.0918245291941361,
-          "changeAbs": 0.33009999999999984,
+          "value": 3.9382,
+          "changePct": 0.09549639767448334,
+          "changeAbs": 0.34330000000000016,
           "direction": "up"
         }
       ]
@@ -21825,17 +21479,24 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 40,
+      "thisValue": 42,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 38,
+      "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-13T19:59:53.000Z",
+      "asOf": "2026-11-14T02:35:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 10,
+          "thisValue": 12,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "All-In",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21863,13 +21524,6 @@
         },
         {
           "label": "Invest Like the Best",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "All-In",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21905,6 +21559,7 @@
         }
       ],
       "highlights": [
+        "Jensen Huang forced out as Nvidia CEO",
         "Jensen Huang departure framed as Washington's AI turning point",
         "Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly",
         "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating",
@@ -21913,16 +21568,16 @@
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
-        "Valuation Headlines Are Actively Misleading",
-        "Earnings divergence as a structural signal"
+        "Valuation Headlines Are Actively Misleading"
       ],
-      "tone": "Tone across 40 episodes — 11 positive, 10 cautious, 7 mixed, 2 neutral",
-      "thisTone": "11 positive, 10 cautious, 7 mixed, 2 neutral",
+      "tone": "Tone across 42 episodes — 13 cautious, 11 positive, 7 mixed, 2 neutral",
+      "thisTone": "13 cautious, 11 positive, 7 mixed, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "Jensen Huang forced out as Nvidia CEO",
         "Jensen Huang departure framed as Washington's AI turning point",
         "Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly",
         "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating",
@@ -21931,14 +21586,13 @@
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history",
         "Megaspeed: $4.6B buyer with a 4-day partner approval",
-        "Valuation Headlines Are Actively Misleading",
-        "Earnings divergence as a structural signal"
+        "Valuation Headlines Are Actively Misleading"
       ],
-      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating; Milken's redefinition of 'safe' in credit markets. Sentiment ran 11 positive, 10 cautious, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang forced out as Nvidia CEO; Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly; The fraudulent-transfer claw-back mechanism that makes the run self-accelerating. Sentiment ran 13 cautious, 11 positive, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang forced out as Nvidia CEO; Jensen Huang departure framed as Washington's AI turning point; Jensen Huang's 32-Year Nvidia Tenure Ends Abruptly.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]

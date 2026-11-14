@@ -3,6 +3,58 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-allin-1yk111r",
+      "podcastId": "allin",
+      "show": "All-In",
+      "title": "Jensen Ousted as Nvidia CEO: \"Spy\" Scandal, Export Restrictions, Market Impact",
+      "date": "2026-11-14T02:35:00.000Z",
+      "url": "https://allinchamathjason.libsyn.com/jensen-ousted-as-nvidia-ceo-spy-scandal-export-restrictions-market-impact",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang forced out as Nvidia CEO",
+          "detail": "Nvidia announced a CEO transition following a spy scandal in which Jensen Huang was alleged to have had contacts with Chinese intelligence; the besties characterize it as a coerced removal driven by Marco Rubio and China hawks rather than a voluntary governance decision."
+        },
+        {
+          "title": "Leaked classified memo and board email published by CNBC",
+          "detail": "A classified memo and a separate email from Jensen Huang to Nvidia's board were leaked to the press — the board email published by CNBC — which the besties treat as evidence of a coordinated campaign to force Huang out rather than an organic governance crisis."
+        },
+        {
+          "title": "'The Bank of Nvidia' thesis and AI trade risk",
+          "detail": "The besties argue Nvidia functions as the singular financial and strategic chokepoint of the entire AI trade — not just a chip company — and that removing Jensen without a credible successor threatens the pricing power, roadmap visibility, and customer relationships that underpin the AI compute ecosystem."
+        },
+        {
+          "title": "DeepSeek returns with new model, undermining export control logic",
+          "detail": "DeepSeek released a new model in April 2026 — roughly a year after its viral initial rise — which Sacks and Chamath cite as direct evidence that Chinese AI development advances domestically regardless of U.S. chip restrictions, fatally weakening the hawk case for aggressive export controls."
+        }
+      ],
+      "synthesis": "The central story is the abrupt ouster of Jensen Huang as Nvidia CEO, triggered by a spy scandal involving alleged Chinese intelligence contacts, a leaked classified memo, and intense pressure from the Trump administration — specifically Secretary of State Marco Rubio — that made Huang's position untenable. The board, facing a coordinated political and media campaign, executed a CEO transition that the besties view as partly coerced by Washington rather than purely a governance decision. The scandal includes allegations of a personal affair with someone linked to Chinese intelligence, echoing the Eric Swalwell/Christine Fang case, and a leaked email from Huang to the board that became public via CNBC.",
+      "whatChanged": "Jensen Huang has been ousted as Nvidia CEO following a Chinese spy scandal, leaked classified memo, and direct pressure from Secretary of State Rubio — the first forced departure of Nvidia's founder-CEO in company history, occurring while U.S.-China chip export controls are actively tightening.",
+      "whyItMatters": "Nvidia's market position as the dominant AI compute supplier ('The Bank of Nvidia') was structurally dependent on Jensen's singular ability to navigate Washington and Beijing simultaneously; his removal, combined with China's existing H20 chip ban and escalating export restrictions, threatens both Nvidia's China…",
+      "beneficiaries": [
+        "Domestic Chinese chip makers / Huawei",
+        "Anthropic"
+      ],
+      "atRisk": [
+        "Nvidia (NVDA)",
+        "U.S. AI labs / cloud providers"
+      ],
+      "numbers": [
+        {
+          "metric": "Anthropic IPO raise target",
+          "value": "as much as $64.4 billion",
+          "context": "Latest draft prospectus per Reuters, at IPO roadshow launch"
+        }
+      ],
+      "topics": [
+        "Jensen Huang ouster",
+        "U.S. export controls",
+        "Nvidia (NVDA) near-term",
+        "Anthropic IPO"
+      ]
+    },
+    {
       "id": "live-aidaily-11s6quv",
       "podcastId": "aidaily",
       "show": "AI Daily",
