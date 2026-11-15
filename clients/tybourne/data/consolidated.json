@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T22:01:55.986Z",
+  "generatedAt": "2026-11-15T05:03:19.536Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2844,10 +2844,10 @@
       "changePct": -0.040816326530612276,
       "changeAbs": -0.10000000000000009,
       "direction": "down",
-      "asOf": "2026-11-12T00:00:00.000Z",
+      "asOf": "2026-11-13T00:00:00.000Z",
       "isStale": false,
       "breakdown": [],
-      "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%). List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 4.1% (output -2.8%). List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -2895,7 +2895,7 @@
           "direction": "down",
           "bigMove": false,
           "breakdown": [],
-          "summary": "Quarter-on-quarter input price down 4.1% (output -2.7%). List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 4.1% (output -2.8%). List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -15361,7 +15361,7 @@
       "changePct": 0.2646639889954351,
       "changeAbs": 150159614494399,
       "direction": "up",
-      "asOf": "2026-11-14T22:01:37.494Z",
+      "asOf": "2026-11-15T05:02:59.275Z",
       "isStale": false,
       "breakdown": [
         {
@@ -16954,7 +16954,7 @@
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-14T22:01:37.571Z"
+          "asOf": "2026-11-15T05:02:59.346Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21315,17 +21315,17 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 42,
+      "thisValue": 40,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 40,
+      "changeAbs": 38,
       "direction": "flat",
       "asOf": "2026-11-14T19:42:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
-          "thisValue": 12,
+          "thisValue": 10,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21406,8 +21406,8 @@
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history"
       ],
-      "tone": "Tone across 42 episodes — 14 cautious, 11 positive, 7 mixed, 2 neutral",
-      "thisTone": "14 cautious, 11 positive, 7 mixed, 2 neutral",
+      "tone": "Tone across 40 episodes — 12 cautious, 11 positive, 7 mixed, 2 neutral",
+      "thisTone": "12 cautious, 11 positive, 7 mixed, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
@@ -21424,11 +21424,11 @@
         "Jensen Huang Departs Nvidia",
         "Three years of AI change outpaces two decades of Roblox history"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Host joins Sound Ventures as investor; Jensen's 60 direct reports and zero succession plan are the structural vulnerability; Jensen Huang forced out as Nvidia CEO; Jensen Huang departure framed as Washington's AI turning point. Sentiment ran 14 cautious, 11 positive, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Host joins Sound Ventures as investor; Jensen's 60 direct reports and zero succession plan are the structural vulnerability; Jensen Huang forced out as Nvidia CEO.",
+      "summary": "Q4 '26 (QTD): 40 investor-podcast episodes across 10 shows. The recurring threads — Host joins Sound Ventures as investor; Jensen's 60 direct reports and zero succession plan are the structural vulnerability; Jensen Huang forced out as Nvidia CEO; Jensen Huang departure framed as Washington's AI turning point. Sentiment ran 12 cautious, 11 positive, 7 mixed, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Host joins Sound Ventures as investor; Jensen's 60 direct reports and zero succession plan are the structural vulnerability; Jensen Huang forced out as Nvidia CEO.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "40 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
