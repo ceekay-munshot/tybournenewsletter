@@ -3,6 +3,54 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-12cej3y",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "7 Things AI-Native Companies Do Differently",
+      "date": "2026-11-15T12:20:55.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/7-Things-AI-Native-Companies-Do-Differently-e3sdtgn",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Seven concrete practices separating AI-native companies from the rest",
+          "detail": "NLW breaks down seven specific operational practices — including shared company context, automatically triggered work, verification steps, and human accountability — that distinguish companies actually extracting systematic value from AI agents versus those stuck in ad-hoc experimentation."
+        },
+        {
+          "title": "The 'AI teammate' model critiqued as structurally flawed",
+          "detail": "The episode argues that framing AI deployment as a fixed roster of digital coworkers mirrors human org-chart logic in a way that limits effectiveness, because it implies static roles and idle agents rather than dynamic assembly around specific work."
+        },
+        {
+          "title": "Flexible agent groups as the superior architecture",
+          "detail": "The emerging alternative to the 'AI teammate' model is flexible groups of agents that assemble dynamically around a task and dissolve when done — a fundamentally different architectural logic with real implications for how enterprises should buy and deploy AI tooling."
+        },
+        {
+          "title": "Automatic event-triggering vs. on-demand prompting as a key dividing line",
+          "detail": "AI-native companies trigger agents automatically in response to real business events rather than waiting for humans to prompt them, allowing AI to operate at system speed rather than human attention speed — one of the clearest markers of mature AI deployment."
+        }
+      ],
+      "synthesis": "The central argument is that AI-native companies don't simply bolt AI onto existing workflows — they redesign work around AI capabilities. Drawing on examples from Stripe, Shopify, Uber, and Ramp, NLW identifies seven concrete practices that separate companies actually extracting value from agents versus those running expensive pilots that go nowhere. The through-line is that agents only become useful systems when they have rich shared context, are triggered automatically by real events, and are embedded in accountability structures that keep humans responsible for outcomes.",
+      "whatChanged": "Leading companies like Stripe, Shopify, Uber, and Ramp have moved past AI experimentation to systematic, process-level agent deployment — characterized by automatic event-triggered workflows, shared company context, and human accountability structures, rather than on-demand prompting.",
+      "whyItMatters": "This shift redefines the competitive benchmark for enterprise AI adoption: companies still running on-demand, prompt-based AI interactions will fall behind peers whose agents operate autonomously at system speed, compressing the window for laggards to catch up before the productivity gap becomes structural.",
+      "beneficiaries": [
+        "Stripe",
+        "Shopify",
+        "Ramp",
+        "Uber"
+      ],
+      "atRisk": [
+        "Enterprises using on-demand AI prompting"
+      ],
+      "numbers": [],
+      "topics": [
+        "AI-native companies",
+        "AI teammate model",
+        "Flexible agent groups",
+        "On-demand AI prompting",
+        "Stripe, Shopify, Uber, Ramp"
+      ]
+    },
+    {
       "id": "live-sources-3rcyfb",
       "podcastId": "sources",
       "show": "Sources",
