@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-lennys-d2c0eh",
+      "podcastId": "lennys",
+      "show": "Lenny's",
+      "title": "Meta’s Muse: How we launched the most successful consumer product this year | Mona Sarantakos",
+      "date": "2026-11-15T13:31:28.000Z",
+      "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "'Trust is a must' — the internal motto that justified seven months before launch",
+          "detail": "The team chose not to rush to market because they believed a single catastrophic agentic failure would permanently destroy user trust in a product holding personal context and making real-world purchases. Mona says in retrospect she would not change the timeline and that so far there has been no catastrophic incident."
+        },
+        {
+          "title": "Mark's reframe: goals over task completion opened 'dreaming and study'",
+          "detail": "Zuckerberg told the team the purpose of Muse is to help users achieve their goals, not just complete tasks. This reframe directly produced the 'dreaming and study' capability — Muse proactively thinking about user priorities between sessions — and the Goals tab in the UI. Engineers' eyes 'lit up' at the new design…"
+        },
+        {
+          "title": "Jolly nearly died a week before launch — Mark saved it",
+          "detail": "The Jolly avatar faced repeated near-death experiences throughout development, with senior stakeholders repeatedly declaring 'there's no way you're launching with a stuffed animal.' About a week before launch, an alternative logo was seriously proposed. Ultimately Mark Zuckerberg and the core team held the line, with…"
+        },
+        {
+          "title": "Shopping emerged as a top use case — a complete surprise",
+          "detail": "Mona had predicted personal productivity, health, and personal finance as the top use cases, with home automation as a strong secondary bet. Shopping was not on the roadmap. It surfaced organically during dog-fooding (led by head of engineering Christine, who was running up large shopping bills) and is now one of…"
+        }
+      ],
+      "synthesis": "Meta's Muse was not a planned initiative but an organic, conviction-driven build triggered by a single Nat Friedman Slack ping in late January/early February, pointing the team to OpenClaw. Mona spent an entire weekend hooking the open-source agent to her email, calendar, and home automation — and when it surfaced a school-week digest for her kids with almost no prompting, she was sold. The kernel was democratizing the 'personal assistant' that most people have never had. What made the resulting product distinct was a set of deliberate, often controversial product bets: chat bubbles over a canvas UI, a persistent main chat thread instead of multiple threads, and a quirky avatar (Jolly) over a corporate logo — each of which went against the grain of everything else being built in the space at the time.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Duration of Muse development before launch",
+          "value": "seven months",
+          "context": "From initial Nat Friedman ping (late Jan/early Feb) to public launch"
+        },
+        {
+          "metric": "Size of initial Muse team",
+          "value": "roughly 10 people",
+          "context": "Mostly engineers plus designer Alex Cornell; Mona was straddling multiple projects"
+        },
+        {
+          "metric": "Total team size (all-in with cross-functional)",
+          "value": "under 100",
+          "context": "Including core team plus Infer, security, and other partner teams"
+        },
+        {
+          "metric": "Number of PMs who built the entire product",
+          "value": "four",
+          "context": "Core PM team for the full Muse build"
+        },
+        {
+          "metric": "Minimum number of evals",
+          "value": "over 100",
+          "context": "Across safety, capability, behavioral, and use-case categories"
+        }
+      ],
+      "topics": [
+        "Muse product",
+        "Jolly avatar",
+        "Traditional PM role",
+        "Agent babysitting problem",
+        "Team culture / build process"
+      ]
+    },
+    {
       "id": "live-aidaily-12cej3y",
       "podcastId": "aidaily",
       "show": "AI Daily",
@@ -1334,6 +1399,80 @@
       ]
     },
     {
+      "id": "live-lennys-1jog9cm",
+      "podcastId": "lennys",
+      "show": "Lenny's",
+      "title": "Why PMs are suddenly valuable again | Tulsee Doshi (Head of Product, Gemini)",
+      "date": "2026-11-08T13:31:32.000Z",
+      "url": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Models are 'grown not built' — the Snape's potions class framing",
+          "detail": "Doshi describes model development as inherently unpredictable: even with explicit training goals and monitored runs, the model's unique strengths and personality emerge as surprises on the other side. The PM's job is to discover and amplify those emergent properties, not just specify them in advance."
+        },
+        {
+          "title": "Google explicitly claims frontier status with Gemini 4 Argon",
+          "detail": "Doshi says 'I actually think we do want to win the frontier conversation' and positions Gemini 4 Argon as a direct frontier push, pushing back firmly on the narrative that Google lags Anthropic and OpenAI. This is a notably sharper public stance than Google has typically taken."
+        },
+        {
+          "title": "PM ascendance — taste is the new scarce resource",
+          "detail": "Doshi argues that because building is now so cheap and fast, the ability to discern what is worth building — taste, prioritization, coherent vision — has become uniquely valuable. Speed without judgment introduces chaos rather than value, reversing the recent 'we don't need PMs' narrative."
+        },
+        {
+          "title": "Eval quality depends on judge quality and serving stack, not just the model",
+          "detail": "Doshi flags that the judge model, the production serving configuration, and the mitigation filters all compound with base model quality to determine what an end user experiences. A strong model evaluated with a weak judge or through a misconfigured serving stack will appear weaker than it is — a systematic blind spot…"
+        }
+      ],
+      "synthesis": "Tulsee Doshi's central argument is that the defining challenge of AI product management is not execution speed but taste and discernment — the ability to look at an unpredictable model's outputs, identify where magic actually lives, and translate that into something users find meaningful. She frames model development as inherently non-deterministic: even when researchers set explicit capability goals and monitor training runs closely, the resulting model persona, behavior, and unique strengths must be discovered after the fact, not specified in advance. This makes the PM's job a dual one — shaping inputs and reading outputs — a fundamentally different skill set than classic software PM work.",
+      "whatChanged": "Google is explicitly positioning Gemini 4 (Argon) as a frontier model, signaling a direct challenge to OpenAI and Anthropic at the top of the capability curve — a sharper claim than the company has historically made publicly — while simultaneously admitting it has not yet shipped a compelling personal-data AI assistant…",
+      "whyItMatters": "If Gemini 4 Argon is genuinely frontier-competitive, Google's distribution moat across 14 billion-user products becomes a force multiplier that could rapidly shift enterprise and consumer AI spend; the personal-assistant gap, however, is a live vulnerability where third-party apps are already extracting value from…",
+      "beneficiaries": [
+        "Google (Alphabet)",
+        "Wiz (Google acquisition)",
+        "WorkOS"
+      ],
+      "atRisk": [
+        "Third-party personal AI assistants (Rockbot, Muse, Instinct, Dots)",
+        "PMs who cannot do evals or model vibes testing"
+      ],
+      "numbers": [
+        {
+          "metric": "Google products above one billion users",
+          "value": "14",
+          "context": "Cited by Doshi as a rough stat reflecting Google's full-stack consumer distribution advantage; she noted she should verify the number"
+        },
+        {
+          "metric": "Monk Skin Tone scale size",
+          "value": "10 skin tones",
+          "context": "Replaced the Fitzpatrick 6-tone scale in Google's responsible AI evaluations for products like the Pixel camera and image generation"
+        },
+        {
+          "metric": "Fitzpatrick scale skin tones",
+          "value": "6 skin tones",
+          "context": "Original scale used for model and product fairness evals before being replaced by the Monk scale; originally designed for healthcare, not AI"
+        },
+        {
+          "metric": "Minimum eval set Doshi recommends to start",
+          "value": "5 prompts",
+          "context": "Starting point for PMs new to writing evals; she says even 20 prompts that show signal between two models is 'so powerful'"
+        },
+        {
+          "metric": "60-20-20 rule — working features today",
+          "value": "60%",
+          "context": "Share of a product's features that should reliably work at launch under Doshi's framework for building ahead of model capabilities"
+        }
+      ],
+      "topics": [
+        "Google's frontier position",
+        "PM role in AI era",
+        "Google personal AI assistant gap",
+        "AI safety at Google",
+        "Model unpredictability"
+      ]
+    },
+    {
       "id": "live-aidaily-13r2qpu",
       "podcastId": "aidaily",
       "show": "AI Daily",
@@ -2558,6 +2697,16 @@
       ]
     },
     {
+      "id": "live-lennys-17c7ya7",
+      "podcastId": "lennys",
+      "show": "Lenny's",
+      "title": "How a 19-year-old intern built the growth engine behind this $2B AI company | Hector Serrano",
+      "date": "2026-11-01T13:31:36.000Z",
+      "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
+      "summarised": false,
+      "notes": "Hector Serrano runs one of the most innovative and successful paid growth programs in Silicon Valley. As Head of Content at Wispr Flow, a leading AI voice-to-text tool, he built a roster of 50 creators who drive 500 to 600 paid user-generated content (UGC) ads every month. The creators are paid a cut of ad spend, and the best of them earn over $13,000 a month. It’s a playbook the best DTC brands have used for years,…"
+    },
+    {
       "id": "live-aidaily-1wtjwwc",
       "podcastId": "aidaily",
       "show": "AI Daily",
@@ -3028,6 +3177,16 @@
       "url": "https://omny.fm/shows/odd-lots/ai-agents-are-already-changing-the-price-of-goods",
       "summarised": false,
       "notes": "It's obvious that things are getting more expensive, and there are plenty of reasons behind the surge in prices &mdash; whether it's wars or inflation or companies padding their profit margins. But with the release of AI agents like Meta's Muse, tech companies are promising consumers that agents will start saving them tons of money by finding the best deals. According to today's guest, Lindsay Owens, the history of…"
+    },
+    {
+      "id": "live-lennys-1trx56c",
+      "podcastId": "lennys",
+      "show": "Lenny's",
+      "title": "An 86-minute guide to finding PMF | Rob Snyder (Author, The Power of Pull)",
+      "date": "2026-10-25T12:31:34.000Z",
+      "url": "https://www.lennysnewsletter.com/p/an-86-minute-guide-to-finding-pmf",
+      "summarised": false,
+      "notes": "Rob Snyder is the author of The Power of Pull and writes the newsletter The Physics of Startups . He has advised more than 50 startups on growing from zero to $1 million in ARR, drawing on his own experience as a founder who spent two years pushing a product the market didn’t want before accidentally stumbling onto what actually works. In this episode, we walk step by step through his framework for finding…"
     },
     {
       "id": "live-aidaily-1vlx5it",
