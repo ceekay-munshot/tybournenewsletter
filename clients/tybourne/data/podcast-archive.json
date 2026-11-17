@@ -3,6 +3,172 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-16swfvl",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "5 Questions That Could Reshape AI",
+      "date": "2026-11-16T19:21:28.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/5-Questions-That-Could-Reshape-AI-e3sgjh5",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Anthropic IPO as AI industry valuation benchmark",
+          "detail": "NLW frames Anthropic's public debut as the event that will set the standard by which Wall Street judges the entire AI industry — a first public-market test for a frontier AI lab whose outcome reverberates across all private AI valuations."
+        },
+        {
+          "title": "Fight over Jensen Huang's future at Nvidia",
+          "detail": "The episode flags a live dispute over whether Jensen Huang can remain at Nvidia, characterizing it as a potential reshaping of the AI industry's most important chipmaker — a governance risk rarely discussed in AI coverage."
+        },
+        {
+          "title": "Congress weighing tighter chip export controls",
+          "detail": "The episode asks whether Congress will move to tighten AI chip export controls this week, a policy question that would directly constrain Nvidia's global revenue and reshape the competitive landscape for non-US AI development."
+        },
+        {
+          "title": "Political fallout spreading across AI sector",
+          "detail": "The episode raises how far an unspecified political controversy will spread across the AI industry, implying systemic reputational or regulatory risk beyond a single company."
+        }
+      ],
+      "synthesis": "The episode frames five open questions as a collective stress test for the AI industry's near-term trajectory. The most structurally significant is Anthropic's IPO, which NLW argues will set the valuation benchmark Wall Street uses to judge every major AI lab — a public debut that could either validate the sector's sky-high private valuations or expose them as speculative excess. The IPO question is inseparable from the broader issue of whether AI labs can generate returns commensurate with the capital they consume, and Anthropic's reception will shape investor appetite for the entire cohort.",
+      "whatChanged": "Anthropic is approaching a public IPO that will, for the first time, force Wall Street to assign a public-market valuation to a frontier AI lab — while simultaneously Jensen Huang's leadership at Nvidia faces a live challenge and Congress weighs tighter chip export controls.",
+      "whyItMatters": "A disappointing Anthropic IPO multiple would reprice private AI-lab valuations broadly and could embolden legislators to treat AI hardware as a policy instrument, compressing Nvidia's (NVDA) growth narrative from two directions at once.",
+      "beneficiaries": [],
+      "atRisk": [
+        "Anthropic",
+        "Nvidia (NVDA)"
+      ],
+      "numbers": [],
+      "topics": [
+        "Anthropic IPO",
+        "Jensen Huang / Nvidia",
+        "Chip export controls",
+        "OpenAI model cadence",
+        "AI political risk"
+      ]
+    },
+    {
+      "id": "live-stratechery-1xz3u1x",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Obituaries",
+      "date": "2026-11-16T11:02:49.000Z",
+      "url": "https://stratechery.com/2026/obituaries/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Fictional Jensen Huang resignation set in November 2026",
+          "detail": "The episode is a speculative obituary imagining Huang resigning on November 12, 2026 after 33 years as CEO — the proximate trigger being affairs (including one with a buyer alleged to be a Chinese spy) and the deeper cause being Nvidia's transformation into a de facto defense contractor."
+        },
+        {
+          "title": "Huang framed as 'ultimate victim of his own success'",
+          "detail": "The piece's central irony: the very success Huang created made Nvidia so strategically important that it attracted defense-contractor-level scrutiny, a context his visionary commercial identity was ill-suited to navigate."
+        },
+        {
+          "title": "CUDA's 16-year wait for vindication",
+          "detail": "Huang introduced CUDA in 2006 and spent roughly 16 years selling the gospel of accelerated computing before ChatGPT's 2022 arrival confirmed the bet — one of the longest and most consequential platform plays in tech history."
+        },
+        {
+          "title": "Huang as a one-person supply-chain coordination function",
+          "detail": "Drawing on Byrne Hobart's book *Boom*, the episode argues Huang personally replicated the coordination role normally played by speculative bubbles — convincing mutually dependent Asian suppliers to commit simultaneously through keynotes, meals, and direct relationship-building."
+        }
+      ],
+      "synthesis": "This episode is a fictional Nvidia obituary — a speculative piece set in an imagined November 2026 in which Jensen Huang has resigned as Nvidia's CEO following a scandal involving an affair with a buyer allegedly connected to Chinese intelligence, as well as relationships with company employees. The proximate cause is personal, but the deeper diagnosis is structural: Nvidia had become, in the eyes of regulators and national-security officials, a de facto defense contractor, and Huang — a visionary ecosystem-builder rather than a Washington operator — never adapted to that reality.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Nvidia founding date",
+          "value": "April 5, 1993",
+          "context": "Date Jensen Huang co-founded Nvidia"
+        },
+        {
+          "metric": "Huang's CEO tenure start",
+          "value": "1993",
+          "context": "Year Huang became CEO, serving continuously until fictional 2026 resignation"
+        },
+        {
+          "metric": "Fictional resignation date",
+          "value": "Thursday, November 12, 2026",
+          "context": "Date of Jensen Huang's fictional resignation as Nvidia CEO"
+        },
+        {
+          "metric": "GeForce 3 launch year",
+          "value": "2001",
+          "context": "Year Nvidia introduced programmable pixel shader on GeForce 3"
+        },
+        {
+          "metric": "CUDA launch year",
+          "value": "2006",
+          "context": "Year Nvidia introduced CUDA API for general-purpose GPU programming"
+        }
+      ],
+      "topics": [
+        "Jensen Huang",
+        "Nvidia's AI dominance",
+        "Huang's geopolitical adaptability",
+        "Asian supply chain coordination"
+      ]
+    },
+    {
+      "id": "live-oddlots-1vj1b0a",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "The Impossible Trilemma That Hangs Over the Nvidia Crisis",
+      "date": "2026-11-16T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/the-impossible-trilemma-that-hangs-over-the-nvidia-crisis",
+      "summarised": true,
+      "keyPoints": [
+        {
+          "title": "Jensen Wong confirmed out at NVIDIA — breaking during recording",
+          "detail": "Joe announces that within the last hour before taping, Jensen Wong's departure as NVIDIA CEO was confirmed. The hosts describe hearing colleagues' audible reactions in the Bloomberg newsroom before the alert even appeared on their screens."
+        },
+        {
+          "title": "Oppenheimer analogy: sovereignty requires total trust in strategic assets",
+          "detail": "Tianyang draws a direct parallel between Jensen Wong and Robert Oppenheimer — both pivotal figures in a technology the sovereign treats as a weapon, both eventually questioned on loyalty grounds. He notes that NVIDIA represents 'nuclear bomb plus commercialization potential,' making trust non-negotiable."
+        },
+        {
+          "title": "The impossible sovereign trilemma: guns, butter, and sound money",
+          "detail": "Tianyang lays out the core framework: sovereignty spending (guns) is locked in by the US-China rivalry; domestic fiscal spending (butter) is locked in by political polarization; therefore history shows sound money is the leg that gives way — producing an inflation dynamic with 1960s echoes."
+        },
+        {
+          "title": "AI financing as 'a marathon of sprints' with NVIDIA as the reflexive anchor",
+          "detail": "Tianyang explains that frontier labs must raise enormous sums continuously and quickly; NVIDIA anchors the confidence loop that makes each private fundraise possible. With the Fed hiking and CPI hot, every sprint now faces a macro headwind, making the financing chain more fragile even if the AI race continues."
+        }
+      ],
+      "synthesis": "The episode's central argument is that the Jensen Wong/NVIDIA scandal is not merely a corporate governance story but an anecdote within a larger 'primacy of sovereignty' theme — the impossible sovereign trilemma between guns (geopolitical mobilization), butter (domestic fiscal spending), and sound money. Guest Tianyang of Variant Perception's VPX Fund argues that because the US-China rivalry is structural and escalating, both guns and butter are politically non-negotiable, which means the leg that historically gives way is sound money. The 1960s LBJ analogy is invoked precisely: Great Society butter + Vietnam War guns = fiscal expansion that eroded the Bretton Woods gold peg, culminating in Nixon's 1971 break. The 2023-25 gold rally is framed as the modern equivalent of the 1968 London gold pool fracture — an early warning, not the final break.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "NVIDIA stock decline on the day of recording",
+          "value": "down 14%",
+          "context": "Intraday move on November 12th following confirmation of Jensen Wong's departure; later in the episode partially recovered to down ~7%"
+        },
+        {
+          "metric": "NVIDIA stock decline (updated intraday)",
+          "value": "down 7%",
+          "context": "Updated reading at approximately 9:55 a.m. during the recording, down from the initial 14% drop reported earlier in the episode"
+        },
+        {
+          "metric": "NVIDIA market cap threshold breached",
+          "value": "below $4 trillion",
+          "context": "Joe notes the stock fell below $4 trillion in market cap on the day of recording"
+        },
+        {
+          "metric": "S&P 500 decline on the day of recording",
+          "value": "down 0.17%",
+          "context": "Contrast to NVIDIA's 14% drop; illustrates the lack of broader market contagion"
+        },
+        {
+          "metric": "Gold peg under Bretton Woods",
+          "value": "$35",
+          "context": "Fixed global price of gold under the Bretton Woods system prior to its breakdown in the late 1960s–early 1970s"
+        }
+      ],
+      "topics": []
+    },
+    {
       "id": "live-lennys-d2c0eh",
       "podcastId": "lennys",
       "show": "Lenny's",
@@ -1399,6 +1565,66 @@
       ]
     },
     {
+      "id": "live-stratechery-p5quqq",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "AI on the Ballot",
+      "date": "2026-11-08T22:00:25.000Z",
+      "url": "https://www.youtube.com/watch?v=F4vInlTqRdo",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "Wisconsin campaign ads dominated by data centers — from both sides",
+          "detail": "Thompson observed that the single most common topic in Wisconsin campaign ads during baseball season was data centers, and both parties ran anti-data-center messaging, each accusing the other of being pro-data center. The bipartisan hostility is the tell."
+        },
+        {
+          "title": "Texas flips Democratic on a data center moratorium pledge",
+          "detail": "Gina Hinojosa became Texas's first Democratic governor since 1990, running on a pledge to impose a moratorium on data center construction in a state that holds 25%+ of planned US capacity by 2030."
+        },
+        {
+          "title": "Republican Greg Abbott had already imposed a permit moratorium",
+          "detail": "Before losing, incumbent Abbott had declared a moratorium on new data-center permits in September — illustrating that even the pro-business Republican felt forced to restrict the industry, yet it still wasn't enough to save his seat."
+        },
+        {
+          "title": "AI data center opposition differs structurally from internet-era reception",
+          "detail": "Thompson notes that internet-era data centers were welcomed by local governments competing for tax and economic benefits; the current backlash is specific to AI-scale facilities, suggesting their power and community footprint have changed the political calculus fundamentally."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that AI data center opposition has become a genuine electoral force — not just a local nuisance — capable of reshaping the policy environment for the entire AI buildout. Ben Thompson's key observation is drawn from watching Wisconsin campaign ads during the MLB playoffs: data centers were the single most common campaign topic, and both parties ran against them, each accusing the other of being pro-data center. That bipartisan antipathy signals the issue has moved from fringe concern to mainstream political liability.",
+      "whatChanged": "Data center opposition became a decisive electoral issue in the 2026 midterms: both parties ran anti-data-center ads in Wisconsin, Texas flipped Democratic on a moratorium pledge, and even incumbent Republican Greg Abbott had already imposed a permit moratorium — signaling that AI infrastructure faces a new, durable…",
+      "whyItMatters": "Texas holds more than 25% of planned US data center capacity by 2030; a moratorium there directly constricts the physical buildout pipeline for AI, raising construction costs and timelines for hyperscalers and potentially shifting capacity investment to jurisdictions with more permissive regimes.",
+      "beneficiaries": [],
+      "atRisk": [
+        "Texas data center pipeline",
+        "AI hyperscalers (unnamed)"
+      ],
+      "numbers": [
+        {
+          "metric": "Senate seats flipped to Democrats",
+          "value": "at least 7",
+          "context": "2026 midterm elections, previously held by Republicans"
+        },
+        {
+          "metric": "Texas share of planned US data center capacity",
+          "value": "more than 25%",
+          "context": "as a share of total planned US capacity by 2030"
+        },
+        {
+          "metric": "Years since Texas last had a Democratic governor",
+          "value": "since 1990",
+          "context": "Gina Hinojosa's win ends a 35+ year Republican hold on the Texas governorship"
+        }
+      ],
+      "topics": [
+        "AI data center buildout",
+        "Gina Hinojosa / Texas result",
+        "Greg Abbott",
+        "Milwaukee Brewers",
+        "Data center opposition (prior internet era vs. now)"
+      ]
+    },
+    {
       "id": "live-lennys-1jog9cm",
       "podcastId": "lennys",
       "show": "Lenny's",
@@ -2105,66 +2331,6 @@
       "atRisk": [],
       "numbers": [],
       "topics": []
-    },
-    {
-      "id": "live-stratechery-p5quqq",
-      "podcastId": "stratechery",
-      "show": "Stratechery",
-      "title": "AI on the Ballot",
-      "date": "2026-11-04T11:00:00.000Z",
-      "url": "https://www.youtube.com/watch?v=F4vInlTqRdo",
-      "summarised": true,
-      "tone": "cautious",
-      "keyPoints": [
-        {
-          "title": "Wisconsin campaign ads dominated by data centers — from both sides",
-          "detail": "Thompson observed that the single most common topic in Wisconsin campaign ads during baseball season was data centers, and both parties ran anti-data-center messaging, each accusing the other of being pro-data center. The bipartisan hostility is the tell."
-        },
-        {
-          "title": "Texas flips Democratic on a data center moratorium pledge",
-          "detail": "Gina Hinojosa became Texas's first Democratic governor since 1990, running on a pledge to impose a moratorium on data center construction in a state that holds 25%+ of planned US capacity by 2030."
-        },
-        {
-          "title": "Republican Greg Abbott had already imposed a permit moratorium",
-          "detail": "Before losing, incumbent Abbott had declared a moratorium on new data-center permits in September — illustrating that even the pro-business Republican felt forced to restrict the industry, yet it still wasn't enough to save his seat."
-        },
-        {
-          "title": "AI data center opposition differs structurally from internet-era reception",
-          "detail": "Thompson notes that internet-era data centers were welcomed by local governments competing for tax and economic benefits; the current backlash is specific to AI-scale facilities, suggesting their power and community footprint have changed the political calculus fundamentally."
-        }
-      ],
-      "synthesis": "The central argument of this episode is that AI data center opposition has become a genuine electoral force — not just a local nuisance — capable of reshaping the policy environment for the entire AI buildout. Ben Thompson's key observation is drawn from watching Wisconsin campaign ads during the MLB playoffs: data centers were the single most common campaign topic, and both parties ran against them, each accusing the other of being pro-data center. That bipartisan antipathy signals the issue has moved from fringe concern to mainstream political liability.",
-      "whatChanged": "Data center opposition became a decisive electoral issue in the 2026 midterms: both parties ran anti-data-center ads in Wisconsin, Texas flipped Democratic on a moratorium pledge, and even incumbent Republican Greg Abbott had already imposed a permit moratorium — signaling that AI infrastructure faces a new, durable…",
-      "whyItMatters": "Texas holds more than 25% of planned US data center capacity by 2030; a moratorium there directly constricts the physical buildout pipeline for AI, raising construction costs and timelines for hyperscalers and potentially shifting capacity investment to jurisdictions with more permissive regimes.",
-      "beneficiaries": [],
-      "atRisk": [
-        "Texas data center pipeline",
-        "AI hyperscalers (unnamed)"
-      ],
-      "numbers": [
-        {
-          "metric": "Senate seats flipped to Democrats",
-          "value": "at least 7",
-          "context": "2026 midterm elections, previously held by Republicans"
-        },
-        {
-          "metric": "Texas share of planned US data center capacity",
-          "value": "more than 25%",
-          "context": "as a share of total planned US capacity by 2030"
-        },
-        {
-          "metric": "Years since Texas last had a Democratic governor",
-          "value": "since 1990",
-          "context": "Gina Hinojosa's win ends a 35+ year Republican hold on the Texas governorship"
-        }
-      ],
-      "topics": [
-        "AI data center buildout",
-        "Gina Hinojosa / Texas result",
-        "Greg Abbott",
-        "Milwaukee Brewers",
-        "Data center opposition (prior internet era vs. now)"
-      ]
     },
     {
       "id": "live-iltb-2crwmu",
