@@ -3,6 +3,281 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3u6c",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+      "date": "2026-11-18T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Nvidia earnings called 'boring' — a dominance signal, not a warning",
+          "detail": "Thompson frames Nvidia's results as so consistently massive and predictable that they no longer carry surprise value — 'boring' is shorthand for mature, compounding structural dominance rather than any sign of weakness."
+        },
+        {
+          "title": "Jensen Huang probably isn't coming back",
+          "detail": "Thompson argues that the institutional momentum behind Nvidia's predictable earnings reduces the unique indispensability of Huang's personal founder-CEO presence, raising the question of succession or a reduced public role."
+        },
+        {
+          "title": "Microsoft and Anthropic ship dueling AI OS updates simultaneously",
+          "detail": "Both companies released competing updates on the same cycle, framing the contest explicitly as a platform-layer war rather than a features race — Thompson treats this as the opening of the AI-era OS battle."
+        },
+        {
+          "title": "Thompson's PC OS war analogy for the AI platform battle",
+          "detail": "Thompson draws a direct structural parallel between the current Microsoft-Anthropic contest and the PC-era OS wars, arguing the stakes — developer gravity, distribution control, and margin capture — are identical."
+        }
+      ],
+      "synthesis": "Nvidia's latest earnings were, paradoxically, both record-breaking and boring — a combination that itself tells a story. Ben Thompson's read is that the numbers are now so consistently massive that they no longer surprise; the implicit argument is that Nvidia has entered a phase of durable, compounding dominance where quarterly results are mere confirmation rather than revelation. The 'boring' framing is not a bearish signal but a mature-dominance signal: the kind of predictability that makes Jensen Huang's continued personal involvement less essential, which is why Thompson raises the question of whether Huang is likely to stay or step back.",
+      "whatChanged": "Microsoft and Anthropic simultaneously shipped competing AI 'operating system' updates, opening an explicit platform-layer battle for who controls the AI-era productivity environment — a contest Thompson frames as structurally analogous to the PC OS wars.",
+      "whyItMatters": "Whoever wins the AI OS layer captures the user-context moat (documents, email, calendar, tasks), which compounds over time into a distribution and data advantage that makes displacement nearly impossible — this directly determines where developer gravity and enterprise AI spend concentrate.",
+      "beneficiaries": [
+        "Microsoft",
+        "Anthropic"
+      ],
+      "atRisk": [
+        "Anthropic",
+        "Jensen Huang / Nvidia succession narrative"
+      ],
+      "numbers": [],
+      "topics": [
+        "Nvidia earnings",
+        "Jensen Huang tenure",
+        "Microsoft AI OS",
+        "AI OS platform wars"
+      ]
+    },
+    {
+      "id": "live-oddlots-ro048m",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "How GTA VI Became the Most Expensive Video Game Ever Made",
+      "date": "2026-11-18T11:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/how-gta-vi-became-the-most-expensive-video-game-ever-made",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "GTA V: 235 million copies sold — best non-mobile game ever",
+          "detail": "Jason Schreier reveals GTA V has sold 235 million copies since 2013, making it the best-selling console/PC game of all time (Minecraft beats it only because of mobile). Joe guessed 250 million, nearly spot-on."
+        },
+        {
+          "title": "GTA 6 projected to out-earn the Odyssey's entire box office in its first week",
+          "detail": "Schreier states GTA 6 is projected to make more money in its first week than the film 'The Odyssey' has made across its entire box office run, underscoring the game's crossover cultural and commercial scale."
+        },
+        {
+          "title": "GTA Online makes an estimated $500M per year — 80% of Take-Two revenue is in-game",
+          "detail": "GTA Online generates an estimated half a billion dollars annually from microtransactions (outfits, guns, etc.), and roughly 80% of Take-Two's total revenue comes from in-game monetization rather than game sales. This cash flow removed urgency to ship GTA 6."
+        },
+        {
+          "title": "GTA 6 broke all-time digital pre-order records on both PlayStation and Xbox",
+          "detail": "Both Sony and Microsoft confirmed that GTA 6 set their respective all-time records for digital pre-orders. Estimates suggest more than 10 million copies are already reserved. Schreier says he would not be shocked if the game doubles GTA V's $800M first-day revenue."
+        }
+      ],
+      "synthesis": "GTA VI is shaping up to be the most anticipated entertainment launch in history — not just in games. Jason Schreier, Bloomberg's gaming reporter who visited Rockstar and played a review copy, reports that both PlayStation and Xbox have confirmed GTA 6 broke their all-time digital pre-order records, with estimates north of 10 million copies already reserved. The predecessor, GTA V, sold 235 million copies since 2013 — making it the best-selling non-mobile game ever — and generated $800M in its first day and $1B in its first three days. Schreier suggests GTA 6 could double that first-day figure, and projects the game will out-earn the Odyssey's entire box office run within its first week.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "GTA V total copies sold",
+          "value": "235 million copies",
+          "context": "Since launch in 2013; best-selling non-mobile game of all time"
+        },
+        {
+          "metric": "GTA V first-day revenue",
+          "value": "approximately $800 million",
+          "context": "Revenue on day one of launch in 2013"
+        },
+        {
+          "metric": "GTA V first-three-day revenue",
+          "value": "$1 billion",
+          "context": "Revenue within the first three days of launch in 2013"
+        },
+        {
+          "metric": "GTA 6 estimated development budget",
+          "value": "$1 to $1.5 billion",
+          "context": "Rumored figure; Rockstar has not officially confirmed; described as the most expensive game ever made"
+        },
+        {
+          "metric": "GTA Online annual microtransaction revenue",
+          "value": "estimated half a billion dollars a year",
+          "context": "Ongoing in-game revenue from cosmetics, weapons, and other items in GTA V's online mode"
+        }
+      ],
+      "topics": [
+        "GTA 6 / Rockstar",
+        "GTA 6 commercial outlook",
+        "Broader AAA games industry",
+        "Console hardware pricing",
+        "GTA Online / in-game monetization",
+        "Indie / new IP games"
+      ]
+    },
+    {
+      "id": "live-ingoodcompany-11wxr76",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Pirelli CEO: Formula One, Smart Tyres and Europe’s Car Industry",
+      "date": "2026-11-18T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/pirelli-ceo-formula-one-smart-tyres-and-europes-car-industry",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Formula One as the birthplace of Pirelli's virtualization capability",
+          "detail": "Casaluci explains that F1 development timelines are so compressed — and physical testing opportunities so limited — that Pirelli had no choice but to build full mathematical models without ever having the car available. This discipline then transferred wholesale into road-tyre development, cutting time-to-market by…"
+        },
+        {
+          "title": "CyberTyre as essential infrastructure for autonomous driving",
+          "detail": "Casaluci frames the CyberTyre not as a premium feature but as a critical input for autonomous-vehicle software: when a car must decide in real time whether to brake or steer around an obstacle, the 'grip estimator' supplied by tyre sensors is the decisive data source. The product is already on the market with McLaren,…"
+        },
+        {
+          "title": "Europe declared EV targets without industrial policy — Norway as the counter-example",
+          "detail": "Casaluci argues Europe's Green Deal electrification target was set without the accompanying purchase incentives or charging infrastructure needed to deliver it, creating consumer confusion. He contrasts Norway, where over 90% of new car registrations are now electric, as proof that consistent industrial policy works."
+        },
+        {
+          "title": "Chinese supplier returns a physical prototype in the time a European supplier took to send an NDA",
+          "detail": "In a materials tender, a European supplier took two months just to return a non-disclosure agreement. A Chinese counterpart returned a physical prototype in the same window. Casaluci uses this anecdote to illustrate the structural speed gap: lean organisations, single decision-makers, no legacy supplier base."
+        }
+      ],
+      "synthesis": "Pirelli's strategic logic rests on a single, deliberate bet: radical product focus. Unlike diversified tire manufacturers, Pirelli exited trucks, mining, and large commercial tires entirely to concentrate on consumer car and motorbike tires for the high-value and prestige segments. Today, 82% of group turnover comes from high-performance tires, rising to nearly 90% in Europe — a defensive moat against Chinese competition that CEO Andrea Casaluci argues cannot yet match Pirelli's performance, quality, or the trust of OEM partners like Ferrari, Lamborghini, McLaren, Rolls-Royce, Aston Martin, Porsche, Bentley, and Maserati. The sole-supplier status in Formula One since 2011 — and MotoGP starting next year — is not just marketing; it is the origin of Pirelli's virtualization capability, since F1 development timelines are so compressed that engineers must model and simulate tires without…",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Pirelli high-performance tyre share of group turnover",
+          "value": "82%",
+          "context": "Global share; rises to close to 90% in Europe specifically"
+        },
+        {
+          "metric": "Pirelli high-performance tyre share of turnover in Europe",
+          "value": "close to 90%",
+          "context": "Higher than global average of 82%, reflecting strategic retreat from commodity segments"
+        },
+        {
+          "metric": "Time-to-market reduction from virtualization",
+          "value": "30%",
+          "context": "Reduction achieved by simulating tyre behaviour digitally before building physical prototypes"
+        },
+        {
+          "metric": "Pirelli sole supplier of Formula One since",
+          "value": "2011",
+          "context": "Continuous sole-supplier status for all F1 cars"
+        },
+        {
+          "metric": "Pirelli MotoGP sole supplier start",
+          "value": "next year",
+          "context": "Beginning of sole-supplier contract for MotoGP"
+        }
+      ],
+      "topics": [
+        "Pirelli's F1 / technology edge",
+        "CyberTyre / autonomous driving",
+        "Europe's EV industrial policy",
+        "Chinese manufacturing speed",
+        "European tyre manufacturing competitiveness",
+        "Pirelli US expansion"
+      ]
+    },
+    {
+      "id": "live-aidaily-fv8y9o",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "How Business AI Use is Changing",
+      "date": "2026-11-17T22:09:59.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-Business-AI-Use-is-Changing-e3sj17g",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "36% more tokens, only 2% more spend",
+          "detail": "Ramp's October data showed businesses consumed 36% more AI tokens while AI spending rose just 2% — a near-20x divergence that is the episode's central data point, signaling aggressive model-switching and cost optimization by enterprise buyers."
+        },
+        {
+          "title": "AI use expanding beyond coding",
+          "detail": "Data from Databricks and Arcana show companies are broadening AI deployment into business functions beyond coding, the historically dominant use case, indicating a structural broadening of enterprise AI adoption."
+        },
+        {
+          "title": "Autonomous agent adoption lagging",
+          "detail": "Despite heavy industry promotion of AI agents, the episode notes that autonomous agent adoption in enterprises is still lagging, revealing a gap between narrative and actual deployment."
+        },
+        {
+          "title": "OpenAI limits independent safety evaluators",
+          "detail": "OpenAI has placed restrictions on independent safety evaluators — third parties who assess model safety — raising governance concerns about reduced external accountability at a critical juncture for AI regulation."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that enterprise AI adoption in October showed a striking efficiency-over-spend pattern: Ramp's business spending data revealed a 36% surge in AI token consumption against only a 2% rise in AI spending, meaning companies are extracting dramatically more AI output per dollar — a signal of rapid model-switching behavior and cost optimization rather than simply throwing money at the problem. Data from Databricks and Arcana reinforces this picture, showing companies broadening AI use beyond the historically dominant coding use case into other business workflows.",
+      "whatChanged": "Ramp's October data showed enterprise AI token consumption rising 36% while AI spending rose only 2% — the first concrete, large-sample evidence that businesses are optimizing model selection hard enough to decouple usage volume from cost growth.",
+      "whyItMatters": "This decoupling means pricing power for AI model providers is under structural pressure: even as aggregate demand accelerates, enterprise buyers are routing workloads to cheaper models, compressing per-token revenue and threatening the revenue growth assumptions of premium-priced frontier model vendors.",
+      "beneficiaries": [
+        "Lower-cost AI model providers",
+        "Databricks"
+      ],
+      "atRisk": [
+        "Premium frontier AI model vendors",
+        "OpenAI"
+      ],
+      "numbers": [
+        {
+          "metric": "AI token consumption growth (Ramp-tracked businesses, October)",
+          "value": "36% more",
+          "context": "Month-over-month or year-over-year increase in AI tokens consumed by businesses tracked by Ramp"
+        },
+        {
+          "metric": "AI spending growth (Ramp-tracked businesses, October)",
+          "value": "2% more",
+          "context": "Corresponding increase in AI spending by the same businesses over the same period, vs. 36% token growth"
+        }
+      ],
+      "topics": [
+        "Enterprise AI efficiency",
+        "AI agent adoption",
+        "OpenAI safety governance",
+        "U.S. chip export controls",
+        "AI use case expansion"
+      ]
+    },
+    {
+      "id": "live-allin-1r50oct",
+      "podcastId": "allin",
+      "show": "All-In",
+      "title": "Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate",
+      "date": "2026-11-17T21:43:00.000Z",
+      "url": "https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Ghodsi declares AGI is already here",
+          "detail": "Ali Ghodsi argues that today's frontier models already match or exceed human cognitive performance broadly enough that AGI is functionally a present reality, not a future milestone. This reframes the entire enterprise AI conversation from capability risk to deployment failure."
+        },
+        {
+          "title": "Enterprise AI adoption lag diagnosed as a data problem",
+          "detail": "Ghodsi's core claim is that the gap between frontier AI capability and enterprise value capture is not a model quality problem but a data readiness problem — most companies lack the clean, governed data layer needed for agents to function. This directly positions Databricks' infrastructure as the prerequisite fix."
+        },
+        {
+          "title": "Explicit case made for staying private over IPO",
+          "detail": "Ghodsi argues that private markets are deep enough to fund Databricks' growth and that staying private allows long-duration investment bets without quarterly earnings pressure. This is a notable public statement from the CEO of one of the most anticipated IPO candidates in enterprise tech."
+        },
+        {
+          "title": "Superintelligence debate framed around practical cyber risk",
+          "detail": "Rather than philosophical doom arguments, the closing segment connects superintelligence concerns to concrete cyber-security risks, grounding the debate in nearer-term threat vectors that enterprises and policymakers can actually act on."
+        }
+      ],
+      "synthesis": "Ali Ghodsi, CEO of Databricks, joins the All-In hosts to argue that AGI is already here in a functional sense — that today's frontier models already match or exceed human performance on a wide range of cognitive tasks — and that the more pressing, investable question is not whether AGI exists but why enterprises are so far behind in capturing its value. Ghodsi traces Databricks' own early bets: a contrarian commitment to open-source AI and cloud-native data infrastructure at a time when most incumbents were ignoring both, which he credits as the foundation for the company's current position in enterprise AI.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "AGI / frontier AI",
+        "Databricks",
+        "Enterprise AI adoption",
+        "IPO / going public",
+        "AI doom / superintelligence risk"
+      ]
+    },
+    {
       "id": "live-sources-1bixci0",
       "podcastId": "sources",
       "show": "Sources",
@@ -1047,38 +1322,32 @@
       "tone": "cautious",
       "keyPoints": [
         {
-          "title": "Earnings divergence as a structural signal",
-          "detail": "The host frames Intel and AMD's diverging earnings not as a cyclical blip but as the quarterly-updated, quantified cost of Intel's IDM model versus AMD's fabless approach — each earnings cycle widens the visible gap."
+          "title": "Earnings divergence frames the structural story",
+          "detail": "Intel's and AMD's latest earnings are presented not merely as one-quarter results but as a vivid illustration of a decades-long strategic fork, with AMD accelerating in data center and AI while Intel faces broad pressure across its business."
         },
         {
-          "title": "Intel's IDM model: from asset to liability",
-          "detail": "The episode argues that Intel's integrated manufacturing model, once a decisive competitive advantage, has inverted into a structural drag now that TSMC leads on process nodes — Intel pays both a product penalty and a capital cost penalty that AMD avoids entirely."
+          "title": "AMD's fabless pivot — a forced move that became a moat",
+          "detail": "The episode recounts how AMD was effectively pushed into a fabless model by financial necessity, spinning out its fabs, and ended up on TSMC's leading-edge nodes — turning what looked like a capitulation into a durable competitive advantage."
         },
         {
-          "title": "AMD as the counterfactual benchmark",
-          "detail": "The host uses AMD's results as a live benchmark for what Intel's design business could achieve if freed from manufacturing drag, implying the gap between the two companies directly measures the cost Intel pays for vertical integration."
+          "title": "Intel's IDM model as a double liability",
+          "detail": "The episode argues Intel must win simultaneously at chip design AND semiconductor manufacturing — two world-class disciplines — and is currently falling short on both, compounding each other's weaknesses rather than reinforcing strengths."
         },
         {
-          "title": "The 'new (old) path' framing",
-          "detail": "The host raises the provocative question of whether Intel should effectively go fabless — a path he describes as 'new' for Intel but 'old' as a model, referencing AMD's own history of separating design from manufacturing."
+          "title": "The 'new (old) path' question for Intel",
+          "detail": "The episode explicitly raises whether Intel should consider returning to a fabless-or-fab-lite model, framing it as a 'new (old) path' — essentially replicating the AMD playbook two decades later, but from a position of far greater complexity and obligation."
         }
       ],
-      "synthesis": "Intel and AMD reported earnings that reveal not just a gap in quarterly performance, but a fundamental strategic divergence rooted in decisions made decades ago. AMD, as a fabless company, has long offloaded manufacturing risk to TSMC, allowing it to focus entirely on chip design — a model that is now paying dividends as its data-center GPU and CPU businesses gain share against Intel. Intel, by contrast, is burdened by its integrated device manufacturer (IDM) legacy: it both designs and fabricates chips, meaning product competitiveness and manufacturing execution must both succeed simultaneously. When either falters, the entire business suffers.",
-      "whatChanged": "Intel and AMD's diverging earnings cycles have made the structural cost of Intel's IDM model quantitatively visible on a quarterly basis, with AMD's fabless model on TSMC now serving as a live benchmark that Intel's integrated business cannot match.",
-      "whyItMatters": "If Intel cannot close the manufacturing gap with TSMC, its design business will keep losing share to AMD (and Nvidia in AI), shrinking the revenue base needed to fund fab capex — a doom loop that may force a binary strategic choice between spinning off the foundry or accepting secular decline.",
-      "beneficiaries": [
-        "AMD",
-        "TSMC"
-      ],
-      "atRisk": [
-        "Intel"
-      ],
+      "synthesis": "Intel and AMD's latest earnings don't just show a gap in quarterly performance — they reveal fundamentally different strategic DNA. The episode's central argument is that the two companies' divergence traces back to a historical fork: Intel chose to be a fully integrated manufacturer (designing and fabricating its own chips), while AMD, forced out of that model by financial necessity, became a fabless designer that outsourced production to TSMC. What looked like AMD's weakness in the early 2000s turned out to be a structural advantage as TSMC's manufacturing scaled to world-class levels, freeing AMD to focus entirely on chip architecture and compete on design merit.",
+      "beneficiaries": [],
+      "atRisk": [],
       "numbers": [],
       "topics": [
         "Intel",
         "AMD",
+        "Intel foundry strategy",
         "TSMC",
-        "Intel spinoff / fabless path"
+        "CHIPS Act obligations"
       ]
     },
     {
