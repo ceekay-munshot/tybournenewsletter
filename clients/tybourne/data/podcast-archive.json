@@ -3,6 +3,153 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-sources-1bixci0",
+      "podcastId": "sources",
+      "show": "Sources",
+      "title": "Why Airtable’s founder is betting on teams of AI agents",
+      "date": "2026-11-17T14:25:00.000Z",
+      "url": "https://sources.news/p/howie-liu-airtable-hyperagent-bending-spoons",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Airtable sold near $500M revenue — below peak valuation",
+          "detail": "Liu sold Airtable to Bending Spoons while it was approaching $500M in revenue and still growing, but accepted a price below its peak valuation. This is the first podcast in which he discusses the deal publicly."
+        },
+        {
+          "title": "AI will compress SaaS valuations — the core reason to sell now",
+          "detail": "Liu's sell rationale was explicitly forward-looking: he believed AI would put sustained pressure on SaaS multiples, making a superior future offer far from guaranteed even for a growing business. Waiting was the riskier bet."
+        },
+        {
+          "title": "'A knife fight in a phone booth' — why Liu is not building a personal assistant",
+          "detail": "Liu used this phrase to describe the personal AI assistant market, citing Meta, Google, and OpenAI as the dominant players. He views it as structurally unwinnable for a startup and is deliberately building elsewhere."
+        },
+        {
+          "title": "Hyperagent's bet: multiplayer agents as AI coworkers",
+          "detail": "Hyperagent's next version features agents with their own roles and accounts, working with each other and with the humans inside a business — a 'team of AI coworkers' architecture rather than a single assistant model."
+        }
+      ],
+      "synthesis": "Howie Liu's central argument is that the personal AI assistant market is already a lost cause for most challengers — a knife fight in a phone booth where Meta, Google, and OpenAI dwarf any startup — and that the real, more winnable opportunity lies in coordinating *teams* of AI agents, each with their own roles and accounts, working together inside a business like a staff a small company could never afford to hire. His concrete example: a landscaping firm using agents to research a property, prepare a proposal, and manage the job end-to-end. The bet is that this 'multiplayer' architecture is both a harder product problem and a more defensible competitive position than any single AI assistant.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Airtable annual revenue at time of sale",
+          "value": "approaching $500 million",
+          "context": "Still growing when Howie Liu agreed to sell to Bending Spoons"
+        },
+        {
+          "metric": "Sale price relative to peak valuation",
+          "value": "below peak valuation",
+          "context": "Airtable sold to Bending Spoons at a price below the company's prior peak valuation"
+        }
+      ],
+      "topics": [
+        "Hyperagent / agent teams",
+        "Personal assistant market",
+        "SaaS valuations under AI",
+        "Airtable / Bending Spoons deal",
+        "Small business AI opportunity",
+        "Starting over vs. building on existing SaaS"
+      ]
+    },
+    {
+      "id": "live-iltb-1wtwapx",
+      "podcastId": "iltb",
+      "show": "Invest Like the Best",
+      "title": "Brad Gerstner & Geoffrey Canada - Raising the Floor for Every American Child - [Invest Like the Best, EP.501]",
+      "date": "2026-11-17T13:00:00.000Z",
+      "url": "https://colossus.com/episode/restoring-the-american-dream/",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "Host's 180° on Invest America",
+          "detail": "Patrick O'Shaughnessy opens by admitting he called Invest America a fool's errand when Gerstner pitched him in 2020. Six years later, nearly 70 million children have accounts and every newborn gets $1,000 in the S&P 500 — a complete reversal of his initial judgment."
+        },
+        {
+          "title": "Nearly 70 Million Children Now Have Accounts",
+          "detail": "The program has scaled to nearly 70 million children holding investment accounts in their own names, with every American newborn receiving $1,000 invested in the S&P 500 — a figure that underscores the policy has moved from idea to mass infrastructure."
+        },
+        {
+          "title": "Free Money Is Surprisingly Hard to Give Away",
+          "detail": "Despite accounts existing for tens of millions of children, the central operational challenge is getting families — especially low-income and minority households — to actually claim them. Gerstner and Canada flag this as the program's most urgent unsolved problem."
+        },
+        {
+          "title": "Education Without Capital Is Insufficient",
+          "detail": "Geoffrey Canada argues from decades at Harlem Children's Zone that education alone cannot secure upward mobility: without savings, even academically successful disadvantaged kids are one emergency away from financial collapse, making a capital stake essential rather than supplementary."
+        }
+      ],
+      "synthesis": "Brad Gerstner and Geoffrey Canada make the case that ownership at birth is the missing link in America's social contract. The core argument is structural: education alone cannot close the opportunity gap because children without savings are perpetually one emergency away from financial ruin, regardless of academic achievement. The vehicle they champion — Invest America — has already enrolled nearly 70 million children, with every American newborn now receiving $1,000 invested in the S&P 500. That the program exists at all, six years after host Patrick O'Shaughnessy initially dismissed it as a fool's errand, is itself the most striking data point in the episode.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Children with Invest America accounts",
+          "value": "nearly 70 million",
+          "context": "As of episode recording, six years after the program was first conceived in 2020"
+        },
+        {
+          "metric": "Initial investment per American newborn",
+          "value": "$1,000",
+          "context": "Invested in the S&P 500 at birth under the Invest America program"
+        },
+        {
+          "metric": "Years since program inception",
+          "value": "six years",
+          "context": "Brad Gerstner first discussed the idea with the host in 2020; episode recorded ~2026"
+        }
+      ],
+      "topics": [
+        "Invest America program",
+        "Education-only approach",
+        "Capitalism & ownership"
+      ]
+    },
+    {
+      "id": "live-stratechery-1xz3u4m",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Apple Permissions Update, The New App Paradigm, My iPhone Duo Review",
+      "date": "2026-11-17T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/apple-permissions-update-the-new-app-paradigm-my-iphone-duo-review/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Apple Fails to Fix the Agent Problem",
+          "detail": "Despite the permissions update, the episode's central finding is that Apple has not solved the agent problem — the structural inability of its app-paradigm architecture to support AI agents that need persistent, cross-app system access."
+        },
+        {
+          "title": "The App Paradigm as Apple's Ceiling",
+          "detail": "The episode frames the app paradigm itself — not any single policy or feature gap — as the fundamental constraint preventing Apple from competing in the agentic AI era, raising the question of whether Apple can reinvent its own core mental model."
+        },
+        {
+          "title": "Permissions Update: Necessary But Insufficient",
+          "detail": "Apple's permissions update is treated as a real but incomplete step; the episode argues it patches the existing model rather than redesigning it for the agent use case, leaving the core incompatibility intact."
+        },
+        {
+          "title": "Can Apple Think Outside the App Paradigm?",
+          "detail": "The episode poses this as an open, skeptical question — implying that Apple's organizational and philosophical identity is so tied to the app as the atomic unit of software that a genuine rethink may be beyond its current trajectory."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that Apple is capable of preserving the integrity of a platform — as demonstrated by not ruining the Mac — but remains structurally constrained when it comes to solving the agent problem. The core tension is whether Apple can think beyond the app paradigm: individual, siloed applications that require discrete user permissions, versus an agentic model where an AI acts fluidly across the whole system on a user's behalf. Apple's permissions architecture, designed to protect privacy and security, becomes the very obstacle that prevents true agent functionality.",
+      "whatChanged": "Apple issued a permissions update that touches on how apps and agents interact with system resources, but the episode's central claim is that it does not resolve the structural incompatibility between Apple's app-paradigm permission model and the requirements of true AI agents.",
+      "whyItMatters": "If Apple cannot redesign its permission architecture to support persistent, cross-app AI agents, it cedes the agentic AI layer to competitors (Google, Microsoft, OpenAI) whose platforms are less constrained — meaning the long-term value of the Apple ecosystem could erode precisely as AI agents become the dominant…",
+      "beneficiaries": [],
+      "atRisk": [
+        "Apple (AAPL)"
+      ],
+      "numbers": [],
+      "topics": [
+        "Apple / Mac",
+        "Apple permissions update",
+        "Apple agent capabilities",
+        "App paradigm",
+        "iPhone Duo (hardware)"
+      ]
+    },
+    {
       "id": "live-aidaily-16swfvl",
       "podcastId": "aidaily",
       "show": "AI Daily",
