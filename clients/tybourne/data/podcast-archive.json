@@ -3,6 +3,79 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-c7odt4",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Why the AI Kids Hate Astra 6.2",
+      "date": "2026-11-18T21:29:03.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-the-AI-Kids-Hate-Astra-6-2-e3sl38t",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "NVIDIA board flatly rejects Jensen Huang's return bid",
+          "detail": "Despite Jensen's public post signaling willingness to return as CEO, board chair Harvey Jones opened the earnings call by stating the board 'unanimously accepted Jensen's resignation and does not intend to reinstate Jensen as CEO.' Interim CEO Kress reinforced this in a CNBC interview — yet Semaphore reported the same…"
+        },
+        {
+          "title": "NVIDIA stops selling AI chips to China entirely",
+          "detail": "Interim CEO Kress announced during the earnings call that NVIDIA would no longer ship licensed Hopper data center products to China — even those with government approval. The earnings report does not yet capture the revenue impact, and the official SEC filing had not been completed, suggesting the full financial hit is…"
+        },
+        {
+          "title": "GPT-6.2 Astra and Sol draw worst early reception the host has ever seen",
+          "detail": "Developer Theo published 'Why I Hate GPT 6.2 Astra,' Matt Schumer called them 'essentially unusable,' and Dan Shipper reported that none of Every's 30-person team switched back to Astra 6.2 after testing it across all workflows. Professor Ethan Mollick called it the first frontier OpenAI release since GPT-4.5 that was…"
+        },
+        {
+          "title": "Astra 6.2 is 35% cheaper per task than its predecessor; Sol is 20% cheaper",
+          "detail": "AA's cost-per-task benchmark showed Astra 6.2 at $4 versus $6.24 for GPT-6 Astra, and Sol 6.2 at $1.01 versus $1.27 for 6.1 Sol. Against Anthropic, Fable 5.2 is more than twice as expensive as Astra 6.2, and Opus 5.5 costs more than three times Sol 6.2 — a dramatic cost divergence between the two companies' mid-tier…"
+        }
+      ],
+      "synthesis": "OpenAI's GPT-6.2 Astra and Sol release landed with unusual hostility from the early-adopter community, but the episode argues the backlash is as much about mismatched use-case expectations as genuine model failure. Benchmarks tell a nuanced story: on the Artificial Analysis Intelligence Index, Astra 6.2 jumped 5 points to 62 (second only to Fable 5.2), and both models posted meaningful cost reductions — Astra 35% cheaper per task at $4 vs. $6.24, Sol 20% cheaper at $1.01 vs. $1.27. The red flag is that both models regressed on the AA Coding Agent Index, with Sol dropping 3 points and showing a tendency to omit key facts on SWE Atlas, which directly explains why developer-heavy testers like Dan Shipper's 30-person Every team and developer Theo had such poor experiences.",
+      "whatChanged": "OpenAI released GPT-6.2 Astra and Sol with a deliberate pivot away from coding-benchmark leadership toward cost-efficient, agentic enterprise workflows — the first frontier release since GPT-4.5 that was not described as a clear step forward, per Professor Ethan Mollick, and the first to lead with agentic/science…",
+      "whyItMatters": "If OpenAI is ceding the premium coding/engineering tier to Anthropic (where Fable 5.2 and Opus 5.5 are over 2x–3x more expensive but stronger), it is implicitly conceding developer mindshare to Anthropic while betting that mid-market enterprise buyers will choose on price — a segmentation that shifts competitive…",
+      "beneficiaries": [
+        "Anthropic",
+        "Meta",
+        "Cost-sensitive enterprise buyers"
+      ],
+      "atRisk": [
+        "OpenAI",
+        "NVIDIA (NVDA)"
+      ],
+      "numbers": [
+        {
+          "metric": "NVIDIA annualized revenue growth",
+          "value": "103%",
+          "context": "Latest quarterly earnings report, beating analyst estimates"
+        },
+        {
+          "metric": "NVIDIA Q4 revenue guidance",
+          "value": "$130 billion",
+          "context": "Raised by interim CEO Colette Kress during earnings call"
+        },
+        {
+          "metric": "NVIDIA growth forecast to 2028",
+          "value": "adjusted from 70% to 75%",
+          "context": "Revised upward by Kress during earnings call"
+        },
+        {
+          "metric": "NVIDIA stock move post-Jensen tweet",
+          "value": "up 2%",
+          "context": "In the five minutes immediately after Jensen Huang's post signaling openness to return"
+        },
+        {
+          "metric": "NVIDIA stock after-hours move",
+          "value": "up 4.5%",
+          "context": "After earnings call, reaching new post-Jensen high"
+        }
+      ],
+      "topics": [
+        "GPT-6.2 Astra & Sol",
+        "OpenAI's enterprise strategy",
+        "NVIDIA earnings",
+        "Anthropic"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3u6c",
       "podcastId": "stratechery",
       "show": "Stratechery",
@@ -1322,32 +1395,38 @@
       "tone": "cautious",
       "keyPoints": [
         {
-          "title": "Earnings divergence frames the structural story",
-          "detail": "Intel's and AMD's latest earnings are presented not merely as one-quarter results but as a vivid illustration of a decades-long strategic fork, with AMD accelerating in data center and AI while Intel faces broad pressure across its business."
+          "title": "Earnings expose a structural, not cyclical, gap",
+          "detail": "Thompson frames Intel and AMD's diverging results not as a temporary cycle difference but as the visible output of fundamentally different business architectures compounding over decades. This reframing matters because it implies no product refresh alone can close the gap."
         },
         {
-          "title": "AMD's fabless pivot — a forced move that became a moat",
-          "detail": "The episode recounts how AMD was effectively pushed into a fabless model by financial necessity, spinning out its fabs, and ended up on TSMC's leading-edge nodes — turning what looked like a capitulation into a durable competitive advantage."
+          "title": "AMD's fabless pivot in 2009 as the decisive fork in the road",
+          "detail": "The episode identifies AMD's 2009 spin-off of its manufacturing operations (into what became GlobalFoundries) as the historical inflection point that now gives AMD its structural advantage. By becoming fabless, AMD unlocked TSMC's leading-edge nodes without carrying fab capex."
         },
         {
-          "title": "Intel's IDM model as a double liability",
-          "detail": "The episode argues Intel must win simultaneously at chip design AND semiconductor manufacturing — two world-class disciplines — and is currently falling short on both, compounding each other's weaknesses rather than reinforcing strengths."
+          "title": "Intel's IDM model now a liability in AI era",
+          "detail": "Thompson argues that owning both design and fabrication, once Intel's greatest strength, has become a liability because AI workloads reward speed-to-market specialization and AMD can iterate its design roadmap far faster by simply leveraging TSMC."
         },
         {
-          "title": "The 'new (old) path' question for Intel",
-          "detail": "The episode explicitly raises whether Intel should consider returning to a fabless-or-fab-lite model, framing it as a 'new (old) path' — essentially replicating the AMD playbook two decades later, but from a position of far greater complexity and obligation."
+          "title": "Thompson raises the 'new (old) path' question for Intel",
+          "detail": "The episode's central provocation is whether Intel needs to rediscover a fundamentally different strategic path — implying deeper structural separation of design and manufacturing — rather than incrementally improving within its current IDM identity."
         }
       ],
-      "synthesis": "Intel and AMD's latest earnings don't just show a gap in quarterly performance — they reveal fundamentally different strategic DNA. The episode's central argument is that the two companies' divergence traces back to a historical fork: Intel chose to be a fully integrated manufacturer (designing and fabricating its own chips), while AMD, forced out of that model by financial necessity, became a fabless designer that outsourced production to TSMC. What looked like AMD's weakness in the early 2000s turned out to be a structural advantage as TSMC's manufacturing scaled to world-class levels, freeing AMD to focus entirely on chip architecture and compete on design merit.",
-      "beneficiaries": [],
-      "atRisk": [],
+      "synthesis": "Intel and AMD's latest earnings exposed what Ben Thompson frames as a structural divergence, not a cyclical one — rooted in decisions made decades ago. Intel's integrated device manufacturer (IDM) model, which owns both chip design and fabrication, is now a liability in an era where AI workloads reward specialization and speed-to-market. AMD, by contrast, fabless since its 2009 spin-off of GlobalFoundries, routes its designs through TSMC and can ride the leading-edge process curve without carrying the capital burden of running fabs. The earnings gap is therefore not a surprise: it reflects the compounding consequences of two fundamentally different business architectures.",
+      "whatChanged": "Intel and AMD's latest earnings confirmed a structural — not cyclical — divergence, with AMD capitalizing on AI-driven data-center demand via its fabless/TSMC model while Intel's integrated IDM model continues to weigh on its competitive position and financial results.",
+      "whyItMatters": "If the divergence is structural, Intel's path to recovery requires a fundamental business-model transformation (deeper separation of design and manufacturing) rather than product fixes — a multi-year, capital-intensive transition that would reshape its cost structure, margin profile, and competitive positioning against…",
+      "beneficiaries": [
+        "AMD",
+        "TSMC"
+      ],
+      "atRisk": [
+        "Intel"
+      ],
       "numbers": [],
       "topics": [
         "Intel",
         "AMD",
-        "Intel foundry strategy",
         "TSMC",
-        "CHIPS Act obligations"
+        "Intel IDM model"
       ]
     },
     {
