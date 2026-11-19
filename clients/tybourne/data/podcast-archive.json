@@ -3,6 +3,82 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3u7c",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "An Interview With Eric Seufert About Agentic Commerce",
+      "date": "2026-11-19T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
+      "summarised": false,
+      "notes": "An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents."
+    },
+    {
+      "id": "live-oddlots-1ytij3e",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "This Is The Problem With AI's Most Bullish Chart",
+      "date": "2026-11-19T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/this-is-the-problem-with-ais-most-bullish-chart",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "30% equity tranche often funded by customer prepayments, not neocloud equity",
+          "detail": "Lee reveals that in the standard 70% LTV structure, the 30% 'equity' is frequently not the neocloud's own capital but prepayments charged to inference companies. This means the equity buffer the loan structure assumes is actually another form of leverage against VC-backed customers."
+        },
+        {
+          "title": "GPU rental chart is a cost-of-capital signal, not a demand signal",
+          "detail": "Stanley Lee argues that rising spot GPU prices reflect the fact that buyers who want long-term term contracts (e.g., B300s at $4.30/hr with 30% down) simply cannot access them because lenders won't finance their off-takers. They're forced into the expensive spot market, so the index rises — not because of organic…"
+        },
+        {
+          "title": "$3–$6 trillion annual revenue required by 2032 to justify AI CapEx",
+          "detail": "Paul Kudrowski runs basic project-finance math on roughly $10 trillion in cumulative AI CapEx and concludes the ecosystem needs to generate $3–$6 trillion in annual revenue by approximately 2032 to earn a reasonable return. He notes this is equivalent to roughly 18% of global white-collar work or more than the entire…"
+        },
+        {
+          "title": "50% of all critical software vulnerabilities ever found were discovered in H1 2025",
+          "detail": "Kudrowski cites data showing AI tools are dramatically accelerating both vulnerability discovery and exploit creation; 8% of all critical CVEs ever found appeared in just the first three weeks of October 2025. He argues the productivity beneficiaries are reinsurers and cybersecurity firms, not enterprises."
+        }
+      ],
+      "synthesis": "The episode's central argument is that the widely-cited GPU rental rate chart — the bulls' favorite proof of insatiable AI demand — is deeply misleading as a demand signal. Stanley Lee (Liquid Compute CPO) explains that rising spot and short-term GPU prices reflect not healthy end-user demand but rather the rising cost of capital: companies that *want* to lock in long-term compute contracts at lower rates simply can't, because lenders have tightened underwriting and require higher prepayments and lower LTV ratios. The result is a thin spot market where a small number of distressed bids sets a headline price that looks bullish but is actually a symptom of credit stress.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "GPU rental rate — Silicon Data B200 index",
+          "value": "$7.10 per hour",
+          "context": "As of November 2025; was in the $5s as recently as August 2025"
+        },
+        {
+          "metric": "B300 GPU long-term contract rate (30% prepay)",
+          "value": "$4.30 per GPU hour",
+          "context": "Quoted by Stanley Lee as the term rate inference companies wish they could lock in"
+        },
+        {
+          "metric": "B300 GPU spot/short-term rate (zero prepay)",
+          "value": "mid-to-high $5s per GPU hour",
+          "context": "Zero-prepay alternative companies actually face given inability to access term financing"
+        },
+        {
+          "metric": "B300 GPU rate used in illustrative deal (3yr, 30% down)",
+          "value": "$4.40 per GPU hour",
+          "context": "Example shown to prospective buyer who chose zero-prepay mid-high fives instead"
+        },
+        {
+          "metric": "GPU loan LTV — summer 2025",
+          "value": "70–80%",
+          "context": "Typical loan-to-value ratio for mid-market neocloud GPU loans written over the summer"
+        }
+      ],
+      "topics": [
+        "GPU rental rate chart",
+        "mid-market neoclouds",
+        "AI productivity evidence",
+        "Anthropic vertical strategy",
+        "reinsurers and cybersecurity firms",
+        "AI financing infrastructure"
+      ]
+    },
+    {
       "id": "live-aidaily-c7odt4",
       "podcastId": "aidaily",
       "show": "AI Daily",
