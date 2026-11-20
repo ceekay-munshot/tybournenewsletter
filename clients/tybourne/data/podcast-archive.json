@@ -3,6 +3,124 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3uu8",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo",
+      "date": "2026-11-20T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/",
+      "summarised": true,
+      "tone": "neutral",
+      "keyPoints": [
+        {
+          "title": "Sharp Tech debuts on video for the first time",
+          "detail": "The show notes announce that Sharp Tech is launching in video format for the first time, available on YouTube, Spotify, and Stratechery — a meaningful format and distribution expansion for a previously audio-only show."
+        },
+        {
+          "title": "Jensen Huang topic: 'Jensen's Not Coming Back'",
+          "detail": "One of the three named discussion topics concerns Nvidia CEO Jensen Huang not returning to some event or venue; the specific context is not elaborated in the show notes but the framing implies a notable strategic or public-relations development."
+        },
+        {
+          "title": "AI Shopping as a dedicated segment",
+          "detail": "The episode dedicates a segment to AI-driven shopping, suggesting a discussion of how AI agents or LLMs are reshaping how consumers discover and purchase products — a topic with broad implications for e-commerce platforms."
+        },
+        {
+          "title": "'The iPhone Duo' framing of Apple's lineup",
+          "detail": "The episode uses the phrase 'The iPhone Duo,' implying Apple has narrowed or is narrowing its iPhone release to two models, which carries implications for pricing strategy, margins, and product positioning."
+        }
+      ],
+      "synthesis": "Sharp Tech's debut on video — via YouTube, Spotify, and Stratechery — is the central event of this episode, but the show notes are sparse promotional copy rather than a full transcript or detailed summary, making it impossible to reconstruct the specific arguments, numbers, or causal chains behind the three named topics: Jensen Huang's absence from a key event, AI-powered shopping, and Apple's iPhone lineup strategy.",
+      "whatChanged": "Sharp Tech launched in video format for the first time, now distributed across YouTube, Spotify, and Stratechery — a format expansion that broadens its potential audience beyond existing audio subscribers.",
+      "whyItMatters": "Adding video distribution on YouTube and Spotify exposes the show to algorithmic recommendation engines on those platforms, which could meaningfully grow Stratechery's subscriber funnel; however, the specific investment or business implications of the episode's three named topics (Jensen Huang, AI shopping, iPhone…",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Sharp Tech video launch",
+        "Jensen Huang / Nvidia",
+        "AI Shopping",
+        "Apple iPhone lineup"
+      ]
+    },
+    {
+      "id": "live-oddlots-zaz3y8",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "How an American AI Company Uses Chinese Open-Weight Models",
+      "date": "2026-11-20T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/how-an-american-ai-company-uses-chinese-open-weight-models",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Fine-tuning costs have collapsed to as little as $90",
+          "detail": "Saidi says a production-quality fine-tuning run on Fireworks costs $7–$9 per million tokens and that some practitioners have done it for as little as $90 total — contrasting with Harvey's $6 million spend on 'Tenant.' He attributes the collapse to managed platforms (Fireworks, Modal) eliminating the need for a…"
+        },
+        {
+          "title": "Obliterated DeepSeek model runs at 1/100th the cost of Claude Opus",
+          "detail": "Saidi tested an uncensored 'obliterated' DeepSeek model (refusal neurons disabled) and found it runs at ~30 cents per million blended tokens — about 10x cheaper than Sonnet, which is itself ~10x cheaper than Opus. He argues swarms of these models are plausibly behind active cyberattacks, representing a concrete…"
+        },
+        {
+          "title": "Reflection AI as a control for the distillation debate",
+          "detail": "Saidi uses Reflection AI — a US open-weight lab with NVIDIA backing and a 12,000–14,000 Blackwell GPU cluster that follows terms of service — as evidence that distillation isn't the whole story behind Chinese model quality. Its flagship model launched 6–9 months behind the closed-source frontier, suggesting Chinese…"
+        },
+        {
+          "title": "Frontier for CapEx, open-weight for OpEx",
+          "detail": "Saidi crystallizes Minerva's model strategy: use closed-source frontier (Claude, Grok) during product development where developer time is costly, but switch to fine-tuned open-weight (Qwen) for production inference where the metric is cost per completed task. This framing reframes the open vs. closed debate from…"
+        }
+      ],
+      "synthesis": "Daniel Saidi, co-founder of Minerva (an AI-native marketing automation company), offers a practitioner's-eye view of the open-weight vs. frontier debate that cuts through the lab-level noise. The core thesis: frontier models for CapEx, open-weight for OpEx. Minerva uses Claude and other closed-source models during product development — where developer time is the scarce resource and mistakes are expensive — but switches to fine-tuned Qwen for production workloads where the metric that matters is cost per completed task, not cost per million tokens. This distinction is non-obvious and has real margin implications: once a marketer's repetitive workflow is reliably served by a fine-tuned open-weight model, the per-token cost collapses, and everything below the customer's willingness-to-pay becomes gross margin.",
+      "whatChanged": "Infrastructure services like Fireworks and Modal have reduced fine-tuning open-weight models from an engineering-team effort to a managed commodity workflow, with production-quality runs achievable for as little as $90, collapsing the barrier that previously confined open-weight fine-tuning to large companies.",
+      "whyItMatters": "This cost collapse hands application-layer startups a structural lever — fine-tune cheap open-weight models on proprietary customer data for production inference, use frontier closed-source only for development — which compresses per-task variable costs and shifts negotiating power away from Anthropic and OpenAI,…",
+      "beneficiaries": [
+        "Fireworks AI",
+        "Modal",
+        "Harvey (legal AI)",
+        "Application-layer AI startups (e.g., Minerva)",
+        "Chinese open-weight model labs (DeepSeek, Qwen, Kimi)"
+      ],
+      "atRisk": [
+        "Anthropic",
+        "OpenAI",
+        "Reflection AI"
+      ],
+      "numbers": [
+        {
+          "metric": "Daniel Saidi tenure at Bridgewater",
+          "value": "five and a half years",
+          "context": "Total time, with last two and a half years overseeing trading of financials"
+        },
+        {
+          "metric": "Fireworks fine-tuning cost",
+          "value": "$7 to $9 per million input and output tokens",
+          "context": "Cost to fine-tune open-weight models on Fireworks' managed platform"
+        },
+        {
+          "metric": "Minimum fine-tuning cost (reported)",
+          "value": "as low as $90",
+          "context": "Final training run cost for practitioners who have fine-tuned production-quality models"
+        },
+        {
+          "metric": "Harvey 'Tenant' model compute cost",
+          "value": "about $6 million",
+          "context": "Compute spend to reach frontier-level performance on legal tasks"
+        },
+        {
+          "metric": "Fireworks ARR",
+          "value": "a billion dollars",
+          "context": "Approximate current ARR, alongside Modal at similar scale"
+        }
+      ],
+      "topics": [
+        "Open-weight fine-tuning economics",
+        "Obliterated open-weight models",
+        "Chinese open-weight model labs",
+        "Anthropic / OpenAI pricing power",
+        "Application-layer AI startups",
+        "AI benchmark tests"
+      ]
+    },
+    {
       "id": "live-ingoodcompany-1qfr97j",
       "podcastId": "ingoodcompany",
       "show": "In Good Company",
