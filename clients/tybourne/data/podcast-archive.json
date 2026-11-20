@@ -3,6 +3,120 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3uu5",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "2026.47: Down in DC",
+      "date": "2026-11-20T19:09:57.000Z",
+      "url": "https://stratechery.com/2026/down-in-dc/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang's departure framed as civilisational turning point",
+          "detail": "Ben Thompson's Monday piece treats Huang's exit as an 'omnibus obituary' for multiple American eras — not just a leadership change — linking it to a shift in U.S. government posture toward AI companies that Huang never adapted to."
+        },
+        {
+          "title": "Seufert breaks ranks with Ben on agentic commerce",
+          "detail": "Eric Seufert, normally aligned with Ben on digital advertising, has spent the past year calling out hyped agentic commerce claims as BS — a direct contrast to Ben's bullish view on the category's upside, making their interview a rare genuine disagreement between two usually-aligned analysts."
+        },
+        {
+          "title": "Market accused of misreading Google's earnings",
+          "detail": "The Ben–Seufert interview includes a discussion of why the market has misread Google's recent earnings report — a specific, contrarian claim that is not elaborated further in the notes but signals a named, investable disagreement with consensus."
+        },
+        {
+          "title": "ChatGPT building an ads business",
+          "detail": "ChatGPT's progress in constructing an advertising business was discussed, flagging OpenAI as a nascent but emerging competitor in the digital advertising ecosystem that incumbents like Google and Meta may need to monitor."
+        }
+      ],
+      "synthesis": "This week's Stratechery bundle centres on three overlapping themes: the end of an American era (symbolised by Jensen Huang's departure), the contested promise of agentic commerce, and the surprisingly delightful iPhone Duo. Ben Thompson's Monday piece frames Huang's exit not merely as a corporate event but as an obituary for multiple interlocking American eras — the strategies that made Huang great, the government's shift in posture toward AI companies, and Huang's failure to adapt to that shift are all treated as causally connected.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Jensen Huang / Nvidia",
+        "agentic commerce",
+        "iPhone Duo",
+        "Google earnings",
+        "ChatGPT ads business",
+        "AI model consolidation"
+      ]
+    },
+    {
+      "id": "live-aidaily-1cmueo4",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Why You Should Try Gemini Neon (Even if You Love Fable)",
+      "date": "2026-11-20T18:30:51.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-You-Should-Try-Gemini-Neon-Even-if-You-Love-Fable-e3sod5e",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Anthropic becomes 7th largest public company at $1.8T market cap",
+          "detail": "Anthropic's stock closed at $97.17 (+17%) on its first Nasdaq trading day, giving it a $1.8 trillion market cap — just ahead of Saudi Aramco, making it the seventh largest publicly traded company in the world and completing the largest IPO in history at $107B total raised."
+        },
+        {
+          "title": "Deleted DeepMind post: Neon is a 'small model' approaching Fable and Astra",
+          "detail": "DeepMind researcher Tianfu Fu posted — then deleted — that Neon is 'actually one of our small models' positioned alongside Opus and Sol, yet 'already approaching Fable and Astra.' The deletion adds intrigue about Google's internal benchmarking and marketing strategy."
+        },
+        {
+          "title": "Neon tops the Coding Agent Index despite coding being Google's historic weakness",
+          "detail": "Neon became the new leader on Artificial Analysis's Coding Agent Index, beating Fable 5.2 and Opus 5.5 by a point and GPT-6.2 Sol by nine points — particularly striking because coding has historically been Google models' biggest liability."
+        },
+        {
+          "title": "Host's concrete use case: Neon broke 'Wikipedia mode' where OpenAI and Anthropic models failed",
+          "detail": "On a stubborn episode outline about why oil still runs the world, all OpenAI and Anthropic model iterations stayed stuck in list-of-facts mode; Neon reconstituted the argument in a novel direction that led to a usable outline — illustrating that *different* training distributions have practical value even without clear…"
+        }
+      ],
+      "synthesis": "The episode's central argument is that Gemini Neon is different, not just incrementally better — and that difference itself carries real utility for practitioners who have grown accustomed to Claude and ChatGPT producing near-identical outputs. The host frames Neon as a smaller-class model (positioned alongside Opus and Sol rather than Fable and Astra, per a since-deleted DeepMind researcher post) that nonetheless tops the benchmarks in its tier: beating Opus 5.5 and GPT-6.2 Sol in nearly every category, leading the Coding Agent Index despite coding having been Google's historic weak point, and scoring 61 on Artificial Analysis's Intelligence Index. Its bug-hunting performance — finding 63 of 105 planted bugs to top Pavel Hurin's bench — adds a real-world data point that goes beyond synthetic leaderboards.",
+      "whatChanged": "Google shipped Gemini 4 Neon — described by a since-deleted DeepMind researcher post as a small-class model — that nonetheless topped the Artificial Analysis Coding Agent Index and Intelligence Index leaderboard for its tier, marking the first time in a prolonged period that Google models are being actively adopted and…",
+      "whyItMatters": "A credible third model family in the frontier tier breaks the OpenAI-Anthropic duopoly on mindshare and usage, forcing both companies to compete on differentiation rather than quality alone; it also signals that Google's $100B+ AI infrastructure spend is beginning to yield competitive models, which could re-rate…",
+      "beneficiaries": [
+        "Alphabet (GOOGL)",
+        "Users/practitioners relying on AI for creative/knowledge work",
+        "Anthropic"
+      ],
+      "atRisk": [
+        "AMD (AMD)",
+        "Chinese AI labs (Moonshot, Tencent, Alibaba)",
+        "Third-party AI agents on Apple hardware (e.g., ChatGPT computer-use)"
+      ],
+      "numbers": [
+        {
+          "metric": "Anthropic IPO total capital raised",
+          "value": "$107,000,000,000",
+          "context": "Largest IPO in history; raised across the full offering"
+        },
+        {
+          "metric": "Anthropic first-day stock closing price",
+          "value": "$97.17",
+          "context": "Up 17% from IPO price of $83 on day one of Nasdaq trading"
+        },
+        {
+          "metric": "Anthropic IPO price",
+          "value": "$83",
+          "context": "Initial offering price on Nasdaq"
+        },
+        {
+          "metric": "Anthropic first-day peak implied valuation",
+          "value": "$2,000,000,000,000 (slightly above $110/share)",
+          "context": "Registered at first trade of the day, the highest price of the day"
+        },
+        {
+          "metric": "Anthropic intraday low",
+          "value": "$93",
+          "context": "Reached around 1:00 PM on IPO day"
+        }
+      ],
+      "topics": [
+        "Gemini Neon",
+        "AMD China exposure",
+        "Chinese AI sector",
+        "Google's AI harnesses"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3uu8",
       "podcastId": "stratechery",
       "show": "Stratechery",
@@ -967,6 +1081,16 @@
         "Huang's geopolitical adaptability",
         "Asian supply chain coordination"
       ]
+    },
+    {
+      "id": "live-stratechery-fnlyv",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Obituaries",
+      "date": "2026-11-16T11:02:49.000Z",
+      "url": "https://www.youtube.com/watch?v=3qZK1YL0mF0",
+      "summarised": false,
+      "notes": "Listen to this post: Dearly beloved, we are gathered here today to get through this thing called life. ― Prince Jensen Huang, CEO of Nvidia, 1993–2026 Jensen Huang resigned as CEO of Nvidia on Thursday, November 12, 2026. He had been CEO of the company ever since he founded it on April 5, 1993. Nvidia started out as a graphics card company; Huang’s exit — nominally because of affairs with a buyer who may or may not…"
     },
     {
       "id": "live-oddlots-1vj1b0a",
