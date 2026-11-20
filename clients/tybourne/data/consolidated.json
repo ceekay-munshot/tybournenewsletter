@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T20:01:11.622Z",
+  "generatedAt": "2026-11-20T05:55:56.046Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2844,7 +2844,7 @@
       "changePct": -0.040816326530612276,
       "changeAbs": -0.10000000000000009,
       "direction": "down",
-      "asOf": "2026-11-17T00:00:00.000Z",
+      "asOf": "2026-11-18T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -14107,7 +14107,7 @@
       "changePct": -0.02097063983229135,
       "changeAbs": -53610,
       "direction": "down",
-      "asOf": "2026-11-17",
+      "asOf": "2026-11-18",
       "isStale": false,
       "breakdown": [
         {
@@ -14194,17 +14194,17 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk to 17 Nov",
+          "thisPeriodLabel": "wk to 18 Nov",
           "lastPeriodLabel": "yr earlier",
-          "thisValue": 2320873,
-          "lastValue": 2222307,
-          "changePct": 0.044352613679783985,
+          "thisValue": 2309349,
+          "lastValue": 2233237,
+          "changePct": 0.03408140611267737,
           "direction": "up",
           "bigMove": true,
-          "prevLabel": "wk to 10 Nov",
+          "prevLabel": "wk to 11 Nov",
           "prevValue": null,
-          "prevChangePct": -0.011020952808162987,
-          "prevDirection": "down",
+          "prevChangePct": 0.004928099820696027,
+          "prevDirection": "up",
           "breakdown": [
             {
               "label": "Latin America",
@@ -14279,7 +14279,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput up 4.4% year-on-year (wk to 17 Nov vs yr earlier), running at 2.32M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput up 3.4% year-on-year (wk to 18 Nov vs yr earlier), running at 2.31M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -14470,7 +14470,7 @@
       "insights": [
         {
           "title": "US demand: current and roughly flat",
-          "body": "TSA checkpoint throughput is tracked daily and is current to Nov '26 17. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
+          "body": "TSA checkpoint throughput is tracked daily and is current to Nov '26 18. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
         },
         {
           "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
@@ -14485,7 +14485,7 @@
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to Nov '26 17. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to Nov '26 18. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Sep '26",
@@ -15669,7 +15669,7 @@
       "changePct": 0.26423867514530064,
       "changeAbs": 149915918330020,
       "direction": "up",
-      "asOf": "2026-11-19T20:00:56.316Z",
+      "asOf": "2026-11-20T05:55:36.724Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17262,11 +17262,11 @@
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
             "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 26.6T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 3.8 Flash 0902, ranked #22 by tokens.",
+            "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #22 by tokens.",
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-19T20:00:56.397Z"
+          "asOf": "2026-11-20T05:55:36.790Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21632,7 +21632,7 @@
       "changePct": null,
       "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-19T11:00:00.000Z",
+      "asOf": "2026-11-20T04:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -21643,7 +21643,7 @@
           "direction": "flat"
         },
         {
-          "label": "Odd Lots",
+          "label": "In Good Company",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21657,7 +21657,7 @@
           "direction": "flat"
         },
         {
-          "label": "In Good Company",
+          "label": "Odd Lots",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21707,36 +21707,36 @@
         }
       ],
       "highlights": [
+        "Chinese vs. European supplier speed — the Pirelli anecdote",
+        "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it",
+        "Ads Will Target Agents, Not Humans",
         "30% equity tranche often funded by customer prepayments, not neocloud equity",
         "NVIDIA board flatly rejects Jensen Huang's return bid",
         "Nvidia earnings called 'boring' — a dominance signal, not a warning",
         "GTA V: 235 million copies sold — best non-mobile game ever",
         "Formula One as the birthplace of Pirelli's virtualization capability",
         "36% more tokens, only 2% more spend",
-        "Ghodsi declares AGI is already here",
-        "Airtable sold near $500M revenue — below peak valuation",
-        "Host's 180° on Invest America",
-        "Apple Fails to Fix the Agent Problem"
+        "Ghodsi declares AGI is already here"
       ],
-      "tone": "Tone across 42 episodes — 13 positive, 11 cautious, 10 mixed, 1 neutral",
-      "thisTone": "13 positive, 11 cautious, 10 mixed, 1 neutral",
+      "tone": "Tone across 42 episodes — 13 mixed, 11 cautious, 11 positive, 1 neutral",
+      "thisTone": "13 mixed, 11 cautious, 11 positive, 1 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "Chinese vs. European supplier speed — the Pirelli anecdote",
+        "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it",
+        "Ads Will Target Agents, Not Humans",
         "30% equity tranche often funded by customer prepayments, not neocloud equity",
         "NVIDIA board flatly rejects Jensen Huang's return bid",
         "Nvidia earnings called 'boring' — a dominance signal, not a warning",
         "GTA V: 235 million copies sold — best non-mobile game ever",
         "Formula One as the birthplace of Pirelli's virtualization capability",
         "36% more tokens, only 2% more spend",
-        "Ghodsi declares AGI is already here",
-        "Airtable sold near $500M revenue — below peak valuation",
-        "Host's 180° on Invest America",
-        "Apple Fails to Fix the Agent Problem"
+        "Ghodsi declares AGI is already here"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — 30% equity tranche often funded by customer prepayments, not neocloud equity; NVIDIA board flatly rejects Jensen Huang's return bid; Nvidia earnings called 'boring' — a dominance signal, not a warning; GTA V: 235 million copies sold — best non-mobile game ever. Sentiment ran 13 positive, 11 cautious, 10 mixed, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: 30% equity tranche often funded by customer prepayments, not neocloud equity; NVIDIA board flatly rejects Jensen Huang's return bid; Nvidia earnings called 'boring' — a dominance signal, not a warning.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Chinese vs. European supplier speed — the Pirelli anecdote; Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it; Ads Will Target Agents, Not Humans; 30% equity tranche often funded by customer prepayments, not neocloud equity. Sentiment ran 13 mixed, 11 cautious, 11 positive, 1 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Chinese vs. European supplier speed — the Pirelli anecdote; Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it; Ads Will Target Agents, Not Humans.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",

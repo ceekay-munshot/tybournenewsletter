@@ -3,14 +3,183 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-ingoodcompany-1qfr97j",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Friday Wrap-Up: AI in product development and the worlds largest IPO",
+      "date": "2026-11-20T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-europes-speed-gap-and-the-anthropic-ipo",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Chinese vs. European supplier speed — the Pirelli anecdote",
+          "detail": "When Pirelli asked suppliers for new materials, European suppliers returned after two months with an NDA to sign; Chinese suppliers returned with a physical prototype. The hosts say this pattern is now causing US companies to drop European sub-suppliers altogether."
+        },
+        {
+          "title": "Xiaomi: phone to finished car in three years",
+          "detail": "Xiaomi went from being a phone manufacturer to producing a ready-made car in just three years — cited as the starkest example of China's compressed product development cycles leaving Western competitors struggling to keep pace."
+        },
+        {
+          "title": "China entering aero engines and pharma ingredients",
+          "detail": "China is now testing domestically made aero engines expected to fly on Chinese planes within a couple of years, and is simultaneously tightening its grip on pharmaceutical ingredient supply chains — described by the hosts as 'really, really serious.'"
+        },
+        {
+          "title": "Anthropic IPO as AI-sector litmus test",
+          "detail": "The hosts frame the Anthropic IPO — described as the largest IPO ever — as a critical test of investor appetite for AI names after corrections triggered by US midterm uncertainty over data centers and turbulence around Nvidia's CEO change."
+        }
+      ],
+      "synthesis": "The episode's central argument is that speed asymmetry between China and Europe is now a structural competitive disadvantage for European industry — not just in manufacturing but increasingly in pharmaceuticals, aero engines, and advanced materials. The Pirelli CEO anecdote is illustrative: when Pirelli asked suppliers for new materials, European suppliers returned after two months with an NDA to sign, while Chinese suppliers returned with a physical prototype. This is not an isolated case — the hosts note that US companies are actively dropping European sub-suppliers for being too slow and unable to scale to American demand.",
+      "whatChanged": "Anthropic's IPO — described as the largest IPO ever — launched against a backdrop of AI-stock corrections triggered by US midterm election uncertainty over data-center policy and turbulence around Nvidia's CEO change, making it the first major test of institutional appetite for AI names in this risk-off period.",
+      "whyItMatters": "If the Anthropic IPO is well-received, it re-opens the pipeline for AI-related listings and signals that institutional capital (including large active-index funds that must own the stock at index weight) will continue flowing into AI infrastructure names, supporting valuations across the sector; a poor reception would…",
+      "beneficiaries": [
+        "Anthropic",
+        "Over Index Fund",
+        "Goldman Sachs"
+      ],
+      "atRisk": [
+        "European industrial suppliers",
+        "European equities broadly"
+      ],
+      "numbers": [
+        {
+          "metric": "US stock market compounding speed vs. Europe",
+          "value": "roughly twice the speed",
+          "context": "Long-run comparison of US vs. European equity market performance, attributed to better earnings growth especially in technology"
+        },
+        {
+          "metric": "Number of podcast interviews underlying the leadership book",
+          "value": "roughly 120",
+          "context": "Interviews conducted for the In Good Company series before the book was written"
+        },
+        {
+          "metric": "Tire change time in Formula One pit stop",
+          "value": "3.5 seconds",
+          "context": "Approximate time for a full team pit stop, cited as example of extreme coordination"
+        },
+        {
+          "metric": "Time for Xiaomi to go from phone to finished car",
+          "value": "three years",
+          "context": "Cited as an example of the dramatically compressed product development cycle in China"
+        },
+        {
+          "metric": "Corporate meeting group size",
+          "value": "between six and ten people",
+          "context": "Typical size of group meetings and dinners held with large US corporates during the New York trip"
+        }
+      ],
+      "topics": [
+        "Chinese industrial speed",
+        "US corporate optimism",
+        "Anthropic IPO",
+        "European industrial base",
+        "AI compute demand"
+      ]
+    },
+    {
+      "id": "live-aidaily-yz0qei",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "The 10 Biggest Days in AI History",
+      "date": "2026-11-19T21:39:48.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/The-10-Biggest-Days-in-AI-History-e3smt2e",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it",
+          "detail": "Anthropic internally tested a chatbot called Claude as early as February 2022, eight months before ChatGPT launched, and recognized it was impressive — but chose not to release it for fear of starting an arms race. A rumor that Anthropic was about to release it is precisely what prompted OpenAI to rush out ChatGPT."
+        },
+        {
+          "title": "OpenAI's Microsoft contract had an AGI escape clause that became terrifying post-coup",
+          "detail": "Microsoft's contract with OpenAI granted access to its models only until the OpenAI board declared they had reached AGI. After the board's capricious firing of Altman, that clause looked far more dangerous, directly motivating Microsoft to hire Mustafa Suleyman and diversify away from OpenAI."
+        },
+        {
+          "title": "DeepSeek erased $589 billion of NVIDIA market cap in a single day",
+          "detail": "On January 27, 2025, NVIDIA fell 17% — a $589 billion single-day loss, the largest for any company in history — driven by the viral (and overstated) claim that DeepSeek trained R1 for only $5.5 million."
+        },
+        {
+          "title": "The agentic shift broke Wall Street's AI valuation model",
+          "detail": "Pre-agentic, Wall Street valued AI by multiplying $20–$30 seat prices by available workers and found the math couldn't justify infrastructure deals. When individual agentic users began spending hundreds or thousands of dollars per month, the entire revenue model and addressable market changed."
+        }
+      ],
+      "synthesis": "This episode is a future-history podcast — recorded on the fictional day of Anthropic's IPO, it narrates 10 landmark moments in generative AI as though the listener is in late 2026. The host frames the Anthropic IPO as the symbolic close of a private-company era and the opening of a public-accountability era, but the real connective tissue of the list is the recurring pattern of incumbents sitting on advantages they failed to exploit: Google invented the transformer and didn't commercialize it; Anthropic had a working chatbot before ChatGPT and sat on it; OpenAI had the best model but nearly imploded in a board coup. Each missed opportunity handed a competitor the defining moment.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Elon Musk's investment in DeepMind (pre-Google acquisition)",
+          "value": "about $5,000,000",
+          "context": "Invested partly to monitor Demis Hassabis; DeepMind later joined Google"
+        },
+        {
+          "metric": "Initial backer commitment to OpenAI at founding",
+          "value": "a billion dollars",
+          "context": "Described as more for the press announcement than a real hard commitment; December 11, 2015"
+        },
+        {
+          "metric": "Microsoft first investment in OpenAI",
+          "value": "a billion dollars",
+          "context": "Announced June 22, 2019 when OpenAI created its for-profit arm"
+        },
+        {
+          "metric": "Time for ChatGPT to reach 1 million users",
+          "value": "five days",
+          "context": "Sam Altman's optimistic forecast had been 'eventually'; November 30, 2022 launch"
+        },
+        {
+          "metric": "ChatGPT users at five weeks",
+          "value": "100,000,000 users",
+          "context": "Making it the fastest-growing application of all time"
+        }
+      ],
+      "topics": [
+        "Anthropic IPO",
+        "Agentic AI era",
+        "OpenAI board coup (2023)",
+        "U.S. government vs. Anthropic",
+        "Jensen Huang resignation"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3u7c",
       "podcastId": "stratechery",
       "show": "Stratechery",
       "title": "An Interview With Eric Seufert About Agentic Commerce",
       "date": "2026-11-19T11:00:00.000Z",
       "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
-      "summarised": false,
-      "notes": "An interview with Eric Seufert about agentic commerce, including why he thinks ads will be the answer, and why I want retailers who cater to agents."
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Ads Will Target Agents, Not Humans",
+          "detail": "Eric Seufert's core claim is that advertising does not die in an agentic commerce world — it evolves into machine-readable signals that influence agent product selection rather than human persuasion. This reframes the entire future of ad tech."
+        },
+        {
+          "title": "Thompson's Counter-Vision: Agent-Native Retailers",
+          "detail": "Ben Thompson argues for a new category of retailer that structures its entire operation — inventory, pricing, product data — to be queried by AI agents rather than browsed by humans. This is a supply-side restructuring bet rather than an advertising layer bet."
+        },
+        {
+          "title": "Current Web Is Poorly Suited to Agentic Consumption",
+          "detail": "Both speakers converge on the view that the existing web, built for human attention and visual persuasion, is fundamentally mismatched with how AI agents consume information — framing the 'legibility problem' as the central technical and commercial challenge."
+        },
+        {
+          "title": "Human-Attention Platforms Face Structural Threat",
+          "detail": "Social media ad networks and search advertising are implicitly identified as the incumbents most exposed: if agents bypass both the feed and the search results page, the human audience those platforms monetize shrinks materially."
+        }
+      ],
+      "synthesis": "Eric Seufert's central argument is that agentic commerce — AI agents making purchasing decisions on behalf of users — will not kill advertising but will instead transform it into a fundamentally different layer of the stack. The logic is structural: if agents are the new interface through which consumers discover and buy products, then the entities with the most to gain are those who can influence agent behavior, and the natural mechanism for that influence is advertising targeted at agents rather than humans. Seufert's contention is that ads will evolve to become machine-readable signals rather than persuasive creative, essentially metadata that agents can query to rank and select products.",
+      "whatChanged": "Eric Seufert argues that the emergence of AI agents as purchasing intermediaries will redirect advertising spend from human-facing creative to machine-readable signals targeting agents, while Ben Thompson contends that a new class of agent-native retailers — structured for programmatic consumption — is the more…",
+      "whyItMatters": "If either model takes hold, platforms monetizing human attention (social ad networks, Google search ads) lose their structural position in the commerce funnel, while whoever owns the agent-readable product-data layer — whether an ad network, a schema standard, or a new retailer format — captures the new chokepoint.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Agentic commerce",
+        "Advertising durability",
+        "Agent-native retail",
+        "Current web / human-attention platforms"
+      ]
     },
     {
       "id": "live-oddlots-1ytij3e",
