@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-oddlots-18gnvc1",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "How AI Is Forcing China to Reshape Industrial Policy",
+      "date": "2026-11-21T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/how-ai-is-forcing-china-to-reshape-industrial-policy",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Huawei-DeepSeek co-design partnership with embedded personnel",
+          "detail": "Chan reveals that Huawei and DeepSeek have personnel physically situated at each other's companies in an intensive technical collaboration to co-design chips optimized for DeepSeek inference workloads — a level of integration that goes beyond typical vendor relationships."
+        },
+        {
+          "title": "Next DeepSeek model rumored to be fully pre-trained on Huawei chips",
+          "detail": "Chan states there are rumors that the next DeepSeek model will be fully pre-trained on Huawei Ascend chips — which would mark the first credible frontier Chinese AI model shifting away from NVIDIA for the most demanding workload, and a symbolic tipping point for domestic chip viability."
+        },
+        {
+          "title": "China attempting to replicate the entire global semiconductor supply chain domestically",
+          "detail": "Chan says China is trying to build not just chips but the full supply chain — lithography, photoresists, etch-and-deposition equipment, and materials — something he says no country has ever attempted before. The EUV ban during Trump 1.0 was the galvanizing shock that made this a national imperative."
+        },
+        {
+          "title": "Beijing actively blocking Chinese AI companies from buying NVIDIA H200s",
+          "detail": "When Trump allowed H200 exports to China, Chinese AI companies eagerly placed orders — but Beijing intervened, telling them to focus on partnering with domestic chip makers instead. Chan frames this as an explicit government override of corporate preference in the name of supply-chain sovereignty."
+        }
+      ],
+      "synthesis": "China's AI development is forcing a fundamental tension between frontier model competitiveness and long-term semiconductor sovereignty — and Beijing has clearly chosen the latter. Kyle Chan (Brookings) argues that the Chinese central government is actively pressuring domestic AI companies (DeepSeek, Z.AI, Alibaba) to co-develop with Huawei Ascend chips rather than chase NVIDIA H200s, even as those companies would privately prefer the American silicon. The government's calculus is explicit: winning 'industries of the future' matters more than GDP growth or consumer welfare, with Xi Jinping's 'new quality productive forces' framework explicitly deprioritizing demand stimulus in favor of high-tech industrial dominance.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Cost of Chinese-made headphones (Joe's anecdote)",
+          "value": "$25",
+          "context": "Compared favorably to Beats headphones in quality but broke; illustrative of cheap Chinese consumer electronics"
+        },
+        {
+          "metric": "Number of circles in Chan's Venn diagram",
+          "value": "more than a dozen",
+          "context": "Representing overlapping Chinese tech industries including EVs, batteries, robotics, smartphones, AI, semiconductors"
+        },
+        {
+          "metric": "DeepSeek model parameter scale cited for training challenge",
+          "value": "two, three trillion parameter models",
+          "context": "Scale at which Huawei Ascend chips were previously insufficient for pre-training runs"
+        },
+        {
+          "metric": "CXMT HBM development timeline",
+          "value": "next two to three years",
+          "context": "Target window for CXMT to reach 'good enough' HBM to pair with Huawei AI chips, still lagging SK Hynix, Samsung, Micron"
+        },
+        {
+          "metric": "AI frontier gap between leading and trailing models",
+          "value": "three to six months / twelve months",
+          "context": "Approximate measure of how much Chinese AI companies could fall behind if forced to use less capable domestic chips"
+        }
+      ],
+      "topics": [
+        "Huawei Ascend chips",
+        "Chinese stock investors",
+        "Beijing's industrial policy",
+        "NVIDIA in China",
+        "China's semiconductor self-reliance push"
+      ]
+    },
+    {
       "id": "live-allin-10z76aw",
       "podcastId": "allin",
       "show": "All-In",
