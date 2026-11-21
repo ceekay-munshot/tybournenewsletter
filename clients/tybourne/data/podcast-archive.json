@@ -3,6 +3,64 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-allin-10z76aw",
+      "podcastId": "allin",
+      "show": "All-In",
+      "title": "Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?",
+      "date": "2026-11-20T22:14:00.000Z",
+      "url": "https://allinchamathjason.libsyn.com/anthropic-goes-public-nvidia-in-crisis-markets-tank-open-source-crackdown",
+      "summarised": true,
+      "keyPoints": [
+        {
+          "title": "Chamath's 'Mag 10' mega-corp thesis",
+          "detail": "Chamath argues 9-10 vertically integrated conglomerates — owning everything from silicon and data centers to consumer apps — will dominate the AI era. He names Meta, Google, Amazon, Anthropic, and SpaceX as early members, and says the market is already rotating capital toward them and away from companies unwilling to…"
+        },
+        {
+          "title": "Anthropic IPO: largest in human history at $2 trillion",
+          "detail": "Anthropic raised over $107 billion with its green shoe fully filled and demand so overwhelming that 100 more green shoes could have been filled. At a $2 trillion valuation (~20-30x run-rate), it surpassed SpaceX's $85 billion IPO to become the largest listing ever, with the stock up 18% on day one while the S&P fell…"
+        },
+        {
+          "title": "Buybacks as a 'tell' — the era of financial engineering is over",
+          "detail": "Chamath argues that in a high-disruption environment, buybacks signal management has no strategic vision. He cites Apple (34% fewer shares over 10 years), Alphabet (12%), and Meta (11%) as examples of wasted war chests, contrasting with Palo Alto Networks' acquisition that drove an 8-9% stock gain — the market…"
+        },
+        {
+          "title": "Chamath: risk-off on equities, 10-year heading to 5.5-6%",
+          "detail": "Despite agreeing with the long-term AI thesis, Chamath says the balance of near-term risks is firmly downward: 10-year Treasury more likely at 5.5-6% than 4.5%, sticky inflation, elevated VIX, and NVIDIA congressional hearings on December 1-2 all tilt the risk-reward against adding equity exposure."
+        }
+      ],
+      "synthesis": "The episode's central argument is that AI is forcing a vertical integration imperative across the entire technology stack — from silicon and data centers ('the dirt') all the way up to consumer applications — and that only 8-10 companies will successfully execute this, creating a new 'Mag 10' that leaves every other business structurally disadvantaged. Chamath frames the Palo Alto Networks acquisition of an open-source AI shop (stock up 8-9% on the day) as the market's clearest vote yet: conglomerate-building is now rewarded, while buybacks are punished as a signal that management has no strategic vision in a period of existential disruption.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Number of AI mega-corps Chamath predicts will be built",
+          "value": "9-10",
+          "context": "Over the next decade, vertically integrated from silicon/data centers to consumer applications"
+        },
+        {
+          "metric": "Palo Alto Networks acquisition cost",
+          "value": "$4,500,000,000",
+          "context": "Acquisition of open-source AI company; stock rose 8-9% on the announcement day"
+        },
+        {
+          "metric": "Palo Alto Networks stock move on acquisition day",
+          "value": "up 8-9%",
+          "context": "Same day Chamath cited it as market validation of vertical integration strategy"
+        },
+        {
+          "metric": "Anthropic IPO valuation",
+          "value": "$2,000,000,000,000",
+          "context": "At IPO, approximately 20-30x run-rate revenue"
+        },
+        {
+          "metric": "Anthropic IPO capital raised",
+          "value": "over $107,000,000,000",
+          "context": "Green shoe filled; described as the largest IPO/fundraise in human history"
+        }
+      ],
+      "topics": []
+    },
+    {
       "id": "live-stratechery-1xz3uu5",
       "podcastId": "stratechery",
       "show": "Stratechery",
@@ -1089,8 +1147,63 @@
       "title": "Obituaries",
       "date": "2026-11-16T11:02:49.000Z",
       "url": "https://www.youtube.com/watch?v=3qZK1YL0mF0",
-      "summarised": false,
-      "notes": "Listen to this post: Dearly beloved, we are gathered here today to get through this thing called life. ― Prince Jensen Huang, CEO of Nvidia, 1993–2026 Jensen Huang resigned as CEO of Nvidia on Thursday, November 12, 2026. He had been CEO of the company ever since he founded it on April 5, 1993. Nvidia started out as a graphics card company; Huang’s exit — nominally because of affairs with a buyer who may or may not…"
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Jensen Huang Resigns After 33 Years as Nvidia CEO",
+          "detail": "Huang stepped down on November 12, 2026, the only CEO Nvidia had ever had since its April 5, 1993 founding. The nominal trigger was affairs with a potentially Chinese-spy-linked buyer and at least two employees."
+        },
+        {
+          "title": "Defense Contractor Classification as the Real Cause",
+          "detail": "The episode argues the affairs were merely pretext; the deeper cause was that Nvidia had become so strategically critical that 'the powers that be' classified it as a defense contractor — a designation Huang never adapted to, making him incompatible with continued leadership."
+        },
+        {
+          "title": "CUDA: The Near-Fatal Bet That Won",
+          "detail": "Introduced in 2006, CUDA was an API for programming GPU shaders. Huang spent 16 years evangelizing it as the platform for accelerated computing before ChatGPT's 2022 arrival proved him right — a bet the episode notes 'almost killed the company' in its early years."
+        },
+        {
+          "title": "Mellanox Acquisition as the Systems Pivot",
+          "detail": "The 2019 Mellanox purchase gave Nvidia the networking fabric to scale from individual chips to full hyperscale training systems, which is what made Nvidia the dominant supplier for LLM training — not just chips but infrastructure."
+        }
+      ],
+      "synthesis": "The central argument of this Stratechery episode is that Jensen Huang's forced resignation was the ultimate irony of his own success: he built Nvidia into an indispensable defense-critical infrastructure company, yet never mentally repositioned himself from founder-CEO of a technology platform company to the kind of executive suited to navigating sovereign and national-security politics. The pretext for his departure — affairs with a buyer who may have been a Chinese spy, and at least two employees — was secondary to the structural reality that Nvidia had become, in the eyes of government powers, a defense contractor, a designation Huang never accepted or adapted to.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Jensen Huang's tenure as Nvidia CEO",
+          "value": "1993–2026",
+          "context": "Founded Nvidia on April 5, 1993; resigned November 12, 2026 — a 33-year run"
+        },
+        {
+          "metric": "Nvidia GPU margin",
+          "value": "exceeding 70%",
+          "context": "Margins Nvidia commanded on its AI GPUs due to platform, technology, and supply-chain lock-in"
+        },
+        {
+          "metric": "GeForce 3 introduction",
+          "value": "2001",
+          "context": "First Nvidia card to introduce a programmable pixel shader, enabling general-purpose GPU programming"
+        },
+        {
+          "metric": "CUDA introduction",
+          "value": "2006",
+          "context": "API for programming GPU shaders; the platform pivot that enabled accelerated computing"
+        },
+        {
+          "metric": "Mellanox acquisition",
+          "value": "2019",
+          "context": "Purchase that gave Nvidia networking/interconnect technology to scale from chips to full AI training systems"
+        }
+      ],
+      "topics": [
+        "Jensen Huang's legacy",
+        "Huang's resignation circumstances",
+        "CUDA platform strategy",
+        "Nvidia as defense contractor",
+        "Nvidia supply-chain moat"
+      ]
     },
     {
       "id": "live-oddlots-1vj1b0a",

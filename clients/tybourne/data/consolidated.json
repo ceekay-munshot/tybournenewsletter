@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T23:44:09.115Z",
+  "generatedAt": "2026-11-21T05:51:06.332Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2839,12 +2839,12 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 2.35,
+      "thisValue": 2.34,
       "lastValue": 2.45,
-      "changePct": -0.040816326530612276,
-      "changeAbs": -0.10000000000000009,
+      "changePct": -0.0448979591836736,
+      "changeAbs": -0.11000000000000032,
       "direction": "down",
-      "asOf": "2026-11-18T00:00:00.000Z",
+      "asOf": "2026-11-19T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2956,7 +2956,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 4.1% (output -2.9%); biggest move: DeepSeek -16.3%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 4.5% (output -3.0%); biggest move: DeepSeek -16.3%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -2997,10 +2997,10 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 2.35,
+          "thisValue": 2.34,
           "lastValue": 2.45,
-          "changePct": -0.040816326530612276,
-          "changeAbs": -0.10000000000000009,
+          "changePct": -0.0448979591836736,
+          "changeAbs": -0.11000000000000032,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
@@ -3113,7 +3113,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 4.1% (output -2.9%); biggest move: DeepSeek -16.3%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 4.5% (output -3.0%); biggest move: DeepSeek -16.3%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3129,9 +3129,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 2.35,
-              "changePct": -0.040816326530612276,
-              "changeAbs": -0.10000000000000009,
+              "value": 2.34,
+              "changePct": -0.0448979591836736,
+              "changeAbs": -0.11000000000000032,
               "direction": "down"
             }
           ]
@@ -3160,9 +3160,9 @@
         },
         {
           "label": "Q4 '26 (QTD)",
-          "value": 2.35,
-          "changePct": -0.040816326530612276,
-          "changeAbs": -0.10000000000000009,
+          "value": 2.34,
+          "changePct": -0.0448979591836736,
+          "changeAbs": -0.11000000000000032,
           "direction": "down"
         }
       ]
@@ -15728,7 +15728,7 @@
       "changePct": 0.26423867514530064,
       "changeAbs": 149915918330020,
       "direction": "up",
-      "asOf": "2026-11-20T23:43:51.370Z",
+      "asOf": "2026-11-21T05:50:46.901Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17321,11 +17321,11 @@
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
             "OpenRouter developer tokens: Google share 4.9% → 3.7% (-1.2pp), 26.6T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #19 by tokens.",
+            "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #18 by tokens.",
             "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-20T23:43:51.417Z"
+          "asOf": "2026-11-21T05:50:46.974Z"
         }
       ],
       "prevLabel": "Aug '26",
@@ -21691,12 +21691,19 @@
       "changePct": null,
       "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-20T19:09:57.000Z",
+      "asOf": "2026-11-20T22:14:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 12,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
+          "label": "All-In",
+          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -21717,13 +21724,6 @@
         },
         {
           "label": "In Good Company",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "All-In",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -21766,6 +21766,7 @@
         }
       ],
       "highlights": [
+        "Chamath's 'Mag 10' mega-corp thesis",
         "Jensen Huang's departure framed as civilisational turning point",
         "Anthropic becomes 7th largest public company at $1.8T market cap",
         "Sharp Tech debuts on video for the first time",
@@ -21774,16 +21775,16 @@
         "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it",
         "Ads Will Target Agents, Not Humans",
         "30% equity tranche often funded by customer prepayments, not neocloud equity",
-        "NVIDIA board flatly rejects Jensen Huang's return bid",
-        "Nvidia earnings called 'boring' — a dominance signal, not a warning"
+        "NVIDIA board flatly rejects Jensen Huang's return bid"
       ],
-      "tone": "Tone across 42 episodes — 15 mixed, 11 positive, 7 cautious, 2 neutral",
-      "thisTone": "15 mixed, 11 positive, 7 cautious, 2 neutral",
+      "tone": "Tone across 42 episodes — 16 mixed, 11 positive, 6 cautious, 2 neutral",
+      "thisTone": "16 mixed, 11 positive, 6 cautious, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "Chamath's 'Mag 10' mega-corp thesis",
         "Jensen Huang's departure framed as civilisational turning point",
         "Anthropic becomes 7th largest public company at $1.8T market cap",
         "Sharp Tech debuts on video for the first time",
@@ -21792,10 +21793,9 @@
         "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it",
         "Ads Will Target Agents, Not Humans",
         "30% equity tranche often funded by customer prepayments, not neocloud equity",
-        "NVIDIA board flatly rejects Jensen Huang's return bid",
-        "Nvidia earnings called 'boring' — a dominance signal, not a warning"
+        "NVIDIA board flatly rejects Jensen Huang's return bid"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Jensen Huang's departure framed as civilisational turning point; Anthropic becomes 7th largest public company at $1.8T market cap; Sharp Tech debuts on video for the first time; Fine-tuning costs have collapsed to as little as $90. Sentiment ran 15 mixed, 11 positive, 7 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Jensen Huang's departure framed as civilisational turning point; Anthropic becomes 7th largest public company at $1.8T market cap; Sharp Tech debuts on video for the first time.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Chamath's 'Mag 10' mega-corp thesis; Jensen Huang's departure framed as civilisational turning point; Anthropic becomes 7th largest public company at $1.8T market cap; Sharp Tech debuts on video for the first time. Sentiment ran 16 mixed, 11 positive, 6 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Chamath's 'Mag 10' mega-corp thesis; Jensen Huang's departure framed as civilisational turning point; Anthropic becomes 7th largest public company at $1.8T market cap.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
