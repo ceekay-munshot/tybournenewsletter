@@ -3,6 +3,65 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-q7euaf",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "When AI Labs Rival Nations",
+      "date": "2026-11-22T12:41:07.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/When-AI-Labs-Rival-Nations-e3sqkoa",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists",
+          "detail": "The Center for AI Safety organized a statement signed by both AI safety regulars AND arch-accelerationist Beth Jezos — two communities that are normally diametrically opposed — both criticizing Anthropic for 'recklessly amassing power in the name of the greater good.' The strange coalition signals that Anthropic's…"
+        },
+        {
+          "title": "Thomas Wolf: Anthropic needs transparency 'higher than a sovereign government'",
+          "detail": "Hugging Face co-founder Thomas Wolf, the second signatory listed on the statement, wrote that Anthropic is 'on track to be the most powerful company on earth' and that this level of impact requires transparency 'close to, or maybe even higher than, that of a sovereign government' — a standard he explicitly says…"
+        },
+        {
+          "title": "Chilling effect: researchers afraid to criticize Anthropic for fear of model access loss",
+          "detail": "Wolf cited direct reports of entrepreneurs, executives, and researchers who agreed with the MisAnthopic Statement's concerns but were afraid to sign publicly due to fear of career consequences or losing access to Anthropic's models. The host flags this chilling effect as itself evidence of dangerous power…"
+        },
+        {
+          "title": "AI labs are no longer just powerful companies — they are powerful institutions",
+          "detail": "The host argues that because AI changes not just how much time we spend with a product but how everything is done at individual and organizational scale, leading AI labs are competing to be the most powerful institution — not merely the most powerful company — rivaling states in societal influence. He traces the…"
+        }
+      ],
+      "synthesis": "The episode's central argument is that AI labs rival nation-states in institutional power — not metaphorically, but structurally. The host traces how private enterprise has historically oscillated against state and religious power, from the Medici banking family deriving legitimacy through the Church, to the East India Company blurring state and private lines, to social media giants surpassing organized religions in membership. AI, the argument goes, is the next and sharpest escalation: unlike social media competing for time, AI competes to change how everything is done, at individual and organizational scale. Thomas Wolf of Hugging Face, signing the 'MisAnthopic Statement,' argues Anthropic is on track to become the most powerful company on earth and that this demands transparency 'close to, or maybe even higher than, that of a sovereign government.'",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "KPMG study sample size",
+          "value": "more than 500",
+          "context": "Early career professionals studied in KPMG / University of Texas at Austin research on AI amplifiers"
+        },
+        {
+          "metric": "Granola discount for new users",
+          "value": "100% off for three months",
+          "context": "Promotional offer for AI Daily Brief listeners using code 'ai daily' at granola.ai"
+        },
+        {
+          "metric": "Blitzy autonomous delivery claim",
+          "value": "over 80%",
+          "context": "Percentage of entire software epics Blitzy claims to deliver autonomously for Fortune 500 engineering teams"
+        },
+        {
+          "metric": "Video pipeline build time",
+          "value": "first week",
+          "context": "Time it took the host to go from zero to producing animated videos using Claude Code with no prior video editing experience"
+        }
+      ],
+      "topics": [
+        "Anthropic",
+        "handoverism concept",
+        "enterprise AI transformation thesis",
+        "agent-native workflows"
+      ]
+    },
+    {
       "id": "live-oddlots-18gnvc1",
       "podcastId": "oddlots",
       "show": "Odd Lots",
