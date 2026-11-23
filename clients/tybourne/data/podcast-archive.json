@@ -3,6 +3,108 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-stratechery-1xz3uyq",
+      "podcastId": "stratechery",
+      "show": "Stratechery",
+      "title": "Amazon Earnings, The Chip Question, About Agents",
+      "date": "2026-11-23T11:00:00.000Z",
+      "url": "https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Amazon claims structural differentiation from other compute providers",
+          "detail": "The episode's central thesis is that Amazon is actively making the case — through its earnings narrative — that it is not interchangeable with generic hyperscalers. The argument rests on custom silicon, vertical integration, and compounding platform assets rather than raw scale alone."
+        },
+        {
+          "title": "Willingness to sacrifice margin for frontier AI market share",
+          "detail": "Amazon explicitly signals it will give up margin to serve frontier AI customers — large model developers running intensive training and inference. This is a deliberate strategic posture, not a one-quarter accounting anomaly, and frames the near-term earnings story as subordinate to long-cycle platform capture."
+        },
+        {
+          "title": "Trainium and Inferentia as the chip bet",
+          "detail": "Amazon's custom AI chips are positioned as the mechanism by which it reduces NVIDIA GPU dependence, lowers per-token costs, and raises customer switching costs. The viability of this bet is framed as the single biggest determinant of whether AWS AI margins recover."
+        },
+        {
+          "title": "Who controls the agent layer is the pivotal open question",
+          "detail": "The episode introduces the agent layer as the next major value-capture battleground in AI: whoever controls the interface through which agents act captures the surplus from automation. Amazon has on-ramps via commerce and AWS, but it is genuinely uncertain whether those assets translate into agent-layer control."
+        }
+      ],
+      "synthesis": "Amazon's central argument, as discussed in this episode, is that it occupies a structurally distinct position among compute providers — not merely a cloud vendor selling undifferentiated capacity, but a vertically integrated platform whose investments in custom silicon (Trainium, Inferentia), logistics, and consumer infrastructure create compounding advantages that generic hyperscalers cannot replicate. The episode turns on the tension between that self-positioning and the financial reality: Amazon is visibly willing to sacrifice margin to serve frontier AI workloads, raising the question of whether this is disciplined long-cycle investing (the bull case) or structural margin compression that the market is underpricing.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [],
+      "topics": [
+        "Amazon's differentiation",
+        "NVIDIA ecosystem dominance"
+      ]
+    },
+    {
+      "id": "live-oddlots-x30t0d",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "What a Town Full of Vibecoders Says About the Chinese Economy",
+      "date": "2026-11-23T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/what-a-town-full-of-vibecoders-says-about-the-chinese-economy",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "China has not 'felt the AGI' — but is running a different race",
+          "detail": "Wong, who describes herself as having gone through 'RSI psychosis,' agrees that China has not yet internalized AGI risk the way U.S. AI labs have. But she reframes the competition: the U.S. is racing to frontier AGI; China is running a full-stack race (electricity, supply chains, diffusion) that the U.S. hasn't signed…"
+        },
+        {
+          "title": "DeepSeek R1 as a moment of national destiny ('guoyun')",
+          "detail": "Before DeepSeek, Chinese tech workers were posting on social media that 'China cannot innovate.' DeepSeek R1's arrival — trained on native Chinese texts, able to quote Tang Dynasty poetry — was received as a sign of national destiny, the term 'guoyun' used by Xi Jinping himself, reversing a collective ego-death moment…"
+        },
+        {
+          "title": "83% vs 38%: The AI optimism polling gap",
+          "detail": "Polling data shows 83% of Chinese people believe AI will benefit their lives versus only 38% of Americans. Wong argues the Chinese number partly reflects genuine historical optimism from prior tech-driven prosperity, and partly reflects the absence of any meaningful ability to say no to the technology."
+        },
+        {
+          "title": "AI education company as MLM pyramid scheme",
+          "detail": "Shengcai Youshu ('There Is an Art of Getting Rich') charges 3,000–4,000 yuan — half the average monthly Hangzhou salary — for membership, has 80,000 paying members, and uses a Dragon Ball points system to advance members from 'Voyager' to the elite 'Deep Sea Circle.' Paid members are incentivized to recruit new…"
+        }
+      ],
+      "synthesis": "The episode's central argument is that China's AI diffusion story is fundamentally different from the U.S. narrative — not a race to frontier AGI, but a state-directed push to embed AI across manufacturing, supply chains, agriculture, and everyday life, mirroring what the internet did to China 10–20 years ago. Reporter Aphra Wong documents this through three on-the-ground stories: a vibe-coding town (Liangzhu) outside Hangzhou populated by burnt-out big-tech workers building quirky apps, a pyramid-scheme-adjacent AI education company charging 3,000–4,000 yuan (half the average monthly Hangzhou salary) for classes with 80,000 paying members, and an AIGC/micro-drama industrial complex where 90% of companies are losing money and only 0.16% of content achieves hit status.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Chinese people who believe AI will benefit their lives",
+          "value": "83%",
+          "context": "Polling data cited by Aphra Wong; contrasted with the U.S. figure"
+        },
+        {
+          "metric": "American people who believe AI will benefit their lives",
+          "value": "38%",
+          "context": "Polling data cited by Aphra Wong; contrasted with the Chinese figure of 83%"
+        },
+        {
+          "metric": "China official youth unemployment rate",
+          "value": "18.9%",
+          "context": "Official figure; Wong flags it with skepticism as likely understated"
+        },
+        {
+          "metric": "AI education company Shengcai Youshu paying members",
+          "value": "80,000",
+          "context": "Total paid membership of the company branded as one of China's largest AI education providers"
+        },
+        {
+          "metric": "Shengcai Youshu membership fee",
+          "value": "3,000–4,000 yuan",
+          "context": "Described as roughly half the average monthly salary in Hangzhou"
+        }
+      ],
+      "topics": [
+        "China AI diffusion",
+        "DeepSeek R1",
+        "AIGC / micro-drama sector",
+        "AI education industry (MLM)",
+        "Chinese youth economic prospects",
+        "Liangzhu vibe-coding town"
+      ]
+    },
+    {
       "id": "live-aidaily-q7euaf",
       "podcastId": "aidaily",
       "show": "AI Daily",
