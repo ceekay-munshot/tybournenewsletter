@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T17:56:35.409Z",
+  "generatedAt": "2026-11-24T03:52:45.841Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -40,26 +40,26 @@
       "lastPeriodLabel": "Oct-26",
       "thisValue": null,
       "lastValue": null,
-      "changePct": -0.007722708703140253,
+      "changePct": -0.007058510789844153,
       "changeAbs": null,
       "direction": "down",
-      "asOf": "2026-11-22T17:12:19.309Z",
+      "asOf": "2026-11-23T21:29:27.946Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Server",
-          "thisValue": 1385.9952207392198,
+          "thisValue": 1383.5792145790556,
           "lastValue": 1386.1284240246407,
-          "changePct": 0.000528875061609075,
-          "direction": "up",
+          "changePct": -0.0012852265287647561,
+          "direction": "down",
           "bigMove": false,
           "sub": [
             {
               "label": "Intel",
-              "thisValue": 1197.223803475936,
+              "thisValue": 1194.8698729946525,
               "lastValue": 1194.9557687165775,
-              "changePct": 0.0018980072892524006,
-              "direction": "up",
+              "changePct": -0.00007188192582010344,
+              "direction": "flat",
               "bigMove": false,
               "prevValue": 1201.3436697860964,
               "prevChangePct": -0.005317296981850407,
@@ -89,18 +89,18 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 1197.223803475936,
-                  "changePct": 0.0018980072892524006,
+                  "value": 1194.8698729946525,
+                  "changePct": -0.00007188192582010344,
                   "changeAbs": null,
-                  "direction": "up"
+                  "direction": "flat"
                 }
               ]
             },
             {
               "label": "AMD",
-              "thisValue": 2010.7784955752213,
+              "thisValue": 2008.1570353982302,
               "lastValue": 2018.8591592920354,
-              "changePct": -0.004002589125458215,
+              "changePct": -0.005301075037625819,
               "direction": "down",
               "bigMove": false,
               "prevValue": 1994.8608849557522,
@@ -131,8 +131,8 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 2010.7784955752213,
-                  "changePct": -0.004002589125458215,
+                  "value": 2008.1570353982302,
+                  "changePct": -0.005301075037625819,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -167,10 +167,10 @@
             },
             {
               "label": "Nov-26",
-              "value": 1385.9952207392198,
-              "changePct": 0.000528875061609075,
+              "value": 1383.5792145790556,
+              "changePct": -0.0012852265287647561,
               "changeAbs": null,
-              "direction": "up"
+              "direction": "down"
             }
           ]
         },
@@ -304,19 +304,19 @@
         },
         {
           "label": "Desktop",
-          "thisValue": 190.03996053670085,
+          "thisValue": 190.57942383583267,
           "lastValue": 193.10263614838198,
-          "changePct": -0.015449699596967152,
+          "changePct": -0.012761321223613653,
           "direction": "down",
           "bigMove": false,
           "sub": [
             {
               "label": "Intel",
-              "thisValue": 196.02425400739827,
+              "thisValue": 196.878803945746,
               "lastValue": 200.35189889025892,
-              "changePct": -0.02160021894891593,
+              "changePct": -0.017334973932117716,
               "direction": "down",
-              "bigMove": true,
+              "bigMove": false,
               "prevValue": 201.82913686806413,
               "prevChangePct": -0.007319250335846552,
               "prevChangeAbs": null,
@@ -345,8 +345,8 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 196.02425400739827,
-                  "changePct": -0.02160021894891593,
+                  "value": 196.878803945746,
+                  "changePct": -0.017334973932117716,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -354,9 +354,9 @@
             },
             {
               "label": "AMD",
-              "thisValue": 179.39684210526318,
+              "thisValue": 179.37592105263155,
               "lastValue": 180.2097587719298,
-              "changePct": -0.004510946977602111,
+              "changePct": -0.004627039761778574,
               "direction": "down",
               "bigMove": false,
               "prevValue": 181.07734649122804,
@@ -387,8 +387,8 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 179.39684210526318,
-                  "changePct": -0.004510946977602111,
+                  "value": 179.37592105263155,
+                  "changePct": -0.004627039761778574,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -423,15 +423,15 @@
             },
             {
               "label": "Nov-26",
-              "value": 190.03996053670085,
-              "changePct": -0.015449699596967152,
+              "value": 190.57942383583267,
+              "changePct": -0.012761321223613653,
               "changeAbs": null,
               "direction": "down"
             }
           ]
         }
       ],
-      "summary": "Month-on-month CPU street price down 0.8% across server / laptop / desktop (Intel & AMD).",
+      "summary": "Month-on-month CPU street price down 0.7% across server / laptop / desktop (Intel & AMD).",
       "sourceName": "PassMark / cpubenchmark.net (street price)",
       "sourceUrl": "https://cpuprices-bzr.pages.dev/",
       "dashboardUrl": "https://cpuprices-bzr.pages.dev/",
@@ -441,16 +441,437 @@
         {
           "comparison": "WoW",
           "label": "Week",
-          "available": false,
-          "unavailableReason": "No like-for-like cohort for this window yet.",
+          "available": true,
           "thisPeriodLabel": "Nov 23-29",
           "lastPeriodLabel": "Nov 16-22",
           "thisValue": null,
           "lastValue": null,
-          "changePct": null,
+          "changePct": 0.0007004307548848898,
           "changeAbs": null,
-          "direction": "flat",
-          "breakdown": []
+          "direction": "up",
+          "bigMove": false,
+          "breakdown": [
+            {
+              "label": "Server",
+              "thisValue": 1392.6207617586913,
+              "lastValue": 1395.0268865030675,
+              "changePct": -0.001790097934397777,
+              "direction": "down",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 1207.1100732356856,
+                  "lastValue": 1209.454600532623,
+                  "changePct": -0.0019384996310774785,
+                  "direction": "down",
+                  "bigMove": false,
+                  "prevValue": 1207.2832023968042,
+                  "prevChangePct": 0.001798582247734451,
+                  "prevChangeAbs": null,
+                  "prevDirection": "up",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 1193.5985494652407,
+                      "changePct": -0.0011357903671988096,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 1199.0822466666666,
+                      "changePct": 0.0012034435941104277,
+                      "changeAbs": null,
+                      "direction": "up"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 1209.454600532623,
+                      "changePct": 0.001798582247734451,
+                      "changeAbs": null,
+                      "direction": "up"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 1207.1100732356856,
+                      "changePct": -0.0019384996310774785,
+                      "changeAbs": null,
+                      "direction": "down"
+                    }
+                  ]
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 2006.3587665198238,
+                  "lastValue": 2008.968678414097,
+                  "changePct": -0.0012991302066160336,
+                  "direction": "down",
+                  "bigMove": false,
+                  "prevValue": 2024.5522907488987,
+                  "prevChangePct": -0.007697312836033178,
+                  "prevChangeAbs": null,
+                  "prevDirection": "down",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 2017.6474778761062,
+                      "changePct": -0.00060018125105565,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 2024.5522907488987,
+                      "changePct": 0.004338157437074292,
+                      "changeAbs": null,
+                      "direction": "up"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 2008.968678414097,
+                      "changePct": -0.007697312836033178,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 2006.3587665198238,
+                      "changePct": -0.0012991302066160336,
+                      "changeAbs": null,
+                      "direction": "down"
+                    }
+                  ]
+                }
+              ],
+              "prevValue": 1396.9765388548058,
+              "prevChangePct": -0.0004054752001339045,
+              "prevChangeAbs": null,
+              "prevDirection": "flat",
+              "series": [
+                {
+                  "label": "Nov 2-8",
+                  "value": 1384.804974332649,
+                  "changePct": -0.0010115114552395137,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Nov 9-15",
+                  "value": 1390.8751842374616,
+                  "changePct": 0.0019317752648911823,
+                  "changeAbs": null,
+                  "direction": "up"
+                },
+                {
+                  "label": "Nov 16-22",
+                  "value": 1395.0268865030675,
+                  "changePct": -0.0004054752001339045,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Nov 23-29",
+                  "value": 1392.6207617586913,
+                  "changePct": -0.001790097934397777,
+                  "changeAbs": null,
+                  "direction": "down"
+                }
+              ]
+            },
+            {
+              "label": "Laptop",
+              "thisValue": 351.5911013215859,
+              "lastValue": 351.5911013215859,
+              "changePct": 0,
+              "direction": "flat",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 395.4417171717172,
+                  "lastValue": 395.4417171717172,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false,
+                  "prevValue": 395.4417171717172,
+                  "prevChangePct": 0,
+                  "prevChangeAbs": null,
+                  "prevDirection": "flat",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 395.4417171717172,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 395.4417171717172,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 395.4417171717172,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 395.4417171717172,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    }
+                  ]
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 52.19724137931034,
+                  "lastValue": 52.19724137931034,
+                  "changePct": 0,
+                  "direction": "flat",
+                  "bigMove": false,
+                  "prevValue": 52.19724137931034,
+                  "prevChangePct": 0,
+                  "prevChangeAbs": null,
+                  "prevDirection": "flat",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 52.19724137931034,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 52.19724137931034,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 52.19724137931034,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 52.19724137931034,
+                      "changePct": 0,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    }
+                  ]
+                }
+              ],
+              "prevValue": 351.5911013215859,
+              "prevChangePct": 0,
+              "prevChangeAbs": null,
+              "prevDirection": "flat",
+              "series": [
+                {
+                  "label": "Nov 2-8",
+                  "value": 351.5911013215859,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Nov 9-15",
+                  "value": 351.5911013215859,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Nov 16-22",
+                  "value": 351.5911013215859,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Nov 23-29",
+                  "value": 351.5911013215859,
+                  "changePct": 0,
+                  "changeAbs": null,
+                  "direction": "flat"
+                }
+              ]
+            },
+            {
+              "label": "Desktop",
+              "thisValue": 190.56318611987382,
+              "lastValue": 190.0241482649842,
+              "changePct": 0.002746751606207696,
+              "direction": "up",
+              "bigMove": false,
+              "sub": [
+                {
+                  "label": "Intel",
+                  "thisValue": 196.84568965517244,
+                  "lastValue": 195.9921921182266,
+                  "changePct": 0.0043547527466348546,
+                  "direction": "up",
+                  "bigMove": false,
+                  "prevValue": 197.4747906403941,
+                  "prevChangePct": -0.007507786271652994,
+                  "prevChangeAbs": null,
+                  "prevDirection": "down",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 200.03891491985203,
+                      "changePct": -0.001562171220440136,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 197.5086806411837,
+                      "changePct": -0.012648710275608576,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 195.9921921182266,
+                      "changePct": -0.007507786271652994,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 196.84568965517244,
+                      "changePct": 0.0043547527466348546,
+                      "changeAbs": null,
+                      "direction": "up"
+                    }
+                  ]
+                },
+                {
+                  "label": "AMD",
+                  "thisValue": 179.37592105263155,
+                  "lastValue": 179.39684210526318,
+                  "changePct": -0.00011661884560557791,
+                  "direction": "flat",
+                  "bigMove": false,
+                  "prevValue": 179.64894736842106,
+                  "prevChangePct": -0.0014033216829313628,
+                  "prevChangeAbs": null,
+                  "prevDirection": "down",
+                  "series": [
+                    {
+                      "label": "Nov 2-8",
+                      "value": 180.84605263157894,
+                      "changePct": 0.0035308512923232093,
+                      "changeAbs": null,
+                      "direction": "up"
+                    },
+                    {
+                      "label": "Nov 9-15",
+                      "value": 179.64894736842106,
+                      "changePct": -0.006619471344484454,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 16-22",
+                      "value": 179.39684210526318,
+                      "changePct": -0.0014033216829313628,
+                      "changeAbs": null,
+                      "direction": "down"
+                    },
+                    {
+                      "label": "Nov 23-29",
+                      "value": 179.37592105263155,
+                      "changePct": -0.00011661884560557791,
+                      "changeAbs": null,
+                      "direction": "flat"
+                    }
+                  ]
+                }
+              ],
+              "prevValue": 191.06423501577285,
+              "prevChangePct": -0.005312489858043322,
+              "prevChangeAbs": null,
+              "prevDirection": "down",
+              "series": [
+                {
+                  "label": "Nov 2-8",
+                  "value": 193.13130228887132,
+                  "changePct": 0.0002708345142244933,
+                  "changeAbs": null,
+                  "direction": "flat"
+                },
+                {
+                  "label": "Nov 9-15",
+                  "value": 191.08086819258088,
+                  "changePct": -0.010478755301186636,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Nov 16-22",
+                  "value": 190.0241482649842,
+                  "changePct": -0.005312489858043322,
+                  "changeAbs": null,
+                  "direction": "down"
+                },
+                {
+                  "label": "Nov 23-29",
+                  "value": 190.56318611987382,
+                  "changePct": 0.002746751606207696,
+                  "changeAbs": null,
+                  "direction": "up"
+                }
+              ]
+            }
+          ],
+          "summary": "Week-on-week CPU street price up 0.1% across server / laptop / desktop (Intel & AMD).",
+          "prevLabel": "Nov 9-15",
+          "prevValue": null,
+          "prevChangePct": -0.002884266836122075,
+          "prevChangeAbs": null,
+          "prevDirection": "down",
+          "series": [
+            {
+              "label": "Nov 2-8",
+              "value": null,
+              "changePct": -0.0002601559270181739,
+              "changeAbs": null,
+              "direction": "flat"
+            },
+            {
+              "label": "Nov 9-15",
+              "value": null,
+              "changePct": -0.00460916168871096,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Nov 16-22",
+              "value": null,
+              "changePct": -0.002884266836122075,
+              "changeAbs": null,
+              "direction": "down"
+            },
+            {
+              "label": "Nov 23-29",
+              "value": null,
+              "changePct": 0.0007004307548848898,
+              "changeAbs": null,
+              "direction": "up"
+            }
+          ]
         },
         {
           "comparison": "MoM",
@@ -460,25 +881,25 @@
           "lastPeriodLabel": "Oct-26",
           "thisValue": null,
           "lastValue": null,
-          "changePct": -0.007722708703140253,
+          "changePct": -0.007058510789844153,
           "changeAbs": null,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
             {
               "label": "Server",
-              "thisValue": 1385.9952207392198,
+              "thisValue": 1383.5792145790556,
               "lastValue": 1386.1284240246407,
-              "changePct": 0.000528875061609075,
-              "direction": "up",
+              "changePct": -0.0012852265287647561,
+              "direction": "down",
               "bigMove": false,
               "sub": [
                 {
                   "label": "Intel",
-                  "thisValue": 1197.223803475936,
+                  "thisValue": 1194.8698729946525,
                   "lastValue": 1194.9557687165775,
-                  "changePct": 0.0018980072892524006,
-                  "direction": "up",
+                  "changePct": -0.00007188192582010344,
+                  "direction": "flat",
                   "bigMove": false,
                   "prevValue": 1201.3436697860964,
                   "prevChangePct": -0.005317296981850407,
@@ -508,18 +929,18 @@
                     },
                     {
                       "label": "Nov-26",
-                      "value": 1197.223803475936,
-                      "changePct": 0.0018980072892524006,
+                      "value": 1194.8698729946525,
+                      "changePct": -0.00007188192582010344,
                       "changeAbs": null,
-                      "direction": "up"
+                      "direction": "flat"
                     }
                   ]
                 },
                 {
                   "label": "AMD",
-                  "thisValue": 2010.7784955752213,
+                  "thisValue": 2008.1570353982302,
                   "lastValue": 2018.8591592920354,
-                  "changePct": -0.004002589125458215,
+                  "changePct": -0.005301075037625819,
                   "direction": "down",
                   "bigMove": false,
                   "prevValue": 1994.8608849557522,
@@ -550,8 +971,8 @@
                     },
                     {
                       "label": "Nov-26",
-                      "value": 2010.7784955752213,
-                      "changePct": -0.004002589125458215,
+                      "value": 2008.1570353982302,
+                      "changePct": -0.005301075037625819,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -586,10 +1007,10 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 1385.9952207392198,
-                  "changePct": 0.000528875061609075,
+                  "value": 1383.5792145790556,
+                  "changePct": -0.0012852265287647561,
                   "changeAbs": null,
-                  "direction": "up"
+                  "direction": "down"
                 }
               ]
             },
@@ -723,19 +1144,19 @@
             },
             {
               "label": "Desktop",
-              "thisValue": 190.03996053670085,
+              "thisValue": 190.57942383583267,
               "lastValue": 193.10263614838198,
-              "changePct": -0.015449699596967152,
+              "changePct": -0.012761321223613653,
               "direction": "down",
               "bigMove": false,
               "sub": [
                 {
                   "label": "Intel",
-                  "thisValue": 196.02425400739827,
+                  "thisValue": 196.878803945746,
                   "lastValue": 200.35189889025892,
-                  "changePct": -0.02160021894891593,
+                  "changePct": -0.017334973932117716,
                   "direction": "down",
-                  "bigMove": true,
+                  "bigMove": false,
                   "prevValue": 201.82913686806413,
                   "prevChangePct": -0.007319250335846552,
                   "prevChangeAbs": null,
@@ -764,8 +1185,8 @@
                     },
                     {
                       "label": "Nov-26",
-                      "value": 196.02425400739827,
-                      "changePct": -0.02160021894891593,
+                      "value": 196.878803945746,
+                      "changePct": -0.017334973932117716,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -773,9 +1194,9 @@
                 },
                 {
                   "label": "AMD",
-                  "thisValue": 179.39684210526318,
+                  "thisValue": 179.37592105263155,
                   "lastValue": 180.2097587719298,
-                  "changePct": -0.004510946977602111,
+                  "changePct": -0.004627039761778574,
                   "direction": "down",
                   "bigMove": false,
                   "prevValue": 181.07734649122804,
@@ -806,8 +1227,8 @@
                     },
                     {
                       "label": "Nov-26",
-                      "value": 179.39684210526318,
-                      "changePct": -0.004510946977602111,
+                      "value": 179.37592105263155,
+                      "changePct": -0.004627039761778574,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -842,15 +1263,15 @@
                 },
                 {
                   "label": "Nov-26",
-                  "value": 190.03996053670085,
-                  "changePct": -0.015449699596967152,
+                  "value": 190.57942383583267,
+                  "changePct": -0.012761321223613653,
                   "changeAbs": null,
                   "direction": "down"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month CPU street price down 0.8% across server / laptop / desktop (Intel & AMD).",
+          "summary": "Month-on-month CPU street price down 0.7% across server / laptop / desktop (Intel & AMD).",
           "prevLabel": "Sep-26",
           "prevValue": null,
           "prevChangePct": -0.003800353038139112,
@@ -881,7 +1302,7 @@
             {
               "label": "Nov-26",
               "value": null,
-              "changePct": -0.007722708703140253,
+              "changePct": -0.007058510789844153,
               "changeAbs": null,
               "direction": "down"
             }
@@ -895,24 +1316,24 @@
           "lastPeriodLabel": "Q3-26",
           "thisValue": null,
           "lastValue": null,
-          "changePct": -0.011474584694681766,
+          "changePct": -0.010818798399966223,
           "changeAbs": null,
           "direction": "down",
           "bigMove": false,
           "breakdown": [
             {
               "label": "Server",
-              "thisValue": 1385.9952207392198,
+              "thisValue": 1383.5792145790556,
               "lastValue": 1385.4657340862423,
-              "changePct": -0.0007821909268562394,
+              "changePct": -0.0025918730063647314,
               "direction": "down",
               "bigMove": false,
               "sub": [
                 {
                   "label": "Intel",
-                  "thisValue": 1197.223803475936,
+                  "thisValue": 1194.8698729946525,
                   "lastValue": 1201.3436697860964,
-                  "changePct": -0.003429381961028679,
+                  "changePct": -0.005388796690123298,
                   "direction": "down",
                   "bigMove": false,
                   "prevValue": null,
@@ -929,8 +1350,8 @@
                     },
                     {
                       "label": "Q4-26",
-                      "value": 1197.223803475936,
-                      "changePct": -0.003429381961028679,
+                      "value": 1194.8698729946525,
+                      "changePct": -0.005388796690123298,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -938,9 +1359,9 @@
                 },
                 {
                   "label": "AMD",
-                  "thisValue": 2010.7784955752213,
+                  "thisValue": 2008.1570353982302,
                   "lastValue": 1994.8608849557522,
-                  "changePct": 0.007979308602174665,
+                  "changePct": 0.006665201840765391,
                   "direction": "up",
                   "bigMove": false,
                   "prevValue": 2012.8744888888891,
@@ -957,8 +1378,8 @@
                     },
                     {
                       "label": "Q4-26",
-                      "value": 2010.7784955752213,
-                      "changePct": 0.007979308602174665,
+                      "value": 2008.1570353982302,
+                      "changePct": 0.006665201840765391,
                       "changeAbs": null,
                       "direction": "up"
                     }
@@ -979,8 +1400,8 @@
                 },
                 {
                   "label": "Q4-26",
-                  "value": 1385.9952207392198,
-                  "changePct": -0.0007821909268562394,
+                  "value": 1383.5792145790556,
+                  "changePct": -0.0025918730063647314,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -1074,17 +1495,17 @@
             },
             {
               "label": "Desktop",
-              "thisValue": 190.03996053670085,
+              "thisValue": 190.57942383583267,
               "lastValue": 194.36045777426992,
-              "changePct": -0.021750135014772392,
+              "changePct": -0.019081539181465972,
               "direction": "down",
-              "bigMove": true,
+              "bigMove": false,
               "sub": [
                 {
                   "label": "Intel",
-                  "thisValue": 196.02425400739827,
+                  "thisValue": 196.878803945746,
                   "lastValue": 201.82913686806413,
-                  "changePct": -0.02876137187496627,
+                  "changePct": -0.024527345254189724,
                   "direction": "down",
                   "bigMove": true,
                   "prevValue": 205.60915737298637,
@@ -1101,8 +1522,8 @@
                     },
                     {
                       "label": "Q4-26",
-                      "value": 196.02425400739827,
-                      "changePct": -0.02876137187496627,
+                      "value": 196.878803945746,
+                      "changePct": -0.024527345254189724,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -1110,9 +1531,9 @@
                 },
                 {
                   "label": "AMD",
-                  "thisValue": 179.39684210526318,
+                  "thisValue": 179.37592105263155,
                   "lastValue": 181.07734649122804,
-                  "changePct": -0.00928058875683986,
+                  "changePct": -0.009396125310898075,
                   "direction": "down",
                   "bigMove": false,
                   "prevValue": 179.61559734513273,
@@ -1129,8 +1550,8 @@
                     },
                     {
                       "label": "Q4-26",
-                      "value": 179.39684210526318,
-                      "changePct": -0.00928058875683986,
+                      "value": 179.37592105263155,
+                      "changePct": -0.009396125310898075,
                       "changeAbs": null,
                       "direction": "down"
                     }
@@ -1151,15 +1572,15 @@
                 },
                 {
                   "label": "Q4-26",
-                  "value": 190.03996053670085,
-                  "changePct": -0.021750135014772392,
+                  "value": 190.57942383583267,
+                  "changePct": -0.019081539181465972,
                   "changeAbs": null,
                   "direction": "down"
                 }
               ]
             }
           ],
-          "summary": "Quarter-on-quarter CPU street price down 1.1% across server / laptop / desktop (Intel & AMD); 1 segment moved more than 2%.",
+          "summary": "Quarter-on-quarter CPU street price down 1.1% across server / laptop / desktop (Intel & AMD).",
           "prevLabel": "Q2-26",
           "prevValue": null,
           "prevChangePct": -0.0038936152163718215,
@@ -1176,7 +1597,7 @@
             {
               "label": "Q4-26",
               "value": null,
-              "changePct": -0.011474584694681766,
+              "changePct": -0.010818798399966223,
               "changeAbs": null,
               "direction": "down"
             }
@@ -1216,7 +1637,7 @@
         {
           "label": "Nov-26",
           "value": null,
-          "changePct": -0.007722708703140253,
+          "changePct": -0.007058510789844153,
           "changeAbs": null,
           "direction": "down"
         }
@@ -2423,7 +2844,7 @@
       "changePct": -0.0448979591836736,
       "changeAbs": -0.11000000000000032,
       "direction": "down",
-      "asOf": "2026-11-21T00:00:00.000Z",
+      "asOf": "2026-11-22T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -2721,7 +3142,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-16.3% input · share +12.95pp"
+          "body": "-16.3% input · share +13.08pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -13745,7 +14166,7 @@
       "changePct": -0.02097063983229135,
       "changeAbs": -53610,
       "direction": "down",
-      "asOf": "2026-11-19",
+      "asOf": "2026-11-22",
       "isStale": false,
       "breakdown": [
         {
@@ -13832,16 +14253,16 @@
           "comparison": "WoW",
           "label": "Week",
           "available": true,
-          "thisPeriodLabel": "wk to 19 Nov",
+          "thisPeriodLabel": "wk to 22 Nov",
           "lastPeriodLabel": "yr earlier",
-          "thisValue": 2327172,
-          "lastValue": 2241640,
-          "changePct": 0.038155860612783324,
+          "thisValue": 2455750,
+          "lastValue": 2374536,
+          "changePct": 0.03420205042164027,
           "direction": "up",
           "bigMove": true,
-          "prevLabel": "wk to 12 Nov",
-          "prevValue": null,
-          "prevChangePct": 0.013765449715165521,
+          "prevLabel": "wk to 15 Nov",
+          "prevValue": 2317821,
+          "prevChangePct": 0.018301088089857313,
           "prevDirection": "up",
           "breakdown": [
             {
@@ -13917,7 +14338,7 @@
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput up 3.8% year-on-year (wk to 19 Nov vs yr earlier), running at 2.33M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput up 3.4% year-on-year (wk to 22 Nov vs yr earlier), running at 2.46M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -14108,7 +14529,7 @@
       "insights": [
         {
           "title": "US demand: current and roughly flat",
-          "body": "TSA checkpoint throughput is tracked daily and is current to Nov '26 19. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
+          "body": "TSA checkpoint throughput is tracked daily and is current to Nov '26 22. On a year-on-year basis it is running close to flat — the month-to-month swings you see in raw counts are seasonal (summer peak, autumn dip), which is why this dashboard reads demand year-on-year."
         },
         {
           "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
@@ -14123,7 +14544,7 @@
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to Nov '26 19. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to Nov '26 22. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Sep '26",
@@ -14823,22 +15244,22 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Nov '26",
       "lastPeriodLabel": "Oct '26",
-      "thisValue": 762764039808204,
+      "thisValue": 776571979074640,
       "lastValue": 717266319430781,
-      "changePct": 0.063432116000553,
-      "changeAbs": 45497720377423,
+      "changePct": 0.0826829003917592,
+      "changeAbs": 59305659643859,
       "direction": "up",
-      "asOf": "2026-11-23T17:56:15.228Z",
+      "asOf": "2026-11-24T03:52:29.074Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "DeepSeek",
-          "thisValue": 259971835347720,
+          "thisValue": 265592209317309,
           "lastValue": 229645100419770,
-          "changePct": 0.13205914200875846,
+          "changePct": 0.1565333152409131,
           "direction": "up",
           "bigMove": true,
-          "note": "share 32.0% → 34.1% (+2.1pp)",
+          "note": "share 32.0% → 34.2% (+2.2pp)",
           "prevValue": 127446809949762,
           "prevChangePct": 0.8018897492239573,
           "prevChangeAbs": null,
@@ -14867,8 +15288,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 259971835347720,
-              "changePct": 0.13205914200875846,
+              "value": 265592209317309,
+              "changePct": 0.1565333152409131,
               "changeAbs": null,
               "direction": "up"
             }
@@ -14876,12 +15297,12 @@
         },
         {
           "label": "Tencent",
-          "thisValue": 159935025261314,
+          "thisValue": 161822896512077,
           "lastValue": 45633262746016,
-          "changePct": 2.504790489154254,
+          "changePct": 2.5461609969189616,
           "direction": "up",
           "bigMove": true,
-          "note": "share 6.4% → 21.0% (+14.6pp)",
+          "note": "share 6.4% → 20.8% (+14.5pp)",
           "prevValue": 58737069102417,
           "prevChangePct": -0.2230926152197435,
           "prevChangeAbs": null,
@@ -14910,8 +15331,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 159935025261314,
-              "changePct": 2.504790489154254,
+              "value": 161822896512077,
+              "changePct": 2.5461609969189616,
               "changeAbs": null,
               "direction": "up"
             }
@@ -14919,9 +15340,9 @@
         },
         {
           "label": "Others",
-          "thisValue": 124295290305480,
+          "thisValue": 126533855228531,
           "lastValue": 153444869390579,
-          "changePct": -0.1899677662789857,
+          "changePct": -0.17537904179480013,
           "direction": "down",
           "bigMove": true,
           "note": "share 21.4% → 16.3% (-5.1pp)",
@@ -14949,8 +15370,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 124295290305480,
-              "changePct": -0.1899677662789857,
+              "value": 126533855228531,
+              "changePct": -0.17537904179480013,
               "changeAbs": null,
               "direction": "down"
             }
@@ -14958,9 +15379,9 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 56101404822010,
+          "thisValue": 57125420971362,
           "lastValue": 70800718345373,
-          "changePct": -0.2076153161562327,
+          "changePct": -0.19315195796886592,
           "direction": "down",
           "bigMove": true,
           "note": "share 9.9% → 7.4% (-2.5pp)",
@@ -14992,8 +15413,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 56101404822010,
-              "changePct": -0.2076153161562327,
+              "value": 57125420971362,
+              "changePct": -0.19315195796886592,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15001,12 +15422,12 @@
         },
         {
           "label": "Z.ai",
-          "thisValue": 53931585515930,
+          "thisValue": 55113370071945,
           "lastValue": 76929537729015,
-          "changePct": -0.29894826996225426,
+          "changePct": -0.2835863609881246,
           "direction": "down",
           "bigMove": true,
-          "note": "share 10.7% → 7.1% (-3.7pp)",
+          "note": "share 10.7% → 7.1% (-3.6pp)",
           "prevValue": 70877490624609,
           "prevChangePct": 0.08538743472818013,
           "prevChangeAbs": null,
@@ -15035,8 +15456,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 53931585515930,
-              "changePct": -0.29894826996225426,
+              "value": 55113370071945,
+              "changePct": -0.2835863609881246,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15044,12 +15465,12 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 44561907982962,
+          "thisValue": 45452801260437,
           "lastValue": 55398285233125,
-          "changePct": -0.19560853200711467,
+          "changePct": -0.17952692815013652,
           "direction": "down",
           "bigMove": true,
-          "note": "share 7.7% → 5.8% (-1.9pp)",
+          "note": "share 7.7% → 5.9% (-1.9pp)",
           "prevValue": 21183787611475,
           "prevChangePct": 1.615126541540495,
           "prevChangeAbs": null,
@@ -15078,8 +15499,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 44561907982962,
-              "changePct": -0.19560853200711467,
+              "value": 45452801260437,
+              "changePct": -0.17952692815013652,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15087,9 +15508,9 @@
         },
         {
           "label": "Nvidia",
-          "thisValue": 25940588267938,
+          "thisValue": 26365612015307,
           "lastValue": 31581391459273,
-          "changePct": -0.17861161053050228,
+          "changePct": -0.16515356679873366,
           "direction": "down",
           "bigMove": false,
           "note": "share 4.4% → 3.4% (-1.0pp)",
@@ -15121,8 +15542,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 25940588267938,
-              "changePct": -0.17861161053050228,
+              "value": 26365612015307,
+              "changePct": -0.16515356679873366,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15130,9 +15551,9 @@
         },
         {
           "label": "Google (Gemini)",
-          "thisValue": 24190166806147,
+          "thisValue": 24729578198969,
           "lastValue": 26611382237249,
-          "changePct": -0.09098420403405162,
+          "changePct": -0.07071425382954985,
           "direction": "down",
           "bigMove": false,
           "note": "share 3.7% → 3.2% (-0.5pp)",
@@ -15164,8 +15585,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 24190166806147,
-              "changePct": -0.09098420403405162,
+              "value": 24729578198969,
+              "changePct": -0.07071425382954985,
               "changeAbs": null,
               "direction": "down"
             }
@@ -15211,7 +15632,7 @@
           ]
         }
       ],
-      "summary": "Month-on-month routed tokens up 6.3% to 762.8T (Oct '26 → Nov '26) — 2 providers grew volume, 6 shrank, and share shifted toward lower-cost open-weight models.",
+      "summary": "Month-on-month routed tokens up 8.3% to 776.6T (Oct '26 → Nov '26) — 2 providers grew volume, 6 shrank, and share shifted toward lower-cost open-weight models.",
       "sourceName": "OpenRouter / UBS / SEC",
       "sourceUrl": "https://google-dash-git.pages.dev/",
       "dashboardUrl": "https://google-dash-git.pages.dev/",
@@ -15224,9 +15645,9 @@
           "available": true,
           "thisPeriodLabel": "wk 16 Nov",
           "lastPeriodLabel": "wk 9 Nov",
-          "thisValue": 314875939951951,
+          "thisValue": 314875955922339,
           "lastValue": 211280142506486,
-          "changePct": 0.4903243448081485,
+          "changePct": 0.4903244203968329,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
@@ -15275,9 +15696,9 @@
             },
             {
               "label": "DeepSeek",
-              "thisValue": 86735075424597,
+              "thisValue": 86735091378114,
               "lastValue": 81999118531416,
-              "changePct": 0.0577561927250051,
+              "changePct": 0.05775638728218189,
               "direction": "up",
               "bigMove": true,
               "note": "share 38.8% → 27.5% (-11.3pp)",
@@ -15309,8 +15730,8 @@
                 },
                 {
                   "label": "wk 16 Nov",
-                  "value": 86735075424597,
-                  "changePct": 0.0577561927250051,
+                  "value": 86735091378114,
+                  "changePct": 0.05775638728218189,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -15443,9 +15864,9 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 14656626447148,
+              "thisValue": 14656626464019,
               "lastValue": 14718480023333,
-              "changePct": -0.004202443192975388,
+              "changePct": -0.00420244204672931,
               "direction": "down",
               "bigMove": true,
               "note": "share 7.0% → 4.7% (-2.3pp)",
@@ -15477,8 +15898,8 @@
                 },
                 {
                   "label": "wk 16 Nov",
-                  "value": 14656626447148,
-                  "changePct": -0.004202443192975388,
+                  "value": 14656626464019,
+                  "changePct": -0.00420244204672931,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15600,8 +16021,8 @@
             },
             {
               "label": "wk 16 Nov",
-              "value": 314875939951951,
-              "changePct": 0.4903243448081485,
+              "value": 314875955922339,
+              "changePct": 0.4903244203968329,
               "changeAbs": null,
               "direction": "up"
             }
@@ -15613,20 +16034,20 @@
           "available": true,
           "thisPeriodLabel": "Nov '26",
           "lastPeriodLabel": "Oct '26",
-          "thisValue": 762764039808204,
+          "thisValue": 776571979074640,
           "lastValue": 717266319430781,
-          "changePct": 0.063432116000553,
+          "changePct": 0.0826829003917592,
           "direction": "up",
           "bigMove": false,
           "breakdown": [
             {
               "label": "DeepSeek",
-              "thisValue": 259971835347720,
+              "thisValue": 265592209317309,
               "lastValue": 229645100419770,
-              "changePct": 0.13205914200875846,
+              "changePct": 0.1565333152409131,
               "direction": "up",
               "bigMove": true,
-              "note": "share 32.0% → 34.1% (+2.1pp)",
+              "note": "share 32.0% → 34.2% (+2.2pp)",
               "prevValue": 127446809949762,
               "prevChangePct": 0.8018897492239573,
               "prevChangeAbs": null,
@@ -15655,8 +16076,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 259971835347720,
-                  "changePct": 0.13205914200875846,
+                  "value": 265592209317309,
+                  "changePct": 0.1565333152409131,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -15664,12 +16085,12 @@
             },
             {
               "label": "Tencent",
-              "thisValue": 159935025261314,
+              "thisValue": 161822896512077,
               "lastValue": 45633262746016,
-              "changePct": 2.504790489154254,
+              "changePct": 2.5461609969189616,
               "direction": "up",
               "bigMove": true,
-              "note": "share 6.4% → 21.0% (+14.6pp)",
+              "note": "share 6.4% → 20.8% (+14.5pp)",
               "prevValue": 58737069102417,
               "prevChangePct": -0.2230926152197435,
               "prevChangeAbs": null,
@@ -15698,8 +16119,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 159935025261314,
-                  "changePct": 2.504790489154254,
+                  "value": 161822896512077,
+                  "changePct": 2.5461609969189616,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -15707,9 +16128,9 @@
             },
             {
               "label": "Others",
-              "thisValue": 124295290305480,
+              "thisValue": 126533855228531,
               "lastValue": 153444869390579,
-              "changePct": -0.1899677662789857,
+              "changePct": -0.17537904179480013,
               "direction": "down",
               "bigMove": true,
               "note": "share 21.4% → 16.3% (-5.1pp)",
@@ -15737,8 +16158,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 124295290305480,
-                  "changePct": -0.1899677662789857,
+                  "value": 126533855228531,
+                  "changePct": -0.17537904179480013,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15746,9 +16167,9 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 56101404822010,
+              "thisValue": 57125420971362,
               "lastValue": 70800718345373,
-              "changePct": -0.2076153161562327,
+              "changePct": -0.19315195796886592,
               "direction": "down",
               "bigMove": true,
               "note": "share 9.9% → 7.4% (-2.5pp)",
@@ -15780,8 +16201,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 56101404822010,
-                  "changePct": -0.2076153161562327,
+                  "value": 57125420971362,
+                  "changePct": -0.19315195796886592,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15789,12 +16210,12 @@
             },
             {
               "label": "Z.ai",
-              "thisValue": 53931585515930,
+              "thisValue": 55113370071945,
               "lastValue": 76929537729015,
-              "changePct": -0.29894826996225426,
+              "changePct": -0.2835863609881246,
               "direction": "down",
               "bigMove": true,
-              "note": "share 10.7% → 7.1% (-3.7pp)",
+              "note": "share 10.7% → 7.1% (-3.6pp)",
               "prevValue": 70877490624609,
               "prevChangePct": 0.08538743472818013,
               "prevChangeAbs": null,
@@ -15823,8 +16244,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 53931585515930,
-                  "changePct": -0.29894826996225426,
+                  "value": 55113370071945,
+                  "changePct": -0.2835863609881246,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15832,12 +16253,12 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 44561907982962,
+              "thisValue": 45452801260437,
               "lastValue": 55398285233125,
-              "changePct": -0.19560853200711467,
+              "changePct": -0.17952692815013652,
               "direction": "down",
               "bigMove": true,
-              "note": "share 7.7% → 5.8% (-1.9pp)",
+              "note": "share 7.7% → 5.9% (-1.9pp)",
               "prevValue": 21183787611475,
               "prevChangePct": 1.615126541540495,
               "prevChangeAbs": null,
@@ -15866,8 +16287,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 44561907982962,
-                  "changePct": -0.19560853200711467,
+                  "value": 45452801260437,
+                  "changePct": -0.17952692815013652,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15875,9 +16296,9 @@
             },
             {
               "label": "Nvidia",
-              "thisValue": 25940588267938,
+              "thisValue": 26365612015307,
               "lastValue": 31581391459273,
-              "changePct": -0.17861161053050228,
+              "changePct": -0.16515356679873366,
               "direction": "down",
               "bigMove": false,
               "note": "share 4.4% → 3.4% (-1.0pp)",
@@ -15909,8 +16330,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 25940588267938,
-                  "changePct": -0.17861161053050228,
+                  "value": 26365612015307,
+                  "changePct": -0.16515356679873366,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15918,9 +16339,9 @@
             },
             {
               "label": "Google (Gemini)",
-              "thisValue": 24190166806147,
+              "thisValue": 24729578198969,
               "lastValue": 26611382237249,
-              "changePct": -0.09098420403405162,
+              "changePct": -0.07071425382954985,
               "direction": "down",
               "bigMove": false,
               "note": "share 3.7% → 3.2% (-0.5pp)",
@@ -15952,8 +16373,8 @@
                 },
                 {
                   "label": "Nov '26",
-                  "value": 24190166806147,
-                  "changePct": -0.09098420403405162,
+                  "value": 24729578198969,
+                  "changePct": -0.07071425382954985,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -15999,7 +16420,7 @@
               ]
             }
           ],
-          "summary": "Month-on-month routed tokens up 6.3% to 762.8T (Oct '26 → Nov '26) — 2 providers grew volume, 6 shrank, and share shifted toward lower-cost open-weight models.",
+          "summary": "Month-on-month routed tokens up 8.3% to 776.6T (Oct '26 → Nov '26) — 2 providers grew volume, 6 shrank, and share shifted toward lower-cost open-weight models.",
           "prevLabel": "Sep '26",
           "prevValue": 567350401100761,
           "prevChangePct": 0.26423867514530064,
@@ -16028,8 +16449,8 @@
             },
             {
               "label": "Nov '26",
-              "value": 762764039808204,
-              "changePct": 0.063432116000553,
+              "value": 776571979074640,
+              "changePct": 0.0826829003917592,
               "changeAbs": null,
               "direction": "up"
             }
@@ -16363,18 +16784,17 @@
       "insights": [
         {
           "title": "The market is the story, not any one model",
-          "body": "Total routed tokens reached 762.8T (+6% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — Tencent (+14.6pp), DeepSeek (+2.1pp) gained, while Z.ai (-3.7pp), OpenAI (-2.5pp), StepFun (-2.0pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
+          "body": "Total routed tokens reached 776.6T (+8% month-on-month). As the pie grew, share moved toward lower-cost and open-weight models — Tencent (+14.5pp), DeepSeek (+2.2pp) gained, while Z.ai (-3.6pp), OpenAI (-2.5pp), StepFun (-2.0pp) gave up ground. A falling share here can sit on top of flat or only slightly lower volume."
         },
         {
           "title": "Gemini in context — it didn’t go to zero",
           "body": "OpenRouter measures one slice (developer API routing, cost-sensitive). On the slices that track Google’s actual business, Gemini is strong — the share drop here is a routing story, not a collapse.",
           "bullets": [
-            "OpenRouter developer tokens: Google share 3.7% → 3.2% (-0.5pp), 24.2T routed — down, but far from gone.",
-            "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #16 by tokens.",
-            "Consumer app downloads (UBS): Gemini 16.0% — #2 behind ChatGPT 39.7% and ahead of Claude 14.9%.",
+            "OpenRouter developer tokens: Google share 3.7% → 3.2% (-0.5pp), 24.7T routed — down, but far from gone.",
+            "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #17 by tokens.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-23T17:56:15.289Z"
+          "asOf": "2026-11-24T03:52:29.150Z"
         }
       ],
       "prevLabel": "Sep '26",
@@ -16406,8 +16826,8 @@
         },
         {
           "label": "Nov '26",
-          "value": 762764039808204,
-          "changePct": 0.063432116000553,
+          "value": 776571979074640,
+          "changePct": 0.0826829003917592,
           "changeAbs": null,
           "direction": "up"
         }
@@ -20740,7 +21160,7 @@
       "changePct": null,
       "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-23T11:00:00.000Z",
+      "asOf": "2026-11-23T18:23:30.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -20751,14 +21171,14 @@
           "direction": "flat"
         },
         {
-          "label": "Odd Lots",
+          "label": "AI Daily",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
         },
         {
-          "label": "AI Daily",
+          "label": "Odd Lots",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -20815,6 +21235,7 @@
         }
       ],
       "highlights": [
+        "~$1 trillion in market cap added in a single pre-market session",
         "Amazon claims structural differentiation from other compute providers",
         "China has not 'felt the AGI' — but is running a different race",
         "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists",
@@ -20823,8 +21244,7 @@
         "Jensen Huang's departure framed as civilisational turning point",
         "Anthropic becomes 7th largest public company at $1.8T market cap",
         "Sharp Tech debuts on video for the first time",
-        "Fine-tuning costs have collapsed to as little as $90",
-        "Chinese vs. European supplier speed — the Pirelli anecdote"
+        "Fine-tuning costs have collapsed to as little as $90"
       ],
       "tone": "Tone across 42 episodes — 18 mixed, 11 positive, 5 cautious, 2 neutral",
       "thisTone": "18 mixed, 11 positive, 5 cautious, 2 neutral",
@@ -20833,6 +21253,7 @@
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "~$1 trillion in market cap added in a single pre-market session",
         "Amazon claims structural differentiation from other compute providers",
         "China has not 'felt the AGI' — but is running a different race",
         "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists",
@@ -20841,10 +21262,9 @@
         "Jensen Huang's departure framed as civilisational turning point",
         "Anthropic becomes 7th largest public company at $1.8T market cap",
         "Sharp Tech debuts on video for the first time",
-        "Fine-tuning costs have collapsed to as little as $90",
-        "Chinese vs. European supplier speed — the Pirelli anecdote"
+        "Fine-tuning costs have collapsed to as little as $90"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Amazon claims structural differentiation from other compute providers; China has not 'felt the AGI' — but is running a different race; MisAnthopic Statement unites arch-enemies: safetyists and accelerationists; Huawei-DeepSeek co-design partnership with embedded personnel. Sentiment ran 18 mixed, 11 positive, 5 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Amazon claims structural differentiation from other compute providers; China has not 'felt the AGI' — but is running a different race; MisAnthopic Statement unites arch-enemies: safetyists and accelerationists.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — ~$1 trillion in market cap added in a single pre-market session; Amazon claims structural differentiation from other compute providers; China has not 'felt the AGI' — but is running a different race; MisAnthopic Statement unites arch-enemies: safetyists and accelerationists. Sentiment ran 18 mixed, 11 positive, 5 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: ~$1 trillion in market cap added in a single pre-market session; Amazon claims structural differentiation from other compute providers; China has not 'felt the AGI' — but is running a different race.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",

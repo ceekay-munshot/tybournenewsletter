@@ -3,6 +3,72 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-nbnpm",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "Too Big to Fire: Jensen Huang Is Back as Nvidia CEO",
+      "date": "2026-11-23T18:23:30.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Too-Big-to-Fire-Jensen-Huang-Is-Back-as-Nvidia-CEO-e3ssrpk",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "~$1 trillion in market cap added in a single pre-market session",
+          "detail": "NVIDIA shares surged nearly 35% in pre-market trading on November 23rd, adding roughly $1 trillion in market value — described as potentially more than doubling Microsoft's record for the single biggest daily gain ever, with Nasdaq 100 futures briefly halted on an upside volatility trip (a nearly unprecedented event)."
+        },
+        {
+          "title": "White House explicitly credited in NVIDIA's reinstatement statement",
+          "detail": "NVIDIA's official board statement disclosed it 'received input from senior levels of the U.S. government' and that based on that input Jensen's return 'poses no national security risk' — a remarkable public acknowledgment of presidential interference in a public company's CEO decision."
+        },
+        {
+          "title": "Trump's Truth Social post includes AG confirmation of no unlawful conduct",
+          "detail": "Trump's statement confirmed the U.S. Attorney General 'does not possess evidence that [Jensen] is engaged in any unlawful conduct' — an extraordinary intervention by the nation's top law enforcement official into a corporate governance dispute that is still under internal investigation."
+        },
+        {
+          "title": "Ben Thompson's 'nationalizing the Bank of NVIDIA' thesis",
+          "detail": "Thompson argued the correct read is that the U.S. government is effectively nationalizing NVIDIA by reinstalling leadership so its cash flows and chip sales can be directed by the White House — a new flavor of too-big-to-fail applied not to a bank but to the central node of the AI economy."
+        }
+      ],
+      "synthesis": "Jensen Huang's reinstatement as NVIDIA CEO — just 11 days after being pushed to resign — is not simply a corporate governance reversal; it is the clearest evidence yet that the White House views NVIDIA as too big to fire. The official board statement explicitly credited 'senior levels of the U.S. government' with providing input, and President Trump personally posted on Truth Social confirming the AG found no evidence of unlawful conduct — effectively granting Jensen political absolution before the internal investigation concluded. The sequence matters: the same administration that runs export controls over NVIDIA chips intervened to restore the man accused of enabling their circumvention.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Days between Jensen's resignation and reinstatement",
+          "value": "11 days",
+          "context": "Resigned under board pressure, reinstated November 23rd"
+        },
+        {
+          "metric": "NVIDIA share price surge on reinstatement",
+          "value": "nearly 35%",
+          "context": "Pre-market trading on November 23rd following reinstatement announcement"
+        },
+        {
+          "metric": "NVIDIA market cap added in pre-market",
+          "value": "about a trillion dollars",
+          "context": "Pre-market trading on reinstatement day; described as potentially more than doubling Microsoft's record for single biggest daily gain ever"
+        },
+        {
+          "metric": "Nasdaq 100 futures jump (upside halt trigger)",
+          "value": "7%",
+          "context": "Triggered rare upside volatility halt on reinstatement morning"
+        },
+        {
+          "metric": "Dow Jones gain at time of recording",
+          "value": "more than 3%",
+          "context": "Market reaction on reinstatement day, November 23rd"
+        }
+      ],
+      "topics": [
+        "Jensen's reinstatement",
+        "White House intervention",
+        "NVIDIA export controls",
+        "Corporate governance norms",
+        "AI CapEx / market stimulus",
+        "Democratic congressional pushback"
+      ]
+    },
+    {
       "id": "live-stratechery-1xz3uyq",
       "podcastId": "stratechery",
       "show": "Stratechery",
