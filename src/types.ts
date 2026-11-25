@@ -46,6 +46,10 @@ export interface SeriesPoint {
   changePct: number | null;
   changeAbs: number | null;
   direction: Direction;
+  /** Header for the change INTO this point, when it isn't "previous label → this label" —
+   *  e.g. a month-to-date compared with the same weeks of the month before, not the full
+   *  month in the column beside it. Optional: without it the header is derived as before. */
+  changeLabel?: string;
 }
 
 /** One cell in a supporting table — pre-formatted text plus optional direction colour. */
