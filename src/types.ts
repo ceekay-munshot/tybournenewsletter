@@ -302,8 +302,15 @@ export interface PodcastMonth {
   weeks: PodcastWeek[];
   ai: boolean;
   model?: string;
-  /** When the AI summary was written (once a month, with the newsletter edition). */
+  /** When the AI summary was written (once a month, with the newsletter edition; at most
+   *  weekly for the month-to-date summary). */
   aiAt?: string;
+  /** Month to date only: how many episodes (and analysed ones) the AI summary was written
+   *  from — the counts above are rebuilt every refresh, the summary is not. */
+  aiEpisodes?: number;
+  aiSummarised?: number;
+  /** Month to date only: the subjects the most episode analyses name (counted, no AI). */
+  topics?: { name: string; episodes: number; shows: number }[];
   headline: string | null;
   overview: string[];
   themes: PodcastTheme[];
@@ -319,6 +326,8 @@ export interface PodcastCompare {
   basis: 'themes' | 'topics';
   ai: boolean;
   model?: string;
+  /** Topics basis only: "dropped" / "new" keep subjects named by at least this many episodes. */
+  minCount?: number;
   read: string | null;
   continued: { last: string; this: string; note?: string }[];
   dropped: { theme: string; note?: string }[];
@@ -340,4 +349,12 @@ export interface PodcastMonthly {
   thisMonth: PodcastMonth;
   /** null when last month has no episodes to compare against. */
   compare: PodcastCompare | null;
+  /** The month after thisMonth — normally the running month, month to date (`mtd`); for
+   *  the day or so between a month ending and its edition, the month that just ended.
+   *  Rebuilt every refresh. Absent in files written before it existed. */
+  currentMonth?: PodcastMonth | null;
+  /** thisMonth -> currentMonth. null when either has no episodes. */
+  compareMtd?: PodcastCompare | null;
+  /** When currentMonth / compareMtd last changed. */
+  mtdAt?: string;
 }

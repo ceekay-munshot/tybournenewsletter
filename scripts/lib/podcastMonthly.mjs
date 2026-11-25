@@ -308,49 +308,74 @@ export function applyCompareAI(last, cur, o) {
   );
 }
 
-/** Honest no-AI comparison: the companies/subjects the episode analyses name, matched
- *  exactly across the two months (ordered by how many episodes named them). */
-export function topicCompare(lastRecs, curRecs) {
+/** The companies/subjects the episode analyses name, matched loosely (case, punctuation
+ *  and bracketed asides ignored): key -> { name, count (episodes naming it), shows }. */
+function topicMap(recs) {
   const key = (s) =>
     norm(s)
       .replace(/\([^)]*\)/g, '')
       .replace(/[^a-z0-9]+/g, ' ')
       .trim();
-  const topics = (recs) => {
-    const m = new Map();
-    for (const r of recs) {
-      const names = new Set([...(r.topics ?? []), ...(r.beneficiaries ?? []), ...(r.atRisk ?? [])].map((n) => n.trim()));
-      const keys = new Set();
-      for (const n of names) {
-        const k = key(n);
-        if (!k || keys.has(k)) continue;
-        keys.add(k);
-        const cur = m.get(k) ?? { name: n.replace(/\s*\([^)]*\)\s*/g, ' ').trim(), count: 0 };
-        cur.count += 1;
-        m.set(k, cur);
-      }
+  const m = new Map();
+  for (const r of recs) {
+    const names = new Set([...(r.topics ?? []), ...(r.beneficiaries ?? []), ...(r.atRisk ?? [])].map((n) => n.trim()));
+    const keys = new Set();
+    for (const n of names) {
+      const k = key(n);
+      if (!k || keys.has(k)) continue;
+      keys.add(k);
+      const cur = m.get(k) ?? { name: n.replace(/\s*\([^)]*\)\s*/g, ' ').trim(), count: 0, shows: new Set() };
+      cur.count += 1;
+      cur.shows.add(r.show);
+      m.set(k, cur);
     }
-    return m;
-  };
-  const L = topics(lastRecs);
-  const C = topics(curRecs);
+  }
+  return m;
+}
+
+/** The subjects named by the most episodes (two or more) — a month's no-AI signal of
+ *  what the shows keep coming back to. Counted, never written. */
+export function topTopics(recs, cap = 6) {
+  return [...topicMap(recs).values()]
+    .filter((t) => t.count >= 2)
+    .sort((a, b) => b.count - a.count || b.shows.size - a.shows.size || a.name.localeCompare(b.name))
+    .slice(0, cap)
+    .map((t) => ({ name: t.name, episodes: t.count, shows: t.shows.size }));
+}
+
+/** An AI summary written earlier in a month that is still running, under today's facts:
+ *  the counts, shows, tone and week list are rebuilt every run; the prose and themes stay
+ *  as written (aiAt / aiEpisodes say how much of the month they cover). */
+export function freshenMonth(cached, meta) {
+  const lines = new Map((cached.weeks ?? []).map((w) => [w.id, w.line]));
+  return { ...cached, ...meta, weeks: meta.weeks.map((w) => ({ ...w, line: lines.get(w.id) ?? null })) };
+}
+
+/** Honest no-AI comparison: the companies/subjects the episode analyses name, matched
+ *  exactly across the two months (ordered by how many episodes named them). With
+ *  minCount > 1, "dropped" and "new" keep only subjects that many episodes named (a busy
+ *  month names hundreds of one-off subjects); "continued" always keeps every match. */
+export function topicCompare(lastRecs, curRecs, minCount = 1) {
+  const L = topicMap(lastRecs);
+  const C = topicMap(curRecs);
   const byCount = (m) => (a, b) => m.get(b).count - m.get(a).count || a.localeCompare(b);
   const lastKeys = [...L.keys()];
   const curKeys = [...C.keys()];
   return {
     basis: 'topics',
     ai: false,
+    ...(minCount > 1 ? { minCount } : {}),
     read: null,
     continued: curKeys
       .filter((k) => L.has(k))
       .sort(byCount(C))
       .map((k) => ({ last: L.get(k).name, this: C.get(k).name })),
     dropped: lastKeys
-      .filter((k) => !C.has(k))
+      .filter((k) => !C.has(k) && L.get(k).count >= minCount)
       .sort(byCount(L))
       .map((k) => ({ theme: L.get(k).name })),
     new: curKeys
-      .filter((k) => !L.has(k))
+      .filter((k) => !L.has(k) && C.get(k).count >= minCount)
       .sort(byCount(C))
       .map((k) => ({ theme: C.get(k).name })),
   };

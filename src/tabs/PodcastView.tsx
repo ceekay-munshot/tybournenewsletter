@@ -16,6 +16,7 @@ import {
   GitCompareArrows,
   BookOpenText,
   Quote,
+  Tag,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { ChangeBlock, PodcastMonthly, PodcastMonth, PodcastCompare, PodcastTheme, PodcastWeek } from '../types';
@@ -28,13 +29,41 @@ import { sectorColor, withAlpha } from '../lib/brand';
 import { dateLabel } from '../lib/format';
 
 type Mode = 'month' | 'quarter';
-type Side = 'last' | 'this';
+/** last/this = the monthly edition's two complete months; current = the month after
+ *  (normally month to date), rebuilt on every refresh. */
+type Side = 'last' | 'this' | 'current';
+/** Which comparison is on screen: edition month -> current month, or the edition's own. */
+type Pair = 'mtd' | 'edition';
 type ThemeStatus = 'continued' | 'dropped' | 'new';
 
 const LAST_TINT = '#64748B';
 const norm = (s: string) => s.trim().toLowerCase();
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? '' : 's'}`;
 const monthTag = (m: PodcastMonth) => `${m.label}${m.mtd ? ' (MTD)' : ''}`;
+const shortMonth = (m: PodcastMonth) => m.longLabel.split(' ')[0].slice(0, 3);
+const dayMonth = (iso: string) => dateLabel(iso).replace(/ \d{4}$/, '');
+/** Newest episode date in a month ("to 25 Nov"). */
+const latestDate = (m: PodcastMonth) =>
+  m.weeks
+    .flatMap((w) => w.episodes.map((e) => e.date))
+    .sort()
+    .slice(-1)[0];
+
+// Pressable tiles: transform-only, custom ease-out, hover lift only on real pointers.
+const EASE = 'ease-[cubic-bezier(0.23,1,0.32,1)]';
+const HOVER = '[@media(hover:hover)_and_(pointer:fine)]';
+const TILE_MOTION = `transition-transform duration-200 ${EASE} enabled:active:scale-[0.985] ${HOVER}:enabled:hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:transform-none`;
+const ICON_MOTION = `transition-transform duration-200 ${EASE} ${HOVER}:group-enabled:group-hover:scale-105 motion-reduce:transition-none`;
+const ARROW_MOTION = `transition-transform duration-200 ${EASE} ${HOVER}:group-enabled:group-hover:translate-x-0.5 motion-reduce:transition-none`;
+
+const monthOfSide = (m: PodcastMonthly, s: Side): PodcastMonth | null =>
+  s === 'last' ? m.lastMonth : s === 'this' ? m.thisMonth : (m.currentMonth ?? null);
+
+function pairDef(m: PodcastMonthly, p: Pair): { from: Side; to: Side; compare: PodcastCompare | null } {
+  return p === 'mtd' && m.currentMonth
+    ? { from: 'this', to: 'current', compare: m.compareMtd ?? null }
+    : { from: 'last', to: 'this', compare: m.compare };
+}
 
 const STATUS: Record<ThemeStatus, { label: string; color: string; icon: LucideIcon }> = {
   continued: { label: 'continued', color: '#6366F1', icon: Repeat },
@@ -72,33 +101,51 @@ function themeLinks(c: PodcastCompare | null) {
   return { last, cur, lastTo, curFrom };
 }
 
-/** Podcast Themes drill-down. Month (default when the monthly summaries exist): last
- *  month and this month side by side — click either for its full summary — plus which
- *  themes continued, dropped off or are new. Quarter: the original QoQ theme comparison. */
+/** One month's theme statuses + counterparts under the comparison on screen (empty for a
+ *  month that isn't part of it). `forward`: this month is the earlier side. */
+function sideLinks(m: PodcastMonthly, pair: Pair, side: Side) {
+  const d = pairDef(m, pair);
+  const links = themeLinks(d.compare);
+  if (side === d.from) return { statuses: links.last, counterpart: links.lastTo, other: monthOfSide(m, d.to), forward: true };
+  if (side === d.to) return { statuses: links.cur, counterpart: links.curFrom, other: monthOfSide(m, d.from), forward: false };
+  return { statuses: new Map<string, ThemeStatus>(), counterpart: new Map<string, string>(), other: null, forward: false };
+}
+
+/** Podcast Themes drill-down. Month (default when the monthly summaries exist): the
+ *  current month to date on top, the edition's two complete months below — click any for
+ *  its full summary — plus which themes continued, dropped off or are new (last full
+ *  month -> month to date by default, or the edition's own pair). Quarter: the original
+ *  QoQ theme comparison. */
 export function PodcastView({ block, monthly }: { block: ChangeBlock; monthly: PodcastMonthly | null }) {
   const [mode, setMode] = useState<Mode>(monthly ? 'month' : 'quarter');
   const [open, setOpen] = useState<Side | null>(null);
+  const [pair, setPair] = useState<Pair>(monthly?.currentMonth ? 'mtd' : 'edition');
   const Icon = iconFor(block.systemId, block.sector);
   const accent = sectorColor(block.sector);
 
   const m = mode === 'month' ? monthly : null;
-  const L = m?.lastMonth;
-  const T = m?.thisMonth;
-  const lastLabel = L ? monthTag(L) : block.lastPeriodLabel;
-  const thisLabel = T ? monthTag(T) : block.thisPeriodLabel;
-  const lastN = L ? L.episodes : block.lastValue;
-  const thisN = T ? T.episodes : block.thisValue;
+  const C = m?.currentMonth ?? null;
+  // The headline pair: last full month -> month to date when there is one.
+  const F = m ? (C ? m.thisMonth : m.lastMonth) : undefined;
+  const N = m ? (C ?? m.thisMonth) : undefined;
+  const lastLabel = F ? monthTag(F) : block.lastPeriodLabel;
+  const thisLabel = N ? monthTag(N) : block.thisPeriodLabel;
+  const lastN = F ? F.episodes : block.lastValue;
+  const thisN = N ? N.episodes : block.thisValue;
 
   const sourceBlock =
-    m && T
+    m && N
       ? {
           ...block,
           notes:
-            `${plural(T.episodes, 'investor-podcast episode')} ${T.mtd ? 'so far in' : 'in'} ${T.longLabel} across ` +
-            `${plural(T.shows.length, 'show')} (${T.summarised} fully analysed). ` +
-            (T.ai || L?.ai
+            `${plural(N.episodes, 'investor-podcast episode')} ${N.mtd ? 'so far in' : 'in'} ${N.longLabel} across ` +
+            `${plural(N.shows.length, 'show')} (${N.summarised} fully analysed). ` +
+            (m.thisMonth.ai || m.lastMonth.ai
               ? "Month summaries are written once a month, with the newsletter edition, by Claude on Amazon Bedrock from the episode analyses — the same inputs as the podcast dashboard's weekly summaries."
-              : m.note ?? 'No AI edition yet — showing the episode analyses as published.'),
+              : m.note ?? 'No AI edition yet — showing the episode analyses as published.') +
+            (C
+              ? ` The ${C.mtd ? 'month-to-date' : C.longLabel} tile is rebuilt from the episodes on every refresh${C.ai ? '; its AI summary is rewritten at most weekly' : ''}.`
+              : ''),
         }
       : block;
 
@@ -151,8 +198,8 @@ export function PodcastView({ block, monthly }: { block: ChangeBlock; monthly: P
         )}
       </Card>
 
-      {m && L && T ? (
-        <MonthCompare monthly={m} accent={accent} onOpen={setOpen} />
+      {m ? (
+        <MonthCompare monthly={m} accent={accent} pair={pair} onPair={setPair} onOpen={setOpen} />
       ) : (
         <QuarterThemes block={block} accent={accent} />
       )}
@@ -164,7 +211,7 @@ export function PodcastView({ block, monthly }: { block: ChangeBlock; monthly: P
       {m &&
         open &&
         createPortal(
-          <MonthSummaryModal monthly={m} side={open} accent={accent} onSide={setOpen} onClose={() => setOpen(null)} />,
+          <MonthSummaryModal monthly={m} side={open} pair={pair} accent={accent} onSide={setOpen} onClose={() => setOpen(null)} />,
           document.body
         )}
     </div>
@@ -174,25 +221,181 @@ export function PodcastView({ block, monthly }: { block: ChangeBlock; monthly: P
 // ---------------------------------------------------------------------------
 // Month view: two clickable month boxes + the continued / dropped / new card.
 
-function MonthCompare({ monthly, accent, onOpen }: { monthly: PodcastMonthly; accent: string; onOpen: (s: Side) => void }) {
-  const { lastMonth: L, thisMonth: T, compare } = monthly;
-  const links = themeLinks(compare);
+function MonthCompare({
+  monthly,
+  accent,
+  pair,
+  onPair,
+  onOpen,
+}: {
+  monthly: PodcastMonthly;
+  accent: string;
+  pair: Pair;
+  onPair: (p: Pair) => void;
+  onOpen: (s: Side) => void;
+}) {
+  const { lastMonth: L, thisMonth: T } = monthly;
+  const C = monthly.currentMonth ?? null;
+  const d = pairDef(monthly, pair);
+  const st = (s: Side) => sideLinks(monthly, pair, s).statuses;
+  const from = monthOfSide(monthly, d.from) ?? T;
+  const to = monthOfSide(monthly, d.to) ?? T;
   return (
     <>
+      {C && <CurrentBox month={C} tint={accent} statuses={st('current')} onOpen={() => onOpen('current')} />}
       <div className="mb-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-        <MonthBox month={L} role="Earlier month" tint={LAST_TINT} statuses={links.last} onOpen={() => onOpen('last')} />
-        <MonthBox month={T} role="Latest month" tint={accent} statuses={links.cur} onOpen={() => onOpen('this')} highlight />
+        <MonthBox month={L} role="Earlier month" tint={LAST_TINT} statuses={st('last')} onOpen={() => onOpen('last')} />
+        <MonthBox
+          month={T}
+          role={C ? 'Last full month' : 'Latest month'}
+          tint={C ? LAST_TINT : accent}
+          statuses={st('this')}
+          onOpen={() => onOpen('this')}
+          highlight={!C}
+        />
       </div>
-      {compare ? (
-        <ContinuityCard compare={compare} last={L} cur={T} accent={accent} />
-      ) : (
-        <Card className="mb-4">
-          <p className="text-[13px] text-slate-500">
-            No episodes were captured for {L.longLabel}, so there is nothing to compare {T.longLabel} against yet.
-          </p>
-        </Card>
-      )}
+      <ContinuityCard
+        compare={d.compare}
+        last={from}
+        cur={to}
+        accent={accent}
+        pairs={
+          C
+            ? {
+                value: pair,
+                onChange: onPair,
+                options: [
+                  { value: 'mtd', label: `${shortMonth(T)} → ${shortMonth(C)}${C.mtd ? ' (MTD)' : ''}` },
+                  { value: 'edition', label: `${shortMonth(L)} → ${shortMonth(T)}` },
+                ],
+              }
+            : undefined
+        }
+      />
     </>
+  );
+}
+
+/** The current month — normally month to date — as a wide tile above the edition's two
+ *  complete months. Counts, tone, lead points and most-named subjects come from the
+ *  episodes on every refresh; the AI headline + themes, when there are any, are as of
+ *  their own date (written at most weekly). */
+function CurrentBox({
+  month,
+  tint,
+  statuses,
+  onOpen,
+}: {
+  month: PodcastMonth;
+  tint: string;
+  statuses: Map<string, ThemeStatus>;
+  onOpen: () => void;
+}) {
+  const empty = month.episodes === 0;
+  const shown = month.themes.slice(0, 6);
+  const through = latestDate(month);
+  const topics = month.topics ?? [];
+  const aiOf = month.aiEpisodes ?? month.episodes;
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      disabled={empty}
+      aria-label={`Open the ${month.longLabel}${month.mtd ? ' month-to-date' : ''} summary`}
+      className={`group mb-4 block w-full min-w-0 rounded-2xl p-4 text-left disabled:cursor-default sm:p-5 ${TILE_MOTION}`}
+      style={{
+        background: `linear-gradient(140deg, #ffffff 0%, ${withAlpha(tint, 0.07)} 100%)`,
+        boxShadow: `inset 0 3px 0 0 ${tint}, 0 0 0 1px rgba(226,232,240,0.7), 0 1px 2px rgba(15,23,42,0.05), 0 8px 24px rgba(15,23,42,0.06)`,
+      }}
+    >
+      <div className="flex w-full items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[10.5px] font-bold uppercase tracking-[0.12em]" style={{ color: tint }}>
+            {month.mtd ? 'Current month' : 'Just ended'}
+          </div>
+          <div className="mt-0.5 flex flex-wrap items-center gap-1.5">
+            <span className="font-display text-[19px] font-bold leading-tight text-slate-900">{month.longLabel}</span>
+            {month.mtd ? (
+              <MtdBadge through={through} />
+            ) : (
+              <span className="rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold uppercase leading-none tracking-wide text-slate-500 ring-1 ring-slate-200">
+                summary due with the edition
+              </span>
+            )}
+          </div>
+          <div className="tnum mt-0.5 text-[11.5px] text-slate-500">
+            {plural(month.episodes, 'episode')} · {plural(month.shows.length, 'show')} · {month.summarised} analysed
+          </div>
+        </div>
+        <span
+          className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${ICON_MOTION}`}
+          style={{ background: withAlpha(tint, 0.1), color: tint }}
+        >
+          <CalendarDays size={17} strokeWidth={2.2} />
+        </span>
+      </div>
+
+      {empty ? (
+        <p className="mt-3 text-[12.5px] italic text-slate-400">No episodes captured yet for {month.longLabel}.</p>
+      ) : (
+        <div className="mt-3 grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
+          <div className="min-w-0">
+            <ToneBar counts={month.toneCounts} className="w-full" />
+            {month.ai && month.headline ? (
+              <p className="mt-3 border-l-2 pl-2.5 text-[13px] font-medium leading-snug text-slate-800" style={{ borderColor: tint }}>
+                {month.headline}
+              </p>
+            ) : (
+              topics.length > 0 && (
+                <div className="mt-3">
+                  <div className="text-[10.5px] font-bold uppercase tracking-[0.1em] text-slate-400">
+                    Most named {month.mtd ? 'so far' : ''}
+                  </div>
+                  <TopicChips topics={topics} className="mt-1.5" />
+                </div>
+              )
+            )}
+          </div>
+
+          <div className="min-w-0 md:border-l md:border-slate-200/70 md:pl-6">
+            <div className="flex w-full items-center justify-between text-[10.5px] font-bold uppercase tracking-[0.1em] text-slate-400">
+              <span>{month.ai ? (month.mtd ? 'Themes so far' : 'Themes') : 'Latest lead points'}</span>
+              {month.themes.length > 0 && <span className="tnum">{month.themes.length}</span>}
+            </div>
+            {shown.length ? (
+              <ul className="mt-1.5 flex flex-col gap-1.5">
+                {shown.map((t) => {
+                  const s = statuses.get(norm(t.title));
+                  return (
+                    <li key={t.title} className="flex gap-2 text-[12.5px] leading-snug text-slate-700">
+                      <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: tint }} />
+                      <span className="min-w-0">
+                        {t.title}
+                        {s && <StatusTag s={s} className="ml-1.5" />}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="mt-1.5 text-[12px] italic text-slate-400">No themes captured.</p>
+            )}
+            <p className="tnum mt-2 text-[11px] leading-snug text-slate-400">
+              {month.ai
+                ? `AI summary of ${month.aiAt ? dayMonth(month.aiAt) : '—'}${aiOf < month.episodes ? `, from ${aiOf} of ${month.episodes} episodes` : ''} · counts update every refresh`
+                : 'No AI summary for the month yet — each newest episode’s own lead point · updates every refresh'}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {!empty && (
+        <span className="mt-4 inline-flex items-center gap-1 text-[12.5px] font-semibold" style={{ color: tint }}>
+          {month.mtd ? 'Read the month so far' : 'Read the full month'}
+          <ArrowRight size={14} strokeWidth={2.4} className={ARROW_MOTION} />
+        </span>
+      )}
+    </button>
   );
 }
 
@@ -219,10 +422,10 @@ function MonthBox({
       onClick={onOpen}
       disabled={empty}
       aria-label={`Open the full ${month.longLabel} summary`}
-      className="group flex h-full w-full min-w-0 flex-col rounded-2xl p-4 text-left ring-1 ring-slate-200/70 transition duration-300 enabled:hover:-translate-y-0.5 enabled:hover:ring-slate-300 disabled:cursor-default sm:p-5"
+      className={`group flex h-full w-full min-w-0 flex-col rounded-2xl p-4 text-left disabled:cursor-default sm:p-5 ${TILE_MOTION}`}
       style={{
         background: highlight ? `linear-gradient(140deg, #ffffff 0%, ${withAlpha(tint, 0.07)} 100%)` : '#ffffff',
-        boxShadow: `inset 0 3px 0 0 ${tint}, 0 1px 2px rgba(15,23,42,0.05), 0 8px 24px rgba(15,23,42,0.06)`,
+        boxShadow: `inset 0 3px 0 0 ${tint}, 0 0 0 1px rgba(226,232,240,0.7), 0 1px 2px rgba(15,23,42,0.05), 0 8px 24px rgba(15,23,42,0.06)`,
       }}
     >
       <div className="flex w-full items-start justify-between gap-3">
@@ -239,7 +442,7 @@ function MonthBox({
           </div>
         </div>
         <span
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl transition group-enabled:group-hover:scale-105"
+          className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${ICON_MOTION}`}
           style={{ background: withAlpha(tint, 0.1), color: tint }}
         >
           <CalendarDays size={17} strokeWidth={2.2} />
@@ -284,45 +487,88 @@ function MonthBox({
 
       {!empty && (
         <span
-          className="mt-auto inline-flex items-center gap-1 pt-4 text-[12.5px] font-semibold transition-all group-hover:gap-2"
+          className="mt-auto inline-flex items-center gap-1 pt-4 text-[12.5px] font-semibold"
           style={{ color: tint === LAST_TINT ? '#475569' : tint }}
         >
-          Read the full month summary <ArrowRight size={14} strokeWidth={2.4} />
+          Read the full month summary <ArrowRight size={14} strokeWidth={2.4} className={ARROW_MOTION} />
         </span>
       )}
     </button>
   );
 }
 
-function ContinuityCard({ compare, last, cur, accent }: { compare: PodcastCompare; last: PodcastMonth; cur: PodcastMonth; accent: string }) {
-  const topics = compare.basis === 'topics';
-  const continued = compare.continued.map((c) => ({
+function ContinuityCard({
+  compare,
+  last,
+  cur,
+  accent,
+  pairs,
+}: {
+  compare: PodcastCompare | null;
+  last: PodcastMonth;
+  cur: PodcastMonth;
+  accent: string;
+  pairs?: { value: Pair; onChange: (p: Pair) => void; options: { value: Pair; label: string }[] };
+}) {
+  const topics = compare?.basis === 'topics';
+  // A month still running hasn't "dropped" anything yet — it just hasn't come up so far.
+  const goneWord = cur.mtd ? 'not raised yet' : 'dropped off';
+  const continued = (compare?.continued ?? []).map((c) => ({
     key: `${c.last}→${c.this}`,
     title: c.this,
     sub: norm(c.last) !== norm(c.this) ? `${last.label}: ${c.last}` : undefined,
     note: c.note,
   }));
-  const dropped = compare.dropped.map((d) => ({ key: d.theme, title: d.theme, note: d.note }));
-  const fresh = compare.new.map((n) => ({ key: n.theme, title: n.theme, note: n.note }));
+  const dropped = (compare?.dropped ?? []).map((d) => ({ key: d.theme, title: d.theme, note: d.note }));
+  const fresh = (compare?.new ?? []).map((n) => ({ key: n.theme, title: n.theme, note: n.note }));
   return (
     <Card className="mb-4" accent={accent}>
       <CardHeader
         icon={GitCompareArrows}
         accent={accent}
         title={`What carried over — ${topics ? 'topics' : 'themes'}`}
-        subtitle={`${monthTag(last)} → ${monthTag(cur)} · ${continued.length} continued · ${dropped.length} dropped off · ${fresh.length} new`}
+        subtitle={
+          compare
+            ? `${monthTag(last)} → ${monthTag(cur)} · ${continued.length} continued · ${dropped.length} ${goneWord} · ${fresh.length} new`
+            : `${monthTag(last)} → ${monthTag(cur)}`
+        }
       />
-      {compare.read && <p className="mb-3.5 text-[13.5px] leading-relaxed text-slate-700">{compare.read}</p>}
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
-        <Bucket kind="continued" title="Continued" hint="talked about in both months" items={continued} />
-        <Bucket kind="dropped" title="Dropped off" hint={`in ${last.label}, gone in ${cur.label}`} items={dropped} />
-        <Bucket kind="new" title={`New in ${cur.label}`} hint={`not in ${last.label}`} items={fresh} />
-      </div>
-      {topics && (
-        <p className="mt-3 flex items-start gap-1.5 text-[11px] leading-snug text-slate-400">
-          <Info size={12} className="mt-px shrink-0" />
-          Matched on the companies and subjects each episode's analysis names (exact names, no AI). The monthly AI
-          edition matches whole themes instead.
+      {pairs && (
+        <div className="mb-3.5">
+          <Segmented size="sm" value={pairs.value} onChange={pairs.onChange} options={pairs.options} />
+        </div>
+      )}
+      {compare ? (
+        <>
+          {compare.read && <p className="mb-3.5 text-[13.5px] leading-relaxed text-slate-700">{compare.read}</p>}
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+            <Bucket kind="continued" title="Continued" hint={cur.mtd ? `in ${last.label} and so far in ${cur.label}` : 'talked about in both months'} items={continued} />
+            <Bucket
+              kind="dropped"
+              title={cur.mtd ? 'Not raised yet' : 'Dropped off'}
+              hint={cur.mtd ? `in ${last.label}, not yet in ${cur.label}` : `in ${last.label}, gone in ${cur.label}`}
+              items={dropped}
+            />
+            <Bucket kind="new" title={`New in ${cur.label}`} hint={`not in ${last.label}`} items={fresh} />
+          </div>
+          {topics && (
+            <p className="mt-3 flex items-start gap-1.5 text-[11px] leading-snug text-slate-400">
+              <Info size={12} className="mt-px shrink-0" />
+              <span>
+                Matched on the companies and subjects each episode's analysis names (exact names, no AI)
+                {compare.minCount ? `; "${goneWord}" and "new" list those named by ${compare.minCount}+ episodes` : ''}.{' '}
+                {cur.mtd || cur.aiEpisodes != null
+                  ? 'When this month has an AI summary, whole themes are matched instead.'
+                  : 'The monthly AI edition matches whole themes instead.'}
+              </span>
+            </p>
+          )}
+        </>
+      ) : (
+        <p className="text-[13px] text-slate-500">
+          {last.episodes === 0
+            ? `No episodes were captured for ${last.longLabel}, so there is nothing to compare ${cur.longLabel} against yet.`
+            : `No episodes ${cur.mtd ? 'yet' : 'were captured'} in ${cur.longLabel} to compare with ${last.longLabel}.`}
         </p>
       )}
     </Card>
@@ -396,22 +642,33 @@ function Bucket({
 function MonthSummaryModal({
   monthly,
   side,
+  pair,
   accent,
   onSide,
   onClose,
 }: {
   monthly: PodcastMonthly;
   side: Side;
+  pair: Pair;
   accent: string;
   onSide: (s: Side) => void;
   onClose: () => void;
 }) {
-  const month = side === 'last' ? monthly.lastMonth : monthly.thisMonth;
-  const other = side === 'last' ? monthly.thisMonth : monthly.lastMonth;
-  const tint = side === 'last' ? LAST_TINT : accent;
-  const links = themeLinks(monthly.compare);
-  const statuses = side === 'last' ? links.last : links.cur;
-  const counterpart = side === 'last' ? links.lastTo : links.curFrom;
+  const C = monthly.currentMonth ?? null;
+  const month = monthOfSide(monthly, side) ?? monthly.thisMonth;
+  const latest: Side = C ? 'current' : 'this';
+  const tint = side === latest ? accent : LAST_TINT;
+  const { statuses, counterpart, other, forward } = sideLinks(monthly, pair, side);
+  const sides: { value: Side; label: string }[] = [
+    { value: 'last', label: monthTag(monthly.lastMonth) },
+    { value: 'this', label: monthTag(monthly.thisMonth) },
+    ...(C ? [{ value: 'current' as Side, label: monthTag(C) }] : []),
+  ];
+  // A month-to-date AI summary covers the episodes up to its own date only.
+  const mtdAI = month.ai && month.aiEpisodes != null;
+  const aiEps = month.aiEpisodes ?? month.episodes;
+  const aiSum = month.aiSummarised ?? month.summarised;
+  const topics = month.topics ?? [];
 
   const closeRef = useRef<HTMLButtonElement>(null);
   const onCloseRef = useRef(onClose);
@@ -431,12 +688,12 @@ function MonthSummaryModal({
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/55 p-3 backdrop-blur-sm sm:p-6" onClick={onClose}>
+    <div className="anim-fade fixed inset-0 z-50 overflow-y-auto bg-slate-900/55 p-3 backdrop-blur-sm sm:p-6" onClick={onClose}>
       <div
         role="dialog"
         aria-modal="true"
         aria-label={`${month.longLabel} podcast summary`}
-        className="anim-pop relative mx-auto w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-pop ring-1 ring-slate-200 sm:my-2"
+        className="relative mx-auto w-full max-w-3xl animate-[pop-in_220ms_cubic-bezier(0.23,1,0.32,1)_both] overflow-hidden rounded-2xl bg-white shadow-pop ring-1 ring-slate-200 motion-reduce:animate-none sm:my-2"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -453,11 +710,11 @@ function MonthSummaryModal({
           style={{ background: `linear-gradient(135deg, ${withAlpha(tint, 0.13)} 0%, ${withAlpha(tint, 0.03)} 60%, #ffffff 100%)` }}
         >
           <div className="text-[10.5px] font-bold uppercase tracking-[0.14em]" style={{ color: tint }}>
-            Investor podcasts · monthly summary
+            Investor podcasts · {month.mtd ? 'month to date' : 'monthly summary'}
           </div>
           <div className="mt-1 flex flex-wrap items-center gap-2 pr-10">
             <h2 className="font-display text-[26px] font-bold leading-tight text-slate-900">{month.longLabel}</h2>
-            {month.mtd && <MtdBadge />}
+            {month.mtd && <MtdBadge through={latestDate(month)} />}
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <Stat value={month.episodes} label="episodes" />
@@ -467,25 +724,26 @@ function MonthSummaryModal({
           </div>
           <ToneBar counts={month.toneCounts} className="mt-3 max-w-md" />
           <div className="mt-4">
-            <Segmented
-              size="sm"
-              value={side}
-              onChange={onSide}
-              options={[
-                { value: 'last', label: monthTag(monthly.lastMonth) },
-                { value: 'this', label: monthTag(monthly.thisMonth) },
-              ]}
-            />
+            <Segmented size="sm" value={side} onChange={onSide} options={sides} />
           </div>
         </header>
 
         <div className="px-5 pb-6 pt-5 sm:px-8">
           {month.episodes === 0 ? (
-            <p className="text-[13px] italic text-slate-400">No episodes were captured for {month.longLabel}.</p>
+            <p className="text-[13px] italic text-slate-400">
+              No episodes {month.mtd ? 'captured yet' : 'were captured'} for {month.longLabel}.
+            </p>
           ) : (
             <>
               {month.ai ? (
                 <section>
+                  {mtdAI && (
+                    <p className="tnum mb-2 inline-flex items-center gap-1.5 rounded-lg bg-slate-50 px-2 py-1 text-[11.5px] text-slate-500 ring-1 ring-slate-200/70">
+                      <Info size={12} className="shrink-0" />
+                      Written {month.aiAt ? dayMonth(month.aiAt) : '—'} from {plural(aiEps, 'episode')}
+                      {aiEps < month.episodes ? ` — ${month.episodes - aiEps} more since, listed week by week below` : ''}
+                    </p>
+                  )}
                   <p className="font-display text-[19px] font-bold leading-snug text-slate-900">{month.headline}</p>
                   <div className="mt-3 flex flex-col gap-2.5">
                     {month.overview.map((p, i) => (
@@ -501,14 +759,29 @@ function MonthSummaryModal({
                   <div>
                     <p className="font-semibold">This month has no AI summary yet.</p>
                     <p className="mt-0.5 text-amber-700">
-                      Below is each episode's own lead point and analysis, as published by the podcast tool. The consolidated
-                      summary is written once a month, with the newsletter edition.
+                      {month.mtd
+                        ? `${month.longLabel} is still running. Below is each episode's own lead point and analysis, as published by the podcast tool — rebuilt on every refresh.`
+                        : "Below is each episode's own lead point and analysis, as published by the podcast tool. The consolidated summary is written once a month, with the newsletter edition."}
                     </p>
                   </div>
                 </div>
               )}
 
-              <ModalSection icon={Layers} title={month.ai ? 'Themes' : 'Lead points'} count={month.themes.length} tint={tint}>
+              {!month.ai && topics.length > 0 && (
+                <ModalSection icon={Tag} title={month.mtd ? 'Most named so far' : 'Most named'} tint={tint}>
+                  <TopicChips topics={topics} />
+                  <p className="mt-1.5 text-[11px] leading-snug text-slate-400">
+                    Companies and subjects named by the most episode analyses — counted, not written by AI.
+                  </p>
+                </ModalSection>
+              )}
+
+              <ModalSection
+                icon={Layers}
+                title={month.ai ? (month.mtd ? 'Themes so far' : 'Themes') : month.mtd ? 'Latest lead points' : 'Lead points'}
+                count={month.themes.length}
+                tint={tint}
+              >
                 <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                   {month.themes.map((t) => {
                     const st = statuses.get(norm(t.title));
@@ -518,7 +791,11 @@ function MonthSummaryModal({
                         key={t.title}
                         theme={t}
                         status={st}
-                        link={link && norm(link) !== norm(t.title) ? `${side === 'last' ? `Continues in ${other.label} as` : `From ${other.label}`}: ${link}` : undefined}
+                        link={
+                          link && other && norm(link) !== norm(t.title)
+                            ? `${forward ? `Continues in ${other.label} as` : `From ${other.label}`}: ${link}`
+                            : undefined
+                        }
                       />
                     );
                   })}
@@ -583,10 +860,18 @@ function MonthSummaryModal({
             <BookOpenText size={12} className="mt-px shrink-0" />
             <span>
               {month.ai
-                ? `Consolidated by Claude on Amazon Bedrock${month.model ? ` (${month.model})` : ''}${month.aiAt ? ` on ${dateLabel(month.aiAt)}` : ''} from ${month.summarised} episode ${month.summarised === 1 ? 'analysis' : 'analyses'}${
-                    month.episodes > month.summarised ? ` and the show notes of ${month.episodes - month.summarised} more` : ''
-                  } — the same per-episode inputs as the podcast dashboard's weekly summaries. Nothing outside the episodes is used.`
-                : `Built from the podcast tool's per-episode analyses, as published. ${monthly.note ?? ''}`}
+                ? `Consolidated by Claude on Amazon Bedrock${month.model ? ` (${month.model})` : ''}${month.aiAt ? ` on ${dateLabel(month.aiAt)}` : ''} from ${aiSum} episode ${aiSum === 1 ? 'analysis' : 'analyses'}${
+                    aiEps > aiSum ? ` and the show notes of ${aiEps - aiSum} more` : ''
+                  } — the same per-episode inputs as the podcast dashboard's weekly summaries. Nothing outside the episodes is used.${
+                    mtdAI
+                      ? month.mtd
+                        ? ' Month to date: rewritten at most once a week; the counts, tone and week-by-week list update on every refresh.'
+                        : ' Written before the month ended; the full-month summary comes with the monthly edition.'
+                      : ''
+                  }`
+                : month.mtd || side === 'current'
+                  ? "Built from the podcast tool's per-episode analyses, as published, on every refresh."
+                  : `Built from the podcast tool's per-episode analyses, as published. ${monthly.note ?? ''}`}
             </span>
           </p>
         </div>
@@ -730,11 +1015,28 @@ function StatusTag({ s, className = '' }: { s: ThemeStatus; className?: string }
   );
 }
 
-function MtdBadge() {
+function MtdBadge({ through }: { through?: string }) {
   return (
-    <span className="rounded-full bg-amber-50 px-1.5 py-0.5 text-[10px] font-bold uppercase leading-none tracking-wide text-amber-600 ring-1 ring-amber-100">
-      month to date
+    <span className="tnum rounded-full bg-amber-50 px-1.5 py-0.5 text-[10px] font-bold uppercase leading-none tracking-wide text-amber-700 ring-1 ring-amber-100">
+      month to date{through ? ` · to ${dayMonth(through)}` : ''}
     </span>
+  );
+}
+
+function TopicChips({ topics, className = '' }: { topics: NonNullable<PodcastMonth['topics']>; className?: string }) {
+  return (
+    <div className={`flex flex-wrap gap-1 ${className}`}>
+      {topics.map((t) => (
+        <span
+          key={t.name}
+          title={`Named in ${plural(t.episodes, 'episode')} across ${plural(t.shows, 'show')}`}
+          className="inline-flex items-baseline gap-1 rounded-md bg-white px-1.5 py-0.5 text-[11.5px] font-medium text-slate-700 ring-1 ring-slate-200"
+        >
+          {t.name}
+          <span className="tnum text-[10.5px] font-semibold text-slate-400">{t.episodes}</span>
+        </span>
+      ))}
+    </div>
   );
 }
 
