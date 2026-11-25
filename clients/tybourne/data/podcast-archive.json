@@ -3,6 +3,79 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-ingoodcompany-13nq3i7",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Euroclear CEO: Europe’s Financial Markets, Frozen Russian Assets and Tokenisation",
+      "date": "2026-11-25T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/euroclear-ceo-europes-financial-markets-frozen-russian-asset",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Settling the world's GDP every single month",
+          "detail": "Orban states that Euroclear settles the equivalent of world GDP every month, meaning a single day of downtime would cause serious disruption to global financial markets. This frames the company as one of the most systemically critical institutions most people have never heard of."
+        },
+        {
+          "title": "Russia's €200 billion converted from securities to cash on Euroclear's balance sheet",
+          "detail": "After the February 2022 invasion, Russia's ~€200 billion in securities at Euroclear were immobilised; as they matured, they converted to cash and landed on Euroclear's own balance sheet, inflating it to nearly €200 billion — an unprecedented situation for a CSD."
+        },
+        {
+          "title": "All windfall profits from Russian cash remitted to European Commission",
+          "detail": "Euroclear earns net interest on the Russian cash (since it contractually pays no interest to depositors) but the board voluntarily redirects 100% of those windfall earnings to the European Commission for Ukrainian aid, explicitly rejecting any benefit from the war."
+        },
+        {
+          "title": "Orban's warning: seizing the Russian principal would erode European rule-of-law credibility",
+          "detail": "Orban argues that there is currently no legal basis to seize state-owned assets and that doing so would undermine sixty years of legal certainty that attracts foreign investors to European markets — framing the debate not just as a legal question but as an existential risk to European financial competitiveness."
+        }
+      ],
+      "synthesis": "Euroclear is one of the most systemically critical yet least visible institutions in global finance — settling the equivalent of world GDP every month, holding €45 trillion in assets under custody, and operating with roughly 3,500 clients across 80+ markets. CEO Valérie Orban's central argument is that Euroclear's value lies not in raw processing power but in its neutrality and trust: a bank or broker-owned platform would be boycotted by competitors, whereas Euroclear's diverse shareholder base (Belgian and Singaporean sovereign funds, New Zealand and Australian pension funds, plus banks) gives it the cross-industry legitimacy that makes network effects work.",
+      "whatChanged": "Russia's ~€200 billion in securities held at Euroclear were immobilised after the February 2022 invasion and have since converted into cash sitting on Euroclear's balance sheet, generating windfall net interest income that is now being remitted in full to the European Commission for Ukrainian aid.",
+      "whyItMatters": "The disposition of the €200 billion principal remains legally unresolved: Orban's public argument that outright seizure would erode European rule-of-law credibility and deter foreign investors sets the boundary condition for any future G7 decision — meaning the asset freeze is likely to remain in legal limbo,…",
+      "beneficiaries": [
+        "European Commission / Ukraine",
+        "Euroclear (tokenisation/Pitagore)",
+        "Asian and intra-APAC investors"
+      ],
+      "atRisk": [
+        "European capital market attractiveness",
+        "Early DLT/blockchain platforms (bank-owned)"
+      ],
+      "numbers": [
+        {
+          "metric": "Assets under custody",
+          "value": "€45 trillion",
+          "context": "Total assets held by Euroclear as of the time of the interview"
+        },
+        {
+          "metric": "Monthly settlement volume",
+          "value": "Equivalent of world GDP every month",
+          "context": "Used to illustrate systemic importance; a one-day outage would severely disrupt global financial markets"
+        },
+        {
+          "metric": "Number of clients",
+          "value": "~3,500",
+          "context": "Financial institutions served by Euroclear, based in more than 80 markets"
+        },
+        {
+          "metric": "Number of markets served",
+          "value": "More than 80",
+          "context": "Geographic footprint of Euroclear's client base"
+        },
+        {
+          "metric": "Russian central bank assets immobilised",
+          "value": "Almost €200 billion",
+          "context": "Securities held at Euroclear belonging to Russia's central bank, frozen following February 2022 invasion of Ukraine"
+        }
+      ],
+      "topics": [
+        "Euroclear's systemic role",
+        "Tokenisation / Pitagore",
+        "Blockchain disintermediation threat",
+        "Asian market expansion"
+      ]
+    },
+    {
       "id": "live-aidaily-1t75t4u",
       "podcastId": "aidaily",
       "show": "AI Daily",
