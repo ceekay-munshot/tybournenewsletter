@@ -388,6 +388,7 @@ function SystemDetail({
                 {fmtValue(b.lastValue, b.unit)} → {fmtValue(b.thisValue, b.unit)}
               </div>
             )}
+            {b.basisShort && <div className="mt-0.5 text-[10px] text-slate-400">{b.basisShort}</div>}
             {(b.prevChangePct != null || b.prevChangeAbs != null) && (
               <div className="tnum mt-0.5 text-[10px] text-slate-400">
                 prior {prevArrow}:{' '}
@@ -493,6 +494,9 @@ function SystemDetail({
                 )}
               </table>
             </div>
+          )}
+          {rows.length > 0 && useSeries && b.basisNote && (
+            <p className="text-[10.5px] leading-snug text-slate-400">{b.basisNote}</p>
           )}
           {b.auxTables?.map((t, i) => (
             <NlAuxTable key={`t${i}`} table={t} />
