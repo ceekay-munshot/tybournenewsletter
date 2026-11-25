@@ -353,8 +353,9 @@ function SystemDetail({
         r.prevChangeAbs != null ||
         (r.sub ?? []).some((s) => s.prevChangePct != null || s.prevChangeAbs != null)
     );
-  const prevArrow = b.prevLabel ? `${b.prevLabel} → ${b.lastPeriodLabel}` : 'Prior';
+  const prevArrow = b.prevChangeLabel ?? (b.prevLabel ? `${b.prevLabel} → ${b.lastPeriodLabel}` : 'Prior');
   const thisArrow = `${b.lastPeriodLabel} → ${b.thisPeriodLabel}`;
+  const colLabels = b.breakdownChangeLabels;
   // Multi-period series (last N periods) — mirrors the dashboard table when present.
   const useSeries = Array.isArray(b.series) && b.series.length >= 2;
   const sLabels = useSeries ? b.series!.map((p) => p.label) : [];
@@ -473,8 +474,8 @@ function SystemDetail({
                         {showPrevVal && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{b.prevLabel}</th>}
                         {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.lastPeriodLabel}</th>}
                         {hasVals && <th className="border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{b.thisPeriodLabel}</th>}
-                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
-                        <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{showPrevChg ? thisArrow : 'Change'}</th>
+                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-medium text-slate-400 last:border-r-0">{colLabels?.prev ?? prevArrow}</th>}
+                        <th className="whitespace-nowrap border-r border-slate-200 px-2.5 py-1.5 text-right font-semibold last:border-r-0">{colLabels?.this ?? (showPrevChg ? thisArrow : 'Change')}</th>
                       </tr>
                     </thead>
                     <tbody>
