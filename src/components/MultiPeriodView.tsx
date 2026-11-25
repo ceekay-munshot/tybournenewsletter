@@ -63,8 +63,9 @@ export function MultiPeriodView({
         r.prevChangeAbs != null ||
         subsOf(r).some((s) => s.prevChangePct != null || s.prevChangeAbs != null)
     );
-  const prevArrow = view.prevLabel ? `${view.prevLabel} → ${view.lastPeriodLabel}` : 'Prior';
+  const prevArrow = view.prevChangeLabel ?? (view.prevLabel ? `${view.prevLabel} → ${view.lastPeriodLabel}` : 'Prior');
   const thisArrow = `${view.lastPeriodLabel} → ${view.thisPeriodLabel}`;
+  const colLabels = block.breakdownChangeLabels;
 
   // Multi-period series (last N periods). When present it supersedes the prev/last/this
   // triple — the table shows one value column per period plus a change column per step.
@@ -205,8 +206,8 @@ export function MultiPeriodView({
                         {showPrevVal && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{view.prevLabel}</th>}
                         {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.lastPeriodLabel}</th>}
                         {hasVals && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{view.thisPeriodLabel}</th>}
-                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{prevArrow}</th>}
-                        <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{showPrevChg ? thisArrow : changeNoun}</th>
+                        {showPrevChg && <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0">{colLabels?.prev ?? prevArrow}</th>}
+                        <th className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right last:border-r-0">{colLabels?.this ?? (showPrevChg ? thisArrow : changeNoun)}</th>
                       </tr>
                     </thead>
                     <tbody>

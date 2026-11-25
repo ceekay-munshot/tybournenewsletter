@@ -100,6 +100,9 @@ export interface PeriodView {
    *  consecutive periods. prevLabel is the period before lastPeriodLabel (e.g. "Aug '26"),
    *  prevValue its overall value, prevChangePct/prevChangeAbs the prevLabel→lastPeriodLabel move. */
   prevLabel?: string;
+  /** Overrides the default "prevLabel → lastPeriodLabel" text for the prior comparison —
+   *  for year-on-year views, where that arrow would pair two unrelated periods. */
+  prevChangeLabel?: string;
   prevValue?: number | null;
   prevChangePct?: number | null;
   prevChangeAbs?: number | null;
@@ -131,6 +134,8 @@ export interface ChangeBlock {
   /** The prior comparison (mirrors the default view) so the overview + newsletter can show
    *  two consecutive periods of trend. Copied from the default view in consolidation. */
   prevLabel?: string;
+  /** Mirrors the default view's prevChangeLabel. */
+  prevChangeLabel?: string;
   prevValue?: number | null;
   prevChangePct?: number | null;
   prevChangeAbs?: number | null;
@@ -156,6 +161,9 @@ export interface ChangeBlock {
    *  default "<Period>-over-<period>" line — used when the breakdown is a separate
    *  lens from the headline (e.g. a lagged regional snapshot). */
   breakdownSubtitle?: string;
+  /** Optional headers for the breakdown table's change columns, when the breakdown runs
+   *  on a different clock from the headline (e.g. IATA months under a TSA MTD headline). */
+  breakdownChangeLabels?: { prev?: string; this?: string };
   /** Lifted narrative ("why it moved") — shown as cards in the multi-period view. */
   insights?: InsightItem[];
   /** Supporting tables rendered under the main breakdown (sector flows, entries/exits,
