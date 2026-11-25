@@ -100,7 +100,12 @@ jobs:
             exit 0
           fi
           git add clients/*/data/*.json
-          git commit -m "chore(data): refresh consolidated + newsletter [skip ci]"
+          # NO "[skip ci]" here: the site bundles clients/*/data/*.json at build time, and
+          # Cloudflare Pages skips the build for any commit whose message carries [skip ci]
+          # / [ci skip] / [no ci]. With it, every data refresh landed in git but the live
+          # dashboard stayed frozen on the last code commit (stuck "as of 6 Nov 2026").
+          # No GitHub workflow here triggers on push, so nothing else needs skipping.
+          git commit -m "chore(data): refresh consolidated + newsletter"
           for i in 1 2 3 4; do
             if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
                git push origin "HEAD:${GITHUB_REF_NAME}"; then
