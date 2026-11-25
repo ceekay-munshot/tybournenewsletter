@@ -3,6 +3,82 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-1t75t4u",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "AI Just Made History in the Middle of a Meltdown",
+      "date": "2026-11-24T20:12:22.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-Just-Made-History-in-the-Middle-of-a-Meltdown-e3sv3tf",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "Riemann hypothesis claimed solved with Claude's help",
+          "detail": "Anthropic mathematician Levant Alpoge announced he and Claude had discovered a proof of the Riemann hypothesis — proposed in 1859 and one of seven Millennium Prize problems — plus the generalized Riemann hypothesis. The proof is 17 million lines of Lean code, and Alpoge himself acknowledged it might be false."
+        },
+        {
+          "title": "Terence Tao said months earlier that AI 'couldn't touch' the Riemann hypothesis",
+          "detail": "In a Numberphile video last month, Fields Medalist Terence Tao said AI companies had secretly devoted enormous effort to the problem and couldn't touch it, speculating that maybe a human-AI combination in 2050 might make progress. The proof arrived weeks after this confident prediction."
+        },
+        {
+          "title": "Musk renamed internal chat 'Cell Compute because we can't compete'",
+          "detail": "In August, Musk renamed an xAI group chat with hundreds of engineers to 'Cell Compute because we can't compete' and threatened to fire anyone wasting GPUs, calling it 'a betrayal of your team.' The Times sourced this directly from internal communications, confirming xAI has effectively conceded frontier AI status."
+        },
+        {
+          "title": "Trump personally called into the NVIDIA board meeting",
+          "detail": "Trump told CNBC he pushed for Jensen's return and 'gave enough assurance' on prosecution, and said Jensen would not have been reinstated without his intervention. Semaphore confirmed Trump personally called into the board meeting; the White House made no effort to conceal this."
+        }
+      ],
+      "synthesis": "The episode's central argument is that AI has crossed a qualitative threshold — not gradually, but all at once, on multiple fronts simultaneously — and the institutional and political structures around it are visibly struggling to keep up. The claimed Riemann hypothesis proof, produced by Anthropic mathematician Levant Alpoge working with Claude, is the sharpest illustration: a 17-million-line Lean proof of a problem proposed in 1859, which no human mathematician can fully verify or even claim to understand. The Lean/Mathlib community endorsed it; the Association for Human Mathematics explicitly condemned the model of proof production as removing human accountability from science. The juxtaposition with Fields Medalist Terence Tao's March prediction — that \"something beyond current AI is needed\" and maybe a human-AI combination in 2050 might make progress — makes the timing viscerally…",
+      "whatChanged": "Anthropic mathematician Levant Alpoge announced a claimed proof of the Riemann hypothesis — one of mathematics' seven Millennium Prize problems — produced in collaboration with Claude and published as 17 million lines of Lean code, while simultaneously President Trump personally intervened in the NVIDIA board meeting…",
+      "whyItMatters": "The Riemann proof, if verified, signals AI has crossed into frontier scientific discovery, compressing timelines for every field that depends on unsolved mathematics; the Trump-NVIDIA intervention sets a precedent for executive branch interference in corporate governance tied to stock market management, transforming…",
+      "beneficiaries": [
+        "Anthropic",
+        "ZAI (GLM 5.4)",
+        "Open-source AI labs"
+      ],
+      "atRisk": [
+        "NVIDIA (NVDA)",
+        "Anthropic (IPO stock)",
+        "xAI / SpaceX AI",
+        "Howard Lutnick / Commerce Dept."
+      ],
+      "numbers": [
+        {
+          "metric": "Lean proof line count (Riemann hypothesis)",
+          "value": "17,000,000 lines of code",
+          "context": "The Alpoge-Claude proof of the Riemann hypothesis, published in the Lean programming language"
+        },
+        {
+          "metric": "Riemann hypothesis Millennium Prize",
+          "value": "$1,000,000",
+          "context": "One of seven Millennium Prize problems; the prize attached to a correct proof"
+        },
+        {
+          "metric": "Year Riemann hypothesis was proposed",
+          "value": "1859",
+          "context": "Proposed by Bernhard Riemann; considered one of the most important problems in number theory"
+        },
+        {
+          "metric": "xAI co-founders who left by March",
+          "value": "all 11",
+          "context": "All 11 xAI co-founders had left the company by March, leaving only Elon Musk"
+        },
+        {
+          "metric": "Trump CNBC call length",
+          "value": "one hour",
+          "context": "Trump called into CNBC to discuss his role in Jensen Huang's reinstatement"
+        }
+      ],
+      "topics": [
+        "Riemann hypothesis proof",
+        "Trump's NVIDIA intervention",
+        "xAI / Grok competitiveness",
+        "Anthropic IPO",
+        "looped transformers"
+      ]
+    },
+    {
       "id": "live-iltb-fov0sa",
       "podcastId": "iltb",
       "show": "Invest Like the Best",
