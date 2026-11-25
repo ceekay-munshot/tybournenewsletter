@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronLeft, Clock, Zap, Quote } from 'lucide-react';
+import { ChevronLeft, Clock, Zap, Quote, Info } from 'lucide-react';
 import type { ChangeBlock, BreakdownRow, Comparison, SeriesPoint } from '../types';
 import { Card, CardHeader, Badge } from './ui/Card';
 import { Segmented } from './ui/Controls';
@@ -132,6 +132,9 @@ export function MultiPeriodView({
                 <span className="font-semibold text-slate-700">{fmtValue(view.thisValue, block.unit)}</span>
               </div>
             )}
+            {view.available && view.basisShort && (
+              <div className="mt-0.5 text-[11px] text-slate-400">{view.basisShort}</div>
+            )}
             {view.available && (view.prevChangePct != null || view.prevChangeAbs != null) && (
               <div className="tnum mt-1 text-[11.5px] text-slate-400">
                 prior {prevArrow}:{' '}
@@ -166,6 +169,12 @@ export function MultiPeriodView({
               <p className="text-[12px] text-slate-500">
                 {hasSub ? `${cap(bNoun)}, then the move for each ${sNoun}. ` : `Each ${bNoun}'s move. `}⚡ = notable move.
               </p>
+              {view.basisNote && (
+                <p className="mt-1.5 flex max-w-[78ch] gap-1.5 text-[11.5px] leading-snug text-slate-500">
+                  <Info size={13} strokeWidth={2.2} className="mt-px shrink-0 text-slate-400" aria-hidden />
+                  <span>{view.basisNote}</span>
+                </p>
+              )}
             </div>
             <div className="px-4 pb-4">
               <div className="overflow-x-auto rounded-lg border border-slate-200">

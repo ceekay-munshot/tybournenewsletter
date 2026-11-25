@@ -107,6 +107,10 @@ export interface PeriodView {
   /** The last N periods (oldest→newest) for the headline — when present the table shows
    *  these as value + change columns instead of the prev/last/this triple. */
   series?: SeriesPoint[];
+  /** Set when the last column is a period TO DATE (e.g. "Nov '26 MTD"): how it is compared,
+   *  shown under the table. basisShort is the one-line version for the headline values. */
+  basisNote?: string;
+  basisShort?: string;
   breakdown: BreakdownRow[];
   summary?: string;
   notes?: string;
@@ -138,6 +142,9 @@ export interface ChangeBlock {
   /** The default view's last-N-periods series, mirrored onto the block so the newsletter
    *  can render the same multi-period table as the dashboard. */
   series?: SeriesPoint[];
+  /** The default view's to-date basis (see PeriodView.basisNote), mirrored in consolidation. */
+  basisNote?: string;
+  basisShort?: string;
   asOf: string;
   isStale?: boolean;
   breakdown: BreakdownRow[];

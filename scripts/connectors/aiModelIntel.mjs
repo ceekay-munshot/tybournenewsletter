@@ -227,7 +227,11 @@ async function buildInsights(system, view) {
       title: 'The market is the story, not any one model',
       body: `Total routed tokens reached ${T(view.thisValue)} (${
         view.changePct != null ? `${view.changePct >= 0 ? '+' : ''}${(view.changePct * 100).toFixed(0)}%` : '—'
-      } ${view.label.toLowerCase()}-on-${view.label.toLowerCase()}). As the pie grew, share moved toward lower-cost and open-weight models${
+      } ${
+        view.basisNote
+          ? `${view.label.toLowerCase()}-to-date vs the same weeks of ${view.lastPeriodLabel}`
+          : `${view.label.toLowerCase()}-on-${view.label.toLowerCase()}`
+      }). As the pie grew, share moved toward lower-cost and open-weight models${
         gained.length ? ` — ${gained.map(ppTxt).join(', ')} gained` : ''
       }${lost.length ? `, while ${lost.map(ppTxt).join(', ')} gave up ground` : ''}. A falling share here can sit on top of flat or only slightly lower volume.`,
     });
@@ -273,20 +277,130 @@ async function buildInsights(system, view) {
   return out;
 }
 
+// Last calendar day (YYYY-MM-DD, UTC) of a month key "2026-11" / quarter key "2026-Q4".
+const monthEnd = (ym) => {
+  const [y, m] = ym.split('-').map(Number);
+  return new Date(Date.UTC(y, m, 0)).toISOString().slice(0, 10);
+};
+const quarterEnd = (qid) => {
+  const m = /^(\d{4})-Q([1-4])$/.exec(qid);
+  return new Date(Date.UTC(Number(m[1]), Number(m[2]) * 3, 0)).toISOString().slice(0, 10);
+};
+// "2026-11-02".."2026-11-22" -> "2–22 Nov"; across months -> "28 Sep – 4 Oct".
+const dayMon = (s) => {
+  const d = new Date(`${s}T00:00:00Z`);
+  return { d: d.getUTCDate(), m: M3[d.getUTCMonth()] };
+};
+const rangeLabel = (from, to) => {
+  const a = dayMon(from);
+  const b = dayMon(to);
+  return a.m === b.m ? `${a.d}–${b.d} ${b.m}` : `${a.d} ${a.m} – ${b.d} ${b.m}`;
+};
+const byStart = (a, b) => String(a.start).localeCompare(String(b.start));
+
+// One Month / Quarter view whose LAST column is the current period to date.
+//
+// Weeks belong to the period their start date falls in. A period is complete once a
+// fully-reported week starting in it runs to (or past) its last day, and it has enough
+// weeks (guards the first, partly-covered period of the feed). Complete periods compare
+// in full, as before.
+//
+// The current period (the one holding the newest week) is shown to date: the sum of its
+// fully-reported weeks so far, compared with the SAME number of opening weeks of the
+// previous period, so the change is like-for-like rather than a part-period against a
+// whole one. The in-progress week is left out until it completes (same rule as the Week
+// view). With no complete week yet in the current period, the view ends at the latest
+// complete period.
+function periodView(weeks, o) {
+  const buckets = bucketWeeks(weeks, o.keyFn);
+  const keys = Object.keys(buckets).sort();
+  const isComplete = (k) =>
+    buckets[k].weeks >= o.minWeeks && weeks.some((w) => !w.partial && o.keyFn(w) === k && String(w.end) >= o.endFn(k));
+  const complete = keys.filter(isComplete);
+
+  const curKey = keys[keys.length - 1];
+  const prevKey = complete[complete.length - 1];
+  const curWeeks = weeks.filter((w) => !w.partial && o.keyFn(w) === curKey).sort(byStart);
+  const n = curWeeks.length;
+  const toDate = curKey && !isComplete(curKey) && prevKey && prevKey < curKey && n > 0;
+
+  if (!toDate) {
+    const tK = complete[complete.length - 1];
+    const lK = complete[complete.length - 2];
+    const v = buildView(buckets, tK, lK, o.comparison, o.label, o.labelFn(tK), o.labelFn(lK));
+    attachPrior(v, buckets, complete, o.comparison, o.label, o.labelFn);
+    attachSeries(v, seriesViews(buckets, complete, o.comparison, o.label, o.labelFn, o.n));
+    return v;
+  }
+
+  const prevWeeks = weeks.filter((w) => !w.partial && o.keyFn(w) === prevKey).sort(byStart).slice(0, n);
+  if (prevWeeks.length < n) {
+    return unavailable(o.comparison, o.label, `Not enough weeks of ${o.labelFn(prevKey)} to compare ${o.toDateTag} like-for-like.`);
+  }
+  const tdBuckets = { ...bucketWeeks(curWeeks, () => 'cur'), ...bucketWeeks(prevWeeks, () => 'prev') };
+  const thisLabel = `${o.labelFn(curKey)} (${o.toDateTag})`;
+  const lastLabel = o.labelFn(prevKey);
+  const v = buildView(tdBuckets, 'cur', 'prev', o.comparison, o.label, thisLabel, lastLabel);
+  if (!v.available) return v;
+
+  // Prior step = the last two complete periods, in full (e.g. Sep → Oct).
+  attachPrior(v, buckets, [...complete, curKey], o.comparison, o.label, o.labelFn);
+
+  // Columns: the last complete periods in full, then the to-date point. attachSeries chains
+  // the complete periods; the to-date point is appended after, because its change is
+  // measured against the prior period's opening weeks, not its full total.
+  attachSeries(v, seriesViews(buckets, complete, o.comparison, o.label, o.labelFn, o.n - 1));
+  const pt = (src) => ({
+    label: thisLabel,
+    value: src ? src.thisValue ?? null : null,
+    changePct: src ? src.changePct ?? null : null,
+    changeAbs: null,
+    direction: src ? src.direction : 'flat',
+  });
+  if (Array.isArray(v.series)) {
+    v.series.push(pt(v));
+    for (const r of v.breakdown) if (Array.isArray(r.series)) r.series.push(pt(r));
+  }
+
+  const wk = (k) => `${k} week${k === 1 ? '' : 's'}`;
+  const curRange = rangeLabel(curWeeks[0].start, curWeeks[n - 1].end);
+  const prevRange = rangeLabel(prevWeeks[0].start, prevWeeks[n - 1].end);
+  const pending = weeks.find((w) => w.partial && o.keyFn(w) === curKey);
+  v.basisNote =
+    `${thisLabel} covers ${wk(n)} (${curRange}) and is compared with the first ${wk(n)} of ${lastLabel} ` +
+    `(${prevRange}: ${T(v.lastValue)} tokens), so the change is like-for-like. Earlier columns are full ${o.noun}s.` +
+    (pending ? ` The week of ${dayMon(pending.start).d} ${dayMon(pending.start).m} is added once it completes.` : '');
+
+  v.basisShort = `${lastLabel} = first ${wk(n)} (${prevRange}), like-for-like`;
+
+  const gainers = v.breakdown.filter((r) => r.direction === 'up' && r.label !== 'Others').length;
+  const fallers = v.breakdown.filter((r) => r.direction === 'down' && r.label !== 'Others').length;
+  if (v.changePct != null) {
+    v.summary = `${cap(o.noun)}-to-date routed tokens ${v.changePct >= 0 ? 'up' : 'down'} ${Math.abs(v.changePct * 100).toFixed(
+      1
+    )}% to ${T(v.thisValue)} over the first ${wk(n)} of ${o.labelFn(curKey)}, against the same ${wk(n)} of ${lastLabel} — ${gainers} providers grew volume, ${fallers} shrank, and share shifted toward lower-cost open-weight models.`;
+  }
+  return v;
+}
+
 export async function connect(system) {
   const usage = await getJson(system.source.usage);
   const allWeeks = usage?.weeks || [];
   const weeks = allWeeks.filter((w) => w && w.start);
   if (weeks.length < 8) throw new Error('not enough usage weeks');
 
-  // --- MoM: complete calendar months (>=4 weeks), excluding the current partial month ---
-  const months = bucketWeeks(weeks, (w) => monthOf(w.start));
-  const completeMonths = Object.keys(months).filter((m) => months[m].weeks >= 4).sort();
-  const tM = completeMonths[completeMonths.length - 1];
-  const lM = completeMonths[completeMonths.length - 2];
-  const momView = buildView(months, tM, lM, 'MoM', 'Month', monthLabel(tM), monthLabel(lM));
-  attachPrior(momView, months, completeMonths, 'MoM', 'Month', monthLabel);
-  attachSeries(momView, seriesViews(months, completeMonths, 'MoM', 'Month', monthLabel, 4));
+  // --- MoM: complete months, then the current month to date as the last column ---
+  const momView = periodView(weeks, {
+    keyFn: (w) => monthOf(w.start),
+    endFn: monthEnd,
+    minWeeks: 4,
+    comparison: 'MoM',
+    label: 'Month',
+    labelFn: monthLabel,
+    toDateTag: 'MTD',
+    noun: 'month',
+    n: 4,
+  });
 
   // --- WoW: the last two fully-reported (non-partial) weeks ---
   const fullWeeks = weeks.filter((w) => !w.partial).sort((a, b) => String(a.start).localeCompare(String(b.start)));
@@ -298,14 +412,18 @@ export async function connect(system) {
   attachPrior(wowView, wkBuckets, wkKeys, 'WoW', 'Week', wkLabel);
   attachSeries(wowView, seriesViews(wkBuckets, wkKeys, 'WoW', 'Week', wkLabel, 4));
 
-  // --- QoQ: complete calendar quarters (>=12 weeks) ---
-  const quarters = bucketWeeks(weeks, (w) => quarterOf(w.start));
-  const completeQ = Object.keys(quarters).filter((q) => quarters[q].weeks >= 12).sort();
-  const tQ = completeQ[completeQ.length - 1];
-  const lQ = completeQ[completeQ.length - 2];
-  const qoqView = buildView(quarters, tQ, lQ, 'QoQ', 'Quarter', quarterLabel(tQ), quarterLabel(lQ));
-  attachPrior(qoqView, quarters, completeQ, 'QoQ', 'Quarter', quarterLabel);
-  attachSeries(qoqView, seriesViews(quarters, completeQ, 'QoQ', 'Quarter', quarterLabel, 3));
+  // --- QoQ: complete quarters, then the current quarter to date as the last column ---
+  const qoqView = periodView(weeks, {
+    keyFn: (w) => quarterOf(w.start),
+    endFn: quarterEnd,
+    minWeeks: 12,
+    comparison: 'QoQ',
+    label: 'Quarter',
+    labelFn: quarterLabel,
+    toDateTag: 'QTD',
+    noun: 'quarter',
+    n: 4,
+  });
 
   const views = [wowView, momView, qoqView];
   const def = momView.available ? momView : qoqView.available ? qoqView : wowView.available ? wowView : views[1];
@@ -324,7 +442,7 @@ export async function connect(system) {
     breakdown: def.breakdown,
     summary: def.summary,
     notes:
-      'OpenRouter routed model-token volume, weekly data rolled to complete weeks / months / quarters. Each provider row shows token volume change with its share shift alongside. Providers not consistently broken out fold into Others so totals stay honest. "Why it moved" adds the consumer-app and Alphabet-filing context for Google/Gemini.',
+      'OpenRouter routed model-token volume, weekly data rolled to weeks / months / quarters. The latest month and quarter show to date (MTD / QTD) from complete weeks, compared with the same number of weeks of the period before. Each provider row shows token volume change with its share shift alongside. Providers not consistently broken out fold into Others so totals stay honest. "Why it moved" adds the consumer-app and Alphabet-filing context for Google/Gemini.',
   });
   block.views = views;
   block.breakdownNoun = 'provider';
