@@ -1149,5 +1149,1192 @@
     ],
     "model": "global.anthropic.claude-sonnet-4-6",
     "inputHash": "696ab3f7f343e942"
-  }
+  },
+  "currentMonth": {
+    "id": "2026-11",
+    "label": "Nov '26",
+    "longLabel": "November 2026",
+    "mtd": true,
+    "episodes": 87,
+    "summarised": 86,
+    "shows": [
+      "Stratechery",
+      "AI Daily",
+      "Odd Lots",
+      "In Good Company",
+      "All-In",
+      "Invest Like the Best",
+      "Sources",
+      "Lenny's",
+      "Cheeky Pint"
+    ],
+    "toneCounts": {
+      "mixed": 37,
+      "positive": 21,
+      "cautious": 19,
+      "neutral": 4
+    },
+    "weeks": [
+      {
+        "id": "2026-11-01",
+        "label": "1 Nov",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-lennys-17c7ya7",
+            "show": "Lenny's",
+            "title": "How a 19-year-old intern built the growth engine behind this $2B AI company | Hector Serrano",
+            "date": "2026-11-01T13:31:36.000Z",
+            "url": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
+            "summarised": false,
+            "line": "Hector Serrano runs one of the most innovative and successful paid growth programs in Silicon Valley. As Head of Content at Wispr Flow, a leading AI voice-to-text tool, he built a roster of 50…"
+          },
+          {
+            "id": "live-aidaily-1wtjwwc",
+            "show": "AI Daily",
+            "title": "AI Won’t Make Our Minds Useless According to 400 Years of History",
+            "date": "2026-11-01T11:52:15.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-Wont-Make-Our-Minds-Useless-According-to-400-Years-of-History-e3rhmc6",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Venkatesh Rao's 'Cognitive Mercantilism' framework reframes the AI labor-displacement debate by arguing — via 400 years of economic history — that abundant intelligence will expand human cognitive ambition rather than replace it, challenging the dominant obsolescence narrative."
+          }
+        ]
+      },
+      {
+        "id": "2026-11-02",
+        "label": "2–8 Nov",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-stratechery-p5quqq",
+            "show": "Stratechery",
+            "title": "AI on the Ballot",
+            "date": "2026-11-08T22:00:25.000Z",
+            "url": "https://www.youtube.com/watch?v=F4vInlTqRdo",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Data center opposition became a decisive electoral issue in the 2026 midterms: both parties ran anti-data-center ads in Wisconsin, Texas flipped Democratic on a moratorium pledge, and even incumbent Republican Greg Abbott had already imposed a permit moratorium — signaling that AI infrastructure faces a new, durable…"
+          },
+          {
+            "id": "live-lennys-1jog9cm",
+            "show": "Lenny's",
+            "title": "Why PMs are suddenly valuable again | Tulsee Doshi (Head of Product, Gemini)",
+            "date": "2026-11-08T13:31:32.000Z",
+            "url": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Google is explicitly positioning Gemini 4 (Argon) as a frontier model, signaling a direct challenge to OpenAI and Anthropic at the top of the capability curve — a sharper claim than the company has historically made publicly — while simultaneously admitting it has not yet shipped a compelling personal-data AI assistant…"
+          },
+          {
+            "id": "live-aidaily-13r2qpu",
+            "show": "AI Daily",
+            "title": "Agentic Video Is Real and Here’s What You Should Try",
+            "date": "2026-11-08T12:05:09.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Agentic-Video-Is-Real-and-Heres-What-You-Should-Try-e3s0li5",
+            "summarised": true,
+            "tone": "positive",
+            "line": "AI agents have reached the point where they can autonomously edit, animate, and produce videos from plain-language prompts — including self-updating customer education videos that regenerate when source material changes — making video a recurring automated workflow rather than a discrete creative project."
+          },
+          {
+            "id": "live-allin-ji1ba3",
+            "show": "All-In",
+            "title": "Midterm Blood Bath, $4T AI Sell Off, Data Center Freeze, What's Next for Trump",
+            "date": "2026-11-07T18:27:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/midterm-blood-bath-4t-ai-sell-off-data-center-freeze-whats-next-for-trump",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "GOP suffers 'generational collapse' in 2026 midterms"
+          },
+          {
+            "id": "live-aidaily-1vkry7r",
+            "show": "AI Daily",
+            "title": "Companies Are Spending 5x More on AI Now",
+            "date": "2026-11-07T00:24:27.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Companies-Are-Spending-5x-More-on-AI-Now-e3rteiq",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Menlo Ventures' enterprise AI report documents that companies are spending nearly 5x more on AI year-over-year, driven by agent deployment, with spending actively exceeding internal budgets — signalling a structural, not incremental, acceleration."
+          },
+          {
+            "id": "live-stratechery-1xz3sg1",
+            "show": "Stratechery",
+            "title": "2026.45: Falling Leaves (and Stocks)",
+            "date": "2026-11-06T18:14:42.000Z",
+            "url": "https://stratechery.com/2026/falling-leaves-and-stocks/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Democrats won their largest Congressional majority in 36 years in the 2026 midterms, combined with data center opposition from both parties and Texas state-level results, materially elevating regulatory risk for the AI infrastructure buildout."
+          },
+          {
+            "id": "live-stratechery-1xz3sgy",
+            "show": "Stratechery",
+            "title": "Sharp Tech on Video: The U.S. Votes on Data Centers, Implications for Big Tech, Google’s Response to AI",
+            "date": "2026-11-06T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/sharp-tech-on-video-the-u-s-votes-on-data-centers-implications-for-big-tech-googles-response-to-ai/",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Sharp Tech launched its first-ever video format, now available on YouTube and Stratechery — a distribution expansion for a show previously audio-only."
+          },
+          {
+            "id": "live-iltb-107fmnm",
+            "show": "Invest Like the Best",
+            "title": "Ramtin Naimi - The State of Venture - [Invest Like the Best, EP.499]",
+            "date": "2026-11-06T09:00:00.000Z",
+            "url": "https://colossus.com/episode/trillion-dollar-goalposts/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Deal mechanics in venture have shifted to include second, pricier tranches for firms that missed the initial round, and Naimi reports more term sheets pulled or renegotiated than at any point since 2021 — a concrete, real-time signal of late-cycle stress in early-stage AI investing."
+          },
+          {
+            "id": "live-oddlots-1ia7cz1",
+            "show": "Odd Lots",
+            "title": "The Macro Implications of the Blue Tsunami",
+            "date": "2026-11-06T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/the-macro-implications-of-the-blue-tsunami",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Texas flips to 'hardcore blue' in a single night"
+          },
+          {
+            "id": "live-ingoodcompany-z6213t",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: Nuclear, Batteries and Reflections from New York",
+            "date": "2026-11-06T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-nuclear-batteries-and-reflections-from-new-yo",
+            "summarised": true,
+            "tone": "positive",
+            "line": "NBIM (the Norwegian sovereign wealth fund) made its first-ever direct investment in battery storage, moving beyond listed equity exposure into direct infrastructure ownership in the energy storage sector."
+          },
+          {
+            "id": "live-aidaily-ppzqtf",
+            "show": "AI Daily",
+            "title": "Why a Data Center Slowdown Benefits Big Tech",
+            "date": "2026-11-05T22:32:18.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-a-Data-Center-Slowdown-Benefits-Big-Tech-e3rreid",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Data center slowdown as a hyperscaler tailwind"
+          },
+          {
+            "id": "live-stratechery-1xz3sdg",
+            "show": "Stratechery",
+            "title": "An Interview With Intuit CEO Sasan Goodarzi About Accounting and AI",
+            "date": "2026-11-05T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Goodarzi rejects the disruption narrative head-on"
+          },
+          {
+            "id": "live-oddlots-1ds0fne",
+            "show": "Odd Lots",
+            "title": "James Bosworth on What Comes After Lula's Stunning Win",
+            "date": "2026-11-05T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/james-bosworth-on-what-comes-after-lulas-stunning-win",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Lula's unexpected win in Brazil's elections signifies a major political shift and potential reconfiguration of regional dynamics, particularly in relation to Venezuela."
+          },
+          {
+            "id": "live-aidaily-1r49zzm",
+            "show": "AI Daily",
+            "title": "How the Midterm Results Change AI",
+            "date": "2026-11-04T19:57:20.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-the-Midterm-Results-Change-AI-e3rotli",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "The Democratic wave has brought scrutiny to AI, which may lead to increased regulation and altered practices in the industry."
+          },
+          {
+            "id": "live-stratechery-1xz38a3",
+            "show": "Stratechery",
+            "title": "AI on the Ballot",
+            "date": "2026-11-04T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/ai-on-the-ballot/",
+            "summarised": true,
+            "line": "The political landscape in Texas has shifted with the election of Gina Hinojosa, who has promised a moratorium on data center construction, indicating a growing opposition to such projects."
+          },
+          {
+            "id": "live-iltb-2crwmu",
+            "show": "Invest Like the Best",
+            "title": "Martin Casado on Frontier Model Economics, AI's Slowdown, and the Cursor Deal - [Invest Like the Best, EP.498]",
+            "date": "2026-11-04T09:00:00.000Z",
+            "url": "https://colossus.com/episode/the-productive-investor/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "The growing emphasis on Frontier Model Economics reflects a shift in evaluation criteria for technology investments, particularly in the AI space."
+          },
+          {
+            "id": "live-ingoodcompany-gkjkiy",
+            "show": "In Good Company",
+            "title": "NextEra Energy CEO: Powering AI, Nuclear's Comeback and a Historic Utility Merger",
+            "date": "2026-11-04T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/nextera-energy-ceo-powering-ai-nuclears-comeback-and-a-histo",
+            "summarised": true,
+            "tone": "positive",
+            "line": "NextEra Energy is set to merge in a record-breaking deal, fundamentally changing the U.S. utility landscape."
+          },
+          {
+            "id": "live-aidaily-16qyp87",
+            "show": "AI Daily",
+            "title": "AI Lurches Toward Recursive Self-Improvement",
+            "date": "2026-11-03T20:15:43.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-Lurches-Toward-Recursive-Self-Improvement-e3rmekk",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "MIT's research reveals a frontier model capable of directly editing the weights of another model, advancing the discussion on AI's self-improvements."
+          },
+          {
+            "id": "live-stratechery-wcu2y",
+            "show": "Stratechery",
+            "title": "End of the Internet",
+            "date": "2026-11-03T16:00:27.000Z",
+            "url": "https://www.youtube.com/watch?v=a08XGPld8XM",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "The episode articulates a notable shift towards proprietary ecosystems dominated by a few tech Titans, threatening the open nature of the Internet."
+          },
+          {
+            "id": "live-sources-39ptq2",
+            "show": "Sources",
+            "title": "A quiet investor’s $10 billion bet on AI, chips, and defense",
+            "date": "2026-11-03T15:50:40.000Z",
+            "url": "https://sources.news/p/alex-davis-disruptive-ai-10-billion-bet",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Alex Davis raised a $10 billion fund aimed at investing significantly in AI, chips, and defense, focusing on about 10 key companies."
+          },
+          {
+            "id": "live-cheekypint-1c97uu5",
+            "show": "Cheeky Pint",
+            "title": "The company building America’s uranium supply from scratch",
+            "date": "2026-11-03T12:45:00.000Z",
+            "url": "https://share.transistor.fm/s/69a09d0c",
+            "summarised": true,
+            "line": "General Matter aims to become a crucial provider of HALEU as the U.S. prepares to halt Russian uranium imports by 2028, indicating a significant shift in the energy landscape."
+          },
+          {
+            "id": "live-stratechery-1xz36me",
+            "show": "Stratechery",
+            "title": "Apple Earnings, Memory Problems, The Hardware Company Regression",
+            "date": "2026-11-03T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/apple-earnings-memory-problems-the-hardware-company-regression/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Hardware business 'better than ever'"
+          },
+          {
+            "id": "live-oddlots-116n1me",
+            "show": "Odd Lots",
+            "title": "An Election Day Special With Nate Silver",
+            "date": "2026-11-03T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/an-election-day-special-with-nate-silver",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Trump approval at worst midterm level since Truman 1946"
+          },
+          {
+            "id": "live-aidaily-b5od52",
+            "show": "AI Daily",
+            "title": "How to Deslopify Your AI",
+            "date": "2026-11-02T17:00:00.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Deslopify-Your-AI-e3rjbqk",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "The episode does not report a discrete market event; its central claim is that AI slop — generic, unreviewed AI output passed off as work — is now the dominant failure mode for knowledge workers adopting AI tools, and that the burden-shifting it creates is becoming a measurable professional liability."
+          },
+          {
+            "id": "live-stratechery-1xz36kj",
+            "show": "Stratechery",
+            "title": "Google Earnings, Facebook Déjà Vu, The Agent Play",
+            "date": "2026-11-02T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/google-earnings-facebook-deja-vu-the-agent-play/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Google reported an earnings miss that the episode reframes as a consequence of deliberately aggressive AI and agent infrastructure spending, drawing an explicit parallel to Facebook's 2022 investment cycle that the market initially punished but which was ultimately vindicated."
+          },
+          {
+            "id": "live-oddlots-1iv58v2",
+            "show": "Odd Lots",
+            "title": "The $300 Billion Structured Notes Market Is Booming",
+            "date": "2026-11-02T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/the-300-billion-structured-notes-market-is-booming",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "U.S. SEC-registered structured notes are on track to hit ~$300 billion in 2026, up from ~$200 billion the prior year, driven by worst-of auto-callables on S&P/NASDAQ/Russell that now carry expected maturities of two years against stated five-year terms — creating a large, undisclosed long-vega overhang in the 2-5 year…"
+          }
+        ]
+      },
+      {
+        "id": "2026-11-09",
+        "label": "9–15 Nov",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-lennys-d2c0eh",
+            "show": "Lenny's",
+            "title": "Meta’s Muse: How we launched the most successful consumer product this year | Mona Sarantakos",
+            "date": "2026-11-15T13:31:28.000Z",
+            "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+            "summarised": true,
+            "tone": "positive",
+            "line": "'Trust is a must' — the internal motto that justified seven months before launch"
+          },
+          {
+            "id": "live-aidaily-12cej3y",
+            "show": "AI Daily",
+            "title": "7 Things AI-Native Companies Do Differently",
+            "date": "2026-11-15T12:20:55.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/7-Things-AI-Native-Companies-Do-Differently-e3sdtgn",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Leading companies like Stripe, Shopify, Uber, and Ramp have moved past AI experimentation to systematic, process-level agent deployment — characterized by automatic event-triggered workflows, shared company context, and human accountability structures, rather than on-demand prompting."
+          },
+          {
+            "id": "live-sources-3rcyfb",
+            "show": "Sources",
+            "title": "We are so early",
+            "date": "2026-11-14T19:42:00.000Z",
+            "url": "https://sources.news/p/we-are-so-early",
+            "summarised": true,
+            "tone": "positive",
+            "line": "The host joined Sound Ventures and has begun making investments, marking a shift from purely media/commentary work to active venture capital deployment."
+          },
+          {
+            "id": "live-oddlots-15mxz6a",
+            "show": "Odd Lots",
+            "title": "How Wall Street Is Bracing For the Post-Jensen Huang Nvidia Era",
+            "date": "2026-11-14T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/how-wall-street-is-bracing-for-the-post-jensen-huang-nvidia-era",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen's 60 direct reports and zero succession plan are the structural vulnerability"
+          },
+          {
+            "id": "live-allin-1yk111r",
+            "show": "All-In",
+            "title": "Jensen Ousted as Nvidia CEO: \"Spy\" Scandal, Export Restrictions, Market Impact",
+            "date": "2026-11-14T02:35:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/jensen-ousted-as-nvidia-ceo-spy-scandal-export-restrictions-market-impact",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen Huang has been ousted as Nvidia CEO following a Chinese spy scandal, leaked classified memo, and direct pressure from Secretary of State Rubio — the first forced departure of Nvidia's founder-CEO in company history, occurring while U.S.-China chip export controls are actively tightening."
+          },
+          {
+            "id": "live-aidaily-11s6quv",
+            "show": "AI Daily",
+            "title": "Washington Is Taking Control of AI",
+            "date": "2026-11-13T19:59:53.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Washington-Is-Taking-Control-of-AI-e3sbe6r",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen Huang's departure from Nvidia has acted as a political catalyst, shifting Washington's AI-China chip debate from 'whether' to restrict toward 'how fast and how broadly' — empowering China hawks and accelerating export restriction policy in ways that go beyond any individual espionage allegation."
+          },
+          {
+            "id": "live-stratechery-1xz3tc5",
+            "show": "Stratechery",
+            "title": "2026.46: The End of Jensen",
+            "date": "2026-11-13T18:00:00.000Z",
+            "url": "https://stratechery.com/2026/the-end-of-jensen/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Jensen Huang abruptly ended his 32-year tenure as Nvidia CEO, described as 'shocking and sudden,' coinciding with Intel reporting disappointing earnings and 2027 guidance signaling continued underperformance."
+          },
+          {
+            "id": "live-oddlots-vd2ywd",
+            "show": "Odd Lots",
+            "title": "Why a $2 Billion Law Firm Suddenly Collapsed",
+            "date": "2026-11-13T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/why-a-2-billion-law-firm-suddenly-collapsed",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "The fraudulent-transfer claw-back mechanism that makes the run self-accelerating"
+          },
+          {
+            "id": "live-ingoodcompany-3z9icy",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: Milken’s Method and a Tech Day in New York",
+            "date": "2026-11-13T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-milkens-method-and-a-tech-day-in-new-york",
+            "summarised": true,
+            "tone": "positive",
+            "line": "NBIM held a tech day in New York where Nicolai Tangen observed firsthand how companies are actually approaching AI — and found the reality surprising relative to expectations, suggesting a disconnect between corporate AI narratives and on-the-ground implementation."
+          },
+          {
+            "id": "live-stratechery-1xz3te1",
+            "show": "Stratechery",
+            "title": "Sharp Tech on Video: Nvidia After Jensen Huang, Ominous News for American AI, D.C. Gets Its Revenge",
+            "date": "2026-11-13T03:47:52.000Z",
+            "url": "https://stratechery.com/2026/sharp-tech-on-video-nvidia-after-jensen-huang-ominous-news-for-american-ai-d-c-gets-its-revenge/",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Sharp Tech launched its first-ever video format, distributing simultaneously on YouTube, Spotify, and Stratechery — a meaningful expansion of the show's surface area beyond audio-only."
+          },
+          {
+            "id": "live-aidaily-e7b9m4",
+            "show": "AI Daily",
+            "title": "Jensen Huang Is Out. Everything in AI Is Now Up for Grabs.",
+            "date": "2026-11-12T18:44:45.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Jensen-Huang-Is-Out--Everything-in-AI-Is-Now-Up-for-Grabs-e3s9ioh",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen Huang has departed Nvidia following personal allegations, removing the single most influential figure in AI infrastructure from the company that supplies the dominant GPU hardware underpinning the entire AI buildout."
+          },
+          {
+            "id": "live-stratechery-1xz3tb6",
+            "show": "Stratechery",
+            "title": "An Interview With Roblox CEO David Baszucki About Aggregating Play",
+            "date": "2026-11-12T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/an-interview-with-roblox-ceo-david-baszucki-about-aggregating-play/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Three years of AI change outpaces two decades of Roblox history"
+          },
+          {
+            "id": "live-oddlots-6i333n",
+            "show": "Odd Lots",
+            "title": "What Nvidia's Megaspeed Scandal Is Really All About",
+            "date": "2026-11-12T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/what-nvidias-megaspeed-scandal-is-really-all-about",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen Huang publicly admitted to NVIDIA's board that he had an extramarital affair with Alice, an executive associated with Megaspeed — the company at the center of an ongoing DOJ chip-smuggling investigation — giving new political life to a story that reporters had been covering for over a year."
+          },
+          {
+            "id": "live-aidaily-eansrf",
+            "show": "AI Daily",
+            "title": "Wall Street Has No Idea What Anthropic Is Worth",
+            "date": "2026-11-11T21:16:03.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Wall-Street-Has-No-Idea-What-Anthropic-Is-Worth-e3s7t73",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Anthropic is moving toward an IPO with surging revenue and a new enterprise productivity suite targeting Microsoft, forcing public markets to price a frontier AI lab for the first time and establish a valuation reference point for the entire sector."
+          },
+          {
+            "id": "live-stratechery-1xz3t9g",
+            "show": "Stratechery",
+            "title": "Intel Earnings, AMD Earnings, Intel and AMD’s Divergence",
+            "date": "2026-11-11T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/intel-earnings-amd-earnings-intel-and-amds-divergence/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Intel and AMD's latest earnings confirmed a structural — not cyclical — divergence, with AMD capitalizing on AI-driven data-center demand via its fabless/TSMC model while Intel's integrated IDM model continues to weigh on its competitive position and financial results."
+          },
+          {
+            "id": "live-iltb-vvzfhl",
+            "show": "Invest Like the Best",
+            "title": "Zach Reitano - Building Ro and Why Healthcare Should Be 50% of GDP - [Invest Like the Best, EP.500]",
+            "date": "2026-11-11T09:00:00.000Z",
+            "url": "https://colossus.com/episode/the-patient-revolution/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Ro has scaled from a $250M run rate to over $3B in four years while cutting headcount below 2021 levels, establishing itself as the country's leading direct-to-patient GLP-1 provider — demonstrating that vertically integrated, cash-pay digital health can reach significant scale."
+          },
+          {
+            "id": "live-oddlots-13q1nwj",
+            "show": "Odd Lots",
+            "title": "The Perfect Storm That Clobbered Hedge Funds",
+            "date": "2026-11-11T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/the-perfect-storm-that-clobbered-hedge-funds",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "In October 2024, nearly every major hedge fund strategy (multi-strat, macro, long/short equity) lost money simultaneously — an event Bloomberg's 16-year hedge fund correspondent called unprecedented in a single week — driven by a simultaneous unwind of implicitly correlated, leveraged-long-AI positions across pods that…"
+          },
+          {
+            "id": "live-ingoodcompany-e67c1b",
+            "show": "In Good Company",
+            "title": "Mike Milken: Access to Capital, the American Dream, and Why Risk Is Misunderstood",
+            "date": "2026-11-11T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/mike-milken-access-to-capital-the-american-dream-and-why-ris",
+            "summarised": true,
+            "tone": "positive",
+            "line": "The episode is a career-retrospective conversation with no breaking news; its central claim is that the high-yield bond market Milken pioneered was a capital-access equaliser, and that the same logic now underlies the private credit boom — a structural recurrence, not a new phenomenon."
+          },
+          {
+            "id": "live-allin-60zilp",
+            "show": "All-In",
+            "title": "Freedom vs. Safety: Axon CEO Rick Smith on the Future of Policing",
+            "date": "2026-11-10T23:03:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/freedom-vs-safety-axon-ceo-rick-smith-on-the-future-of-policing",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Axon has moved well beyond TASER hardware into a full public-safety platform — body cameras, cloud evidence management (Evidence.com), AI analytics, and now drone/robotics partnerships (Skydio) — creating a vertically integrated stack with high switching costs across U.S. law enforcement."
+          },
+          {
+            "id": "live-aidaily-1kzdjo2",
+            "show": "AI Daily",
+            "title": "Fable 5.2 Is the Best AI Ever. So Why Am I Not Switching Yet?",
+            "date": "2026-11-10T21:38:24.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Fable-5-2-Is-the-Best-AI-Ever--So-Why-Am-I-Not-Switching-Yet-e3s60fp",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Anthropic released 'Fable 5.2,' a new frontier model that breaks standard benchmarks and enables ambitious long-horizon demos, yet early hands-on evaluations (including NLW's own) find it does not compel a switch for everyday work tasks over Opus 3.5."
+          },
+          {
+            "id": "live-sources-l6dfmi",
+            "show": "Sources",
+            "title": "Amazon AWS CEO: AI boom is just getting started",
+            "date": "2026-11-10T16:03:25.000Z",
+            "url": "https://sources.news/p/aws-ceo-matt-garman-1-trillion",
+            "summarised": true,
+            "line": "Garman blames rogue operators for industry's political backlash"
+          },
+          {
+            "id": "live-cheekypint-3oets7",
+            "show": "Cheeky Pint",
+            "title": "Nik Storonsky: The most uncompromising banking CEO",
+            "date": "2026-11-10T12:45:00.000Z",
+            "url": "https://share.transistor.fm/s/dd3ec675",
+            "summarised": true,
+            "tone": "positive",
+            "line": "100,000 customers per day, zero paid marketing for 7 years"
+          },
+          {
+            "id": "live-stratechery-1xz3t8f",
+            "show": "Stratechery",
+            "title": "The Jensen Huang Story Gets Worse, Washington vs. New York, Silicon Valley",
+            "date": "2026-11-10T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/the-jensen-huang-story-gets-worse-washington-vs-new-york-silicon-valley/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "The Jensen Huang controversy escalated on Monday with a new development that shifted the primary risk framing from national security to corporate governance, making Huang's personal position as CEO the central concern."
+          },
+          {
+            "id": "live-aidaily-1ma56bn",
+            "show": "AI Daily",
+            "title": "Nvidia CEO Admits Affair With Suspected Chinese Spy",
+            "date": "2026-11-09T19:34:01.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Nvidia-CEO-Admits-Affair-With-Suspected-Chinese-Spy-e3s3kk2",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Jensen Huang publicly admitted an affair with a woman reported by intelligence sources as a suspected Chinese spy, triggering an Nvidia board investigation and injecting a human-intelligence risk vector directly into the world's most consequential AI chip company."
+          },
+          {
+            "id": "live-stratechery-1xz3t5q",
+            "show": "Stratechery",
+            "title": "Jensen Huang’s Affair, The Culper Report, Huang’s Righteousness",
+            "date": "2026-11-09T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/jensen-huangs-affair-the-culper-report-huangs-righteousness/",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Nvidia CEO Jensen Huang publicly admitted to an affair with a person alleged to be a Chinese intelligence operative, transforming what might have been a private matter into a national-security-tinged corporate governance crisis at the most strategically important semiconductor company in the world."
+          },
+          {
+            "id": "live-oddlots-q9o6m3",
+            "show": "Odd Lots",
+            "title": "This Is How New York City Takes Out Its Trash",
+            "date": "2026-11-09T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/this-is-how-new-york-city-takes-out-its-trash",
+            "summarised": true,
+            "tone": "positive",
+            "line": "New York City's Department of Sanitation launched the first on-street containerization program in North American history in June 2025 (West Harlem), backed by a mayoral commitment to full citywide rollout by end of 2031 — shifting from black bags on sidewalks to building-assigned and automated-side-loader-serviced bins…"
+          }
+        ]
+      },
+      {
+        "id": "2026-11-16",
+        "label": "16–22 Nov",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-aidaily-q7euaf",
+            "show": "AI Daily",
+            "title": "When AI Labs Rival Nations",
+            "date": "2026-11-22T12:41:07.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/When-AI-Labs-Rival-Nations-e3sqkoa",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists"
+          },
+          {
+            "id": "live-oddlots-18gnvc1",
+            "show": "Odd Lots",
+            "title": "How AI Is Forcing China to Reshape Industrial Policy",
+            "date": "2026-11-21T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/how-ai-is-forcing-china-to-reshape-industrial-policy",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Huawei-DeepSeek co-design partnership with embedded personnel"
+          },
+          {
+            "id": "live-allin-10z76aw",
+            "show": "All-In",
+            "title": "Anthropic Goes Public, Nvidia in Crisis, Markets Tank, Open Source Crackdown?",
+            "date": "2026-11-20T22:14:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/anthropic-goes-public-nvidia-in-crisis-markets-tank-open-source-crackdown",
+            "summarised": true,
+            "line": "Chamath's 'Mag 10' mega-corp thesis"
+          },
+          {
+            "id": "live-stratechery-1xz3uu5",
+            "show": "Stratechery",
+            "title": "2026.47: Down in DC",
+            "date": "2026-11-20T19:09:57.000Z",
+            "url": "https://stratechery.com/2026/down-in-dc/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Jensen Huang's departure framed as civilisational turning point"
+          },
+          {
+            "id": "live-aidaily-1cmueo4",
+            "show": "AI Daily",
+            "title": "Why You Should Try Gemini Neon (Even if You Love Fable)",
+            "date": "2026-11-20T18:30:51.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-You-Should-Try-Gemini-Neon-Even-if-You-Love-Fable-e3sod5e",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Google shipped Gemini 4 Neon — described by a since-deleted DeepMind researcher post as a small-class model — that nonetheless topped the Artificial Analysis Coding Agent Index and Intelligence Index leaderboard for its tier, marking the first time in a prolonged period that Google models are being actively adopted and…"
+          },
+          {
+            "id": "live-stratechery-1xz3uu8",
+            "show": "Stratechery",
+            "title": "Sharp Tech on Video: Jensen’s Not Coming Back, AI Shopping, The iPhone Duo",
+            "date": "2026-11-20T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/sharp-tech-on-video-jensens-not-coming-back-ai-shopping-the-iphone-duo/",
+            "summarised": true,
+            "tone": "neutral",
+            "line": "Sharp Tech launched in video format for the first time, now distributed across YouTube, Spotify, and Stratechery — a format expansion that broadens its potential audience beyond existing audio subscribers."
+          },
+          {
+            "id": "live-oddlots-zaz3y8",
+            "show": "Odd Lots",
+            "title": "How an American AI Company Uses Chinese Open-Weight Models",
+            "date": "2026-11-20T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/how-an-american-ai-company-uses-chinese-open-weight-models",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Infrastructure services like Fireworks and Modal have reduced fine-tuning open-weight models from an engineering-team effort to a managed commodity workflow, with production-quality runs achievable for as little as $90, collapsing the barrier that previously confined open-weight fine-tuning to large companies."
+          },
+          {
+            "id": "live-ingoodcompany-1qfr97j",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: AI in product development and the worlds largest IPO",
+            "date": "2026-11-20T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-europes-speed-gap-and-the-anthropic-ipo",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Anthropic's IPO — described as the largest IPO ever — launched against a backdrop of AI-stock corrections triggered by US midterm election uncertainty over data-center policy and turbulence around Nvidia's CEO change, making it the first major test of institutional appetite for AI names in this risk-off period."
+          },
+          {
+            "id": "live-aidaily-yz0qei",
+            "show": "AI Daily",
+            "title": "The 10 Biggest Days in AI History",
+            "date": "2026-11-19T21:39:48.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/The-10-Biggest-Days-in-AI-History-e3smt2e",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Anthropic had a ChatGPT-like chatbot in February 2022 — and sat on it"
+          },
+          {
+            "id": "live-stratechery-1xz3u7c",
+            "show": "Stratechery",
+            "title": "An Interview With Eric Seufert About Agentic Commerce",
+            "date": "2026-11-19T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/an-interview-with-eric-seufert-about-agentic-commerce/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Eric Seufert argues that the emergence of AI agents as purchasing intermediaries will redirect advertising spend from human-facing creative to machine-readable signals targeting agents, while Ben Thompson contends that a new class of agent-native retailers — structured for programmatic consumption — is the more…"
+          },
+          {
+            "id": "live-oddlots-1ytij3e",
+            "show": "Odd Lots",
+            "title": "This Is The Problem With AI's Most Bullish Chart",
+            "date": "2026-11-19T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/this-is-the-problem-with-ais-most-bullish-chart",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "30% equity tranche often funded by customer prepayments, not neocloud equity"
+          },
+          {
+            "id": "live-aidaily-c7odt4",
+            "show": "AI Daily",
+            "title": "Why the AI Kids Hate Astra 6.2",
+            "date": "2026-11-18T21:29:03.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Why-the-AI-Kids-Hate-Astra-6-2-e3sl38t",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "OpenAI released GPT-6.2 Astra and Sol with a deliberate pivot away from coding-benchmark leadership toward cost-efficient, agentic enterprise workflows — the first frontier release since GPT-4.5 that was not described as a clear step forward, per Professor Ethan Mollick, and the first to lead with agentic/science…"
+          },
+          {
+            "id": "live-stratechery-1xz3u6c",
+            "show": "Stratechery",
+            "title": "Nvidia Earnings; Office Convergence; OS Wars, AI Edition",
+            "date": "2026-11-18T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/nvidia-earnings-office-convergence-os-wars-ai-edition/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Microsoft and Anthropic simultaneously shipped competing AI 'operating system' updates, opening an explicit platform-layer battle for who controls the AI-era productivity environment — a contest Thompson frames as structurally analogous to the PC OS wars."
+          },
+          {
+            "id": "live-oddlots-ro048m",
+            "show": "Odd Lots",
+            "title": "How GTA VI Became the Most Expensive Video Game Ever Made",
+            "date": "2026-11-18T11:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/how-gta-vi-became-the-most-expensive-video-game-ever-made",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "GTA V: 235 million copies sold — best non-mobile game ever"
+          },
+          {
+            "id": "live-ingoodcompany-11wxr76",
+            "show": "In Good Company",
+            "title": "Pirelli CEO: Formula One, Smart Tyres and Europe’s Car Industry",
+            "date": "2026-11-18T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/pirelli-ceo-formula-one-smart-tyres-and-europes-car-industry",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Formula One as the birthplace of Pirelli's virtualization capability"
+          },
+          {
+            "id": "live-aidaily-fv8y9o",
+            "show": "AI Daily",
+            "title": "How Business AI Use is Changing",
+            "date": "2026-11-17T22:09:59.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-Business-AI-Use-is-Changing-e3sj17g",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Ramp's October data showed enterprise AI token consumption rising 36% while AI spending rose only 2% — the first concrete, large-sample evidence that businesses are optimizing model selection hard enough to decouple usage volume from cost growth."
+          },
+          {
+            "id": "live-allin-1r50oct",
+            "show": "All-In",
+            "title": "Databricks CEO: AGI Is Already Here, Why Companies Are Behind, and the Superintelligence Debate",
+            "date": "2026-11-17T21:43:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/databricks-ceo-agi-is-already-here-why-companies-are-behind-and-the-superintelligence-debate",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Ghodsi declares AGI is already here"
+          },
+          {
+            "id": "live-sources-1bixci0",
+            "show": "Sources",
+            "title": "Why Airtable’s founder is betting on teams of AI agents",
+            "date": "2026-11-17T14:25:00.000Z",
+            "url": "https://sources.news/p/howie-liu-airtable-hyperagent-bending-spoons",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Airtable sold near $500M revenue — below peak valuation"
+          },
+          {
+            "id": "live-iltb-1wtwapx",
+            "show": "Invest Like the Best",
+            "title": "Brad Gerstner & Geoffrey Canada - Raising the Floor for Every American Child - [Invest Like the Best, EP.501]",
+            "date": "2026-11-17T13:00:00.000Z",
+            "url": "https://colossus.com/episode/restoring-the-american-dream/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Host's 180° on Invest America"
+          },
+          {
+            "id": "live-stratechery-1xz3u4m",
+            "show": "Stratechery",
+            "title": "Apple Permissions Update, The New App Paradigm, My iPhone Duo Review",
+            "date": "2026-11-17T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/apple-permissions-update-the-new-app-paradigm-my-iphone-duo-review/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Apple issued a permissions update that touches on how apps and agents interact with system resources, but the episode's central claim is that it does not resolve the structural incompatibility between Apple's app-paradigm permission model and the requirements of true AI agents."
+          },
+          {
+            "id": "live-aidaily-16swfvl",
+            "show": "AI Daily",
+            "title": "5 Questions That Could Reshape AI",
+            "date": "2026-11-16T19:21:28.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/5-Questions-That-Could-Reshape-AI-e3sgjh5",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Anthropic is approaching a public IPO that will, for the first time, force Wall Street to assign a public-market valuation to a frontier AI lab — while simultaneously Jensen Huang's leadership at Nvidia faces a live challenge and Congress weighs tighter chip export controls."
+          },
+          {
+            "id": "live-stratechery-1xz3u1x",
+            "show": "Stratechery",
+            "title": "Obituaries",
+            "date": "2026-11-16T11:02:49.000Z",
+            "url": "https://stratechery.com/2026/obituaries/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Fictional Jensen Huang resignation set in November 2026"
+          },
+          {
+            "id": "live-stratechery-fnlyv",
+            "show": "Stratechery",
+            "title": "Obituaries",
+            "date": "2026-11-16T11:02:49.000Z",
+            "url": "https://www.youtube.com/watch?v=3qZK1YL0mF0",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Jensen Huang Resigns After 33 Years as Nvidia CEO"
+          },
+          {
+            "id": "live-oddlots-1vj1b0a",
+            "show": "Odd Lots",
+            "title": "The Impossible Trilemma That Hangs Over the Nvidia Crisis",
+            "date": "2026-11-16T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/the-impossible-trilemma-that-hangs-over-the-nvidia-crisis",
+            "summarised": true,
+            "line": "Jensen Wong confirmed out at NVIDIA — breaking during recording"
+          }
+        ]
+      },
+      {
+        "id": "2026-11-23",
+        "label": "23–29 Nov",
+        "line": null,
+        "episodes": [
+          {
+            "id": "live-ingoodcompany-13nq3i7",
+            "show": "In Good Company",
+            "title": "Euroclear CEO: Europe’s Financial Markets, Frozen Russian Assets and Tokenisation",
+            "date": "2026-11-25T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/euroclear-ceo-europes-financial-markets-frozen-russian-asset",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Russia's ~€200 billion in securities held at Euroclear were immobilised after the February 2022 invasion and have since converted into cash sitting on Euroclear's balance sheet, generating windfall net interest income that is now being remitted in full to the European Commission for Ukrainian aid."
+          },
+          {
+            "id": "live-aidaily-1t75t4u",
+            "show": "AI Daily",
+            "title": "AI Just Made History in the Middle of a Meltdown",
+            "date": "2026-11-24T20:12:22.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-Just-Made-History-in-the-Middle-of-a-Meltdown-e3sv3tf",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Anthropic mathematician Levant Alpoge announced a claimed proof of the Riemann hypothesis — one of mathematics' seven Millennium Prize problems — produced in collaboration with Claude and published as 17 million lines of Lean code, while simultaneously President Trump personally intervened in the NVIDIA board meeting…"
+          },
+          {
+            "id": "live-iltb-fov0sa",
+            "show": "Invest Like the Best",
+            "title": "Scott Wu on Cybersecurity, Compute, and the Future of Engineering - [Invest Like the Best, EP.502]",
+            "date": "2026-11-24T15:00:00.000Z",
+            "url": "https://traffic.megaphone.fm/CLS5759445410.mp3",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Zero to $1B ARR in under two years"
+          },
+          {
+            "id": "live-stratechery-1xz3uzv",
+            "show": "Stratechery",
+            "title": "The Individual Exception",
+            "date": "2026-11-24T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/the-individual-exception/",
+            "summarised": true,
+            "tone": "positive",
+            "line": "Thompson demonstrates — through an enumerated list of shipped, production-quality software and hardware built solo in roughly one week — that AI has already collapsed the team-size requirement for complex, multi-platform technical work for capable individual operators."
+          },
+          {
+            "id": "live-oddlots-14ji0je",
+            "show": "Odd Lots",
+            "title": "What Jensen Huang's Stunning Return Means for the AI Trade",
+            "date": "2026-11-24T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/what-jensen-huangs-stunning-return-means-for-the-ai-trade",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "NASDAQ 100 'up crash' of 6.9% on Jensen's reinstatement"
+          },
+          {
+            "id": "live-allin-1jebnca",
+            "show": "All-In",
+            "title": "CrowdStrike CEO: AI Cyberattack Wave, Hyperspeed Hacks, & The Patching Problem",
+            "date": "2026-11-24T02:30:00.000Z",
+            "url": "https://allinchamathjason.libsyn.com/crowdstrike-ceo-ai-cyberattack-wave-hyperspeed-hacks-the-patching-problem",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "Defenders used Chinese models because US frontier models refused security queries"
+          },
+          {
+            "id": "live-aidaily-nbnpm",
+            "show": "AI Daily",
+            "title": "Too Big to Fire: Jensen Huang Is Back as Nvidia CEO",
+            "date": "2026-11-23T18:23:30.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/Too-Big-to-Fire-Jensen-Huang-Is-Back-as-Nvidia-CEO-e3ssrpk",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "~$1 trillion in market cap added in a single pre-market session"
+          },
+          {
+            "id": "live-stratechery-1xz3uyq",
+            "show": "Stratechery",
+            "title": "Amazon Earnings, The Chip Question, About Agents",
+            "date": "2026-11-23T11:00:00.000Z",
+            "url": "https://stratechery.com/2026/amazon-earnings-the-chip-question-about-agents/",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "Amazon claims structural differentiation from other compute providers"
+          },
+          {
+            "id": "live-oddlots-x30t0d",
+            "show": "Odd Lots",
+            "title": "What a Town Full of Vibecoders Says About the Chinese Economy",
+            "date": "2026-11-23T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/what-a-town-full-of-vibecoders-says-about-the-chinese-economy",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "China has not 'felt the AGI' — but is running a different race"
+          }
+        ]
+      }
+    ],
+    "topics": [
+      {
+        "name": "Anthropic",
+        "episodes": 13,
+        "shows": 5
+      },
+      {
+        "name": "NVIDIA",
+        "episodes": 10,
+        "shows": 4
+      },
+      {
+        "name": "Jensen Huang / Nvidia",
+        "episodes": 8,
+        "shows": 3
+      },
+      {
+        "name": "Anthropic IPO",
+        "episodes": 6,
+        "shows": 3
+      },
+      {
+        "name": "OpenAI",
+        "episodes": 5,
+        "shows": 2
+      },
+      {
+        "name": "AMD",
+        "episodes": 4,
+        "shows": 2
+      }
+    ],
+    "ai": false,
+    "headline": null,
+    "overview": [],
+    "themes": [
+      {
+        "title": "Settling the world's GDP every single month",
+        "summary": "Orban states that Euroclear settles the equivalent of world GDP every month, meaning a single day of downtime would cause serious disruption to global financial markets. This frames the company as one of the most systemically critical institutions most people have never heard of.",
+        "shows": [
+          "In Good Company"
+        ],
+        "episodeIds": [
+          "live-ingoodcompany-13nq3i7"
+        ]
+      },
+      {
+        "title": "Riemann hypothesis claimed solved with Claude's help",
+        "summary": "Anthropic mathematician Levant Alpoge announced he and Claude had discovered a proof of the Riemann hypothesis — proposed in 1859 and one of seven Millennium Prize problems — plus the generalized Riemann hypothesis. The proof is 17 million lines of Lean code, and Alpoge himself acknowledged it might be false.",
+        "shows": [
+          "AI Daily"
+        ],
+        "episodeIds": [
+          "live-aidaily-1t75t4u"
+        ]
+      },
+      {
+        "title": "Zero to $1B ARR in under two years",
+        "summary": "Wu states Cognition earned its first dollar of revenue on September 20, 2024 and crossed a $1 billion annual revenue run-rate on September 16, 2026 — just under two years. This is one of the fastest zero-to-billion ramp rates in enterprise software history.",
+        "shows": [
+          "Invest Like the Best"
+        ],
+        "episodeIds": [
+          "live-iltb-fov0sa"
+        ]
+      },
+      {
+        "title": "One person, one week, a production-grade tech stack",
+        "summary": "Thompson enumerates the full scope of what he built solo in roughly one week: a multi-platform studio management service, multiple iOS apps, a 3D-printed measurement rig, custom hardware devices, a screen-sharing client, and a distributed agent orchestration harness — work he explicitly says would have taken teams of…",
+        "shows": [
+          "Stratechery"
+        ],
+        "episodeIds": [
+          "live-stratechery-1xz3uzv"
+        ]
+      },
+      {
+        "title": "NASDAQ 100 'up crash' of 6.9% on Jensen's reinstatement",
+        "summary": "Joe describes a 6.9% single-day NASDAQ 100 surge as an 'up crash' — a phrase he coins to describe violent upside moves — triggered by Jensen Huang's reinstatement. He notes 'you just don't see up crashes like this almost ever,' framing it as one of the most extreme single-day moves in recent memory.",
+        "shows": [
+          "Odd Lots"
+        ],
+        "episodeIds": [
+          "live-oddlots-14ji0je"
+        ]
+      },
+      {
+        "title": "Defenders used Chinese models because US frontier models refused security queries",
+        "summary": "During the Hugging Face agentic attack, defenders could not use US frontier AI to analyze the incident because those models refused their requests; they had to resort to Chinese models instead. Kurtz calls this the real lesson: offensive AI is currently ahead of defensive AI because of model access asymmetry.",
+        "shows": [
+          "All-In"
+        ],
+        "episodeIds": [
+          "live-allin-1jebnca"
+        ]
+      },
+      {
+        "title": "~$1 trillion in market cap added in a single pre-market session",
+        "summary": "NVIDIA shares surged nearly 35% in pre-market trading on November 23rd, adding roughly $1 trillion in market value — described as potentially more than doubling Microsoft's record for the single biggest daily gain ever, with Nasdaq 100 futures briefly halted on an upside volatility trip (a nearly unprecedented event).",
+        "shows": [
+          "AI Daily"
+        ],
+        "episodeIds": [
+          "live-aidaily-nbnpm"
+        ]
+      },
+      {
+        "title": "Amazon claims structural differentiation from other compute providers",
+        "summary": "The episode's central thesis is that Amazon is actively making the case — through its earnings narrative — that it is not interchangeable with generic hyperscalers. The argument rests on custom silicon, vertical integration, and compounding platform assets rather than raw scale alone.",
+        "shows": [
+          "Stratechery"
+        ],
+        "episodeIds": [
+          "live-stratechery-1xz3uyq"
+        ]
+      }
+    ],
+    "numbers": [
+      {
+        "value": "€45 trillion",
+        "metric": "Assets under custody",
+        "context": "Total assets held by Euroclear as of the time of the interview · In Good Company"
+      },
+      {
+        "value": "Equivalent of world GDP every month",
+        "metric": "Monthly settlement volume",
+        "context": "Used to illustrate systemic importance; a one-day outage would severely disrupt global financial markets · In Good Company"
+      },
+      {
+        "value": "~3,500",
+        "metric": "Number of clients",
+        "context": "Financial institutions served by Euroclear, based in more than 80 markets · In Good Company"
+      },
+      {
+        "value": "More than 80",
+        "metric": "Number of markets served",
+        "context": "Geographic footprint of Euroclear's client base · In Good Company"
+      },
+      {
+        "value": "Almost €200 billion",
+        "metric": "Russian central bank assets immobilised",
+        "context": "Securities held at Euroclear belonging to Russia's central bank, frozen following February 2022 invasion of Ukraine · In Good Company"
+      },
+      {
+        "value": "17,000,000 lines of code",
+        "metric": "Lean proof line count (Riemann hypothesis)",
+        "context": "The Alpoge-Claude proof of the Riemann hypothesis, published in the Lean programming language · AI Daily"
+      }
+    ],
+    "tone": "37 mixed, 21 positive, 19 cautious, 4 neutral",
+    "watch": [],
+    "inputHash": "c8d8410f3bf83630"
+  },
+  "compareMtd": {
+    "basis": "topics",
+    "ai": false,
+    "minCount": 2,
+    "read": null,
+    "continued": [
+      {
+        "last": "NVIDIA",
+        "this": "NVIDIA"
+      },
+      {
+        "last": "Sharp Tech video launch",
+        "this": "Sharp Tech video launch"
+      },
+      {
+        "last": "AI Infrastructure",
+        "this": "AI Infrastructure"
+      },
+      {
+        "last": "Apple",
+        "this": "Apple"
+      },
+      {
+        "last": "Chinese AI labs",
+        "this": "Chinese AI labs"
+      },
+      {
+        "last": "Meta",
+        "this": "Meta"
+      }
+    ],
+    "dropped": [
+      {
+        "theme": "AI Safety"
+      },
+      {
+        "theme": "Anthropic S-1"
+      },
+      {
+        "theme": "Match Group"
+      },
+      {
+        "theme": "SpaceX"
+      }
+    ],
+    "new": [
+      {
+        "theme": "Anthropic"
+      },
+      {
+        "theme": "Jensen Huang / Nvidia"
+      },
+      {
+        "theme": "Anthropic IPO"
+      },
+      {
+        "theme": "OpenAI"
+      },
+      {
+        "theme": "AMD"
+      },
+      {
+        "theme": "Jensen Huang"
+      },
+      {
+        "theme": "agentic commerce"
+      },
+      {
+        "theme": "AI agents"
+      },
+      {
+        "theme": "AI data center buildout"
+      },
+      {
+        "theme": "Databricks"
+      },
+      {
+        "theme": "Google"
+      },
+      {
+        "theme": "Huawei"
+      },
+      {
+        "theme": "Intel"
+      },
+      {
+        "theme": "iPhone Duo"
+      },
+      {
+        "theme": "Jensen Huang's legacy"
+      },
+      {
+        "theme": "Microsoft"
+      },
+      {
+        "theme": "NextEra Energy"
+      },
+      {
+        "theme": "Nuclear energy"
+      },
+      {
+        "theme": "NVIDIA earnings"
+      },
+      {
+        "theme": "Prediction Markets"
+      }
+    ]
+  },
+  "mtdAt": "2026-11-25T18:30:36.736Z"
 }
