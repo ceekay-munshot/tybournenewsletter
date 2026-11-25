@@ -196,7 +196,7 @@ export function MultiPeriodView({
                             key={`c${i}`}
                             className="whitespace-nowrap border-r border-slate-200 px-3 py-2.5 text-right font-medium text-slate-400 last:border-r-0"
                           >
-                            {sLabels[i]} → {l}
+                            {view.series![i + 1]?.changeLabel ?? `${sLabels[i]} → ${l}`}
                           </th>
                         ))}
                       </tr>
