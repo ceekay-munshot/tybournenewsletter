@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T01:38:44.253Z",
+  "generatedAt": "2026-11-26T02:51:13.509Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -3142,7 +3142,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-16.0% input · share +13.45pp"
+          "body": "-16.0% input · share +13.44pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -15875,7 +15875,7 @@
       "changePct": 0.4047365041861669,
       "changeAbs": 211953400363343,
       "direction": "up",
-      "asOf": "2026-11-26T01:38:23.420Z",
+      "asOf": "2026-11-26T02:50:57.347Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17616,7 +17616,7 @@
             "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #18 by tokens.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-26T01:38:23.482Z"
+          "asOf": "2026-11-26T02:50:57.419Z"
         }
       ],
       "prevLabel": "Sep '26",
@@ -21984,7 +21984,7 @@
       "changePct": null,
       "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-25T04:00:00.000Z",
+      "asOf": "2026-11-25T21:41:57.000Z",
       "isStale": false,
       "breakdown": [
         {
@@ -21995,14 +21995,14 @@
           "direction": "flat"
         },
         {
-          "label": "In Good Company",
+          "label": "AI Daily",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
         },
         {
-          "label": "AI Daily",
+          "label": "In Good Company",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -22059,6 +22059,7 @@
         }
       ],
       "highlights": [
+        "AI governance 'phase transition' declaration",
         "Settling the world's GDP every single month",
         "Riemann hypothesis claimed solved with Claude's help",
         "Zero to $1B ARR in under two years",
@@ -22067,8 +22068,7 @@
         "Defenders used Chinese models because US frontier models refused security queries",
         "~$1 trillion in market cap added in a single pre-market session",
         "Amazon claims structural differentiation from other compute providers",
-        "China has not 'felt the AGI' — but is running a different race",
-        "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists"
+        "China has not 'felt the AGI' — but is running a different race"
       ],
       "tone": "Tone across 42 episodes — 19 mixed, 10 positive, 5 cautious, 2 neutral",
       "thisTone": "19 mixed, 10 positive, 5 cautious, 2 neutral",
@@ -22077,6 +22077,7 @@
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "AI governance 'phase transition' declaration",
         "Settling the world's GDP every single month",
         "Riemann hypothesis claimed solved with Claude's help",
         "Zero to $1B ARR in under two years",
@@ -22085,10 +22086,9 @@
         "Defenders used Chinese models because US frontier models refused security queries",
         "~$1 trillion in market cap added in a single pre-market session",
         "Amazon claims structural differentiation from other compute providers",
-        "China has not 'felt the AGI' — but is running a different race",
-        "MisAnthopic Statement unites arch-enemies: safetyists and accelerationists"
+        "China has not 'felt the AGI' — but is running a different race"
       ],
-      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — Settling the world's GDP every single month; Riemann hypothesis claimed solved with Claude's help; Zero to $1B ARR in under two years; One person, one week, a production-grade tech stack. Sentiment ran 19 mixed, 10 positive, 5 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: Settling the world's GDP every single month; Riemann hypothesis claimed solved with Claude's help; Zero to $1B ARR in under two years.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — AI governance 'phase transition' declaration; Settling the world's GDP every single month; Riemann hypothesis claimed solved with Claude's help; Zero to $1B ARR in under two years. Sentiment ran 19 mixed, 10 positive, 5 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: AI governance 'phase transition' declaration; Settling the world's GDP every single month; Riemann hypothesis claimed solved with Claude's help.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",

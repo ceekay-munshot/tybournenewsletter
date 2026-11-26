@@ -1155,8 +1155,8 @@
     "label": "Nov '26",
     "longLabel": "November 2026",
     "mtd": true,
-    "episodes": 87,
-    "summarised": 86,
+    "episodes": 88,
+    "summarised": 87,
     "shows": [
       "Stratechery",
       "AI Daily",
@@ -1169,7 +1169,7 @@
       "Cheeky Pint"
     ],
     "toneCounts": {
-      "mixed": 37,
+      "mixed": 38,
       "positive": 21,
       "cautious": 19,
       "neutral": 4
@@ -1983,6 +1983,16 @@
         "line": null,
         "episodes": [
           {
+            "id": "live-aidaily-14kzree",
+            "show": "AI Daily",
+            "title": "How to Talk About AI at Thanksgiving",
+            "date": "2026-11-25T21:41:57.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-at-Thanksgiving-e3t1hhr",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "AI governance 'phase transition' declaration"
+          },
+          {
             "id": "live-ingoodcompany-13nq3i7",
             "show": "In Good Company",
             "title": "Euroclear CEO: Europe’s Financial Markets, Frozen Russian Assets and Tokenisation",
@@ -2112,6 +2122,16 @@
     "overview": [],
     "themes": [
       {
+        "title": "AI governance 'phase transition' declaration",
+        "summary": "The host argues that Anthropic's IPO, midterm election results, and the White House's intervention in the Jensen Huang/Nvidia affair collectively represent a phase transition where the future of AI will no longer be decided solely by the AI labs. He frames this as a democratization of AI's direction — and says…",
+        "shows": [
+          "AI Daily"
+        ],
+        "episodeIds": [
+          "live-aidaily-14kzree"
+        ]
+      },
+      {
         "title": "Settling the world's GDP every single month",
         "summary": "Orban states that Euroclear settles the equivalent of world GDP every month, meaning a single day of downtime would cause serious disruption to global financial markets. This frames the company as one of the most systemically critical institutions most people have never heard of.",
         "shows": [
@@ -2180,53 +2200,43 @@
         "episodeIds": [
           "live-aidaily-nbnpm"
         ]
-      },
-      {
-        "title": "Amazon claims structural differentiation from other compute providers",
-        "summary": "The episode's central thesis is that Amazon is actively making the case — through its earnings narrative — that it is not interchangeable with generic hyperscalers. The argument rests on custom silicon, vertical integration, and compounding platform assets rather than raw scale alone.",
-        "shows": [
-          "Stratechery"
-        ],
-        "episodeIds": [
-          "live-stratechery-1xz3uyq"
-        ]
       }
     ],
     "numbers": [
       {
+        "value": "around 30 times the water volume",
+        "metric": "Water used by US Gulf irrigation vs. data centers",
+        "context": "US Gulf irrigation consumes approximately 30x more water than all US data centers combined — cited to put AI water usage in context · AI Daily"
+      },
+      {
+        "value": "about one handful of almonds worth of water",
+        "metric": "Annual AI water consumption for a typical user",
+        "context": "Based on asking AI 10 questions a day for an entire year, using the high end of chatbot consumption estimates · AI Daily"
+      },
+      {
+        "value": "more than 500 early career professionals",
+        "metric": "KPMG / UT Austin study sample size",
+        "context": "Study examined how working with AI produces different outcomes even among people with similar skills · AI Daily"
+      },
+      {
+        "value": "sixteen weeks",
+        "metric": "Legacy insurance stack modernization timeline (Blitzy customer)",
+        "context": "Against a 137-week baseline — a 9x compression — for a $10,000,000 monolithic insurance system · AI Daily"
+      },
+      {
+        "value": "one hundred and thirty seven weeks",
+        "metric": "Legacy insurance stack modernization baseline",
+        "context": "The original projected timeline before Blitzy's AI-driven modernization approach was applied · AI Daily"
+      },
+      {
         "value": "€45 trillion",
         "metric": "Assets under custody",
         "context": "Total assets held by Euroclear as of the time of the interview · In Good Company"
-      },
-      {
-        "value": "Equivalent of world GDP every month",
-        "metric": "Monthly settlement volume",
-        "context": "Used to illustrate systemic importance; a one-day outage would severely disrupt global financial markets · In Good Company"
-      },
-      {
-        "value": "~3,500",
-        "metric": "Number of clients",
-        "context": "Financial institutions served by Euroclear, based in more than 80 markets · In Good Company"
-      },
-      {
-        "value": "More than 80",
-        "metric": "Number of markets served",
-        "context": "Geographic footprint of Euroclear's client base · In Good Company"
-      },
-      {
-        "value": "Almost €200 billion",
-        "metric": "Russian central bank assets immobilised",
-        "context": "Securities held at Euroclear belonging to Russia's central bank, frozen following February 2022 invasion of Ukraine · In Good Company"
-      },
-      {
-        "value": "17,000,000 lines of code",
-        "metric": "Lean proof line count (Riemann hypothesis)",
-        "context": "The Alpoge-Claude proof of the Riemann hypothesis, published in the Lean programming language · AI Daily"
       }
     ],
-    "tone": "37 mixed, 21 positive, 19 cautious, 4 neutral",
+    "tone": "38 mixed, 21 positive, 19 cautious, 4 neutral",
     "watch": [],
-    "inputHash": "c8d8410f3bf83630"
+    "inputHash": "b18749029fd73caa"
   },
   "compareMtd": {
     "basis": "topics",
@@ -2342,5 +2352,5 @@
     "ok": false,
     "error": "All Bedrock models failed (2 tried). Last: podcast-mtd 2026-11: global.anthropic.claude-haiku-4-5-20251001-v1:0 transport error — spawn E2BIG"
   },
-  "mtdAt": "2026-11-26T01:38:45.291Z"
+  "mtdAt": "2026-11-26T02:51:14.601Z"
 }

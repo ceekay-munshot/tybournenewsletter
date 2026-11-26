@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-14kzree",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "How to Talk About AI at Thanksgiving",
+      "date": "2026-11-25T21:41:57.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-at-Thanksgiving-e3t1hhr",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "AI governance 'phase transition' declaration",
+          "detail": "The host argues that Anthropic's IPO, midterm election results, and the White House's intervention in the Jensen Huang/Nvidia affair collectively represent a phase transition where the future of AI will no longer be decided solely by the AI labs. He frames this as a democratization of AI's direction — and says…"
+        },
+        {
+          "title": "Entry-level job erosion as the real near-term risk",
+          "detail": "While rejecting the generic job-apocalypse narrative, the host flags a specific and credible concern: employers appear to be hiring fewer young workers right now, and if AI hits entry-level positions hardest, it could break the mentorship pipeline from mid- and late-career workers — damaging not just individuals but…"
+        },
+        {
+          "title": "Debt-funded AI buildout as the bubble's real transmission risk",
+          "detail": "The host explains that the AI infrastructure buildout has shifted from being funded by hyperscaler balance sheets to being funded by debt. If that debt defaults, the damage doesn't stay within the AI sector — it transmits through the broader financial system via the financiers holding the debt, creating a systemic risk…"
+        },
+        {
+          "title": "Concentration risk and open Chinese models as the revenue squeeze",
+          "detail": "The host names two specific pressures on the AI labs' pricing power: a large share of Anthropic's and OpenAI's revenue appears to come from a small handful of buyers (concentration risk), and open-source Chinese models create competitive pressure from below that could undermine their ability to charge premium prices."
+        }
+      ],
+      "synthesis": "The episode's central argument is that AI has crossed a phase transition point where its future will no longer be decided solely by the labs, but by a much broader cross-section of society — and Thanksgiving dinner tables are a microcosm of exactly that democratic reckoning. The host frames this not as a burden but as an opportunity: inviting skeptics into the conversation is preferable to leaving them on the outside, because a more engaged public actually reduces the risk of a catastrophic bubble or unchecked development. The 15 questions he works through are really a single meta-argument: AI is a neutral technology whose net effect is determined by the choices society makes around it.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Water used by US Gulf irrigation vs. data centers",
+          "value": "around 30 times the water volume",
+          "context": "US Gulf irrigation consumes approximately 30x more water than all US data centers combined — cited to put AI water usage in context"
+        },
+        {
+          "metric": "Annual AI water consumption for a typical user",
+          "value": "about one handful of almonds worth of water",
+          "context": "Based on asking AI 10 questions a day for an entire year, using the high end of chatbot consumption estimates"
+        },
+        {
+          "metric": "KPMG / UT Austin study sample size",
+          "value": "more than 500 early career professionals",
+          "context": "Study examined how working with AI produces different outcomes even among people with similar skills"
+        },
+        {
+          "metric": "Legacy insurance stack modernization timeline (Blitzy customer)",
+          "value": "sixteen weeks",
+          "context": "Against a 137-week baseline — a 9x compression — for a $10,000,000 monolithic insurance system"
+        },
+        {
+          "metric": "Legacy insurance stack modernization baseline",
+          "value": "one hundred and thirty seven weeks",
+          "context": "The original projected timeline before Blitzy's AI-driven modernization approach was applied"
+        }
+      ],
+      "topics": [
+        "AI job displacement",
+        "AI & environment",
+        "AI safety / existential risk",
+        "AI in education",
+        "democratic AI governance"
+      ]
+    },
+    {
       "id": "live-ingoodcompany-13nq3i7",
       "podcastId": "ingoodcompany",
       "show": "In Good Company",
