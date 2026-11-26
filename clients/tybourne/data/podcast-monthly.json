@@ -1155,8 +1155,8 @@
     "label": "Nov '26",
     "longLabel": "November 2026",
     "mtd": true,
-    "episodes": 88,
-    "summarised": 87,
+    "episodes": 89,
+    "summarised": 88,
     "shows": [
       "Stratechery",
       "AI Daily",
@@ -1169,8 +1169,8 @@
       "Cheeky Pint"
     ],
     "toneCounts": {
+      "positive": 22,
       "mixed": 38,
-      "positive": 21,
       "cautious": 19,
       "neutral": 4
     },
@@ -1983,6 +1983,16 @@
         "line": "Jensen Huang's White House-backed reinstatement triggered a near-35% Nvidia pre-market surge and a NASDAQ 100 'up crash' of 6.9%; a claimed Riemann hypothesis proof produced with Claude signalled AI crossing into frontier scientific discovery; and CrowdStrike's CEO warned that 25% of all historical CVEs were found in 2026 alone, framing AI-enabled cyber offense as an almost-inevitable near-term enterprise crisis.",
         "episodes": [
           {
+            "id": "live-oddlots-111hyqu",
+            "show": "Odd Lots",
+            "title": "Marc Levinson on How UPS Created Modern Logistics",
+            "date": "2026-11-26T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/marc-levinson-on-how-ups-created-modern-logistics",
+            "summarised": true,
+            "tone": "positive",
+            "line": "UPS was private from 1907 all the way to 1999"
+          },
+          {
             "id": "live-aidaily-14kzree",
             "show": "AI Daily",
             "title": "How to Talk About AI at Thanksgiving",
@@ -2397,5 +2407,5 @@
     "at": "2026-11-26T03:31:23.067Z",
     "ok": true
   },
-  "mtdAt": "2026-11-26T03:31:23.067Z"
+  "mtdAt": "2026-11-26T16:30:33.089Z"
 }

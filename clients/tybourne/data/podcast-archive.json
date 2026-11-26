@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-oddlots-111hyqu",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "Marc Levinson on How UPS Created Modern Logistics",
+      "date": "2026-11-26T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/marc-levinson-on-how-ups-created-modern-logistics",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "UPS was private from 1907 all the way to 1999",
+          "detail": "Levinson notes UPS was founded in 1907 and remained privately held until 1999 — over 90 years — meaning it had no obligation to disclose information to investors or the public, enabling its famously secretive culture and allowing UPS to shape its own historical mythology."
+        },
+        {
+          "title": "World War I freed UPS from retail delivery competition",
+          "detail": "The U.S. government estimated ~200,000 men were employed in retail delivery during WWI and wanted them reassigned to the military or higher-paying shipyards. Retailers unable to staff their own fleets handed UPS their business, and because UPS's consolidated model needed fewer workers per package, it was less disrupted…"
+        },
+        {
+          "title": "Casey lobbied regulators to restrict his own company's freight authority",
+          "detail": "In a move Levinson calls unusual, Casey persuaded California regulators to classify UPS as a parcel-only carrier — explicitly prohibiting it from taking large freight — arguing 'parcel delivery is an essentially different business from trucking.' This won UPS the right to deviate miles off designated routes to reach…"
+        },
+        {
+          "title": "Promotion-from-within culture made UPS a laggard on barcoding and IT",
+          "detail": "Casey's deeply held belief in internal promotion meant management ranks had no computing expertise. Outside technologists were skeptical about career prospects at what looked like a trucking company. FedEx moved faster on barcoding and electronic tracking, and Levinson says UPS was 'a bit late to that party' — a…"
+        }
+      ],
+      "synthesis": "UPS's rise is a story of organizational innovation over technology: the central sorting hub — routing packages from multiple retailers through one depot and assigning them by route — was the decisive breakthrough, not any mechanical or digital invention. Marc Levinson makes clear this was conceptually simple but operationally hard to execute, requiring retailers to sign binding contracts, standardize pick-up times, and accept that their parcels would comingle with competitors' goods. The payoff was density: one truck delivering for ten stores along a single street crushed the economics of ten trucks each making one drop.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "UPS founding year",
+          "value": "1907",
+          "context": "Year James E. Casey started the messenger service in Seattle"
+        },
+        {
+          "metric": "UPS IPO / public listing year",
+          "value": "1999",
+          "context": "Company was private from founding in 1907 until this year"
+        },
+        {
+          "metric": "Years UPS operated only in Seattle",
+          "value": "first 12 years",
+          "context": "Seattle was the only market until roughly 1919"
+        },
+        {
+          "metric": "U.S. retail delivery workforce estimate",
+          "value": "about 200,000",
+          "context": "U.S. government estimate of men employed in retail deliveries during World War I, a labor pool it sought to redeploy"
+        },
+        {
+          "metric": "Year U.S. parcel post established",
+          "value": "1912",
+          "context": "Congress established parcel post after ~20 years of lobbying by farm groups"
+        }
+      ],
+      "topics": [
+        "James E. Casey / UPS founding",
+        "Scientific management",
+        "UPS vs. FedEx on technology",
+        "Pre-1912 parcel delivery system",
+        "UPS Germany expansion"
+      ]
+    },
+    {
       "id": "live-aidaily-14kzree",
       "podcastId": "aidaily",
       "show": "AI Daily",
