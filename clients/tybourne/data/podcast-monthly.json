@@ -2346,11 +2346,5 @@
       }
     ]
   },
-  "mtdAttempt": {
-    "month": "2026-11",
-    "at": "2026-11-26T01:38:45.291Z",
-    "ok": false,
-    "error": "All Bedrock models failed (2 tried). Last: podcast-mtd 2026-11: global.anthropic.claude-haiku-4-5-20251001-v1:0 transport error — spawn E2BIG"
-  },
   "mtdAt": "2026-11-26T02:51:14.601Z"
 }

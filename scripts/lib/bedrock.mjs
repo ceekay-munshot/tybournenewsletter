@@ -58,11 +58,16 @@ async function converseOnce(modelId, payload, timeout) {
     '-H', `Authorization: Bearer ${KEY}`,
     '-H', 'Content-Type: application/json',
     '-H', 'Accept: application/json',
-    '--data-binary', JSON.stringify(payload),
+    // Body via stdin, not argv: Linux caps one argument at 128 KB, so a big prompt (a full
+    // month of podcast episodes) failed with "spawn E2BIG" before curl even started.
+    '--data-binary', '@-',
     '-w', '\n%{http_code}',
     url,
   ];
-  const { stdout } = await pExecFile('curl', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  const run = pExecFile('curl', args, { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+  run.child.stdin.on('error', () => {}); // curl exiting early (bad URL, timeout) rejects `run` itself
+  run.child.stdin.end(JSON.stringify(payload));
+  const { stdout } = await run;
   const nl = stdout.lastIndexOf('\n');
   const status = parseInt(stdout.slice(nl + 1).trim(), 10);
   return { status: Number.isFinite(status) ? status : 0, body: stdout.slice(0, nl) };
