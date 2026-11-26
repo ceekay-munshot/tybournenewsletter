@@ -1178,7 +1178,7 @@
       {
         "id": "2026-11-01",
         "label": "1 Nov",
-        "line": null,
+        "line": "AI Daily launched the month with a historical reframe — Venkatesh Rao's 'Cognitive Mercantilism' thesis arguing cheap intelligence expands human ambition rather than replacing it — while Lenny's profiled Wispr Flow's creator-driven paid growth engine.",
         "episodes": [
           {
             "id": "live-lennys-17c7ya7",
@@ -1204,7 +1204,7 @@
       {
         "id": "2026-11-02",
         "label": "2–8 Nov",
-        "line": null,
+        "line": "The 2026 midterm 'blue tsunami' dominated: a $4 trillion AI and data-centre selloff, Texas flipping Democratic on a moratorium pledge, bipartisan data-centre opposition, and a Nate Silver pre-election deep-dive set the political and market tone for the entire month; Google earnings, Intuit's AI positioning, structured notes market growth, and enterprise AI spending (Menlo Ventures' 5x figure) rounded out a dense week.",
         "episodes": [
           {
             "id": "live-stratechery-p5quqq",
@@ -1469,7 +1469,7 @@
       {
         "id": "2026-11-09",
         "label": "9–15 Nov",
-        "line": null,
+        "line": "Jensen Huang's affair admission, Nvidia's board investigation, Stacey Raskin's price-target halving, and the Megaspeed chip-smuggling scandal turned Nvidia governance into the market's dominant story, while the Anthropic IPO roadshow and Intel/AMD structural divergence added further semiconductor pressure.",
         "episodes": [
           {
             "id": "live-lennys-d2c0eh",
@@ -1735,7 +1735,7 @@
       {
         "id": "2026-11-16",
         "label": "16–22 Nov",
-        "line": null,
+        "line": "Huang's abrupt 11-day ouster was confirmed and dissected across every show; Anthropic's IPO priced at $2 trillion, the largest in history; Gemini Neon topped coding benchmarks; and AI Daily, Stratechery, and Odd Lots debated whether Washington had effectively nationalised Nvidia and what the agentic commerce and AI OS platform battles mean for incumbents.",
         "episodes": [
           {
             "id": "live-aidaily-q7euaf",
@@ -1980,7 +1980,7 @@
       {
         "id": "2026-11-23",
         "label": "23–29 Nov",
-        "line": null,
+        "line": "Jensen Huang's White House-backed reinstatement triggered a near-35% Nvidia pre-market surge and a NASDAQ 100 'up crash' of 6.9%; a claimed Riemann hypothesis proof produced with Claude signalled AI crossing into frontier scientific discovery; and CrowdStrike's CEO warned that 25% of all historical CVEs were found in 2026 alone, framing AI-enabled cyber offense as an almost-inevitable near-term enterprise crisis.",
         "episodes": [
           {
             "id": "live-aidaily-14kzree",
@@ -2117,234 +2117,285 @@
         "shows": 2
       }
     ],
-    "ai": false,
-    "headline": null,
-    "overview": [],
+    "ai": true,
+    "headline": "Jensen Huang's spy scandal, a historic Anthropic IPO, and Democratic midterm sweep converged to make AI governance the month's defining investor story.",
+    "overview": [
+      "November 2026 opened with the Democratic 'blue tsunami' reshaping the regulatory backdrop for AI infrastructure: both parties ran anti-data-centre ads, Texas flipped on a moratorium pledge, and a $4 trillion single-session selloff in AI and data-centre stocks signalled that politics had become a first-order risk for the capex cycle. Enterprise AI spending simultaneously hit nearly 5x year-over-year (Menlo Ventures), Ramp data showed 36% more tokens consumed against only 2% more spend, and Anthropic and OpenAI cemented their two-player grip on enterprise model share — illustrating that the demand story remained intact even as the policy environment darkened.",
+      "The Jensen Huang saga dominated weeks two and three across virtually every show. His admitted affair with a suspected Chinese intelligence asset triggered an Nvidia board investigation, a Bernstein price-target cut in half, and an 11-day ouster — before a White House intervention that saw Nvidia's official reinstatement statement explicitly credit 'senior levels of the U.S. government,' adding roughly $1 trillion in market cap in a single pre-market session. Stratechery, All-In, Odd Lots, and AI Daily all converged on the same read: Nvidia has become a de facto instrument of US industrial policy, too big to fire, with Jensen's singular relationship network now entangled with sovereign decision-making on chip exports.",
+      "Anthropic's IPO — the largest in history at $107 billion raised and a $2 trillion debut valuation — closed the month as a sector-defining pricing event. AI Daily, All-In, and In Good Company framed it as the first public-market test for a frontier AI lab, whose reception will anchor valuations for OpenAI and all private AI labs. Meanwhile, the AI-native enterprise theme deepened: Cognition's Devon crossed $1 billion ARR in under two years, Ro scaled 12x in four years on fewer employees than 2021, and shows from Lenny's to Invest Like the Best debated whether benchmark-leading models still automatically win practitioner workflows — or whether taste, agentic architecture, and open-weight cost discipline are becoming the new competitive variables."
+    ],
     "themes": [
       {
-        "title": "AI governance 'phase transition' declaration",
-        "summary": "The host argues that Anthropic's IPO, midterm election results, and the White House's intervention in the Jensen Huang/Nvidia affair collectively represent a phase transition where the future of AI will no longer be decided solely by the AI labs. He frames this as a democratization of AI's direction — and says…",
+        "title": "Jensen Huang ouster and reinstatement",
+        "summary": "Every major show covered Jensen Huang's forced departure and 11-day reinstatement as the most consequential leadership event in AI history. Stratechery framed it as an obituary for multiple American eras; All-In called it a Washington-engineered removal; Odd Lots traced the Megaspeed chip-smuggling scandal and Oppenheimer analogy; AI Daily argued the real shift was Washington's China hawks gaining momentum on export controls. The White House explicitly crediting its own intervention in Nvidia's reinstatement statement — and roughly $1 trillion in market cap recovering in a single pre-market session — confirmed Nvidia is now treated as sovereign infrastructure.",
         "shows": [
+          "Stratechery",
+          "All-In",
+          "Odd Lots",
           "AI Daily"
         ],
         "episodeIds": [
-          "live-aidaily-14kzree"
-        ]
+          "live-stratechery-1xz3tc5",
+          "live-stratechery-1xz3t5q",
+          "live-stratechery-1xz3t8f",
+          "live-stratechery-1xz3te1",
+          "live-stratechery-fnlyv",
+          "live-allin-1yk111r",
+          "live-oddlots-15mxz6a",
+          "live-oddlots-6i333n",
+          "live-oddlots-1vj1b0a",
+          "live-aidaily-e7b9m4",
+          "live-aidaily-11s6quv",
+          "live-aidaily-1ma56bn",
+          "live-aidaily-c7odt4",
+          "live-aidaily-nbnpm",
+          "live-oddlots-14ji0je"
+        ],
+        "strength": "major"
       },
       {
-        "title": "Settling the world's GDP every single month",
-        "summary": "Orban states that Euroclear settles the equivalent of world GDP every month, meaning a single day of downtime would cause serious disruption to global financial markets. This frames the company as one of the most systemically critical institutions most people have never heard of.",
+        "title": "AI data centre buildout faces political headwinds",
+        "summary": "The 2026 midterm results — Democrats winning their largest Congressional majority in 36 years, Texas flipping on a data-centre moratorium pledge, and bipartisan anti-data-centre ads in Wisconsin — transformed the AI capex story from a capital-execution risk to a legislative and permitting risk. Stratechery, All-In, Odd Lots, AI Daily, and In Good Company all covered this. AWS CEO Matt Garman publicly blamed rogue operators for the backlash and said he was working with governors to mandate responsible practices; AI Daily argued the slowdown could paradoxically improve hyperscaler free cash flow by giving CFOs political cover to cut capex without admitting demand weakness.",
         "shows": [
+          "Stratechery",
+          "All-In",
+          "Odd Lots",
+          "AI Daily",
+          "In Good Company",
+          "Sources"
+        ],
+        "episodeIds": [
+          "live-stratechery-p5quqq",
+          "live-stratechery-1xz3sg1",
+          "live-stratechery-1xz38a3",
+          "live-allin-ji1ba3",
+          "live-aidaily-1r49zzm",
+          "live-aidaily-ppzqtf",
+          "live-oddlots-1ia7cz1",
+          "live-ingoodcompany-z6213t",
+          "live-sources-l6dfmi"
+        ],
+        "strength": "major"
+      },
+      {
+        "title": "Anthropic IPO prices the entire AI sector",
+        "summary": "Anthropic raised $107 billion at a $2 trillion valuation — the largest IPO in history — with the stock closing up 17% on its first Nasdaq day, making it the seventh-largest public company in the world. All-In, AI Daily, Stratechery, and In Good Company all framed the listing as the first public-market valuation anchor for the entire frontier AI lab cohort, arguing its reception would set the reference multiple for OpenAI and every major private AI lab's current markups. AI Daily noted that headline valuations were actively misleading given Anthropic's complex capital structure and enormous compute commitments.",
+        "shows": [
+          "All-In",
+          "AI Daily",
+          "Stratechery",
           "In Good Company"
         ],
         "episodeIds": [
-          "live-ingoodcompany-13nq3i7"
-        ]
+          "live-allin-1yk111r",
+          "live-allin-10z76aw",
+          "live-aidaily-eansrf",
+          "live-aidaily-16swfvl",
+          "live-aidaily-1cmueo4",
+          "live-aidaily-1t75t4u",
+          "live-ingoodcompany-1qfr97j",
+          "live-stratechery-1xz3uu5"
+        ],
+        "strength": "major"
       },
       {
-        "title": "Riemann hypothesis claimed solved with Claude's help",
-        "summary": "Anthropic mathematician Levant Alpoge announced he and Claude had discovered a proof of the Riemann hypothesis — proposed in 1859 and one of seven Millennium Prize problems — plus the generalized Riemann hypothesis. The proof is 17 million lines of Lean code, and Alpoge himself acknowledged it might be false.",
+        "title": "Enterprise AI adoption accelerating but uneven",
+        "summary": "Menlo Ventures documented nearly 5x year-over-year enterprise AI spending, driven by agents rather than copilots; Ramp's October data showed 36% more tokens consumed against only 2% more spend — evidence of aggressive model-switching and cost optimisation. AI Daily identified seven practices separating AI-native companies (Stripe, Shopify, Uber, Ramp) from laggards, while Cognition's Scott Wu disclosed Devon crossed $1 billion ARR in under two years and Citibank expected $1.5 billion in savings from Devon in 2026 alone. Invest Like the Best's Ramtin Naimi and All-In's Ali Ghodsi debated whether the binding constraint is now enterprise data readiness rather than model capability.",
         "shows": [
-          "AI Daily"
+          "AI Daily",
+          "Invest Like the Best",
+          "All-In",
+          "Lenny's",
+          "Sources"
         ],
         "episodeIds": [
-          "live-aidaily-1t75t4u"
-        ]
-      },
-      {
-        "title": "Zero to $1B ARR in under two years",
-        "summary": "Wu states Cognition earned its first dollar of revenue on September 20, 2024 and crossed a $1 billion annual revenue run-rate on September 16, 2026 — just under two years. This is one of the fastest zero-to-billion ramp rates in enterprise software history.",
-        "shows": [
-          "Invest Like the Best"
+          "live-aidaily-1vkry7r",
+          "live-aidaily-12cej3y",
+          "live-aidaily-fv8y9o",
+          "live-iltb-107fmnm",
+          "live-iltb-vvzfhl",
+          "live-allin-1r50oct",
+          "live-iltb-fov0sa",
+          "live-lennys-d2c0eh"
         ],
-        "episodeIds": [
-          "live-iltb-fov0sa"
-        ]
+        "strength": "major"
       },
       {
-        "title": "One person, one week, a production-grade tech stack",
-        "summary": "Thompson enumerates the full scope of what he built solo in roughly one week: a multi-platform studio management service, multiple iOS apps, a 3D-printed measurement rig, custom hardware devices, a screen-sharing client, and a distributed agent orchestration harness — work he explicitly says would have taken teams of…",
+        "title": "US-China chip war reshaping AI supply chains",
+        "summary": "Odd Lots' Kyle Chan revealed Huawei and DeepSeek have embedded personnel at each other's companies co-designing chips, with rumours the next DeepSeek model will be fully pre-trained on Huawei Ascend hardware — a potential symbolic tipping point for domestic Chinese chip viability. All-In and AI Daily noted DeepSeek's continued model releases undermined the export-control logic, while Odd Lots' Megaspeed investigation exposed the remote-access loophole allowing Chinese AI firms to legally use Nvidia chips via Southeast Asian data centres. Beijing was reported to be actively blocking Chinese AI companies from buying Nvidia H200s to force domestic adoption.",
         "shows": [
+          "Odd Lots",
+          "All-In",
+          "AI Daily",
           "Stratechery"
         ],
         "episodeIds": [
-          "live-stratechery-1xz3uzv"
-        ]
+          "live-oddlots-18gnvc1",
+          "live-oddlots-6i333n",
+          "live-allin-1yk111r",
+          "live-aidaily-11s6quv",
+          "live-aidaily-e7b9m4",
+          "live-aidaily-c7odt4"
+        ],
+        "strength": "major"
       },
       {
-        "title": "NASDAQ 100 'up crash' of 6.9% on Jensen's reinstatement",
-        "summary": "Joe describes a 6.9% single-day NASDAQ 100 surge as an 'up crash' — a phrase he coins to describe violent upside moves — triggered by Jensen Huang's reinstatement. He notes 'you just don't see up crashes like this almost ever,' framing it as one of the most extreme single-day moves in recent memory.",
+        "title": "AI energy and nuclear infrastructure as investable themes",
+        "summary": "In Good Company's conversations with NextEra Energy CEO John Ketchum and Norges Bank CEO Nicolai Tangen established AI as the primary structural driver of a new electricity demand surge, with nuclear and battery storage as complementary rather than competing infrastructure responses. NBIM made its first-ever direct battery storage investment, a milestone that In Good Company framed as validating the asset class for institutional capital. Cheeky Pint's episode on General Matter highlighted that the US uranium supply chain faces a hard 2028 deadline as Russian imports are banned, with $900 million already awarded for capacity-building.",
         "shows": [
+          "In Good Company",
+          "Cheeky Pint"
+        ],
+        "episodeIds": [
+          "live-ingoodcompany-gkjkiy",
+          "live-ingoodcompany-z6213t",
+          "live-cheekypint-1c97uu5"
+        ],
+        "strength": "minor"
+      },
+      {
+        "title": "AI model competition breaks OpenAI-Anthropic duopoly",
+        "summary": "AI Daily documented Gemini 4 Neon topping the Artificial Analysis Coding Agent Index despite coding being Google's historic weakness, while Lenny's Tulsee Doshi staked Google's sharpest-ever public claim to frontier status with Gemini 4 Argon. OpenAI's GPT-6.2 Astra received the worst early-adopter reception since GPT-4.5 according to AI Daily, with Dan Shipper's 30-person Every team and developer Theo both publishing negative assessments. The practitioner debate shifted from 'which model wins benchmarks' to 'which model fits workflows' — with Stratechery and AI Daily both noting that benchmark-leading models no longer automatically displace incumbents in practitioner use.",
+        "shows": [
+          "AI Daily",
+          "Lenny's",
+          "Stratechery"
+        ],
+        "episodeIds": [
+          "live-aidaily-1cmueo4",
+          "live-lennys-1jog9cm",
+          "live-aidaily-c7odt4",
+          "live-aidaily-1kzdjo2",
+          "live-aidaily-eansrf"
+        ],
+        "strength": "minor"
+      },
+      {
+        "title": "Venture cycle signals echo 2021 froth",
+        "summary": "Invest Like the Best's Ramtin Naimi posed the defining question — 2019 (early cycle) or 2021 (frothy peak) — citing reserved second tranches at higher prices for firms that missed initial rounds and more pulled term sheets than any point since 2021 as late-cycle stress signals. One neolab is planning $1 billion on a single training run; the assumed ceiling for a top AI winner has moved from $10 billion to $1 trillion. Odd Lots documented a hedge fund perfect storm in October where nearly every strategy lost simultaneously due to implicitly correlated leveraged-long-AI positions, with VARA losing 33% in a single month.",
+        "shows": [
+          "Invest Like the Best",
           "Odd Lots"
         ],
         "episodeIds": [
-          "live-oddlots-14ji0je"
-        ]
-      },
-      {
-        "title": "Defenders used Chinese models because US frontier models refused security queries",
-        "summary": "During the Hugging Face agentic attack, defenders could not use US frontier AI to analyze the incident because those models refused their requests; they had to resort to Chinese models instead. Kurtz calls this the real lesson: offensive AI is currently ahead of defensive AI because of model access asymmetry.",
-        "shows": [
-          "All-In"
+          "live-iltb-107fmnm",
+          "live-oddlots-13q1nwj",
+          "live-oddlots-1ytij3e"
         ],
-        "episodeIds": [
-          "live-allin-1jebnca"
-        ]
-      },
-      {
-        "title": "~$1 trillion in market cap added in a single pre-market session",
-        "summary": "NVIDIA shares surged nearly 35% in pre-market trading on November 23rd, adding roughly $1 trillion in market value — described as potentially more than doubling Microsoft's record for the single biggest daily gain ever, with Nasdaq 100 futures briefly halted on an upside volatility trip (a nearly unprecedented event).",
-        "shows": [
-          "AI Daily"
-        ],
-        "episodeIds": [
-          "live-aidaily-nbnpm"
-        ]
+        "strength": "minor"
       }
     ],
     "numbers": [
       {
-        "value": "around 30 times the water volume",
-        "metric": "Water used by US Gulf irrigation vs. data centers",
-        "context": "US Gulf irrigation consumes approximately 30x more water than all US data centers combined — cited to put AI water usage in context · AI Daily"
+        "value": "$107,000,000,000",
+        "metric": "Total capital raised in Anthropic's IPO — the largest in history",
+        "context": "All-In and AI Daily; Anthropic Nasdaq debut, November 2026"
       },
       {
-        "value": "about one handful of almonds worth of water",
-        "metric": "Annual AI water consumption for a typical user",
-        "context": "Based on asking AI 10 questions a day for an entire year, using the high end of chatbot consumption estimates · AI Daily"
+        "value": "$4 trillion",
+        "metric": "Market cap erased in a single session in AI and data-centre stocks after midterm results",
+        "context": "All-In (live-allin-ji1ba3)"
       },
       {
-        "value": "more than 500 early career professionals",
-        "metric": "KPMG / UT Austin study sample size",
-        "context": "Study examined how working with AI produces different outcomes even among people with similar skills · AI Daily"
+        "value": "nearly five times more",
+        "metric": "Year-over-year increase in enterprise AI spending",
+        "context": "AI Daily, citing Menlo Ventures enterprise AI report (live-aidaily-1vkry7r)"
       },
       {
-        "value": "sixteen weeks",
-        "metric": "Legacy insurance stack modernization timeline (Blitzy customer)",
-        "context": "Against a 137-week baseline — a 9x compression — for a $10,000,000 monolithic insurance system · AI Daily"
+        "value": "more than 25%",
+        "metric": "Texas share of planned US data centre capacity by 2030",
+        "context": "Stratechery (live-stratechery-p5quqq); at risk under new Democratic governor's moratorium pledge"
       },
       {
-        "value": "one hundred and thirty seven weeks",
-        "metric": "Legacy insurance stack modernization baseline",
-        "context": "The original projected timeline before Blitzy's AI-driven modernization approach was applied · AI Daily"
+        "value": "about a trillion dollars",
+        "metric": "NVIDIA market cap added in pre-market trading on Jensen Huang's reinstatement day",
+        "context": "AI Daily (live-aidaily-nbnpm), Odd Lots (live-oddlots-14ji0je)"
       },
       {
-        "value": "€45 trillion",
-        "metric": "Assets under custody",
-        "context": "Total assets held by Euroclear as of the time of the interview · In Good Company"
+        "value": "36% more",
+        "metric": "AI token consumption growth among Ramp-tracked businesses in October, against only 2% more spending",
+        "context": "AI Daily (live-aidaily-fv8y9o); illustrates aggressive enterprise model-switching"
       }
     ],
-    "tone": "38 mixed, 21 positive, 19 cautious, 4 neutral",
-    "watch": [],
-    "inputHash": "b18749029fd73caa"
+    "tone": "Cautiously bearish on near-term AI infrastructure policy and governance risk, bullish on the structural demand story — a tension that sharpened as the month progressed and Nvidia's reinstatement signalled the US government will backstop the AI trade at the expense of normal corporate governance.",
+    "watch": [
+      "Whether the NVIDIA-Megaspeed DOJ investigation and congressional hearings (scheduled 1–2 December) produce new export-control legislation that meaningfully curtails Nvidia's China revenue and the broader AI compute supply chain.",
+      "How public-market investors price Anthropic's stock in the weeks after IPO euphoria fades — the multiple it sustains will set the valuation floor for OpenAI and every major private AI lab.",
+      "Whether Texas's incoming Democratic governor follows through on the data-centre moratorium and whether other Democratic-controlled states adopt similar restrictions, compressing the physical buildout pipeline for hyperscalers.",
+      "Whether Levant Alpoge's claimed Riemann hypothesis proof survives peer review in Lean/Mathlib — confirmation would mark AI's first verified frontier mathematical discovery and dramatically compress timelines for fields dependent on unsolved number theory."
+    ],
+    "model": "global.anthropic.claude-sonnet-4-6",
+    "aiAt": "2026-11-26T03:31:23.067Z",
+    "inputHash": "b18749029fd73caa",
+    "aiEpisodes": 88,
+    "aiSummarised": 87
   },
   "compareMtd": {
-    "basis": "topics",
-    "ai": false,
-    "minCount": 2,
-    "read": null,
+    "basis": "themes",
+    "ai": true,
+    "read": "October's conversation centered on the theoretical and financial architecture of AI — whether the capex was justified, which models would win, and what agents would do — with governance and neurotechnology as adjacent threads. November's conversation was dominated by a single dramatic event (Jensen Huang's ouster and reinstatement) that reframed AI infrastructure as sovereign political territory, while the Anthropic IPO finally gave public markets a valuation anchor for the entire frontier-lab cohort. The month's tone shifted from analytical scepticism about AI economics to urgent political and market-structure reckoning.",
     "continued": [
       {
-        "last": "NVIDIA",
-        "this": "NVIDIA"
+        "last": "AI infrastructure scale and capital justification",
+        "this": "AI data centre buildout faces political headwinds",
+        "note": "The capital-justification debate escalated from financial risk to legislative and permitting risk after midterm results introduced data-centre moratoriums as a live political force."
       },
       {
-        "last": "Sharp Tech video launch",
-        "this": "Sharp Tech video launch"
+        "last": "AI bubble fears and market credibility",
+        "this": "Anthropic IPO prices the entire AI sector",
+        "note": "The Anthropic S-1 stress test from October became a live event as the IPO priced at $2 trillion, giving public markets their first reference multiple for frontier AI labs and intensifying the bubble-or-breakthrough debate."
       },
       {
-        "last": "AI Infrastructure",
-        "this": "AI Infrastructure"
+        "last": "Open-weight AI models and Western competition",
+        "this": "US-China chip war reshaping AI supply chains",
+        "note": "The open-model competitive framing widened into a supply-chain and export-control story as evidence emerged that DeepSeek and Huawei are co-designing chips and that Chinese AI firms are being forced off Nvidia hardware entirely."
       },
       {
-        "last": "Apple",
-        "this": "Apple"
+        "last": "Agentic AI transforming software and devices",
+        "this": "Enterprise AI adoption accelerating but uneven",
+        "note": "The conceptual agent thesis from October became a measurable enterprise reality, with Devon crossing $1 billion ARR and Menlo Ventures documenting nearly 5x year-over-year AI spending driven specifically by agents rather than copilots."
       },
       {
-        "last": "Chinese AI labs",
-        "this": "Chinese AI labs"
-      },
-      {
-        "last": "Meta",
-        "this": "Meta"
+        "last": "Governance risks and investor rights",
+        "this": "Venture cycle signals echo 2021 froth",
+        "note": "October's governance concerns about permanent capital and misaligned incentives extended into November's broader market-structure warning about leveraged-long-AI correlation risk and late-cycle venture stress signals."
       }
     ],
     "dropped": [
       {
-        "theme": "AI Safety"
+        "theme": "AI fintech and banking disruption",
+        "note": "Covered Nubank's AI organisational rebuild and Robinhood's AI trading agents as a distinct fintech-disruption thread, with no comparable company-level fintech focus in November."
       },
       {
-        "theme": "Anthropic S-1"
+        "theme": "Hardware platform strategy: Apple and SpaceX",
+        "note": "Examined Apple's HomeView launch and SpaceX's spectrum strategy as integrated consumer and broadband platform plays, with no continuation of these specific company threads in November."
       },
       {
-        "theme": "Match Group"
-      },
-      {
-        "theme": "SpaceX"
+        "theme": "Neurotechnology and brain-AI interfaces",
+        "note": "Argued via Andrew Huberman that neuroscience is shifting from reading to writing brain states, identifying waking-state modulation as a novel investable category, but the topic did not resurface in November."
       }
     ],
     "new": [
       {
-        "theme": "Anthropic"
+        "theme": "Jensen Huang ouster and reinstatement",
+        "note": "Surfaced entirely due to the month's singular news event — Jensen Huang's forced removal and 11-day reinstatement — which had no precedent in prior coverage and recast Nvidia as sovereign infrastructure."
       },
       {
-        "theme": "Jensen Huang / Nvidia"
+        "theme": "AI energy and nuclear infrastructure as investable themes",
+        "note": "Surfaced as a distinct investable category following In Good Company's interviews with NextEra's CEO and NBIM's first-ever direct battery storage investment, elevating energy infrastructure from a capex footnote to a standalone thesis."
       },
       {
-        "theme": "Anthropic IPO"
-      },
-      {
-        "theme": "OpenAI"
-      },
-      {
-        "theme": "AMD"
-      },
-      {
-        "theme": "Jensen Huang"
-      },
-      {
-        "theme": "agentic commerce"
-      },
-      {
-        "theme": "AI agents"
-      },
-      {
-        "theme": "AI data center buildout"
-      },
-      {
-        "theme": "Databricks"
-      },
-      {
-        "theme": "Google"
-      },
-      {
-        "theme": "Huawei"
-      },
-      {
-        "theme": "Intel"
-      },
-      {
-        "theme": "iPhone Duo"
-      },
-      {
-        "theme": "Jensen Huang's legacy"
-      },
-      {
-        "theme": "Microsoft"
-      },
-      {
-        "theme": "NextEra Energy"
-      },
-      {
-        "theme": "Nuclear energy"
-      },
-      {
-        "theme": "NVIDIA earnings"
-      },
-      {
-        "theme": "Prediction Markets"
+        "theme": "AI model competition breaks OpenAI-Anthropic duopoly",
+        "note": "Emerged as Google's Gemini 4 Neon topped coding benchmarks and OpenAI's GPT-6.2 Astra received poor practitioner reception, shifting the competitive narrative beyond the two-lab framing that dominated October."
       }
-    ]
+    ],
+    "model": "global.anthropic.claude-sonnet-4-6",
+    "inputHash": "157e919976142059"
   },
-  "mtdAt": "2026-11-26T02:51:14.601Z"
+  "mtdAttempt": {
+    "month": "2026-11",
+    "at": "2026-11-26T03:31:23.067Z",
+    "ok": true
+  },
+  "mtdAt": "2026-11-26T03:31:23.067Z"
 }

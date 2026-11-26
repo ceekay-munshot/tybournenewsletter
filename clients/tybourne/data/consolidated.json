@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T02:51:13.509Z",
+  "generatedAt": "2026-11-26T03:31:22.241Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -14173,79 +14173,79 @@
       "isStale": false,
       "breakdown": [
         {
-          "label": "Latin America",
-          "thisValue": null,
-          "lastValue": null,
-          "changePct": 0.053,
-          "direction": "up",
-          "bigMove": true,
-          "note": "5.4% of global RPK · -0.8pp vs prior mo",
-          "prevValue": null,
-          "prevChangePct": 0.061,
-          "prevDirection": "up"
-        },
-        {
           "label": "Africa",
           "thisValue": null,
           "lastValue": null,
-          "changePct": 0.044000000000000004,
+          "changePct": 0.05,
+          "direction": "up",
+          "bigMove": true,
+          "note": "2.2% of global RPK · +0.6pp vs prior mo",
+          "prevValue": null,
+          "prevChangePct": 0.044000000000000004,
+          "prevDirection": "up"
+        },
+        {
+          "label": "Latin America",
+          "thisValue": null,
+          "lastValue": null,
+          "changePct": 0.043,
           "direction": "up",
           "bigMove": false,
-          "note": "2.2% of global RPK · -0.8pp vs prior mo",
+          "note": "5.4% of global RPK · -1.0pp vs prior mo",
           "prevValue": null,
-          "prevChangePct": 0.052000000000000005,
+          "prevChangePct": 0.053,
           "prevDirection": "up"
         },
         {
           "label": "Asia/Pacific",
           "thisValue": null,
           "lastValue": null,
-          "changePct": 0.013999999999999999,
+          "changePct": 0.005,
           "direction": "up",
           "bigMove": false,
-          "note": "34.4% of global RPK · +0.4pp vs prior mo",
+          "note": "34.4% of global RPK · -0.9pp vs prior mo",
           "prevValue": null,
-          "prevChangePct": 0.01,
+          "prevChangePct": 0.013999999999999999,
           "prevDirection": "up"
         },
         {
           "label": "Europe",
           "thisValue": null,
           "lastValue": null,
-          "changePct": 0.006999999999999999,
+          "changePct": 0.003,
           "direction": "up",
           "bigMove": false,
-          "note": "26.7% of global RPK · -1.4pp vs prior mo",
+          "note": "26.7% of global RPK · -0.4pp vs prior mo",
           "prevValue": null,
-          "prevChangePct": 0.021,
+          "prevChangePct": 0.006999999999999999,
           "prevDirection": "up"
         },
         {
           "label": "North America",
           "thisValue": null,
           "lastValue": null,
-          "changePct": -0.022000000000000002,
+          "changePct": -0.016,
           "direction": "down",
           "bigMove": false,
-          "note": "21.8% of global RPK · -1.0pp vs prior mo",
+          "note": "21.8% of global RPK · +0.6pp vs prior mo",
           "prevValue": null,
-          "prevChangePct": -0.012,
+          "prevChangePct": -0.022000000000000002,
           "prevDirection": "down"
         },
         {
           "label": "Middle East",
           "thisValue": null,
           "lastValue": null,
-          "changePct": -0.146,
+          "changePct": -0.08,
           "direction": "down",
           "bigMove": true,
-          "note": "9.5% of global RPK · -4.6pp vs prior mo",
+          "note": "9.5% of global RPK · +6.6pp vs prior mo",
           "prevValue": null,
-          "prevChangePct": -0.1,
+          "prevChangePct": -0.146,
           "prevDirection": "down"
         }
       ],
-      "summary": "US passenger throughput up 1.6% year-on-year month to date (1–24 Nov '26 vs the same weekdays a year earlier, 2–25 Nov '25), running at 2.41M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split.",
+      "summary": "US passenger throughput up 1.6% year-on-year month to date (1–24 Nov '26 vs the same weekdays a year earlier, 2–25 Nov '25), running at 2.41M passengers/day. Globally, industry RPK is down 0.5% YoY — see the regional split.",
       "sourceName": "TSA.gov + IATA",
       "sourceUrl": "",
       "dashboardUrl": null,
@@ -14270,79 +14270,79 @@
           "prevDirection": "up",
           "breakdown": [
             {
-              "label": "Latin America",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.053,
-              "direction": "up",
-              "bigMove": true,
-              "note": "5.4% of global RPK · -0.8pp vs prior mo",
-              "prevValue": null,
-              "prevChangePct": 0.061,
-              "prevDirection": "up"
-            },
-            {
               "label": "Africa",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.044000000000000004,
+              "changePct": 0.05,
+              "direction": "up",
+              "bigMove": true,
+              "note": "2.2% of global RPK · +0.6pp vs prior mo",
+              "prevValue": null,
+              "prevChangePct": 0.044000000000000004,
+              "prevDirection": "up"
+            },
+            {
+              "label": "Latin America",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": 0.043,
               "direction": "up",
               "bigMove": false,
-              "note": "2.2% of global RPK · -0.8pp vs prior mo",
+              "note": "5.4% of global RPK · -1.0pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.052000000000000005,
+              "prevChangePct": 0.053,
               "prevDirection": "up"
             },
             {
               "label": "Asia/Pacific",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.013999999999999999,
+              "changePct": 0.005,
               "direction": "up",
               "bigMove": false,
-              "note": "34.4% of global RPK · +0.4pp vs prior mo",
+              "note": "34.4% of global RPK · -0.9pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.01,
+              "prevChangePct": 0.013999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "Europe",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.006999999999999999,
+              "changePct": 0.003,
               "direction": "up",
               "bigMove": false,
-              "note": "26.7% of global RPK · -1.4pp vs prior mo",
+              "note": "26.7% of global RPK · -0.4pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.021,
+              "prevChangePct": 0.006999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "North America",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.022000000000000002,
+              "changePct": -0.016,
               "direction": "down",
               "bigMove": false,
-              "note": "21.8% of global RPK · -1.0pp vs prior mo",
+              "note": "21.8% of global RPK · +0.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.012,
+              "prevChangePct": -0.022000000000000002,
               "prevDirection": "down"
             },
             {
               "label": "Middle East",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.146,
+              "changePct": -0.08,
               "direction": "down",
               "bigMove": true,
-              "note": "9.5% of global RPK · -4.6pp vs prior mo",
+              "note": "9.5% of global RPK · +6.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.1,
+              "prevChangePct": -0.146,
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput up 1.5% year-on-year (18–24 Nov '26 vs the same weekdays a year earlier, 19–25 Nov '25), running at 2.56M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput up 1.5% year-on-year (18–24 Nov '26 vs the same weekdays a year earlier, 19–25 Nov '25), running at 2.56M passengers/day. Globally, industry RPK is down 0.5% YoY — see the regional split."
         },
         {
           "comparison": "MoM",
@@ -14362,79 +14362,79 @@
           "prevDirection": "down",
           "breakdown": [
             {
-              "label": "Latin America",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.053,
-              "direction": "up",
-              "bigMove": true,
-              "note": "5.4% of global RPK · -0.8pp vs prior mo",
-              "prevValue": null,
-              "prevChangePct": 0.061,
-              "prevDirection": "up"
-            },
-            {
               "label": "Africa",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.044000000000000004,
+              "changePct": 0.05,
+              "direction": "up",
+              "bigMove": true,
+              "note": "2.2% of global RPK · +0.6pp vs prior mo",
+              "prevValue": null,
+              "prevChangePct": 0.044000000000000004,
+              "prevDirection": "up"
+            },
+            {
+              "label": "Latin America",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": 0.043,
               "direction": "up",
               "bigMove": false,
-              "note": "2.2% of global RPK · -0.8pp vs prior mo",
+              "note": "5.4% of global RPK · -1.0pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.052000000000000005,
+              "prevChangePct": 0.053,
               "prevDirection": "up"
             },
             {
               "label": "Asia/Pacific",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.013999999999999999,
+              "changePct": 0.005,
               "direction": "up",
               "bigMove": false,
-              "note": "34.4% of global RPK · +0.4pp vs prior mo",
+              "note": "34.4% of global RPK · -0.9pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.01,
+              "prevChangePct": 0.013999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "Europe",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.006999999999999999,
+              "changePct": 0.003,
               "direction": "up",
               "bigMove": false,
-              "note": "26.7% of global RPK · -1.4pp vs prior mo",
+              "note": "26.7% of global RPK · -0.4pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.021,
+              "prevChangePct": 0.006999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "North America",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.022000000000000002,
+              "changePct": -0.016,
               "direction": "down",
               "bigMove": false,
-              "note": "21.8% of global RPK · -1.0pp vs prior mo",
+              "note": "21.8% of global RPK · +0.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.012,
+              "prevChangePct": -0.022000000000000002,
               "prevDirection": "down"
             },
             {
               "label": "Middle East",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.146,
+              "changePct": -0.08,
               "direction": "down",
               "bigMove": true,
-              "note": "9.5% of global RPK · -4.6pp vs prior mo",
+              "note": "9.5% of global RPK · +6.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.1,
+              "prevChangePct": -0.146,
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput up 1.6% year-on-year month to date (1–24 Nov '26 vs the same weekdays a year earlier, 2–25 Nov '25), running at 2.41M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput up 1.6% year-on-year month to date (1–24 Nov '26 vs the same weekdays a year earlier, 2–25 Nov '25), running at 2.41M passengers/day. Globally, industry RPK is down 0.5% YoY — see the regional split."
         },
         {
           "comparison": "QoQ",
@@ -14454,108 +14454,108 @@
           "prevDirection": "down",
           "breakdown": [
             {
-              "label": "Latin America",
-              "thisValue": null,
-              "lastValue": null,
-              "changePct": 0.053,
-              "direction": "up",
-              "bigMove": true,
-              "note": "5.4% of global RPK · -0.8pp vs prior mo",
-              "prevValue": null,
-              "prevChangePct": 0.061,
-              "prevDirection": "up"
-            },
-            {
               "label": "Africa",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.044000000000000004,
+              "changePct": 0.05,
+              "direction": "up",
+              "bigMove": true,
+              "note": "2.2% of global RPK · +0.6pp vs prior mo",
+              "prevValue": null,
+              "prevChangePct": 0.044000000000000004,
+              "prevDirection": "up"
+            },
+            {
+              "label": "Latin America",
+              "thisValue": null,
+              "lastValue": null,
+              "changePct": 0.043,
               "direction": "up",
               "bigMove": false,
-              "note": "2.2% of global RPK · -0.8pp vs prior mo",
+              "note": "5.4% of global RPK · -1.0pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.052000000000000005,
+              "prevChangePct": 0.053,
               "prevDirection": "up"
             },
             {
               "label": "Asia/Pacific",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.013999999999999999,
+              "changePct": 0.005,
               "direction": "up",
               "bigMove": false,
-              "note": "34.4% of global RPK · +0.4pp vs prior mo",
+              "note": "34.4% of global RPK · -0.9pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.01,
+              "prevChangePct": 0.013999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "Europe",
               "thisValue": null,
               "lastValue": null,
-              "changePct": 0.006999999999999999,
+              "changePct": 0.003,
               "direction": "up",
               "bigMove": false,
-              "note": "26.7% of global RPK · -1.4pp vs prior mo",
+              "note": "26.7% of global RPK · -0.4pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": 0.021,
+              "prevChangePct": 0.006999999999999999,
               "prevDirection": "up"
             },
             {
               "label": "North America",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.022000000000000002,
+              "changePct": -0.016,
               "direction": "down",
               "bigMove": false,
-              "note": "21.8% of global RPK · -1.0pp vs prior mo",
+              "note": "21.8% of global RPK · +0.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.012,
+              "prevChangePct": -0.022000000000000002,
               "prevDirection": "down"
             },
             {
               "label": "Middle East",
               "thisValue": null,
               "lastValue": null,
-              "changePct": -0.146,
+              "changePct": -0.08,
               "direction": "down",
               "bigMove": true,
-              "note": "9.5% of global RPK · -4.6pp vs prior mo",
+              "note": "9.5% of global RPK · +6.6pp vs prior mo",
               "prevValue": null,
-              "prevChangePct": -0.1,
+              "prevChangePct": -0.146,
               "prevDirection": "down"
             }
           ],
-          "summary": "US passenger throughput down 0.5% year-on-year quarter to date (1 Oct – 24 Nov '26 vs the same weekdays a year earlier, 2 Oct – 25 Nov '25), running at 2.46M passengers/day. Globally, industry RPK is down 0.8% YoY — see the regional split."
+          "summary": "US passenger throughput down 0.5% year-on-year quarter to date (1 Oct – 24 Nov '26 vs the same weekdays a year earlier, 2 Oct – 25 Nov '25), running at 2.46M passengers/day. Globally, industry RPK is down 0.5% YoY — see the regional split."
         }
       ],
       "breakdownNoun": "world region",
       "changeNoun": "RPK growth",
       "breakdownChangeLabels": {
-        "prev": "Jul '26 YoY",
-        "this": "Aug '26 YoY (latest IATA)"
+        "prev": "Aug '26 YoY",
+        "this": "Sep '26 YoY (latest IATA)"
       },
       "prevChangeLabel": "Oct '26 YoY",
-      "breakdownSubtitle": "Global RPK by region · IATA · year-on-year · Aug '26 (latest available)",
+      "breakdownSubtitle": "Global RPK by region · IATA · year-on-year · Sep '26 (latest available)",
       "insights": [
         {
           "title": "US demand: current to the latest TSA day",
           "body": "TSA checkpoint throughput is tracked daily and is current to 24 Nov '26, and the month and quarter views run to that day (MTD / QTD). Raw counts swing with the seasons (summer peak, autumn dip), so this dashboard reads demand year-on-year against the same weekdays a year earlier."
         },
         {
-          "title": "Global regional demand (IATA RPK, YoY, Aug '26)",
+          "title": "Global regional demand (IATA RPK, YoY, Sep '26)",
           "body": "Where passenger traffic is growing and shrinking, by world region, on revenue-passenger-kilometres.",
           "bullets": [
-            "Latin America: +5.3% YoY (5.4% of global RPK · -0.8pp vs prior mo)",
-            "Africa: +4.4% YoY (2.2% of global RPK · -0.8pp vs prior mo)",
-            "Middle East: -14.6% YoY (9.5% of global RPK · -4.6pp vs prior mo)",
-            "North America: -2.2% YoY (21.8% of global RPK · -1.0pp vs prior mo)"
+            "Africa: +5.0% YoY (2.2% of global RPK · +0.6pp vs prior mo)",
+            "Latin America: +4.3% YoY (5.4% of global RPK · -1.0pp vs prior mo)",
+            "Middle East: -8.0% YoY (9.5% of global RPK · +6.6pp vs prior mo)",
+            "North America: -1.6% YoY (21.8% of global RPK · +0.6pp vs prior mo)"
           ],
-          "asOf": "2026-08-28"
+          "asOf": "2026-09-28"
         },
         {
           "title": "On the dates — not frozen, two different clocks",
-          "body": "The headline (US TSA) is current to 24 Nov '26. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Aug '26. Two different reporting clocks, both showing their newest real data — neither is stale."
+          "body": "The headline (US TSA) is current to 24 Nov '26. The regional RPK figures come from IATA, which publishes on a ~2-month lag, so the latest available there is Sep '26. Two different reporting clocks, both showing their newest real data — neither is stale."
         }
       ],
       "prevLabel": "Oct '26",
@@ -15875,7 +15875,7 @@
       "changePct": 0.4047365041861669,
       "changeAbs": 211953400363343,
       "direction": "up",
-      "asOf": "2026-11-26T02:50:57.347Z",
+      "asOf": "2026-11-26T03:31:09.803Z",
       "isStale": false,
       "breakdown": [
         {
@@ -17616,7 +17616,7 @@
             "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #18 by tokens.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-26T02:50:57.419Z"
+          "asOf": "2026-11-26T03:31:09.878Z"
         }
       ],
       "prevLabel": "Sep '26",
