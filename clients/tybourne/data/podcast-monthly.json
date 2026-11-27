@@ -1155,21 +1155,21 @@
     "label": "Nov '26",
     "longLabel": "November 2026",
     "mtd": true,
-    "episodes": 89,
-    "summarised": 88,
+    "episodes": 91,
+    "summarised": 90,
     "shows": [
-      "Stratechery",
       "AI Daily",
+      "Stratechery",
       "Odd Lots",
       "In Good Company",
       "All-In",
       "Invest Like the Best",
-      "Sources",
       "Lenny's",
+      "Sources",
       "Cheeky Pint"
     ],
     "toneCounts": {
-      "positive": 22,
+      "positive": 24,
       "mixed": 38,
       "cautious": 19,
       "neutral": 4
@@ -1738,6 +1738,16 @@
         "line": "Huang's abrupt 11-day ouster was confirmed and dissected across every show; Anthropic's IPO priced at $2 trillion, the largest in history; Gemini Neon topped coding benchmarks; and AI Daily, Stratechery, and Odd Lots debated whether Washington had effectively nationalised Nvidia and what the agentic commerce and AI OS platform battles mean for incumbents.",
         "episodes": [
           {
+            "id": "live-lennys-ey5o95",
+            "show": "Lenny's",
+            "title": "First principles: What it takes to be a great product manager in the AI era | Sherif Mansour",
+            "date": "2026-11-22T13:31:53.000Z",
+            "url": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+            "summarised": true,
+            "tone": "positive",
+            "line": "PMs are the most-hired role in tech right now — the opposite of what AI pessimists predicted"
+          },
+          {
             "id": "live-aidaily-q7euaf",
             "show": "AI Daily",
             "title": "When AI Labs Rival Nations",
@@ -1982,6 +1992,16 @@
         "label": "23–29 Nov",
         "line": "Jensen Huang's White House-backed reinstatement triggered a near-35% Nvidia pre-market surge and a NASDAQ 100 'up crash' of 6.9%; a claimed Riemann hypothesis proof produced with Claude signalled AI crossing into frontier scientific discovery; and CrowdStrike's CEO warned that 25% of all historical CVEs were found in 2026 alone, framing AI-enabled cyber offense as an almost-inevitable near-term enterprise crisis.",
         "episodes": [
+          {
+            "id": "live-aidaily-1rl9139",
+            "show": "AI Daily",
+            "title": "How Anthropic Went From Anti-Product to $81B a Year",
+            "date": "2026-11-26T15:00:00.000Z",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-Anthropic-Went-From-Anti-Product-to-81B-a-Year-e3t0vt0",
+            "summarised": true,
+            "tone": "positive",
+            "line": "ChatGPT launched because OpenAI heard Anthropic might release a chatbot"
+          },
           {
             "id": "live-oddlots-111hyqu",
             "show": "Odd Lots",
@@ -2407,5 +2427,5 @@
     "at": "2026-11-26T03:31:23.067Z",
     "ok": true
   },
-  "mtdAt": "2026-11-26T16:30:33.089Z"
+  "mtdAt": "2026-11-27T01:32:37.656Z"
 }

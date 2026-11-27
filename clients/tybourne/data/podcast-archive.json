@@ -3,6 +3,71 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-aidaily-1rl9139",
+      "podcastId": "aidaily",
+      "show": "AI Daily",
+      "title": "How Anthropic Went From Anti-Product to $81B a Year",
+      "date": "2026-11-26T15:00:00.000Z",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-Anthropic-Went-From-Anti-Product-to-81B-a-Year-e3t0vt0",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "ChatGPT launched because OpenAI heard Anthropic might release a chatbot",
+          "detail": "OpenAI released ChatGPT 19 days after FTX filed for bankruptcy, ironically in response to a rumor that Anthropic was planning to release its own chatbot — the very race Anthropic had held Claude back to avoid. Most OpenAI employees guessed 10,000–50,000 sign-ups; it hit a million in five days and 100 million by January…"
+        },
+        {
+          "title": "Dario at Davos: AI doing 'most or all' of software engineering within 6–12 months",
+          "detail": "In January 2026 at Davos, Dario said AI could be doing most or all of software engineering end-to-end within 6–12 months. Simultaneously, people at both Anthropic and OpenAI said close to 100% of their own code was already written by AI — a data point that reframed the entire market."
+        },
+        {
+          "title": "The token vs. seat shift: one power user now generates thousands per month",
+          "detail": "The narrator notes that as an individual running agents, he personally generates thousands of dollars per month for Anthropic and OpenAI — versus the ~$30/month ceiling of a per-seat subscription. A company with 10 engineers each running 50 agents, potentially spawning tens of thousands of sub-agents, is in an entirely…"
+        },
+        {
+          "title": "Anthropic's revenue: $87M → $65B annualized in roughly 2.5 years",
+          "detail": "Run-rate revenue went from ~$87M in January 2024 to $1B (end 2024), $9B (end 2025), $14B (Feb 2026), $30B (April 2026), and $65B (July 2026). Dario said growth ran ~8x faster than the company's own forecasts — an almost unprecedented ramp for any company at this scale."
+        }
+      ],
+      "synthesis": "Anthropic's story is a case study in reluctant commercialization forced by survival: the company was founded by OpenAI alumni who explicitly did not want to build a product, seriously considered becoming a non-profit, and had co-founders who had 'ruled out commercializing anything.' The pivot happened because Dario Moustakas argued in January 2023 — after ChatGPT launched — that sitting out would cede the frontier to labs that cared less about safety, and that frontier models costing billions could only be funded by a product. It's sad that we have to make this trade-off, he said, but it's going to be worth it.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Anthropic Series A funding",
+          "value": "$124 million",
+          "context": "Announced May 2021, led by Jaan Tallinn with participation from Dustin Moskovitz"
+        },
+        {
+          "metric": "Sam Bankman-Fried investment in Anthropic",
+          "value": "$500 million",
+          "context": "For approximately 13% of the one-year-old company, with no board seat attached"
+        },
+        {
+          "metric": "SBF stake sale in bankruptcy",
+          "value": "about $1.3 billion",
+          "context": "Sold in 2024; analysts estimated it would have been worth $40 billion or more had it been kept together at IPO"
+        },
+        {
+          "metric": "Amazon investment commitment in Anthropic",
+          "value": "up to $4 billion",
+          "context": "Committed in September 2023"
+        },
+        {
+          "metric": "Google investment commitment in Anthropic",
+          "value": "$2 billion",
+          "context": "Committed in October 2023"
+        }
+      ],
+      "topics": [
+        "Anthropic's trajectory",
+        "Claude 3.5 Sonnet coding quality",
+        "Sam Bankman-Fried / FTX",
+        "per-seat AI business model",
+        "vibe coding / agentic AI"
+      ]
+    },
+    {
       "id": "live-oddlots-111hyqu",
       "podcastId": "oddlots",
       "show": "Odd Lots",
@@ -712,6 +777,71 @@
         "AI education industry (MLM)",
         "Chinese youth economic prospects",
         "Liangzhu vibe-coding town"
+      ]
+    },
+    {
+      "id": "live-lennys-ey5o95",
+      "podcastId": "lennys",
+      "show": "Lenny's",
+      "title": "First principles: What it takes to be a great product manager in the AI era | Sherif Mansour",
+      "date": "2026-11-22T13:31:53.000Z",
+      "url": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+      "summarised": true,
+      "tone": "positive",
+      "keyPoints": [
+        {
+          "title": "PMs are the most-hired role in tech right now — the opposite of what AI pessimists predicted",
+          "detail": "Lenny shares data from his state-of-the-tech-job-market report: PM roles are seeing the most open positions of any role, while engineering roles are slowing, design is flat, and user research has only ~108 open roles globally. This directly contradicts the 'PMs are over' narrative from a year ago."
+        },
+        {
+          "title": "Atlassian AI-builder squad experiment: everyone reverted after one month",
+          "detail": "Atlassian ran squads with no PMs or designers — only 'AI builders' from various crafts. A participating PM reported moving faster than ever in the first few weeks, but after one month everyone had gone back to their traditional roles. The lesson: 'throughput is not our problem, direction is our problem.'"
+        },
+        {
+          "title": "PMs own decision-making velocity, not decisions themselves",
+          "detail": "Mansour's core reframe: PMs don't own decision-making — they own decision-making velocity. Their job is to remove context gaps so the whole team can make faster, better micro-decisions without the PM as bottleneck. He says telling an engineer something is a priority without explaining the underlying context is a…"
+        },
+        {
+          "title": "Counter-narrative: hire MORE junior PMs now, not fewer",
+          "detail": "Many organizations are cutting junior hiring because 'AI can do that work.' Mansour flips the argument: for established organizations trying to transform their culture, juniors who have only ever worked with AI are the best change agents. His 12-year-old son who went from Scratch directly to vibe coding — skipping…"
+        }
+      ],
+      "synthesis": "The central argument Sherif Mansour makes is that PMs own context, not decisions — their primary job is to build a 'shared brain' across engineers, designers, and stakeholders by filling three distinct context gaps: customer context, product/market context, and business context. This reframe has direct implications: a PM who hoards decisions is a bottleneck; a PM who distributes context multiplies team throughput. Mansour backs this with a concrete Atlassian example — engineers who sat in live customer interviews, not just received summary reports, generated better product ideas, like the engineer in 2010 who invented the checkbox in Confluence documents after watching customers use colored stars as a workaround.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Open user research roles globally in tech",
+          "value": "100 open roles (specifically 108)",
+          "context": "Per Lenny's state of the tech job market report, described as 'really not great' for user researchers"
+        },
+        {
+          "metric": "Junior PMs more likely to adopt new tools than seniors",
+          "value": "38%",
+          "context": "Atlassian internal data and customer research; juniors are 38% more likely to adopt new AI tools"
+        },
+        {
+          "metric": "Agent loops running monthly in Jira and Confluence",
+          "value": "nearly 10 million",
+          "context": "Customer-deployed agents running in loops inside Atlassian's Jira and Confluence products"
+        },
+        {
+          "metric": "Atlassian team size threshold where shared-brain problems begin",
+          "value": "more than 20, 30 people",
+          "context": "Point at which trust breaks, shared brains break, and us-vs-them culture starts forming in product teams"
+        },
+        {
+          "metric": "Mansour's tenure at Atlassian",
+          "value": "17 years",
+          "context": "Used to establish credibility when discussing design's role and Atlassian's cultural evolution"
+        }
+      ],
+      "topics": [
+        "PM role in AI era",
+        "AI-builder squads (no PMs)",
+        "junior / AI-native PMs",
+        "nuance in product advice",
+        "user research role"
       ]
     },
     {
