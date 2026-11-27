@@ -19,6 +19,10 @@ on:
     - cron: '41 6 2 * *'
   workflow_dispatch:
     inputs:
+      verify_private_feeds:
+        description: 'Check both private source feeds against the published snapshot (read-only)'
+        type: boolean
+        default: false
       ai_edition:
         description: 'Also write the monthly AI edition now (calls Bedrock)'
         type: boolean
@@ -39,7 +43,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch the two private Tybourne feeds
+        id: private_sources
+        continue-on-error: ${{ !inputs.verify_private_feeds }}
+        env:
+          GH_TOKEN: ${{ secrets.TYBOURNE_FEEDS_READ_TOKEN }}
+        run: node scripts/fetch-private-feeds.mjs
+
+      - name: Verify private feed snapshot
+        if: inputs.verify_private_feeds
+        run: |
+          node scripts/consolidate.mjs --private-feeds
+          git diff --exit-code --stat -- clients/tybourne/data/consolidated.json
+
       - name: Set up Node 20
+        if: ${{ !inputs.verify_private_feeds }}
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -47,13 +65,16 @@ jobs:
 
       # esbuild is needed to read the Nubank TypeScript data sources.
       - name: Install dependencies
+        if: ${{ !inputs.verify_private_feeds }}
         run: npm ci
 
       - name: Consolidate (all clients)
+        if: ${{ !inputs.verify_private_feeds }}
         run: node scripts/consolidate.mjs
 
       # 'due' = this month's AI edition isn't on file yet (or ai_edition was ticked).
       - name: Is the monthly AI edition due?
+        if: ${{ !inputs.verify_private_feeds }}
         id: edition
         continue-on-error: true # never let the check block the data refresh
         env:
@@ -76,6 +97,7 @@ jobs:
       # PODCAST_EDITION is always an explicit 'true'/'false' (never empty): if it were unset,
       # the script would treat every keyed run as an edition run.
       - name: Podcast monthly summaries
+        if: ${{ !inputs.verify_private_feeds }}
         continue-on-error: true
         env:
           BEDROCK_API_KEY: ${{ secrets.BEDROCK_API_KEY }}
@@ -89,6 +111,7 @@ jobs:
       # step shows the failure (continue-on-error keeps the job going), and the next run
       # retries because the edition is still due.
       - name: Generate AI newsletter
+        if: ${{ !inputs.verify_private_feeds }}
         continue-on-error: true
         env:
           BEDROCK_API_KEY: ${{ steps.edition.outputs.due == 'true' && secrets.BEDROCK_API_KEY || '' }}
@@ -97,6 +120,7 @@ jobs:
         run: node scripts/newsletter.mjs
 
       - name: Commit data if changed
+        if: ${{ !inputs.verify_private_feeds }}
         run: |
           git config user.name "munshot-bot"
           git config user.email "actions@users.noreply.github.com"
@@ -144,3 +168,7 @@ jobs:
       - name: Edition still missing
         if: steps.edition.outputs.due == 'true' && steps.written.outputs.current != 'true'
         run: echo "::warning::This month's AI edition was due but wasn't written this run (see the Generate AI newsletter step). The next refresh run retries it automatically."
+
+      - name: Report private source failures
+        if: steps.private_sources.outcome == 'failure'
+        run: exit 1

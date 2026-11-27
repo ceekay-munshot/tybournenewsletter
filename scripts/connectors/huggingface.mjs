@@ -4,6 +4,7 @@
 // headline, the use-case breakdown and the model-family shifts all come straight
 // from the Hub's published numbers. History starts late-July 2026, so a QoQ needs
 // two full quarters we don't have yet — shown honestly as unavailable.
+import { readFeed } from '../lib/private-feeds.mjs';
 import { getJson } from '../lib/http.mjs';
 import { monthLabel } from '../lib/quarters.mjs';
 import { makeBlock, directionOf, attachPrev, attachSeries } from '../lib/changeBlock.mjs';
@@ -569,7 +570,11 @@ function fillRowGaps(view, X, windowOf, keepChange = new Set()) {
 }
 
 export async function connect(system) {
-  const [ins, sx] = await Promise.all([
+  const { repository } = system.source;
+  const [ins, sx] = repository ? await Promise.all([
+    readFeed(repository, 'public/data/insights.json'),
+    readFeed(repository, 'public/data/series.json'),
+  ]) : await Promise.all([
     getJson(system.source.insights),
     system.source.series ? getJson(system.source.series).catch(() => null) : Promise.resolve(null),
   ]);

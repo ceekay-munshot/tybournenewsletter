@@ -9,6 +9,7 @@ import { errorBlock, reconcilePrev } from './lib/changeBlock.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
+const privateOnly = process.argv.includes('--private-feeds');
 const CLIENT = process.env.CLIENT || 'tybourne';
 const configPath = resolve(ROOT, `clients/${CLIENT}/client.config.json`);
 const outPath = resolve(ROOT, `clients/${CLIENT}/data/consolidated.json`);
@@ -35,7 +36,13 @@ const arrow = (d) => (d === 'up' ? '▲' : d === 'down' ? '▼' : '•');
 
 async function run() {
   const config = JSON.parse(await readFile(configPath, 'utf8'));
-  const systems = Array.isArray(config.systems) ? config.systems : [];
+  const configured = Array.isArray(config.systems) ? config.systems : [];
+  const systems = privateOnly ? configured.filter((s) => s.source?.repository) : configured;
+  const previous = await readFile(outPath, 'utf8').then(JSON.parse).catch((error) => {
+    if (error.code === 'ENOENT' && !privateOnly) return null;
+    throw error;
+  });
+  if (privateOnly && systems.length !== 2) throw new Error('Expected both private Tybourne feeds');
   const blocks = [];
   let okCount = 0;
 
@@ -51,6 +58,9 @@ async function run() {
     try {
       const mod = await load();
       const block = await mod.connect(system);
+      if (system.source?.repository && (!Number.isFinite(block.thisValue) || !block.breakdown?.length)) {
+        throw new Error('Private feed has no usable headline or breakdown');
+      }
       // Two-period trend: drop any prior VALUE that doesn't chain cleanly (like-for-like
       // basket shift), keeping the honest prior change. Then mirror the default view's prior
       // fields onto the block so the overview + newsletter can read them. No-op without `views`.
@@ -84,9 +94,26 @@ async function run() {
       }
     } catch (e) {
       const reason = e instanceof Error ? e.message : String(e);
-      blocks.push(errorBlock(system, reason));
+      const saved = system.source?.repository && previous?.systems.find((b) => b.systemId === system.id && b.status === 'ok');
+      blocks.push(saved ? { ...saved, isStale: true, statusReason: 'Source unavailable. Showing last successful data.' } : errorBlock(system, reason));
+      if (system.source?.repository) console.error(`::warning::${system.name} refresh failed`);
       console.log(`  ✗ ${system.name.padEnd(30)} ${reason}`);
     }
+  }
+
+  if (privateOnly) {
+    if (okCount !== systems.length) {
+      throw new Error('Private feed validation failed before publication');
+    }
+    const existing = previous;
+    for (const block of blocks) {
+      const index = existing.systems.findIndex((b) => b.systemId === block.systemId);
+      if (index < 0) throw new Error(`Missing existing system ${block.systemId}`);
+      existing.systems[index] = block;
+    }
+    // The overall timestamp belongs to the last full refresh.
+    await writeFile(outPath, `${JSON.stringify(existing, null, 2)}\n`, 'utf8');
+    return;
   }
 
   const out = {
