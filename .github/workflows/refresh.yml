@@ -54,6 +54,15 @@ jobs:
         if: inputs.verify_private_feeds
         run: |
           node scripts/consolidate.mjs --private-feeds
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync } from 'node:fs';
+          const expected = JSON.parse(readFileSync('clients/tybourne/data/consolidated.json')).systems.find(b => b.systemId === 'huggingface');
+          const res = await fetch('https://tybournenewsletter.pages.dev/api/hf-data/block');
+          assert.equal(res.status, 200);
+          assert.deepEqual(await res.json(), expected);
+          NODE
+          node scripts/strip-runtime-feed.mjs
           git diff --exit-code --stat -- clients/tybourne/data/consolidated.json
 
       - name: Set up Node 20
@@ -122,6 +131,7 @@ jobs:
       - name: Commit data if changed
         if: ${{ !inputs.verify_private_feeds }}
         run: |
+          node scripts/strip-runtime-feed.mjs
           git config user.name "munshot-bot"
           git config user.email "actions@users.noreply.github.com"
           if [ -z "$(git status --porcelain clients)" ]; then
