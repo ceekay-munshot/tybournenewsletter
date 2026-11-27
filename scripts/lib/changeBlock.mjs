@@ -239,3 +239,26 @@ export function buildSeries(points, display = 'pct') {
   }
   return out;
 }
+
+export function finishBlock(block) {
+  // Two-period trend: drop any prior VALUE that doesn't chain cleanly (like-for-like
+  // basket shift), keeping the honest prior change. Then mirror the default view's prior
+  // fields onto the block so the overview + newsletter can read them. No-op without `views`.
+  if (Array.isArray(block.views)) {
+    for (const v of block.views) reconcilePrev(v);
+    const dv =
+      block.views.find((v) => v.comparison === block.comparison && v.available) ||
+      block.views.find((v) => v.available);
+    if (dv) {
+      block.prevLabel = dv.prevLabel;
+      block.prevValue = dv.prevValue ?? null;
+      block.prevChangePct = dv.prevChangePct ?? null;
+      block.prevChangeAbs = dv.prevChangeAbs ?? null;
+      block.prevDirection = dv.prevDirection;
+      if (Array.isArray(dv.series) && dv.series.length) block.series = dv.series;
+      if (dv.basisNote) block.basisNote = dv.basisNote;
+      if (dv.basisShort) block.basisShort = dv.basisShort;
+    }
+  }
+  return block;
+}
