@@ -11,6 +11,19 @@ function github(path, args = []) {
 }
 
 async function fetchRepository(repository, paths) {
+  if (repository === 'huggingface') {
+    const res = await fetch('https://tybournenewsletter.pages.dev/api/hf-data/pair', { signal: AbortSignal.timeout(30000) });
+    if (!res.ok) throw new Error(`R2 feed returned HTTP ${res.status}`);
+    const pair = await res.json();
+    if (!pair.series?.weeks?.includes(pair.week) || !pair.insights?.week?.length) throw new Error('Incomplete R2 release');
+    for (const name of ['series', 'insights']) {
+      const file = feedFile(repository, `public/data/${name}.json`);
+      await mkdir(new URL('.', file), { recursive: true });
+      await writeFile(file, JSON.stringify(pair[name]));
+    }
+    console.log(`Read Hugging Face release ${pair.week} from R2`);
+    return;
+  }
   const repo = `repos/nostra-demus/${repository}`;
   const sha = github(`${repo}/commits/main`, ['--jq', '.sha']).trim();
   if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error(`Invalid revision for ${repository}`);

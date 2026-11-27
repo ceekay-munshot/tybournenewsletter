@@ -278,8 +278,8 @@ both lockups pick it up automatically, no code change.
 | Financial | Nubank | BCB / IF.data / issuer filings | QoQ (pp) |
 | Macro | Podcast Themes | Investor podcasts | QoQ (QTD) |
 
-### Tybourne private source feeds
+### Tybourne source feeds
 
-The existing consolidated refresh reads the four TSA, IATA and Hugging Face JSON files from the default branches of `nostra-demus/Airlines` and `nostra-demus/huggingface`. Each repository is read at one commit. The GitHub Actions secret `TYBOURNE_FEEDS_READ_TOKEN` grants read-only Contents access to just these two repositories. Renew it before expiry. Only the download step receives it. A failed download marks the last successful reading stale and reports a failed refresh.
+The existing refresh reads TSA and IATA from one commit of the private `nostra-demus/Airlines` repository using the read-only `TYBOURNE_FEEDS_READ_TOKEN` secret. It reads Hugging Face series and insights from one Cloudflare R2 release at `/api/hf-data/pair`. The dashboard loads the current Hugging Face block at `/api/hf-data/block`; Git contains a stable placeholder. A new weekly publication appears on the next page load.
 
-For a local check, authenticate GitHub CLI with read access to both repositories, then run `node scripts/fetch-private-feeds.mjs` and `node scripts/consolidate.mjs --private-feeds`. The targeted command updates just those two entries in the existing snapshot. To check the committed snapshot on the hosted runner, select **Verify private feeds** in **Refresh consolidated data**. That check shares the scheduled run's concurrency group and skips publishing, AI and email.
+Run `node scripts/fetch-private-feeds.mjs` and `node scripts/consolidate.mjs --private-feeds` to verify the two feeds locally with GitHub CLI read access to Airlines. Select **Verify private feeds** in **Refresh consolidated data** for the read-only hosted check. It shares the normal refresh concurrency group and skips publishing, AI and email.

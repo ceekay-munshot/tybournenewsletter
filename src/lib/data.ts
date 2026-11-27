@@ -26,10 +26,20 @@ export function useConsolidated(): LoadState {
       return;
     }
     loader()
-      .then((mod) => {
+      .then(async (mod) => {
         if (!alive) return;
         const data = ((mod as { default?: ConsolidatedData }).default ?? mod) as ConsolidatedData;
         setState({ status: 'ready', data });
+        if (CLIENT !== 'tybourne') return;
+        try {
+          const response = await fetch('/api/hf-data/block', { signal: AbortSignal.timeout(10000) });
+          if (!response.ok) throw new Error('Feed unavailable');
+          const block: ChangeBlock = await response.json();
+          if (block.systemId !== 'huggingface' || block.status !== 'ok' || !Number.isFinite(block.thisValue)) throw new Error('Invalid feed');
+          if (alive) setState({ status: 'ready', data: { ...data, systems: data.systems.map(s => s.systemId === block.systemId ? block : s) } });
+        } catch {
+          // The snapshot already displays the feed's availability message.
+        }
       })
       .catch((e) => {
         if (!alive) return;
