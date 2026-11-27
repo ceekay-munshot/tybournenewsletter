@@ -3,6 +3,213 @@
   "keepMonths": 3,
   "episodes": [
     {
+      "id": "live-oddlots-nu7myn",
+      "podcastId": "oddlots",
+      "show": "Odd Lots",
+      "title": "Isabella Weber's Vision for an Affordability Agenda",
+      "date": "2026-11-27T09:00:00.000Z",
+      "url": "https://omny.fm/shows/odd-lots/isabella-webers-vision-for-an-affordability-agenda",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "CPI is a 'plutocratic index' that systematically hides the essentials squeeze",
+          "detail": "Weber states the CPI weights every dollar of spending, so a $300,000-a-year spender counts ten times more than a $30,000-a-year spender in the index — meaning luxury deflation (high-end appliances, etc.) can mask severe price increases in food, rent, and energy that devastate lower-income households."
+        },
+        {
+          "title": "Bottom 50% spend ~70% of income on essentials; a 10% spike on any item is catastrophic",
+          "detail": "Weber presents the arithmetic: if the bottom half of earners allocate roughly 70% of income to housing, food, energy, transportation, and healthcare, their financial buffer is so thin that a double-digit price increase in any single essential category immediately puts them 'with their back against the wall.'"
+        },
+        {
+          "title": "Mexico's 24-product grocery basket deal — replicable in the U.S. because retail is so concentrated",
+          "detail": "Sheinbaum negotiated a price-stability agreement with Mexico's top grocery chains covering 24 staple products, holds regular press conferences on corporate compliance, and thereby positions government as a consumer advocate. Weber argues the U.S. grocery sector's concentration (four or five dominant chains) makes an…"
+        },
+        {
+          "title": "Rate hikes actively suppress the renewable energy build-out they are supposed to enable",
+          "detail": "Weber argues that hiking interest rates in response to oil-price shocks raises financing costs most severely for capital-intensive, low-running-cost projects — exactly the profile of wind, solar, and grid infrastructure — creating a direct contradiction between the current monetary stabilization regime and the…"
+        }
+      ],
+      "synthesis": "The central argument of this episode is that affordability is not merely a political slogan but a structural crisis requiring a two-track policy response: immediate price stabilization in essentials (energy, food, housing) paired with long-run public supply build-out. Isabella Weber grounds this in a pointed critique of the CPI as plutocratic index — it weights every dollar of spending equally, so the consumption patterns of a $300,000-earner count ten times more than those of a $30,000-earner, systematically obscuring the squeeze on the bottom half who spend roughly 70% of income on essentials.",
+      "whatChanged": "With the U.S. midterms cementing affordability as the dominant political issue, Isabella Weber's book 'Anti-Fascist Economics' lays out the first systematic sectoral policy agenda — combining immediate price-cap mechanisms modeled on Germany and Mexico with a call for a national public electricity authority —…",
+      "whyItMatters": "If governments adopt sectoral price-stabilization tools (basket agreements, nonlinear utility pricing, expanded SPR with price floors) instead of relying on rate hikes, the cost of capital for renewable energy infrastructure falls, accelerating grid build-out while redistributing windfall fossil-fuel profits away from…",
+      "beneficiaries": [
+        "Consumers in the bottom 50% income cohort",
+        "Renewable energy developers (public or quasi-public)",
+        "Claudia Sheinbaum / Mexican government model"
+      ],
+      "atRisk": [
+        "Fossil fuel sector (majors)",
+        "Concentrated U.S. grocery retailers (e.g., Kroger, Walmart)",
+        "Current Federal Reserve rate-hike paradigm"
+      ],
+      "numbers": [
+        {
+          "metric": "CPI as plutocratic index — relative weighting example",
+          "value": "$300,000 spender counts 10x as much as $30,000 spender",
+          "context": "Weber's illustration of why the CPI misrepresents inflation for lower-income households"
+        },
+        {
+          "metric": "U.S. electricity price increase",
+          "value": "up 40%",
+          "context": "Referenced as a large price rise that did not trigger the grid investment needed for renewable energy transition"
+        },
+        {
+          "metric": "Income growth for bottom 20%",
+          "value": "risen around 30%",
+          "context": "Compared against 40% electricity price rise, illustrating the squeeze on lowest-income households"
+        },
+        {
+          "metric": "Share of income spent on essentials by bottom 50%",
+          "value": "around 70%",
+          "context": "Housing, food, energy, transportation, and healthcare combined; context for why any essential price spike causes immediate financial distress"
+        },
+        {
+          "metric": "Berlin rent increase over 10 years",
+          "value": "70%",
+          "context": "Used to challenge the assumption that higher prices reliably induce more supply — rents rose sharply with no commensurate supply increase"
+        }
+      ],
+      "topics": [
+        "Current CPI measurement",
+        "Sectoral price stabilization tools",
+        "Interest rate hikes as inflation tool",
+        "China's price management of essentials",
+        "Germany's nuclear exit",
+        "Prospect of restoring 2018 price levels"
+      ]
+    },
+    {
+      "id": "live-ingoodcompany-1aqm5rf",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Friday Wrap-Up: Cyber Worries and Capital Flowing into the US",
+      "date": "2026-11-27T04:10:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-cyber-worries-and-capital-flowing-into-the-us",
+      "summarised": true,
+      "tone": "mixed",
+      "keyPoints": [
+        {
+          "title": "80% of global equity flows went into the US in the past year",
+          "detail": "Rishi Sharma's data point, cited by Tangen, that 80% of global equity flows went into the US over the past year — a level of concentration Sharma compares to past mania signals like Dubai taxi drivers buying tech or Singapore housewives using crypto tokens."
+        },
+        {
+          "title": "Geographic diversification into Taiwan, Korea, and Europe is illusory",
+          "detail": "Tangen and Sharma argue that TSMC (Taiwan), Korean AI companies, and ASML (Europe) are all extensions of the same US AI trade, meaning investors who think they are diversifying are simply accumulating correlated AI exposure under different flags."
+        },
+        {
+          "title": "AI-enabled cyber attacks have exploded in the last quarter",
+          "detail": "Tangen states there has been an explosion in cyber attacks over the last quarter, directly caused by advanced AI models released ~6 months ago being distilled and redistributed — particularly in China — making attack tools accessible to anyone. He calls it 'massive, massive problems ahead.'"
+        },
+        {
+          "title": "Smaller banks are dangerously underinvested in cyber defense",
+          "detail": "US business leaders specifically pointed to smaller banks having underinvested in cyber defenses as the cohort most likely to suffer material damage from the current wave of AI-enabled attacks."
+        }
+      ],
+      "synthesis": "The central argument of this episode is that capital and talent are concentrating in the US at the expense of Europe, with AI as the defining axis of competitiveness across markets, geopolitics, and corporate strategy. Nikola Tangen's takeaway from 80 meetings with US business leaders is unambiguous: AI is no longer a sector theme but a macro-economic force shaping labor markets, credit markets, inflation, defense, and medical research simultaneously — a breadth of influence he says is simply not mirrored in conversations with European counterparts.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "Global equity flows into the US",
+          "value": "80%",
+          "context": "Share of global equity flows that went into the US over the past year, per Rishi Sharma"
+        },
+        {
+          "metric": "NBIM assets invested in the US",
+          "value": "55%",
+          "context": "Nikola Tangen's figure for the fund's current US allocation"
+        },
+        {
+          "metric": "US business leaders met by Tangen",
+          "value": "80",
+          "context": "Number of US business leaders Tangen met over approximately four weeks in the US"
+        },
+        {
+          "metric": "Duration of Tangen's US trip",
+          "value": "four weeks",
+          "context": "Period over which the 80 business leader meetings took place"
+        },
+        {
+          "metric": "Valerie Urban's Smurf collection",
+          "value": "around 300 Smurfs",
+          "context": "Size of Euroclear CEO Valerie Urban's personal Smurf collection, mentioned as a personal anecdote"
+        }
+      ],
+      "topics": [
+        "US business dynamism",
+        "cyber security threat",
+        "European competitiveness",
+        "European defense sector",
+        "shareholder rights / governance"
+      ]
+    },
+    {
+      "id": "live-ingoodcompany-1368tto",
+      "podcastId": "ingoodcompany",
+      "show": "In Good Company",
+      "title": "Ruchir Sharma: Why the World Is Betting on America and Predictions for 2027",
+      "date": "2026-11-27T04:00:00.000Z",
+      "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/ruchir-sharma-why-the-world-is-betting-on-america-and-predic",
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "$600B in AI debt this year vs. $2T+ government deficit",
+          "detail": "Sharma cites $600 billion raised by the AI ecosystem in external debt in the current year alone, running alongside a US fiscal deficit exceeding $2 trillion. He argues the two combined are driving long-end rates structurally higher — a dynamic with no historical precedent."
+        },
+        {
+          "title": "US fiscal deficit at 6.5% of GDP — an unprecedented bubble backdrop",
+          "detail": "Sharma contrasts the current 6.5% deficit with the 2000 tech bubble, when the government was running a surplus. He calls this the 'big difference this time' and the core reason financing the AI boom will become progressively harder."
+        },
+        {
+          "title": "80% of global equity flows into one country",
+          "detail": "Over the past year, 80% of global equity flows have gone to the US, versus a prior-decade average of 40%, even though the US is only ~28% of world GDP. Sharma calls this a 'this decade phenomenon' with no historical parallel."
+        },
+        {
+          "title": "US equity market peaked in relative performance in December 2024",
+          "detail": "Despite record inflows, the US equity market stopped outperforming the rest of the world after December 2024 and has 'barely' kept pace with international markets since. Sharma interprets this as evidence that equity issuance is absorbing capital as fast as it arrives, funding AI CapEx rather than lifting prices."
+        }
+      ],
+      "synthesis": "Ruchir Sharma's central argument is that the AI boom is in a late-stage bubble, and the specific mechanism that will deflate it is not a valuation crash but a financing crunch. His logic: tech giants have exhausted self-funding capacity and are now net-debt issuers, competing for capital in a market already absorbing a $2 trillion+ US fiscal deficit at 6.5% of GDP — a constellation with no historical precedent. The 2000 dot-com bubble burst when money was cheap and the government was running a surplus; this time, every dollar borrowed for AI chips competes with sovereign paper that never stops printing.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "US fiscal deficit as share of GDP",
+          "value": "6.5%",
+          "context": "Current level; previously dipped into 'the fives' in 2025 before rebounding; described as unprecedented in prior bubble cycles"
+        },
+        {
+          "metric": "AI ecosystem external debt raised (current year)",
+          "value": "$600 billion",
+          "context": "Total borrowing by the AI ecosystem in the current year, up from prior practice of self-funding from balance sheets"
+        },
+        {
+          "metric": "US government fiscal deficit",
+          "value": "$2 trillion+",
+          "context": "Annual US federal deficit used as comparator to AI ecosystem borrowing of $600B"
+        },
+        {
+          "metric": "US interest rates (long end)",
+          "value": "5%",
+          "context": "Current level vs sub-1% five years ago — a regime shift Sharma identifies as the bubble-deflating mechanism"
+        },
+        {
+          "metric": "US interest rates five years ago",
+          "value": "sub-1%",
+          "context": "Prior to the current rate regime; used to illustrate the magnitude of the monetary tightening cycle"
+        }
+      ],
+      "topics": [
+        "AI bubble",
+        "US fiscal position",
+        "China equities",
+        "India equity market",
+        "Global quality stocks (non-AI basket)",
+        "New York City"
+      ]
+    },
+    {
       "id": "live-aidaily-1rl9139",
       "podcastId": "aidaily",
       "show": "AI Daily",
@@ -136,9 +343,9 @@
       "id": "live-aidaily-14kzree",
       "podcastId": "aidaily",
       "show": "AI Daily",
-      "title": "How to Talk About AI at Thanksgiving",
+      "title": "How to Talk About AI with Your Family",
       "date": "2026-11-25T21:41:57.000Z",
-      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-at-Thanksgiving-e3t1hhr",
+      "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-with-Your-Family-e3t1hhr",
       "summarised": true,
       "tone": "mixed",
       "keyPoints": [

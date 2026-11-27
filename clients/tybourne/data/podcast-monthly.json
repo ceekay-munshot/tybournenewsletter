@@ -1155,8 +1155,8 @@
     "label": "Nov '26",
     "longLabel": "November 2026",
     "mtd": true,
-    "episodes": 91,
-    "summarised": 90,
+    "episodes": 94,
+    "summarised": 93,
     "shows": [
       "AI Daily",
       "Stratechery",
@@ -1169,9 +1169,9 @@
       "Cheeky Pint"
     ],
     "toneCounts": {
+      "mixed": 40,
+      "cautious": 20,
       "positive": 24,
-      "mixed": 38,
-      "cautious": 19,
       "neutral": 4
     },
     "weeks": [
@@ -1993,6 +1993,36 @@
         "line": "Jensen Huang's White House-backed reinstatement triggered a near-35% Nvidia pre-market surge and a NASDAQ 100 'up crash' of 6.9%; a claimed Riemann hypothesis proof produced with Claude signalled AI crossing into frontier scientific discovery; and CrowdStrike's CEO warned that 25% of all historical CVEs were found in 2026 alone, framing AI-enabled cyber offense as an almost-inevitable near-term enterprise crisis.",
         "episodes": [
           {
+            "id": "live-oddlots-nu7myn",
+            "show": "Odd Lots",
+            "title": "Isabella Weber's Vision for an Affordability Agenda",
+            "date": "2026-11-27T09:00:00.000Z",
+            "url": "https://omny.fm/shows/odd-lots/isabella-webers-vision-for-an-affordability-agenda",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "With the U.S. midterms cementing affordability as the dominant political issue, Isabella Weber's book 'Anti-Fascist Economics' lays out the first systematic sectoral policy agenda — combining immediate price-cap mechanisms modeled on Germany and Mexico with a call for a national public electricity authority —…"
+          },
+          {
+            "id": "live-ingoodcompany-1aqm5rf",
+            "show": "In Good Company",
+            "title": "Friday Wrap-Up: Cyber Worries and Capital Flowing into the US",
+            "date": "2026-11-27T04:10:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/friday-wrap-up-cyber-worries-and-capital-flowing-into-the-us",
+            "summarised": true,
+            "tone": "mixed",
+            "line": "80% of global equity flows went into the US in the past year"
+          },
+          {
+            "id": "live-ingoodcompany-1368tto",
+            "show": "In Good Company",
+            "title": "Ruchir Sharma: Why the World Is Betting on America and Predictions for 2027",
+            "date": "2026-11-27T04:00:00.000Z",
+            "url": "https://shows.acast.com/in-good-company-with-nicolai-tangen/episodes/ruchir-sharma-why-the-world-is-betting-on-america-and-predic",
+            "summarised": true,
+            "tone": "cautious",
+            "line": "$600B in AI debt this year vs. $2T+ government deficit"
+          },
+          {
             "id": "live-aidaily-1rl9139",
             "show": "AI Daily",
             "title": "How Anthropic Went From Anti-Product to $81B a Year",
@@ -2015,9 +2045,9 @@
           {
             "id": "live-aidaily-14kzree",
             "show": "AI Daily",
-            "title": "How to Talk About AI at Thanksgiving",
+            "title": "How to Talk About AI with Your Family",
             "date": "2026-11-25T21:41:57.000Z",
-            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-at-Thanksgiving-e3t1hhr",
+            "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/How-to-Talk-About-AI-with-Your-Family-e3t1hhr",
             "summarised": true,
             "tone": "mixed",
             "line": "AI governance 'phase transition' declaration"
@@ -2427,5 +2457,5 @@
     "at": "2026-11-26T03:31:23.067Z",
     "ok": true
   },
-  "mtdAt": "2026-11-27T01:32:37.656Z"
+  "mtdAt": "2026-11-27T16:16:15.925Z"
 }

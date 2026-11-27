@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T01:32:36.943Z",
+  "generatedAt": "2026-11-27T16:16:14.981Z",
   "client": {
     "id": "tybourne",
     "name": "Tybourne Global Holdings",
@@ -2844,19 +2844,19 @@
       "changePct": -0.0448979591836736,
       "changeAbs": -0.11000000000000032,
       "direction": "down",
-      "asOf": "2026-11-24T00:00:00.000Z",
+      "asOf": "2026-11-25T00:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "DeepSeek",
           "thisValue": 0.237,
-          "lastValue": 0.28180737217598095,
-          "changePct": -0.159,
+          "lastValue": 0.2814726840855107,
+          "changePct": -0.158,
           "direction": "down",
           "bigMove": true,
           "prevChangePct": 0.052,
           "prevDirection": "up",
-          "prevValue": 0.2678777302053051,
+          "prevValue": 0.2675595856326147,
           "series": [
             {
               "label": "Q3 '26",
@@ -2868,7 +2868,7 @@
             {
               "label": "Q4 '26 (QTD)",
               "value": 0.237,
-              "changePct": -0.159,
+              "changePct": -0.158,
               "changeAbs": null,
               "direction": "down"
             }
@@ -2876,14 +2876,14 @@
         },
         {
           "label": "Google",
-          "thisValue": 0.574,
-          "lastValue": 0.5786290322580645,
+          "thisValue": 0.576,
+          "lastValue": 0.5806451612903225,
           "changePct": -0.008,
           "direction": "down",
           "bigMove": false,
           "prevChangePct": -0.002,
           "prevDirection": "down",
-          "prevValue": 0.5797886094770185,
+          "prevValue": 0.5818087788480185,
           "series": [
             {
               "label": "Q3 '26",
@@ -2894,7 +2894,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 0.574,
+              "value": 0.576,
               "changePct": -0.008,
               "changeAbs": null,
               "direction": "down"
@@ -2903,14 +2903,14 @@
         },
         {
           "label": "OpenAI",
-          "thisValue": 4.684,
-          "lastValue": 4.684,
+          "thisValue": 4.66,
+          "lastValue": 4.66,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 4.684,
+          "prevValue": 4.66,
           "series": [
             {
               "label": "Q3 '26",
@@ -2921,7 +2921,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 4.684,
+              "value": 4.66,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -2930,14 +2930,14 @@
         },
         {
           "label": "Anthropic",
-          "thisValue": 5.069,
-          "lastValue": 5.069,
+          "thisValue": 5.072,
+          "lastValue": 5.072,
           "changePct": 0,
           "direction": "flat",
           "bigMove": false,
           "prevChangePct": 0,
           "prevDirection": "flat",
-          "prevValue": 5.069,
+          "prevValue": 5.072,
           "series": [
             {
               "label": "Q3 '26",
@@ -2948,7 +2948,7 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 5.069,
+              "value": 5.072,
               "changePct": 0,
               "changeAbs": null,
               "direction": "flat"
@@ -2956,7 +2956,7 @@
           ]
         }
       ],
-      "summary": "Quarter-on-quarter input price down 4.5% (output -3.2%); biggest move: DeepSeek -15.9%. List prices are otherwise flat month-to-month.",
+      "summary": "Quarter-on-quarter input price down 4.5% (output -3.3%); biggest move: DeepSeek -15.8%. List prices are otherwise flat month-to-month.",
       "sourceName": "pricepertoken.com / getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -3007,13 +3007,13 @@
             {
               "label": "DeepSeek",
               "thisValue": 0.237,
-              "lastValue": 0.28180737217598095,
-              "changePct": -0.159,
+              "lastValue": 0.2814726840855107,
+              "changePct": -0.158,
               "direction": "down",
               "bigMove": true,
               "prevChangePct": 0.052,
               "prevDirection": "up",
-              "prevValue": 0.2678777302053051,
+              "prevValue": 0.2675595856326147,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3025,7 +3025,7 @@
                 {
                   "label": "Q4 '26 (QTD)",
                   "value": 0.237,
-                  "changePct": -0.159,
+                  "changePct": -0.158,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -3033,14 +3033,14 @@
             },
             {
               "label": "Google",
-              "thisValue": 0.574,
-              "lastValue": 0.5786290322580645,
+              "thisValue": 0.576,
+              "lastValue": 0.5806451612903225,
               "changePct": -0.008,
               "direction": "down",
               "bigMove": false,
               "prevChangePct": -0.002,
               "prevDirection": "down",
-              "prevValue": 0.5797886094770185,
+              "prevValue": 0.5818087788480185,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3051,7 +3051,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 0.574,
+                  "value": 0.576,
                   "changePct": -0.008,
                   "changeAbs": null,
                   "direction": "down"
@@ -3060,14 +3060,14 @@
             },
             {
               "label": "OpenAI",
-              "thisValue": 4.684,
-              "lastValue": 4.684,
+              "thisValue": 4.66,
+              "lastValue": 4.66,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 4.684,
+              "prevValue": 4.66,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3078,7 +3078,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 4.684,
+                  "value": 4.66,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3087,14 +3087,14 @@
             },
             {
               "label": "Anthropic",
-              "thisValue": 5.069,
-              "lastValue": 5.069,
+              "thisValue": 5.072,
+              "lastValue": 5.072,
               "changePct": 0,
               "direction": "flat",
               "bigMove": false,
               "prevChangePct": 0,
               "prevDirection": "flat",
-              "prevValue": 5.069,
+              "prevValue": 5.072,
               "series": [
                 {
                   "label": "Q3 '26",
@@ -3105,7 +3105,7 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 5.069,
+                  "value": 5.072,
                   "changePct": 0,
                   "changeAbs": null,
                   "direction": "flat"
@@ -3113,7 +3113,7 @@
               ]
             }
           ],
-          "summary": "Quarter-on-quarter input price down 4.5% (output -3.2%); biggest move: DeepSeek -15.9%. List prices are otherwise flat month-to-month.",
+          "summary": "Quarter-on-quarter input price down 4.5% (output -3.3%); biggest move: DeepSeek -15.8%. List prices are otherwise flat month-to-month.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.39,
           "prevChangePct": 0.02510460251046027,
@@ -3142,7 +3142,7 @@
       "insights": [
         {
           "title": "Biggest price cut — DeepSeek",
-          "body": "-15.9% input · share +13.49pp"
+          "body": "-15.8% input · share +13.58pp"
         }
       ],
       "prevLabel": "Q2 '26",
@@ -14601,7 +14601,7 @@
       "changePct": 0.4047365041861669,
       "changeAbs": 211953400363343,
       "direction": "up",
-      "asOf": "2026-11-27T01:32:20.287Z",
+      "asOf": "2026-11-27T16:15:56.129Z",
       "isStale": false,
       "breakdown": [
         {
@@ -16342,7 +16342,7 @@
             "Top Gemini model on OpenRouter: Gemini 4 Carbon 1110, ranked #18 by tokens.",
             "Alphabet Q3 2026: search revenue +12% YoY, total revenue $127.6B (+25% YoY)."
           ],
-          "asOf": "2026-11-27T01:32:20.343Z"
+          "asOf": "2026-11-27T16:15:56.227Z"
         }
       ],
       "prevLabel": "Sep '26",
@@ -19818,19 +19818,19 @@
       "comparison": "MoM",
       "thisPeriodLabel": "Nov-26 (MTD)",
       "lastPeriodLabel": "Oct-26",
-      "thisValue": 3.9543,
+      "thisValue": 3.9417,
       "lastValue": 3.5949,
-      "changePct": 0.09997496453308853,
-      "changeAbs": 0.35939999999999994,
+      "changePct": 0.09646999916548443,
+      "changeAbs": 0.3468,
       "direction": "up",
-      "asOf": "2026-11-26",
+      "asOf": "2026-11-27",
       "isStale": false,
       "breakdown": [
         {
           "label": "H100",
-          "thisValue": 3.9543,
+          "thisValue": 3.9417,
           "lastValue": 3.5949,
-          "changePct": 0.09997496453308853,
+          "changePct": 0.09646999916548443,
           "direction": "up",
           "bigMove": true,
           "prevValue": 3.3492,
@@ -19861,8 +19861,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.9543,
-              "changePct": 0.09997496453308853,
+              "value": 3.9417,
+              "changePct": 0.09646999916548443,
               "changeAbs": null,
               "direction": "up"
             }
@@ -19912,9 +19912,9 @@
         },
         {
           "label": "B200",
-          "thisValue": 8.1667,
+          "thisValue": 8.1791,
           "lastValue": 7.5642,
-          "changePct": 0.0796515163533488,
+          "changePct": 0.08129081727082844,
           "direction": "up",
           "bigMove": true,
           "prevValue": 6.3742,
@@ -19945,8 +19945,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 8.1667,
-              "changePct": 0.0796515163533488,
+              "value": 8.1791,
+              "changePct": 0.08129081727082844,
               "changeAbs": null,
               "direction": "up"
             }
@@ -19954,9 +19954,9 @@
         },
         {
           "label": "GB200",
-          "thisValue": 11.4519,
+          "thisValue": 11.4167,
           "lastValue": 16,
-          "changePct": -0.28425625,
+          "changePct": -0.28645624999999997,
           "direction": "down",
           "bigMove": true,
           "prevValue": 16.554,
@@ -19987,8 +19987,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 11.4519,
-              "changePct": -0.28425625,
+              "value": 11.4167,
+              "changePct": -0.28645624999999997,
               "changeAbs": null,
               "direction": "down"
             }
@@ -19996,9 +19996,9 @@
         },
         {
           "label": "A100",
-          "thisValue": 1.943,
+          "thisValue": 1.9449,
           "lastValue": 1.8231,
-          "changePct": 0.06576709999451491,
+          "changePct": 0.06680928089517861,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.7444,
@@ -20029,8 +20029,8 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.943,
-              "changePct": 0.06576709999451491,
+              "value": 1.9449,
+              "changePct": 0.06680928089517861,
               "changeAbs": null,
               "direction": "up"
             }
@@ -20038,9 +20038,9 @@
         },
         {
           "label": "L40S",
-          "thisValue": 1.6257,
+          "thisValue": 1.6266,
           "lastValue": 1.5815,
-          "changePct": 0.027948150490041113,
+          "changePct": 0.02851723047739497,
           "direction": "up",
           "bigMove": true,
           "prevValue": 1.5035,
@@ -20071,15 +20071,15 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 1.6257,
-              "changePct": 0.027948150490041113,
+              "value": 1.6266,
+              "changePct": 0.02851723047739497,
               "changeAbs": null,
               "direction": "up"
             }
           ]
         }
       ],
-      "summary": "Month-on-month H100 rental up 10.0% to $3.95/hr; GB200 the standout at -28.4%.",
+      "summary": "Month-on-month H100 rental up 9.6% to $3.94/hr; GB200 the standout at -28.6%.",
       "sourceName": "getdeploying.com",
       "sourceUrl": "https://ai-compute-pricing.pages.dev/",
       "dashboardUrl": "https://ai-compute-pricing.pages.dev/",
@@ -20106,18 +20106,18 @@
           "available": true,
           "thisPeriodLabel": "Nov-26 (MTD)",
           "lastPeriodLabel": "Oct-26",
-          "thisValue": 3.9543,
+          "thisValue": 3.9417,
           "lastValue": 3.5949,
-          "changePct": 0.09997496453308853,
-          "changeAbs": 0.35939999999999994,
+          "changePct": 0.09646999916548443,
+          "changeAbs": 0.3468,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.9543,
+              "thisValue": 3.9417,
               "lastValue": 3.5949,
-              "changePct": 0.09997496453308853,
+              "changePct": 0.09646999916548443,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.3492,
@@ -20148,8 +20148,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 3.9543,
-                  "changePct": 0.09997496453308853,
+                  "value": 3.9417,
+                  "changePct": 0.09646999916548443,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20199,9 +20199,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 8.1667,
+              "thisValue": 8.1791,
               "lastValue": 7.5642,
-              "changePct": 0.0796515163533488,
+              "changePct": 0.08129081727082844,
               "direction": "up",
               "bigMove": true,
               "prevValue": 6.3742,
@@ -20232,8 +20232,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 8.1667,
-                  "changePct": 0.0796515163533488,
+                  "value": 8.1791,
+                  "changePct": 0.08129081727082844,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20241,9 +20241,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 11.4519,
+              "thisValue": 11.4167,
               "lastValue": 16,
-              "changePct": -0.28425625,
+              "changePct": -0.28645624999999997,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.554,
@@ -20274,8 +20274,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 11.4519,
-                  "changePct": -0.28425625,
+                  "value": 11.4167,
+                  "changePct": -0.28645624999999997,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -20283,9 +20283,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.943,
+              "thisValue": 1.9449,
               "lastValue": 1.8231,
-              "changePct": 0.06576709999451491,
+              "changePct": 0.06680928089517861,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7444,
@@ -20316,8 +20316,8 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.943,
-                  "changePct": 0.06576709999451491,
+                  "value": 1.9449,
+                  "changePct": 0.06680928089517861,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20325,9 +20325,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.6257,
+              "thisValue": 1.6266,
               "lastValue": 1.5815,
-              "changePct": 0.027948150490041113,
+              "changePct": 0.02851723047739497,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5035,
@@ -20358,15 +20358,15 @@
                 },
                 {
                   "label": "Nov-26 (MTD)",
-                  "value": 1.6257,
-                  "changePct": 0.027948150490041113,
+                  "value": 1.6266,
+                  "changePct": 0.02851723047739497,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Month-on-month H100 rental up 10.0% to $3.95/hr; GB200 the standout at -28.4%.",
+          "summary": "Month-on-month H100 rental up 9.6% to $3.94/hr; GB200 the standout at -28.6%.",
           "prevLabel": "Sep-26",
           "prevValue": 3.3492,
           "prevChangePct": 0.07336080257972047,
@@ -20396,9 +20396,9 @@
             },
             {
               "label": "Nov-26 (MTD)",
-              "value": 3.9543,
-              "changePct": 0.09997496453308853,
-              "changeAbs": 0.35939999999999994,
+              "value": 3.9417,
+              "changePct": 0.09646999916548443,
+              "changeAbs": 0.3468,
               "direction": "up"
             }
           ]
@@ -20409,18 +20409,18 @@
           "available": true,
           "thisPeriodLabel": "Q4 '26 (QTD)",
           "lastPeriodLabel": "Q3 '26",
-          "thisValue": 3.7589,
+          "thisValue": 3.7563,
           "lastValue": 3.3073,
-          "changePct": 0.1365464275995525,
-          "changeAbs": 0.4516,
+          "changePct": 0.13576028784809355,
+          "changeAbs": 0.44899999999999984,
           "direction": "up",
           "bigMove": true,
           "breakdown": [
             {
               "label": "H100",
-              "thisValue": 3.7589,
+              "thisValue": 3.7563,
               "lastValue": 3.3073,
-              "changePct": 0.1365464275995525,
+              "changePct": 0.13576028784809355,
               "direction": "up",
               "bigMove": true,
               "prevValue": 2.9802,
@@ -20444,8 +20444,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 3.7589,
-                  "changePct": 0.1365464275995525,
+                  "value": 3.7563,
+                  "changePct": 0.13576028784809355,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20453,9 +20453,9 @@
             },
             {
               "label": "H200",
-              "thisValue": 4.8663,
+              "thisValue": 4.8677,
               "lastValue": 4.3361,
-              "changePct": 0.12227577777265279,
+              "changePct": 0.12259864855515326,
               "direction": "up",
               "bigMove": true,
               "prevValue": 3.7738,
@@ -20479,8 +20479,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 4.8663,
-                  "changePct": 0.12227577777265279,
+                  "value": 4.8677,
+                  "changePct": 0.12259864855515326,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20488,9 +20488,9 @@
             },
             {
               "label": "B200",
-              "thisValue": 7.839,
+              "thisValue": 7.8504,
               "lastValue": 6.3989,
-              "changePct": 0.22505430620887967,
+              "changePct": 0.22683586241385226,
               "direction": "up",
               "bigMove": true,
               "prevValue": 5.7373,
@@ -20514,8 +20514,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 7.839,
-                  "changePct": 0.22505430620887967,
+                  "value": 7.8504,
+                  "changePct": 0.22683586241385226,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20523,9 +20523,9 @@
             },
             {
               "label": "GB200",
-              "thisValue": 13.9254,
+              "thisValue": 13.8664,
               "lastValue": 16.9936,
-              "changePct": -0.18055032482817066,
+              "changePct": -0.18402222012993127,
               "direction": "down",
               "bigMove": true,
               "prevValue": 16.6392,
@@ -20549,8 +20549,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 13.9254,
-                  "changePct": -0.18055032482817066,
+                  "value": 13.8664,
+                  "changePct": -0.18402222012993127,
                   "changeAbs": null,
                   "direction": "down"
                 }
@@ -20558,9 +20558,9 @@
             },
             {
               "label": "A100",
-              "thisValue": 1.8778,
+              "thisValue": 1.8798,
               "lastValue": 1.7896,
-              "changePct": 0.04928475637013848,
+              "changePct": 0.05040232454179695,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.7997,
@@ -20584,8 +20584,8 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.8778,
-                  "changePct": 0.04928475637013848,
+                  "value": 1.8798,
+                  "changePct": 0.05040232454179695,
                   "changeAbs": null,
                   "direction": "up"
                 }
@@ -20593,9 +20593,9 @@
             },
             {
               "label": "L40S",
-              "thisValue": 1.6016,
+              "thisValue": 1.6025,
               "lastValue": 1.5182,
-              "changePct": 0.054933473850612514,
+              "changePct": 0.055526281122381796,
               "direction": "up",
               "bigMove": true,
               "prevValue": 1.5627,
@@ -20619,15 +20619,15 @@
                 },
                 {
                   "label": "Q4 '26 (QTD)",
-                  "value": 1.6016,
-                  "changePct": 0.054933473850612514,
+                  "value": 1.6025,
+                  "changePct": 0.055526281122381796,
                   "changeAbs": null,
                   "direction": "up"
                 }
               ]
             }
           ],
-          "summary": "Quarter-on-quarter H100 rental up 13.7% to $3.76/hr; B200 the standout at +22.5%.",
+          "summary": "Quarter-on-quarter H100 rental up 13.6% to $3.76/hr; B200 the standout at +22.7%.",
           "prevLabel": "Q2 '26",
           "prevValue": 2.9802,
           "prevChangePct": 0.109757734380243,
@@ -20650,9 +20650,9 @@
             },
             {
               "label": "Q4 '26 (QTD)",
-              "value": 3.7589,
-              "changePct": 0.1365464275995525,
-              "changeAbs": 0.4516,
+              "value": 3.7563,
+              "changePct": 0.13576028784809355,
+              "changeAbs": 0.44899999999999984,
               "direction": "up"
             }
           ]
@@ -20689,9 +20689,9 @@
         },
         {
           "label": "Nov-26 (MTD)",
-          "value": 3.9543,
-          "changePct": 0.09997496453308853,
-          "changeAbs": 0.35939999999999994,
+          "value": 3.9417,
+          "changePct": 0.09646999916548443,
+          "changeAbs": 0.3468,
           "direction": "up"
         }
       ]
@@ -20705,24 +20705,17 @@
       "comparison": "QoQ",
       "thisPeriodLabel": "Q4 '26 (QTD)",
       "lastPeriodLabel": "Q3 '26",
-      "thisValue": 46,
+      "thisValue": 42,
       "lastValue": 2,
       "changePct": null,
-      "changeAbs": 44,
+      "changeAbs": 40,
       "direction": "flat",
-      "asOf": "2026-11-26T15:00:00.000Z",
+      "asOf": "2026-11-27T09:00:00.000Z",
       "isStale": false,
       "breakdown": [
         {
           "label": "Stratechery",
           "thisValue": 12,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "AI Daily",
-          "thisValue": 4,
           "lastValue": null,
           "changePct": null,
           "direction": "flat"
@@ -20742,6 +20735,13 @@
           "direction": "flat"
         },
         {
+          "label": "AI Daily",
+          "thisValue": 4,
+          "lastValue": null,
+          "changePct": null,
+          "direction": "flat"
+        },
+        {
           "label": "Invest Like the Best",
           "thisValue": 4,
           "lastValue": null,
@@ -20750,13 +20750,6 @@
         },
         {
           "label": "All-In",
-          "thisValue": 4,
-          "lastValue": null,
-          "changePct": null,
-          "direction": "flat"
-        },
-        {
-          "label": "Lenny's",
           "thisValue": 4,
           "lastValue": null,
           "changePct": null,
@@ -20792,40 +20785,40 @@
         }
       ],
       "highlights": [
+        "CPI is a 'plutocratic index' that systematically hides the essentials squeeze",
+        "80% of global equity flows went into the US in the past year",
+        "$600B in AI debt this year vs. $2T+ government deficit",
         "ChatGPT launched because OpenAI heard Anthropic might release a chatbot",
         "UPS was private from 1907 all the way to 1999",
         "AI governance 'phase transition' declaration",
         "Settling the world's GDP every single month",
         "Riemann hypothesis claimed solved with Claude's help",
         "Zero to $1B ARR in under two years",
-        "One person, one week, a production-grade tech stack",
-        "NASDAQ 100 'up crash' of 6.9% on Jensen's reinstatement",
-        "Defenders used Chinese models because US frontier models refused security queries",
-        "~$1 trillion in market cap added in a single pre-market session"
+        "One person, one week, a production-grade tech stack"
       ],
-      "tone": "Tone across 46 episodes — 18 mixed, 14 positive, 5 cautious, 2 neutral",
-      "thisTone": "18 mixed, 14 positive, 5 cautious, 2 neutral",
+      "tone": "Tone across 42 episodes — 17 mixed, 11 positive, 6 cautious, 2 neutral",
+      "thisTone": "17 mixed, 11 positive, 6 cautious, 2 neutral",
       "prevHighlights": [
         "Home Depot outperforms Apple since IPO with 25% compounding returns"
       ],
       "prevTone": "1 mixed",
       "newHighlights": [
+        "CPI is a 'plutocratic index' that systematically hides the essentials squeeze",
+        "80% of global equity flows went into the US in the past year",
+        "$600B in AI debt this year vs. $2T+ government deficit",
         "ChatGPT launched because OpenAI heard Anthropic might release a chatbot",
         "UPS was private from 1907 all the way to 1999",
         "AI governance 'phase transition' declaration",
         "Settling the world's GDP every single month",
         "Riemann hypothesis claimed solved with Claude's help",
         "Zero to $1B ARR in under two years",
-        "One person, one week, a production-grade tech stack",
-        "NASDAQ 100 'up crash' of 6.9% on Jensen's reinstatement",
-        "Defenders used Chinese models because US frontier models refused security queries",
-        "~$1 trillion in market cap added in a single pre-market session"
+        "One person, one week, a production-grade tech stack"
       ],
-      "summary": "Q4 '26 (QTD): 46 investor-podcast episodes across 11 shows. The recurring threads — ChatGPT launched because OpenAI heard Anthropic might release a chatbot; UPS was private from 1907 all the way to 1999; AI governance 'phase transition' declaration; Settling the world's GDP every single month. Sentiment ran 18 mixed, 14 positive, 5 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: ChatGPT launched because OpenAI heard Anthropic might release a chatbot; UPS was private from 1907 all the way to 1999; AI governance 'phase transition' declaration.",
+      "summary": "Q4 '26 (QTD): 42 investor-podcast episodes across 10 shows. The recurring threads — CPI is a 'plutocratic index' that systematically hides the essentials squeeze; 80% of global equity flows went into the US in the past year; $600B in AI debt this year vs. $2T+ government deficit; ChatGPT launched because OpenAI heard Anthropic might release a chatbot. Sentiment ran 17 mixed, 11 positive, 6 cautious, 2 neutral. Last quarter (Q3 '26) ran 2 episodes (1 mixed), centred on Home Depot outperforms Apple since IPO with 25% compounding returns. New to the conversation this quarter: CPI is a 'plutocratic index' that systematically hides the essentials squeeze; 80% of global equity flows went into the US in the past year; $600B in AI debt this year vs. $2T+ government deficit.",
       "sourceName": "Investor podcasts",
       "sourceUrl": "https://podcast-afg.pages.dev/",
       "dashboardUrl": "https://podcast-afg.pages.dev/",
-      "notes": "46 investor-podcast episodes analysed this quarter across 11 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
+      "notes": "42 investor-podcast episodes analysed this quarter across 10 shows. A qualitative read of the quarter's narrative, not a quantitative mover.",
       "status": "ok"
     }
   ]
