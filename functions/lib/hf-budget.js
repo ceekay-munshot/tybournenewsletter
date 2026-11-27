@@ -8,6 +8,11 @@ const prices = {
 export async function meter(bucket, command, now = new Date()) {
   const currentMonth = now.toISOString().slice(0, 7);
   const { op, month = currentMonth, id, model, maxTokens, usage } = command;
+  if (op === 'status') {
+    const obj = await bucket.get('budget/' + currentMonth + '.json');
+    const used = obj ? (await obj.json()).used : 0;
+    return Response.json({ month: currentMonth, used, limit: LIMIT });
+  }
   if (!/^\d{4}-\d{2}$/.test(month) || !/^[a-f0-9-]{36}$/.test(id || '') || !['reserve', 'settle'].includes(op)) return new Response('Invalid request', { status: 400 });
   const key = 'budget/' + month + '.json';
   for (let attempt = 0; attempt < 6; attempt++) {
@@ -15,7 +20,7 @@ export async function meter(bucket, command, now = new Date()) {
     const ledger = obj ? await obj.json() : { used: 0, pending: {} };
     if (op === 'reserve') {
       const rates = prices[model];
-      if (month !== currentMonth || !rates || !Number.isSafeInteger(maxTokens) || maxTokens < 1 || maxTokens > 16384) return new Response('Unsupported model or request', { status: 400 });
+      if (month !== currentMonth || !Object.hasOwn(prices, model) || !Number.isSafeInteger(maxTokens) || maxTokens < 1 || maxTokens > 16384) return new Response('Unsupported model or request', { status: 400 });
       if (ledger.pending[id]) return new Response('Duplicate reservation', { status: 409 });
       const amount = rates.context * rates.write + maxTokens * rates.output;
       if (ledger.used + amount > LIMIT) return new Response('Weekly feed paused at its monthly Bedrock budget', { status: 402 });
