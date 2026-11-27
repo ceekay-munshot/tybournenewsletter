@@ -277,3 +277,9 @@ both lockups pick it up automatically, no code change.
 | Financial | 13F Fund Holdings | SEC EDGAR 13F filings | QoQ |
 | Financial | Nubank | BCB / IF.data / issuer filings | QoQ (pp) |
 | Macro | Podcast Themes | Investor podcasts | QoQ (QTD) |
+
+### Tybourne private source feeds
+
+The existing consolidated refresh reads the four TSA, IATA and Hugging Face JSON files from the default branches of `nostra-demus/Airlines` and `nostra-demus/huggingface`. Each repository is read at one commit. The GitHub Actions secret `TYBOURNE_FEEDS_READ_TOKEN` grants read-only Contents access to just these two repositories. Renew it before expiry. Only the download step receives it. A failed download marks the last successful reading stale and reports a failed refresh.
+
+For a local check, authenticate GitHub CLI with read access to both repositories, then run `node scripts/fetch-private-feeds.mjs` and `node scripts/consolidate.mjs --private-feeds`. The targeted command updates just those two entries in the existing snapshot. To check the committed snapshot on the hosted runner, select **Verify private feeds** in **Refresh consolidated data**. That check shares the scheduled run's concurrency group and skips publishing, AI and email.

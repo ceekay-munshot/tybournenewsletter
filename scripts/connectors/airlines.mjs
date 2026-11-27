@@ -4,6 +4,7 @@
 // earlier. TSA is current (daily, ~1-day lag). The breakdown is global demand by world
 // region (IATA RPK, year-on-year) — IATA publishes on a ~2-month lag, so those figures
 // are the latest available (not frozen); that lag is stamped explicitly.
+import { readFeed } from '../lib/private-feeds.mjs';
 import { getJson } from '../lib/http.mjs';
 import { quarterOf, quarterLabel, monthLabel } from '../lib/quarters.mjs';
 import { makeBlock, directionOf, pctChange } from '../lib/changeBlock.mjs';
@@ -87,8 +88,9 @@ const unavailable = (comparison, label, reason) => ({
 });
 
 export async function connect(system) {
-  const base = system.source.base;
-  const tsa = await getJson(`${base}/tsa.json`);
+  const { repository, base } = system.source;
+  const read = (name) => repository ? readFeed(repository, `data/${name}.json`) : getJson(`${base}/${name}.json`);
+  const tsa = await read('tsa');
   const realSet = new Set(tsa?._meta?.real_days || []);
   const days = (tsa?.days || []).filter(
     (d) => d && d.throughput != null && (realSet.size ? realSet.has(d.date) : true)
@@ -185,7 +187,7 @@ export async function connect(system) {
   let industry = null;
   let shares = {};
   try {
-    const data = await getJson(`${base}/data.json`);
+    const data = await read('data');
     const ry = data?.series?.rpk_yoy || {};
     const months = data?.months || [];
     shares = data?.market_share || {};
@@ -220,8 +222,9 @@ export async function connect(system) {
       .sort((a, b) => (b.changePct ?? -9) - (a.changePct ?? -9));
     const ind = ry['Industry'];
     if (ind && ind.length) industry = { v: ind[ind.length - 1], prev: ind[ind.length - 2] };
-  } catch {
-    /* regional feed optional */
+  } catch (error) {
+    if (repository) throw error;
+    /* regional feed optional for legacy HTTP sources */
   }
 
   // attach the same regional breakdown to each (deseasonalized-YoY) throughput view
