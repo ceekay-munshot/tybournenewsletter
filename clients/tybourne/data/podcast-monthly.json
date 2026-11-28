@@ -1156,7 +1156,7 @@
     "longLabel": "November 2026",
     "mtd": true,
     "episodes": 95,
-    "summarised": 93,
+    "summarised": 94,
     "shows": [
       "AI Daily",
       "Stratechery",
@@ -1169,8 +1169,8 @@
       "Cheeky Pint"
     ],
     "toneCounts": {
+      "cautious": 21,
       "mixed": 40,
-      "cautious": 20,
       "positive": 24,
       "neutral": 4
     },
@@ -1998,8 +1998,9 @@
             "title": "AI is Too Big to Fail",
             "date": "2026-11-27T18:00:01.000Z",
             "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-is-Too-Big-to-Fail-e3t47qv",
-            "summarised": false,
-            "line": "As Senator Adam Schiff pushes to rule out an AI bailout, NLW examines whether Washington could actually let the industry fail. He traces how AI became central to U.S. economic growth and national…"
+            "summarised": true,
+            "tone": "cautious",
+            "line": "AI responsible for 92% of US GDP growth in first half of 2025"
           },
           {
             "id": "live-oddlots-nu7myn",
@@ -2157,7 +2158,7 @@
     "topics": [
       {
         "name": "Anthropic",
-        "episodes": 13,
+        "episodes": 14,
         "shows": 5
       },
       {
@@ -2466,5 +2467,5 @@
     "at": "2026-11-26T03:31:23.067Z",
     "ok": true
   },
-  "mtdAt": "2026-11-28T01:11:27.742Z"
+  "mtdAt": "2026-11-28T15:09:05.430Z"
 }

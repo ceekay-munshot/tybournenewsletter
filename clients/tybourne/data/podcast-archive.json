@@ -9,8 +9,63 @@
       "title": "AI is Too Big to Fail",
       "date": "2026-11-27T18:00:01.000Z",
       "url": "https://podcasters.spotify.com/pod/show/nlw/episodes/AI-is-Too-Big-to-Fail-e3t47qv",
-      "summarised": false,
-      "notes": "As Senator Adam Schiff pushes to rule out an AI bailout, NLW examines whether Washington could actually let the industry fail. He traces how AI became central to U.S. economic growth and national security under two administrations, then revisits the bank bailouts of 2008 to explore what a government rescue might look like if the AI boom collapses. New Episode: How Anthropic Went from AI Safety Outcast to World's Most…"
+      "summarised": true,
+      "tone": "cautious",
+      "keyPoints": [
+        {
+          "title": "AI responsible for 92% of US GDP growth in first half of 2025",
+          "detail": "Harvard economist Jason Furman claimed AI was responsible for 92% of US GDP growth for the first half of 2025, with the US effectively having been in recession without AI investment. By 2026, the Bureau of Economic Analysis estimates AI contributed 1.27 percentage points — roughly two-thirds of total US growth —…"
+        },
+        {
+          "title": "AI funding model shift from free cash flow to debt financing",
+          "detail": "The episode identifies a critical inflection: early hyperscaler AI buildout was funded from free cash flow (annoying but contained), whereas the current buildout is predominantly debt-financed. Debt introduces interest accrual, counterparty risk, and contagion through defaults — and makes the entire buildout sensitive…"
+        },
+        {
+          "title": "80% of OpenAI and Anthropic revenues come from just 1% of customers",
+          "detail": "Ramp data cited in the episode shows an extreme revenue concentration: 80% of combined OpenAI and Anthropic revenues derive from just 1% of their customers. This means the departure of a small number of enterprise accounts could unravel the entire AI capital stack, since these two labs are also the anchor tenants for…"
+        },
+        {
+          "title": "Trump White House intervention in NVIDIA framed as 'preventative strike' to avoid larger bailout",
+          "detail": "The host argues the most coherent reading of Trump and Vance personally intervening to reinstate Jensen Huang is not simply cronyism but a strategic calculation: that stabilizing NVIDIA — the 'lodestone company' of the AI economy — was a low-cost move to reduce the probability of a far more expensive and politically…"
+        }
+      ],
+      "synthesis": "The episode's central argument is that AI has quietly crossed a threshold where it functions as critical national infrastructure — not just another tech sector — making a true market-failure scenario politically and strategically untenable for any administration, regardless of party. The host traces this logic from the Biden era's export controls through the Trump era's Stargate announcement and Jensen Huang intervention, arguing that each of these moves, however framed, reflects a bipartisan conviction that AI is too strategically important to leave entirely to market forces.",
+      "beneficiaries": [],
+      "atRisk": [],
+      "numbers": [
+        {
+          "metric": "TARP program size (2008 financial crisis)",
+          "value": "$443,000,000,000",
+          "context": "Total amount of mortgage bonds and busted assets bought from banks; almost all paid back within a couple of years"
+        },
+        {
+          "metric": "Stargate project announcement",
+          "value": "$500,000,000,000",
+          "context": "One of the first White House press events under Trump, announced with Sam Altman, Masayoshi Son, and Larry Ellison in attendance"
+        },
+        {
+          "metric": "AI share of US GDP growth (first half 2025)",
+          "value": "92%",
+          "context": "Harvard economist Jason Furman's estimate; the US would have been in recession without AI investment"
+        },
+        {
+          "metric": "AI industry share of overall US GDP (2026)",
+          "value": "approaching 1%",
+          "context": "Overall AI industry size relative to total US GDP in 2026"
+        },
+        {
+          "metric": "AI contribution to US economic growth (2026)",
+          "value": "1.27 percentage points",
+          "context": "Bureau of Economic Analysis estimate; roughly two-thirds of total US growth across first three quarters of 2026"
+        }
+      ],
+      "topics": [
+        "AI as national infrastructure",
+        "Adam Schiff's 'no bailout' resolution",
+        "Trump/Vance NVIDIA intervention",
+        "Anthropic",
+        "government AI oversight"
+      ]
     },
     {
       "id": "live-oddlots-nu7myn",
